@@ -1,0 +1,666 @@
+.mainbutton.focus, .mainbutton:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+.button.focus, .button:focus {
+    outline: 0;
+    box-shadow: none!important;
+}
+
+
+body {
+  font-family: 'Abel';
+  font-size: 13px;
+
+  background-image: var(--bg-image);
+  background-color: var(--bg);
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: var(--font-color);
+// text-shadow: 0px 0px 40px white,0px 0px 40px white,0px 0px 40px white,0px 0px 15px white,0px 0px 15px white;
+}
+
+@font-face {
+  font-family: L5R;
+  src: url(L5RIcons.ttf);
+}
+
+@font-face {
+  font-family: brushtip;
+  src: url(brushtip.otf);
+}
+
+.l5r {
+  font-family: 'L5R';
+  font-size: 13px;
+}
+
+.air {
+  color: var(--icon-air-color);
+}
+
+.earth {
+  color: var(--icon-earth-color);
+}
+
+.fire {
+  color: var(--icon-fire-color);
+}
+
+.water {
+  color: var(--icon-water-color);
+}
+
+.void {
+  color: var(--icon-void-color);
+}
+
+.icon {
+  font-family: 'L5R';
+  font-size: 16px;
+  margin-top: 5px;
+  display: inline;
+}
+
+.container {
+  animation-duration: 500ms;
+  animation-name: slidein;
+  animation-iteration-count: none; 
+  margin-left: 0%;
+
+  width: 100%; 
+  padding-bottom: 15px;
+  margin-bottom:  15px;
+  padding-top:  15px;
+  display: inline-block;  
+  background-color: var(--opacity-bg-overlay);
+}
+
+.containerx {
+  animation-duration: 500ms;
+  animation-name: slideout;
+  animation-iteration-count: none; 
+  margin-left: 100%;
+
+  width: 300%; 
+  padding-bottom: 15px;
+  display: none;  
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 100%;
+    width: 300%; 
+  }
+
+  to {
+    margin-left: 0%;
+    width: 100%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    margin-left: 0%;
+    width: 100%;
+  }
+
+  to {
+    margin-left: 100%;
+    width: 300%; 
+  }
+}
+
+
+.stancediv {
+  padding-top: 4px;
+  min-height: 22px;
+}
+
+.numberform {
+  width: 40px;
+}
+
+.margin10{
+	margin-left: 10px;
+}
+
+.margin20{
+  margin-left: 20px;
+}
+
+.defcategory {
+	padding-bottom: 5px;
+}
+
+#npcstats {
+  padding-top: 10px;
+  }
+
+.paddingtopbottom{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
+.margintopbottom{
+  margin-top: 5px;
+  margin-bottom: 5px;
+}
+
+.button {
+  font-family: 'Abel';
+  font-size: 12px;
+  margin-bottom: 5px;
+  background-color: white;
+}
+
+.styledselect {
+  font-family: 'Abel';
+  font-size: 12px;
+  min-height: 22px;
+  display: inline-block;
+}
+
+.defs {
+  display: inline-block;
+  padding-left: 20px;
+  font-size: 12.5px;
+}
+
+.padding20 {
+  padding-left: 20px;
+}
+
+.padding10 {
+  padding-left: 10px;
+}
+
+.inlineblock {
+  display: inline-block;
+  font-size: 12.5px;
+}
+
+#teahousediv{
+  width: 100%;
+}
+
+
+.techresults {
+  padding-bottom: 5px;
+}
+
+.filtitem {
+  margin-bottom: 5px;
+  max-width: 1000px;
+}
+
+.filtitemeffect {
+  margin-bottom: 10px;
+  max-width: 1000px;
+  margin-left: 20px;
+}
+
+.filtitemeffect2 {
+  margin-bottom: 5px;
+  max-width: 1000px;
+}
+
+.fontsize13 {
+  font-size: 13px;
+}
+
+.width {
+  width: 200px;
+}
+
+.xwidth {
+  width: 400px;
+}
+
+table {
+  font-family: 'Abel';
+  font-size: 13px;
+  table-layout: fixed;
+  margin: auto;
+}
+
+td {
+  display: inline-block;
+  border-color: black;
+  table-layout: fixed;
+  padding-left: 5px;
+}
+
+thead {
+  background-color: var(--table-header-bg);
+  color: var(--table-header-font);
+  font-family: 'Abel';
+  font-size: 13px;
+  font-weight: bold;
+  table-layout: fixed;
+}
+
+.tooltiptext {
+  width: 60%;
+  color: var(--tooltipfont);
+  text-align: justify;
+  padding: 5px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  position: absolute;
+  padding-bottom: 15px;
+  font-size: 14px;
+  border-color: white;
+  border-style: solid;
+  border-width: 2px;
+  background-color: #c2c9d3;
+}
+
+.tooltipstance {
+  margin-left: 460px;
+  width: auto;
+}
+
+.tooltipclass {
+  margin-left: 270px;
+}
+
+.namelength {
+  min-width: 60px;
+  display: inline-block;
+}
+
+.stancelength {
+  min-width: 20px;
+  display: inline-block;
+}
+
+.clanlength {
+  min-width: 170px;
+  display: inline-block;
+}
+
+.fatiguelength {
+  min-width: 110px;
+  display: inline-block;
+}
+
+.noteslength {
+	min-width: 190px;
+	display: inline-block;
+}
+
+.titlebar {
+  width:100%;
+  background-color: var(--);
+  margin-bottom: 15px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  background-color: var(--opacity-bg-overlay);
+}
+
+.title {
+  font-family: 'brushtip';
+  font-size: 24px;
+  margin: 20px;
+  text-shadow: var(--title-text-shadow)
+}
+
+.editwidth {
+  width:750px;
+}
+
+.word-wrap {
+  width:750px;
+}
+
+.mainbutton {
+  font-family: 'brushtip';
+  font-size: 20px;
+  margin-left: 5px;
+  background-color: white;
+    color: var(--buttontext);
+  
+}
+
+.schoolskillswidth{
+  width: 150px;
+}
+
+#Silhouettes-table td {
+  width: 70px;
+}
+
+#Silhouettes-table td+td {
+  width: 200px;
+}
+
+#RangeBands-table td {
+  width: 65px;
+}
+
+#RangeBands-table td+td {
+  width: 150px;
+}
+
+#RangeBands-table td+td+td {
+  width: 500px;
+}
+
+#CriticalStrikes-table td {
+  width: 55px;
+}
+
+#CriticalStrikes-table td+td {
+  width: 350px;
+}
+
+#CriticalStrikes-table td+td+td {
+  width: 600px;
+}
+
+#SkillsandApproaches-table td {
+  width: 210px;
+}
+
+#SkillsandApproaches-table td+td {
+  width: 300px;
+}
+
+#SkillsandApproaches-table td+td+td {
+  width: 350px;
+}
+
+#FallingDamage-table td {
+  width: 120px;
+}
+
+#FallingDamage-table td+td {
+  width: 450px;
+}
+
+#Weapons-table td {
+  width: 100px;
+}
+
+#Weapons-table td+td {
+  width: 60px;
+}
+
+#Weapons-table td+td+td {
+  width: 60px;
+}
+
+#Weapons-table td+td+td+td {
+  width: 45px;
+  text-align:   center; 
+}
+
+#Weapons-table td+td+td+td+td {
+  width: 30px;
+ text-align:   left; 
+}
+
+#Weapons-table td+td+td+td+td+td {
+  width: 30px;
+}
+
+#Weapons-table td+td+td+td+td+td+td {
+  width: 200px;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td {
+  width: 400px;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td+td {
+  width: 40px;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td+td+td {
+  width: 45px;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td+td+td+td {
+  width: 65px;
+}
+
+#Armors-table td {
+  width: 110px;
+}
+
+#Armors-table td+td {
+  width: 45px;
+}
+
+#Armors-table td+td+td {
+  width: 45px;
+}
+
+#Armors-table td+td+td+td {
+  width: 285px;
+}
+
+#Armors-table td+td+td+td+td {
+  width: 45px;
+}
+
+#Armors-table td+td+td+td+td+td {
+  width: 50px;
+}
+
+#Armors-table td+td+td+td+td+td+td {
+  width: 50px;
+}
+
+#GeneralOpportunities-table  tbody tr{
+  background-color: #efefef;
+}
+
+#GeneralOpportunities-table  tbody tr + tr,
+#InitiativeOpportunities-table tbody tr, 
+#MartialOpportunities-table tbody tr, 
+#InvocationOpportunities-table tbody tr, 
+#OtherSkillsOpportunities-table tbody tr, 
+#DowntimeOpportunities-table tbody tr{
+background-color: #e1c5ea;
+}
+
+#GeneralOpportunities-table  tbody tr + tr + tr,
+#InitiativeOpportunities-table tbody tr + tr , 
+#MartialOpportunities-table tbody tr + tr , 
+#InvocationOpportunities-table tbody tr + tr , 
+#OtherSkillsOpportunities-table tbody tr + tr , 
+#DowntimeOpportunities-table tbody tr + tr {
+background-color: #95db83;
+}
+
+#GeneralOpportunities-table  tbody tr +  tr + tr + tr,
+#InitiativeOpportunities-table tbody tr  + tr + tr,
+#MartialOpportunities-table tbody tr + tr + tr,
+#InvocationOpportunities-table tbody tr + tr + tr, 
+#OtherSkillsOpportunities-table tbody tr + tr + tr, 
+#DowntimeOpportunities-table tbody tr + tr + tr {
+background-color: #edad6a;
+}
+
+#GeneralOpportunities-table  tbody tr +tr +  tr + tr + tr,
+#InitiativeOpportunities-table tbody tr +  tr + tr + tr, 
+#MartialOpportunities-table tbody tr +  tr + tr + tr,
+#InvocationOpportunities-table tbody tr +  tr + tr + tr,
+#OtherSkillsOpportunities-table tbody tr +  tr + tr + tr, 
+#DowntimeOpportunities-table tbody tr +  tr + tr + tr{
+background-color:#bdc2ed;
+}
+#GeneralOpportunities-table  tbody tr +tr +tr +  tr + tr + tr,
+#InitiativeOpportunities-table tbody tr+tr +  tr + tr + tr, 
+#MartialOpportunities-table tbody tr+tr +  tr + tr + tr,
+#InvocationOpportunities-table tbody tr+tr +  tr + tr + tr,
+#OtherSkillsOpportunities-table tbody tr+tr +  tr + tr + tr,
+#DowntimeOpportunities-table tbody tr +tr +  tr + tr + tr {
+background-color:#282828;
+color:var(--table-header-font);
+}
+
+#GeneralOpportunities-table td, #InitiativeOpportunities-table td, #MartialOpportunities-table td, #InvocationOpportunities-table td, #OtherSkillsOpportunities-table td, #DowntimeOpportunities-table td{
+  width: 70;
+  text-align: center;
+}
+
+#GeneralOpportunities-table td + td, #InitiativeOpportunities-table td + td, #MartialOpportunities-table td + td, #InvocationOpportunities-table td + td, #OtherSkillsOpportunities-table td + td, #DowntimeOpportunities-table td + td{
+  width: 650px;
+  text-align: left;
+}
+
+#shinseisearch {
+  padding-top: 5px;
+  padding-bottom: 10px;
+}
+
+#makenewchar {
+  padding-top: 5px;
+}
+
+.white {
+  color: var(--table-header-font);
+}
+
+#menu {
+  font-size: 12.5px;
+  width: 400px;
+  vertical-align: top;
+}
+
+#statblock {
+  max-width: 750px;
+}
+
+.floatleft {
+  float: left;
+}
+
+.floatright {
+  float: right;
+}
+
+.center {
+  margin: auto;
+  float: center;
+  text-align: center;
+}
+
+.inline {
+  display: inline;
+}
+
+.block {
+  display: block;
+}
+
+.bold {
+  font-weight: bold;
+}
+
+.hide {
+  display: none;
+}
+
+.button{
+    color: var(--buttontext);
+    background-color: var(--button-centre);
+    border-top-color: var(--button-border-light);
+    border-right-color: var(--button-border-dark);
+    border-bottom-color: var(--button-border-dark);
+    border-left-color: var(--button-border-light);
+}
+.mainbutton{
+    background-color: var(--button-centre);
+    color: var(--buttontext);
+    border-top-color: var(--button-border-light);
+    border-right-color: var(--button-border-dark);
+    border-bottom-color: var(--button-border-dark);
+    border-left-color: var(--button-border-light);
+}
+
+tbody tr:nth-child(odd) {
+  background-color: var(--tooltip-bg-color);
+  color: var(--tooltipfont);
+}
+
+.tooltiptext {
+  background-color: var(--tooltip-bg-color);
+}
+
+.editbox {
+  width: 730px;
+  height: 300px;
+}
+
+.tea {
+  margin: 0 auto;
+  text-align: center;
+  margin-bottom: 15px;
+  font-size: 14px;
+}
+
+.brushfont{
+  font-family: brushtip;
+  font-size:  25px;
+  color: var(--greentea);
+}
+
+.small {
+  font-size: 12.5;
+}
+
+.highlight {
+  animation-name: button-highlight;
+  animation-duration: 0.25s;
+
+  color: var(--highlight-mainbutton-text-color);
+}
+
+.nohighlight {
+  animation-name: button-unhighlight;
+  animation-duration: 1s;
+
+  color: var(--buttontext);
+  
+}
+
+:root {
+  --bg: white;
+  --bg-image: url('blossom.png');
+  --bgposition: left top;
+ 
+  --opacity-bg-overlay: rgb(203, 230, 237, 0.8);
+  
+  --highlight-mainbutton-text-color: #F7BAA1; 
+  --tooltip-bg-color: #F7BAA1; 
+  --table-header-bg: #595858;
+  --table-header-font: #ffffff;
+  --button-centre: #fffff4;
+  --button-border-light: #f7e5d7;
+  --button-border-dark: #d6c49c;
+  --buttontext: #5e4031;
+  --font-color: #5e4031;
+
+  --icon-air-color: #ab79af;
+  --icon-earth-color: #375b2d;
+  --icon-fire-color: #bf6613;
+  --icon-water-color: #58649e;
+  --icon-void-color: black;
+  --greentea: #96c988;
+}
+  
+
+@keyframes button-highlight {
+  from {color: var(--buttontext);}
+  to {color: var(--highlight-mainbutton-text-color);}
+}
+
+@keyframes button-unhighlight {
+  from {color: var(--highlight-mainbutton-text-color);}
+  to {color: var(--buttontext);}
+}

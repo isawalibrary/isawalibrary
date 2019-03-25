@@ -1,0 +1,78 @@
+<html>
+ <head>
+ 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
+	<LINK href="style.css" rel="stylesheet" type="text/css">
+	<script src="data.js"></script>
+	<script src="javascript.js"></script>
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
+ <title></title>
+ </head>
+
+<body onload="loadNPC();makeNpcLibrary();makeSkirmish();makeDefs();divider();makeTable();makeTechniques();buildNpcMenu();buildNpcStats();loadTheme();">
+
+ 	<div id="titlebar" class="titlebar">
+ 	<div id="title" class="inline title">Legend of the Five Rings 5th Edition GM Screen</div>
+	<button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="mainbutton button">npc builder</button>
+	<button id="npclibrarybutton" onclick="highlight('npclibrarybutton','library')" class="mainbutton button">npc library</button>
+	<button class="mainbutton button" id="skirmishbutton" onclick="highlight('skirmishbutton','skirmishcontainer');">skirmish tracker</button>
+ 	<button id="definitionbutton" onclick="highlight('definitionbutton','definitioncontainer')" class="mainbutton button">reference</button>
+	<button id="techsbutton" onclick="highlight('techsbutton','techniquecontainer')" class="mainbutton button">technique search</button>
+	<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="mainbutton button">school search</button>
+	<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="mainbutton button">Toggle random</button>
+		</div>
+ 	
+
+	<div id="skirmishcontainer" class="containerx"></div>
+
+	<div id="definitioncontainer" class="containerx">
+		<div id="definitionsdiv"></div>
+		<div id="definitionstables" class="inline"></div>
+	</div>
+
+	<div id="npccontainer" class="containerx">
+		<div id="npcmenu" class="margin20"></div>
+		<div id="npcstats" class="hide margin20"></div>
+
+	</div>		
+
+	 <div id="library" class="containerx">
+ 		<div id="menu" class="inlineblock margin20"></div>
+ 		<div id="statblock" class="inlineblock "></div>
+ 		<div id="editcharacter" class="inlineblock editwidth hide margin20"></div>
+	</div>
+
+	<div id="schoolcontainer" class="containerx">
+ 		<form id="schoolsearch" class="block defs"><span class="inlineblock" style="width:97px">Search Schools:</span>
+ 	 	<input id="schoolsearchinput" class="width styledselect" oninput="schoolfilter();titlefilter();" type="text"><br></form>
+		<div id="schooloutput" class="block"></div>
+		<div id="titleoutput" class="block"></div>
+	</div>
+
+	<div id="techniquecontainer" class="containerx"></div>	
+
+	<div id="teahousediv" class="containerx">
+		<div class="themeswitcher tea">Select theme:
+			<span class="margin10" onclick="colourSwitcher('spring')">air</span> 
+			<span class="margin10"onclick="colourSwitcher('summer')">earth</span> 
+			<span class="margin10"onclick="colourSwitcher('autumn')">fire</span>
+			<span class="margin10"onclick="colourSwitcher('winter')">water</span>
+			<span class="margin10"onclick="colourSwitcher('void')">void</span></div> 
+	 	<div class="tea bold">Rokugani Teahouse Generator</div>
+		<button onclick="makeTea()" class="tea block button">pour me another at...</button>
+		<div id="pour" class="tea block brushfont"></div>
+		<div class="tea bold">Random Name Generator</div>
+	 	<button class="tea block button" id="namebutton" onclick="namegenerator()">random name</button>
+ 		<div id="nameoutput" class="tea block brushfont"></div>
+ 		<div class="tea bold">Fortune Cookie Generator</div>
+ 	 	<button class="tea button center block" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
+ 	 	<form id="shinseisearch" class="center block">Search:
+ 	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
+		<div id="shinseioutput" class="tea block"></div>
+		<div id="changelog" class="tea block"><span onclick="hideshow('log');">changelog</span>
+			<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
+	</div>
+
+</body>
+

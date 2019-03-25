@@ -1,0 +1,33 @@
+
+-Upcoming
+
++ Apply titles to NPC in NPC Builder and Edit, show Title Ability.
++ Player checkbox in Edit NPC to designate character as PC in skirmish.
++ Add 'extra advantage' and 'extra disadvantage' in NPC edit
++ Add the other pre-made baddies from the core book to the NPC Builder under 'Outlaws' or 'Outcasts' 
+
+-version 0.05 25.03.19
+
++ Added 'calculate social stats' button to NPC Builder, to get honor and status scores from the selected clan and school
+
+-version 0.04 24.03.19
+
++ Fixed issues when trying to load for the first time with no existing save.
++ Fixed issues with deleting characters from NPC library - thanks to CalmEyE for debugging help!
+
+-version 0.03 23.03.19
+
++ Demeanor TNs and Unmasking display properly in NPC Edit and in NPC library
++ Fixed NPC armor/ Animal armor display issue in NPC Edit.
++ When editing an animal or a creature NPC that can only use natural weapons and armor, only natural options are presented.
++ Shows social attributes and demeanor in library and in edit.
+
+-version 0.02 22.03.19
+
++ Fixed issue with editing NPCs where the animal and NPC armors did not select properly
++ Formatted Title information so L5R font displays properly.
+
+-version 0.01 21.03.19
+
++ Added search by title in schools filter
++ Added NPC and animal weapons and armor to the edit dropdowns.
