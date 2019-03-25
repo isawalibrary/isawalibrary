@@ -1113,7 +1113,7 @@ function buildNpcMenu(){
 	x = '<select id="type" class="styledselect" onchange="selectType();"></select>';
 	divcontents("npctype",x);
 
-	var typelist = ["Rokugani","Animals","Creatures","Pregen"];
+	var typelist = ["Rokugani","Animals","Creatures",];
 	makeSelectDropdown1("type",typelist);
 
 		newdiv("npcarchetype","npcmenu","inline margin10");
@@ -1381,7 +1381,7 @@ function selectArchetype(){
 		thisnpc.name = selectedArchetype.title;
 	}
 
-	if (selectedArchetype.type == "Pregen"){
+	if (selectedArchetype.type == "Creatures"){
 
 		template.classList.add("hide");
 		clan.classList.add("hide");
@@ -1389,6 +1389,7 @@ function selectArchetype(){
 		save.classList.remove("hide");
 
 		document.getElementById("npcnameinput").value = selectedArchetype.title;
+		thisnpc.name = selectedArchetype.title;
 	}
 
 	if (selectedArchetype.type == "Rokugani"){
@@ -2652,6 +2653,7 @@ function colourSwitcher(theme){
 
 	theme = color[theme]
 
+if (theme !== undefined){
 
   document.documentElement.style.setProperty('--bg', theme.bg);
   document.documentElement.style.setProperty('--bg-image', theme.bgimage);
@@ -2668,7 +2670,7 @@ function colourSwitcher(theme){
   document.documentElement.style.setProperty('--buttontext', theme.buttontext)
   document.documentElement.style.setProperty('--tooltipfont', theme.tooltipfont)
   document.documentElement.style.setProperty('--greentea', theme.greentea)
-
+	}
 }
 
 var savetheme = {};
