@@ -4,11 +4,12 @@
 + Apply titles to NPC in NPC Builder and Edit, show Title Ability.
 + Player checkbox in Edit NPC to designate character as PC in skirmish.
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
-+ Add the other pre-made baddies from the core book to the NPC Builder under 'Outlaws' or 'Outcasts' 
 
 -version 0.05 25.03.19
 
++ Added schools from the Shadowlands book
 + Added 'calculate social stats' button to NPC Builder, to get honor and status scores from the selected clan and school
++ Added pregen NPCs from the Core Book such as Loyal Bushi, Humble Peasant to NPC builder
 
 -version 0.04 24.03.19
 
