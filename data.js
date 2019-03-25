@@ -2909,6 +2909,13 @@ rank: "3",
 reference: "Shadowlands",
 ring: "Earth",
 effect: "Activation: As a Support action, you may make a TN 3 Theology (Earth) check targeting one position at range 0-2.<br><br>Effects: If you succeed, you purify the area and remove the Defiled terrain quality from an area that extends a number of range bands around the target position equal to your Earth Ring.  This effect persists for one round plus additional rounds equal to your bonus successes.<br><br>New Opportunities<br><span class='l5r'>O</span>: This effect persists until the end of the scene instead.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: While the effect persists, the terrain gains the Hallowed (Earth) terrain quality.<br><span class='l5r'>O</span>: While the effect persists, each Tainted being in the affected area increases the TN of all checks they make to resists effects by 2.<br><span class='l5r'>O</span>: You may choose a character instead of a position.  The cleansed area follows that character.<br><span class='l5r'>O</span>: While the effect persists, all damage inflicted in this area has the Sacred quality." },
+{
+title: "Blessing of Steel",
+type: "Ritual",
+rank: "2",
+reference: "Shadowlands",
+ring: "Any",
+effect: "Activation: As a downtime activity, you may make a TN 2 Smithing check using any ring to undertake the maintenance of your weapons and armor.<br><br>Effect: If you succeed, apply one of the following based on the ring you used:<br>Air: Increase the deadliness of a weapon by 1.<br>Earth: Remove the Damaged quality from the item.  If it did not have the Damaged quality, it gains the Durable quality.<br>Fire: The item gains one quality that it could logically possess.  The GM is the final arbiter of what quality can be added this way, and they should inform the player of whether an option is possible before their character undertakes this downtime activity.<br>Water: Increase the base damage of a weapon by 1 and decrease its deadliness by 1, or increase the supernatural resistance of a set of armor by 1 and reduce its physical resistance.<br>Void: Reduce the TN of the next check a character makes with this weapon by 1.<br>Only one of these effects can be applied to an item.  Any effect applied this way persists until the end of the next scene in which the item is used." },
 ]
 
  var tealists = {
