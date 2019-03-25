@@ -2899,7 +2899,16 @@ rank: "4",
 reference: "Emerald Empire",
 ring: "Air",
 effect: "Activation: Once per scene, as an Attack and Scheme action, you may make a Command (Void) check targeting any number of characters in the scene.  The TN of the check is equal to the highest status rank among your targets.  <br><br>Effects: If you suceed, each target suffers the Silenced condition."
-}
+},
+
+
+{
+title: "Essence of Jade",
+type: "Invocation",
+rank: "3",
+reference: "Shadowlands",
+ring: "Earth",
+effect: "Activation: As a Support action, you may make a TN 3 Theology (Earth) check targeting one position at range 0-2.<br><br>Effects: If you succeed, you purify the area and remove the Defiled terrain quality from an area that extends a number of range bands around the target position equal to your Earth Ring.  This effect persists for one round plus additional rounds equal to your bonus successes.<br><br>New Opportunities<br><span class='l5r'>O</span>: This effect persists until the end of the scene instead.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: While the effect persists, the terrain gains the Hallowed (Earth) terrain quality.<br><span class='l5r'>O</span>: While the effect persists, each Tainted being in the affected area increases the TN of all checks they make to resists effects by 2.<br><span class='l5r'>O</span>: You may choose a character instead of a position.  The cleansed area follows that character.<br><span class='l5r'>O</span>: While the effect persists, all damage inflicted in this area has the Sacred quality." },
 ]
 
  var tealists = {
