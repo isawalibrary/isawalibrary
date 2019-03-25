@@ -5457,7 +5457,7 @@ var titles = {
 		xp:24,
 		ability:"Enlightened: When you are selected as a target of an action requiring a skill check, you may spend a Void point to increase or decrease the TN of the check by an amount up to your ranks in Meditation (to a minimum of 1)",
 		source:"Emerald Empire p251",
-		advance:["Martial Skills","Scholar Skills","Aesthetics","Composition","Cleansing Spirit","Ki Protection","Still the Elements"],
+		advance:["Martial Skills","Scholar Skills","Aesthetics","Composition","<span class='l5r'>b</span> Cleansing Spirit","<span class='l5r'>b</span> Ki Protection","<span class='l5r'>b</span> Still the Elements"],
 	},
 
 	priest:{
@@ -5465,7 +5465,7 @@ var titles = {
 		status:"+10 (to a minimum of 40)",
 		xp:24,
 		ability:"Servant of the Kami: You may importune invocations even if you do not know any invocations.  When you importune an invocation, do not increase the TN by 1 (although you still increase the TN if the rank of the invocation is higher than your school rank",
-		advance:["Social Skills","Composition","Culture","Theology","Rank 1-5 Rituals","Civility Foremost","Rouse the Soul"],
+		advance:["Social Skills","Composition","Culture","Theology","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Civility Foremost","<span class='l5r'>b</span> Rouse the Soul"],
 		source:"Emerald Empire p251",
 	},
 
@@ -5474,7 +5474,7 @@ var titles = {
 		status:"-5",
 		xp:24,
 		ability:"Ears Everywhere: Once per game session as a Scheme and Support action or as a downtime activity targeting a particular location or social group, you may gather and sift through the current rumors for credible intelligence by making a TN 4 Sentiment (Air) check.  If you succeed, you discover the latest happenings relevant to your current location or social group, as well as which current rumors are false.  If discerning someone's qualities is your social objective in an intrigue scene, you score momentum points equal to your Air Ring plus your bonus successes.<br>O: You plant a rumor that spreads among the characters in the scene or the targeted group (although they don't necessarily believe it)",
-		advance:["Social Skills","Government","Sentiment","Skulduggery","Rank 1-5 Air Shuji","Shallow Waters","Skulk"],
+		advance:["Social Skills","Government","Sentiment","Skulduggery","<span class='l5r'>b</span> Rank 1-5 Air Shuji","<span class='l5r'>b</span> Shallow Waters","<span class='l5r'>b</span> Skulk"],
 		source:"Emerald Empire p252",
 	},
 
@@ -5483,7 +5483,7 @@ var titles = {
 		status:"+10 (to a minimum of 40)",
 		xp: 36,
 		ability:"No Sacrifice Too Great: One character is assigned as your charge; this character can order you to treat someone else as your charge instead until they lift this order.  If your charge is at range 0-2, you may spend 1 Void point to replace your charge as the target of an Attack action.  If you suffer a critical strike as a result of this Attack action, gain 1 Void point.",
-		advance:["Martial Skills","Government","Medicine","Sentiment","Iaijutsu Cut: Crossing Blade","Iaijutsu Cut: Rising Blade","Warrior's Resolve"],
+		advance:["Martial Skills","Government","Medicine","Sentiment","<span class='l5r'>b</span> Iaijutsu Cut: Crossing Blade","<span class='l5r'>b</span> Iaijutsu Cut: Rising Blade","<span class='l5r'>b</span> Warrior's Resolve"],
 		source:"Emerald Empire p252",
 	},
 
@@ -5491,8 +5491,8 @@ var titles = {
 		title:"Yoriki",
 		status:"+5 (to a minimum of 35)",
 		xp:24,
-		ability:"Take Them Alive: When you make an Attack action using a weapon with the Snaring quality.  You may alter any number of kept dice containing S or E to results set to O",
-		advance:["Social Skills","Government","Martial Arts: Melee","Skulduggery","Rank 1-3 Kata","Fanning the Flames","Shallow Waters"],
+		ability:"Take Them Alive: When you make an Attack action using a weapon with the Snaring quality.  You may alter any number of kept dice containing <span class='l5r'>S</span> or <span class='l5r'>E</span> to results set to <span class='l5r'>O</span>",
+		advance:["Social Skills","Government","Martial Arts: Melee","Skulduggery","<span class='l5r'>b</span> Rank 1-3 Kata","F<span class='l5r'>b</span> anning the Flames","<span class='l5r'>b</span> Shallow Waters"],
 		source:"Emerald Empire p253",
 	},
 
@@ -5501,9 +5501,44 @@ var titles = {
 		status:"+15 to a maximum of 40",
 		xp:30,
 		ability:"Voice of Authority: Once per game session when making a Scheme or Support action check using a Social skill, you may choose additional targets equal to your Glory rank. You cannot choose any additional target with vigilance higher than the highest among your initial targets.",
-		advance:["Trade Skills","Fitness","Martial Arts (choose one)","Performance","Rank 1-2 Kata","Open Hand Style","Shallow Waters"],
+		advance:["Trade Skills","Fitness","Martial Arts (choose one)","Performance","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Open Hand Style","<span class='l5r'>b</span> Shallow Waters"],
 		source:"Core p305",
 	},
 
+	damned:{
+		title:"The Damned",
+		status:"-20 (to a minimum of 30)",
+		xp:20,
+		ability:"Prerequisite: Must possess at least one Shadowlands Taint disadvantage to receive this title.<br>Immediate Effect: Gain the Ferocity disadvantage.<br>Title Ability: Tainted Warrior: Increase the TN of all your non-Command Social skill checks by 1, and reduce the TN of all your Martial Arts (Any) skill checks targeting Tainted beings by 1 (to a minimum of 1).  Non-Tainted beings receive 1 strife whenever they make a Social skill check targeting you.",
+		advance:["Martial Skills","Medicine","Survival","Theology","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Heartpiercing Strike","<span class='l5r'>b</span> Rallying Cry"],
+		source:"Shadowlands",
+	},
+
+	harvester:{
+		title:"Harvester",
+		status:"+10 (to a minimum of 45)",
+		xp:20,
+		ability:"Title Ability: Capture Evil: Reduce the TN of your Survival checks to track down a Tainted being by 1.  When you inflict a critical strike on a Tainted being, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span> <span class='l5r'>O</span>: The target suffers the Dazed, Disoriented or Immobilized condition.",
+		advance:["Martial Skills","Smithing","Survival","Theology","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Rank 1-2 Rituals","<span class='l5r'>b</span> Skulk"],
+		source:"Shadowlands",
+	},
+
+	twentygoblin:{
+		title:"Twenty-Goblin Crab",
+		status:"+15 (to a minimum of 30 and a maximum of 40), officially become samurai and member of the Crab Clan",
+		xp:20,
+		ability:"Title Ability: Goblin Killer: When making a Martial Arts (Any) check targeting a goblin, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span>+: Each goblin at range 0-2 of your target receives 1 strife per <span class='l5r'>O</span> that you spend this way.",
+		advance:["Martial Skills","Social Skills","Culture","Government","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Thunderclap Strike","<span class='l5r'>b</span> Stonewall Tactics"],
+		source:"Shadowlands",
+	},
+
+	witchhunter:{
+		title:"Witch Hunter",
+		status:"+10 (to a minimum of 30)",
+		xp:45,
+		ability:"Title Ability: Bane of Sorcerers: When you make a check to resist the effects of a maho technique, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span>: Reduce the TN of your next check targeting tbe maho practitioner who performed it by 1 per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed on the check to resist, the maho practitioner receives strife equal to your ranks in Theology.",
+		advance:["Martial Skills","Scholar Skills","Command","Skulduggery","<span class='l5r'>b</span> Rank 1-4 Kata","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Honest Assessment"],
+		source:"Shadowlands",
+	},
 
 }
