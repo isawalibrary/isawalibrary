@@ -2916,6 +2916,13 @@ rank: "2",
 reference: "Shadowlands",
 ring: "Any",
 effect: "Activation: As a downtime activity, you may make a TN 2 Smithing check using any ring to undertake the maintenance of your weapons and armor.<br><br>Effect: If you succeed, apply one of the following based on the ring you used:<br>Air: Increase the deadliness of a weapon by 1.<br>Earth: Remove the Damaged quality from the item.  If it did not have the Damaged quality, it gains the Durable quality.<br>Fire: The item gains one quality that it could logically possess.  The GM is the final arbiter of what quality can be added this way, and they should inform the player of whether an option is possible before their character undertakes this downtime activity.<br>Water: Increase the base damage of a weapon by 1 and decrease its deadliness by 1, or increase the supernatural resistance of a set of armor by 1 and reduce its physical resistance.<br>Void: Reduce the TN of the next check a character makes with this weapon by 1.<br>Only one of these effects can be applied to an item.  Any effect applied this way persists until the end of the next scene in which the item is used." },
+{
+title: "Craft Shikigami",
+type: "Ritual",
+rank: "2",
+reference: "Shadowlands",
+ring: "Void",
+effect: "Activation: As a downtime activity using a consecrated vessel of silhouette 0 or smaller, you may make an Artisan skill (Void) check to create a shikigami (Shadowlands p115).  You choose the TN of the check (minimum 1).<br>Effect: If you succeed, choose a number of invocations that you know up to the TN of the check.  Remove the selected incocations and create a unique name for the shikigami.  WHile the shikigami exists, the chosen invocations are sealed within it - you cannot use them but the shikigami can.  You can have up to one shikigami at a time.  When the shikigami's physical form is destroyed, its essence returns to you; you can recreate it by making a new physical form for it in the manner of making a new shikigami but it retains its memories and personality." },
 ]
 
  var tealists = {
