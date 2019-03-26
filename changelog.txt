@@ -5,6 +5,10 @@
 + Player checkbox in Edit NPC to designate character as PC in skirmish.
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
 
+-version 0.06 26.03.19
+
++ Added techniques and titles from the Shadowlands book
+
 -version 0.05 25.03.19
 
 + Added schools from the Shadowlands book
