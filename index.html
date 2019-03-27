@@ -10,7 +10,7 @@
  <title></title>
  </head>
 
-<body onload="loadNPC();makeNpcLibrary();makeSkirmish();makeDefs();divider();makeTable();makeTechniques();buildNpcMenu();buildNpcStats();loadTheme();">
+<body onload="loadNPC();makeNpcLibrary();makeSkirmish();makeDefs();divider();makeTable();makeTechniques();buildNpcMenu();buildNpcStats();loadTheme();loadCampaign();">
 
  	<div id="titlebar" class="titlebar">
  	<div id="title" class="inline title">Legend of the Five Rings 5th Edition GM Screen</div>
@@ -21,6 +21,7 @@
 	<button id="techsbutton" onclick="highlight('techsbutton','techniquecontainer')" class="mainbutton button">technique search</button>
 	<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="mainbutton button">school search</button>
 	<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="mainbutton button">Toggle random</button>
+	<button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="mainbutton button">Campaign</button>
 		</div>
  	
 
@@ -72,6 +73,13 @@
 		<div id="shinseioutput" class="tea block"></div>
 		<div id="changelog" class="tea block"><span onclick="hideshow('log');">changelog</span>
 			<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
+	</div>
+
+	<div id="campaigninfodiv" class="containerx">
+		<div id="campaignhouserules"><span onclick="hideshow('houserules')">House Rules</span>
+			<div id="houserules"></div>
+		</div>
+
 	</div>
 
 </body>
