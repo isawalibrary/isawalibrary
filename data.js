@@ -5411,6 +5411,29 @@ var color={
 
 		  greentea: "#5a4d70",
 	},
+	printer:{
+		  bg: "#000000",
+		  "bgimage": "none",
+		  bgposition: "",
+		   
+		  "opacitybgoverlay": "rgb(255, 255, 255, 1)",
+
+		  "highlightmainbuttontextcolor": "white", 
+		  "tooltipbgcolor": "#FFFFFF", 
+
+		  "tableheaderbg": "#C0C0C0",
+		  "tableheaderfont": "#ffffff",
+
+		  "buttoncentre": "#ffffff",
+		  buttontext:"black",
+		  "buttonborderlight": "#0d0249",
+		  "buttonborderdark": "#0d0249",
+
+		  "fontcolor": "#000000",
+		  tooltipfont:"#000000",
+
+		  greentea: "#5a4d70",
+	},
 }
 
 var titles = {
