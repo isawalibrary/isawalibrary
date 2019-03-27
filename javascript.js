@@ -2271,6 +2271,7 @@ function saveNPC (){
 	npc[name].equiptype = thisnpc.equiptype;
 	npc[name].clan = npcclan;
 	npc[name].school = npcschool;
+
 	npc[name].template = npctemplate;
 	npc[name].rings = {};		
 	npc[name].rings.air = thisnpc.Air;
@@ -2590,7 +2591,9 @@ function npcskirmish(nom){
 	skirmishcharacters[nom].stance = "Stance";
 	skirmishcharacters[nom].clan = npc[nom].clan;
 	skirmishcharacters[nom].school = npc[nom].school;
-	skirmishcharacters[nom].player = 0;
+
+	skirmishcharacters[nom].player = npc[nom].player;
+
 	skirmishcharacters[nom].composure = npc[nom].derived.composure;
 	skirmishcharacters[nom].endurance = npc[nom].derived.endurance;
 	skirmishcharacters[nom].ability = dropcontent;
@@ -2712,6 +2715,10 @@ function makeNpcEdit(nom){
 	newdiv("editschool","edittype","inline margin10")
 	x ='School: <input type="text" id="editschoolinput" class="styledselect"></input>'
 	divcontents("editschool",x)
+
+	newdiv("editplayer","edittype","inline margin10")
+	x ='PC?: <form class="inline styledselect"><input onchange="setNpcPlayer()" type="checkbox" id="npceditplayer" name="npcplayer" value="npcplayer">Player </form>'
+	divcontents("editplayer",x)
 
 	newdiv("editSaveNpc","edittype","inline margin10")
 	x =  "<button class='button' onclick='saveEditNpc(&apos;"+nom.title+"&apos;)'>Save NPC</button>"
@@ -2951,6 +2958,12 @@ function selectNPCDemeanor(){
 	}
 }
 
+function setNpcPlayer(){
+	if (document.getElementById("npceditplayer").checked = true){
+		document.getElementById("editarchetypeinput").value = "PC";
+	}
+}
+
 var nom={};
 
 function populateNpcEdit(nom){
@@ -2958,10 +2971,19 @@ function populateNpcEdit(nom){
 	thisnpc = nom
 
 	document.getElementById("editnameinput").value = nom.title;
-	document.getElementById("editarchetypeinput").value = nom.archetype;
+
+	if (nom.player == 1){
+		document.getElementById("editarchetypeinput").value = "PC";
+	} else {document.getElementById("editarchetypeinput").value = nom.archetype}
+
 	document.getElementById("edittemplateinput").value = nom.template;
 	document.getElementById("editclaninput").value = nom.clan;
 	document.getElementById("editschoolinput").value = nom.school;
+
+	if (nom.player == 1){
+		document.getElementById("npceditplayer").checked = true
+	} else {document.getElementById("npceditplayer").checked = false}
+
 	document.getElementById("editairinput").value = nom.rings.air;
 	document.getElementById("editearthinput").value = nom.rings.earth;
 	document.getElementById("editwaterinput").value = nom.rings.water;
@@ -3129,6 +3151,11 @@ function saveEditNpc(nom){
 	nom.template = document.getElementById("edittemplateinput").value
 	nom.clan = document.getElementById("editclaninput").value;
 	nom.school = document.getElementById("editschoolinput").value
+
+	if(document.getElementById("npceditplayer").checked){
+ 		nom.player=1;  //sets character as PC
+ 	} else {nom.player=0;}  //sets character as NPC
+
 	nom.rings.air = document.getElementById("editairinput").value
 	nom.rings.earth = document.getElementById("editearthinput").value
 	nom.rings.fire = document.getElementById("editfireinput").value
