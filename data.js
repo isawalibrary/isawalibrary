@@ -5393,7 +5393,7 @@ var color={
 		  "bgimage": "url('night.jpg')",
 		  bgposition: "right bottom",
 		   
-		  "opacitybgoverlay": "rgb(252, 252, 252, 0.7)",
+		  "opacitybgoverlay": "rgb(252, 252, 252, 0.85)",
 
 		  "highlightmainbuttontextcolor": "white", 
 		  "tooltipbgcolor": "#0d0249", 
