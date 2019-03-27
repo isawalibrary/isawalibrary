@@ -1,0 +1,24 @@
+Duel Structure
+
+1) Focus:
+Draw, Predict or Center, or take another action which cannot include Attack or Scheme.
+
+2) Determine Initiative Values: 
+For a duel, the Initiative check is a <b>TN 1 Meditation</b> check to attempt to foresee how the duel will transpire.
+Base initiative value is the focus attribute.  Then, if the character succeeded on their Initiative check, they add 1 to their base initiative value, plus an additional amount equal to their bonus successes.
+However, each round, at the start of Phase 2: Take Turns, the characters participate in a staredown that modifies initiative.  
+
+3) Staredown:
+The staredown is a special step at the start of Phase 2: Take Turns each round. During the staredown, each character receives strife equal to the number of the round (1 strife for the first round, 2 for the second, 3 for the third, and so forth). Additionally, after receiving this strife, each character who is not Compromised may bid additional strife to increase their initiative value for that round. To bid, each participating character secretly chooses a number between 0 and their focus attribute. Then, all simultaneously reveal their number, and each suffers that amount of strife, and adds it to their initiative for the round.
+
+4) Strike:
+Calming Breath, Prepare Item, Strike or Unique Action
+
+Finishing Blow: 
+As a combatant begins to make a move, a gap sometimes opens in their defenses, giving their foe a chance to end the fight with a well-placed attack. 
+The first time their opponent becomes Compromised or unmasks during a duel, a character may immediately execute a finishing blow. This is a special action that can be performed out of turn. 
+A character executes the finishing blow by choosing an Attack action and performing it against their opponent, interrupting anything their target is doing (including resolving a check of their own, in which case the finishing blow resolves during Step 6 of the check, after Strife symbols are resolved but before Opportunities are spent). One finishing blow can even interrupt another! 
+If the character executing a finishing blow succeeds, instead of dealing damage, the finishing blow inflicts a critical strike with severity equal to two times the deadliness of the weapon or Attack action used, plus the attacker's bonus successes. Any other effects of the Attack action are resolved as usual. 
+If two characters trigger finishing blows simultaneously for any reason (such as the mandatory strife gained during the staredown), the one with the lower honor fully executes their finishing blow first, then the other character executes theirs (assuming they are still alive!). If the duel's objective is achieved by the finishing blow, the duel ends immediately. Otherwise, the duel picks up where it left off (including returning to resolving a check, if one was interrupted).
+
+
