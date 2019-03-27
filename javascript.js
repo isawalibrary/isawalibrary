@@ -1569,7 +1569,7 @@ function setNPCStats(){
 		selectedTemplate.ring.Fire = numbers[3];
 		selectedTemplate.ring.Water = numbers[4];
 		selectedTemplate.ring.Void = numbers[0];
-		selectedTemplate.ring.type = "set";
+	
 	}
 
 	thisnpc.name = document.getElementById("npcnameinput").value
