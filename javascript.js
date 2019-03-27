@@ -2959,7 +2959,7 @@ function selectNPCDemeanor(){
 }
 
 function setNpcPlayer(){
-	if (document.getElementById("npceditplayer").checked = true){
+	if (document.getElementById("npceditplayer").checked == true){
 		document.getElementById("editarchetypeinput").value = "PC";
 	}
 }
