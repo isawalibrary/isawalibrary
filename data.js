@@ -5383,7 +5383,7 @@ var color={
 		  "buttonborderlight": "#e5e5c3",
 		  "buttonborderdark": "#d6c49c",
 
-		  "fontcolor": "#535560",
+		  "fontcolor": "#353849",
 		  tooltipfont:"black",
 
 		  greentea: "rgb(84, 109, 255)",
