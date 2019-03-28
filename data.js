@@ -1,4 +1,24 @@
+var ringdice = [
+		"Blank",
+		"<span class='l5r'>O</span> <span class='l5r'>T</span>",
+		"<span class='l5r'>O</span>",
+		"<span class='l5r'>S</span> <span class='l5r'>T</span>",
+		"<span class='l5r'>S</span>",
+		"<span class='l5r'>E</span> <span class='l5r'>T</span>"];
 
+var skilldice = [
+		"Blank",
+		"Blank",
+		"<span class='l5r'>O</span>",
+		"<span class='l5r'>O</span>",
+		"<span class='l5r'>O</span>",
+		"<span class='l5r'>S</span> <span class='l5r'>T</span>",
+		"<span class='l5r'>S</span> <span class='l5r'>T</span>",
+		"<span class='l5r'>S</span>",
+		"<span class='l5r'>S</span>",
+		"<span class='l5r'>S</span> <span class='l5r'>T</span>",
+		"<span class='l5r'>E</span> <span class='l5r'>T</span>",
+		"<span class='l5r'>E</span>"];
 
 var definitions = {
 	Conditions:{
@@ -5305,6 +5325,7 @@ var color={
 
 		  "highlightmainbuttontextcolor": "#F7BAA1", 
 		  "tooltipbgcolor": "#F7BAA1", 
+		  "tooltip-border":"white",
 
 		  "tableheaderbg": "#595858",
 		  "tableheaderfont": "#ffffff",
@@ -5328,6 +5349,7 @@ var color={
 
 		  "highlightmainbuttontextcolor": "#adce67", 
 		  "tooltipbgcolor": "#adce67", 
+		  "tooltip-border":"white",
 
 		  "tableheaderbg": "#97b752",
 		  "tableheaderfont": "#fffff4",
@@ -5351,6 +5373,7 @@ var color={
 
 		  "highlightmainbuttontextcolor": "#FFA500", 
 		  "tooltipbgcolor": "rgb(255,215,0)", 
+		  "tooltipborder":"white",
 
 		  "tableheaderbg": "#595858",
 		  "tableheaderfont": "#ffffff",
@@ -5374,6 +5397,7 @@ var color={
 
 		  "highlightmainbuttontextcolor": "rgb(84, 109, 255)", 
 		  "tooltipbgcolor": "#9ea4bf", 
+		  "tooltipborder":"white",
 
 		  "tableheaderbg": "#595858",
 		  "tableheaderfont": "#ffffff",
@@ -5396,7 +5420,8 @@ var color={
 		  "opacitybgoverlay": "rgb(252, 252, 252, 0.85)",
 
 		  "highlightmainbuttontextcolor": "white", 
-		  "tooltipbgcolor": "#0d0249", 
+		  "tooltipbgcolor": "#0d0249",
+		  "tooltipborder":"white", 
 
 		  "tableheaderbg": "#C0C0C0",
 		  "tableheaderfont": "#ffffff",
@@ -5418,13 +5443,14 @@ var color={
 		   
 		  "opacitybgoverlay": "rgb(255, 255, 255, 1)",
 
-		  "highlightmainbuttontextcolor": "white", 
+		  "highlightmainbuttontextcolor": "#DCDCDC", 
 		  "tooltipbgcolor": "#FFFFFF", 
+		  "tooltipborder":"#C0C0C0",
 
 		  "tableheaderbg": "#C0C0C0",
 		  "tableheaderfont": "#ffffff",
 
-		  "buttoncentre": "#ffffff",
+		  "buttoncentre": "#FFFFFF",
 		  buttontext:"black",
 		  "buttonborderlight": "#0d0249",
 		  "buttonborderdark": "#0d0249",

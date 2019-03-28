@@ -2688,6 +2688,7 @@ if (theme !== undefined){
   document.documentElement.style.setProperty('--opacity-bg-overlay', theme.opacitybgoverlay);
   document.documentElement.style.setProperty('--highlight-mainbutton-text-color', theme.highlightmainbuttontextcolor)  ;
   document.documentElement.style.setProperty('--tooltip-bg-color', theme.tooltipbgcolor);
+  document.documentElement.style.setProperty('--tooltip-border',theme.tooltipborder);
   document.documentElement.style.setProperty('--table-header-bg', theme.tableheaderbg);
   document.documentElement.style.setProperty('--table-header-font', theme.tableheaderfont)
   document.documentElement.style.setProperty('--button-centre', theme.buttoncentre)
@@ -2697,7 +2698,7 @@ if (theme !== undefined){
   document.documentElement.style.setProperty('--buttontext', theme.buttontext)
   document.documentElement.style.setProperty('--tooltipfont', theme.tooltipfont)
   document.documentElement.style.setProperty('--greentea', theme.greentea)
-	}
+	}	
 }
 
 var savetheme = {};
@@ -3294,6 +3295,54 @@ function titlefilter(){
 
 function makechangelog(){
 	document.getElementById("log").innerHTML = changelog.txt;
+}
+
+function rolldice (){
+	document.getElementById("results").innerHTML = ""
+	rollRings();
+	rollSkills();
+}
+
+function rollRings(){
+	ringdicenumber = document.getElementById("ringdicenumber").value 
+
+	for (i=0; i<ringdicenumber; i++){
+
+		ringresult = getRandom(ringdice)
+
+		newdiv("ringdice"+i,"results","")
+
+		x = "<span class='l5r'>d</span> " + ringresult
+
+		while (ringresult == "<span class='l5r'>E</span> <span class='l5r'>T</span>") {
+			ringresult = getRandom(ringdice)
+			x += " / " + ringresult
+		}
+						
+		divcontents("ringdice"+i,x)
+	}
+}
+
+
+function rollSkills(){
+	skilldicenumber = document.getElementById("skilldicenumber").value 
+
+	for (i=0; i<skilldicenumber; i++){
+
+		skillresult = getRandom(skilldice)
+
+		newdiv("skilldice"+i,"results","")
+
+		x = "<span class='l5r' style='color:silver'>D</span> " + skillresult;
+
+		while (skillresult == "<span class='l5r'>E</span>" || skillresult == "<span class='l5r'>E</span> <span class='l5r'>T</span>"){
+			skillresult = getRandom(skilldice)
+			x += " / " + skillresult
+		}
+		
+
+		divcontents("skilldice"+i,x)
+	}
 }
 
 function unlockscreen(){

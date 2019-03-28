@@ -60,7 +60,12 @@
 			<span class="margin10"onclick="colourSwitcher('autumn')">fire</span>
 			<span class="margin10"onclick="colourSwitcher('winter')">water</span>
 			<span class="margin10"onclick="colourSwitcher('void')">void</span>
-			<span class="margin10"onclick="colourSwitcher('printer')">printer-friendly</span></div> 
+			<span class="margin10"onclick="colourSwitcher('printer')">printer-friendly</span></div>
+		<div class="tea">
+			Ring Dice: <input type="number" id="ringdicenumber" class="numberform styledselect"></input><br>
+			Skill Dice: <input type="number" id="skilldicenumber" class="numberform styledselect"></input><br>
+			<button id="roll" class="button margintopbottom" onclick="rolldice()">Roll Dice</button>
+			<div id="results" class="alignleft"></div> </div>
 	 	<div class="tea bold">Rokugani Teahouse Generator</div>
 		<button onclick="makeTea()" class="tea block button">pour me another at...</button>
 		<div id="pour" class="tea block brushfont"></div>

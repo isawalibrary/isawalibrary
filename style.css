@@ -590,6 +590,7 @@ tbody tr:nth-child(odd) {
 
 .tooltiptext {
   background-color: var(--tooltip-bg-color);
+  border-color: var(--tooltip-border)
 }
 
 .editbox {
@@ -629,6 +630,11 @@ tbody tr:nth-child(odd) {
   
 }
 
+.alignleft {
+  text-align: left;
+  margin-left: 45%;
+}
+
 :root {
   --bg: white;
   --bg-image: url('blossom.png');
@@ -637,7 +643,10 @@ tbody tr:nth-child(odd) {
   --opacity-bg-overlay: rgb(203, 230, 237, 0.8);
   
   --highlight-mainbutton-text-color: #F7BAA1; 
-  --tooltip-bg-color: #F7BAA1; 
+
+  --tooltip-bg-color: #F7BAA1;
+  --tooltip-border:white; 
+
   --table-header-bg: #595858;
   --table-header-font: #ffffff;
   --button-centre: #fffff4;
