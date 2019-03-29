@@ -1091,17 +1091,6 @@ function selectType(){
 		thisnpc.name = selectedArchetype.title;
 	}
 
-	if (type == "Pregen"){
-
-		template.classList.add("hide");
-		clan.classList.add("hide");
-		school.classList.add("hide");
-		save.classList.remove("hide")
-
-		document.getElementById("npcnameinput").value = selectedArchetype.title;
-		thisnpc.name = selectedArchetype.title;
-	}
-
 	if (type == "Rokugani"){
 
 		template.classList.remove("hide");
@@ -1110,6 +1099,18 @@ function selectType(){
 		save.classList.remove("hide")
 
 		document.getElementById("npcsavebutton").classList.add("hide");
+
+	}
+	if (type == "Pregen"){
+
+		template.classList.add("hide");
+		clan.classList.add("hide");
+		school.classList.add("hide");
+		save.classList.add("hide")
+
+		document.getElementById("npcnameinput").value = selectedArchetype.title;
+		thisnpc.name = selectedArchetype.title;
+
 
 	}
 
@@ -1124,7 +1125,7 @@ function buildNpcMenu(){
 	x = '<select id="type" class="styledselect" onchange="selectType();"></select>';
 	divcontents("npctype",x);
 
-	var typelist = ["Rokugani","Animals","Creatures","Pregen"];
+	var typelist = ["Rokugani","Animals","Creatures","Pregen",];
 	makeSelectDropdown1("type",typelist);
 
 		newdiv("npcarchetype","npcmenu","inline margin10");
@@ -1403,23 +1404,24 @@ function selectArchetype(){
 		thisnpc.name = selectedArchetype.title;
 	}
 
-	if (selectedArchetype.type == "Pregen"){
-
-		template.classList.add("hide");
-		clan.classList.add("hide");
-		school.classList.add("hide");
-		save.classList.remove("hide");
-
-		document.getElementById("npcnameinput").value = selectedArchetype.title;
-		thisnpc.name = selectedArchetype.title;
-	}
-
 	if (selectedArchetype.type == "Rokugani"){
 
 		template.classList.remove("hide");
 		clan.classList.remove("hide");
 		school.classList.remove("hide");
 		document.getElementById("npcsavebutton").classList.add("hide");
+
+	}
+	if (selectedArchetype.type == "Pregen"){
+
+		template.classList.add("hide");
+		clan.classList.add("hide");
+		school.classList.add("hide");
+		save.classList.remove("hide")
+
+		document.getElementById("npcnameinput").value = selectedArchetype.title;
+		thisnpc.name = selectedArchetype.title;
+
 
 	}
 
@@ -1567,7 +1569,7 @@ function setNPCStats(){
 		selectedTemplate.ring.Fire = numbers[3];
 		selectedTemplate.ring.Water = numbers[4];
 		selectedTemplate.ring.Void = numbers[0];
-		selectedTemplate.ring.type = "set";
+	
 	}
 
 	thisnpc.name = document.getElementById("npcnameinput").value
@@ -2247,8 +2249,7 @@ function setTechs(){
 var npc = {};
 
 function saveNPC (){
-	name = document.getElementById("npcnameinput").value
-	thisnpc.name = name;
+	name = thisnpc.name;
 
 	npcarchetype = document.getElementById('archetype').options[document.getElementById('archetype').selectedIndex].text;
 	
@@ -2687,6 +2688,7 @@ if (theme !== undefined){
   document.documentElement.style.setProperty('--opacity-bg-overlay', theme.opacitybgoverlay);
   document.documentElement.style.setProperty('--highlight-mainbutton-text-color', theme.highlightmainbuttontextcolor)  ;
   document.documentElement.style.setProperty('--tooltip-bg-color', theme.tooltipbgcolor);
+  document.documentElement.style.setProperty('--tooltip-border',theme.tooltipborder);
   document.documentElement.style.setProperty('--table-header-bg', theme.tableheaderbg);
   document.documentElement.style.setProperty('--table-header-font', theme.tableheaderfont)
   document.documentElement.style.setProperty('--button-centre', theme.buttoncentre)
@@ -2696,7 +2698,7 @@ if (theme !== undefined){
   document.documentElement.style.setProperty('--buttontext', theme.buttontext)
   document.documentElement.style.setProperty('--tooltipfont', theme.tooltipfont)
   document.documentElement.style.setProperty('--greentea', theme.greentea)
-	}
+	}	
 }
 
 var savetheme = {};
@@ -2987,6 +2989,7 @@ function setNpcPlayer(){
 	}
 }
 
+
 var nom={};
 
 function populateNpcEdit(nom){
@@ -3078,10 +3081,7 @@ function populateNpcEdit(nom){
 		}
 	}
 
-
-
 }
-
 function editAddWeapon(){
 
 	y="selectNPCWeaponEdit('editweapon0input','editweapon0stats')"
@@ -3113,10 +3113,7 @@ function editAddWeapon(){
 
 	weapons.sort();
 
-
 	makeSelectDropdown("editweapon0input","Select Weapon",weapons)
-
-	
 }
 
 function editAddTech(i){
@@ -3145,7 +3142,6 @@ function editAddTech(i){
 		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
 
 }
-
 function setEditTech(id){
 
 	abilitydiv = document.getElementById("edittechsability"+id);
@@ -3164,7 +3160,6 @@ function setEditTech(id){
 
 
 }
-
 function saveEditNpc(nom){
 
 	nom = npc[nom]
@@ -3175,7 +3170,7 @@ function saveEditNpc(nom){
 	nom.clan = document.getElementById("editclaninput").value;
 	nom.school = document.getElementById("editschoolinput").value
 
-	if(document.getElementById("npceditplayer").checked){
+	if(document.getElementById("npceditplayer").checked == true){
  		nom.player=1;  //sets character as PC
  	} else {nom.player=0;}  //sets character as NPC
 
@@ -3302,6 +3297,54 @@ function makechangelog(){
 	document.getElementById("log").innerHTML = changelog.txt;
 }
 
+function rolldice (){
+	document.getElementById("results").innerHTML = ""
+	rollRings();
+	rollSkills();
+}
+
+function rollRings(){
+	ringdicenumber = document.getElementById("ringdicenumber").value 
+
+	for (i=0; i<ringdicenumber; i++){
+
+		ringresult = getRandom(ringdice)
+
+		newdiv("ringdice"+i,"results","")
+
+		x = "<span class='l5r'>d</span> " + ringresult
+
+		while (ringresult == "<span class='l5r'>E</span> <span class='l5r'>T</span>") {
+			ringresult = getRandom(ringdice)
+			x += " / " + ringresult
+		}
+						
+		divcontents("ringdice"+i,x)
+	}
+}
+
+
+function rollSkills(){
+	skilldicenumber = document.getElementById("skilldicenumber").value 
+
+	for (i=0; i<skilldicenumber; i++){
+
+		skillresult = getRandom(skilldice)
+
+		newdiv("skilldice"+i,"results","")
+
+		x = "<span class='l5r' style='color:silver'>D</span> " + skillresult;
+
+		while (skillresult == "<span class='l5r'>E</span>" || skillresult == "<span class='l5r'>E</span> <span class='l5r'>T</span>"){
+			skillresult = getRandom(skilldice)
+			x += " / " + skillresult
+		}
+		
+
+		divcontents("skilldice"+i,x)
+	}
+}
+
 function unlockscreen(){
 	show("definitionbutton")
 	show("techsbutton")
@@ -3319,12 +3362,3 @@ function loadCampaign(){
 	x += "<b>+Critical Strike Rules</b><br><br>Coming Soon, my issue here is that Dying is less bad than being drastically maimed, it is really hard to die as long as you have a half decent medic around but really super easy to get life changing injuries.  I am sort of glad that you don't die by accident all the time, as I want to be able to make fights without worrying that Random Basic Bandit #348 will roll 3 10s on his damage roll and decapitate your samurai, because that is really uncinematic and also sort of disruptive - mainly I just want a smoother graph of Crit Severity-to-Badness rather than the weird up and down curve it makes at the moment.<br><br>"
 	divcontents("houserules",x)
 }
-//check everything works, including when there is no existing save 
-//make it so the tooltip is triggered on click rather than hover for the skirmish notes
-//add unmaskings to demeanors
-//add second weapon slot
-//add edit for npcs, add tick box so can save player data, add extra field for extra adv or disadv
-//when beasts and creatures are added to library, have their school/class not show as none/none - if it is none, show nothing
-//when beasts and creatures are added to skirmish, have their stat info come up on their name or their species
-//when rokugani is selected, then the type is changed, hide the template, clan and school dropdowns and don't allow select school technique!
-//change how editing the beasts and creatures works - weapon and armor needs work here
