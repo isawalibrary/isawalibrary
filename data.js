@@ -3119,7 +3119,9 @@ children:[
 	{armor:"Plated Armor", phys:5, sup:0, qualities:"Cumbersome, Durable, Wargear", rarity:"8", price:"40 koku", source:"Core"},
 	{armor:"Sailor's Garb", phys:1, sup:0, qualities:"Durable, Mundane<br> Reduce the TN of checks to repair or maintain sailor's garb by 1.", rarity:"2", price:"1 bu", source:"Mantis DLC"},
 	{armor:"Shark Leather Armor", phys:2, sup:0, qualities:"Resplendant<br> When you succeed at a check to resist a critical strike while wearing this armor, add two bonus successes.", rarity:"7", price:"12 koku", source:"Mantis DLC"},
-
+	{armor:"O-yoroi", phys:6, sup:0, qualities:"Cumbersome, Resplendant, Wargear", rarity:"8", price:"60 koku", source:"Shadowlands"},
+	{armor:"Tatami Gusoku", phys:3, sup:0, qualities:"Wargear (while equipped)", rarity:"4", price:"7 koku", source:"Shadowlands"},
+	{armor:"Tosei-Gusoku", phys:4, sup:0, qualities:"Cumbersome, Durable, Wargear", rarity:"8", price:"50 koku", source:"Shadowlands"},		
 ]},
 {
 title:"General",
