@@ -1,12 +1,16 @@
 
 -Upcoming
 
++ Add special rules for the Shadowlands book weapons and armors.
++ Add all the new mahos.
++ Add pattern information.
 + Apply titles to NPC in NPC Builder and Edit, show Title Ability.
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
 
 -version 0.08 28.03.19
 
 + Added dice roller
++ Added weapons info and armor info for Shadowlands equipment
 
 -version 0.07 27.03.19
 
