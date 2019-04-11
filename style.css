@@ -454,6 +454,24 @@ thead {
   width: 50px;
 }
 
+#Patterns-table td {
+  width: 110px;
+}
+
+#Patterns-table td+td, #Patterns-table td+td+td {
+  width: 60px;
+  text-align:   center; 
+}
+
+#Patterns-table td+td+td+td {
+  width: 450px;
+  text-align: left; 
+}
+
+#Patterns-table td+td+td+td+td {
+  width: 100px;
+}
+
 #GeneralOpportunities-table  tbody tr{
   background-color: #efefef;
 }
