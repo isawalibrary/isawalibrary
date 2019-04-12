@@ -834,4 +834,79 @@ body {
   text-align: left;
 }
 
+#Armors-table td {
+  width: 20%;
+}
+
+#Armors-table td+td {
+  width: 6%;
+}
+
+#Armors-table td+td+td {
+  width: 6%;
+}
+
+#Armors-table td+td+td+td {
+  width: 40%;
+}
+
+#Armors-table td+td+td+td+td {
+  width: 6%;
+}
+
+#Armors-table td+td+td+td+td+td {
+  width: 7%;
+}
+
+#Armors-table td+td+td+td+td+td+td {
+  width: 7%;
+}
+
+#Weapons-table td {
+  width: 9%;
+  font-size: 0.8rem;
+}
+
+#Weapons-table td+td {
+  width: 5%;
+}
+
+#Weapons-table td+td+td {
+  width: 5%;
+}
+
+#Weapons-table td+td+td+td {
+  width: 4%;
+  text-align:   center; 
+}
+
+#Weapons-table td+td+td+td+td {
+  width: 2%;
+ text-align:   left; 
+}
+
+#Weapons-table td+td+td+td+td+td {
+  width: 2%;
+}
+
+#Weapons-table td+td+td+td+td+td+td {
+  width: 10%;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td {
+  width: 35%;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td+td {
+  width: 3%;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td+td+td {
+  width: 4%;
+}
+
+#Weapons-table td+td+td+td+td+td+td+td+td+td+td {
+  width: 6%;
+}
+
 }
