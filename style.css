@@ -695,6 +695,7 @@ tbody tr:nth-child(odd) {
 
 /* Mobile Styles */
 @media only screen and (max-width: 400px) {
+body {
   font-family: 'Courier New';
   font-size: 16px;
 
@@ -703,4 +704,11 @@ tbody tr:nth-child(odd) {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--font-color);
+
+}
+
+
+  .title {
+  display: none;
+}
 }
