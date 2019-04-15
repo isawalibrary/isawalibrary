@@ -2461,7 +2461,7 @@ function makeNpcLibrary(){
 															')' 
 															;
 ;
-		newdiv("npc-"+each.title,"statblock","block hide");
+		newdiv("npc-"+each.title,"statblock","block hide librarywidth");
 		document.getElementById("npc-"+each.title).innerHTML='<b>'+ each.title + 
 												' [' + each.clan +
 												'/' + each.school +
