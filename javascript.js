@@ -2471,7 +2471,7 @@ function makeNpcLibrary(){
 												'<button id="'+each.title+'-toskirmish" class="button" onclick="npcskirmish('+"'"+each.title+"'"+')">add to skirmish</button> '
 												+ '<button id="'+each.title+'-edit" class="button" onclick="makeNpcEdit('+"'"+each.title+"'"+')">edit NPC</button> '; 
 												
-		newdiv("stat"+each.title,"npc-"+each.title,"block");
+		newdiv("stat"+each.title,"npc-"+each.title,"block statwidth");
 		document.getElementById("stat"+each.title).innerHTML= 
 												'Rings:<span class="l5r air margin10">a</span>: '+ each.rings.air +
 												'<span class="l5r earth margin10">e</span>: '+ each.rings.earth +
