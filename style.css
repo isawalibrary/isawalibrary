@@ -909,4 +909,12 @@ body {
   width: 6%;
 }
 
+#menu {
+  width: 35%;
+}
+
+#statblock {
+  width: 60%
+}
+
 }
