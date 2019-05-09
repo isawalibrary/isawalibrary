@@ -3380,8 +3380,6 @@ function nameMaker(){
 
 		name = pro+deutero;
 	}
-
-	document.getElementById("output").innerHTML = name;
 }
 
 
