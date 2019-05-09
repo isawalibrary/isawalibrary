@@ -1,11 +1,15 @@
 
 -Upcoming
 
-+ Add special rules for the Shadowlands book weapons and armors.
-+ Add all the new mahos.
-+ Add pattern information.
 + Apply titles to NPC in NPC Builder and Edit, show Title Ability.
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
+
+-version 0.09 09.05.19
+
++ Added special rules for the Shadowlands book weapons and armors.
++ Added all the new mahos.
++ Added pattern information.
++ Added new demeanor, and advantages / disadvantages for Crab samurai.
 
 -version 0.08 28.03.19
 
