@@ -72,7 +72,7 @@ function makeNewChar(){
 }
 
 function getRandomName(){
-	name = getRandom(names);
+	name = nameMaker();
 	document.getElementById("name").value = name
 
 }
@@ -898,7 +898,7 @@ function capitalizeFirstLetter(string) {
 	}
 
 function namegenerator(){
- 	name = getRandom(names)
+ 	name = nameMaker()
  	document.getElementById("nameoutput").innerHTML="";
  	document.getElementById("nameoutput").innerHTML=name; 	
  }
@@ -1220,7 +1220,7 @@ function buildNpcStats(){
 
 
 function getNPCName(){
-	name = getRandom(names);
+	name = nameMaker();
 	document.getElementById("npcnameinput").value = name
 
 	thisnpc.name = name;
@@ -3350,6 +3350,40 @@ function unlockscreen(){
 	show("techsbutton")
 	show("schoolbutton")
 }
+
+function nameMaker(){
+
+	array = [2];
+	type = getRandom(array);
+
+	if (type == 1){
+		name = getRandom(names);
+	} 
+	else if (type == 2){
+		array = ["m","f"]
+
+		gender = getRandom(array)
+
+		pro = getRandom(protheme);
+
+		if (gender=="m"){
+			deutero = getRandom(mdeuterotheme);
+		} else if (gender == "f"){
+			deutero = getRandom(fdeuterotheme);
+		}
+
+		proLower = pro.toLowerCase()
+
+			while (proLower == deutero){
+				deutero = getRandom(deuterotheme);
+			}
+
+		name = pro+deutero;
+	}
+
+	document.getElementById("output").innerHTML = name;
+}
+
 
 function loadCampaign(){
 	x="<b>+Duel House Rules</b><br><br>1) Any ring can be called when using Predict.<br>RAW: Predict can only be called for Air, Earth, Fire and Water, not for Void.<br>Rationale: I don't see any reason why void should be different & immune to Predict in this case.<br><br>2) Duelists in the staredown phase get an action which cannot be used to attack.  Draw, Center or Predict can be used here, as well as shuji or school abilities if appropriate.  Iaijutsu techs can use 2 Opportunities to sheathe their blade, 'reloading' the technique.<br>RAW: No actions can be taken during the staredown phase, it is just for initiative.  Predict, Center and Draw can only be used in the third phase of a duel.<br>Rationale: a) If a duelist does not have an Iaijutsu tech, Water stance in first round is pretty much mandatory if that duelist is trying to win.  It is boring to have mandatory stances and Water stance is useful enough with its ability to unStrife the user.  This house rule makes Iaijutsu techs a little bit less powerful, but the Iaijutsu tech user still has a significant advantage as he can spend his action here on Predict to potentially compromise his opponent and open him up for a Finishing Blow, or he can choose to Center and potentially guarantee his next strike will be successful.  In order to balance this small nerf, Iaijutsu tech users can commit 2 Opportunities in order to sheathe their blade as part of the same movement after use, effectively reloading the tech so it can be used in successive turns.  <br>b) Additionally, in RAW, Predict is a fun choice but does not make tactical sense - I want Predict and Center to be usable rather than novelties which don’t make sense to use in earnest.<br><br>3) When striking or otherwise making an attack, if the strike misses, the attacker takes the defender's vigilance in strife.  <br>RAW: There is no penalty to missing a strike in a duel.<br>Rationale: This is to stop duels becoming two people slashing wildly at the air around each other until one connects - pretty sure duels should not look like this - as with the rules as written, this is pretty much the most effective tactic.  When there is a penalty to missing, Center action becomes useful.  A high composure character can still slash wildly all around a low vigilance opponent for a while before he strifes out, but it is no longer the best strategy for everyone.<br><br>"
