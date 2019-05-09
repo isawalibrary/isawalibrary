@@ -3353,7 +3353,7 @@ function unlockscreen(){
 
 function nameMaker(){
 
-	array = [2];
+	array = [1,2];
 	type = getRandom(array);
 
 	if (type == 1){
@@ -3378,8 +3378,11 @@ function nameMaker(){
 				deutero = getRandom(deuterotheme);
 			}
 
-		name = pro+deutero;
+		name = pro.concat(deutero);
+		
 	}
+
+	return name;
 }
 
 
