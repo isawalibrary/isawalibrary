@@ -1193,6 +1193,76 @@ rank: "2",
 reference: "Courts of Stone",
 ring: "Any",
 effect: "Activation: When you make a Martial Arts check during a duel or clash, you can spend <span class='l5r'>O</span> in the following way:<br><br><span class='l5r'>O</span>+: Each observer with Vigilance equal to or less than 1 plus <span class='l5r'>O</span> spent this way believes your attack was not meant to be lethal." },
+{
+title: "Like a Ghost",
+type: "Ninjitsu",
+rank: "2",
+reference: "Courts of Stone",
+ring: "Air/Water",
+effect: "Activation: As a Movement and Scheme action, you may make a TN 2 Fitness (Air or Water) check.<br><br>Effect: If you succeed, you may move one range band, plus one additional range band per two bonus successes.  This movement ignores the effects of any terrain you pass through.  You may also move up or down vertical surfaces or across gaps that could conceivably be jumped if your GM permits.<br><br>Opportunities:<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Your footfalls are so light as to be completely silent." },
+{
+title: "Slicing Wind Kick",
+type: "Ninjitsu",
+rank: "3",
+reference: "Courts of Stone",
+ring: "Air",
+effect: "Activation: As an Attack and Movement action, using one readied polearm, you may make a TN 3 Martial Arts [Unarmed] (Air) check with your unarmed kick profile (Core p237) targeting one character at range 1-2.<br><br>Effects: If you succeed, the target suffers physical damage equal to your unarmed kick profile's base damage plus your bonus succeses.  If you succeed, the target suffers the Disoriented condition.<br><br>Opportunities:<br>Air <span class='l5r'>O</span>: Before or after resolving success or failure, move 1 range band.<br>Air <span class='l5r'>O</span> <span class='l5r'>O</span>: One target suffers the Prone condition.<br>Air <span class='l5r'>O</span> <span class='l5r'>O</span>+: Choose one additional target per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way." },
+{
+title: "Silent Elimination",
+type: "Ninjitsu",
+rank: "3",
+reference: "Courts of Stone",
+ring: "Any",
+effect: "Activation: As an Attack and Movement action using one readied melee or unarmed weapon with the Snaring quality, you may make a TN 3 Martial Arts [Melee or Unarmed] check targeting one living character of silhouette 0-2 in range of the weapon.  If you successfully performed this action against the same target during the previous round, reduce the TN of the check by 2, to a minimum of 1.<br><br>Effects: If you succeed, the target suffers the Immobilized and Silen condition, and is pulled to range 0 of you.  If the target chooses to perform Attack actions, they are limited to making Martial Arts [Unarmed] checks targeting you, and they must increase the TN of these checks by 1.<br><br>Opportunities:<br><span class='l5r'>O</span>: If you succeed and the target is a minion, they suffer the Unconscious condition.<br><span class='l5r'>O</span>+: If you succeed, the target suffers 2 fatigue and 2 strife per <span class='l5r'>O</span> spent in this way.  If the target suffers fatigue exceeding their endurance as a result of this, they suffer the Unconscious condition.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed, you and your target move one range band, ending at range 0 of each other." },
+{
+title: "Stillness of Death",
+type: "Ninjitsu",
+rank: "5",
+reference: "Courts of Stone",
+ring: "Any",
+effect: "Opportunities: When you perform a check to use a Ninjitsu technique, you may spend <span class='l5r'>O</span> in the following way:<br><span class='l5r'>O</span>+: Increase the TN of the next check a character makes to resist a critical strike you inflict by 1 per <span class='l5r'>O</span> spent this way.  This effect persists until the end of your next turn." },
+{
+title: "To Float or Sink",
+type: "Ninjitsu",
+rank: "2",
+reference: "Courts of Stone",
+ring: "Water/Earth",
+effect: "Opportunities: When you make a Martial skill (Water or Earth) check you may spend <span class='l5r'>O</span> in the following way:<br>Water or Earth <span class='l5r'>O</span>+: Remove one existing Disoriented or Prone condition from yourself.<br>Water or Earth <span class='l5r'>O</span>: Do not suffer the Disoriented and Prone conditions if the check would cause you to suffer them." },
+{
+title: "What's Yours is Mine",
+type: "Ninjitsu",
+rank: "2",
+reference: "Courts of Stone",
+ring: "Fire",
+effect: "Activation: As an Attack and Movement action using one readied weapon without the Cumbersome quality, you may make a TN 3 Martial Arts [Melee] (Fire) check targeting one character at range 0-1.<br><br>Effects: If you succeed and your target is Dazed, you may steal one item that your target has on their person, the size and location of an object should be narritively reasonable and is subject to the GM's approval.  If you choose to steal a readied weapon, the target may resist with a TN Fitness check (Air 5, Water 2).<br><br>Opportunities:<br>Fire <span class='l5r'>O</span>: The target suffers the Dazed condition.<br>Fire <span class='l5r'>O</span>+: Move 1 range band plus one additional band per <span class='l5r'>O</span> <span class='l5r'>O</span> beyond the first.<br>Fire <span class='l5r'>O</span> <span class='l5r'>O</span>+: If you succeed, you may steal one additional item per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way." },
+{
+title: "Formal Tea Ceremony",
+type: "Ritual",
+rank: "5",
+reference: "Courts of Stone",
+ring: "Void",
+effect: "Activation: Once per game session, as a downtime activity using a ceremonial tea set (Core p248) you may make a TN 5 Performance (Void) check targeting yourself and a number of other characters up to your ranks in Culture who are also participants.  Up to one other participant may assist, providing the usual benefits (Core p26).<br><br>Effects: Each participant removes 6 strife plus additional strife equal to your bonus successes.  If you succeed, each participant also gains a Void point.<br><br>Opportunities: <span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed, reduce the TN of each participant's next check by 2.<br><span class='l5r'>O</span>+: Each participant removes 2 fatigue, plus 1 fatigue per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed, you gain 1 glory per participant of higher status than yourself." },
+{
+title: "Treaty Signing",
+type: "Ritual",
+rank: "2",
+reference: "Courts of Stone",
+ring: "Fire/Air",
+effect: "Once per game session as a downtime activity (Core p248), you may make a TN 2 Composition (Fire) check to write an agreement.  If you succeed, you may make a TN 3 Government (Air) check targeting yourself and a number of other characters who are also participants.  Up to three other participants may assist, providing the usual benefits (Core p26).<br><br>Effects: If you succeed, each participant is assured that there are no mistakes or objectionable loopholes to the agreement, and that the agreement is acceptable to all parties involved.  Each participant stakes 10 honor on upholding the agreement.  Anyoen who later breaks the agreement loses the honor they staked, unless another participant broke the agreement first.<br><br>Opportunities (both checks):<br><span class='l5r'>O</span>+: If you succeed, all participants stake 1 additional honor, plus 1 additional honor per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed, you need only stake half the honor that the other participants stake." },
 
 
 ]
+
+
+/*
+<span class='l5r'>O</span>
+
+{
+title: "",
+type: "Shuji",
+rank: "",
+reference: "Courts of Stone",
+ring: "",
+effect: "" },
+*/
+

@@ -1350,7 +1350,7 @@ var titles = {
 
 	advisor:{
 		title:"Advisor",
-		status:"+10 (to a minimum of 40",
+		status:"+10 Status (to a minimum of 40",
 		xp:36,
 		ability:" Title Ability: Skilled Attendant: When you provide assistance on a Scholar skill check, the character you are assisting may also roll <span class='l5r'>D</span> equal to your ranks in that skill instead of rolling D equal to their own ranks in that skill.",
 		advance:["Scholar Skills","Commerce","Courtesy","Design","<span class='l5r'>b</span> Fanning the Flames (Core 218) Fire Shuji Rank 2","<span class='l5r'>b</span> Feigned Opening (Core 214) Air Shuji Rank 2", "<span class='l5r'>b</span> Stonewall Tactics (Core 216) Earth Shuji Rank 1"],
@@ -1359,7 +1359,7 @@ var titles = {
 
 	"clan magistrate":{
 		title:"Clan Magistrate",
-		status:"+10 (to a minimum of 45)",
+		status:"+10 Status (to a minimum of 45)",
 		xp: 30,
 		ability:" Title Ability: Justice of the Champion: When you make a Command or Courtesy check targeting a member of your clan, you may spend O as follows:<br>O+: The target receives or removes (your choice) strife equal to O spent this way.",
 		advance:["Scholar Skills","Social Skills","Fitness","Martial Arts: Melee", "<span class='l5r'>b</span> Coiling Serpent Style (Core 179) Any Kata Rank 2","<span class='l5r'>b</span> Prey on the Weak (Core 215) Air Shuji Rank 2","<span class='l5r'>b</span> Truth Burns Through Lies (Core 219) Fire Shuji Rank 1"],
@@ -1368,7 +1368,7 @@ var titles = {
 
 	daimyo:{
 		title:"Daimyo",
-		status:"+20 (to a minimum of 55)",
+		status:"+20 Status (to a minimum of 55)",
 		xp: 36,
 		ability:" Title Ability: Voice of Authority: Reduce the TN of Command checks you make targeting your vassals by 1.",
 		source:"Emerald Empire p250",
@@ -1377,7 +1377,7 @@ var titles = {
 
 	gunso:{
 		title:"Gunso",
-		status:"+5 (to a minimum of 20)",
+		status:"+5 Status (to a minimum of 20)",
 		xp:24,
 		ability:" Title Ability: Lead from the Front: When you defeat an opponent in a clash, your cohort removes panic equal to the opponent's glory rank.  Once per round when you succeed at an Attack action check during a mass battle, your cohort removes panic equal to half of the attrition you inflict.",
 		source:"Emerald Empire p250",
@@ -1395,7 +1395,7 @@ var titles = {
 
 	priest:{
 		title:"Priest",
-		status:"+10 (to a minimum of 40)",
+		status:"+10 Status (to a minimum of 40)",
 		xp:24,
 		ability:" Title Ability: Servant of the Kami: You may importune invocations even if you do not know any invocations.  When you importune an invocation, do not increase the TN by 1 (although you still increase the TN if the rank of the invocation is higher than your school rank",
 		advance:["Social Skills","Composition","Culture","Theology","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Civility Foremost","<span class='l5r'>b</span> Rouse the Soul"],
@@ -1404,7 +1404,7 @@ var titles = {
 
 	spy:{
 		title:"Spy",
-		status:"-5",
+		status:"-5 Status ",
 		xp:24,
 		ability:" Title Ability: Ears Everywhere: Once per game session as a Scheme and Support action or as a downtime activity targeting a particular location or social group, you may gather and sift through the current rumors for credible intelligence by making a TN 4 Sentiment (Air) check.  If you succeed, you discover the latest happenings relevant to your current location or social group, as well as which current rumors are false.  If discerning someone's qualities is your social objective in an intrigue scene, you score momentum points equal to your Air Ring plus your bonus successes.<br>O: You plant a rumor that spreads among the characters in the scene or the targeted group (although they don't necessarily believe it)",
 		advance:["Social Skills","Government","Sentiment","Skulduggery","<span class='l5r'>b</span> Rank 1-5 Air Shuji","<span class='l5r'>b</span> Shallow Waters","<span class='l5r'>b</span> Skulk"],
@@ -1413,7 +1413,7 @@ var titles = {
 
 	yojimbo:{
 		title:"Yojimbo",
-		status:"+10 (to a minimum of 40)",
+		status:"+10 Status (to a minimum of 40)",
 		xp: 36,
 		ability:" Title Ability: No Sacrifice Too Great: One character is assigned as your charge; this character can order you to treat someone else as your charge instead until they lift this order.  If your charge is at range 0-2, you may spend 1 Void point to replace your charge as the target of an Attack action.  If you suffer a critical strike as a result of this Attack action, gain 1 Void point.",
 		advance:["Martial Skills","Government","Medicine","Sentiment","<span class='l5r'>b</span> Iaijutsu Cut: Crossing Blade","<span class='l5r'>b</span> Iaijutsu Cut: Rising Blade","<span class='l5r'>b</span> Warrior's Resolve"],
@@ -1422,7 +1422,7 @@ var titles = {
 
 	yoriki:{
 		title:"Yoriki",
-		status:"+5 (to a minimum of 35)",
+		status:"+5 Status (to a minimum of 35)",
 		xp:24,
 		ability:" Title Ability: Take Them Alive: When you make an Attack action using a weapon with the Snaring quality.  You may alter any number of kept dice containing <span class='l5r'>S</span> or <span class='l5r'>E</span> to results set to <span class='l5r'>O</span>",
 		advance:["Social Skills","Government","Martial Arts: Melee","Skulduggery","<span class='l5r'>b</span> Rank 1-3 Kata","F<span class='l5r'>b</span> anning the Flames","<span class='l5r'>b</span> Shallow Waters"],
@@ -1431,7 +1431,7 @@ var titles = {
 
 	"emerald magistrate":{
 		title:"Emerald Magistrate",
-		status:"+15 to a maximum of 40",
+		status:"+15 Status to a maximum of 40",
 		xp:30,
 		ability:" Title Ability: Voice of Authority: Once per game session when making a Scheme or Support action check using a Social skill, you may choose additional targets equal to your Glory rank. You cannot choose any additional target with vigilance higher than the highest among your initial targets.",
 		advance:["Trade Skills","Fitness","Martial Arts (choose one)","Performance","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Open Hand Style","<span class='l5r'>b</span> Shallow Waters"],
@@ -1440,7 +1440,7 @@ var titles = {
 
 	damned:{
 		title:"The Damned",
-		status:"-20 (to a minimum of 30)",
+		status:"-20 Status (to a minimum of 30)",
 		xp:20,
 		ability:" Prerequisite: Must possess at least one Shadowlands Taint disadvantage to receive this title.<br>Immediate Effect: Gain the Ferocity disadvantage.<br>Title Ability: Tainted Warrior: Increase the TN of all your non-Command Social skill checks by 1, and reduce the TN of all your Martial Arts (Any) skill checks targeting Tainted beings by 1 (to a minimum of 1).  Non-Tainted beings receive 1 strife whenever they make a Social skill check targeting you.",
 		advance:["Martial Skills","Medicine","Survival","Theology","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Heartpiercing Strike","<span class='l5r'>b</span> Rallying Cry"],
@@ -1449,7 +1449,7 @@ var titles = {
 
 	harvester:{
 		title:"Harvester",
-		status:"+10 (to a minimum of 45)",
+		status:"+10 Status (to a minimum of 45)",
 		xp:20,
 		ability:"Title Ability: Capture Evil: Reduce the TN of your Survival checks to track down a Tainted being by 1.  When you inflict a critical strike on a Tainted being, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span> <span class='l5r'>O</span>: The target suffers the Dazed, Disoriented or Immobilized condition.",
 		advance:["Martial Skills","Smithing","Survival","Theology","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Rank 1-2 Rituals","<span class='l5r'>b</span> Skulk"],
@@ -1458,7 +1458,7 @@ var titles = {
 
 	twentygoblin:{
 		title:"Twenty-Goblin Crab",
-		status:"+15 (to a minimum of 30 and a maximum of 40), officially become samurai and member of the Crab Clan",
+		status:"+15 Status (to a minimum of 30 and a maximum of 40), officially become samurai and member of the Crab Clan",
 		xp:20,
 		ability:"Title Ability: Goblin Killer: When making a Martial Arts (Any) check targeting a goblin, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span>+: Each goblin at range 0-2 of your target receives 1 strife per <span class='l5r'>O</span> that you spend this way.",
 		advance:["Martial Skills","Social Skills","Culture","Government","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Thunderclap Strike","<span class='l5r'>b</span> Stonewall Tactics"],
@@ -1467,11 +1467,128 @@ var titles = {
 
 	witchhunter:{
 		title:"Witch Hunter",
-		status:"+10 (to a minimum of 30)",
+		status:"+10 Status (to a minimum of 30)",
 		xp:45,
 		ability:"Title Ability: Bane of Sorcerers: When you make a check to resist the effects of a maho technique, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span>: Reduce the TN of your next check targeting tbe maho practitioner who performed it by 1 per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed on the check to resist, the maho practitioner receives strife equal to your ranks in Theology.",
 		advance:["Martial Skills","Scholar Skills","Command","Skulduggery","<span class='l5r'>b</span> Rank 1-4 Kata","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Honest Assessment"],
 		source:"Shadowlands",
 	},
 
+	castellan:{
+		title:"Castellan",
+		status:"+5 Status (to a maximum of 30), and Glory +10 (to a maximum of 60)",
+		xp:20,
+		ability:"Title Ability: Every Stone Has Its Place: When undertaking a downtime activity to prepare your castle for an important event (a wedding, a battle, or a Winter Court for example), you may change all rolled blank results to <span class='l5r'>O</span> results.",
+		advance:["Social Skills","Culture","Design","Govenment","<span class='l5r'>b</span> Rallying Cry","<span class='l5r'>b</span> Slippery Maneuvers","<span class='l5r'>b</span> Touchstone of Courage"],
+		source:"Courts of Stone",
+	},
+
+	covertagent:{
+		title:"Covert Agent",
+		status:"-10 Honor (to a minimum of 25)",
+		xp:20,
+		ability:"Immediate Effects: Gain the Dark Secret disadvantage.<br>Title Ability: Practiced Prevaricator: When you make a check to decieve or hide from someone, you may negate up to 2 strife symbols.",
+		advance:["Social Skills","Meditation","<span class='l5r'>b</span> Artful Alibi","<span class='l5r'>b</span> Cadence","<span class='l5r'>b</span> Cunning Distraction","<span class='l5r'>b</span> To Float Or Sink","<span class='l5r'>b</span> What's Yours Is Mine"		],
+		source:"Courts of Stone",
+	},
+	dreadenforcer:{
+		title:"Dread Enforcer",
+		status:"-10 Honor (to a minimum of 5), Glory -20 (to a minimum of 15)",
+		xp:40,
+		ability:"Immediate Effects: Gain the Whispers of Cruelty disadvantage.<br>Title Ability: Merciless Eyes: Whem making a check to plan an assassination or attack with lethal intent, you may negate up to 2 strife symbols.",
+		advance:["Martial Skills","Medicine","Skulduggery","<span class='l5r'>b</span> Deceitful Strike","<span class='l5r'>b</span> Like a Ghost","<span class='l5r'>b</span> Silent Elimination","<span class='l5r'>b</span> The Stillness of Death"],
+		source:"Courts of Stone",
+	},
+	esteemednegotiator:{
+		title:"Esteemed Negotiator",
+		status:"+10 Glory",
+		xp:34,
+		ability:"Title Ability: Calming Words: Once per scene, as a Scheme and Support action, you may reduce the strife of all characters in the scene by your ranks in Sentiment.",
+		advance:["Social Skills","Culture","Government","Sentiment","<span class='l5r'>b</span> Rank 1-3 Earth Shuji","<span class='l5r'>b</span> The Ties that Bind","<span class='l5r'>b</span> Treaty Signing"],
+		source:"Courts of Stone",
+	},
+	kenshinzen:{
+		title:"Kenshinzen",
+		status:"+20 Glory (to a maximum of 75)",
+		xp:24,
+		ability:"Title Ability: A Single Moment: When you perform an Attack action that uses a sheathed Razor-Edged weapon, you may spend <span class='l5r'>O</span> as follows:<br>Void <span class='l5r'>O</span> <span class='l5r'>O</span>: Your target cannot defend against the damage from this Attack action unless they spend a Void point.<br>Any <span class='l5r'>O</span>: After you perform this action, you may sheathe the weapon you used.",
+		advance:["Martial Skills","Social Skills","Culture","Sentiment","<span class='l5r'>b</span> Rank 1-5 Close Combat Kata","<span class='l5r'>b</span> Rank 1-5 Void Shuji","<span class='l5r'>b</span> Tea Ceremony"],
+		source:"Courts of Stone",
+	},
+	kyudenasakoshieldbearer:{
+		title:"Kyuden Asako Shieldbearer",
+		status:"+5 Glory (to a maximum of 55)",
+		xp:40,
+		ability:"Title Ability: Time-Tested Defense: After an Attack action targeting you fails, the attacker suffers strife equal to their shortfall.",
+		advance:["Scholar Skills","Martial Skills [Melee]","Martial Skills [Ranged]","Meditation","Tactics","<span class='l5r'>b</span> Rank 1-3 Kata","<span class='l5r'>b</span> Cleansing Rite"],
+		source:"Courts of Stone",
+	},
+
+	masterartisan:{
+		title:"Master Artisan",
+		status:"+30 Glory (to a maximum of 80)",
+		xp:60,
+		ability:"Title Ability: Inspired Creations: When crafting an item, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: The item you create is a singular masterwork.  You must give it a name befitting its status.  Once per game session when making a check that uses the item, a character may add 1 <span class='l5r'>d</span> set to any result of their choice.",
+		advance:["Artisan Skills","Courtesy","Culture","Medicine","Meditation","<span class='l5r'>b</span> All Arts Are One","<span class='l5r'>b</span> Formal Tea Ceremony"],
+		source:"Courts of Stone",
+	},
+	wintercourtchampion:{
+		title:"Winter Court Champion",
+		status:"+20 Glory (to a maximum of 75)",
+		xp:16,
+		ability:"Title Ability: Accustomed to Attention: When making a check to boast or get people's attention, you may negate up to 2 strife symbols.",
+		advance:["Artisan Skills","Social Skills","<span class='l5r'>b</span> Artisan's Appraisal","<span class='l5r'>b</span> Formal Tea Ceremony","<span class='l5r'>b</span> Fun and Games","<span class='l5r'>b</span> Offend the Sensibilities","<span class='l5r'>b</span> Spiteful Loss"],
+		source:"Courts of Stone",
+	},
+	sevenfoldpalaceacolyte:{
+		title:"Seven Fold Palace Acolyte",
+		status:"+5 Glory (to a maximum of 35)",
+		xp:36,
+		ability:"Title Ability: First, Forge Yourself: When you make a check to craft an item, you may suffer a number of fatigue up to your ranks in Fitness.  If you do, change that many results containing <span class='l5r'>S</span> to <span class='l5r'>O</span> results",
+		advance:["Trade Skills","Aesthetics","Design","Fitness","Meditation","Smithing","<span class='l5r'>b</span> Artisan's Appraisal"],
+		source:"Courts of Stone",
+	},
+
+
+
+
 }
+
+
+/*
+	witchhunter:{
+		title:"",
+		status:"",
+		xp:,
+		ability:"Title Ability: ",
+		advance:["Martial Skills","Scholar Skills","Command","Skulduggery","<span class='l5r'>b</span> Rank 1-4 Kata","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Honest Assessment"],
+		source:"Courts of Stone",
+	},
+
+	ikomashadow: {
+			name:'',
+			clan:'',
+			ring1: '',
+			ring2: '',
+			source: 'Courts of Stone',
+			skillnumber: ,
+			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:0,Trade:0},
+			skills: [],
+			honor: 40,
+			role: [],
+			techniquetypes: ['Shuji','Rituals','Kata'],
+			startingtechs: [],
+			startingtechoptions: [],
+			chooseoptions: ,
+			ability:,
+			rank1techs:[],
+			rank2techs:[],
+			rank3techs:[],
+			rank4techs:[],
+			rank5techs:[],
+
+		},
+
+<span class='l5r'>O</span>
+<span class='l5r'>b</span>
+*/

@@ -3256,7 +3256,7 @@ function titlefilter(){
 							' <div class="filtitemeffect defcategory"> ' +
 							' <div class="filtitemeffect2" onclick="hideshow(&quot;<%= child.title %>-title&quot)"><b><%= child.title %></b> <i>(<%= child.source %>)</i> Title</div>' +
 							' <div class="filtitemeffect2 fontsize13 hide" id="<%= child.title %>-title"><b>Ability:</b> <%= child.ability %>' +
-							' <br><b>Status:</b>  <%= child.status %>' +
+							' <br><b>Social:</b>  <%= child.status %>' +
 							' <br><b>XP needed to complete:</b> <%= child.xp %>' +
 							' <br><b>To Advance:</b> <% child.advance.forEach(function(adv) { %> <%= adv %>, <% }); %>' +
 							'</div></div>' +
