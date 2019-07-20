@@ -754,7 +754,8 @@ function techniquefilter() {
 			techlist = techlist.filter(function(tech)				{
 				if (tech.type.toLowerCase() == techtype){
 					return true;
-				}
+				};
+
 				return false;
 			});
 		}
@@ -764,6 +765,9 @@ function techniquefilter() {
 				if (tech.ring.toLowerCase() == techring){
 					return true;
 				}
+				if (tech.ring.toLowerCase().includes(techring)){
+					return true;
+				};
 				return false;
 			});
 		}
