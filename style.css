@@ -482,7 +482,10 @@ thead {
 #MartialOpportunities-table tbody tr, 
 #InvocationOpportunities-table tbody tr, 
 #OtherSkillsOpportunities-table tbody tr, 
-#DowntimeOpportunities-table tbody tr{
+#DowntimeOpportunities-table tbody tr,
+#NegotiationsOpportunities-table tbody tr,
+#RomanceOpportunities-table tbody tr,
+#EspionageOpportunities-table tbody tr{
 background-color: #e1c5ea;
 }
 
@@ -491,7 +494,10 @@ background-color: #e1c5ea;
 #MartialOpportunities-table tbody tr + tr , 
 #InvocationOpportunities-table tbody tr + tr , 
 #OtherSkillsOpportunities-table tbody tr + tr , 
-#DowntimeOpportunities-table tbody tr + tr {
+#DowntimeOpportunities-table tbody tr + tr ,
+#NegotiationsOpportunities-table tbody tr + tr,
+#RomanceOpportunities-table tbody tr + tr,
+#EspionageOpportunities-table tbody tr + tr{
 background-color: #95db83;
 }
 
@@ -500,7 +506,10 @@ background-color: #95db83;
 #MartialOpportunities-table tbody tr + tr + tr,
 #InvocationOpportunities-table tbody tr + tr + tr, 
 #OtherSkillsOpportunities-table tbody tr + tr + tr, 
-#DowntimeOpportunities-table tbody tr + tr + tr {
+#DowntimeOpportunities-table tbody tr + tr + tr ,
+#NegotiationsOpportunities-table tbody tr + tr + tr,
+#RomanceOpportunities-table tbody tr + tr + tr,
+#EspionageOpportunities-table tbody tr + tr + tr{
 background-color: #edad6a;
 }
 
@@ -509,7 +518,10 @@ background-color: #edad6a;
 #MartialOpportunities-table tbody tr +  tr + tr + tr,
 #InvocationOpportunities-table tbody tr +  tr + tr + tr,
 #OtherSkillsOpportunities-table tbody tr +  tr + tr + tr, 
-#DowntimeOpportunities-table tbody tr +  tr + tr + tr{
+#DowntimeOpportunities-table tbody tr +  tr + tr + tr,
+#NegotiationsOpportunities-table tbody tr + tr + tr + tr,
+#RomanceOpportunities-table tbody tr + tr + tr + tr,
+#EspionageOpportunities-table tbody tr + tr + tr + tr{
 background-color:#bdc2ed;
 }
 #GeneralOpportunities-table  tbody tr +tr +tr +  tr + tr + tr,
@@ -517,17 +529,20 @@ background-color:#bdc2ed;
 #MartialOpportunities-table tbody tr+tr +  tr + tr + tr,
 #InvocationOpportunities-table tbody tr+tr +  tr + tr + tr,
 #OtherSkillsOpportunities-table tbody tr+tr +  tr + tr + tr,
-#DowntimeOpportunities-table tbody tr +tr +  tr + tr + tr {
+#DowntimeOpportunities-table tbody tr +tr +  tr + tr + tr ,
+#NegotiationsOpportunities-table tbody tr + tr + tr + tr + tr,
+#RomanceOpportunities-table tbody tr + tr + tr + tr + tr,
+#EspionageOpportunities-table tbody tr + tr + tr + tr + tr{
 background-color:#282828;
 color:var(--table-header-font);
 }
 
-#GeneralOpportunities-table td, #InitiativeOpportunities-table td, #MartialOpportunities-table td, #InvocationOpportunities-table td, #OtherSkillsOpportunities-table td, #DowntimeOpportunities-table td{
+#GeneralOpportunities-table td, #InitiativeOpportunities-table td, #MartialOpportunities-table td, #InvocationOpportunities-table td, #OtherSkillsOpportunities-table td, #DowntimeOpportunities-table td, #NegotiationsOpportunities-table td, #RomanceOpportunities-table td, #EspionageOpportunities-table td{
   width: 70;
   text-align: center;
 }
 
-#GeneralOpportunities-table td + td, #InitiativeOpportunities-table td + td, #MartialOpportunities-table td + td, #InvocationOpportunities-table td + td, #OtherSkillsOpportunities-table td + td, #DowntimeOpportunities-table td + td{
+#GeneralOpportunities-table td + td, #InitiativeOpportunities-table td + td, #MartialOpportunities-table td + td, #InvocationOpportunities-table td + td, #OtherSkillsOpportunities-table td + td, #DowntimeOpportunities-table td + td, #NegotiationsOpportunities-table td + td, #RomanceOpportunities-table td + td, #EspionageOpportunities-table td + td{
   width: 650px;
   text-align: left;
 }
@@ -824,12 +839,12 @@ body {
   width: 15%;
 }
 
-#GeneralOpportunities-table td, #InitiativeOpportunities-table td, #MartialOpportunities-table td, #InvocationOpportunities-table td, #OtherSkillsOpportunities-table td, #DowntimeOpportunities-table td{
+#GeneralOpportunities-table td, #InitiativeOpportunities-table td, #MartialOpportunities-table td, #InvocationOpportunities-table td, #OtherSkillsOpportunities-table td, #DowntimeOpportunities-table td, #NegotiationsOpportunities-table td, #RomanceOpportunities-table td, #EspionageOpportunities-table td{
   width: 10%;
   text-align: center;
 }
 
-#GeneralOpportunities-table td + td, #InitiativeOpportunities-table td + td, #MartialOpportunities-table td + td, #InvocationOpportunities-table td + td, #OtherSkillsOpportunities-table td + td, #DowntimeOpportunities-table td + td{
+#GeneralOpportunities-table td + td, #InitiativeOpportunities-table td + td, #MartialOpportunities-table td + td, #InvocationOpportunities-table td + td, #OtherSkillsOpportunities-table td + td, #DowntimeOpportunities-table td + td, #NegotiationsOpportunities-table td + td, #RomanceOpportunities-table td + td, #EspionageOpportunities-table td + td{
   width: 80%;
   text-align: left;
 }

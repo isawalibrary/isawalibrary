@@ -248,5 +248,45 @@ children:[
 	{ring: "Water", spend:"<span class='l5r'>O</span>+: Remove 1 <span class='l5r'>T</span> or fatigue per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Make a new friend while undertaking your downtime activity."},
 	{ring: "Void", spend:"<span class='l5r'>O</span>+: Reserve 1 dropped die from your check, to a maximum of your ranks in the skill you used. Add that die to your next check with the same skill as a kept die instead of rolling it.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Have a brief premonition of a possible future event while undertaking your downtime activity."},
 		]},
+{
+title:"Negotiations",
+ref:"NegotiationsOpportunities",
+children:[
+	{ring: "", spend:"NEGOTIATIONS OPPORTUNITY SPENDS:"},
+	{ring: "Air", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>+: Your careful verbal trap ensnares someone in a position in which they must either give up ground or give you a boon. They must offer you a minor concession unrelated to your current social objective unless they give up 1 momentum point per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way. "},
+	{ring: "Earth", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: Your uncompromising dedication to your bottom line stalls the conversation. Choose a character In the scene: that character cannot gain momentum points toward any social objective until the end of your next turn."},
+	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: You set someone else on the defense with fast-paced questions and demands. Choose a demand or statement another character in the scene has made. Their player (or the GM, for NPCs) must tell you any hidden motivations behind that demand or statement. "},
+	{ring: "Water", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: You break the tension with a well-timed joke or clever comment. You may ask one personal question of a character in the scene with a different social objective. The question must be unrelated to the subject of the negotiations. If the character answers honestly, they gain 1 momentum point toward their current objective and may ask you a personal question in turn. If they do, you gain 1 momentum point toward your current objective."},
+	{ring: "Void", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: You briefly shake someone's conviction with a deep insight into their character or circumstances, causing them to speak without certainty. Until the end of your next turn, any momentum points they score are added to your current social objective instead of to their own. "},
+		]},
+{
+title:"Romance",
+ref:"RomanceOpportunities",
+children:[
+	{ring: "", spend:"ROMANCE OPPORTUNITY SPENDS:"},
+	{ring: "Air", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: The conversation turns to mutual friends or acquaintances. Name a character you and your intended both know. They must tell you what they think of that character, revealing one of that person's advantages or disadvantages."},
+	{ring: "Earth", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: An offhand comment reveals that you and your intended share some common ground: an odd hobby, a favorite actor, or a core belief. Make three suggestions to your intended's player; they must tell you which one it is. You and your intended may each remove 2 strife"},
+	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>:  A detail of your appearance catches your intended's interest. Their player must tell you which of your physical attributes they find most captivating. You and your intended each receive 1 strife, and you each reduce the TN of your next Social skill check by 1"},
+	{ring: "Water", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: Your interaction is pleasant enough that your intended not you, suggests another meeting within the next day or two. They offer you several options for the next time you and they spend personal time together; choose whichever you like the best, and don't be late."},
+	{ring: "Void", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: Due to circumstances beyond your control - a gust of wind or an earth tremor, perhaps - you and your intended find yourselves unexpectedly aware of one another! Your intended decides What land of contact it was, from a fateful meeting of the eyes to a brush of your hands against one another as you both reach for a dropped scroll. They also decide how they react, although they not blame you for anything untoward (after all it wasn't your fault). "},
+		]},
+		{
+title:"Espionage",
+ref:"EspionageOpportunities",
+children:[
+	{ring: "", spend:"ESPIONAGE OPPORTUNITY SPENDS:"},
+	{ring: "Air", spend:"<span class='l5r'>O</span>+: Your subtlety allows you to step out of sight of people, whether by hiding in a crowd or within convenient terrain. Designate a number of Minion NPCs equal to spent this way or a single Adversary NPC with vigilance lower than or equal to spent this way. Those characters lose sight of you (and do not notice your absence unless actively looking for you)."},
+	{ring: "Earth", spend:"<span class='l5r'>O</span>+>: You locate an excellent hiding place, either a place where no one questions your cover identity or a concealed location no one checks. While hiding in this location, you reduce the TN of your checks to avoid notice by <span class='l5r'>O</span> spent this way. "},
+	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: A stray motion of yours catches the attention of a person or creature— but unexpectedly they are sympathetic or helpful to you when they notice you. Who are they, and how do they offer to help? Do they think you are someone you're not? "},
+	{ring: "Water", spend:"<span class='l5r'>O</span>: You observe a clue or hint that indicates to you that information about your target or goal might also be found elsewhere, The GM reveals another viable avenue for espionage or, the same subject, unrelated to your current operation. "},
+	{ring: "Void", spend:"<span class='l5r'>O</span>: Your understanding of stealth clues you in on the possibility that you are not. the first spy to pass this way. The GM reveals whether another spy has traversed your location and, if so, what trace they unwittingly left behind.  "},
+		]},
 
 ];
+
+
+
+/*
+<span class='l5r'>O</span>
+
+*/

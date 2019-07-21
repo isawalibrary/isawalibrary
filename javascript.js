@@ -618,7 +618,7 @@ function makeTable(){
 
 	var div;
 
-	tableobj = ["General", "Initiative", "Martial", "Invocation", "Other Skills", "Downtime"];
+	tableobj = ["General", "Initiative", "Martial", "Invocation", "Other Skills", "Downtime", "Negotiations", "Romance", "Espionage"];
 
 	for (j=0; j<tableobj.length; j++)	{
 		div = document.getElementById(tableobj[j]).childNodes[0].childNodes[1];
@@ -665,6 +665,9 @@ function insertOpportunitySymbols(){
 	document.getElementById("InvocationOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
 	document.getElementById("OtherSkillsOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
 	document.getElementById("DowntimeOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
+	document.getElementById("NegotiationsOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
+	document.getElementById("RomanceOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
+	document.getElementById("EspionageOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
 }
 
 function sortTable(tableName,sortByColumn) {
