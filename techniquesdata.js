@@ -1249,8 +1249,83 @@ rank: "2",
 reference: "Courts of Stone",
 ring: "Fire/Air",
 effect: "Once per game session as a downtime activity (Core p248), you may make a TN 2 Composition (Fire) check to write an agreement.  If you succeed, you may make a TN 3 Government (Air) check targeting yourself and a number of other characters who are also participants.  Up to three other participants may assist, providing the usual benefits (Core p26).<br><br>Effects: If you succeed, each participant is assured that there are no mistakes or objectionable loopholes to the agreement, and that the agreement is acceptable to all parties involved.  Each participant stakes 10 honor on upholding the agreement.  Anyoen who later breaks the agreement loses the honor they staked, unless another participant broke the agreement first.<br><br>Opportunities (both checks):<br><span class='l5r'>O</span>+: If you succeed, all participants stake 1 additional honor, plus 1 additional honor per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed, you need only stake half the honor that the other participants stake." },
-
-
+{
+title: "The Ties that Bind",
+type: "Ritual",
+rank: "4",
+reference: "Courts of Stone",
+ring: "Void",
+effect: "Activation: As a downtime activity, you may make a TN 3 Sentiment (Void) check targeting one character. <br><br>Effects: If you succeed, you learn of a character who would be a particularly fortuitous match for your target (in potentially any sort of relationship, such as marriage, friendship, or a formal alliance). This does not provide the exact identity of said character, but should provide valuable clues about this person (where they live, what their social status is, what clan or family they belong to, etc). If you already have met this character, the clues should be enough to identify them. If you are using the Bond rules (Courts of Stone p136), after performing this ritual the target and identified character may decrease the cost of forming a Bond to 1 XP. <br><br>Opportunities:<br>Void <span class='l5r'>O</span> <span class='l5r'>O</span>+: You learn of one likely future consequence of a relationship between your target and the identified character per <span class='l5r'>O</span> <span class='l5r'>O</span> spent in this way. These consequences may affect the target, their family and clan, or you and your clan.<br>Void <span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span> You may learn of another character who would be a particularly inauspicious match for your target, and one likely future consequence of their relationship." },
+{
+title: "Assess Strengths",
+type: "Shuji",
+rank: "1",
+reference: "Courts of Stone",
+ring: "Air",
+effect: "Activation: As a Scheme action, you may make a Games (Air) check targeting one opponent in a game that you are playing. The TN of this check is equal to the target's vigilance. <br><br<>Effects: If you succeed, you learn your target's ranks in Games, Tactics, or any one Martial Arts skill. Choose one additional skill to learn for each bonus success on the check.<br><br>Opportunities:<br>Air <span class='l5r'>O</span> <span class='l5r'>O</span>: You learn all your target's Mental advantages and disadvantages." },
+{
+title: "Hidden in Smoke",
+type: "Shuji",
+rank: "4",
+reference: "Courts of Stone",
+ring: "Air",
+effect: "Activation: Once per scene as a Scheme action, you may make a Social (Air) check targeting one other character The TN of this check is equal to the target's vigilance. <br><br>Effects: If you succeed, you hide your true goal or objective from your opponent. Any action or ability that would reveal your true intentions or objective to the target instead reveals a false, narratively appropriate goal, subject to the GM's approval. This effect persists until the end of the scene. If you succeed, during an intrigue scene, you gain 1 momentum point toward a relevant goal. <br><br>New Opportunities:<br>Air <span class='l5r'>O</span> <span class='l5r'>O</span>+: Choose one additional target with vigilance lower than the original target per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way. <br>Air <span class='l5r'>O</span> <span class='l5r'>O</span>+: If you succeed, you gain 1 additional momentum point per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way." },
+{
+title: "Unyielding Terms",
+type: "Shuji",
+rank: "2",
+reference: "Courts of Stone",
+ring: "Earth",
+effect: "Activation: Once per scene as a Scheme action, you may make a TN 4 Culture (Earth) check when you are determining the method of battle and stakes for victory in a duel (as a participant or adjudicator). <br><br>Effects: You select either the method of battle, or the stakes for victory. " },
+{
+title: "All Shall Fear Me",
+type: "Shuji",
+rank: "3",
+reference: "Courts of Stone",
+ring: "Fire",
+effect: "Activation: As a Scheme action, you may make a TN 4 Command or Performance (Fire) check targeting any number of characters in the scene. <br><br>Effects: If you succeed, each target receives 2 strife when they choose you as a target for a Social Skill check. This effect persists until the end of the scene. If you fail, you receive 4 strife. <br><br>Opportunities: <br>Fire <span class='l5r'>O</span> <span class='l5r'>O</span>+: If you succeed. ail characters targeted by you suffer 1 additional strife per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way whenever they target you wtth a Social skill check " },
+{
+title: "Crackling Laughter",
+type: "Shuji",
+rank: "3",
+reference: "Courts of Stone",
+ring: "Fire",
+effect: "Activation: Once per game session, as a Scheme action, you may make a TN 3 Performance (Fire) check targetmg a number of characters up to your Fire Ring.  <br><br>Effects: If you succeed, each target receives 2 strife, and must make a TN 5 Meditation (Air 6, Water 3) check or receive additional strife equal to the shortfall. If you fail, you receive 3 strife. <br><br>Opportunities: <br>Fire <span class='l5r'>O</span> <span class='l5r'>O</span>: For each character who suffers the Compromised condition, gain 1 glory." },
+{
+title: "Offend the Sensibilities",
+type: "Shuji",
+rank: "2",
+reference: "Courts of Stone",
+ring: "Fire",
+effect: "Opportunities: When you make an Artisan (Fire) check to craft an Item, you can spend <span class='l5r'>O</span> in the following way: <br>Fire <span class='l5r'>O</span> <span class='l5r'>O</span>: Choose one individual known to you. When that individual first sees the item you created, they receive 2 strife. If this causes them to suffer the Compromised condition, the target also suffers the Dazed, Enraged, or Silenced condition (your choice). Anyone else seeing the item knows it could be very offensive." },
+{
+title: "Spiteful Loss",
+type: "Shuji",
+rank: "1",
+reference: "Courts of Stone",
+ring: "Fire",
+effect: "Opportunities: When you make a Games (Fire) check while playing a game, you may spend opportunity in the following way: <br>Fire <span class='l5r'>O</span>: If you fail, forfeit 1 glory . Then each participant receives strife equal to 1 plus the shortfall of the check on all participants in the game. " },
+{
+title: "Beware the Smallest Mouse",
+type: "Shuji",
+rank: "1",
+reference: "Courts of Stone",
+ring: "Water",
+effect: "Opportunities: When you make a Social skill (Water) check targeting one or more characters, you may spend <span class='l5r'>O</span> in the following way: <br><br>Water <span class='l5r'>O</span> <span class='l5r'>O</span>+: While interacting with you, the target treats their vigilance as 1 lower per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way and decreases the TN of their social checks targeting you by 1 This effect persists until the end of the scene" },
+{
+title: "Fun and Games",
+type: "Shuji",
+rank: "1",
+reference: "Courts of Stone",
+ring: "Water",
+effect: "Opportunities: When you make a Games (Water) check, you may spend <span class='l5r'>O</span> in the following ways:<br><br>Water <span class='l5r'>O</span>+: Choose one participant in the game or an observer.  Remove 1 strife per opportunity spent from that participant.<br>Water <span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: Remove 1 strife from each participant and observer instead." },
+{
+title: "Foreseen Need",
+type: "Shuji",
+rank: "4",
+reference: "Courts of Stone",
+ring: "Void",
+effect: "Activation: As a Support action, you may make a TN 1 Artisan (Void) check. <br><br>Effects: If you succeed, you recall that you had foreseen the need for an item with a rarity equal to 1 plus your bonus successes on the check. Spend one Void point to instantly reveal one item you could have crafted, as long as it is reasonable (e.g. you could be carrying it on your person or have it in your quarters, you had access to the resources to craft it over the past month). <br><br>Opportunities:<br>Void <span class='l5r'>O</span>: Double the rarity of the target item, but the item must be of a perishable nature or one with only sentimental value. " },
 ]
 
 
@@ -1264,5 +1339,6 @@ rank: "",
 reference: "Courts of Stone",
 ring: "",
 effect: "" },
+
 */
 
