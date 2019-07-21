@@ -137,14 +137,14 @@ children:[
 	{name: "Ballista", skill:"[Ranged]", category:"Siege", range:"3-5", damage:"14", deadliness:"8", grips:"2-hand: - ", qualities:"Durable, Prepare (2)<br>Damage inflicted with a ballista ignores 4 points of Phys Res.", rarity:"7", price:"60 koku", source:"Shadowlands"},
 	{name: "O-Gata Dohou", skill:"[Ranged]", category:"Siege", range:"4-5", damage:"16", deadliness:"6", grips:"2-hand: - ", qualities:"Durable, Prepare (2)", rarity:"7", price:"120 koku", source:"Shadowlands"},
 	{name: "Ninjato", skill:"[Melee]", category:"Swords", range:"0-1", damage:"4", deadliness:"4", grips:"1-hand: - / 2-hand: Deadliness +1", qualities:"Concealable, Forbidden, Razor-Edged", rarity:"7", price:"12 koku", source:"Courts of Stone"},
-	{name: "Shinobigatana", skill:"[Melee]", category:"Swords", range:"0-1", damage:"4", deadliness:"5", grips:"1-hand: - / 2-hand: Deadliness +1", qualities:"Ceremonial, Concealable, Razor-Edged", rarity:"8", price:"22 koku", source:"Courts of Stone"},
-	{name: "Folding Half-Bow", skill:"[Ranged]", category:"Bows", range:"2-3", damage:"4", deadliness:"3", grips:"2-hand: - ", qualities:" - ", rarity:"5", price:"3 koku", source:"Courts of Stone"},
+	{name: "Shinobigatana", skill:"[Melee]", category:"Swords", range:"0-1", damage:"4", deadliness:"5", grips:"1-hand: - / 2-hand: Deadliness +1", qualities:"Ceremonial, Concealable, Razor-Edged<br>Appears to be a katana until examined; a character must either see it drawn or make a TN 4 Smithing (Air 2, Water 5) check to find the telltale details that betray the blade's duplicity.  If its true function is discovered, it loses the Ceremonial quality and gains Forbidden for anyone who knows its identity.", rarity:"8", price:"22 koku", source:"Courts of Stone"},
+	{name: "Folding Half-Bow", skill:"[Ranged]", category:"Bows", range:"2-3", damage:"4", deadliness:"3", grips:"2-hand: - ", qualities:" - <br>While in its case or otherwise folded, it has the Concealable quality and cannot be fired.  As a Support action, a character may prepare it for use.", rarity:"5", price:"3 koku", source:"Courts of Stone"},
 	{name: "Kamayari", skill:"[Melee]", category:"Specialist", range:"2", damage:"4", deadliness:"3", grips:"2-hand: - ", qualities:"Durable, Snaring", rarity:"7", price:"8 koku", source:"Courts of Stone"},
 	{name: "Kusari-fundo", skill:"[Melee]", category:"Specialist", range:"1", damage:"2", deadliness:"2", grips:"1-hand: - / 2-hand: Snaring", qualities:"Concealable", rarity:"5", price:"4 bu", source:"Courts of Stone"},
 	{name: "Kyoketsu Shoge", skill:"[Ranged]", category:"Specialist", range:"1-2", damage:"2", deadliness:"3", grips:"2-hand: - ", qualities:"Concealable, Forbidden, Snaring", rarity:"6", price:"3 bu", source:"Courts of Stone"},
 	{name: "Shakuhachi", skill:"[Melee]", category:"Specialist", range:"0", damage:"3", deadliness:"2", grips:"1-hand: - / 2-hand: Damage +1", qualities:"Durable, Mundane, Subtle", rarity:"4", price:"3 bu", source:"Courts of Stone"},
-	{name: "Tekagi", skill:"[Unarmed]", category:"Specialist", range:"0", damage:"1", deadliness:"3", grips:"1-hand: - ", qualities:"Durable, Forbidden", rarity:"6", price:"3 bu", source:"Courts of Stone"},
-
+	{name: "Tekagi", skill:"[Unarmed]", category:"Specialist", range:"0", damage:"1", deadliness:"3", grips:"1-hand: - ", qualities:"Durable, Forbidden<br>Spend <span class='l5r'>O</span> when performing an Attack action:<br><span class='l5r'>O</span>+: If the target's Vigilance is lower or equal to <span class='l5r'>O</span> spent, choose one Razor-Edged weapon the target has readied; it becomes Damaged.", rarity:"6", price:"4 bu", source:"Courts of Stone"},
+	{name: "Tekken", skill:"[Unarmed]", category:"Specialist", range:"0", damage:"2", deadliness:"3", grips:"1-hand: - ", qualities:"Durable, Concealable", rarity:"4", price:"3 bu", source:"Courts of Stone"},
 
 	]},
 	{
@@ -165,7 +165,9 @@ children:[
 	{armor:"Shark Leather Armor", phys:2, sup:0, qualities:"Resplendant<br> When you succeed at a check to resist a critical strike while wearing this armor, add two bonus successes.", rarity:"7", price:"12 koku", source:"Mantis DLC"},
 	{armor:"O-yoroi", phys:6, sup:0, qualities:"Cumbersome, Resplendant, Wargear<br>While you wear o-yoroi, if you are suffering the Disoriented, Dazed or Immobilised condition, treat your Phys Res as 3 as your foes can strike at your lightly armored back.", rarity:"8", price:"60 koku", source:"Shadowlands"},
 	{armor:"Tatami Gusoku", phys:3, sup:0, qualities:"Wargear (while equipped)", rarity:"4", price:"7 koku", source:"Shadowlands"},
-	{armor:"Tosei-Gusoku", phys:4, sup:0, qualities:"Cumbersome, Durable, Wargear<br>While wearing tosei-gusoku, treat your Phys Res as 2 higher when reducing damage from projectile attacks.", rarity:"8", price:"50 koku", source:"Shadowlands"},		
+	{armor:"Tosei-Gusoku", phys:4, sup:0, qualities:"Cumbersome, Durable, Wargear<br>While wearing tosei-gusoku, treat your Phys Res as 2 higher when reducing damage from projectile attacks.", rarity:"8", price:"50 koku", source:"Shadowlands"},	
+	{armor:"Firefighter's Coat", phys:2, sup:0, qualities:"Cumbersome<br>Ignore the effects of Dangerous terrain created by fire, treat resistance against all flames as 4.", rarity:"4", price:"6 bu", source:"Courts of Stone"},
+	{armor:"Stealth Clothing", phys:2, sup:0, qualities:"Forbidden, Subtle<br>While wearing set to the appropriate side and in Obscuring terrain, increase the TN of attacks targeting you by an additional 1 (for a total of 2).", rarity:"7", price:"4 bu", source:"Courts of Stone"},	
 ]},
 	{
 title:"Patterns",
