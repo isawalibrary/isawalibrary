@@ -1310,7 +1310,7 @@ Unicorn:{
 			skills: ["Composition","Courtesy","Culture","Meditation","Sentiment","Theology"],
 			honor: 50,
 			role: ["Courtier","Shugenja"],
-			techniquetypes: ['Shuji','Rituals','Invocations'],
+			techniquetypes: ['Shuji','Rituals','Air & Water Invocations'],
 			startingtechs: ["The Ties that Bind","Yari of Air"],
 			startingtechoptions: ["Blessed Wind","Path to Inner Peace","Sympathetic Energies","Tempest of Air"],
 			chooseoptions: 2,
