@@ -710,7 +710,7 @@ tbody tr:nth-child(odd) {
 
 
 /* Mobile Styles */
-@media only screen and (max-width: 1100px) {
+@media only screen and (max-width: 800px) {
 body {
   font-family: 'Abel';
   font-size: 16px;
