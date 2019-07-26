@@ -1343,7 +1343,7 @@ function selectArchetype(){
 	divcontents("npcrings",x) 
 
 
-	x = '<div><span>Honor: </span><span id="npchonor">'+selectedArchetype.honor+'</span>'+
+	x = '<div class="techresults"><span>Honor: </span><span id="npchonor">'+selectedArchetype.honor+'</span>'+
 		'<span class="margin10">Glory: </span><span id="npcglory">'+selectedArchetype.glory+'</span>'+
 		'<span class="margin10">Status: </span><span id="npcstatus">'+selectedArchetype.status+'</span>'+
 		'<span class="margin10">Demeanor: <select id="npcdemeanor" class="styledselect inline margintopbottom" onchange="setDemeanor()"></select>'+
