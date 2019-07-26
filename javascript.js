@@ -963,7 +963,7 @@ function schoolfilter(){
 							' <% schoolsArr.forEach(function(child) { %> ' +
 							' <div class="filtitemeffect defcategory"> ' +
 							' <div class="filtitemeffect2" onclick="hideshow(&quot;<%= child.name %>-school&quot)"><b><%= child.name %></b> <i>(<%= child.source %>)</i> <% child.role.forEach(function(types) { %> <%= types %>, <% }); %></div>' +
-							' <div class="filtitemeffect2 fontsize13 hide" id="<%= child.name %>-school"><b>Ability:</b> <%= child.ability %>' +
+							' <div class="filtitemeffect2 hide" id="<%= child.name %>-school"><b>Ability:</b> <%= child.ability %>' +
 							' <br><b>Skills:</b>  <% child.skills.forEach(function(skill) { %> <%= skill %>, <% }); %>' +
 							' <br><b>Honor:</b> <%= child.honor %> <b>Rings:</b> <%= child.ring1 %>, <%= child.ring2 %> <b>Technique Types:</b> <% child.techniquetypes.forEach(function(types) { %> <%= types %>, <% }); %>' +
 							' <br><b>Favoured Techniques:</b> Rank 1: <% child.startingtechs.forEach(function(stechs) { %> <%= stechs %>, <% }); %>' +
