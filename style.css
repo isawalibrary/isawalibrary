@@ -713,7 +713,7 @@ tbody tr:nth-child(odd) {
 @media only screen and (max-width: 1100px) {
 body {
   font-family: 'Abel';
-  font-size: 16px;
+  font-size: 18px;
 
   max-width: 800px;
   background-image: var(--bg-image);
@@ -730,19 +730,19 @@ body {
 
 .l5r {
   font-family: 'L5R';
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .defs {
   display: inline-block;
   padding-left: 20px;
   padding-right: 20px;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .inlineblock {
   display: inline-block;
-  font-size: 16px;
+  font-size: 18px;
 }
 
 .filtitem {
@@ -751,7 +751,7 @@ body {
 }
 
 .filtitemeffect {
-  font-size: 16px;
+  font-size: 18px;
   margin-bottom: 10px;
   max-width: 100%;
   margin-left: 20px;
@@ -771,7 +771,7 @@ body {
 }
 
 .techresults {
-  font-size: 16px;
+  font-size: 18px;
 }
 
 #Silhouettes-table td {
