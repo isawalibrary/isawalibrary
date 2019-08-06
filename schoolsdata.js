@@ -21,7 +21,7 @@ var schools = {
 			rank4techs:["Striking as Void","A Samurai's Fate",],
 			rank5techs:["Rouse the Soul","The Immovable Hand of Peace",],
 			chooseoptions: 1,
-			ability:'Ignore the Cumbersome quality of armor you wear. Once per round, before making a check to resist a critical strike, you may reduce the severity of that critical strike by the physical resistance of your armor plus your school rank (to a minimum of 0).'
+			ability:'Ignore the Cumbersome quality of armor you wear. Once per round, before making a check to resist a critical strike, you may reduce the severity of that critical strike by the physical resistance of your armor plus your school rank (to a minimum of 0).',
 			keyword:'',
 			},
 		hiruma: {
@@ -44,7 +44,7 @@ var schools = {
 				],
 			rank1techs:["Threshold Barrier","Slippery Maneuvers",],rank2techs:["Skulk","Lord Hida's Grip",],rank3techs:["Deadly Sting","Touchstone of Courage",],rank4techs:["Noxious Cloud","Crashing Wave Style",],rank5techs:["Rouse the Soul","Silencing Stroke",],
 			chooseoptions: 1,
-			ability:'After performing an Attack action, you may change your stance. If you do, increase the TN of Attack checks by creatures of silhouette 3 or larger targeting you by your school rank until the start of your next turn.'
+			ability:'After performing an Attack action, you may change your stance. If you do, increase the TN of Attack checks by creatures of silhouette 3 or larger targeting you by your school rank until the start of your next turn.',
 			keyword:'',
 			},
 		kaiu: {
@@ -67,7 +67,7 @@ var schools = {
 				],
 			rank1techs:["Pelting Hail Style","Hawk's Precision",],rank2techs:["Battle in the Mind","Noxious Cloud",],rank3techs:["Pillar of Calm","Flowing Water Strike",],rank4techs:["Soul Sunder","Iron in the Mountains Style",],rank5techs:["Sear the Wound","Pin the Fan",],
 				chooseoptions: 0,
-			ability:'Once per scene, when making a check to use an item you personally crafted, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.'
+			ability:'Once per scene, when making a check to use an item you personally crafted, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.',
 			keyword:'',
 			},
 		kuni: {
@@ -90,7 +90,7 @@ var schools = {
 				],
 			rank1techs:["Bind the Shadow","Biting Steel",],rank2techs:["Crimson Leaves Strike","Symbol of Earth",],rank3techs:["Rise, Earth","Open Hand Style",],rank4techs:["Tomb of Jade","Flowing Water Strike",],rank5techs:["Earthquake","Soul Sunder",],
 			chooseoptions: 1,
-			ability:'Once per round, when you make a check targeting or involving a Tainted being, you may choose a number of your kept dice up to your school rank containing <span class="l5r">T</span> symbols. Set each of these dice to a <span class="l5r">S</span> result. You cannot use this ability if you are unsure if a being is Tainted or not.'
+			ability:'Once per round, when you make a check targeting or involving a Tainted being, you may choose a number of your kept dice up to your school rank containing <span class="l5r">T</span> symbols. Set each of these dice to a <span class="l5r">S</span> result. You cannot use this ability if you are unsure if a being is Tainted or not.',
 			keyword:'',
 			},
 		yasuki: {
@@ -113,7 +113,7 @@ var schools = {
 				],
 			rank1techs:["Tributaries of Trade","All in Jest",],rank2techs:["Ebb and Flow","Slippery Maneuvers",],rank3techs:["Pillar of Calm","Lord Hida's Grip",],rank4techs:["Buoyant Arrival","Bravado",],rank5techs:["The Immovable Hand of Peace","Lady Doji's Decree",],
 			chooseoptions: 1,
-			ability:'As a downtime activity, if you have access to a market, you may acquire a number of items up to your school rank of rarity 4 or lower, or a single item of up to rarity 4 plus your school rank. You do not need to make a check or expend money to acquire these items, nor do you need to forfeit or stake honor or glory for the act of acquiring them, even if they are not befitting of your station or Forbidden (though displaying them openly later is a different matter). The GM can still apply rarity adjustments as usual based on the specifics of the market available.'
+			ability:'As a downtime activity, if you have access to a market, you may acquire a number of items up to your school rank of rarity 4 or lower, or a single item of up to rarity 4 plus your school rank. You do not need to make a check or expend money to acquire these items, nor do you need to forfeit or stake honor or glory for the act of acquiring them, even if they are not befitting of your station or Forbidden (though displaying them openly later is a different matter). The GM can still apply rarity adjustments as usual based on the specifics of the market available.',
 			keyword:'',
 			},
 
@@ -187,7 +187,7 @@ var schools = {
 							],
 			rank1techs:["Path to Inner Peace","Artisan's Appraisal",],rank2techs:["Grasp of the Air Dragon","Tea Ceremony",],rank3techs:["Wings of the Phoenix","Vapor of Nightmare",],rank4techs:["Rise, Air","Bend with the Storm",],rank5techs:["Ever Changing Waves","Buoyant Arrival",],
 			chooseoptions: 3,
-			ability:'When making a check to mystically summon an illusion or to summon, augment, or awaken an object, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.'
+			ability:'When making a check to mystically summon an illusion or to summon, augment, or awaken an object, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.',
 			keyword:'',
 			},
 		daidoji: {
@@ -210,7 +210,7 @@ var schools = {
 				],
 			rank1techs:["Crescent Moon Style","Stonewall Tactics",],rank2techs:["Flowing Water Strike","Lady Doji's Decree",],rank3techs:["Crashing Wave Style","Ebb and Flow",],rank4techs:["Striking as Void","A Samurai's Fate",],rank5techs:["Rouse the Soul","The Immovable Hand of Peace",],
 			chooseoptions: 1,
-			ability:'Once per round, when another character within range of one of your readied melee weapons would suffer physical damage, you may intercept. If you do, you may suffer fatigue up to your school rank to reduce the damage the target suffers by twice that amount.'
+			ability:'Once per round, when another character within range of one of your readied melee weapons would suffer physical damage, you may intercept. If you do, you may suffer fatigue up to your school rank to reduce the damage the target suffers by twice that amount.',
 			keyword:'',
 			},
 		doji: {
@@ -233,7 +233,7 @@ var schools = {
 				],
 			rank1techs:["Civility Foremost","Tea Ceremony",],rank2techs:["The Wind Blows Both Ways","Artisan's Appraisal",],rank3techs:["Regal Bearing","Ebb and Flow",],rank4techs:["Bend with the Storm","Pillar of Calm",],rank5techs:["Buoyant Arrival","The Immovable Hand of Peace",],
 			chooseoptions:1,
-			ability:'Once per scene when making a check to persuade or influence someone, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.'
+			ability:'Once per scene when making a check to persuade or influence someone, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.',
 			keyword:'',
 			},
 		kakita: {
@@ -256,7 +256,7 @@ var schools = {
 				],
 			rank1techs:["Iaijutsu Cut: Crossing Blade","Cadence",],rank2techs:["All Arts Are One","Thunderclap Strike",],rank3techs:["A Samurai's Fate","Heartpiercing Strike",],rank4techs:["Striking as Void","Pillar of Calm",],rank5techs:["Rouse the Soul","Soul Sunder",],
 			chooseoptions:1,
-			ability:'Once per round, you may increase or decrease the severity of a critical strike you inflict by an amount up to your school rank.'
+			ability:'Once per round, you may increase or decrease the severity of a critical strike you inflict by an amount up to your school rank.',
 			keyword:'',
 			},
 
@@ -351,7 +351,7 @@ var schools = {
 				],
 			rank1techs:["Heart of the Water Dragon","Divination",],rank2techs:["Power of the Earth Dragon","Touchstone of Courage",],rank3techs:["Rise, Earth","Earth Becomes Sky",],rank4techs:["Ever Changing Waves","Rise, Water",],rank5techs:["Sear the Wound","Earthquake",],
 			chooseoptions:1,
-			ability:'When performing an invocation, you may choose a different ring with which to make the check. While using this school ability, you cannot activate <span class="l5r">O</span> of the original Element of the invocation, but you can activate <span class="l5r">O</span> for the new Element. You can use this school ability a number of times per game session up to your school rank.'
+			ability:'When performing an invocation, you may choose a different ring with which to make the check. While using this school ability, you cannot activate <span class="l5r">O</span> of the original Element of the invocation, but you can activate <span class="l5r">O</span> for the new Element. You can use this school ability a number of times per game session up to your school rank.',
 			keyword:'',
 			},
 		kitsuki: {
@@ -374,7 +374,7 @@ var schools = {
 				],
 			rank1techs:["Slippery Maneuvers","Honest Assessment",],rank2techs:["All Arts Are One","Feigned Opening",],rank3techs:["Regal Bearing","Battle in the Mind",],rank4techs:["Sear the Wound","Bravado",],rank5techs:["Wolf's Proposal","Crashing Wave Style",],
 			chooseoptions: 1,
-			ability:'When performing a check to investigate with any skill (see The Art of Investigation, on page 170), you may treat your ranks in the skill you are using as being equal to your school rank. If your ranks in the skill are equal to or higher than your school rank, or if you have 5 ranks in the skill, you may add a kept <span class="l5r">d</span> set to an <span class="l5r">O</span> result instead.'
+			ability:'When performing a check to investigate with any skill (see The Art of Investigation, on page 170), you may treat your ranks in the skill you are using as being equal to your school rank. If your ranks in the skill are equal to or higher than your school rank, or if you have 5 ranks in the skill, you may add a kept <span class="l5r">d</span> set to an <span class="l5r">O</span> result instead.',
 			keyword:'',
 			},
 		mirumoto: {
@@ -397,7 +397,7 @@ var schools = {
 				],
 			rank1techs:["Iaijutsu Cut: Rising Blade","Stirring the Embers",],rank2techs:["Heartpiercing Strike","Slippery Maneuvers",],rank3techs:["Pillar of Calm","Commune with the Spirits",],rank4techs:["Striking as Void","Crashing Wave Style",],rank5techs:["Sear the Wound","Rouse the Soul",],
 			chooseoptions: 1,
-			ability:'Once per round during a duel or skirmish when you are targeted by an Attack check with a melee weapon, you may use one of your weapons readied in a one-handed grip (or one of your hands, if it is empty) to ward or trap. If you ward, the attacker must reroll dice containing <span class="l5r">S</span> or <span clasS="l5r">E</span>  up to your school rank. If you trap, reduce the TN of your next Attack check against the attacker this scene by your school rank (to a minimum of 1). You cannot choose this weapon for Attack actions until the end of your next turn.'
+			ability:'Once per round during a duel or skirmish when you are targeted by an Attack check with a melee weapon, you may use one of your weapons readied in a one-handed grip (or one of your hands, if it is empty) to ward or trap. If you ward, the attacker must reroll dice containing <span class="l5r">S</span> or <span clasS="l5r">E</span>  up to your school rank. If you trap, reduce the TN of your next Attack check against the attacker this scene by your school rank (to a minimum of 1). You cannot choose this weapon for Attack actions until the end of your next turn.',
 			keyword:'',
 			},
 		togashi: {
@@ -420,7 +420,7 @@ var schools = {
 				],
 			rank1techs:["Way of the Earthquake","Honest Assessment",],rank2techs:["Open-Hand Style","Stirring the Embers",],rank3techs:["Death Touch","All Arts Are One",],rank4techs:["Touch the Void Dragon","Pillar of Calm",],rank5techs:["Rouse the Soul",],
 			chooseoptions: 1,
-			ability:'You have one mystical tattoo that empowers your kiho, and gain more as your school rank increases. When you make a check to activate a kiho linked to one of your mystical tattoos, if you succeed, add additional bonus successes equal to your school rank. Select a natural motif for your first tattoo and choose one kiho for which you meet the prerequisites that are linked to the tattoo. If you have not learned it, you learn that kiho (without paying its XP cost). You cannot choose the same kiho multiple times this way. Each time your school rank increases, you gain one additional tattoo this way.'
+			ability:'You have one mystical tattoo that empowers your kiho, and gain more as your school rank increases. When you make a check to activate a kiho linked to one of your mystical tattoos, if you succeed, add additional bonus successes equal to your school rank. Select a natural motif for your first tattoo and choose one kiho for which you meet the prerequisites that are linked to the tattoo. If you have not learned it, you learn that kiho (without paying its XP cost). You cannot choose the same kiho multiple times this way. Each time your school rank increases, you gain one additional tattoo this way.',
 			keyword:'',
 			},
 		taoistblade: {
@@ -492,7 +492,7 @@ var schools = {
 				],
 			rank1techs:["Iron Forest Style","Honest Assessment",],rank2techs:["Rallying Cry","Lightning Raid",],rank3techs:["A Samurai's Fate","Touchstone of Courage",],rank4techs:["Rouse the Soul","Disappearing World Style",],rank5techs:["Bend with the Storm","Striking as Void",],
 			chooseoptions: 1,
-			ability:'When you succeed at an Attack or Support action check, you may remove an amount of strife from yourself up to your school rank. For each strife you remove this way, add that one bonus success to the check and receive 1 fatigue.'
+			ability:'When you succeed at an Attack or Support action check, you may remove an amount of strife from yourself up to your school rank. For each strife you remove this way, add that one bonus success to the check and receive 1 fatigue.',
 			keyword:'',
 			},
 		ikoma: {
@@ -515,7 +515,7 @@ var schools = {
 				],
 			rank1techs:["Slippery Maneuvers","Soaring Slice",],rank2techs:["Dazzling Performance","Spinning Blades Style",],rank3techs:["Rallying Cry","Regal Bearing",],rank4techs:["Sear the Wound","Pillar of Calm",],rank5techs:["Bend with the Storm","Buoyant Arrival",],
 			chooseoptions:0,
-			ability:'Once per scene, after you perform a check using a Social skill that targets one or more characters, you may agitate or console: If you agitate, transfer strife up to twice your school rank from yourself to your targets (divided among them as you choose). If you console, transfer strife up to twice your school rank from your targets (divided among them as you choose) to yourself.'
+			ability:'Once per scene, after you perform a check using a Social skill that targets one or more characters, you may agitate or console: If you agitate, transfer strife up to twice your school rank from yourself to your targets (divided among them as you choose). If you console, transfer strife up to twice your school rank from your targets (divided among them as you choose) to yourself.',
 			keyword:'',
 			},
 		kitsu: {
@@ -538,7 +538,7 @@ var schools = {
 				],
 			rank1techs:["Courage of Seven Thunders","Heart of the Water Dragon",],rank2techs:["Hands of the Tides","Fanning the Flames",],rank3techs:["Rise, Earth","Ebb and Flow",],rank4techs:["Wrath of Kaze-no-Kami","Bravado",],rank5techs:["Sear the Wound","Buoyant Arrival",],
 			chooseoptions:2,
-			ability:'Once per scene, you may importune one invocation (see Importune Invocations, on page 189) with a school rank prerequisite up to your school rank without making the sacrifices usually required and without the usual TN increase.'
+			ability:'Once per scene, you may importune one invocation (see Importune Invocations, on page 189) with a school rank prerequisite up to your school rank without making the sacrifices usually required and without the usual TN increase.',
 			keyword:'',
 			},
 		matsu: {
@@ -561,7 +561,7 @@ var schools = {
 				],
 			rank1techs:["Lord Akodo's Roar","Stonewall Tactics",],rank2techs:["Heartpiercing Strike","Fanning the Flames",],rank3techs:["Disappearing World Style","Rallying Cry",],rank4techs:["Striking as Void","Bravado",],rank5techs:["Sear the Wound","Rouse the Soul",],
 			chooseoptions: 1,
-			ability:'After you suffer a critical strike or unmask, you may suffer the Enraged condition to remove an amount of fatigue from yourself equal to your school rank.'
+			ability:'After you suffer a critical strike or unmask, you may suffer the Enraged condition to remove an amount of fatigue from yourself equal to your school rank.',
 			keyword:'',
 			},
 		kitsumedic: {
@@ -632,7 +632,7 @@ var schools = {
 				],
 			rank1techs:["Open Hand Style","Divination",],rank2techs:["All Arts Are One","Tea Ceremony",],rank3techs:["Pillar of Calm","Ebb and Flow",],rank4techs:["Cleansing Spirit","Wolf's Proposal",],rank5techs:["Still the Elements","Bend With The Storm",],
 			chooseoptions: 1,
-			ability:'When performing a Scholar skill check, you may treat your ranks in the skill as being equal to your school rank. If your ranks in that Scholar skill are equal to or higher than your school rank, or if you have 5 ranks in the skill, you may add one kept <span class="l5r">d</span> set to an <span class="l5r">O</span> result instead.'
+			ability:'When performing a Scholar skill check, you may treat your ranks in the skill as being equal to your school rank. If your ranks in that Scholar skill are equal to or higher than your school rank, or if you have 5 ranks in the skill, you may add one kept <span class="l5r">d</span> set to an <span class="l5r">O</span> result instead.',
 			keyword:'',
 			},
 		isawa: {
@@ -655,7 +655,7 @@ var schools = {
 				],
 			rank1techs:["Dance of Seasons","Cleansing Rite",],rank2techs:["Fanning the Flames","Fury of Osano-Wo",],rank3techs:["Wings of the Phoenix","Strike the Tsunami",],rank4techs:["Wrath of Kaze-no-Kami","Rise, Flame",],rank5techs:["Earthquake","Rouse the Soul",],
 			chooseoptions:3,
-			ability:'Once per scene when making the check to activate an invocation technique, before rolling dice, you may reduce the TN of the check by your school rank.'
+			ability:'Once per scene when making the check to activate an invocation technique, before rolling dice, you may reduce the TN of the check by your school rank.',
 			keyword:'',
 			},
 		shiba: {
@@ -678,7 +678,7 @@ var schools = {
 				],
 			rank1techs:["Civility Foremost","Stirring the Embers",],rank2techs:["Rallying Cry","Slippery Maneuvers",],rank3techs:["A Samurai's Fate","Touchstone of Courage",],rank4techs:["The Immovable Hand of Peace","Touch the Void Dragon",],rank5techs:["Way of the Edgeless Sword","Rouse the Soul",],
 			chooseoptions:1,
-			ability:'Once per scene, when a character at range 0-3 makes a check that contains 1 or more Strife symbols, you may negate all of those Strife symbols. Then, that character removes strife and fatigue equal to your school rank.'
+			ability:'Once per scene, when a character at range 0-3 makes a check that contains 1 or more Strife symbols, you may negate all of those Strife symbols. Then, that character removes strife and fatigue equal to your school rank.',
 			keyword:'',
 			},
 		kaito: {
@@ -701,7 +701,7 @@ var schools = {
 				],
 			rank1techs:["Bind the Shadow","Striking as Air",],rank2techs:["Grasp of the Air Dragon","Divination",],rank3techs:["Breath of Wind Style","Flowing Water Strike",],rank4techs:["Rise, Air","Soul Sunder",],rank5techs:["Tomb of Jade","Pin the Fan",],
 			chooseoptions:3,
-			ability:'As an action, you may augment one of your arrows with a prayer to the kami. Make the check to perform one invocation you know, reducing the TN by your school rank, and record the result. The arrow gains the Sacred quality, and remains infused with the invocation until the end of the scene. After you perform an Attack action using the arrow (or fire it at a location, at the GM&apos;s discretion), you may resolve the effects of the invocation from the place the arrow landed. You may spend <span class="l5r">O</span>+ to delay resolving the effects of the invocation for 1 round per <span class="l5r">O</span> spent this way, and may spend <span class="l5r">O</span> <span class="l5r">O</span> from a failed check to affect one target of the attack that you missed.'
+			ability:'As an action, you may augment one of your arrows with a prayer to the kami. Make the check to perform one invocation you know, reducing the TN by your school rank, and record the result. The arrow gains the Sacred quality, and remains infused with the invocation until the end of the scene. After you perform an Attack action using the arrow (or fire it at a location, at the GM&apos;s discretion), you may resolve the effects of the invocation from the place the arrow landed. You may spend <span class="l5r">O</span>+ to delay resolving the effects of the invocation for 1 round per <span class="l5r">O</span> spent this way, and may spend <span class="l5r">O</span> <span class="l5r">O</span> from a failed check to affect one target of the attack that you missed.',
 			keyword:'',
 			},
 		inquisitor: {
@@ -773,7 +773,7 @@ Scorpion:{
 				],
 			rank1techs:["Fanning the Flames","Weight of Duty",],rank2techs:["Dazzling Performance","Veiled Menace Style",],rank3techs:["Wolf's Proposal","Skulk",],rank4techs:["Buoyant Arrival","Deadly Sting",],rank5techs:["Bend with the Storm","Sear the Wound",],
 			chooseoptions:1,
-			ability:'When you exploit a target&apos;s disadvantage (see Turning Advantages and Disadvantages, page 100) as part of a Scheme action, you do not need to spend a Void point, and you may reroll additional dice up to your school rank.'
+			ability:'When you exploit a target&apos;s disadvantage (see Turning Advantages and Disadvantages, page 100) as part of a Scheme action, you do not need to spend a Void point, and you may reroll additional dice up to your school rank.',
 			keyword:'',
 			},
 		shosuro: {
@@ -796,7 +796,7 @@ Scorpion:{
 				],
 			rank1techs:["Veiled Menace Style","Skulk",],rank2techs:["Lord Bayushi's Whispers","Noxious Cloud",],rank3techs:["Bravado","Dazzling Performance",],rank4techs:["Silencing Stroke","A Samurai's Fate",],rank5techs:["Buoyant Arrival","Sear the Wound",],
 			chooseoptions:1,
-			ability:'While performing an Attack action against a target who is Compromised, Incapacitated, Unconscious, or unaware of your presence, treat the damage and deadliness of your weapon as being increased by your school rank.'
+			ability:'While performing an Attack action against a target who is Compromised, Incapacitated, Unconscious, or unaware of your presence, treat the damage and deadliness of your weapon as being increased by your school rank.',
 			keyword:'',
 			},
 		soshi: {
@@ -819,7 +819,7 @@ Scorpion:{
 				],
 			rank1techs:["Mask of Wind","Skulk",],rank2techs:["Vapor of Nightmares","Lord Bayushi's Whispers",],rank3techs:["False Realm of the Fox Spirits","Noxious Cloud",],rank4techs:["Deadly Sting ","Rise, Air",],rank5techs:["Buoyant Arrival","Silencing Stroke",],
 			chooseoptions:3,
-			ability:'While you are performing an invocation technique or channeling, characters with a vigilance lower than or equal to your school rank plus one cannot detect any physical sign that you are in the act of invoking the spirits. They can still observe effects of the invocation, however. Increase the TN of Theology checks to detect or study your supernatural activities by your school rank.'
+			ability:'While you are performing an invocation technique or channeling, characters with a vigilance lower than or equal to your school rank plus one cannot detect any physical sign that you are in the act of invoking the spirits. They can still observe effects of the invocation, however. Increase the TN of Theology checks to detect or study your supernatural activities by your school rank.',
 			keyword:'',
 			},
 		yogo: {
@@ -842,7 +842,7 @@ Scorpion:{
 				],
 			rank1techs:["Civility Foremost","Path to Inner Peace",],rank2techs:["Ebb and Flow","Embrace of Kenro-ji-Jin",],rank3techs:["Open Hand Style","Earth Becomes Sky",],rank4techs:["Skulk","Rise, Water",],rank5techs:["Deadly Sting","Tomb of Jade",],
 			chooseoptions:2,
-			ability:'You can have a number of additional wards with prepared invocations (Core p190) up to your school rank. Decoding or using one of your wards requires any other character to make a Theology (Void) check with TN equal to your school rank.'
+			ability:'You can have a number of additional wards with prepared invocations (Core p190) up to your school rank. Decoding or using one of your wards requires any other character to make a Theology (Void) check with TN equal to your school rank.',
 			keyword:'',
 			},
 		yogopreserver: {
@@ -890,7 +890,7 @@ Unicorn:{
 				],
 			rank1techs:["Feigned Opening","Hawk's Precision",],rank2techs:["Ebb and Flow","Lady Shinjo's Speed",],rank3techs:["Pillar of Calm","All Arts Are One",],rank4techs:["Sear the Wound","Regal Bearing",],rank5techs:["Bend with the Storm","The Immovable Hand of Peace",],
 			chooseoptions:1,
-			ability:'Ignore the Forbidden quality when acquiring and handling items. When acquiring, selling, or gifting an item, you may treat its rarity as reduced or increased by your school rank.'
+			ability:'Ignore the Forbidden quality when acquiring and handling items. When acquiring, selling, or gifting an item, you may treat its rarity as reduced or increased by your school rank.',
 			keyword:'',
 			},
 		iuchi: {
@@ -913,7 +913,7 @@ Unicorn:{
 				],
 			rank1techs:["Sympathetic Energies","Cleansing Rite",],rank2techs:["Hands of the Tides","Artisan's Appraisal",],rank3techs:["Dazzling Performance","Rise, Earth",],rank4techs:["Rouse the Soul","A Samurai's Fate",],rank5techs:["The Soul's Blade","Ever-Changing Waves",],
 			chooseoptions:3,
-			ability:'As a downtime activity, you may make a TN 2 Design check using any ring to bind a spirit to an inanimate vessel, creating a meishodo talisman for one invocation of that Element that you have learned. While you have the talisman in your possession, reduce the TN of checks to activate that invocation by 1. You can give the talisman to another shugenja, allowing them to perform that invocation even if they have not learned it and reducing the TN to activate it by 1, but the talisman ceases to function after a number of uses equal to your school rank. You can sustain a number of meishodo talismans up to your school rank. You can only have one meishodo talisman for any single invocation.'
+			ability:'As a downtime activity, you may make a TN 2 Design check using any ring to bind a spirit to an inanimate vessel, creating a meishodo talisman for one invocation of that Element that you have learned. While you have the talisman in your possession, reduce the TN of checks to activate that invocation by 1. You can give the talisman to another shugenja, allowing them to perform that invocation even if they have not learned it and reducing the TN to activate it by 1, but the talisman ceases to function after a number of uses equal to your school rank. You can sustain a number of meishodo talismans up to your school rank. You can only have one meishodo talisman for any single invocation.',
 			keyword:'',
 			},
 		moto: {
@@ -936,7 +936,7 @@ Unicorn:{
 				],
 			rank1techs:["Crescent Moon Style","Stirring the Embers",],rank2techs:["Heartpiercing Strike","Veiled Menace Style",],rank3techs:["Bravado","Dazzling Performance",],rank4techs:["Striking as Void","Crashing Wave Style",],rank5techs:["Sear the Wound","Buoyant Arrival",],
 			chooseoptions:1,
-			ability:'When performing an Attack action during a skirmish or mass battle, you may spend <span class="l5r">O</span> as follows: <span class="l5r">O</span>:  Choose an enemy other than your target whom you can perceive. Increase the TN of that enemy&apos;s Attack checks targeting you by your school rank until the start of your next turn.'
+			ability:'When performing an Attack action during a skirmish or mass battle, you may spend <span class="l5r">O</span> as follows: <span class="l5r">O</span>:  Choose an enemy other than your target whom you can perceive. Increase the TN of that enemy&apos;s Attack checks targeting you by your school rank until the start of your next turn.',
 			keyword:'',
 			},
 		shinjo: {
@@ -959,7 +959,7 @@ Unicorn:{
 				],
 			rank1techs:["Pelting Hail Style","Cadence",],rank2techs:["Flowing Water Strike","Dazzling Performance",],rank3techs:["Crashing Wave Style","Crimson Leaves Strike",],rank4techs:["Bend with the Storm","Bravado",],rank5techs:["Pin the Fan","Rouse the Soul",],
 			chooseoptions:1,
-			ability:'Once per scene, before rolling dice, you may declare that you are directing your horse (who must be present) to aid in a task and describe how its efforts help in those circumstances. Reduce the TN of the check by your school rank.'
+			ability:'Once per scene, before rolling dice, you may declare that you are directing your horse (who must be present) to aid in a task and describe how its efforts help in those circumstances. Reduce the TN of the check by your school rank.',
 			keyword:'',
 			},
 		utaku: {
@@ -982,7 +982,7 @@ Unicorn:{
 				],
 			rank1techs:["Lady Shinjo's Speed","Striking as Air",],rank2techs:["Thunderclap Strike","Rushing Avalanche Style",],rank3techs:["Pillar of Calm","Touchstone of Courage",],rank4techs:["Soul Sunder","Breath of Wind Style",],rank5techs:["Rouse the Soul","Bend With The Storm",],
 			chooseoptions:1,
-			ability:'When you succeed at an Attack action check, add bonus successes equal to the number of range bands you have moved this round, to a maximum of your school rank. During a duel or mass battle, if you are mounted on your steed, you always count as having moved a number of range bands equal to your school rank this turn. Utaku Steed gives skilled assistance to a mounted Battle Maiden.'
+			ability:'When you succeed at an Attack action check, add bonus successes equal to the number of range bands you have moved this round, to a maximum of your school rank. During a duel or mass battle, if you are mounted on your steed, you always count as having moved a number of range bands equal to your school rank this turn. Utaku Steed gives skilled assistance to a mounted Battle Maiden.',
 			keyword:'',
 			},
 		motoavenger: {
@@ -1031,7 +1031,7 @@ Unicorn:{
 			rank4techs:["Buoyant Arrival","Crashing Wave Style"],
 			rank5techs:["Rouse the Soul","Sear the Wound"],
 			chooseoptions: 1,
-			ability:'Once per round when making a Trade skill check, if you are not Compromised, you may receive a number of strife up to your school rank to reroll that many rolled dice.<br>Mantis DLC'
+			ability:'Once per round when making a Trade skill check, if you are not Compromised, you may receive a number of strife up to your school rank to reroll that many rolled dice.<br>Mantis DLC',
 			keyword:'Minor clan Mantis',
 			},
 		seer: {
@@ -1054,7 +1054,7 @@ Unicorn:{
 			rank4techs:["Wrath of Kaze-no-Kami","Rise, Water"],
 			rank5techs:["Ever-Changing Waves","Rise, Air"],
 			chooseoptions: 1,
-			ability:'When an invocation technique you perform would affect "each character" or "each other character" at a specified range, you may exclude a number of characters up to your school rank from all effects of the invocation except for spiritual backlash (Core p190).<br>Mantis DLC'
+			ability:'When an invocation technique you perform would affect "each character" or "each other character" at a specified range, you may exclude a number of characters up to your school rank from all effects of the invocation except for spiritual backlash (Core p190).<br>Mantis DLC',
 			keyword:'Minor clan Mantis',
 			},
 		},
@@ -1200,7 +1200,7 @@ Unicorn:{
 				],
 			rank1techs:["Open Hand Style","Shallow Waters",],rank2techs:["All Arts Are One","Iron Forest Style",],rank3techs:["A Samurai's Fate","Dazzling Performance",],rank4techs:["Striking as Void","Crimson Leaves Strike",],rank5techs:["Sear the Wound","Buoyant Arrival",],
 				chooseoptions:2,
-			ability:'Choose one bonus curriculum skill; this skill henceforth counts as part of the Worldly Ronin Path curriculum for you at all ranks. Each time your school rank increases, choose one additional bonus curriculum skill this way. When you make a check using one of your bonus curriculum skills, you may negate 1 Strife symbol.'
+			ability:'Choose one bonus curriculum skill; this skill henceforth counts as part of the Worldly Ronin Path curriculum for you at all ranks. Each time your school rank increases, choose one additional bonus curriculum skill this way. When you make a check using one of your bonus curriculum skills, you may negate 1 Strife symbol.,'
 			keyword:'Unaligned',
 			
 			},
@@ -1321,7 +1321,7 @@ Unicorn:{
 			rank4techs:["Silencing Stroke","Wolf's Proposal"],
 			rank5techs:["Buoyant Arrival"],
 			chooseoptions: 0,
-			ability:'Once per game session at the beginning of a scene, you may reveal that an NPC in that scene is the target of your current assignment.  The GM then decides what your assignment entails, such as sabotaging the targets current activities, framing them for a crime, killing them, or even making sure they survive to play their part in a long and sinister plot.  Until the end of the session, when you make a skill check targeting the chosen NPC, you may reroll a number of dice up to your school rank'
+			ability:'Once per game session at the beginning of a scene, you may reveal that an NPC in that scene is the target of your current assignment.  The GM then decides what your assignment entails, such as sabotaging the targets current activities, framing them for a crime, killing them, or even making sure they survive to play their part in a long and sinister plot.  Until the end of the session, when you make a skill check targeting the chosen NPC, you may reroll a number of dice up to your school rank',
 			keyword:'Unaligned',
 		
 			},
