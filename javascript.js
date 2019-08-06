@@ -1001,6 +1001,8 @@ function schoolfilter(){
 					return true;
 				} else if (school.source.toLowerCase().includes(searchString)) {
 					return true;
+				} else if (school.keyword.toLowerCase().includes(searchString)) {
+					return true;
 				} for (i=0; i<school.skills.length; i++){ 	
 					if (school.skills[i].toLowerCase().includes(searchString)){
 					return true;
@@ -1037,10 +1039,7 @@ function schoolfilter(){
 					if (school.rank5techs[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.rank5techs.length; i++){ 	
-					if (school.keyword[i].toLowerCase().includes(searchString)){
-					return true;
-					}	
+					
 					else {
 				return false;
 			}}});

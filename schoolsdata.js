@@ -1200,7 +1200,7 @@ Unicorn:{
 				],
 			rank1techs:["Open Hand Style","Shallow Waters",],rank2techs:["All Arts Are One","Iron Forest Style",],rank3techs:["A Samurai's Fate","Dazzling Performance",],rank4techs:["Striking as Void","Crimson Leaves Strike",],rank5techs:["Sear the Wound","Buoyant Arrival",],
 				chooseoptions:2,
-			ability:'Choose one bonus curriculum skill; this skill henceforth counts as part of the Worldly Ronin Path curriculum for you at all ranks. Each time your school rank increases, choose one additional bonus curriculum skill this way. When you make a check using one of your bonus curriculum skills, you may negate 1 Strife symbol.,'
+			ability:'Choose one bonus curriculum skill; this skill henceforth counts as part of the Worldly Ronin Path curriculum for you at all ranks. Each time your school rank increases, choose one additional bonus curriculum skill this way. When you make a check using one of your bonus curriculum skills, you may negate 1 Strife symbol.',
 			keyword:'Unaligned',
 			
 			},
