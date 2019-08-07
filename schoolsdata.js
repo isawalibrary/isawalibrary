@@ -890,6 +890,7 @@ Scorpion:{
 			rank4techs:["A Samurai's Fate","Rallying Cry"],
 			rank5techs:["Stillness of Death","Hidden in Smoke"],
 
+			keyword:'',
 		},
 		},
 Unicorn:{
@@ -1687,7 +1688,7 @@ var titles = {
 			rank3techs:[],
 			rank4techs:[],
 			rank5techs:[],
-
+			keyword:'',
 		},
 
 <span class='l5r'>O</span>
