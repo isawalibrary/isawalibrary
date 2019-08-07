@@ -868,6 +868,29 @@ Scorpion:{
 			ability:'Warded Shikigami: You can hyave a number of additional shikigami (Shadowlands p115) up to your school rank.  Once per scene, after you perform an action, you may instruct one of your shikigami to perform an action, for which it benefits from your assistance.',
 			keyword:'',
 			},
+		bayushideathdealer: {
+			name:'Bayushi Deathdealer',
+			clan:'Scorpion',
+			ring1: 'Air',
+			ring2: 'Fire',
+			source: 'Courts of Stone',
+			skillnumber: 5,
+			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
+			skills: ['Command','Courtesy','Fitness','Melee','Ranged','Tactics','Sentiment','Skulduggery'],
+			honor: 40,
+			role: ['Bushi','Shinobi'],
+			techniquetypes: ['Shuji','Rituals','Kata'],
+			startingtechs: ['Assess Strengths'],
+			startingtechoptions: ['Striking As Air','Striking as Fire'],
+			chooseoptions: 1,
+			ability:"Way of the Scorpion: When you exploit a target's disadvantage (see Core p100) as part of an initiative check for a duel or an Attack action, you do not need to spend a Void point and you may reroll additional dice up to your school rank.",
+			rank1techs:['Deceitful Strike',"Spiteful Loss"],
+			rank2techs:['Deadly Sting','Iaijutsu Cut: Rising Blade'],
+			rank3techs:["Cunning Distraction","All Shall Fear Me"],
+			rank4techs:["A Samurai's Fate","Rallying Cry"],
+			rank5techs:["Stillness of Death","Hidden in Smoke"],
+
+		},
 		},
 Unicorn:{
 		ide: {
@@ -1643,7 +1666,7 @@ var titles = {
 		source:"Courts of Stone",
 	},
 
-	ikomashadow: {
+	bayushideathdealer: {
 			name:'',
 			clan:'',
 			ring1: '',
