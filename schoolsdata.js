@@ -42,7 +42,7 @@ var schools = {
 				],
 			startingtechoptions: ['Striking as Air','Striking as Water'
 				],
-			rank1techs:["Threshold Barrier","Slippery Maneuvers",],rank2techs:["Skulk","Lord Hida's Grip",],rank3techs:["Deadly Sting","Touchstone of Courage",],rank4techs:["Noxious Cloud","Crashing Wave Style",],rank5techs:["Rouse the Soul","Silencing Stroke",],
+			rank1techs:["Threshold Barrier","Slippery Maneuvers",],rank2techs:["Skulk","Lord Hida's Grasp (Crab)",],rank3techs:["Deadly Sting","Touchstone of Courage",],rank4techs:["Noxious Cloud","Crashing Wave Style",],rank5techs:["Rouse the Soul","Silencing Stroke",],
 			chooseoptions: 1,
 			ability:'After performing an Attack action, you may change your stance. If you do, increase the TN of Attack checks by creatures of silhouette 3 or larger targeting you by your school rank until the start of your next turn.',
 			keyword:'',
@@ -111,7 +111,7 @@ var schools = {
 				],
 			startingtechoptions: ['Rustling of Leaves','Well of Desire'
 				],
-			rank1techs:["Tributaries of Trade","All in Jest",],rank2techs:["Ebb and Flow","Slippery Maneuvers",],rank3techs:["Pillar of Calm","Lord Hida's Grip",],rank4techs:["Buoyant Arrival","Bravado",],rank5techs:["The Immovable Hand of Peace","Lady Doji's Decree (Crane)",],
+			rank1techs:["Tributaries of Trade","All in Jest",],rank2techs:["Ebb and Flow","Slippery Maneuvers",],rank3techs:["Pillar of Calm","Lord Hida's Grasp (Crab)",],rank4techs:["Buoyant Arrival","Bravado",],rank5techs:["The Immovable Hand of Peace","Lady Doji's Decree (Crane)",],
 			chooseoptions: 1,
 			ability:'As a downtime activity, if you have access to a market, you may acquire a number of items up to your school rank of rarity 4 or lower, or a single item of up to rarity 4 plus your school rank. You do not need to make a check or expend money to acquire these items, nor do you need to forfeit or stake honor or glory for the act of acquiring them, even if they are not befitting of your station or Forbidden (though displaying them openly later is a different matter). The GM can still apply rarity adjustments as usual based on the specifics of the market available.',
 			keyword:'',
@@ -462,7 +462,7 @@ var schools = {
 			startingtechoptions: ['Cleansing Spirit','Ki Protection','Honest Assessment','Truth Burns Through Lies'],
 			chooseoptions:2,
 			ability:"A Grain of Truth: Once per scene after you succeed on a Social skill check, you may choose a kiho with a prerequisite up to your school rank (whether you know it or not).  You gain the benefits of its Enhancement Effect (see Core p183) as if you had successfully activated it.  This effect persists until the end of the scene.",
-			rank1techs:["Lord Togashi's Insight","Beware the Smallest Mouse"],
+			rank1techs:["Lord Togashi's Insight (Dragon)","Beware the Smallest Mouse"],
 			rank2techs:["All Arts Are One","Open Hand Style"],
 			rank3techs:["The Great Silence","The Ties that Bind"],
 			rank4techs:["Breaking Blow","Foreseen Need"],
@@ -559,7 +559,7 @@ var schools = {
 				],
 			startingtechoptions: ['Rushing Avalanche Style','Spinning Blades Style'
 				],
-			rank1techs:["Lord Akodo's Roar","Stonewall Tactics",],rank2techs:["Heartpiercing Strike","Fanning the Flames",],rank3techs:["Disappearing World Style","Rallying Cry",],rank4techs:["Striking as Void","Bravado",],rank5techs:["Sear the Wound","Rouse the Soul",],
+			rank1techs:["Lord Akodo's Roar (Lion)","Stonewall Tactics",],rank2techs:["Heartpiercing Strike","Fanning the Flames",],rank3techs:["Disappearing World Style","Rallying Cry",],rank4techs:["Striking as Void","Bravado",],rank5techs:["Sear the Wound","Rouse the Soul",],
 			chooseoptions: 1,
 			ability:'After you suffer a critical strike or unmask, you may suffer the Enraged condition to remove an amount of fatigue from yourself equal to your school rank.',
 			keyword:'',
@@ -1004,7 +1004,7 @@ Unicorn:{
 				],
 			startingtechoptions: ['Crescent Moon Style','Iron Forest Style'
 				],
-			rank1techs:["Lady Shinjo's Speed","Striking as Air",],rank2techs:["Thunderclap Strike","Rushing Avalanche Style",],rank3techs:["Pillar of Calm","Touchstone of Courage",],rank4techs:["Soul Sunder","Breath of Wind Style",],rank5techs:["Rouse the Soul","Bend With The Storm",],
+			rank1techs:["Lady Shinjo's Speed (Unicorn)","Striking as Air",],rank2techs:["Thunderclap Strike","Rushing Avalanche Style",],rank3techs:["Pillar of Calm","Touchstone of Courage",],rank4techs:["Soul Sunder","Breath of Wind Style",],rank5techs:["Rouse the Soul","Bend With The Storm",],
 			chooseoptions:1,
 			ability:'When you succeed at an Attack action check, add bonus successes equal to the number of range bands you have moved this round, to a maximum of your school rank. During a duel or mass battle, if you are mounted on your steed, you always count as having moved a number of range bands equal to your school rank this turn. Utaku Steed gives skilled assistance to a mounted Battle Maiden.',
 			keyword:'',
