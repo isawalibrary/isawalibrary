@@ -107,11 +107,11 @@ var schools = {
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
-			startingtechs: ['Artisan&apos;s Appraisal'
+			startingtechs: ["Artisan's Appraisal"
 				],
 			startingtechoptions: ['Rustling of Leaves','Well of Desire'
 				],
-			rank1techs:["Tributaries of Trade","All in Jest",],rank2techs:["Ebb and Flow","Slippery Maneuvers",],rank3techs:["Pillar of Calm","Lord Hida's Grip",],rank4techs:["Buoyant Arrival","Bravado",],rank5techs:["The Immovable Hand of Peace","Lady Doji's Decree",],
+			rank1techs:["Tributaries of Trade","All in Jest",],rank2techs:["Ebb and Flow","Slippery Maneuvers",],rank3techs:["Pillar of Calm","Lord Hida's Grip",],rank4techs:["Buoyant Arrival","Bravado",],rank5techs:["The Immovable Hand of Peace","Lady Doji's Decree (Crane)",],
 			chooseoptions: 1,
 			ability:'As a downtime activity, if you have access to a market, you may acquire a number of items up to your school rank of rarity 4 or lower, or a single item of up to rarity 4 plus your school rank. You do not need to make a check or expend money to acquire these items, nor do you need to forfeit or stake honor or glory for the act of acquiring them, even if they are not befitting of your station or Forbidden (though displaying them openly later is a different matter). The GM can still apply rarity adjustments as usual based on the specifics of the market available.',
 			keyword:'',
@@ -183,7 +183,7 @@ var schools = {
 			role: ['Shugenja','Artisan'],
 			startingtechs: ['Commune with the Spirits','Cleansing Rite'
 							],
-			startingtechoptions: ['Blessed Wind','Armor of Radience','Inari&apos;s Blessing','Reflections of P&apos;an Ku','Token of Memory'
+			startingtechoptions: ['Blessed Wind','Armor of Radience',"Inari's Blessing","Reflections of P'an Ku",'Token of Memory'
 							],
 			rank1techs:["Path to Inner Peace","Artisan's Appraisal",],rank2techs:["Grasp of the Air Dragon","Tea Ceremony",],rank3techs:["Wings of the Phoenix","Vapor of Nightmare",],rank4techs:["Rise, Air","Bend with the Storm",],rank5techs:["Ever Changing Waves","Buoyant Arrival",],
 			chooseoptions: 3,
@@ -208,7 +208,7 @@ var schools = {
 				],
 			startingtechoptions: ['Striking as Earth','Striking as Water'
 				],
-			rank1techs:["Crescent Moon Style","Stonewall Tactics",],rank2techs:["Flowing Water Strike","Lady Doji's Decree",],rank3techs:["Crashing Wave Style","Ebb and Flow",],rank4techs:["Striking as Void","A Samurai's Fate",],rank5techs:["Rouse the Soul","The Immovable Hand of Peace",],
+			rank1techs:["Crescent Moon Style","Stonewall Tactics",],rank2techs:["Flowing Water Strike","Lady Doji's Decree (Crane)",],rank3techs:["Crashing Wave Style","Ebb and Flow",],rank4techs:["Striking as Void","A Samurai's Fate",],rank5techs:["Rouse the Soul","The Immovable Hand of Peace",],
 			chooseoptions: 1,
 			ability:'Once per round, when another character within range of one of your readied melee weapons would suffer physical damage, you may intercept. If you do, you may suffer fatigue up to your school rank to reduce the damage the target suffers by twice that amount.',
 			keyword:'',
@@ -297,7 +297,7 @@ var schools = {
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ["Ancestry Unearthed"],
 			startingtechoptions: ['Like a Ghost','Skulk','Striking as Air','Striking as Earth'],
-			rank1techs:["Lady Doji's Decree","Weight of Duty"],
+			rank1techs:["Lady Doji's Decree (Crane)","Weight of Duty"],
 			rank2techs:["What's Yours is Mine","Treaty Signing"],
 			rank3techs:["Hidden in Smoke","Open Hand Style"],
 			rank4techs:["Cunning Distraction","Wolf's Proposal"],
@@ -345,7 +345,7 @@ var schools = {
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
 			role: ['Shugenja'],
-			startingtechs: ['Path to Inner Peace','Jurojin&apos;s Balm','Cleansing Rite','Commune with the Spirits'
+			startingtechs: ['Path to Inner Peace',"Jurojin's Balm",'Cleansing Rite','Commune with the Spirits'
 				],
 			startingtechoptions: ['The Fires from Within','Tetsubo of Earth'
 				],
@@ -414,7 +414,7 @@ var schools = {
 			techniquetypes: ['Kiho','Shuji','Rituals'
 				],
 			role: ['Monk'],
-			startingtechs: ['Lord Togashi&apos;s Insight (Dragon)'
+			startingtechs: ["Lord Togashi's Insight (Dragon)"
 				],
 			startingtechoptions: ['Earthen Fist','Earth Needs No Eyes','Flame Fist','Ki Protection','Water Fist'
 				],
@@ -486,7 +486,7 @@ var schools = {
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi'],
-			startingtechs: ['Lord Akodo&apos;s Roar (Lion)'
+			startingtechs: ["Lord Akodo's Roar (Lion)"
 				],
 			startingtechoptions: ['Striking as Earth','Striking as Water'
 				],
@@ -509,7 +509,7 @@ var schools = {
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
-			startingtechs: ['Warrior&apos;s Resolve','Fanning the Flames','Tributaries of Trade'
+			startingtechs: ["Warrior's Resolve",'Fanning the Flames','Tributaries of Trade'
 				],
 			startingtechoptions: ['None'
 				],
@@ -672,7 +672,7 @@ var schools = {
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi','Courtier'],
-			startingtechs: ['Lord Shiba&apos;s Valor (Phoenix)'
+			startingtechs: ["Lord Shiba's Valor (Phoenix)"
 				],
 			startingtechoptions: ['Striking as Earth','Striking as Water'
 				],
@@ -695,7 +695,7 @@ var schools = {
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Monk'],
-			startingtechs: ['Hawk&apos;s Precision','Tempest of Air'
+			startingtechs: ["Hawk's Precision",'Tempest of Air'
 				],
 			startingtechoptions: ['Cleansing Rite','Commune with the Spirits','Threshold Barrier'
 				],
@@ -794,7 +794,7 @@ Scorpion:{
 				],
 			startingtechoptions: ['Whispers of Court','Sensational Distraction'
 				],
-			rank1techs:["Veiled Menace Style","Skulk",],rank2techs:["Lord Bayushi's Whispers","Noxious Cloud",],rank3techs:["Bravado","Dazzling Performance",],rank4techs:["Silencing Stroke","A Samurai's Fate",],rank5techs:["Buoyant Arrival","Sear the Wound",],
+			rank1techs:["Veiled Menace Style","Skulk",],rank2techs:["Lord Bayushi's Whispers (Scorpion)","Noxious Cloud",],rank3techs:["Bravado","Dazzling Performance",],rank4techs:["Silencing Stroke","A Samurai's Fate",],rank5techs:["Buoyant Arrival","Sear the Wound",],
 			chooseoptions:1,
 			ability:'While performing an Attack action against a target who is Compromised, Incapacitated, Unconscious, or unaware of your presence, treat the damage and deadliness of your weapon as being increased by your school rank.',
 			keyword:'',
@@ -815,9 +815,9 @@ Scorpion:{
 				],
 			startingtechs: ['Commune with the Spirits','All in Jest'
 				],
-			startingtechoptions: ['Bo of Water','Cloak of Night','Nature&apos;s Touch','Token of Memory'
+			startingtechoptions: ['Bo of Water','Cloak of Night',"Nature's Touch",'Token of Memory'
 				],
-			rank1techs:["Mask of Wind","Skulk",],rank2techs:["Vapor of Nightmares","Lord Bayushi's Whispers",],rank3techs:["False Realm of the Fox Spirits","Noxious Cloud",],rank4techs:["Deadly Sting ","Rise, Air",],rank5techs:["Buoyant Arrival","Silencing Stroke",],
+			rank1techs:["Mask of Wind","Skulk",],rank2techs:["Vapor of Nightmares","Lord Bayushi's Whispers (Scorpion)",],rank3techs:["False Realm of the Fox Spirits","Noxious Cloud",],rank4techs:["Deadly Sting ","Rise, Air",],rank5techs:["Buoyant Arrival","Silencing Stroke",],
 			chooseoptions:3,
 			ability:'While you are performing an invocation technique or channeling, characters with a vigilance lower than or equal to your school rank plus one cannot detect any physical sign that you are in the act of invoking the spirits. They can still observe effects of the invocation, however. Increase the TN of Theology checks to detect or study your supernatural activities by your school rank.',
 			keyword:'',
@@ -912,7 +912,7 @@ Unicorn:{
 				],
 			startingtechoptions: ['Cadence','Shallow Waters'
 				],
-			rank1techs:["Feigned Opening","Hawk's Precision",],rank2techs:["Ebb and Flow","Lady Shinjo's Speed",],rank3techs:["Pillar of Calm","All Arts Are One",],rank4techs:["Sear the Wound","Regal Bearing",],rank5techs:["Bend with the Storm","The Immovable Hand of Peace",],
+			rank1techs:["Feigned Opening","Hawk's Precision",],rank2techs:["Ebb and Flow","Lady Shinjo's Speed (Unicorn)",],rank3techs:["Pillar of Calm","All Arts Are One",],rank4techs:["Sear the Wound","Regal Bearing",],rank5techs:["Bend with the Storm","The Immovable Hand of Peace",],
 			chooseoptions:1,
 			ability:'Ignore the Forbidden quality when acquiring and handling items. When acquiring, selling, or gifting an item, you may treat its rarity as reduced or increased by your school rank.',
 			keyword:'',
@@ -933,7 +933,7 @@ Unicorn:{
 				],
 			startingtechs: ['Commune with the Spirits'
 				],
-			startingtechoptions: ['Grasp of Earth','Jurojin&apos;s Balm','The Rushing Wave','Ancestry Unearthed','Well of Desire'
+			startingtechoptions: ['Grasp of Earth',"Jurojin's Balm",'The Rushing Wave','Ancestry Unearthed','Well of Desire'
 				],
 			rank1techs:["Sympathetic Energies","Cleansing Rite",],rank2techs:["Hands of the Tides","Artisan's Appraisal",],rank3techs:["Dazzling Performance","Rise, Earth",],rank4techs:["Rouse the Soul","A Samurai's Fate",],rank5techs:["The Soul's Blade","Ever-Changing Waves",],
 			chooseoptions:3,
@@ -977,7 +977,7 @@ Unicorn:{
 			role: ['Bushi','Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
-			startingtechs: ['Lady Shinjo&apos;s Speed (Unicorn)'
+			startingtechs: ["Lady Shinjo's Speed (Unicorn)"
 				],
 			startingtechoptions: ['Striking as Fire','Striking as Water'
 				],
@@ -1000,7 +1000,7 @@ Unicorn:{
 			role: ['Bushi'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
-			startingtechs: ['Warrior&apos;s Resolve'
+			startingtechs: ["Warrior's Resolve"
 				],
 			startingtechoptions: ['Crescent Moon Style','Iron Forest Style'
 				],
