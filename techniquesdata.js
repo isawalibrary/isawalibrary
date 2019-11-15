@@ -1113,7 +1113,7 @@ rank: "4",
 reference: "Core 227",
 ring: "Air",
 effect: "Activation: As an Attack action, you may make a TN 4 Martial Arts (Air) check using a readied weapon targeting one character within the weapon's range.   <br><br>Effects: If you succeed, the target suffers physical damage equal to your weapon's base damage and suffers the Silenced condition.   If you succeed, other characters beyond range 0-2 of the target do not notice that they have been struck for 1 round, plus additional rounds equal to your bonus <span class='l5r'>S</span>. <br><br>New Opportunities: <br><span class='l5r'>O</span>+: If you succeed, the target suffers a critical strike with severity equal to the deadliness of your weapon plus 1 per <span class='l5r'>O</span> spent this way beyond the first."},{
-title: "Osano-wo's Boast (Mantis)",
+title: "Osano-Wo's Boast (Mantis)",
 type: "Shuji",
 rank: "3",
 reference: "Mantis DLC",
