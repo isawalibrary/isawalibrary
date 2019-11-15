@@ -4,6 +4,12 @@
 + Apply titles to NPC in NPC Builder and Edit, show Title Ability.
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
 
+-version 0.10 15.11.19
+
++improved Technique Search and School Search
++prevents Technique Search and School Search reloading page on hitting enter
++up to date including Courts of Stone
+
 -version 0.09 09.05.19
 
 + Added special rules for the Shadowlands book weapons and armors.

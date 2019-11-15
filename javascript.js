@@ -720,7 +720,7 @@ function divider() {
 
 function makeTechniques(){
 	newdiv("techniquecontainerx","techniquecontainer","");
-	x = '<form id="techniquesearch" class="inlineblock defs"><span class="inlineblock" style="width:100px">Search Techniques: </span><input id="techniquesearchinput" oninput="techniquefilter()" type="text" class="styledselect width"><br></form>'
+	x = '<form id="techniquesearch" onsubmit="return false" class="inlineblock defs"><span class="inlineblock" style="width:100px">Search Techniques: </span><input id="techniquesearchinput" oninput="techniquefilter()" type="text" class="styledselect width"><br></form>'
 	divcontents	("techniquecontainerx",x);
 
 	newdiv("techniquecontainery","techniquecontainerx","inlineblock");
@@ -819,6 +819,17 @@ function techniquefilter() {
 			return false;
 			});
 		};
+
+
+			//sorts schools so if the search term is part of the name, those schools are first in thelist
+			techlist = techlist.sort(function(tech) {
+				if (tech.title.toLowerCase().includes(searchString)==true){
+					return -1;
+				} else if (tech.title.toLowerCase().includes(searchString)!==true){
+					return 1;
+				}
+			})
+
 		let html = techniqueTemplateFunction({
 			techlist: techlist
 	})
@@ -1043,6 +1054,15 @@ function schoolfilter(){
 					else {
 				return false;
 			}}});
+
+			//sorts schools so if the search term is part of the name, those schools are first in thelist
+			schoolsArr = schoolsArr.sort(function(school) {
+				if (school.name.toLowerCase().includes(searchString)==true){
+					return -1;
+				} else if (school.name.toLowerCase().includes(searchString)!==true){
+					return 1;
+				}
+			})
 
 			//If any of the children match, we still want to show the parent.
 			if (schoolsArr.length > 0) {

@@ -52,7 +52,7 @@
 	</div>
 
 	<div id="schoolcontainer" class="containerx">
- 		<form id="schoolsearch" class="block defs"><span class="inlineblock" style="width:97px">Search Schools:</span>
+ 		<form onsubmit="return false" id="schoolsearch" class="block defs"><span class="inlineblock" style="width:97px">Search Schools:</span>
  	 	<input id="schoolsearchinput" class="width styledselect" oninput="schoolfilter();titlefilter();" type="text"><br></form>
 		<div id="schooloutput" class="block"></div>
 		<div id="titleoutput" class="block"></div>
@@ -81,7 +81,7 @@
  		<div id="nameoutput" class="tea block brushfont"></div>
  		<div class="tea bold">Fortune Cookie Generator</div>
  	 	<button class="tea button center block" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
- 	 	<form id="shinseisearch" class="center block">Search:
+ 	 	<form id="shinseisearch" onsubmit="return false" class="center block">Search:
  	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
 		<div id="shinseioutput" class="tea block"></div>
 		<div id="changelog" class="tea block"><span onclick="hideshow('log');">changelog</span>
