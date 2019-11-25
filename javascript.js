@@ -3000,6 +3000,8 @@ function makeNpcEdit(nom){
 
 		newdiv("edittechsability"+i,"techwrap"+i,"block small")
 
+		newdiv("edittechfilter"+i,"edittechs"+i,"inlineblock");
+
 		techniquestext = [];
 		techniquesvalues = [];
 		for (each in techniquelist){
@@ -3179,7 +3181,12 @@ function editAddTech(i){
 		x ='<select id="edittechselect'+i+'" class="styledselect inline" onchange='+y+'></select>'
 		divcontents("edittechs"+i,x)
 
-		newdiv("edittechsability"+i,"techwrap"+i,"block small")
+		newdiv("edittechfilter"+i,"techwrap"+i,"inline")
+		z = '<div class="inlineblock margin10">Type: <select id="edittechsearchtype" onchange="edittechfilter('+i+')" class="styledselect"><option value="any">Any</option><option value="invocation">Invocation</option><option value="kata">Kata</option><option value="kiho">Kiho</option><option value="maho">Maho</option><option value="ninjutsu">Ninjutsu</option><option value="ritual">Ritual</option><option value="shuji">Shuji</option></select></div><div class="inline defs">Ring: <select id="edittechsearchring" onchange="edittechfilter('+i+')" class="styledselect"><option value="default">select</option><option value="air">Air</option><option value="earth">Earth</option><option value="fire">Fire</option><option value="water">Water</option><option value="void">Void</option><option value="any">None</option></select></div><div class="inline defs">Rank: <select id="edittechsearchrank1" onchange="edittechfilter('+i+')" class="styledselect"><option value="1">=</option><option value="2">=<</option></select><select class="margin10 styledselect" id="edittechsearchrank" onchange="edittechfilter('+i+')" class="styledselect"><option value="any">Any</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>';
+		divcontents("edittechfilter"+i,z);
+
+
+		newdiv("edittechsability"+i,"techwrap"+i,"inlineblock small")
 
 		techniquestext = [];
 		techniquesvalues = [];
@@ -3190,7 +3197,77 @@ function editAddTech(i){
 
 		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
 
+
+
 }
+
+function edittechfilter(i){
+	
+		techniquestext = [];
+		techniquesvalues = [];
+
+		techtype = document.getElementById("edittechsearchtype").value;
+		techring = document.getElementById("edittechsearchring").value;
+		techrank1 = document.getElementById("edittechsearchrank1").value;
+		techrank = document.getElementById("edittechsearchrank").value;
+
+		techlist = techniquelist
+
+		for(var j = 0; j < techlist.length; j++){
+			if (techtype !== false && techtype !== "any")					{
+			techlist = techlist.filter(function(tech)				{
+				if (tech.type.toLowerCase() == techtype){
+					return true;
+				};
+
+				return false;
+			});
+		}
+		if (techring !== false && techring !== "default")					{
+			techlist = techlist.filter(function(tech)				{
+				if (tech.ring.toLowerCase() == techring){
+					return true;
+				}
+				if (tech.ring.toLowerCase().includes(techring)){
+					return true;
+				};
+				return false;
+			});
+		}
+
+
+		techrank = Number(techrank);
+
+	if (isNaN(techrank)){techlist=techlist}
+		else {
+
+		if (techrank1 == "1")					{
+			techlist = techlist.filter(function(tech)				{
+				tech.rank = Number(tech.rank);
+				if (tech.rank == techrank){
+					return true;
+				}
+				return false;
+			});
+			} else if (techrank1 == "2")									{
+				techlist = techlist.filter(function(tech){
+					tech.rank = Number(tech.rank);
+					if (tech.rank <= techrank){
+						return true;
+					}
+					return false;
+				});
+			}
+		} 
+
+			techniquestext.push(techlist[j].title+" ("+techlist[j].ring+") ["+techlist[j].type+" Rank "+techlist[j].rank+"]")
+			techniquesvalues.push(techlist[j].title)
+		}
+
+		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
+}
+
+
 function setEditTech(id){
 
 	abilitydiv = document.getElementById("edittechsability"+id);
@@ -3206,6 +3283,8 @@ function setEditTech(id){
 			abilitydiv.innerHTML = effect
 		}
 	}
+
+	divcontents("edittechfilter"+id,"");
 
 
 }
