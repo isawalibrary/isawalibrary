@@ -471,8 +471,8 @@ var color={
 
 		  "buttoncentre": "#FFFFFF",
 		  buttontext:"black",
-		  "buttonborderlight": "#0d0249",
-		  "buttonborderdark": "#0d0249",
+		  "buttonborderlight": "#dbdbdb",
+		  "buttonborderdark": "#dbdbdb",
 
 		  "fontcolor": "#000000",
 		  tooltipfont:"#000000",
