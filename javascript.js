@@ -25,6 +25,8 @@ function loadSkirmish(){
 		document.getElementById(elem+"-stance").selectedIndex =0;
 		document.getElementById(elem+"-fatigue").value=skirmishcharacters[elem].fatigue;
 		document.getElementById(elem+"-strife").value=skirmishcharacters[elem].strife;
+		document.getElementById(elem+"-physres").value=skirmishcharacters[elem].physres;
+		document.getElementById(elem+"-supres").value=skirmishcharacters[elem].supres;
 		document.getElementById(elem+"-engaged").value=skirmishcharacters[elem].engaged;
 		document.getElementById(elem+"-notes").value=skirmishcharacters[elem].notes;
 		updatestance(elem);
@@ -127,6 +129,14 @@ function selectSchool(){
 		x = '<form id="composure" class="styledselect">Composure:<input id="xcomposure" class="numberform" type="number"></form>';
 		divcontents("divcomposure",x);
 
+	newdiv("divphysres","makenewchar","inline margin10")
+		x = '<form id="physicalres" class="styledselect">Phys Res:<input id="xphysres" class="numberform" type="number"></form>';
+		divcontents("divphysres",x);
+
+	newdiv("divsupres","makenewchar","inline margin10")
+		x = '<form id="supernaturalres" class="styledselect">Sup Res:<input id="xsupres" class="numberform" type="number"></form>';
+		divcontents("divsupres",x);
+
 	newdiv("addtoskirmish","makenewchar","inline margin10");
 		x = '<button id="addtoskirmish" class="button inline" onclick="addToSkirmish()">Add Character</button>';
 		divcontents("addtoskirmish",x);
@@ -143,8 +153,10 @@ function addToSkirmish(){
  	skirmishcharacters[newName].name=newName;
  	skirmishcharacters[newName].clan=selectedClan;
  	skirmishcharacters[newName].school=selectedSchool;
- 	skirmishcharacters[newName].endurance=document.getElementById("xendurance").value;
- 	skirmishcharacters[newName].composure=document.getElementById("xcomposure").value;
+ 	skirmishcharacters[newName].endurance=parseInt(document.getElementById("xendurance").value);
+ 	skirmishcharacters[newName].composure=parseInt(document.getElementById("xcomposure").value);
+  	skirmishcharacters[newName].physres=parseInt(document.getElementById("xphysres").value);
+ 	skirmishcharacters[newName].supres=parseInt(document.getElementById("xsupres").value);
  	skirmishcharacters[newName].ability=document.getElementById("skirmishability").innerHTML;
 
  	if(document.getElementById("skirmishplayer").checked){
@@ -172,7 +184,7 @@ function hideAddElements(){
 function buildSkirmishCharacter (nom){
 	newdiv (nom,"skirmish","block margin10") //creates container for all char stats
 
- 	newdiv (nom+"-name",nom,"margin10 styledselect namelength");  //creates name container
+ 	newdiv (nom+"-name",nom," styledselect namelength");  //creates name container
  		
  		if (skirmishcharacters[nom].player==1){		//sets PC or NPC
 				divcontents (nom+"-name","<b>"+nom+"</b>");
@@ -189,7 +201,7 @@ function buildSkirmishCharacter (nom){
 
  	newdiv (nom+"-xinitiative",nom,"inline margin10");  //creates initiative container
  	newn="'"+nom+"'";
- 	x = '<form class="inline styledselect" oninput="update('+newn+',\'initiative\')" "id="'+nom+'-xinitiative">Initiative:<input id="'+nom+'-initiative" class="numberform" type="number"></form>';
+ 	x = '<form class="inline styledselect" oninput="update('+newn+',\'initiative\')" "id="'+nom+'-xinitiative">Init:<input id="'+nom+'-initiative" class="numberform" type="number"></form>';
  	divcontents (nom+"-xinitiative",x);
 
  	newdiv (nom+"-xstance",nom,"inline margin10");  //creates stance container
@@ -220,12 +232,23 @@ function buildSkirmishCharacter (nom){
  	x = '<form class="inline styledselect" oninput="update('+newn+',\'fatigue\')" id="'+nom+'-endurance">Fatigue:<input id="'+nom+'-fatigue" class="numberform" type="number"></form>'
  	divcontents (nom+"-endurance",x+" / "+skirmishcharacters[nom].endurance);
 
- 	newdiv (nom+"-composure",nom," fatiguelength margin10");  //creates composure and strife container
+ 	newdiv (nom+"-composure",nom," strifelength margin10");  //creates composure and strife container
  	x = '<form class="inline styledselect" oninput="update('+newn+',\'strife\')" id="'+nom+'-composure">Strife:<input id="'+nom+'-strife" class="numberform" type="number"></form>'
  	divcontents (nom+"-composure",x+" / "+skirmishcharacters[nom].composure);
 
-   	newdiv (nom+"-xengaged",nom," margin10 inline");  //creates engaged with container
- 	x = '<form class="inline styledselect" oninput="update('+newn+',\'engaged\')" id="'+nom+'-xengaged">Engaged with:<input id="'+nom+'-engaged" type="text" class="styledselect" style="width:70px" ></form>'
+  	newdiv (nom+"-physres",nom," reslength margin10");  //creates phys res container
+ 	x = 'Res: <form class="inline styledselect" oninput="update('+newn+',\'physres\')" id="'+nom+'-physres">Phys:<input id="'+nom+'-nphysres" class="numberform" type="number"></form>'
+ 	divcontents (nom+"-physres",x);
+
+ 	newdiv (nom+"-supres",nom," reslength margin10");  //creates supres container
+ 	x = '<form class="inline styledselect" oninput="update('+newn+',\'supres\')" id="'+nom+'-composure">Sup:<input id="'+nom+'-nsupres" class="numberform" type="number"></form>'
+ 	divcontents (nom+"-supres",x);
+
+ 	document.getElementById(nom+"-nphysres").value=skirmishcharacters[nom].physres;
+	document.getElementById(nom+"-nsupres").value=skirmishcharacters[nom].supres;
+
+   	newdiv (nom+"-xengaged",nom,"margin10 inline");  //creates engaged with container
+ 	x = '<form class="inline styledselect" oninput="update('+newn+',\'engaged\')" id="'+nom+'-xengaged">Engaged:<input id="'+nom+'-engaged" type="text" class="styledselect" style="width:70px" ></form>'
  	divcontents (nom+"-xengaged",x)
 
   	newdiv (nom+"-xnotes",nom," margin10 inline");  //creates conditions and notes container
@@ -263,8 +286,8 @@ function updatestatus(name){
 			skirmishcharacters[name].status = "alive";
 		break;
 
-		case "unconscious":
-			skirmishcharacters[name].status = "unconscious";
+		case "out":
+			skirmishcharacters[name].status = "out";
 		break;
 
 		case "dead":
@@ -357,7 +380,7 @@ function reorderSkirmish(){
 				init+=0.5;
 			} else {orderarray[elem]=orderarray[elem]}
 
-			if (skirmishcharacters[elem].status=="unconscious" || skirmishcharacters[elem].status=="dead"){
+			if (skirmishcharacters[elem].status=="out" || skirmishcharacters[elem].status=="dead"){
 				init=-1
 			}
 			
@@ -392,6 +415,8 @@ function reorderSkirmish(){
 		document.getElementById(elem+"-stance").value=skirmishcharacters[elem].stance;
 		document.getElementById(elem+"-fatigue").value=skirmishcharacters[elem].fatigue;
 		document.getElementById(elem+"-strife").value=skirmishcharacters[elem].strife;
+		document.getElementById(elem+"-physres").value=skirmishcharacters[elem].physres;
+		document.getElementById(elem+"-supres").value=skirmishcharacters[elem].supres;
 		document.getElementById(elem+"-engaged").value=skirmishcharacters[elem].engaged;
 		document.getElementById(elem+"-notes").value=skirmishcharacters[elem].notes;
 		document.getElementById(elem+"-status").value=skirmishcharacters[elem].status;
@@ -2049,7 +2074,9 @@ function selectNPCArmor(){
 				'<span class="margin10">Qualities: </span>'+selectedArmor.qualities;
 
 			divcontents("npcarmorstats",x);
-		}	
+
+		}
+
 	} 
 
 	for (i=0; npcarmor.length > i; i++){
@@ -2324,6 +2351,22 @@ function saveNPC (){
 	armor = document.getElementById('npcarmor').options[document.getElementById('npcarmor').selectedIndex].text;
 	npcarmorstats = document.getElementById("npcarmorstats").innerHTML;
 
+	for(i=0; i < tabledata[6].children.length; i++){
+		if (tabledata[6].children[i].armor == selectedArmor){
+			selectedArmor = tabledata[6].children[i]
+		}	
+			thisnpc.armorphys = selectedArmor.phys
+			thisnpc.armorsup = selectedArmor.sup
+	} 
+
+	for (i=0; npcarmor.length > i; i++){
+		if ( npcarmor[i].title == armor){
+			selectedArmor = npcarmor[i];
+		}
+			thisnpc.armorphys = selectedArmor.phys
+			thisnpc.armorsup = selectedArmor.sup
+	}
+
 	npcadv = document.getElementById('npcadv').options[document.getElementById('npcadv').selectedIndex].text;
 	npcdisadv = document.getElementById('npcdisadv').options[document.getElementById('npcdisadv').selectedIndex].text;
 	npcabilities = document.getElementById("npcabilities").innerHTML;
@@ -2373,6 +2416,8 @@ function saveNPC (){
 	npc[name].weaponstats = npcweaponstats;
 	npc[name].armor = armor;
 	npc[name].armorstats = npcarmorstats;
+	npc[name].armorphys = thisnpc.armorphys;
+	npc[name].armorsup = thisnpc.armorsup;
 	npc[name].advantage = npcadv;
 	npc[name].disadvantage = npcdisadv;
 	npc[name].ability = npcabilities;
@@ -2673,6 +2718,8 @@ function npcskirmish(nom){
 	skirmishcharacters[nom].engaged = "";
 	skirmishcharacters[nom].fatigue = 0;
 	skirmishcharacters[nom].strife = 0;
+	skirmishcharacters[nom].physres = npc[nom].armorphys;
+	skirmishcharacters[nom].supres = npc[nom].armorsup;
 	skirmishcharacters[nom].notes = "";
 	skirmishcharacters[nom].status = "alive";
 

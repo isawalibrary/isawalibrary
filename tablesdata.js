@@ -179,7 +179,8 @@ children:[
 {title:"Shirogane Jade Inlay",cost:3,rarity:2,effect:"Weapons and armor designed for Shirogane Jade Inlay gain the Sacred quality.  Armor so altered loses 1 point of Physical Resistance, and weapons lose 1 point of deadliness.  Should the item become Damaged, the jade is chipped away as well and must be reapplied.  When this happens, the item loses the Sacred quality until a smith applies more jade resin by making a TN 3 Smithing (Earth) check as a downtime activity.  The process consumes one finger of jade per attempt.",source:"Shadowlands p109",},
 {title:"Uchema's Technique",cost:4,rarity:3,effect:"A suit of armor made using Uchema's technique loses the Cumbersome quality and loses 1 point of Physical Resistance",source:"Shadowlands p109",},
 {title:"Yasunori Steel",cost:5,rarity:4,effect:"A weapon made from Yasunori steel loses the Ceremonial, Cumbersome and Resplendant qualities (and can never gain any of these).  It gains the Durable quality; if the weapon already has the Durable quality it gains +1 deadliness instead.",source:"Shadowlands p109",},
-	
+{title:"Pit-Forged Obsidian",cost:4,rarity:4,effect:"An item produced with Pit-forged obsidian gains +1 damage, +1 deadliness, and the Unholy quality.  Additionally, while in possession of such an item, a character increases the TN of their Fitness or Meditation checks to resist the Taint.",source:"Shadowlands p29",},
+
 ]},
 {
 title:"General",

@@ -30,7 +30,7 @@ var skills = [
 	["Commerce","Animal Handling","Labor","Seafaring","Skulduggery","Survival"]
 	];
 
-var statuslist = ["alive", "unconscious", "dead"];
+var statuslist = ["alive", "out", "dead"];
 
 var stances = {
 	Stance:{name:"Stance",

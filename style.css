@@ -118,7 +118,7 @@ body {
 }
 
 .numberform {
-  width: 40px;
+  width: 35px;
 }
 
 .margin10{
@@ -268,7 +268,7 @@ thead {
 }
 
 .namelength {
-  min-width: 60px;
+  min-width: 50px;
   display: inline-block;
 }
 
@@ -278,17 +278,27 @@ thead {
 }
 
 .clanlength {
-  min-width: 170px;
+  min-width: 150px;
   display: inline-block;
 }
 
 .fatiguelength {
-  min-width: 110px;
+  min-width: 100px;
+  display: inline-block;
+}
+
+.strifelength {
+  min-width: 95px;
+  display: inline-block;
+}
+
+.reslength {
+  min-width: 70px;
   display: inline-block;
 }
 
 .noteslength {
-	min-width: 190px;
+	min-width: 185px;
 	display: inline-block;
 }
 
