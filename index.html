@@ -29,6 +29,7 @@
 	<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="mainbutton button">school search</button>
 	<button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="mainbutton button">campaign</button>
 	<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="mainbutton button">random</button>
+	<button id="secretbutton" onclick="highlight('secretbutton','secretdiv')" class="mainbutton button hide">secret</button>
 		</div>
  	
 
@@ -60,6 +61,8 @@
 
 	<div id="techniquecontainer" class="containerx"></div>	
 
+
+
 	<div id="teahousediv" class="containerx">
 		<div class="themeswitcher tea">Select theme:
 			<span class="margin10" onclick="colourSwitcher('spring')">air</span> 
@@ -90,21 +93,32 @@
 
 	<div id="campaigninfodiv" class="containerx">
 
-		<div id="campaignhouserules" class="inline margin20 container"><span onclick="hideshow('houserules')" class="tea">House Rules</span>
+		<div id="campaignhouserules" class="inline margin20"><span onclick="hideshow('houserules');" class="tea">House Rules</span>
 		</div>
 
 		<div class="inline margin20">
-		Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/	charactersheet_forprint.pdf" download> 	<span class="tea">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/	charactersheet_fillable.pdf" download>
+		Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="tea">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download>
 		  	<span class="tea">fillable</span>	</a>	
 		</div>
 
 
 
 		<div id="houserules" class="hide margin20">
-			<iframe src="houserules.html" class="iframe"></iframe>
+			<iframe id="rulesframe" src="houserules.html" class="iframe container"></iframe>
 			</div>
 
 	</div>
+
+
+		<div id="secretdiv" class="containerx">
+			<div id="plannav" class="inline margin20"><span onclick="hideshow('plan');" class="tea">Campaign</span>
+		</div>
+
+		<div id="plan" class="hide margin20" style="background-color: var(--opacity-bg-overlay);">
+			<iframe id="planframe" src="plan.html" class="iframe container"></iframe>
+			</div>
+
+		</div>
 
 </body>
 

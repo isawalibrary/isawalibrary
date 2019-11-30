@@ -2795,6 +2795,46 @@ if (theme !== undefined){
   document.documentElement.style.setProperty('--tooltipfont', theme.tooltipfont)
   document.documentElement.style.setProperty('--greentea', theme.greentea)
 	}	
+
+	document.getElementById('rulesframe').src = document.getElementById('rulesframe').src
+
+
+}
+function loadFrameTheme(){
+	save = JSON.parse(localStorage.getItem("savetheme"));
+	theme=save;
+
+	frameSwitcher(theme)
+}
+
+function frameSwitcher(theme){
+	savetheme=theme;
+	localStorage.setItem("savetheme",JSON.stringify(savetheme));
+
+	theme = color[theme]
+
+	if (theme !== undefined){
+
+  document.documentElement.style.setProperty('--bg', theme.bg);
+  document.documentElement.style.setProperty('--bgposition', theme.bgposition);
+  document.documentElement.style.setProperty('--opacity-bg-overlay', theme.opacitybgoverlay);
+  document.documentElement.style.setProperty('--highlight-mainbutton-text-color', theme.highlightmainbuttontextcolor)  ;
+  document.documentElement.style.setProperty('--tooltip-bg-color', theme.tooltipbgcolor);
+  document.documentElement.style.setProperty('--tooltip-border',theme.tooltipborder);
+  document.documentElement.style.setProperty('--table-header-bg', theme.tableheaderbg);
+  document.documentElement.style.setProperty('--table-header-font', theme.tableheaderfont)
+  document.documentElement.style.setProperty('--button-centre', theme.buttoncentre)
+  document.documentElement.style.setProperty('--button-border-light', theme.buttonborderlight)
+  document.documentElement.style.setProperty('--button-border-dark', theme.buttonborderdark)
+  document.documentElement.style.setProperty('--font-color', theme.fontcolor)
+  document.documentElement.style.setProperty('--buttontext', theme.buttontext)
+  document.documentElement.style.setProperty('--tooltipfont', theme.tooltipfont)
+  document.documentElement.style.setProperty('--greentea', theme.greentea)
+
+  document.documentElement.style.setProperty('--bg-image', "none");
+	}	
+	document.getElementById('rulesframe').src = document.getElementById('rulesframe').src
+
 }
 
 var savetheme = {};
@@ -2804,6 +2844,7 @@ function loadTheme(){
 	theme=save;
 
 	colourSwitcher(theme)
+
 }
 
 function makeNpcEdit(nom){
@@ -3520,10 +3561,8 @@ function rollSkills(){
 	}
 }
 
-function unlockscreen(){
-	show("definitionbutton")
-	show("techsbutton")
-	show("schoolbutton")
+function unlock(){
+	show("secretbutton")
 }
 
 function nameMaker(){
