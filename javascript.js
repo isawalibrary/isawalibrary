@@ -3,7 +3,7 @@ var save ={};
 function saveSkirmish(){
 	saveskirmish.skirmishcharacters=skirmishcharacters;
 	saveskirmish.skirmish=document.getElementById("skirmish").innerHTML;
-	localStorage.setItem("save",JSON.stringify(save));
+	localStorage.setItem("saveskirmish",JSON.stringify(saveskirmish));
 	}
 
 function loadSkirmish(){
