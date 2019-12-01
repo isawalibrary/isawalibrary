@@ -1,0 +1,51 @@
+<html>
+ <head>
+ 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
+	<LINK href="style.css" rel="stylesheet" type="text/css">
+	<script src="data.js"></script>
+	<script src="familiesdata.js"></script>
+	<script src="definitionsdata.js"></script>
+	<script src="schoolsdata.js"></script>
+	<script src="techniquesdata.js"></script>
+	<script src="tablesdata.js"></script>
+	<script src="npcsdata.js"></script>
+	<script src="javascript.js"></script>
+	<script src="campaigndata.js"></script>
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
+ <title></title>
+ </head>
+
+ <body onload="loadFrameTheme()">
+<div style="background-color: var(--opacity-bg-overlay);" class="padding20">
+<br>Shadowlands Taint
+<br><br>This becomes a 0-100 scale, like Glory, Honor, and Status. You gain a Shadowlands Taint disadvantage at 10 and another every 20 points beyond it (30, 50, 70, and 90). I'm not sure yet at what point a character becomes too tainted to be playable; I'm likely to leave that to GM discretion.
+
+<br><br>Shadowlands Taint Resist checks
+<br>Every two weeks, a character with 1 or more Shadowlands Taint points must make a TN 4 Fitness or Meditation check. They can use any ring for the check, as long as they don't have a Shadowlands Taint disadvantage associated with the ring. If they pass, they stave off the corrupting influence of the Shadowlands for a little longer. If they fail, they gain a number of Shadowlands Taint points equal to four times their shortfall. If this increase in points causes them to gain a new Shadowlands Taint disadvantage, it must be in the ring they used for the check.
+
+<br><br>Afflicted
+<br>Scratch the last paragraph of the Afflicted entry (about making a check or getting the Shadowlands Taint disadvantage). Add the following to the Effects section:
+
+<br>An Afflicted character must make Shadowlands Taint Resist checks as though they had Shadowlands Taint points, even if they have none.
+
+<br><br>Time Spent in the Shadowlands
+<br>At the end of each day spent in the Shadowlands, a player must roll a Fitness or Meditation check to resist acquiring Shadowlands Taint. They can use any ring for the check, as long as they don't have a Shadowlands Taint disadvantage associated with the ring. On the first day, the TN is 1. Increase the TN by 1 if they have an open wound (by GM discretion, but a good starting point is a wound from the last 24 hours that caused the Bleeding, Unconscious, or Severely Wounded conditions). Increase the TN by 1 if they have the Afflicted condition. If they pass, increase the TN by 1 for the next check to resist the Shadowlands Taint in this way. For every two bonus successes, they can go one day without needing to make a check. If they fail, they gain a number of Taint points equal to four times their shortfall (but the TN for the next check is not increased).
+
+<br><br>Example: Hiruma Do is scouting in the Shadowlands. At the end of the first day, he rolls to resist the Shadowlands Taint. Because it’s only been one day, the TN is 1. He gets three successes. Having two bonus successes means he doesn’t need to roll at the end of the second day. On the third day, he’ll roll against a TN of 2. If on the third day he had an open wound or was Afflicted, the TN would be 3. If he had an open wound and was Afflicted, the TN would be 4.
+
+<br><br>Maho
+<br>Every time a character performs a Maho technique, they gain Shadowlands Taint points equal to four times the rank of the technique plus the number of strife kept. These Taint points are acquired, even if the Maho fails. Every Maho technique also gains the following new opportunity:
+
+<br><br><span class="l5r">O</span>+: Reduce the number of Taint points gained from using this technique by the number of opportunity kept this way. This cannot reduce the Taint points acquired below 1.
+
+<br><br>Finger of Jade
+<br>A finger of jade absorbs 10 points of Taint that its bearer would otherwise acquire. It will only absorb half (rounded down) of the Shadowlands Taint points if they were acquired willfully, such as through the use of Maho.
+
+<br><br>Tea of Jade Petals
+<br>If tea of jade petals is consumed, a player suppresses the effects of one Shadowlands Taint disadvantage for 24 hours. If tea of jade petals is used in a Tea Ceremony, add the following effect and new opportunity:
+Effect: Each target suppresses one Shadowlands Taint disadvantage of their choice, plus an additional Shadowlands Taint disadvantage for each bonus success.
+<span class="l5r">O</span> <span class="l5r">O</span>: Each target adds one kept [success] die to the next roll they make to resist acquiring Shadowlands Taint made within the next 24 hours.
+</div>
+</body>

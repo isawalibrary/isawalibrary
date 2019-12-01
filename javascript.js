@@ -637,7 +637,10 @@ function makeTable(){
 	sortTable("Armors",1);
 	sortTable("Armors",2);
 
+
+
 	};
+
 
 	function insertRingSymbols(){
 
@@ -1288,6 +1291,7 @@ function buildNpcStats(){
 	divcontents("npctechs","Techniques:<br>");
 
 	newdiv("npcschooltechnique","npctechs","block")
+	newdiv("npcschooltechniquedetails","npctechs","block")
 
 	newdiv("npctechniquecontainer","npctechs","block")
 }
@@ -1882,7 +1886,7 @@ function selectNPCSchool(){
 		}
 	}
 
-		x = '<select id="schooltechdrop" class="styledselect inline margintopbottom" >';
+		x = '<select id="schooltechdrop" class="styledselect inline margintopbottom" onchange="showSelectedTechnique(schooltechdrop,npcschooltechniquedetails)">';
  		document.getElementById("npcschooltechnique").innerHTML = x;
 
 			var el = document.createElement("option");
@@ -1950,6 +1954,47 @@ function selectNPCSchool(){
 	document.getElementById("npccalcsocial").classList.remove("hide");
 
 	selectedClan = families[selectedClan]
+}
+
+function setEditTech(id){
+
+	abilitydiv = document.getElementById("edittechsability"+id);
+	techselect = document.getElementById("edittechselect"+id)
+
+	for (j=0; j< techniquelist.length; j++){
+		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
+			effect = techniquelist[j].effect
+			effect = effect.replace("<br><br>","<br>");
+				effect = effect.replace("<br><br>","<br>");
+					effect = effect.replace("<br><br>","<br>");
+						effect = effect.replace("<br><br>","<br>");
+			abilitydiv.innerHTML = effect
+		}
+	}
+
+	divcontents("edittechfilter"+id,"");
+
+
+}
+
+function showSelectedTechnique(dropId,displayDiv){
+
+	abilitydiv = displayDiv;
+	techselect = dropId;
+
+	if  (techselect.selectedIndex !== -1){
+
+		for (j=0; j< techniquelist.length; j++){
+		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
+			effect = techniquelist[j].effect
+			effect = effect.replace("<br><br>","<br>");
+				effect = effect.replace("<br><br>","<br>");
+					effect = effect.replace("<br><br>","<br>");
+						effect = effect.replace("<br><br>","<br>");
+			abilitydiv.innerHTML = effect
+		}
+	}}
+
 }
 
 
@@ -2303,8 +2348,18 @@ function setTechs(){
 
 		npctechselecti = "npctechselect"+i
 
-		x = '<select id="npctechselect'+i+'" class="styledselect block margintopbottom" >';
+		x = '<select id="npctechselect'+i+'" class="styledselect block margintopbottom"></select>'
  		document.getElementById("npctechselector").innerHTML += x;
+
+ 		newdiv("npctechselectdetails"+i,"npctechselector")
+
+
+		npctechselectdetailsi = document.getElementById("npctechselectdetails"+i)
+
+		npctechselecti = document.getElementById(npctechselecti);
+
+
+ 		npctechselecti.setAttribute("onchange","showSelectedTechnique(npctechselect"+i+",npctechselectdetails"+i+")");
 
 			var el = document.createElement("option");
 			npctechselecti=document.getElementById("npctechselect"+i);

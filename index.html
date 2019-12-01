@@ -12,7 +12,7 @@
 	<script src="tablesdata.js"></script>
 	<script src="npcsdata.js"></script>
 	<script src="javascript.js"></script>
-	<script src="campaigndata.js"></script>
+
 	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
  <title></title>
  </head>
@@ -29,7 +29,7 @@
 	<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="mainbutton button">school search</button>
 	<button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="mainbutton button">campaign</button>
 	<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="mainbutton button">random</button>
-	<button id="secretbutton" onclick="highlight('secretbutton','secretdiv')" class="mainbutton button hide">secret</button>
+	<button id="secretbutton" onclick="highlight('secretbutton','secretdiv')" class="hide mainbutton button">secret</button>
 		</div>
  	
 
@@ -96,6 +96,8 @@
 		<div id="campaignhouserules" class="inline margin20"><span onclick="hideshow('houserules');" class="tea">House Rules</span>
 		</div>
 
+
+
 		<div class="inline margin20">
 		Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="tea">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download>
 		  	<span class="tea">fillable</span>	</a>	
@@ -107,6 +109,8 @@
 			<iframe id="rulesframe" src="houserules.html" class="iframe container"></iframe>
 			</div>
 
+
+
 	</div>
 
 
@@ -114,9 +118,18 @@
 			<div id="plannav" class="inline margin20"><span onclick="hideshow('plan');" class="tea">Campaign</span>
 		</div>
 
+				<div id="campaigntaint" class="inline margin20"><span onclick="hideshow('taint');" class="tea">Taint Rules</span>
+		</div>
+
 		<div id="plan" class="hide margin20" style="background-color: var(--opacity-bg-overlay);">
 			<iframe id="planframe" src="plan.html" class="iframe container"></iframe>
 			</div>
+
+		<div id="taint" class="hide margin20" style="background-color: var(--opacity-bg-overlay);">
+			<iframe id="taintframe" src="taint.html" class="iframe container"></iframe>
+			</div>
+
+		</div>
 
 		</div>
 
