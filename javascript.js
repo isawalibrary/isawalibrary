@@ -2909,7 +2909,9 @@ function frameSwitcher(theme){
 
   document.documentElement.style.setProperty('--bg-image', "none");
 	}	
-	document.getElementById('rulesframe').src = document.getElementById('rulesframe').src
+
+	//	document.getElementById('rulesframe').src = document.getElementById('rulesframe').src
+	
 
 }
 
