@@ -1353,6 +1353,8 @@ var selectedSchool = {
 		},
 		techniquetypes: [],
 		role: [],
+		advantages: [],
+		disadvantages: [],
 		startingtechs: [],
 		startingtechoptions: [],
 		ability: "",
@@ -1633,6 +1635,8 @@ function setNPCStats(){
 				},
 				techniquetypes: [],
 				role: [],
+				advantages: [],
+				disadvantages: [],
 				startingtechs: [],
 				startingtechoptions: [],
 				ability: "",
@@ -1816,7 +1820,6 @@ function selectNPCSchool(){
 
 	selectedClan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
 
-
 	if (document.getElementById("npcabilities").textContent == "None"){
 		document.getElementById("npcabilities").innerHTML = "";
 	}	 
@@ -1838,6 +1841,8 @@ function selectNPCSchool(){
 				schoolskills: {
 					Artisan:0,Martial:0,Social:0,Scholar:0,Trade:0,
 				},
+				advantages: [],
+				disadvantages: [],
 				techniquetypes: [],
 				role: [],
 				startingtechs: [],
@@ -1845,6 +1850,8 @@ function selectNPCSchool(){
 				ability: "",
 					};
 				}
+
+
 
 	techobjs = [];
 
@@ -1873,6 +1880,17 @@ function selectNPCSchool(){
 
 
 }
+
+	var x = selectedSchool.family
+	y = families[selectedClan]
+	y = y[x]
+	advantage = y.advantages
+	disadvantage = y.disadvantages
+
+
+	addToSelect("npcadv",advantage)
+	addToSelect("npcdisadv",disadvantage)
+
 
 	var techlist = [];
 	var techdroplist = [];
@@ -1954,6 +1972,7 @@ function selectNPCSchool(){
 	document.getElementById("npccalcsocial").classList.remove("hide");
 
 	selectedClan = families[selectedClan]
+
 }
 
 function setEditTech(id){
@@ -2550,6 +2569,8 @@ selectedSchool = {
 		},
 		techniquetypes: [],
 		role: [],
+		advantages: [],
+		disadvantages: [],
 		startingtechs: [],
 		startingtechoptions: [],
 		ability: "",

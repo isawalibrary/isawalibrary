@@ -2,6 +2,7 @@
 var schools = {
 	Crab:{
 		hida: {
+			family:'hida',
 			source:'Core p57',
 			name:'Hida Defender',
 			clan:'Crab',
@@ -25,6 +26,7 @@ var schools = {
 			keyword:'',
 			},
 		hiruma: {
+			family:'hiruma',
 			source:'Core p58',
 			name:'Hiruma Scout',
 			clan:'Crab',
@@ -48,6 +50,7 @@ var schools = {
 			keyword:'',
 			},
 		kaiu: {
+			family:'kaiu',
 			source:'Core p59',
 			name:'Kaiu Engineer',
 			clan:'Crab',
@@ -71,6 +74,7 @@ var schools = {
 			keyword:'',
 			},
 		kuni: {
+			family:'kuni',
 			source:'Core p60',
 			name:'Kuni Purifier',
 			clan:'Crab',
@@ -94,6 +98,7 @@ var schools = {
 			keyword:'',
 			},
 		yasuki: {
+			family:'yasuki',
 			source:'Core p61',
 			name:'Yasuki Merchant',
 			clan:'Crab',
@@ -118,6 +123,7 @@ var schools = {
 			},
 
 		kuniwarden: {
+			family:'kuni',
 			name:'Kuni Warden',
 			clan:'Crab',
 			ring1: 'Void',
@@ -141,6 +147,7 @@ var schools = {
 			keyword:'',
 			},	
 	yasukiyojimbo: {
+			family:'yasuki',
 			name:'Yasuki Yojimbo',
 			clan:'Crab',
 			ring1: 'Earth',
@@ -168,6 +175,7 @@ var schools = {
 	Crane:{
 
 		asahina: {
+			family:'asahina',
 			source:'Core p62',
 			name:'Asahina Artificer',
 			clan:'Crane',
@@ -191,6 +199,8 @@ var schools = {
 			keyword:'',
 			},
 		daidoji: {
+
+			family:'daidoji',
 			source:'Core p63',
 			name:'Daidoji Iron Warrior',
 			clan:'Crane',
@@ -214,6 +224,7 @@ var schools = {
 			keyword:'',
 			},
 		doji: {
+			family:'doji',
 			source:'Core p64',
 			name:'Doji Diplomat',
 			clan:'Crane',
@@ -237,6 +248,7 @@ var schools = {
 			keyword:'',
 			},
 		kakita: {
+			family:'kakita',
 			source:'Core p65',
 			name:'Kakita Duelist',
 			clan:'Crane',
@@ -261,6 +273,7 @@ var schools = {
 			},
 
 		kakitaswordsmith: {
+			family:'kakita',
 			name:'Kakita Swordsmith',
 			clan:'Crane',
 			ring1: 'Air',
@@ -284,6 +297,7 @@ var schools = {
 			keyword:'',
 			},		
 		daidojispymaster: {
+			family:'daidoji',
 			name:'Daidoji Spymaster',
 			clan:'Crane',
 			ring1: 'Air',
@@ -307,6 +321,7 @@ var schools = {
 			keyword:'',
 			},	
 		dojibureaucrat: {
+			family:'doji',
 			name:'Doji Bureaucrat',
 			clan:'Crane',
 			ring1: 'Earth',
@@ -332,6 +347,7 @@ var schools = {
 		},
 	Dragon:{
 		agasha: {
+			family:'agasha',
 			source:'Core p66',
 			name:'Agasha Mystic',
 			clan:'Dragon',
@@ -355,6 +371,7 @@ var schools = {
 			keyword:'',
 			},
 		kitsuki: {
+			family:'kitsuki',
 			source:'Core p67',
 			name:'Kitsuki Investigator',
 			clan:'Dragon',
@@ -378,6 +395,7 @@ var schools = {
 			keyword:'',
 			},
 		mirumoto: {
+			family:'mirumoto',
 			source:'Core p68',
 			name:'Mirumoto Niten Adept',
 			clan:'Dragon',
@@ -401,6 +419,7 @@ var schools = {
 			keyword:'',
 			},
 		togashi: {
+			family:'togashi',
 			source:'Core p69',
 			name:'Togashi Tattooed Order',
 			clan:'Dragon',
@@ -424,6 +443,7 @@ var schools = {
 			keyword:'',
 			},
 		taoistblade: {
+			family:'mirumoto',
 			name:'Mirumoto Taoist Blade',
 			clan:'Dragon',
 			ring1: 'Void',
@@ -447,6 +467,7 @@ var schools = {
 			keyword:'',
 			},
 	togashichronicler: {
+			family:'togashi',
 			name:'Togashi Chronicler',
 			clan:'Dragon',
 			ring1: 'Earth',
@@ -473,6 +494,7 @@ var schools = {
 		},
 	Lion:{
 		akodo: {
+			family:'akodo',
 			source:'Core p70',
 			name:'Akodo Commander',
 			clan:'Lion',
@@ -496,6 +518,7 @@ var schools = {
 			keyword:'',
 			},
 		ikoma: {
+			family:'ikoma',
 			source:'Core p71',
 			name:'Ikoma Bard',
 			clan:'Lion',
@@ -519,6 +542,7 @@ var schools = {
 			keyword:'',
 			},
 		kitsu: {
+			family:'kitsu',
 			source:'Core p72',
 			name:'Kitsu Medium',
 			clan:'Lion',
@@ -542,6 +566,7 @@ var schools = {
 			keyword:'',
 			},
 		matsu: {
+			family:'matsu',
 			source:'Core p73',
 			name:'Matsu Berserker',
 			clan:'Lion',
@@ -565,6 +590,7 @@ var schools = {
 			keyword:'',
 			},
 		kitsumedic: {
+			family:'kitsu',
 			name:'Kitsu Medic',
 			clan:'Lion',
 			ring1: 'Earth',
@@ -588,6 +614,7 @@ var schools = {
 			keyword:'',
 			},
 		ikomashadow: {
+			family:'ikoma',
 			name:'Ikoma Shadow',
 			clan:'Lion',
 			ring1: 'Air',
@@ -613,6 +640,7 @@ var schools = {
 		},
 	Phoenix:{
 		asako: {
+			family:'asako',
 			source:'Core p74',
 			name:'Asako Loremaster',
 			clan:'Phoenix',
@@ -636,6 +664,7 @@ var schools = {
 			keyword:'',
 			},
 		isawa: {
+			family:'isawa',
 			source:'Core p75',
 			name:'Isawa Elementalist',
 			clan:'Phoenix',
@@ -659,6 +688,7 @@ var schools = {
 			keyword:'',
 			},
 		shiba: {
+			family:'shiba',
 			source:'Core p76',
 			name:'Shiba Guardian',
 			clan:'Phoenix',
@@ -682,6 +712,7 @@ var schools = {
 			keyword:'',
 			},
 		kaito: {
+			family:'kaito',
 			source:'Core p77',
 			name:'Kaito Shrine Keeper',
 			clan:'Phoenix',
@@ -705,6 +736,7 @@ var schools = {
 			keyword:'',
 			},
 		inquisitor: {
+			family:'asako',
 			name:'Asako Inquisitor',
 			clan:'Phoenix',
 			ring1: 'Fire',
@@ -728,6 +760,7 @@ var schools = {
 			keyword:'',
 			},
 		shibaartist: {
+			family:'shiba',
 			name:'Shiba Artist',
 			clan:'Phoenix',
 			ring1: 'Fire',
@@ -754,6 +787,7 @@ var schools = {
 		},
 Scorpion:{
 		bayushi: {
+			family:'bayushi',
 			source:'Core p78',
 			name:'Bayushi Manipulator',
 			clan:'Scorpion',
@@ -777,6 +811,7 @@ Scorpion:{
 			keyword:'',
 			},
 		shosuro: {
+			family:'shosuro',
 			source:'Core p79',
 			name:'Shosuro Infiltrator',
 			clan:'Scorpion',
@@ -800,6 +835,7 @@ Scorpion:{
 			keyword:'',
 			},
 		soshi: {
+			family:'soshi',
 			source:'Core p80',
 			name:'Soshi Illusionist',
 			clan:'Scorpion',
@@ -823,6 +859,7 @@ Scorpion:{
 			keyword:'',
 			},
 		yogo: {
+			family:'yogo',
 			source:'Core p81',
 			name:'Yogo Wardmaster',
 			clan:'Scorpion',
@@ -846,6 +883,7 @@ Scorpion:{
 			keyword:'',
 			},
 		yogopreserver: {
+			family:'yogo',
 			name:'Yogo Preserver',
 			clan:'Scorpion',
 			ring1: 'Fire',
@@ -869,6 +907,7 @@ Scorpion:{
 			keyword:'',
 			},
 		bayushideathdealer: {
+			family:'bayushi',
 			name:'Bayushi Deathdealer',
 			clan:'Scorpion',
 			ring1: 'Air',
@@ -895,6 +934,7 @@ Scorpion:{
 		},
 Unicorn:{
 		ide: {
+			family:'ide',
 			source:'Core p82',
 			name:'Ide Trader',
 			clan:'Unicorn',
@@ -918,6 +958,7 @@ Unicorn:{
 			keyword:'',
 			},
 		iuchi: {
+			family:'iuchi',
 			source:'Core p83',
 			name:'Iuchi Meishodo Master',
 			clan:'Unicorn',
@@ -941,6 +982,7 @@ Unicorn:{
 			keyword:'',
 			},
 		moto: {
+			family:'moto',
 			source:'Core p84',
 			name:'Moto Conqueror',
 			clan:'Unicorn',
@@ -964,6 +1006,7 @@ Unicorn:{
 			keyword:'',
 			},
 		shinjo: {
+			family:'shinjo',
 			source:'Core p85',
 			name:'Shinjo Outrider',
 			clan:'Unicorn',
@@ -987,6 +1030,7 @@ Unicorn:{
 			keyword:'',
 			},
 		utaku: {
+			family:'utaku',
 			source:'Core p86',
 			name:'Utaku Battle Maiden',
 			clan:'Unicorn',
@@ -1010,6 +1054,7 @@ Unicorn:{
 			keyword:'',
 			},
 		motoavenger: {
+			family:'moto',
 			name:'Moto Avenger',
 			clan:'Unicorn',
 			ring1: 'Air',
@@ -1035,6 +1080,7 @@ Unicorn:{
 		},
 	Mantis:{
 		sailor: {
+			family:'mantis',
 			name:'Storm Fleet Sailor',
 			clan:'Mantis',
 			source: 'Mantis DLC',
@@ -1059,6 +1105,8 @@ Unicorn:{
 			keyword:'Minor clan Mantis',
 			},
 		seer: {
+
+			family:'mantis',
 			name:'Storm Fleet Tide Seer',
 			clan:'Mantis',
 			ring1: 'Air',
@@ -1084,6 +1132,8 @@ Unicorn:{
 		},
 	Imperial:{
 		cartographer: {
+
+			family:'miya',
 			name:'Miya Cartographer',
 			clan:'Imperial',
 			ring1: 'Air',
@@ -1110,6 +1160,8 @@ Unicorn:{
 			},
 
 		herald: {
+
+			family:'miya',
 			name:'Miya Herald',
 			clan:'Imperial',
 			ring1: 'Air',
@@ -1133,6 +1185,7 @@ Unicorn:{
 			
 			ability:'Once per round, after a character at range 0-4 succeeds on an Attack or Scheme action check, you may cause them to receive strife equal to your school rank.'},
 		schemer: {
+			family:'otomo',
 			name:'Otomo Schemer',
 			clan:'Imperial',
 			ring1: 'Air',
@@ -1156,6 +1209,7 @@ Unicorn:{
 			
 			ability:'You never forfeit honor or glory in order to lie or decieve for the good of the Emperor and Empire (in your opinion).  However you must forfeit twice as much honor or glory to lie for your personal gain (again, in your opinion).  When a character stakes or forfeits an amount of honor or glory in order to act against your desires, you may force them to increase that amount by your school rank.'},
 		astrologer: {
+			family:'seppun',
 			name:'Seppun Astrologer',
 			clan:'Imperial',
 			ring1: 'Air',
@@ -1179,6 +1233,7 @@ Unicorn:{
 			
 			ability:'At the beginning of a game session or as a downtime activity, you may make a TN1 Theology check using any ring.  If you succeed, choose a number of kept dice up to your school rank to reserve.   Until the end of the game session or the next downtime scene, when any character makes a skill check using the chosen ring, you may replace one or more kept dice with the same number of reserved dice of the same type.'},
 		guard: {
+			family:'seppun',
 			name:'Seppun Palace Guard',
 			clan:'Imperial',
 			ring1: 'Earth',
@@ -1205,6 +1260,7 @@ Unicorn:{
 	
 	Other:{
 		worldlyronin: {
+			family:'other',
 			source:'Core p87',
 			name:'Worldly Ronin',
 			clan:'Other',
@@ -1230,6 +1286,8 @@ Unicorn:{
 			},
 
 		fortunist: {
+
+			family:'other',
 			name:'Fortunist Monk',
 			clan:'Other',
 			ring1: 'Earth',
@@ -1254,6 +1312,7 @@ Unicorn:{
 			keyword:'Unaligned',
 			},
 		shinseist: {
+			family:'other',
 			name:'Shinseist Monk',
 			clan:'Other',
 			ring1: 'Earth',
@@ -1278,6 +1337,7 @@ Unicorn:{
 			keyword:'Unaligned',
 			},
 		kitsune: {
+			family:'other',
 			name:'Kitsune Impersonator',
 			clan:'Other',
 			ring1: 'Air',
@@ -1302,6 +1362,7 @@ Unicorn:{
 			
 		},
 		toritaka: {
+			family:'other',
 			name:'Toritaka Phantom Hunter',
 			clan:'Other',
 			ring1: 'Air',
@@ -1326,6 +1387,7 @@ Unicorn:{
 			
 		},
 		ksaboteur: {
+			family:'other',
 			name:'Kolat Saboteur',
 			clan:'Other',
 			ring1: 'Air',
@@ -1350,6 +1412,7 @@ Unicorn:{
 		
 			},
 		tortoise:{
+			family:'other',
 			name:'Kasuga Smuggler',
 			source: 'Dark Tides Adventure',
 			clan:'Other',
@@ -1374,6 +1437,7 @@ Unicorn:{
 			
 		},
 		mercenaryninja: {
+			family:'other',
 			name:'Mercenary Ninja',
 			clan:'Other',
 			ring1: 'Air',
@@ -1398,6 +1462,7 @@ Unicorn:{
 			
 		},
 		shikamatchmaker: {
+			family:'other',
 			name:'Shika Matchmaker',
 			clan:'Other',
 			ring1: 'Air',
@@ -1422,6 +1487,7 @@ Unicorn:{
 			
 		},
 		skikaspeardancer: {
+			family:'other',
 			name:'Shika Speardancer',
 			clan:'Other',
 			ring1: 'Air',
