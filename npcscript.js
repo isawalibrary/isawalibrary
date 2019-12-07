@@ -1111,7 +1111,6 @@ function selectNPCSchool(){
 				}
 	};}}}
 
-
 	selectedSchool = document.getElementById('npcschoolselect').options[document.getElementById('npcschoolselect').selectedIndex].text;
 
 	selectedClan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
@@ -1195,8 +1194,9 @@ function selectNPCSchool(){
 			}
 		}
 	}
-
- 		makeSelect("npcschooltechnique","schooltechdrop","styledselect inline margintopbottom","showSelectedTechnique(schooltechdrop,npcschooltechniquedetails)")
+		if (document.getElementById("schooltechdrop") == null){
+ 			makeSelect("npcschooltechnique","schooltechdrop","styledselect inline margintopbottom","showSelectedTechnique(schooltechdrop,npcschooltechniquedetails)")
+ 		}
 
 			var el = document.createElement("option");
 			npcschooltech=document.getElementById("schooltechdrop");

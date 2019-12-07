@@ -153,6 +153,7 @@ function makeNumberInput(parentName,formId,formClasses,formHTML,inputId,inputCla
 	newForm.id = formId;
 	newForm.classList = formClasses;
 	newForm.innerHTML = formHTML;
+	newForm.setAttribute("onsubmit", "return false")
 
 	var input = document.createElement("input");
 	input.type = "number";
