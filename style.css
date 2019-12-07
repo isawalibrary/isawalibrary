@@ -18,6 +18,7 @@ body {
   background-attachment: fixed;
   color: var(--font-color);
 // text-shadow: 0px 0px 40px white,0px 0px 40px white,0px 0px 40px white,0px 0px 15px white,0px 0px 15px white;
+  overflow-x: hidden;
 }
 
 @font-face {
@@ -72,7 +73,7 @@ body {
   padding-bottom: 15px;
   margin-bottom:  15px;
   padding-top:  15px;
-  display: inline-block;  
+
   background-color: var(--opacity-bg-overlay);
 }
 
@@ -82,15 +83,17 @@ body {
   animation-iteration-count: none; 
   margin-left: 100%;
 
-  width: 300%; 
+  width: 100%;
   padding-bottom: 15px;
-  display: none;  
+  margin-bottom:  15px;
+  padding-top:  15px;  
+  background-color: var(--opacity-bg-overlay);
 }
 
 @keyframes slidein {
   from {
     margin-left: 100%;
-    width: 300%; 
+    width: 100%; 
   }
 
   to {
@@ -106,9 +109,9 @@ body {
   }
 
   to {
-    margin-left: 100%;
-    width: 300%; 
+    margin-left: 100%; 
   }
+
 }
 
 

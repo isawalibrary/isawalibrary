@@ -139,7 +139,7 @@ var families = {
 		clan:'Crane',
 			ring1:"Earth",
 			ring2:"Water",
-			advantages:["Practical (Water) [Any; Interpersonal]",
+			advantages:["A Practical Mind (Water) [Any; Interpersonal]",
 			],
 			disadvantages:[
 			],
@@ -274,7 +274,8 @@ var families = {
 			advantages:["Sworn to Bushido (Earth) [Social; Interpersonal]",
 			],
 			disadvantages:["Easily Scandalized (Earth) [Social; Interpersonal]",
-				"Prim and Proper (Fire) [Social; Interpersonal]"
+				"Prim and Proper (Fire) [Social; Interpersonal]",
+				"Stodgy Traditionalist (Fire) [Scholar, Social; Mental]",
 			],
 			skill1:"Command",
 			skill2:"Government",
@@ -286,6 +287,7 @@ var families = {
 			ring1:"Air",
 			ring2:"Water",
 			advantages:["Keen Genealogist (Earth) [Scholar; Mental]",
+			"Stodgy Traditionalist (Fire) [Scholar, Social; Mental]",
 			],
 			disadvantages:[
 			],
@@ -298,7 +300,7 @@ var families = {
 		clan:'Lion',
 			ring1:"Void",
 			ring2:"Water",
-			advantages:[
+			advantages:["Stodgy Traditionalist (Fire) [Scholar, Social; Mental]",
 			],
 			disadvantages:[
 			],
@@ -438,7 +440,7 @@ Scorpion:{
 			ring1:"Air",
 			ring2:"Void",
 			advantages:["Consummate Professional (Any; Mental)",
-			"Unmemorable Face (Earth) [Social; Physical, Interpersonal]",
+						"Unmemorable Face (Earth) [Social; Physical, Interpersonal]",
 						"Subtle Observer (Water) [Social; Interpersonal]",
 			],
 			disadvantages:[
@@ -468,7 +470,7 @@ Scorpion:{
 			advantages:["Consummate Professional (Any; Mental)",
 			],
 			disadvantages:["Cold and Withdrawn (Fire) [Social; Interpersonal]",
-							"Vengeful When Slighted (Earth) [Social; Interpersonal]",
+						"Vengeful When Slighted (Earth) [Social; Interpersonal]",
 			],
 			skill1:"Composition",
 			skill2:"Theology",
@@ -479,7 +481,7 @@ Unicorn:{
 		clanring:{"Water":+1},
 			clanskill:"Trade",
 			clanstatus:30,
-			weapons:["Scimitar","Horsebow","Naginata"],
+			weapons:["Scimitar","Oyumi","Naginata"],
 			armor: ["Ashigaru Armor"],
 			advantages: [
 				"Expert Rider (Water) [Trade, Martial; Physical]",
@@ -650,4 +652,17 @@ Unicorn:{
 
 					],
 },
+			other: {
+			name:'Other',
+			clan:'Other',
+			ring1:"",
+			ring2:"",
+			advantages:[
+			],
+			disadvantages:[
+			],
+			skill1:"",
+			skill2:"",
+			glory:"",
+			wealth:"",	},
 }

@@ -1,8 +1,6 @@
 <html>
  <head>
  	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
- 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
-	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
 	<LINK href="style.css" rel="stylesheet" type="text/css">
 	<script src="data.js"></script>
 	<script src="familiesdata.js"></script>
@@ -11,7 +9,9 @@
 	<script src="techniquesdata.js"></script>
 	<script src="tablesdata.js"></script>
 	<script src="npcsdata.js"></script>
-	<script src="javascript.js"></script>
+	<script src="script.js"></script>
+	<script src="npcscript.js"></script>	
+	<script src="common.js"></script>
 
 	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
  <title></title>
@@ -33,37 +33,36 @@
 		</div>
  	
 
-	<div id="skirmishcontainer" class="containerx"></div>
+	<div id="skirmishcontainer" class="hide containerx"></div>
 
-	<div id="definitioncontainer" class="containerx">
+	<div id="definitioncontainer" class="hide containerx">
 		<div id="definitionsdiv"></div>
 		<div id="definitionstables" class="inline"></div>
 	</div>
 
-	<div id="npccontainer" class="containerx">
+	<div id="npccontainer" class="hide containerx">
 		<div id="npcmenu" class="margin20"></div>
-		<div id="npcstats" class="hide margin20"></div>
+		<div id="npcstats" class="hide margin10"></div>
 
 	</div>		
 
-	 <div id="library" class="containerx">
+	 <div id="library" class="hide containerx">
  		<div id="menu" class="inlineblock margin20"></div>
  		<div id="statblock" class="inlineblock "></div>
  		<div id="editcharacter" class="inlineblock editwidth hide margin20"></div>
 	</div>
 
-	<div id="schoolcontainer" class="containerx">
+	<div id="techniquecontainer" class="hide containerx"></div>	
+
+	<div id="schoolcontainer" class="hide containerx">
  		<form onsubmit="return false" id="schoolsearch" class="block defs"><span class="inlineblock" style="width:97px">Search Schools:</span>
  	 	<input id="schoolsearchinput" class="width styledselect" oninput="schoolfilter();titlefilter();" type="text"><br></form>
 		<div id="schooloutput" class="block"></div>
 		<div id="titleoutput" class="block"></div>
 	</div>
 
-	<div id="techniquecontainer" class="containerx"></div>	
 
-
-
-	<div id="teahousediv" class="containerx">
+	<div id="teahousediv" class="hide containerx">
 		<div class="themeswitcher tea">Select theme:
 			<span class="margin10" onclick="colourSwitcher('spring')">air</span> 
 			<span class="margin10"onclick="colourSwitcher('summer')">earth</span> 
@@ -91,7 +90,7 @@
 			<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
 	</div>
 
-	<div id="campaigninfodiv" class="containerx">
+	<div id="campaigninfodiv" class="hide containerx">
 
 		<div id="campaignhouserules" class="inline margin20"><span onclick="hideshow('houserules');" class="tea">House Rules</span>
 		</div>
@@ -114,7 +113,7 @@
 	</div>
 
 
-		<div id="secretdiv" class="containerx">
+		<div id="secretdiv" class="containerx hide">
 			<div id="plannav" class="inline margin20"><span onclick="hideshow('plan');" class="tea">Campaign</span>
 		</div>
 
