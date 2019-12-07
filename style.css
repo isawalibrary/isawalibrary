@@ -249,6 +249,7 @@ thead {
 
 .tooltiptext {
   width: 60%;
+  left: 20%;
   color: var(--tooltipfont);
   text-align: justify;
   padding: 5px 0;
@@ -257,6 +258,7 @@ thead {
   border-radius: 6px;
   position: absolute;
   padding-bottom: 15px;
+  padding-top: 15px;
   font-size: 14px;
   border-color: white;
   border-style: solid;
