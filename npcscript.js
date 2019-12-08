@@ -27,6 +27,8 @@ function loadSkirmish(){
 		document.getElementById(elem+"-stance").selectedIndex =0;
 		document.getElementById(elem+"-fatigue").value=skirmishcharacters[elem].fatigue;
 		document.getElementById(elem+"-strife").value=skirmishcharacters[elem].strife;
+		document.getElementById(elem+"-endurance").value=skirmishcharacters[elem].endurance;
+		document.getElementById(elem+"-composure").value=skirmishcharacters[elem].composure;
 		document.getElementById(elem+"-physres").value=skirmishcharacters[elem].physres;
 		document.getElementById(elem+"-supres").value=skirmishcharacters[elem].supres;
 		document.getElementById(elem+"-engaged").value=skirmishcharacters[elem].engaged;
@@ -312,17 +314,18 @@ function buildSkirmishCharacter (nom){
 			divcontents(nom+"-stanceicon","<div class='inline' "+v+">"+x+"</div>");
 
 
- 	newdiv (nom+"-endurance",nom," fatiguelength margin10");  //creates endurance&fatigue container
-	makeNumberInput(nom+"-endurance",nom+'-yendurance',"inline styledselect","Fatigue:",nom+'-fatigue',"numberform")
+ 	newdiv (nom+"-zendurance",nom,"fatiguelength margin10");  //creates endurance&fatigue container
+	makeNumberInput(nom+"-zendurance",nom+'-yendurance',"inline styledselect","Fatigue:",nom+'-fatigue',"numberform")
 	formid = nom+'-yendurance';
 	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"fatigue")')
+	newdiv (nom+"-endurance",nom+"-zendurance","inline")
 
 
- 	newdiv (nom+"-composure",nom," strifelength margin10");  //creates composure and strife container
- 	makeNumberInput(nom+"-composure",nom+'-ycomposure',"inline styledselect","Strife:",nom+'-strife',"numberform")
+ 	newdiv (nom+"-zcomposure",nom," strifelength margin10");  //creates composure and strife container
+ 	makeNumberInput(nom+"-zcomposure",nom+'-ycomposure',"inline styledselect","Strife:",nom+'-strife',"numberform")
  	formid = nom+'-ycomposure';
 	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"strife")')
-
+	newdiv (nom+"-composure",nom+"-zcomposure","inline")
 
   	newdiv (nom+"-physres",nom," reslength margin10");  //creates phys res container
   	makeNumberInput(nom+"-physres",nom+'-yphysres',"inline styledselect","Phys:",nom+'-nphysres',"numberform")
@@ -371,6 +374,9 @@ function buildSkirmishCharacter (nom){
 	makeButton(nom+"-xdelete",nom+'-delete',"button","deletechar("+nom+")","x") //makes delete button
 
 	newdiv (nom+"-stancetool",nom,"hide tooltiptext tooltipstance");
+
+	document.getElementById(nom+"-endurance").innerHTML = " /"+skirmishcharacters[nom].endurance
+	document.getElementById(nom+"-composure").innerHTML = " /"+skirmishcharacters[nom].composure
 	}
 
 
@@ -426,6 +432,8 @@ function reorderSkirmish(){
 		document.getElementById(elem+"-stance").value=skirmishcharacters[elem].stance;
 		document.getElementById(elem+"-fatigue").value=skirmishcharacters[elem].fatigue;
 		document.getElementById(elem+"-strife").value=skirmishcharacters[elem].strife;
+		document.getElementById(elem+"-endurance").value=skirmishcharacters[elem].endurance;
+		document.getElementById(elem+"-composure").value=skirmishcharacters[elem].composure;
 		document.getElementById(elem+"-physres").value=skirmishcharacters[elem].physres;
 		document.getElementById(elem+"-supres").value=skirmishcharacters[elem].supres;
 		document.getElementById(elem+"-engaged").value=skirmishcharacters[elem].engaged;
@@ -606,9 +614,9 @@ function selectArchetype(){
 		'Endurance: <span id="npcendurance">'+selectedArchetype.endurance+'</span>'+
 		'<span class="margin10">Composure:</span> <span id="npccomposure">'+selectedArchetype.composure+'</span>'+
 		'<span class="margin10">Focus:</span> <span id="npcfocus">'+selectedArchetype.focus+'</span>'+
-		'<span class="margin10">Vigilance:</span> <span id="npcvigilance">'+selectedArchetype.vigilance+'</span>' +
-		'<button id="calcderivedstatbutton" class="button inline margin10" onclick="calculateDerivedStats()">calculate derived stats</button>'
+		'<span class="margin10">Vigilance:</span> <span id="npcvigilance">'+selectedArchetype.vigilance+'</span>' 
 	divcontents("npcrings",x) 
+	makeButton("npcrings","calcderivedstatbutton","button inline margin10","calculateDerivedStats()","calculate derived stats")
 
 
 	x = '<div class="techresults"><span>Honor: </span><span id="npchonor">'+selectedArchetype.honor+'</span>'+
