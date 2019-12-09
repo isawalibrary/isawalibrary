@@ -24,7 +24,6 @@ function loadSkirmish(){
 		var chosenChar = skirmishcharacters[elem];
 
 		document.getElementById(elem+"-initiative").value=skirmishcharacters[elem].initiative;
-		document.getElementById(elem+"-stance").selectedIndex =0;
 		document.getElementById(elem+"-fatigue").value=skirmishcharacters[elem].fatigue;
 		document.getElementById(elem+"-strife").value=skirmishcharacters[elem].strife;
 		document.getElementById(elem+"-endurance").value=skirmishcharacters[elem].endurance;
@@ -33,6 +32,15 @@ function loadSkirmish(){
 		document.getElementById(elem+"-supres").value=skirmishcharacters[elem].supres;
 		document.getElementById(elem+"-engaged").value=skirmishcharacters[elem].engaged;
 		document.getElementById(elem+"-notes").value=skirmishcharacters[elem].notes;
+
+		valueToSet = skirmishcharacters[elem].stance;
+		selectObj = document.getElementById(elem+"-stance")
+		for (var i = 0; i < selectObj.options.length; i++) {
+		        if (selectObj.options[i].text== valueToSet) {
+		            selectObj.options[i].selected = true;
+
+		        }
+		    }
 
 		updateStance(chosenChar);
 
@@ -78,13 +86,17 @@ function makeNewChar(){
 
 function getRandomName(){
 	name = nameMaker();
+	document.getElementById("name").innerText = name
 	document.getElementById("name").value = name
 
 }
 
 function selectClan(){
 	newdiv("skirmishschool","makenewchar","inline margin10");
-	makeSelect("skirmishschool","newSchool","styledselect inline","selectSchool();")
+
+	if (document.getElementById("newSchool") == null || document.getElementById("newSchool") == undefined){
+			makeSelect("skirmishschool","newSchool","styledselect inline","selectSchool();")
+		}
 
 	newdiv("skirmishability","skirmishcontainer","block margin10");
 
@@ -140,7 +152,7 @@ function selectSchool(){
 	makeNumberInput("divsupres","supernaturalres","styledselect","Sup Res:","xsupres","numberform")
 
 	newdiv("addtoskirmish","makenewchar","inline margin10");
-	makeButton("addtoskirmish","addtoskirmish","button inline","addToSkirmish()","Add Character")
+	makeButton("addtoskirmish","addtoskirmishbutton","button inline","addToSkirmish()","Add Character")
 
 }
 
@@ -201,15 +213,16 @@ function update(name,property){
 
 function updateStance(name){
 
-		if (name.id != undefined){
+		if (name.id !== undefined){
 			name = name.id;
-		} else if (name.name != undefined){
+		} else if (name.name !== undefined){
 			name = name.name
 		}
 
 	stancebox=name+'-stance';
 	stanceicon=name+'-stanceicon';
-	switch(document.getElementById(name+'-stance').value){
+	n = document.getElementById(name+"-stance").options[document.getElementById(name+"-stance").selectedIndex].value
+	switch(n){
 		case "air":
 			hide(name+'-defaulticon');
 			show(name+'-air');

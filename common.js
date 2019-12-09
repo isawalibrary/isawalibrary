@@ -108,6 +108,7 @@ function addToSelect(selectorForm,listName){
 
 
 function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
+	if (document.getElementById(buttonId) == null){
 	newButton = document.createElement('button');
 	document.getElementById(parentName).appendChild(newButton);
 
@@ -116,9 +117,11 @@ function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText
 	newButton.setAttribute("onclick",onClickFunction);
 	newButton.innerHTML = buttonText;
 }
+}
 
 
 function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,inputClasses){
+	if (document.getElementById(formId) == null){
 	var newForm = document.createElement('form');
 	document.getElementById(parentName).appendChild(newForm);
 
@@ -133,20 +136,24 @@ function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,input
 	input.classList = inputClasses; 
 
 	newForm.appendChild(input);
-
+	}
 }
 
 function makeSelect(parentName,selectId,selectClasses,onChangeFunction){
+	if (document.getElementById(selectId) == null){
+
 	var select = document.createElement("select");
 	document.getElementById(parentName).appendChild(select);
 
 	select.id = selectId;
 	select.classList = selectClasses;
 	select.setAttribute("onchange",onChangeFunction);
+	}
 }
 
 
 function makeNumberInput(parentName,formId,formClasses,formHTML,inputId,inputClasses){
+	if (document.getElementById(formId) == null){
 	var newForm = document.createElement('form');
 	document.getElementById(parentName).appendChild(newForm);
 
@@ -160,4 +167,5 @@ function makeNumberInput(parentName,formId,formClasses,formHTML,inputId,inputCla
 	input.id = inputId
 	input.classList = inputClasses; 
 	newForm.appendChild(input);
+}
 }
