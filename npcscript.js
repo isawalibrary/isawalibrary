@@ -1103,6 +1103,7 @@ function selectNPCClan(){
 
 	selectTemplate()
 	document.getElementById("npcschooltechniquedetails").innerHTML = "";
+	document.getElementById("npcschoolability").innerHTML = "";
 }
 
 function selectNPCSchool(){
@@ -1755,35 +1756,19 @@ function makeTechSelectDropdown(selectorForm,defaultText,listName,valueName){
 
 
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
 
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
 
 
 var npc = {};
 
 function saveNPC (){
-	name = thisnpc.name;
+	name = document.getElementById('npcnameinput').value;
 
 	npcarchetype = document.getElementById('archetype').options[document.getElementById('archetype').selectedIndex].text;
 	
 	npcclan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
-	if (npcclan == "Select Clan"){npcclan = "None"};
+	if (npcclan == "Select Clan"){npcclan = "None"}
+	else if (npcclan == undefined){npcclan = "None"}
 
 	if (document.getElementById('npcschoolselect').options[document.getElementById('npcschoolselect').selectedIndex] == undefined){
 		npcschool = "None";
@@ -1834,7 +1819,7 @@ function saveNPC (){
 
 	npc[name] = new Object;
 
-	npc[name].title = thisnpc.name;
+	npc[name].title = name;
 	npc[name].archetype = thisnpc.archetype;
 	npc[name].type = thisnpc.type;
 	npc[name].equiptype = thisnpc.equiptype;
@@ -2002,7 +1987,7 @@ function makeNpcLibrary(){
 
 		newdiv("div"+each.title,"menu","block");
 		divcontents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
-		document.getElementById('menu'+each.title).innerHTML = '<button id="'+each.title+'-delete" class="button" onclick="deletenpc('+"'"+each.title+"'"+')">x</button> ' + each.title + 
+		document.getElementById('menu'+each.title).innerHTML = '<button id="'+each.title+'--delete" class="button" onclick="deletenpc('+"'"+each.title+"'"+')">x</button> ' + each.title + 
 															' [' + each.clan +
 															'/' + each.school +
 															'] (' + each.archetype +
@@ -2016,9 +2001,10 @@ function makeNpcLibrary(){
 												'/' + each.school +
 												'] (' + each.archetype +
 												'/' + each.template +
-												')</b> ' + 
-												'<button id="'+each.title+'-toskirmish" class="button" onclick="npcskirmish('+"'"+each.title+"'"+')">add to skirmish</button> '
-												+ '<button id="'+each.title+'-edit" class="button" onclick="makeNpcEdit('+"'"+each.title+"'"+')">edit NPC</button> '; 
+												')</b> ';
+		newdiv("addskirmishbuttondiv"+each.title,"npc-"+each.title,"inline") 
+		makeButton("addskirmishbuttondiv"+each.title,each.title+'-toskirmish',"button margin10",'npcskirmish('+"'"+each.title+"'"+')',"add to skirmish")
+		makeButton("addskirmishbuttondiv"+each.title,each.title+'-edit',"button margin10",'makeNpcEdit('+"'"+each.title+"'"+')',"edit NPC")
 												
 		newdiv("stat"+each.title,"npc-"+each.title,"block statwidth");
 		document.getElementById("stat"+each.title).innerHTML= 
@@ -2089,22 +2075,18 @@ function makeNpcLibrary(){
 								'</u><br>' + eff + '<br>'
 
 							techs.push(x);
-
 						}
 					}
 
 				if (techs[i] !== undefined){
 					document.getElementById("stat"+each.title).innerHTML += techs[i] 
 				}
-
 				}
 		if (techs.length == 0){
 			document.getElementById("stat"+each.title).innerHTML += 'None';
 		}
-
 	}
 	document.getElementById("statblock").innerHTML = document.getElementById("statblock").innerHTML.replace("<br><br>","<br>")
-
 }
 
 function deletenpc (name){
@@ -2117,6 +2099,9 @@ function deletenpc (name){
 	statdiv=document.getElementById('statblock');
 	item = document.getElementById('npc-'+name)
 	statdiv.removeChild(item);
+
+	document.getElementById("editcharacter").innerHTML = "";
+	
 	}
 
 
@@ -2125,7 +2110,6 @@ function showNpc(thisnpc){
 	npcstat = "npc-"+thisnpc;
 	npcmenu = "div"+thisnpc;
 
-	
 	thatNpc = document.getElementById(npcstat);
 
 	if (thatNpc !== null){
@@ -2138,7 +2122,6 @@ function showNpc(thisnpc){
 
 	thatNpc.classList.remove("hide")
 
-
 	thatNpc = document.getElementById(npcmenu);
 
 	children = document.getElementById("menu").childNodes;
@@ -2148,13 +2131,10 @@ function showNpc(thisnpc){
 	}
 
 	thatNpc.classList.add("bold")
-
-
 }
 }
 
 function npcskirmish(nom){
-
 
 	dropcontent = document.getElementById("stat"+nom).innerHTML;
 
@@ -2180,8 +2160,6 @@ function npcskirmish(nom){
 
 	saveSkirmish();
 	loadSkirmish();
-
-
 
 	if (document.getElementById("skirmishcontainer").classList.contains("containerx")){
 			highlight("skirmishbutton","skirmishcontainer");
@@ -2226,8 +2204,6 @@ function frameSwitcher(theme){
 	}	
 
 	//	document.getElementById('rulesframe').src = document.getElementById('rulesframe').src
-	
-
 }
 
 

@@ -107,65 +107,95 @@ function addToSelect(selectorForm,listName){
 }
 
 
+function setSelectedValue(selectObj, valueToSet) {
+    for (var i = 0; i < selectObj.options.length; i++) {
+        if (selectObj.options[i].text== valueToSet) {
+            selectObj.options[i].selected = true;
+            
+        }
+    }
+}
+
+
 function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
 	if (document.getElementById(buttonId) == null){
-	newButton = document.createElement('button');
-	document.getElementById(parentName).appendChild(newButton);
+		newButton = document.createElement('button');
+		document.getElementById(parentName).appendChild(newButton);
 
-	newButton.id = buttonId;
-	newButton.classList = buttonClasses;
-	newButton.setAttribute("onclick",onClickFunction);
-	newButton.innerHTML = buttonText;
-}
+		newButton.id = buttonId;
+		newButton.classList = buttonClasses;
+		newButton.setAttribute("onclick",onClickFunction);
+		newButton.innerHTML = buttonText;
+	}
 }
 
 
 function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,inputClasses){
 	if (document.getElementById(formId) == null){
-	var newForm = document.createElement('form');
-	document.getElementById(parentName).appendChild(newForm);
+		var newForm = document.createElement('form');
+		document.getElementById(parentName).appendChild(newForm);
 
-	newForm.id = formId;
-	newForm.classList = formClasses;
-	newForm.innerHTML = spanInnerHTML;
-	newForm.setAttribute("onsubmit", "return false")
+		newForm.id = formId;
+		newForm.classList = formClasses;
+		newForm.innerHTML = spanInnerHTML;
+		newForm.setAttribute("onsubmit", "return false")
 
-	var input = document.createElement("input");
-	input.type = "text";
-	input.id = inputId
-	input.classList = inputClasses; 
+		var input = document.createElement("input");
+		input.type = "text";
+		input.id = inputId
+		input.classList = inputClasses; 
 
-	newForm.appendChild(input);
+		newForm.appendChild(input);
 	}
 }
 
 function makeSelect(parentName,selectId,selectClasses,onChangeFunction){
 	if (document.getElementById(selectId) == null){
 
-	var select = document.createElement("select");
-	document.getElementById(parentName).appendChild(select);
+		var select = document.createElement("select");
+		document.getElementById(parentName).appendChild(select);
 
-	select.id = selectId;
-	select.classList = selectClasses;
-	select.setAttribute("onchange",onChangeFunction);
+		select.id = selectId;
+		select.classList = selectClasses;
+		select.setAttribute("onchange",onChangeFunction);
 	}
 }
 
 
 function makeNumberInput(parentName,formId,formClasses,formHTML,inputId,inputClasses){
 	if (document.getElementById(formId) == null){
-	var newForm = document.createElement('form');
-	document.getElementById(parentName).appendChild(newForm);
+		var newForm = document.createElement('form');
+		document.getElementById(parentName).appendChild(newForm);
 
-	newForm.id = formId;
-	newForm.classList = formClasses;
-	newForm.innerHTML = formHTML;
-	newForm.setAttribute("onsubmit", "return false")
+		newForm.id = formId;
+		newForm.classList = formClasses;
+		newForm.innerHTML = formHTML;
+		newForm.setAttribute("onsubmit", "return false")
 
-	var input = document.createElement("input");
-	input.type = "number";
-	input.id = inputId
-	input.classList = inputClasses; 
-	newForm.appendChild(input);
+		var input = document.createElement("input");
+		input.type = "number";
+		input.id = inputId
+		input.classList = inputClasses; 
+		newForm.appendChild(input);
+	}
 }
+
+
+function shuffle(array) {
+  var currentIndex = array.length, temporaryValue, randomIndex;
+
+  // While there remain elements to shuffle...
+  while (0 !== currentIndex) {
+
+    // Pick a remaining element...
+    randomIndex = Math.floor(Math.random() * currentIndex);
+    currentIndex -= 1;
+
+    // And swap it with the current element.
+    temporaryValue = array[currentIndex];
+    array[currentIndex] = array[randomIndex];
+    array[randomIndex] = temporaryValue;
+  }
+
+  return array;
 }
