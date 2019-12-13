@@ -96,9 +96,19 @@ function makeSelectDropdown(selectorForm,defaultText,listName){
 function addToSelect(selectorForm,listName){
 	var el = document.createElement("option");
 	selectorForm=document.getElementById(selectorForm);
+	for(var i = 0; i < listName.length; i++) {
+		var selectedOption = listName[i];
+		
+	    for (var j = 0; j < selectorForm.options.length; j++) {
+	    	formOption = selectorForm.options[j].value
+	    	if (selectedOption == formOption){
+	    		listName.splice(i-1, 1)
+    	}}
+    }
 
 	for(var i = 0; i < listName.length; i++) {
     var selectedOption = listName[i];
+
     var el = document.createElement("option");
     el.textContent = selectedOption;
     el.value = selectedOption;

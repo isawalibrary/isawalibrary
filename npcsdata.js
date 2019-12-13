@@ -974,7 +974,7 @@ var archetypes =[
 			advantages:[
 					"Wisdom of the Forest (Air) [Scholar; Mental]"
 					],
-			disadvantages:[	
+			disadvantages:[	"Removed from the Earth (Fire) [Scholar; Mental]"
 					],
 			weapon:["Majestic Antlers"],
 			armor:["Magical Hide"],
@@ -1879,7 +1879,7 @@ title:"Dark Sage",
 		],
 	disadvantages:["Bitter Marriage (Water) [Social; Interpersonal]", 
 		"Know-It-All (Air) [Social; Interpersonal]", 
-		"Bad Eyesight (Water) [Scholar; Physical]",
+		"Poor Eyesight (Water) [Scholar; Physical]",
 		"Scholar's Physique (Earth) [Martial; Physical]"
 		],
 	extratechs:3,

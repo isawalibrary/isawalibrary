@@ -12,6 +12,8 @@ var schools = {
 			skillnumber: 5,
 			skills: ['Fitness', 'Melee', 'Ranged', 'Unarmed', 'Meditation', 'Survival', 'Tactics'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			techniquetypes: ['Kata', 'Rituals', 'Shuji'],
 			role: ['Bushi'],
 			startingtechs: ["Lord Hida's Grasp (Crab)"],
@@ -37,6 +39,8 @@ var schools = {
 			skills: ['Fitness','Melee', 'Ranged', 'Skulduggery','Survival','Tactics','Theology'
 				],
 			honor: 35,
+			weapons:[],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi','Shinobi'],
@@ -61,12 +65,14 @@ var schools = {
 			skills: ['Command','Design','Labor','Ranged','Medicine','Smithing','Theology'
 				],
 			honor: 40,
+			weapons:["Oyumi",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi','Artisan'],
 			startingtechs: ['Tactical Assessment','Stirring the Embers','Stonewall Tactics'
 				],
-			startingtechoptions: ['None'
+			startingtechoptions: [
 				],
 			rank1techs:["Pelting Hail Style","Hawk's Precision",],rank2techs:["Battle in the Mind","Noxious Cloud",],rank3techs:["Pillar of Calm","Flowing Water Strike",],rank4techs:["Soul Sunder","Iron in the Mountains Style",],rank5techs:["Sear the Wound","Pin the Fan",],
 				chooseoptions: 0,
@@ -85,6 +91,8 @@ var schools = {
 			skills: ['Melee','Medicine','Sentiment','Skulduggery','Survival','Theology'
 				],
 			honor: 40,
+			weapons:[],
+			armor:["Sanctified Robes",],
 			techniquetypes: ['Invocations','Kata','Rituals'
 				],
 			role: ['Shugenja','Bushi'],
@@ -109,6 +117,8 @@ var schools = {
 			skills: ['Commerce','Composition','Courtesy','Culture','Design','Government','Ranged'
 				],
 			honor: 40,
+			weapons:[],
+			armor:["Ceremonial Robes",],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
@@ -133,6 +143,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			skills: ['Command','Melee','Unarmed','Meditation','Performance','Theology'],
 			honor: 34,
+			weapons:[],
+			armor:[],
 			role: ['Monk'],
 			techniquetypes: ['Shuji','Rituals','Kiho'],
 			startingtechs: ["Truth Burns Through Lies"],
@@ -157,6 +169,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			skills: ['Melee','Ranged','Tactics','Commerce','Courtesy','Seafaring','Survival'],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			role: ['Bushi'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ['Crescent Moon Style'],
@@ -186,6 +200,8 @@ var schools = {
 			skills: ['Aesthetics','Courtesy','Culture','Design','Games','Theology'
 			],
 			honor: 50,
+			weapons:[],
+			armor:["Sanctified Robes",],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 							],
 			role: ['Shugenja','Artisan'],
@@ -210,6 +226,8 @@ var schools = {
 			skills: ['Command','Courtesy','Culture','Fitness','Government','Melee','Tactics'
 				],
 			honor: 55,
+			weapons:["Bisento","Naginata",],
+			armor:[],
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -235,6 +253,8 @@ var schools = {
 			skills: ['Aesthetics','Composition','Courtesy','Culture','Design','Government','Ranged'
 				],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
@@ -259,6 +279,8 @@ var schools = {
 			skills: ['Courtesy','Design','Fitness','Melee','Meditation','Sentiment','Smithing'
 				],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi','Artisan'],
@@ -283,6 +305,8 @@ var schools = {
 			schoolskills:{Artisan:2,Social:0,Scholar:0,Martial:0,Trade:0},
 			skills: ['Aesthetics','Melee','Courtesy','Culture','Sentiment','Smithing','Theology'],
 			honor: 55,
+			weapons:[],
+			armor:[],
 			role: ['Artisan','Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ["Artisan's Appraisal"],
@@ -307,6 +331,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
 			skills: ['Command','Courtesy','Culture','Government','Performance','Sentiment','Skulduggery'],
 			honor: 35,
+			weapons:[],
+			armor:[],
 			role: ['Courtier','Shinobi'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ["Ancestry Unearthed"],
@@ -331,6 +357,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:1,Scholar:1,Martial:0,Trade:0},
 			skills: ['Command','Composition','Courtesy','Culture','Games','Government','Meditation'],
 			honor: 55,
+			weapons:[],
+			armor:[],
 			role: ['Courtier'],
 			techniquetypes: ['Rituals','Shuji'],
 			startingtechs: ["Courtier's Resolve","Stonewall Tactics"],
@@ -358,6 +386,8 @@ var schools = {
 			skills: ['Fitness','Unarmed','Medicine','Meditation','Smithing','Theology'
 				],
 			honor: 40,
+			weapons:["Bo",],
+			armor:["Sanctified Robes",],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
 			role: ['Shugenja'],
@@ -382,6 +412,8 @@ var schools = {
 			skills: ['Culture','Government','Melee','Medicine','Sentiment','Skulduggery','Survival'
 				],
 			honor: 45,
+			weapons:["Jian","Bo",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier','Bushi'],
@@ -406,6 +438,8 @@ var schools = {
 			skills: ['Command','Composition','Fitness','Melee','Meditation','Tactics','Theology'
 				],
 			honor: 50,
+			weapons:["Gao","Jian",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi'],
@@ -430,6 +464,8 @@ var schools = {
 			skills: ['Fitness','Melee','Unarmed','Meditation','Survival','Theology'
 				],
 			honor: 40,
+			weapons:["Bo",],
+			armor:[],
 			techniquetypes: ['Kiho','Shuji','Rituals'
 				],
 			role: ['Monk'],
@@ -453,6 +489,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			skills: ['Labor','Melee','Unarmed','Meditation','Survival','Theology'],
 			honor: 48,
+			weapons:[],
+			armor:[],
 			role: ['Bushi','Monk'],
 			techniquetypes: ['Kata','Rituals','Kiho'],
 			startingtechs: ["Water Fist"],
@@ -477,6 +515,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:1,Scholar:0,Martial:1,Trade:0},
 			skills: ['Culture','Fitness','Labor','Unarmed','Meditation','Performance'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Courtier','Monk'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ['Divination'],
@@ -505,6 +545,8 @@ var schools = {
 			skills: ['Command','Fitness','Government','Melee','Ranged','Meditation','Tactics'
 				],
 			honor: 50,
+			weapons:[],
+			armor:["Lacquered Armor",],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi'],
@@ -529,12 +571,14 @@ var schools = {
 			skills: ['Composition','Courtesy','Culture','Ranged','Performance','Sentiment','Tactics'
 				],
 			honor: 45,
+			weapons:["Tessen",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
 			startingtechs: ["Warrior's Resolve",'Fanning the Flames','Tributaries of Trade'
 				],
-			startingtechoptions: ['None'
+			startingtechoptions: [
 				],
 			rank1techs:["Slippery Maneuvers","Soaring Slice",],rank2techs:["Dazzling Performance","Spinning Blades Style",],rank3techs:["Rallying Cry","Regal Bearing",],rank4techs:["Sear the Wound","Pillar of Calm",],rank5techs:["Bend with the Storm","Buoyant Arrival",],
 			chooseoptions:0,
@@ -553,6 +597,8 @@ var schools = {
 			skills: ['Courtesy','Government','Meditation','Performance','Survival','Theology'
 				],
 			honor: 50,
+			weapons:["Bo",],
+			armor:["Lacquered Armor",],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
 			role: ['Shugenja'],
@@ -577,6 +623,8 @@ var schools = {
 			skills: ['Command','Fitness','Labor','Melee','Ranged','Unarmed','Survival'
 				],
 			honor: 55,
+			weapons:["Nodachi","Zanbato","Tessen",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi'],
@@ -600,6 +648,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
 			skills: ['Command','Fitness','Melee','Unarmed','Medicine','Sentiment','Survival'],
 			honor: 44,
+			weapons:[],
+			armor:[],
 			role: ['Artisan','Bushi'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ["Stonewall Tactics"],
@@ -624,6 +674,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			skills: ['Courtesy','Culture','Government','Melee','Ranged','Skulduggery','Survival'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Courtier','Shinobi'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ["Whispers of Court","Skulk"],
@@ -651,6 +703,8 @@ var schools = {
 			skills: ['Culture','Government','Unarmed','Medicine','Performance','Sentiment','Theology'
 				],
 			honor: 45,
+			weapons:[],
+			armor:["Ceremonial Robes",],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
@@ -675,6 +729,8 @@ var schools = {
 			skills: ['Composition','Courtesy','Medicine','Meditation','Performance','Theology'
 				],
 			honor: 40,
+			weapons:[],
+			armor:["Sanctified Robes",],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
 			role: ['Shugenja'],
@@ -699,6 +755,8 @@ var schools = {
 			skills: ['Courtesy','Fitness','Melee','Meditation','Survival','Tactics','Theology'
 				],
 			honor: 45,
+			weapons:["Jian","Ji","Naginata",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi','Courtier'],
@@ -722,6 +780,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
 			skills: ['Fitness','Ranged','Meditation','Performance','Smithing','Theology'
 				],
+			weapons:[],
+			armor:["Sanctified Robes",],
 			honor: 45,
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -746,6 +806,8 @@ var schools = {
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
 			skills: ['Courtesy','Meditation','Melee','Unarmed','Performance','Theology'],
 			honor: 35,
+			weapons:[],
+			armor:[],
 			role: ['Courtier','Shugenja'],
 			techniquetypes: ['Invocations','Shuji','Rituals',],
 			startingtechs: ["Cleansing Rite","Commune with the Spirits","Divination"],
@@ -770,6 +832,8 @@ var schools = {
 			schoolskills:{Artisan:1,Social:1,Scholar:0,Martial:0,Trade:0},
 			skills: ["Aesthetics","Composition","Courtesy","Culture","Design","Performance","Smithing"],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			role: ["Artisan"],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ["Tea Ceremony"],
@@ -798,6 +862,8 @@ Scorpion:{
 			skills: ['Command','Courtesy','Design','Unarmed','Performance','Sentiment','Skulduggery'
 				],
 			honor: 35,
+			weapons:[],
+			armor:["Ceremonial Robes",],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Courtier'],
@@ -822,6 +888,8 @@ Scorpion:{
 			skills: ['Courtesy','Fitness','Games','Melee','Unarmed','Performance','Skulduggery'
 				],
 			honor: 30,
+			weapons:[],
+			armor:["Ceremonial Robes",],
 			role: ['Shinobi','Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -846,6 +914,8 @@ Scorpion:{
 			skills: ['Courtesy','Fitness','Games','Performance','Skulduggery','Theology'
 				],
 			honor: 30,
+			weapons:[],
+			armor:["Sanctified Robes",],
 			role: ['Shugenja','Courtier','Shinobi'],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
@@ -870,6 +940,8 @@ Scorpion:{
 			skills: ['Composition','Fitness','Melee','Unarmed','Meditation','Theology'
 				],
 			honor: 40,
+			weapons:[],
+			armor:["Sanctified Robes","Concealed Armor",],
 			role: ['Shugenja'],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
@@ -893,6 +965,8 @@ Scorpion:{
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
 			skills: ['Aesthetics','Courtesy','Melee','Sentiment','Skulduggery','Theology'],
 			honor: 38,
+			weapons:[],
+			armor:[],
 			role: ['Shugenja'],
 			techniquetypes: ['Invocations','Shuji','Rituals',],
 			startingtechs: ["By the Light of the Lord Moon","Embrace of Kenro-Ji-Jin","Yari of Air"],
@@ -917,6 +991,8 @@ Scorpion:{
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			skills: ['Command','Courtesy','Fitness','Melee','Ranged','Tactics','Sentiment','Skulduggery'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Bushi','Shinobi'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ['Assess Strengths'],
@@ -945,6 +1021,8 @@ Unicorn:{
 			skills: ['Commerce','Courtesy','Games','Labor','Ranged','Medicine','Survival'
 				],
 			honor: 45,
+			weapons:[],
+			armor:[],
 			role: ['Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -969,6 +1047,8 @@ Unicorn:{
 			skills: ['Aesthetics','Design','Melee','Meditation','Survival','Theology'
 				],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Shugenja','Artisan'],
 			techniquetypes: ['Invocations','Rituals','Shuji'
 				],
@@ -993,6 +1073,8 @@ Unicorn:{
 			skills: ['Command', 'Fitness', 'Performance', 'Melee', 'Unarmed', 'Survival', 'Tactics'
 				],
 			honor: 35,
+			weapons:[],
+			armor:[],
 			role: ['Bushi'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -1017,6 +1099,8 @@ Unicorn:{
 			skills: ['Commerce','Melee','Ranged','Medicine','Skulduggery','Survival','Tactics'
 				],
 			honor: 40,
+			weapons:["Horsebow",],
+			armor:[],
 			role: ['Bushi','Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -1041,6 +1125,8 @@ Unicorn:{
 			skills: ['Command','Fitness','Government','Melee','Meditation','Smithing','Survival'
 				],
 			honor: 50,
+			weapons:["Naginata",],
+			armor:["Lacquered Armor",],
 			role: ['Bushi'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
@@ -1064,6 +1150,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
 			skills: ['Courtesy','Melee','Sentiment','Culture','Sentiment','Theology','Survival'],
 			honor: 44,
+			weapons:[],
+			armor:[],
 			role: ['Shugenja'],
 			techniquetypes: ['Air and Earth Invocations','Shuji','Rituals',],
 			startingtechs: ["Grasp of Earth","Tempest of Air"],
@@ -1091,6 +1179,8 @@ Unicorn:{
 			skills: ['Commerce','Fitness','Games','Labor','Melee','Ranged','Seafaring'
 			],
 			honor: 35,
+			weapons:["Nunchaku",],
+			armor:[],
 			role: ['Bushi'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ['Pelting Hail Style'],
@@ -1107,7 +1197,7 @@ Unicorn:{
 		seer: {
 
 			family:'mantis',
-			name:'Storm Fleet Tide Seer',
+			name:'Tide Seer',
 			clan:'Mantis',
 			ring1: 'Air',
 			ring2: 'Water',
@@ -1116,6 +1206,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:0,Trade:1},
 			skills: ['Commerce','Fitness','Games','Labor','Melee','Seafaring','Theology'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Shugenja'],
 			techniquetypes: ['Air & Water Invocations','Rituals','Shuji'],
 			startingtechs: ['Domination of Suijin','Tempest of Air','Commune with the Spirits','Divination'],
@@ -1144,6 +1236,8 @@ Unicorn:{
 			skills: ['Aesthetics','Composition','Culture','Fitness','Government','Seafaring','Survival'
 			],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			role: ['Artisan','Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'
 			],
@@ -1171,6 +1265,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:1,Scholar:0,Martial:0,Trade:1},
 			skills: ['Command','Composition','Courtesy','Fitness','Seafaring','Sentiment','Survival'],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			role: ['Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: [],
@@ -1195,6 +1291,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:1,Scholar:1,Martial:0,Trade:0},
 			skills: ['Command','Composition','Courtesy','Culture','Design','Government','Sentiment'],
 			honor: 45,
+			weapons:[],
+			armor:[],
 			role: ['Courtier'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ['Slippery Maneuvers'],
@@ -1219,6 +1317,8 @@ Unicorn:{
 			schoolskills:{Artisan:1,Social:0,Scholar:1,Martial:0,Trade:0},
 			skills: ['Composition','Government','Medicine','Meditation','Sentiment','Theology'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Shugenja','Artisan'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ['Bind the Shadow','Divination','Commune with the Spirits','Threshold Barrier'],
@@ -1243,6 +1343,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:1,Scholar:0,Martial:1,Trade:0},
 			skills: ['Fitness','Melee','Ranged','Unarmed','Meditation','Sentiment','Tactics'],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			role: ['Bushi'],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: [],
@@ -1271,6 +1373,8 @@ Unicorn:{
 			skills: ['Command','Fitness','Labor','Melee','Ranged','Unarmed','Skulduggery'
 				],
 			honor: 30,
+			weapons:["Masakari",],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Bushi','Courtier'],
@@ -1297,6 +1401,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:1,Scholar:1,Martial:0,Trade:0},
 			skills: ['Courtesy','Culture','Unarmed','Meditation','Survival','Theology'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'
 				],
 			role: ['Monk'],
@@ -1322,6 +1428,8 @@ Unicorn:{
 			schoolskills:{Artisan:1,Social:0,Scholar:0,Martial:1,Trade:0},
 			skills: ['Aesthetics','Composition','Fitness','Unarmed','Meditation','Theology'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Monk'],
 			techniquetypes: ['Kata','Rituals','Kiho'
 				],
@@ -1336,10 +1444,69 @@ Unicorn:{
 			ability:'When you spend a Void point to Seize the Moment (Core p36) you may also treat your ranks in the skill you are using as being equal to your school rank,  If your ranks in the skill are equal to or higher than your school rank, or if you have 5 ranks in the skill, you may add one kept <span class="l5r">d</span> set to an <span class="l5r">O</span> result instead.',
 			keyword:'Unaligned',
 			},
+
+		ksaboteur: {
+			family:'other',
+			name:'Kolat Saboteur',
+			clan:'Other',
+			ring1: 'Air',
+			ring2: 'Water',
+			source: 'Emerald Empire p240',
+			skillnumber: 5,
+			schoolskills:{Artisan:0,Social:1,Scholar:0,Martial:1,Trade:0},
+			skills: ['Commerce','Fitness','Melee','Ranged','Medicine','Meditation','Skulduggery'],
+			honor: 20,
+			weapons:[],
+			armor:[],
+			role: ['Shinobi'],
+			techniquetypes: ['Kata','Shuji'],
+			startingtechs: ['Veiled Menace Style','Skulk','Cadence'],
+			startingtechoptions: [],
+			rank1techs:["Deadly Sting","Shallow Waters"],
+			rank2techs:["Noxious Clouds","Tributaries of Trade"],
+			rank3techs:["Ebb and Flow","Spin the Web (Kolat)"],
+			rank4techs:["Silencing Stroke","Wolf's Proposal"],
+			rank5techs:["Buoyant Arrival"],
+			chooseoptions: 0,
+			ability:'Once per game session at the beginning of a scene, you may reveal that an NPC in that scene is the target of your current assignment.  The GM then decides what your assignment entails, such as sabotaging the targets current activities, framing them for a crime, killing them, or even making sure they survive to play their part in a long and sinister plot.  Until the end of the session, when you make a skill check targeting the chosen NPC, you may reroll a number of dice up to your school rank',
+			keyword:'Unaligned',
+		
+			},
+
+		mercenaryninja: {
+			family:'other',
+			name:'Mercenary Ninja',
+			clan:'Other',
+			ring1: 'Air',
+			ring2: 'Any',
+			source: 'Courts of Stone',
+			skillnumber: 5,
+			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
+			skills: ["Fitness","Melee","Ranged","Unarmed","Medicine","Skulduggery","Survival"],
+			honor: 20,
+			weapons:[],
+			armor:[],
+			role: ["Shinobi"],
+			techniquetypes: ['Ninjitsu','Rituals','Kata'],
+			startingtechs: ["Skulk"],
+			startingtechoptions: ["Cadence","Shallow Waters"],
+			chooseoptions: 1,
+			rank1techs:["Beware the Smallest Mouse","Like a Ghost"],
+			rank2techs:["Silent Elimination","Veiled Menace Style"],
+			rank3techs:["Feigned Opening","Slicing Wind Kick"],
+			rank4techs:["Hidden in Smoke","Breath of Wind Style"],
+			rank5techs:["Foreseen Need","Striking as Void"],
+			ability:"Disciple of Darkness: When you perform a check to hide, move stealthily, or deceive others as to your true identity, you may suffer a number of strife up to your school rank to choose that many characters targeted by the check.  Treat each chosen character's vigilance as 1 lower while resolving the check.",
+			keyword:'Unaligned',
+			
+		},
+
+	},
+	Minor:{	
 		kitsune: {
 			family:'other',
 			name:'Kitsune Impersonator',
-			clan:'Other',
+			clan:'Minor',
 			ring1: 'Air',
 			ring2: 'Fire',
 			source: 'Emerald Empire p239',			
@@ -1347,6 +1514,8 @@ Unicorn:{
 			schoolskills:{Artisan:1,Social:1,Scholar:0,Martial:0,Trade:0},
 			skills: ['Courtesy','Games','Performance','Unarmed','Survival','Theology'],
 			honor: 30,
+			weapons:[],
+			armor:[],
 			role: ['Courtier','Shugenja'],
 			techniquetypes: ['Invocations','Rituals','Shuji'],
 			startingtechs: ['Natures Touch','Token of Memory','Commune with the Spirits'],
@@ -1364,7 +1533,7 @@ Unicorn:{
 		toritaka: {
 			family:'other',
 			name:'Toritaka Phantom Hunter',
-			clan:'Other',
+			clan:'Minor',
 			ring1: 'Air',
 			ring2: 'Water',
 			source: 'Shadowlands',
@@ -1372,6 +1541,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:0,Scholar:2,Martial:0,Trade:0},
 			skills: ['Culture','Government','Melee','Sentiment','Survival','Theology'],
 			honor: 40,
+			weapons:[],
+			armor:[],
 			role: ['Shugenja'],
 			techniquetypes: ['Invocations','Rituals','Shuji'],
 			startingtechs: ["Cleansing Rite","Commune with the Spirits","Tea Ceremony","Courtier's Resolve"],
@@ -1386,36 +1557,11 @@ Unicorn:{
 			keyword:'Minor Clan Falcon Ghost',
 			
 		},
-		ksaboteur: {
-			family:'other',
-			name:'Kolat Saboteur',
-			clan:'Other',
-			ring1: 'Air',
-			ring2: 'Water',
-			source: 'Emerald Empire p240',
-			skillnumber: 5,
-			schoolskills:{Artisan:0,Social:1,Scholar:0,Martial:1,Trade:0},
-			skills: ['Commerce','Fitness','Melee','Ranged','Medicine','Meditation','Skulduggery'],
-			honor: 20,
-			role: ['Shinobi'],
-			techniquetypes: ['Kata','Shuji'],
-			startingtechs: ['Veiled Menace Style','Skulk','Cadence'],
-			startingtechoptions: [],
-			rank1techs:["Deadly Sting","Shallow Waters"],
-			rank2techs:["Noxious Clouds","Tributaries of Trade"],
-			rank3techs:["Ebb and Flow","Spin the Web (Kolat)"],
-			rank4techs:["Silencing Stroke","Wolf's Proposal"],
-			rank5techs:["Buoyant Arrival"],
-			chooseoptions: 0,
-			ability:'Once per game session at the beginning of a scene, you may reveal that an NPC in that scene is the target of your current assignment.  The GM then decides what your assignment entails, such as sabotaging the targets current activities, framing them for a crime, killing them, or even making sure they survive to play their part in a long and sinister plot.  Until the end of the session, when you make a skill check targeting the chosen NPC, you may reroll a number of dice up to your school rank',
-			keyword:'Unaligned',
-		
-			},
 		tortoise:{
 			family:'other',
 			name:'Kasuga Smuggler',
 			source: 'Dark Tides Adventure',
-			clan:'Other',
+			clan:'Minor',
 			ring1: 'Air',
 			ring2: 'Water',
 			skillnumber: 5,
@@ -1423,6 +1569,8 @@ Unicorn:{
 			role: ['Bushi'],
 			skills: ['Commerce','Culture','Courtesy','Melee','Seafaring','Skulduggery'],
 			honor: 29,
+			weapons:[],
+			armor:[],
 			techniquetypes: ['Kata','Rituals','Shuji'],
 			startingtechs: ['Rushing Avalanche Style'],
 			startingtechoptions: ['Honest Assessment','Well of Desire'],
@@ -1436,31 +1584,7 @@ Unicorn:{
 			keyword:'Minor clan Tortoise',
 			
 		},
-		mercenaryninja: {
-			family:'other',
-			name:'Mercenary Ninja',
-			clan:'Other',
-			ring1: 'Air',
-			ring2: 'Any',
-			source: 'Courts of Stone',
-			skillnumber: 5,
-			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
-			skills: ["Fitness","Melee","Ranged","Unarmed","Medicine","Skulduggery","Survival"],
-			honor: 20,
-			role: ["Shinobi"],
-			techniquetypes: ['Ninjitsu','Rituals','Kata'],
-			startingtechs: ["Skulk"],
-			startingtechoptions: ["Cadence","Shallow Waters"],
-			chooseoptions: 1,
-			rank1techs:["Beware the Smallest Mouse","Like a Ghost"],
-			rank2techs:["Silent Elimination","Veiled Menace Style"],
-			rank3techs:["Feigned Opening","Slicing Wind Kick"],
-			rank4techs:["Hidden in Smoke","Breath of Wind Style"],
-			rank5techs:["Foreseen Need","Striking as Void"],
-			ability:"Disciple of Darkness: When you perform a check to hide, move stealthily, or deceive others as to your true identity, you may suffer a number of strife up to your school rank to choose that many characters targeted by the check.  Treat each chosen character's vigilance as 1 lower while resolving the check.",
-			keyword:'Unaligned',
-			
-		},
+
 		shikamatchmaker: {
 			family:'other',
 			name:'Shika Matchmaker',
@@ -1472,6 +1596,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:1,Scholar:1,Martial:0,Trade:0},
 			skills: ["Composition","Courtesy","Culture","Meditation","Sentiment","Theology"],
 			honor: 50,
+			weapons:[],
+			armor:[],
 			role: ["Courtier","Shugenja"],
 			techniquetypes: ['Shuji','Rituals','Air & Water Invocations'],
 			startingtechs: ["The Ties that Bind","Yari of Air"],
@@ -1486,7 +1612,7 @@ Unicorn:{
 			keyword:'Minor clan Deer',
 			
 		},
-		skikaspeardancer: {
+		shikaspeardancer: {
 			family:'other',
 			name:'Shika Speardancer',
 			clan:'Other',
@@ -1497,6 +1623,8 @@ Unicorn:{
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
 			skills: ["Melee","Meditation","Skulduggery","Survival","Fitness","Sentiment","Courtesy"],
 			honor: 35,
+			weapons:[],
+			armor:[],
 			role: ['Bushi','Shinobi'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ['Trip the Leg'],
@@ -1510,9 +1638,10 @@ Unicorn:{
 			rank5techs:['Silent Elimination','The Ties That Bind'],
 			keyword:'Minor clan Deer',
 			
-
 		},
-	},};
+	},
+
+};
 
 var titles = {
 

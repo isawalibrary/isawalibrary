@@ -51,8 +51,7 @@ function loadSkirmish(){
 function makeSkirmish(){
 
 	newdiv("addnewcontainer","skirmishcontainer","button inline margin10")
-	makeButton("addnewcontainer","addnewbutton","button inline","makeNewChar()","Add new character to skirmish")
-
+	makeButton("addnewcontainer","addnewbutton","button inline skirmishbuttonstyle","makeNewChar()","Add new character to skirmish")
 
 	newdiv("reorderskirmish","skirmishcontainer","button inline margin10")
 	makeButton("reorderskirmish","reorderskirmishbutton","button inline","reorderSkirmish()","Reorder skirmish by initiative")
@@ -623,13 +622,15 @@ function selectArchetype(){
 		'<span class="l5r earth margin10">e</span> <span id="npcEarth">'+selectedArchetype.ring.Earth+'</span>'+
 		'<span class="l5r fire margin10">f</span> <span id="npcFire">'+selectedArchetype.ring.Fire+ '</span>'+
 		'<span class="l5r water margin10">w</span> <span id="npcWater">'+selectedArchetype.ring.Water+ '</span>'+
-		'<span class="margin10 void l5r">v</span> <span id="npcVoid">'+selectedArchetype.ring.Void+'</div>'+'</span>'+
-		'Endurance: <span id="npcendurance">'+selectedArchetype.endurance+'</span>'+
+		'<span class="margin10 void l5r">v</span> <span id="npcVoid">'+selectedArchetype.ring.Void+'</div>'+'</span>'
+	divcontents("npcrings",x)
+	makeButton("npcrings","useclanstats","button inline margin10","useClanFamilyStats()","use rings from clan and family")
+	x =	'Endurance: <span id="npcendurance">'+selectedArchetype.endurance+'</span>'+
 		'<span class="margin10">Composure:</span> <span id="npccomposure">'+selectedArchetype.composure+'</span>'+
 		'<span class="margin10">Focus:</span> <span id="npcfocus">'+selectedArchetype.focus+'</span>'+
 		'<span class="margin10">Vigilance:</span> <span id="npcvigilance">'+selectedArchetype.vigilance+'</span>' 
-	divcontents("npcrings",x) 
-	makeButton("npcrings","calcderivedstatbutton","button inline margin10","calculateDerivedStats()","calculate derived stats")
+	divcontents("npcderivedstats",x) 
+	makeButton("npcderivedstats","calcderivedstatbutton","button inline margin10","calculateDerivedStats()","calculate derived stats")
 
 
 	x = '<div class="techresults"><span>Honor: </span><span id="npchonor">'+selectedArchetype.honor+'</span>'+
@@ -742,6 +743,9 @@ function selectArchetype(){
 
 }
 
+
+
+
 function buildNpcStats(){
 
 	document.getElementById("npcstats").innerHTML = "";
@@ -752,6 +756,8 @@ function buildNpcStats(){
 	newdiv("npcinfo","npcstats","inline margin10")
 
 	newdiv("npcrings","npcstats","block margin10")
+
+	newdiv("npcderivedstats","npcstats","block margin10")
 
 	newdiv("npcskills","npcstats","block margin10")
 
@@ -856,6 +862,62 @@ function npcCalcSocial(){
 	family = selectedSchool.family
 	thisnpc.glory = selectedClan[family].glory;
 	updateSpans("glory");
+}
+
+
+function useClanFamilyStats(){
+
+	var element = document.getElementById("useclanstats")
+	element.parentNode.removeChild(element);
+
+	var rings = {Air:0, Earth:0, Fire:0, Water:0, Void:0};
+
+//get base stats for the rank
+
+	document.getElementById("npcAir")
+
+	if (selectedArchetype.ring.type !== "set"){
+				selectedArchetype.extra();
+		}
+
+	family = selectedSchool.family
+	family = selectedClan[family]
+
+	familyRing = "ring"+getRndInteger(1,2);
+
+	familyRing = family[familyRing]
+
+	rings[familyRing] ++;
+
+	clanRing = selectedClan.clanring
+	clanRing = Object.keys(clanRing) 
+	clanRing = clanRing[0]
+
+	rings[clanRing] ++;
+
+	schoolRing = selectedSchool.ring1
+	rings[schoolRing] ++;
+	schoolRing = selectedSchool.ring2
+	rings[schoolRing] ++;
+
+	rings.Air = rings.Air + selectedArchetype.ring.Air
+	rings.Earth = rings.Earth + selectedArchetype.ring.Earth
+	rings.Fire = rings.Fire + selectedArchetype.ring.Fire
+	rings.Water = rings.Water + selectedArchetype.ring.Water
+	rings.Void = rings.Void + selectedArchetype.ring.Void
+
+	thisnpc.Air = rings.Air
+	thisnpc.Earth = rings.Earth 
+	thisnpc.Fire = rings.Fire 
+	thisnpc.Water = rings.Water 
+	thisnpc.Void = rings.Void 
+
+	updateSpans("Air");
+	updateSpans("Earth");
+	updateSpans("Fire");
+	updateSpans("Water");
+	updateSpans("Void");
+
 }
 
 
@@ -1205,6 +1267,12 @@ function selectNPCSchool(){
 	addToSelect("npcadv",advantage)
 	addToSelect("npcdisadv",disadvantage)
 
+	weapons = selectedSchool.weapons
+	armor = selectedSchool.armor
+
+	addToSelect("npcweapon",weapons)
+	addToSelect("npcarmor",armor)
+	
 	var techlist = [];
 	var techdroplist = [];
 
@@ -1282,6 +1350,8 @@ function selectNPCSchool(){
 	document.getElementById("npccalcsocial").classList.remove("hide");
 
 	selectedClan = families[selectedClan]
+
+	makeButton("npcrings","useclanstats","button inline margin10","useClanFamilyStats()","use rings from clan and family")
 
 }
 
@@ -1682,36 +1752,25 @@ function setTechs(){
 
 
 function calculateDerivedStats(){
-	thisnpc.endurance = (thisnpc.Earth + thisnpc.Fire)*2;
-	thisnpc.composure = (thisnpc.Earth + thisnpc.Water)*2;
-	thisnpc.focus = thisnpc.Fire + thisnpc.Air;
-	thisnpc.vigilance = Math.ceil((thisnpc.Air + thisnpc.Water)/2);
+
+	if (thisnpc.Earth !== undefined){
+		thisnpc.endurance = (thisnpc.Earth + thisnpc.Fire)*2;
+		thisnpc.composure = (thisnpc.Earth + thisnpc.Water)*2;
+		thisnpc.focus = thisnpc.Fire + thisnpc.Air;
+		thisnpc.vigilance = Math.ceil((thisnpc.Air + thisnpc.Water)/2);
+	}
+	if (thisnpc.rings !== undefined){
+		thisnpc.endurance = (thisnpc.rings.earth + thisnpc.rings.fire)*2;
+		thisnpc.composure = (thisnpc.rings.earth + thisnpc.rings.water)*2;
+		thisnpc.focus = thisnpc.rings.fire + thisnpc.rings.air;
+		thisnpc.vigilance = Math.ceil((thisnpc.rings.air + thisnpc.rings.water)/2);
+	}
 
 	updateSpans("endurance");
 	updateSpans("composure");
 	updateSpans("focus");
 	updateSpans("vigilance");
 }
-
-
-//CHECKED UP TO HERE
-//WHEN NPCBUILDER IS USED, NPC HAS NO MAX ENDURANCE OR COMPOSURE
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -1751,10 +1810,6 @@ function makeTechSelectDropdown(selectorForm,defaultText,listName,valueName){
     selectorForm.appendChild(el);
 		};
 	};
-
-
-
-
 
 
 
@@ -2608,8 +2663,7 @@ function editAddWeapon(){
 		if (npcweapons[each].type == "natural"){
 			weapons.push(npcweapons[each].title)
 		}
-	}
-	}
+	}}
 
 	weapons.sort();
 
@@ -2634,7 +2688,6 @@ function editAddTech(i){
 		z = '<div class="inlineblock margin10">Type: <select id="edittechsearchtype" onchange="edittechfilter('+i+')" class="styledselect"><option value="any">Any</option><option value="invocation">Invocation</option><option value="kata">Kata</option><option value="kiho">Kiho</option><option value="maho">Maho</option><option value="ninjutsu">Ninjutsu</option><option value="ritual">Ritual</option><option value="shuji">Shuji</option></select></div><div class="inline defs">Ring: <select id="edittechsearchring" onchange="edittechfilter('+i+')" class="styledselect"><option value="default">select</option><option value="air">Air</option><option value="earth">Earth</option><option value="fire">Fire</option><option value="water">Water</option><option value="void">Void</option><option value="any">None</option></select></div><div class="inline defs">Rank: <select id="edittechsearchrank1" onchange="edittechfilter('+i+')" class="styledselect"><option value="1">=</option><option value="2">=<</option></select><select class="margin10 styledselect" id="edittechsearchrank" onchange="edittechfilter('+i+')" class="styledselect"><option value="any">Any</option><option value="1">1</option><option value="2">2</option><option value="3">3</option><option value="4">4</option><option value="5">5</option></select></div>';
 		divcontents("edittechfilter"+i,z);
 
-
 		newdiv("edittechsability"+i,"techwrap"+i,"inlineblock small")
 
 		techniquestext = [];
@@ -2645,9 +2698,6 @@ function editAddTech(i){
 		}
 
 		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
-
-
-
 }
 
 function edittechfilter(i){

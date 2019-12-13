@@ -1,10 +1,10 @@
-var clans = ["Crab","Crane","Dragon","Lion","Mantis","Phoenix","Scorpion","Unicorn","Imperial","Other"];
+var clans = ["Crab","Crane","Dragon","Lion","Mantis","Phoenix","Scorpion","Unicorn","Imperial","Minor","Other"];
 
 var families = {
 	Crab:{	clanring:{Earth:+1},
 			clanskill:"Martial",
 			clanstatus:30,
-			weapons:["Tetsubo","Otsuchi","Oyumi"],
+			weapons:["Tetsubo","Otsuchi",],
 			armor:["Ashigaru Armor","Lacquered Armor"],
 			advantages:["Inured to Horrors (Fire) [Scholar, Martial; Mental]",
 					"Veteran of the Shadowlands (Earth) [Scholar, Martial; Mental]",
@@ -187,7 +187,7 @@ var families = {
 			clanring:{Fire:+1},
 			clanskill:"Scholar",
 			clanstatus:30,
-			weapons:["Bo","Jian"],
+			weapons:["Bo","Ji"],
 			armor:["Sanctified Robes"],
 			advantages:["Mysterious Personage (Void) [Social; Interpersonal]",
 				"Friend of the Brotherhood (Water) [Social; Interpersonal]",
@@ -258,7 +258,7 @@ var families = {
 			clanring:{Water:+1},
 			clanskill:"Martial",
 			clanstatus:35,
-			weapons:["Nodachi","Tessen","Hammer"],
+			weapons:[],
 			armor:["Ashigaru Armor"],
 			advantages:["Intense and Sincere! (Fire) [Social; Interpersonal]",
 						"Famed for a Valiant Battle  (Water) [Social; Interpersonal]",
@@ -488,7 +488,7 @@ Unicorn:{
 		clanring:{"Water":+1},
 			clanskill:"Trade",
 			clanstatus:30,
-			weapons:["Scimitar","Oyumi","Naginata"],
+			weapons:["Scimitar",],
 			armor: ["Ashigaru Armor"],
 			advantages: [
 				"Expert Rider (Water) [Trade, Martial; Physical]",
@@ -679,4 +679,32 @@ Unicorn:{
 			skill2:"",
 			glory:"",
 			wealth:"",	},
+
+
+	Minor:{
+		clanring: {"Void":+1},
+		clanskill: "Trade",
+		weapons:[],
+		armor:[],			
+		advantages: [
+
+					],
+		disadvantages: [
+
+					],
+},
+			other: {
+			name:'Minor',
+			clan:'Minor',
+			ring1:"",
+			ring2:"",
+			advantages:[
+			],
+			disadvantages:[
+			],
+			skill1:"",
+			skill2:"",
+			glory:"",
+			wealth:"",	},
+
 }

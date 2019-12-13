@@ -249,7 +249,6 @@ thead {
 
 .tooltiptext {
   width: 60%;
-  left: 20%;
   color: var(--tooltipfont);
   text-align: justify;
   padding: 5px 0;
@@ -275,8 +274,12 @@ thead {
   margin-left: 270px;
 }
 
+.tooltipdef {
+  margin-left: 270px;
+}
+
 .namelength {
-  min-width: 50px;
+  min-width: 80px;
   display: inline-block;
 }
 
@@ -286,7 +289,7 @@ thead {
 }
 
 .clanlength {
-  min-width: 150px;
+  min-width: 120px;
   display: inline-block;
 }
 
@@ -726,6 +729,10 @@ tbody tr:nth-child(odd) {
   to {color: var(--buttontext);}
 }
 
+.skirmishbuttonstyle {
+  margin-bottom: 10px;
+}
+
 
 /* Mobile Styles */
 @media only screen and (max-width: 1000px) {
@@ -739,7 +746,6 @@ body {
   background-repeat: no-repeat;
   background-attachment: fixed;
   color: var(--font-color);
-
 }
 
 .button {
@@ -774,6 +780,10 @@ body {
 .filtitem {
   margin-bottom: 10px;
   max-width: 100%;
+}
+
+.tooltipdef {
+  margin-left: 270px;
 }
 
 .filtitemeffect {
