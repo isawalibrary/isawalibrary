@@ -71,14 +71,11 @@ function makeDefs(){
 
 
 function divider() {
-	document.getElementById("//3").innerHTML="//";
-	document.getElementById("//4").innerHTML="//";
-	document.getElementById("//5").innerHTML="//";
-	document.getElementById("//x4").innerHTML="//";
-	document.getElementById("//17").innerHTML="//";
-	document.getElementById("//27").innerHTML="//";
-	document.getElementById("//37").innerHTML="//";
-	document.getElementById("//47").innerHTML="//";
+	document.getElementById("//x1").innerHTML="//";
+	document.getElementById("//14").innerHTML="//";
+	document.getElementById("//24").innerHTML="//";
+	document.getElementById("//34").innerHTML="//";
+	document.getElementById("//44").innerHTML="//";
 }
 
 function makeTable(){

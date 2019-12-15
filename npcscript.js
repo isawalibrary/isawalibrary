@@ -618,7 +618,7 @@ function selectArchetype(){
 		}
 
 
-	x = '<div class="paddingtopbottom">Rings: <span class="margin10 air l5r">a</span> <span id="npcAir">'+selectedArchetype.ring.Air+'</span>'+
+	x = '<div class="paddingtopbottom inline">Rings: <span class="margin10 air l5r">a</span> <span id="npcAir">'+selectedArchetype.ring.Air+'</span>'+
 		'<span class="l5r earth margin10">e</span> <span id="npcEarth">'+selectedArchetype.ring.Earth+'</span>'+
 		'<span class="l5r fire margin10">f</span> <span id="npcFire">'+selectedArchetype.ring.Fire+ '</span>'+
 		'<span class="l5r water margin10">w</span> <span id="npcWater">'+selectedArchetype.ring.Water+ '</span>'+
@@ -755,7 +755,7 @@ function buildNpcStats(){
 
 	newdiv("npcinfo","npcstats","inline margin10")
 
-	newdiv("npcrings","npcstats","block margin10")
+	newdiv("npcrings","npcstats","block margin10 paddingtopbottom")
 
 	newdiv("npcderivedstats","npcstats","block margin10")
 
@@ -865,29 +865,19 @@ function npcCalcSocial(){
 }
 
 
+
 function useClanFamilyStats(){
+
+	var rings = {Air:0, Earth:0, Fire:0, Water:0, Void:0};
 
 	var element = document.getElementById("useclanstats")
 	element.parentNode.removeChild(element);
 
-	var rings = {Air:0, Earth:0, Fire:0, Water:0, Void:0};
-
 //get base stats for the rank
-
-	document.getElementById("npcAir")
 
 	if (selectedArchetype.ring.type !== "set"){
 				selectedArchetype.extra();
 		}
-
-	family = selectedSchool.family
-	family = selectedClan[family]
-
-	familyRing = "ring"+getRndInteger(1,2);
-
-	familyRing = family[familyRing]
-
-	rings[familyRing] ++;
 
 	clanRing = selectedClan.clanring
 	clanRing = Object.keys(clanRing) 
@@ -895,10 +885,35 @@ function useClanFamilyStats(){
 
 	rings[clanRing] ++;
 
-	schoolRing = selectedSchool.ring1
-	rings[schoolRing] ++;
-	schoolRing = selectedSchool.ring2
-	rings[schoolRing] ++;
+	schoolRing1 = selectedSchool.ring1
+	rings[schoolRing1] ++;
+	schoolRing2 = selectedSchool.ring2
+	rings[schoolRing2] ++;
+
+	family = selectedSchool.family
+	family = selectedClan[family]
+
+	x = getRndInteger(1,2);
+	familyRing = "ring"+ x
+
+	familyRing = family[familyRing]
+	
+	if (rings[familyRing] < 2){
+		rings[familyRing] ++;
+	} else {
+		if (x == 1){
+			familyRing = family.ring2
+			rings[familyRing] ++;
+		}
+
+		if (x == 2){
+			familyRing = family.ring1
+			rings[familyRing] ++;
+		}
+	}
+
+
+	startingRingsAtThree(rings)  //adds the extra +1 to a ring that won't push it over 3
 
 	rings.Air = rings.Air + selectedArchetype.ring.Air
 	rings.Earth = rings.Earth + selectedArchetype.ring.Earth
@@ -918,6 +933,18 @@ function useClanFamilyStats(){
 	updateSpans("Water");
 	updateSpans("Void");
 
+}
+
+function startingRingsAtThree(rings){
+
+	array = ["Air", "Earth", "Fire", "Water", "Void"]
+	raisedRing = getRandom(array)
+
+		if (rings[raisedRing] < 2){
+			rings[raisedRing] ++;
+		} else {
+			startingRingsAtThree(rings)
+		}
 }
 
 
@@ -1752,6 +1779,12 @@ function setTechs(){
 
 
 function calculateDerivedStats(){
+
+	parseInt(thisnpc.Air)
+	parseInt(thisnpc.Earth)
+	parseInt(thisnpc.Fire)
+	parseInt(thisnpc.Water)
+	parseInt(thisnpc.Void)
 
 	if (thisnpc.Earth !== undefined){
 		thisnpc.endurance = (thisnpc.Earth + thisnpc.Fire)*2;

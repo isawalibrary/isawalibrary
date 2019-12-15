@@ -1500,13 +1500,10 @@ Unicorn:{
 			keyword:'Unaligned',
 			
 		},
-
-	},
-	Minor:{	
 		kitsune: {
 			family:'other',
 			name:'Kitsune Impersonator',
-			clan:'Minor',
+			clan:'Other',
 			ring1: 'Air',
 			ring2: 'Fire',
 			source: 'Emerald Empire p239',			
@@ -1530,8 +1527,12 @@ Unicorn:{
 			keyword:'Minor Clan Fox',
 			
 		},
+
+	},
+	Minor:{	
+
 		toritaka: {
-			family:'other',
+			family:'toritaka',
 			name:'Toritaka Phantom Hunter',
 			clan:'Minor',
 			ring1: 'Air',

@@ -693,18 +693,19 @@ Unicorn:{
 
 					],
 },
-			other: {
-			name:'Minor',
+			toritaka: {
+			name:'Toritaka',
 			clan:'Minor',
-			ring1:"",
-			ring2:"",
+			clanring: "Void",
+			ring1:"Earth",
+			ring2:"Water",
 			advantages:[
 			],
 			disadvantages:[
 			],
-			skill1:"",
-			skill2:"",
-			glory:"",
+			skill1:"Survival",
+			skill2:"Meditation",
+			glory:"35",
 			wealth:"",	},
 
 }

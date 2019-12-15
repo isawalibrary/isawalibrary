@@ -63,6 +63,11 @@ body {
   display: inline;
 }
 
+.paddingtable{
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 .container {
   animation-duration: 500ms;
   animation-name: slidein;
@@ -146,6 +151,11 @@ body {
 .paddingtopbottom{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.paddingtable{
+  padding-top: 5px;
+  padding-bottom: 5px;
 }
 
 .margintopbottom{
@@ -350,6 +360,46 @@ thead {
   width: 150px;
 }
 
+#Conditions-table td {
+  width: 80px;
+}
+
+#Conditions-table td+td {
+  width: 400px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right:10px;
+}
+#Conditions-table td+td+td {
+  width: 400px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#ItemQualities-table td {
+  width: 70px;
+}
+
+#ItemQualities-table td+td {
+  width: 300px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+  padding-right:10px;
+}
+#ItemQualities-table td+td+td {
+  width: 500px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+#Terrain-table td {
+  width: 70px;
+}
+
+#Terrain-table td+td {
+  width: 600px;
+  padding-top: 5px;
+  padding-bottom: 5px;
+}
+
 #Silhouettes-table td {
   width: 70px;
 }
@@ -473,7 +523,7 @@ thead {
 }
 
 #Armors-table td+td+td+td+td+td+td {
-  width: 50px;
+  width: 70px;
 }
 
 #Patterns-table td {
