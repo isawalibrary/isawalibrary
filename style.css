@@ -118,6 +118,9 @@ body {
   }
 
 }
+#advantagelength {
+  width: 400px;
+}
 
 
 .stancediv {
@@ -146,11 +149,30 @@ body {
 
 #npcstats {
   padding-top: 10px;
+  width: 600px;
   }
+
+#npcnotesinput {
+  width: 300px;
+  height: 400px;
+}
+
+#npcnotes {
+  width: 350px;
+  vertical-align: top;
+}
 
 .paddingtopbottom{
   padding-top: 10px;
   padding-bottom: 10px;
+}
+
+.paddingbottom{
+  padding-bottom: 10px;
+}
+
+.marginbottom{
+  margin-bottom: 10px;
 }
 
 .paddingtable{
@@ -299,7 +321,7 @@ thead {
 }
 
 .clanlength {
-  min-width: 120px;
+  min-width: 160px;
   display: inline-block;
 }
 
@@ -341,6 +363,11 @@ thead {
 
 .editwidth {
   width:750px;
+}
+
+#editnotesinput {
+  width: 750px;
+  height: 30px;
 }
 
 .word-wrap {
@@ -633,7 +660,7 @@ color:var(--table-header-font);
 
 #menu {
   font-size: 12.5px;
-  width: 400px;
+  width: 350px;
   vertical-align: top;
 }
 
@@ -782,6 +809,8 @@ tbody tr:nth-child(odd) {
 .skirmishbuttonstyle {
   margin-bottom: 10px;
 }
+
+
 
 
 /* Mobile Styles */
@@ -1022,6 +1051,8 @@ body {
 #statblock {
   width: 60%
 }
+
+
 
 .hide {
 	display: none;

@@ -886,8 +886,12 @@ function nameMaker(){
 		proLower = pro.toLowerCase()
 
 			while (proLower == deutero){
-				deutero = getRandom(deuterotheme);
-			}
+				if (gender=="m"){
+					deutero = getRandom(mdeuterotheme);
+				} else if (gender == "f"){
+					deutero = getRandom(fdeuterotheme);
+				}
+					}
 
 		name = pro.concat(deutero);
 		

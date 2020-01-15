@@ -16,6 +16,11 @@ function divcontents (divname,contents){ //set contents of a div
 	}
 
 
+function addToDiv (divname,contents){ //set contents of a div
+	document.getElementById(divname).innerHTML += contents;
+	}
+
+
 function show(x) { //unhides via CSS
 	document.getElementById(x).classList.remove("hide");
 	}
@@ -28,8 +33,7 @@ function hide(x) { //hides via CSS
 
 function getRandom(listname){
 	return listname[Math.floor(Math.random()*listname.length)]
-};
-
+	};
 
 
 function trailingCommaKiller(){
@@ -37,12 +41,12 @@ function trailingCommaKiller(){
 
 	for (i = 0; i < trailingCommaStringList.length; i++){
 
-	thisString = trailingCommaStringList[i];
+		thisString = trailingCommaStringList[i];
 
-	thisString.innerHTML = thisString.innerHTML.trim();
+		thisString.innerHTML = thisString.innerHTML.trim();
 
- 	if(thisString.innerHTML.slice(-1)==","){
- 		thisString.innerHTML = thisString.innerHTML.slice(0,-1);
+	 	if(thisString.innerHTML.slice(-1)==","){
+	 		thisString.innerHTML = thisString.innerHTML.slice(0,-1);
  	}	
  }
 }
@@ -64,14 +68,12 @@ function makeSelectDropdown1(selectorForm,listName){
 	selectorForm.innerHTML="";
 
 	for(var i = 0; i < listName.length; i++) {
-    var selectedOption = listName[i];
-    var el = document.createElement("option");
-    el.textContent = selectedOption;
-    el.value = selectedOption;
-    selectorForm.appendChild(el);
-    	if (i==0){
-    		
-    	}};
+	    var selectedOption = listName[i];
+	    var el = document.createElement("option");
+	    el.textContent = selectedOption;
+	    el.value = selectedOption;
+	    selectorForm.appendChild(el);
+	};
 }	
 
 
@@ -90,6 +92,19 @@ function makeSelectDropdown(selectorForm,defaultText,listName){
     el.value = selectedOption;
     selectorForm.appendChild(el);
 		};
+}
+
+function removeDuplicates(array){  //array must be global or this function won't change the array
+	uniqueSet = new Set(array);
+	array = [...uniqueSet]
+}
+
+function addToArray(arrayToAddTo,arrayToAdd){
+		if (arrayToAdd.length > 0){
+		for (i = 0; i < arrayToAdd.length; i++){
+			arrayToAddTo.push(arrayToAdd[i])
+		}
+	}
 }
 
 
@@ -117,6 +132,16 @@ function addToSelect(selectorForm,listName){
 }
 
 
+function getRandomSelect(selectId){
+	var select = document.getElementById(selectId)
+	var options = select.children;
+	maxint = options.length
+	minint = 0
+	
+	select.selectedIndex = getRndInteger(minint,maxint);
+}
+
+
 function setSelectedValue(selectObj, valueToSet) {
     for (var i = 0; i < selectObj.options.length; i++) {
         if (selectObj.options[i].text== valueToSet) {
@@ -126,6 +151,9 @@ function setSelectedValue(selectObj, valueToSet) {
     }
 }
 
+function clearSelect(selectId){
+	document.getElementById(selectId).options.length = 0
+}
 
 function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
 	if (document.getElementById(buttonId) == null){
@@ -156,6 +184,20 @@ function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,input
 		input.classList = inputClasses; 
 
 		newForm.appendChild(input);
+	}
+}
+
+
+function makeTextArea(parentName,inputId,inputClasses){
+	if (document.getElementById(inputId) == null){
+		var textarea = document.createElement("textarea");
+
+		textarea.type = "text";
+		textarea.id = inputId
+		textarea.classList = inputClasses; 
+
+		document.getElementById(parentName).appendChild(textarea);
+
 	}
 }
 
@@ -209,3 +251,22 @@ function shuffle(array) {
 
   return array;
 }
+
+
+function makeTechSelectDropdown(selectorForm,defaultText,listName,valueName){
+	var el = document.createElement("option");
+	selectorForm=document.getElementById(selectorForm);
+	selectorForm.innerHTML="";
+	el.textContent = defaultText;
+
+	selectorForm.appendChild(el);
+
+	for(var i = 0; i < listName.length; i++) {
+    var selectedOption = listName[i];
+    var el = document.createElement("option");
+    el.textContent = selectedOption;
+    var selectedValue = valueName[i];
+    el.value = selectedValue;
+    selectorForm.appendChild(el);
+		};
+	};

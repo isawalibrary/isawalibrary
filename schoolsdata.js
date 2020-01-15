@@ -1166,62 +1166,7 @@ Unicorn:{
 			keyword:'',
 			},
 		},
-	Mantis:{
-		sailor: {
-			family:'mantis',
-			name:'Storm Fleet Sailor',
-			clan:'Mantis',
-			source: 'Mantis DLC',
-			ring1: 'Fire',
-			ring2: 'Water',
-			skillnumber: 5,
-			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
-			skills: ['Commerce','Fitness','Games','Labor','Melee','Ranged','Seafaring'
-			],
-			honor: 35,
-			weapons:["Nunchaku",],
-			armor:[],
-			role: ['Bushi'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
-			startingtechs: ['Pelting Hail Style'],
-			startingtechoptions: ['All in Jest','Stirring the Embers'],
-			rank1techs:["Skulk","Shallow Waters"],
-			rank2techs:["Flowing Water Strike","Osano-Wo's Boast (Mantis)"],
-			rank3techs:["Bravado","Heartpiercing Strike"],
-			rank4techs:["Buoyant Arrival","Crashing Wave Style"],
-			rank5techs:["Rouse the Soul","Sear the Wound"],
-			chooseoptions: 1,
-			ability:'Once per round when making a Trade skill check, if you are not Compromised, you may receive a number of strife up to your school rank to reroll that many rolled dice.<br>Mantis DLC',
-			keyword:'Minor clan Mantis',
-			},
-		seer: {
 
-			family:'mantis',
-			name:'Tide Seer',
-			clan:'Mantis',
-			ring1: 'Air',
-			ring2: 'Water',
-			source: 'Mantis DLC',
-			skillnumber: 3,
-			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:0,Trade:1},
-			skills: ['Commerce','Fitness','Games','Labor','Melee','Seafaring','Theology'],
-			honor: 40,
-			weapons:[],
-			armor:[],
-			role: ['Shugenja'],
-			techniquetypes: ['Air & Water Invocations','Rituals','Shuji'],
-			startingtechs: ['Domination of Suijin','Tempest of Air','Commune with the Spirits','Divination'],
-			startingtechoptions: ['Bo of Water','Yari of Air', 'Path to Inner Peace'],
-			rank1techs:["Summon Fog","Reflections of P'an Ku"],
-			rank2techs:["Hand of the Tides","Call upon the Wind"],
-			rank3techs:["Fury of Osano-Wo","Osano-Wo's Boast (Mantis)"],
-			rank4techs:["Wrath of Kaze-no-Kami","Rise, Water"],
-			rank5techs:["Ever-Changing Waves","Rise, Air"],
-			chooseoptions: 1,
-			ability:'When an invocation technique you perform would affect "each character" or "each other character" at a specified range, you may exclude a number of characters up to your school rank from all effects of the invocation except for spiritual backlash (Core p190).<br>Mantis DLC',
-			keyword:'Minor clan Mantis',
-			},
-		},
 	Imperial:{
 		cartographer: {
 
@@ -1386,7 +1331,7 @@ Unicorn:{
 				chooseoptions:2,
 			ability:'Choose one bonus curriculum skill; this skill henceforth counts as part of the Worldly Ronin Path curriculum for you at all ranks. Each time your school rank increases, choose one additional bonus curriculum skill this way. When you make a check using one of your bonus curriculum skills, you may negate 1 Strife symbol.',
 			keyword:'Unaligned',
-			
+			clanstatus: 20,
 			},
 
 		fortunist: {
@@ -1416,6 +1361,7 @@ Unicorn:{
 			chooseoptions: 1,
 			ability:'You have gained the goodwill of the Fortune you serve, who grants you certain Invocations.  When you make a check to use an Invocation you learned in this way, add additional bonus successes equal to your school rank.  Select a Fortune to be the primary object of your veneration and choose one appropriate Invocation (Emerald Empire p237) for which you meet the rank prerequisite.  You learn that Invocation without paying its XP cost.  Each time your school rank increases, you gain one additional invocation this way.',
 			keyword:'Unaligned',
+			clanstatus: 25,
 			},
 		shinseist: {
 			family:'other',
@@ -1443,6 +1389,7 @@ Unicorn:{
 			chooseoptions: 2,
 			ability:'When you spend a Void point to Seize the Moment (Core p36) you may also treat your ranks in the skill you are using as being equal to your school rank,  If your ranks in the skill are equal to or higher than your school rank, or if you have 5 ranks in the skill, you may add one kept <span class="l5r">d</span> set to an <span class="l5r">O</span> result instead.',
 			keyword:'Unaligned',
+			clanstatus: 25,
 			},
 
 		ksaboteur: {
@@ -1530,6 +1477,60 @@ Unicorn:{
 
 	},
 	Minor:{	
+		sailor: {
+			family:'mantis',
+			name:'Storm Fleet Sailor',
+			clan:'Minor',
+			source: 'Mantis DLC',
+			ring1: 'Fire',
+			ring2: 'Water',
+			skillnumber: 5,
+			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
+			skills: ['Commerce','Fitness','Games','Labor','Melee','Ranged','Seafaring'
+			],
+			honor: 35,
+			weapons:["Nunchaku","Butterfly Sword","Kama","Rochin","Tinbe"],
+			armor:["Sailor's Garb","Shark Leather Armor"],
+			role: ['Bushi'],
+			techniquetypes: ['Kata','Rituals','Shuji'],
+			startingtechs: ['Pelting Hail Style'],
+			startingtechoptions: ['All in Jest','Stirring the Embers'],
+			rank1techs:["Skulk","Shallow Waters"],
+			rank2techs:["Flowing Water Strike","Osano-Wo's Boast (Mantis)"],
+			rank3techs:["Bravado","Heartpiercing Strike"],
+			rank4techs:["Buoyant Arrival","Crashing Wave Style"],
+			rank5techs:["Rouse the Soul","Sear the Wound"],
+			chooseoptions: 1,
+			ability:'Once per round when making a Trade skill check, if you are not Compromised, you may receive a number of strife up to your school rank to reroll that many rolled dice.<br>Mantis DLC',
+			keyword:'Minor clan Mantis',
+			},
+		seer: {
+
+			family:'mantis',
+			name:'Tide Seer',
+			clan:'Minor',
+			ring1: 'Air',
+			ring2: 'Water',
+			source: 'Mantis DLC',
+			skillnumber: 3,
+			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:0,Trade:1},
+			skills: ['Commerce','Fitness','Games','Labor','Melee','Seafaring','Theology'],
+			honor: 40,
+			weapons:[],
+			armor:[],
+			role: ['Shugenja'],
+			techniquetypes: ['Air & Water Invocations','Rituals','Shuji'],
+			startingtechs: ['Domination of Suijin','Tempest of Air','Commune with the Spirits','Divination'],
+			startingtechoptions: ['Bo of Water','Yari of Air', 'Path to Inner Peace'],
+			rank1techs:["Summon Fog","Reflections of P'an Ku"],
+			rank2techs:["Hand of the Tides","Call upon the Wind"],
+			rank3techs:["Fury of Osano-Wo","Osano-Wo's Boast (Mantis)"],
+			rank4techs:["Wrath of Kaze-no-Kami","Rise, Water"],
+			rank5techs:["Ever-Changing Waves","Rise, Air"],
+			chooseoptions: 1,
+			ability:'When an invocation technique you perform would affect "each character" or "each other character" at a specified range, you may exclude a number of characters up to your school rank from all effects of the invocation except for spiritual backlash (Core p190).<br>Mantis DLC',
+			keyword:'Minor clan Mantis',
+			},
 
 		toritaka: {
 			family:'toritaka',
@@ -1559,7 +1560,7 @@ Unicorn:{
 			
 		},
 		tortoise:{
-			family:'other',
+			family:'kasuga',
 			name:'Kasuga Smuggler',
 			source: 'Dark Tides Adventure',
 			clan:'Minor',
@@ -1587,7 +1588,7 @@ Unicorn:{
 		},
 
 		shikamatchmaker: {
-			family:'other',
+			family:'shika',
 			name:'Shika Matchmaker',
 			clan:'Other',
 			ring1: 'Air',
@@ -1614,7 +1615,7 @@ Unicorn:{
 			
 		},
 		shikaspeardancer: {
-			family:'other',
+			family:'shika',
 			name:'Shika Speardancer',
 			clan:'Other',
 			ring1: 'Air',

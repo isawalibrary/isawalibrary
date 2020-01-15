@@ -216,7 +216,7 @@ children:[
 	{armor:"Sanctified Robes", phys:1, sup:3, qualities:"Ceremonial", rarity:"7", price:"4 koku", source:"Core"}, 
 	{armor:"Traveling Clothes", phys:1, sup:0, qualities:"Durable, Mundane, Subtle", rarity:"2", price:"2 bu", source:"Core"}, 
 	{armor:"Concealed Armor", phys:2, sup:0, qualities:"Concealable", rarity:"4", price:"5 koku", source:"Core"}, 
-	{armor:"Ashigaru Armor / <br>Light Armor", phys:3, sup:0, qualities:"Wargear", rarity:"3", price:"5 koku", source:"Core"}, 
+	{armor:"Ashigaru Armor", phys:3, sup:0, qualities:"Wargear", rarity:"3", price:"5 koku", source:"Core"}, 
 	{armor:"Lacquered Armor", phys:4, sup:0, qualities:"Ceremonial, Cumbersome, Wargear", rarity:"6", price:"25 koku", source:"Core"}, 
 	{armor:"Plated Armor", phys:5, sup:0, qualities:"Cumbersome, Durable, Wargear", rarity:"8", price:"40 koku", source:"Core"},
 	{armor:"Sailor's Garb", phys:1, sup:0, qualities:"Durable, Mundane<br> Reduce the TN of checks to repair or maintain sailor's garb by 1.", rarity:"2", price:"1 bu", source:"Mantis DLC"},

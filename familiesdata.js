@@ -1,4 +1,4 @@
-var clans = ["Crab","Crane","Dragon","Lion","Mantis","Phoenix","Scorpion","Unicorn","Imperial","Minor","Other"];
+var clans = ["Crab","Crane","Dragon","Lion","Phoenix","Scorpion","Unicorn","Imperial","Minor","Other"];
 
 var families = {
 	Crab:{	clanring:{Earth:+1},
@@ -31,7 +31,7 @@ var families = {
 			"Wall Weary (Earth) [Social; Interpersonal]",
 			],
 			skill1:"Command",
-			skill2:"Tactics",
+			skill2:"Tactics",demeanor:[],
 			glory:44,
 			wealth:4,
 			},
@@ -47,7 +47,7 @@ var families = {
 			"Wall Weary (Earth) [Social; Interpersonal]",
 			],
 			skill1:"Skulduggery",
-			skill2:"Survival",
+			skill2:"Survival",demeanor:[],
 			glory:39,
 			wealth:3,
 			},
@@ -62,7 +62,7 @@ var families = {
 			disadvantages:["Always Taking Things Apart (Water) [Scholar; Mental]",
 			],
 			skill1:"Smithing",
-			skill2:"Labor",
+			skill2:"Labor",demeanor:[],
 			glory:40,
 			wealth:5,
 			},
@@ -80,7 +80,7 @@ var families = {
 				"Benten's Curse (Air) [Social; Interpersonal, Spiritual]",
 			],
 			skill1:"Medicine",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:4,
 			},
@@ -96,7 +96,7 @@ var families = {
 				"Accustomed to Luxury (Earth) [Martial, Social, Trade; Interpersonal]",
 			],
 			skill1:"Commerce",
-			skill2:"Design",
+			skill2:"Design",demeanor:[],
 			glory:39,
 			wealth:10,
 			},
@@ -132,7 +132,7 @@ var families = {
 				"Jurojin's Curse (Void) [Martial, Trade; Physical, Spiritual]",
 			],
 			skill1:"Aesthetics",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:6,
 		},
@@ -146,7 +146,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Fitness",
-			skill2:"Tactics",
+			skill2:"Tactics",demeanor:[],
 			glory:40,
 			wealth:7,
 		},
@@ -162,7 +162,7 @@ var families = {
 			"Perfectionist (Water) [Any; Physical, Mental]",
 			],
 			skill1:"Courtesy",
-			skill2:"Design",
+			skill2:"Design",demeanor:[],
 			glory:44,
 			wealth:8,
 		},
@@ -178,7 +178,7 @@ var families = {
 			"Perfectionist (Water) [Any; Physical, Mental]",
 			],
 			skill1:"Aesthetics",
-			skill2:"Meditation",
+			skill2:"Meditation",demeanor:[],
 			glory:44,
 			wealth:7,
 		},
@@ -209,7 +209,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Medicine",
-			skill2:"Smithing",
+			skill2:"Smithing",demeanor:[],
 			glory:40,
 			wealth:4,
 		},
@@ -223,7 +223,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Government",
-			skill2:"Sentiment",
+			skill2:"Sentiment",demeanor:[],
 			glory:44,
 			wealth:6,		},
 		mirumoto: {
@@ -236,7 +236,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Fitness",
-			skill2:"Tactics",
+			skill2:"Tactics",demeanor:[],
 			glory:44,
 			wealth:5,
 		},
@@ -250,7 +250,7 @@ var families = {
 			disadvantages:["Head in the Clouds (Void) [Social; Mental]",
 			],
 			skill1:"Fitness",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:45,
 			wealth:3,		},
 		},
@@ -283,7 +283,7 @@ var families = {
 				"Stodgy Traditionalist (Fire) [Scholar, Social; Mental]",
 			],
 			skill1:"Command",
-			skill2:"Government",
+			skill2:"Government",demeanor:[],
 			glory:44,
 			wealth:5,		},
 		ikoma: {
@@ -297,7 +297,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Composition",
-			skill2:"Performance",
+			skill2:"Performance",demeanor:[],
 			glory:40,
 			wealth:5,		},
 		kitsu: {
@@ -310,7 +310,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Meditation",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:4,		},
 		matsu: {
@@ -323,7 +323,7 @@ var families = {
 			disadvantages:["Hot-Tempered (Water) [Social: Mental]",
 			],
 			skill1:"Command",
-			skill2:"Fitness",
+			skill2:"Fitness",demeanor:[],
 			glory:44,
 			wealth:5,		},
 		},
@@ -357,7 +357,7 @@ var families = {
 					"Easily Scandalized (Earth) [Social; Interpersonal]",
 			],
 			skill1:"Culture",
-			skill2:"Sentiment",
+			skill2:"Sentiment",demeanor:[],
 			glory:40,
 			wealth:5,		},
 		isawa: {
@@ -375,7 +375,7 @@ var families = {
 			"Easily Scandalized (Earth) [Social; Interpersonal]",
 			],
 			skill1:"Meditation",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:44,
 			wealth:5,		},
 		shiba: {
@@ -390,7 +390,7 @@ var families = {
 			disadvantages:["Naive to Trickery (Air) [Social; Mental]",
 			],
 			skill1:"Fitness",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:4,		},
 		kaito: {
@@ -404,7 +404,7 @@ var families = {
 			disadvantages:[
 			],
 			skill1:"Meditation",
-			skill2:"Tactics",
+			skill2:"Tactics",demeanor:[],
 			glory:40,
 			wealth:5,		},
 		},
@@ -437,7 +437,7 @@ Scorpion:{
 				"Vengeful When Slighted (Earth) [Social; Interpersonal]",
 			],
 			skill1:"Courtesy",
-			skill2:"Performance",
+			skill2:"Performance",demeanor:[],
 			glory:40,
 			wealth:6,		},
 		shosuro: {
@@ -452,7 +452,7 @@ Scorpion:{
 			disadvantages:[
 			],
 			skill1:"Design",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:6,		},
 		soshi: {
@@ -465,7 +465,7 @@ Scorpion:{
 			disadvantages:["Jurojin's Curse (Void) [Martial, Trade; Physical, Spiritual]",
 			],
 			skill1:"Design",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:6,		},
 		yogo: {
@@ -480,7 +480,7 @@ Scorpion:{
 						"Benten's Curse (Air) [Social; Interpersonal, Spiritual]",
 			],
 			skill1:"Composition",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:39,
 			wealth:4,		},
 		},
@@ -512,7 +512,7 @@ Unicorn:{
 			disadvantages:["Materialism (Void) [Social; Mental]",
 			],
 			skill1:"Commerce",
-			skill2:"Courtesy",
+			skill2:"Courtesy",demeanor:[],
 			glory:40,
 			wealth:9,		},
 		iuchi: {
@@ -525,7 +525,7 @@ Unicorn:{
 			disadvantages:["Outlandish Customs (Water) [Social; Mental]",
 			],
 			skill1:"Meditation",
-			skill2:"Theology",
+			skill2:"Theology",demeanor:[],
 			glory:40,
 			wealth:5,		},
 		moto: {
@@ -539,7 +539,7 @@ Unicorn:{
 			"Outlandish Customs (Water) [Social; Mental]",
 			],
 			skill1:"Command",
-			skill2:"Survival",
+			skill2:"Survival",demeanor:[],
 			glory:40,
 			wealth:6,		},
 		shinjo: {
@@ -553,7 +553,7 @@ Unicorn:{
 			disadvantages:[
 			],
 			skill1:"Sentiment",
-			skill2:"Survival",
+			skill2:"Survival",demeanor:[],
 			glory:44,
 			wealth:8,		},
 		utaku: {
@@ -567,41 +567,14 @@ Unicorn:{
 			disadvantages:["Naive to Trickery (Air) [Social; Mental]",
 			],
 			skill1:"Survival",
-			skill2:"Tactics",
+			skill2:"Tactics",demeanor:[],
 			glory:44,
 			wealth:6,			},},
-	Mantis:{
-		clanring:{"Water":+1},
-			clanskill:"Trade",
-			clanstatus:25,
-			weapons:["Butterfly Sword","Kama","Rochin","Tinbe"],
-			armor:["Sailor's Garb","Shark Leather Armor"],
-			advantages: ["Seasoned Seafarer (Water) [Trade, Scholar; Mental, Physical]",
-						"Hero of the People (Earth) [Trade, Social; Interpersonal]",
-						"Surefooted (Air) [Martial; Physical]",
-						"Widely Traveled (Water) [Scholar, Trade; Mental]",
-						"Daikoku's Blessing (Water) [Social; Interpersonal]",
-			],				
-			disadvantages: ["Whispers of Avarice (Air) [Social; Mental, Interpersonal]",
-							"Penny Pincher (Water) [Social; Mental]",
-			],
-		mantis: {
-		name:'Families of the FLeet',
-		clan:'Mantis',
-			ring1:"Fire",
-			ring2:"Water",
-			advantages:[
-			],
-			disadvantages:[
-			],
-			skill1:"Commerce",
-			skill2:"Survival",
-			glory:36,
-			wealth:7,		},
-		},
+
 	Imperial:{
 		clanring: {"Earth":+1},
 		clanskill: "Social",
+		clanstatus:40,
 		weapons:[],
 		armor:["Ceremonial Robes","Lacquered Armor",],			
 		advantages: ["Blessed Lineage (Void) [Social; Spiritual]",
@@ -615,48 +588,48 @@ Unicorn:{
 		miya: {
 			name:'Miya',
 			clan:'Imperial',
-			ring1:"",
-			ring2:"",
+			ring1:"Air",
+			ring2:"Earth",
 			advantages:[
 			],
 			disadvantages:[
 			],
-			skill1:"",
-			skill2:"",
-			glory:"",
-			wealth:"",
+			skill1:"Courtesy",
+			skill2:"Culture",demeanor:[],
+			glory:44,
+			wealth:8,
 		},
 		otomo: {
 			name:'Otomo',
 			clan:'Imperial',
-			ring1:"",
-			ring2:"",
+			ring1:"Air",
+			ring2:"Water",
 			advantages:[
 			],
 			disadvantages:[
 			],
-			skill1:"",
-			skill2:"",
-			glory:"",
-			wealth:"",
+			skill1:"Culture",
+			skill2:"Sentiment",demeanor:[],
+			glory:43,
+			wealth:9,
 		},
 		seppun: {
 			name:'Seppun',
 			clan:'Imperial',
-			ring1:"",
-			ring2:"",
+			ring1:"Earth",
+			ring2:"Void",
 			advantages:[
 			],
 			disadvantages:[
 			],
-			skill1:"",
-			skill2:"",
-			glory:"",
-			wealth:"",	},
+			skill1:"Meditation",
+			skill2:"Theology",demeanor:[],
+			glory:45,
+			wealth:6,	},
 },
 	Other:{
-		clanring: {"Void":+1},
-		clanskill: "Trade",
+		clanring: {},
+		clanskill: "",
 		weapons:[],
 		armor:[],			
 		advantages: [
@@ -665,7 +638,6 @@ Unicorn:{
 		disadvantages: [
 
 					],
-},
 			other: {
 			name:'Other',
 			clan:'Other',
@@ -676,10 +648,12 @@ Unicorn:{
 			disadvantages:[
 			],
 			skill1:"",
-			skill2:"",
+			skill2:"",demeanor:[],
 			glory:"",
 			wealth:"",	},
 
+},
+			
 
 	Minor:{
 		clanring: {"Void":+1},
@@ -692,11 +666,11 @@ Unicorn:{
 		disadvantages: [
 
 					],
-},
 			toritaka: {
 			name:'Toritaka',
 			clan:'Minor',
-			clanring: "Void",
+			clanring: {"Void":+1},
+			clanskill: "Scholar",
 			ring1:"Earth",
 			ring2:"Water",
 			advantages:[
@@ -704,8 +678,63 @@ Unicorn:{
 			disadvantages:[
 			],
 			skill1:"Survival",
-			skill2:"Meditation",
+			skill2:"Meditation",demeanor:[],
 			glory:"35",
-			wealth:"",	},
+			wealth:"3",	},
+
+			shika: {
+			name:'Shika',
+			clan:'Minor',
+			clanring: {"Air":+1},
+			clanskill: "Social",
+			ring1:"Water",
+			ring2:"Fire",
+			advantages:[
+			],
+			disadvantages:[
+			],
+			skill1:"Courtesy",
+			skill2:"Culture",demeanor:[],
+			glory:"35",
+			wealth:"5",	},
+
+			kasuga: {
+			name:'Kasuga',
+			clan:'Minor',
+			clanring: {"Air":+1},
+			clanskill: "Trade",
+			ring1:"Water",
+			ring2:"Earth",
+			advantages:[
+			],
+			disadvantages:[
+			],
+			skill1:"Skulduggery",
+			skill2:"Government",demeanor:[],
+			glory:"33",
+			wealth:"9",	},
+
+			mantis: {
+			name:'Mantis',
+			clan:'Minor',
+			clanring: {"Water":+1},
+			clanskill: "Seafaring",
+			ring1:"Water",
+			ring2:"Fire",
+			advantages:["Seasoned Seafarer (Water) [Trade, Scholar; Mental, Physical]",
+						"Hero of the People (Earth) [Trade, Social; Interpersonal]",
+						"Surefooted (Air) [Martial; Physical]",
+						"Widely Traveled (Water) [Scholar, Trade; Mental]",
+						"Daikoku's Blessing (Water) [Social; Interpersonal]",
+			],
+			disadvantages:["Whispers of Avarice (Air) [Social; Mental, Interpersonal]",
+							"Penny Pincher (Water) [Social; Mental]",
+			],
+			skill1:"Commerce",
+			skill2:"Survival",demeanor:[],
+			glory:"36",
+			wealth:"7",	},
+},
+
 
 }
