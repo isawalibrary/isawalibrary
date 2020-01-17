@@ -980,7 +980,7 @@ function makeTechDropdowns(){
 	}
 }
 		x = ' Rank: =< '
-		document.getElementById().innerHTML += x;
+		document.getElementById("npctechniquecontainer").innerHTML += x;
 		
 		makeSelect("npctechniquecontainer","npctechniquesearchrank","margin10 styledselect","setTechs()")
 		ranks = [1,2,3,4,5]
