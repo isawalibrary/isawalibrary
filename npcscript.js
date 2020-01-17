@@ -995,7 +995,9 @@ function makeTechDropdowns(){
 
 function setTechs(){
 
+	if (document.getElementById("npctechselector") !== null){
 	document.getElementById("npctechselector").innerHTML="";
+}
 	var techobjs = [];
 	var techlist = [];
 	var techdroplist = [];
