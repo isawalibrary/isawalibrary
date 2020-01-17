@@ -681,7 +681,7 @@ function buildNpcStatsDiv(){
 		divcontents("npcsocial",x);	
 		makeSelect("npcsocial","npcdemeanor","styledselect inline","setDemeanor()")
 		x = '<span id="npcdemeanornotes" class="inline margin10"></span>'
-		divcontents("npcsocial",x);
+		addToDiv("npcsocial",x);
 
 
 	newdiv("npcadvdisadv","npcstats","block margin10")
