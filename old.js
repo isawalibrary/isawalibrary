@@ -490,25 +490,6 @@ function selectNPCSchool(){
 
 }
 
-function setEditTech(id){
-	abilitydiv = document.getElementById("edittechsability"+id);
-	techselect = document.getElementById("edittechselect"+id)
-
-	for (j=0; j< techniquelist.length; j++){
-		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
-			effect = techniquelist[j].effect
-			effect = effect.replace("<br><br>","<br>");
-				effect = effect.replace("<br><br>","<br>");
-					effect = effect.replace("<br><br>","<br>");
-						effect = effect.replace("<br><br>","<br>");
-			abilitydiv.innerHTML = effect
-		}
-	}
-
-	divcontents("edittechfilter"+id,"");
-
-
-}
 
 
 

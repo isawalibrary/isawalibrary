@@ -1498,7 +1498,8 @@ function makeNpcEdit(nom){
 
 	newdiv("editweapon","editstats","inline margin10")
 	
-	makeSelect("editweapon","editweaponinput","margintopbottom styledselect inline","selectNPCWeaponEdit(&apos;editweaponinput&apos;,&apos;editweaponstats&apos;);")
+	divcontents("editweapon","<br>Weapon: ")
+	makeSelect("editweapon","editweaponinput","margintopbottom styledselect inline","selectNPCWeaponEdit('editweaponinput','editweaponstats');")
 
 	weapons = [];
 
@@ -1534,6 +1535,7 @@ function makeNpcEdit(nom){
 	newdiv("editweapon0stats","editstats","inline margin10")
 
 	newdiv("editarmor","editstats","inline margin10")
+	divcontents("editarmor","<br>Armor: ")
 	makeSelect("editarmor","editarmorinput","margintopbottom styledselect inline","selectNPCArmorEdit();")
 
 	armor = [];
@@ -1841,6 +1843,8 @@ function saveEditNpc(nom){
 
 	nom.techs = [];
 
+	nom.notes = document.getElementById("editnotesinput").value
+
 	var childDivs = document.getElementById('edittechs').children;
 
 		for( i=0; i< childDivs.length; i++ ){
@@ -1864,4 +1868,54 @@ function saveEditNpc(nom){
 	}
 
 	showNpc(nom.title)
+}
+
+function setEditTech(id){
+	abilitydiv = document.getElementById("edittechsability"+id);
+	techselect = document.getElementById("edittechselect"+id)
+
+	for (j=0; j< techniquelist.length; j++){
+		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
+			effect = techniquelist[j].effect
+			effect = effect.replace("<br><br>","<br>");
+				effect = effect.replace("<br><br>","<br>");
+					effect = effect.replace("<br><br>","<br>");
+						effect = effect.replace("<br><br>","<br>");
+			abilitydiv.innerHTML = effect
+		}
+	}
+
+	divcontents("edittechfilter"+id,"");
+}
+
+function editAddWeapon(){
+
+	divcontents("editweapon0","<br>And: ")
+	makeSelect("editweapon0","editweapon0input","margintopbottom styledselect inline","selectNPCWeaponEdit('editweapon0input','editweapon0stats')")
+
+	weapons = [];
+
+	if (thisnpc.equiptype == "equipped"){
+
+	for (each in tabledata[5].children){
+		if (tabledata[5].children[each].name !== "NAME"){
+			weapons.push(tabledata[5].children[each].name)
+		}
+	}
+	for (each in npcweapons){
+		if (npcweapons[each].type == "equipped"){
+			weapons.push(npcweapons[each].title)
+		}
+	}}
+
+	if (thisnpc.equiptype == "natural"){
+		for (each in npcweapons){
+		if (npcweapons[each].type == "natural"){
+			weapons.push(npcweapons[each].title)
+		}
+	}}
+
+	weapons.sort();
+
+	makeSelectDropdown("editweapon0input","Select Weapon",weapons)
 }
