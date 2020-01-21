@@ -1919,3 +1919,126 @@ function editAddWeapon(){
 
 	makeSelectDropdown("editweapon0input","Select Weapon",weapons)
 }
+
+techtypearray = []
+
+function editAddTech(i){
+
+		document.getElementById("addextratech").innerHTML = "";
+
+		newdiv("techwrap"+i,"edittechs","inline")
+		divcontents("techwrap"+i,"")
+
+		newdiv("edittechs"+i,"techwrap"+i,"inline")
+
+		makeSelect("edittechs"+i,"edittechselect"+i,"styledselect inline","setEditTech("+i+")")
+
+		newdiv("edittechfilter"+i,"techwrap"+i,"inline")
+
+		addToDiv("edittechfilter"+i,"Type: ")
+		makeSelect("edittechfilter"+i,"edittechsearchtype","styledselect","edittechfilter("+i+")")
+		
+		for (each in techniquelist){	
+			if (techtypearray.includes(techniquelist[each].type)){} else {techtypearray.push(techniquelist[each].type)}
+		}
+
+		makeSelectDropdown("edittechsearchtype","Any",techtypearray)
+		addToDiv("edittechfilter"+i,"Ring: ")
+		makeSelect("edittechfilter"+i,"edittechsearchring","styledselect","edittechfilter("+i+")")
+		ringtypearray = ["Air","Earth","Fire","Water","Void"]
+		makeSelectDropdown("edittechsearchring","Any",techtypearray)
+		addToDiv("edittechfilter"+i,"Rank: ")
+
+		makeSelect("edittechfilter"+i,"edittechsearchrank1","styledselect","edittechfilter("+i+")")
+		var option = document.createElement("option");
+		option.text = "=<";
+		option.value = "1"
+		document.getElementById("edittechsearchrank1").add(option)
+
+		var option = document.createElement("option");
+		option.text = "=";
+		option.value = "2"
+		document.getElementById("edittechsearchrank1").add(option)
+
+		makeSelect("edittechfilter"+i,"edittechsearchrank","styledselect","edittechfilter("+i+")")
+		rankarray = ["1","2","3","4","5"]
+		makeSelectDropdown("edittechsearchrank","Any",rankarray)
+
+
+		newdiv("edittechsability"+i,"techwrap"+i,"inlineblock small")
+
+		techniquestext = [];
+		techniquesvalues = [];
+		for (each in techniquelist){
+			techniquestext.push(techniquelist[each].title+" ("+techniquelist[each].ring+") ["+techniquelist[each].type+" Rank "+techniquelist[each].rank+"]")
+			techniquesvalues.push(techniquelist[each].title)
+		}
+
+		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
+}
+
+function edittechfilter(i){
+	
+		techniquestext = [];
+		techniquesvalues = [];
+
+		techtype = document.getElementById("edittechsearchtype").value;
+		techring = document.getElementById("edittechsearchring").value;
+		techrank1 = document.getElementById("edittechsearchrank1").value;
+		techrank = document.getElementById("edittechsearchrank").value;
+
+		techlist = techniquelist
+
+		for(var j = 0; j < techlist.length; j++){
+			if (techtype !== false && techtype !== "any")					{
+			techlist = techlist.filter(function(tech)				{
+				if (tech.type.toLowerCase() == techtype){
+					return true;
+				};
+
+				return false;
+			});
+		}
+		if (techring !== false && techring !== "default")					{
+			techlist = techlist.filter(function(tech)				{
+				if (tech.ring.toLowerCase() == techring){
+					return true;
+				}
+				if (tech.ring.toLowerCase().includes(techring)){
+					return true;
+				};
+				return false;
+			});
+		}
+
+
+		techrank = Number(techrank);
+
+	if (isNaN(techrank)){techlist=techlist}
+		else {
+
+		if (techrank1 == "1")					{
+			techlist = techlist.filter(function(tech)				{
+				tech.rank = Number(tech.rank);
+				if (tech.rank == techrank){
+					return true;
+				}
+				return false;
+			});
+			} else if (techrank1 == "2")									{
+				techlist = techlist.filter(function(tech){
+					tech.rank = Number(tech.rank);
+					if (tech.rank <= techrank){
+						return true;
+					}
+					return false;
+				});
+			}
+		} 
+
+			techniquestext.push(techlist[j].title+" ("+techlist[j].ring+") ["+techlist[j].type+" Rank "+techlist[j].rank+"]")
+			techniquesvalues.push(techlist[j].title)
+		}
+
+		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
+}
