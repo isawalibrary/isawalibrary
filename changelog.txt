@@ -1,14 +1,19 @@
 
 -Upcoming
 
-+ Apply titles to NPC in NPC Builder and Edit, show Title Ability.
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
++ Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category)
++ Sort pregens into alphabetical on NPC builder
++ Add 'Nezumi' option in character maker, have it structured as a clan, the different tribes can be represented by families, and the different social roles (Rememberer, Dreamer etc) can be schools.  Maybe don't add this yet, so the nezumi are a surprise when they show up in the story.
+
+-version 0.11 31.01.20
++ fixed minor bugs 
 
 -version 0.10 15.11.19
 
-+improved Technique Search and School Search
-+prevents Technique Search and School Search reloading page on hitting enter
-+up to date including Courts of Stone
++ improved Technique Search and School Search
++ prevents Technique Search and School Search reloading page on hitting enter
++ up to date including Courts of Stone
 
 -version 0.09 09.05.19
 
