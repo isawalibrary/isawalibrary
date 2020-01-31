@@ -128,11 +128,11 @@ function makeNpcLibrary(){
 		if (techs.length == 0){
 			document.getElementById("stat"+each.title).innerHTML += 'None';
 		}
+
+			document.getElementById("stat"+each.title).innerHTML +=
+						'<br>Notes: ' + each.notes;
 	}
 	document.getElementById("statblock").innerHTML = document.getElementById("statblock").innerHTML.replace("<br><br>","<br>");
-
-	document.getElementById("stat"+each.title).innerHTML +=
-						'<br>Notes: ' + each.notes;
 
 }
 
@@ -1897,9 +1897,9 @@ function editAddWeapon(){
 
 	if (thisnpc.equiptype == "equipped"){
 
-	for (each in tabledata[5].children){
-		if (tabledata[5].children[each].name !== "NAME"){
-			weapons.push(tabledata[5].children[each].name)
+	for (each in tabledata[8].children){
+		if (tabledata[8].children[each].name !== "NAME"){
+			weapons.push(tabledata[8].children[each].name)
 		}
 	}
 	for (each in npcweapons){
@@ -1952,12 +1952,12 @@ function editAddTech(i){
 		makeSelect("edittechfilter"+i,"edittechsearchrank1","styledselect","edittechfilter("+i+")")
 		var option = document.createElement("option");
 		option.text = "=<";
-		option.value = "1"
+		option.value = "2"
 		document.getElementById("edittechsearchrank1").add(option)
 
 		var option = document.createElement("option");
 		option.text = "=";
-		option.value = "2"
+		option.value = "1"
 		document.getElementById("edittechsearchrank1").add(option)
 
 		makeSelect("edittechfilter"+i,"edittechsearchrank","styledselect","edittechfilter("+i+")")
@@ -1990,9 +1990,9 @@ function edittechfilter(i){
 		techlist = techniquelist
 
 		for(var j = 0; j < techlist.length; j++){
-			if (techtype !== false && techtype !== "any")					{
+			if (techtype !== false && techtype !== "Any")					{
 			techlist = techlist.filter(function(tech)				{
-				if (tech.type.toLowerCase() == techtype){
+				if (tech.type == techtype){
 					return true;
 				};
 
@@ -2001,10 +2001,10 @@ function edittechfilter(i){
 		}
 		if (techring !== false && techring !== "default")					{
 			techlist = techlist.filter(function(tech)				{
-				if (tech.ring.toLowerCase() == techring){
+				if (tech.ring == techring || techring == "Any"){
 					return true;
 				}
-				if (tech.ring.toLowerCase().includes(techring)){
+				if (tech.ring.includes(techring)){
 					return true;
 				};
 				return false;
@@ -2013,6 +2013,12 @@ function edittechfilter(i){
 
 
 		techrank = Number(techrank);
+
+		if (techrank == NaN){
+			techrank = 1
+		}
+
+
 
 	if (isNaN(techrank)){techlist=techlist}
 		else {
