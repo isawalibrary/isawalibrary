@@ -1415,18 +1415,18 @@ function makeNpcEdit(nom){
 	
 	newdiv("edittype","editcharacter","inline")
 
-	makeTextInput("edittype","editname","inline ","Name: ","editnameinput","margintopbottom styledselect")
+	makeTextInput("edittype","editname","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Name: </span>","editnameinput","margintopbottom styledselect")
 
-	makeTextInput("edittype","editarchetype","inline "," Archetype: ","editarchetypeinput","styledselect")
+	makeTextInput("edittype","editarchetype","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Archetype: </span>","editarchetypeinput","styledselect")
 
-	makeTextInput("edittype","edittemplate","inline margin10","Template: ","edittemplateinput","styledselect")
+	makeTextInput("edittype","edittemplate","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Template: </span>","edittemplateinput","styledselect")
 
 	newdiv("editbackground","editcharacter","block")
-	makeTextInput("editbackground","editclan","inline margin10","Clan: ","editclaninput","styledselect")
+	makeTextInput("editbackground","editclan","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Clan: </span>","editclaninput","styledselect")
 
-	makeTextInput("editbackground","editfamily","inline margin10","Family: ","editfamilyinput","styledselect")
+	makeTextInput("editbackground","editfamily","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Family: </span>","editfamilyinput","styledselect")
 
-	makeTextInput("editbackground","editschool","inline margin10","School: ","editschoolinput","styledselect")
+	makeTextInput("editbackground","editschool","inline schoolskillswidth","<span class='topboxwidth inlineblock'>School: </span>","editschoolinput","styledselect")
 
 	newdiv("editplayer","edittype","inline margin10")
 	x ='PC?: <form class="inline styledselect"><input onchange="setNpcPlayer()" type="checkbox" id="npceditplayer" name="npcplayer" value="npcplayer">Player </form>'
@@ -1438,34 +1438,40 @@ function makeNpcEdit(nom){
 	newdiv("editstats","editcharacter","block")
 	newdiv("editnotes","editcharacter","block")
 
-	newdiv("editrings","editstats","inline")
-	divcontents("editrings","<br>Rings: ")
+	newdiv("editrings","editstats","block margintop")
+	divcontents("editrings","<span class='groupboxwidth inlineblock'>Rings: </span>")
 
-	makeNumberInput("editstats","editair","inline",'<span class="l5r air margin10">a</span>: ',"editairinput","margintopbottom numberform styledselect")
+	makeNumberInput("editrings","editair","editboxwidth inlineblock",'<span class="l5r air margin10">a</span>: ',"editairinput"," numberform styledselect")
 
-	makeNumberInput("editstats","editearth","inline margin10",'<span class="l5r earth margin10">e</span>: ',"editearthinput","numberform styledselect")
+	makeNumberInput("editrings","editearth","inlineblock margin10 editboxwidth",'<span class="l5r earth margin10">e</span>: ',"editearthinput","numberform styledselect")
 
-	makeNumberInput("editstats","editfire","inline margin10",'<span class="l5r fire margin10">f</span>: ',"editfireinput","numberform styledselect")
+	makeNumberInput("editrings","editfire","inlineblock margin10 editboxwidth",'<span class="l5r fire margin10">f</span>: ',"editfireinput","numberform styledselect")
 
-	makeNumberInput("editstats","editwater","inline margin10",'<span class="l5r water margin10">w</span>: ',"editwaterinput","numberform styledselect")
+	makeNumberInput("editrings","editwater","inlineblock margin10 editboxwidth",'<span class="l5r water margin10">w</span>: ',"editwaterinput","numberform styledselect")
 
-	makeNumberInput("editstats","editvoid","inline margin10",'<span class="l5r void margin10">v</span>: ',"editvoidinput","numberform styledselect")
+	makeNumberInput("editrings","editvoid","inlineblock margin10 editboxwidth",'<span class="l5r void margin10">v</span>: ',"editvoidinput","numberform styledselect")
 
-	makeNumberInput("editstats","editendurance","inline",'<br>Endurance: ',"editenduranceinput","margintopbottom numberform styledselect")
+	newdiv("editderivedstats","editstats","block margintop")
+	divcontents("editderivedstats","<span class='groupboxwidth inlineblock'>Derived: </span>")
 
-	makeNumberInput("editstats","editcomposure","inline margin10",'Composure: ',"editcomposureinput","numberform styledselect")
+	makeNumberInput("editderivedstats","editendurance","inlineblock editboxwidth",'Endurance: ',"editenduranceinput"," numberform styledselect")
 
-	makeNumberInput("editstats","editfocus","inline margin10",'Focus: ',"editfocusinput","numberform styledselect")
+	makeNumberInput("editderivedstats","editcomposure","inlineblock margin10 editboxwidth",'Composure: ',"editcomposureinput","numberform styledselect")
 
-	makeNumberInput("editstats","editvigilance","inline margin10",'Vigilance: ',"editvigilanceinput","numberform styledselect")
+	makeNumberInput("editderivedstats","editfocus","inlineblock margin10 editboxwidth",'Focus: ',"editfocusinput","numberform styledselect")
 
-	makeNumberInput("editstats","edithonor","inline margin10",'<br>Honor: ',"edithonorinput","numberform styledselect margintopbottom")
+	makeNumberInput("editderivedstats","editvigilance","inlineblock margin10 editboxwidth",'Vigilance: ',"editvigilanceinput","numberform styledselect")
 
-	makeNumberInput("editstats","editglory","inline margin10",'Glory: ',"editgloryinput","numberform styledselect")
+	newdiv("editsocialstats","editstats","block margintop")
+	divcontents("editsocialstats","<span class='groupboxwidth inlineblock'>Social: </span>")
 
-	makeNumberInput("editstats","editstatus","inline margin10",'Status: ',"editstatusinput","numberform styledselect")
+	makeNumberInput("editsocialstats","edithonor","inlineblock editboxwidth",'Honor: ',"edithonorinput","numberform styledselect ")
 
-	newdiv("editdemeanor","editstats","inline margin10")
+	makeNumberInput("editsocialstats","editglory","inlineblock margin10 editboxwidth",'Glory: ',"editgloryinput","numberform styledselect")
+
+	makeNumberInput("editsocialstats","editstatus","inlineblock margin10 editboxwidth",'Status: ',"editstatusinput","numberform styledselect")
+
+	newdiv("editdemeanor","editsocialstats","inline margin10")
 	divcontents("editdemeanor",'Demeanor:')
 	makeSelect("editdemeanor","editdemeanorinput","styledselect inline","selectNPCDemeanor();")
 
@@ -1477,7 +1483,7 @@ function makeNpcEdit(nom){
 
 	makeSelectDropdown1("editdemeanorinput",demeanor)
 
-	newdiv("editdemeanorinfo","editstats","inline margin10")
+	newdiv("editdemeanorinfo","editsocialstats","inline margin10")
 
 	makeTextInput("editstats","editadvantage","inline margin10","<br>Advantage: ","editadvantageinput","margintopbottom styledselect xwidth")
 

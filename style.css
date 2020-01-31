@@ -175,6 +175,10 @@ body {
   margin-bottom: 10px;
 }
 
+.margintop{
+  margin-top: 10px;
+}
+
 .paddingtable{
   padding-top: 5px;
   padding-bottom: 5px;
@@ -362,7 +366,7 @@ thead {
 }
 
 .editwidth {
-  width:750px;
+  width:800px;
 }
 
 #editnotesinput {
@@ -386,6 +390,22 @@ thead {
 .schoolskillswidth{
   width: 150px;
 }
+
+.editboxwidth{
+  min-width: 95px;
+  text-align: right;
+  margin-bottom: 0px;
+}
+
+.groupboxwidth{
+  min-width: 40px;
+}
+
+.topboxwidth{
+  min-width: 55px;
+  text-align: right;
+}
+
 
 #Conditions-table td {
   width: 80px;
@@ -665,7 +685,7 @@ color:var(--table-header-font);
 }
 
 #statblock {
-  max-width: 750px;
+  max-width: 900px;
 }
 
 .floatleft {
@@ -826,6 +846,11 @@ body {
   background-attachment: fixed;
   color: var(--font-color);
 }
+
+.editboxwidth{
+  min-width: 120px;
+}
+
 
 .button {
   font-size: 16px;
