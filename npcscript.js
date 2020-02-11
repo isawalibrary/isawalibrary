@@ -1952,7 +1952,7 @@ function editAddTech(i){
 		addToDiv("edittechfilter"+i,"Ring: ")
 		makeSelect("edittechfilter"+i,"edittechsearchring","styledselect","edittechfilter("+i+")")
 		ringtypearray = ["Air","Earth","Fire","Water","Void"]
-		makeSelectDropdown("edittechsearchring","Any",techtypearray)
+		makeSelectDropdown("edittechsearchring","Any",ringtypearray)
 		addToDiv("edittechfilter"+i,"Rank: ")
 
 		makeSelect("edittechfilter"+i,"edittechsearchrank1","styledselect","edittechfilter("+i+")")
