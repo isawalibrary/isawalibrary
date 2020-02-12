@@ -588,6 +588,16 @@ function setRokuganiRings(){
 
 	rings[clanRing] ++;
 
+	array = ["Air", "Earth", "Fire", "Water", "Void"]
+
+	if (selectedSchool.ring1 == "Any"){
+		selectedSchool.ring1 = getRandom(array)
+	}
+
+	if (selectedSchool.ring2 == "Any"){
+		selectedSchool.ring2 = getRandom(array)
+	}
+
 	schoolRing1 = selectedSchool.ring1
 	rings[schoolRing1] ++;
 	schoolRing2 = selectedSchool.ring2
