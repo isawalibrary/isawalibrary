@@ -446,11 +446,20 @@ function selectNPCSchool(){
 	text = document.getElementById("npcfamilyselect").value
 
 	if (text == "Select Family"){
-		selectedFamily = selectedSchool.family
-		selectedFamily = families[clanName][selectedFamily]
-		selectedFamilyName = selectedFamily.name
-		npcfamilyselect = document.getElementById("npcfamilyselect")
-		setSelectedValue(npcfamilyselect, selectedFamilyName)
+		if (selectedSchool.family !== "Other"){
+			selectedFamily = selectedSchool.family
+			selectedFamily = families[clanName][selectedFamily]
+			selectedFamilyName = selectedFamily.name
+			npcfamilyselect = document.getElementById("npcfamilyselect")
+			setSelectedValue(npcfamilyselect, selectedFamilyName)
+		}
+
+		if (selectedSchool.family == "Other"){
+			selectedFamily = families.Other.other
+			selectedFamilyName = selectedFamily.name
+			npcfamilyselect = document.getElementById("npcfamilyselect")
+			setSelectedValue(npcfamilyselect, selectedFamilyName)
+		}
 	}
 
 	selectedArchetypeName = document.getElementById("archetype").value;
