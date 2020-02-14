@@ -416,8 +416,19 @@ function selectNPCFamily(){
 	hide("npcsave");
 
 	selectedFamily = document.getElementById("npcfamilyselect").value;
+
+	if (selectedFamily.includes(" ")){
+		for (each in families.Other){
+			if (families.Other[each].name == selectedFamily){
+				selectedFamily = families.Other[each]
+			}
+		}
+	}
+
+	else {
 	selectedFamily = selectedFamily.toLowerCase()
 	selectedFamily = selectedClan[selectedFamily]
+	}
 
 	clanName = selectedFamily.clan
 
@@ -464,7 +475,7 @@ function selectNPCSchool(){
 
 	selectedArchetypeName = document.getElementById("archetype").value;
 
-	if (document.getElementById("npcclanselect").value == "Other"){
+	if (document.getElementById("npcclanselect").value == "Other" && document.getElementById("npcfamilyselect").value == "Other"){
 		makeSelect("npcschool","npcbackgroundclanselect","styledselect inline margin10","makeNpcBgFamily();")
 		makeSelectDropdown("npcbackgroundclanselect","Select Background Clan",clans)
 		hide("npcsave");

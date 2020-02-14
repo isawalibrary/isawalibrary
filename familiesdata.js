@@ -652,6 +652,10 @@ Unicorn:{
 			glory:"",
 			wealth:"",	},
 
+			geishaupbringing: {name: "Geisha House Upbringing", clan: "Other", ring1: "Air", ring2: "Fire", advantages: [], disadvantages: [], skill1: "Aesthetics", skill2: "Courtesy", demeanor: [], glory: "", wealth: "3",},
+
+
+
 },
 			
 
