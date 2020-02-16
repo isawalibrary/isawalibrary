@@ -28,7 +28,8 @@ var demeanors =[
 
 var archetypes =[
 		{
-			title:"Rank 1 Samurai",
+			fullname:"Rank 1",
+			title:"Rank1",
 			type:"Rokugani",
 			equiptype:"equipped",
 			conflictcombat:1,
@@ -66,7 +67,8 @@ var archetypes =[
 			abilities:[],
 			techniques:[],
 		},		{
-			title:"Rank 2 Samurai",
+			fullname:"Rank 2",
+			title:"Rank2",
 			type:"Rokugani",
 			equiptype:"equipped",
 			conflictcombat:2,
@@ -120,7 +122,8 @@ var archetypes =[
 			}
 			
 		},	{
-			title:"Rank 3 Samurai",
+			title:"Rank3",
+			fullname: "Rank 3",
 			type:"Rokugani",
 			equiptype:"equipped",
 			conflictcombat:3,
@@ -160,6 +163,7 @@ var archetypes =[
 			techniques:[],
 		},{
 			title:"Bear",
+			fullname: "Bear",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:7,
@@ -200,6 +204,7 @@ var archetypes =[
 			techniques:[],
 		},{
 			title:"Boar",
+			fullname:"Boar",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:5,
@@ -239,6 +244,7 @@ var archetypes =[
 			techniques:[],
 		},{
 			title:"Cat",
+			fullname:"Cat",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:1,
@@ -282,7 +288,8 @@ var archetypes =[
 			abilities:["Pouncing Predator: When performing an Attack action check against an unaware or Prone target, it may spend <span class='l5r'>O</span> as follows:<br> <span class='l5r'>O</span>: The target suffers the Disoriented condition."],
 			techniques:[],
 		},{
-			title:"Panda, Red",
+			title:"PandaRed",
+			fullname:"Panda, Red",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:1,
@@ -327,7 +334,8 @@ var archetypes =[
 			abilities:["When making a Scheme action to captivate a human, it may spend <span class='l5r'>O</span> as follows:<br> <span class='l5r'>O</span>: The target suffers the Dazed condition."],
 			techniques:[],
 		},{
-			title:"Dog, Large",
+			title:"DogLarge",
+			fullname:"Dog, Large",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:2,
@@ -368,7 +376,8 @@ var archetypes =[
 			abilities:["Working Companion: Choose one Martial or Trade skill. When the dog provides assistance on a check with this skill, it counts as providing skilled assistance (see page 26)."],
 			techniques:[],
 		},{
-			title:"Dog, Small",
+			title:"DogSmall",
+			fullname:"Dog, Small",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:2,
@@ -412,6 +421,7 @@ var archetypes =[
 			techniques:[],
 		},{
 			title:"Hawk",
+			fullname:"Hawk",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:2,
@@ -452,7 +462,8 @@ var archetypes =[
 						"Swoop: When performing an Attack action check, a hawk may spend <span class='l5r'>O</span> as follows: <br><span class='l5r'>O</span>+: Move 1 range band away from the target per <span class='l5r'>O</span> spent this way. If the target is of silhouette 0 or smaller, the hawk may carry it to its destination instead."],
 			techniques:[],
 		},{
-			title:"Horse, Rokugani Pony",
+			title:"HorseRokuganiPony",
+			fullname:"Horse, Rokugani Pony",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:2,
@@ -492,7 +503,8 @@ var archetypes =[
 			abilities:["Trained Mount: While it is being ridden during a conflict, a mount does not take a turn of its own, and provides the following benefits to its rider:<br>- When the rider succeeds on a Movement action check, add bonus successes equal to the mount's Water Ring. <br>- The rider may use their Survival skill in place of their Fitness skill for any Fitness check they make.<br>- During narrative and downtime scenes, a mounted character doubles their overland travel speed."],
 			techniques:[],
 		},{
-			title:"Horse, Shinjo Riding Horse",
+			fullname:"Horse, Shinjo Riding Horse",
+			title:"HorseShinjoRidingHorse",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:3,
@@ -535,7 +547,8 @@ var archetypes =[
 			abilities:["Loyal Steed: While it is being ridden during a conflict, a mount does not take a turn of its own, and provides the following benefits to its rider:<br>- When the rider succeeds on a Movement action check, add bonus successes equal to the mount's Water Ring. <br>- The rider may use their Survival skill in place of their Fitness skill for any Fitness check they make.<br>- During narrative and downtime scenes, a mounted character doubles their overland travel speed."],
 			techniques:[],
 		},{
-			title:"Horse, Utaku Steed",
+			fullname:"Horse, Utaku Steed",
+			title:"HorseUtakuSteed",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:4,
@@ -580,7 +593,8 @@ var archetypes =[
 			abilities:["Paragon of Horses: A Utaku steed grants its rider skilled assistance (Core p26) on Martial checks they make while mounted","Legendary Steed: While it is being ridden during a conflict, a mount does not take a turn of its own, and provides the following benefits to its rider:<br>- When the rider succeeds on a Movement action check, add bonus successes equal to the mount's Water Ring. <br>- The rider may use their Survival skill in place of their Fitness skill for any Fitness check they make.<br>- During narrative and downtime scenes, a mounted character doubles their overland travel speed."],
 			techniques:[],
 		},{
-			title:"Hunting Cat",
+			fullname:"Hunting Cat",
+			title:"HuntingCat",
 			type:"Animals",
 			equiptype:"natural",
 			conflictcombat:6,
@@ -620,6 +634,7 @@ var archetypes =[
 			abilities:["Pouncing Predator: When performing an Attack action check against an unaware or Prone target, the hunting cat may spend <span class='l5r'>O</span> as follows: <br><span class='l5r'>O</span>: The target suffers the Disoriented condition.","Savage Mauling: Disoriented targets cannot defend against damage dealt by a hunting cat."],
 			techniques:[],
 		},{
+			fullname:"Wolf",
 			title:"Wolf",
 			type:"Animals",
 			equiptype:"natural",
@@ -659,7 +674,8 @@ var archetypes =[
 			abilities:["Circle the Kill: When performing a Martial Arts [Unarmed] check, a wolf may spend <span class='l5r'>O</span> in the following ways. <br>Water <span class='l5r'>O</span>: The target suffers the Bleeding condition. <br>Fire <span class='l5r'>O</span> : The target treats all terrain as Dangerous (see page 267) until the end of their next turn."],
 			techniques:[],
 		},{
-			title:"Bushi Skeleton",
+			fullname:"Bushi Skeleton",
+			title:"BushiSkeleton",
 			type:"Creatures",
 			equiptype:"equipped",
 			conflictcombat:3,
@@ -699,7 +715,8 @@ var archetypes =[
 			abilities:["Clattering Bones: The first time it would be defeated each scene, it receives a Scar disadvantage of the GM's choice instead as one of its limbs snaps or flies off.","Does not Bleed: A skeletal bushi ignores conditions and critical strikes from non-Sacred sources."],
 			techniques:[],
 		},{
-			title:"Bog Hag",
+			fullname:"Bog Hag",
+			title:"BogHag",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:8,
@@ -744,6 +761,7 @@ var archetypes =[
 			techniques:[],
 		},{
 			title:"Goblin",
+			fullname:"Goblin",
 			type:"Creatures",
 			equiptype:"equipped",
 			conflictcombat:1,
@@ -785,7 +803,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Sinister Oni",
+			fullname:"Sinister Oni",
+			title:"SinisterOni",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:12,
@@ -829,7 +848,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Zombie Peasant",
+			fullname:"Zombie Peasant",
+			title:"ZombiePeasant",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:2,
@@ -872,7 +892,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Forest Troll",
+			fullname:"Forest Troll",
+			title:"ForestTroll",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:7,
@@ -915,6 +936,7 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
+			fullname:"Ki-Rin",
 			title:"Ki-Rin",
 			type:"Creatures",
 			equiptype:"natural",
@@ -958,7 +980,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Manifest Air Kami",
+			fullname:"Manifest Air Kami",
+			title:"ManifestAirKami",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:7,
@@ -1002,7 +1025,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Manifest Earth Kami",
+            fullname:"Manifest Earth Kami",
+			title:"ManifestEarthKami",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:8,
@@ -1046,7 +1070,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Manifest Fire Kami",
+			fullname:"Manifest Fire Kami",
+			title:"ManifestFireKami",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:9,
@@ -1090,7 +1115,8 @@ var archetypes =[
 											],
 			techniques:[],
 		},{
-			title:"Manifest Water Kami",
+            fullname:"Manifest Water Kami",
+			title:"ManifestWaterKami",
 			type:"Creatures",
 			equiptype:"natural",
 			conflictcombat:7,
@@ -1133,7 +1159,8 @@ var archetypes =[
 			techniques:[],
 		},
 		{
-			title:"Loyal Bushi",
+            fullname:"Loyal Bushi",
+			title:"LoyalBushi",
 			type:"Pregen",
 			conflictcombat:4,
 			conflictintrigue:2,
@@ -1166,6 +1193,7 @@ var archetypes =[
 			abilities:["Sworn Protector: Once per scene, when an Attack action check targeting another character at range 0-1 succeeds, a bushi may intervene, becoming the target of the action instead.",],
 			techniques:["Crescent Moon Style"],
 		},{
+            fullname:"HumblePeasant",
 			title:"Humble Peasant",
 			conflictcombat:1,
 			conflictintrigue:1,
@@ -1199,7 +1227,8 @@ var archetypes =[
 			abilities:["Overlooked: When a peasant makes a check targeting a character with a higher status rank, they treat that character's vigilance as 1 lower.",],
 			techniques:[],
 		},{
-			title:"Seasoned Courtier",
+            fullname:"Seasoned Courtier",
+			title:"SeasonedCourtier",
 			conflictcombat:1,
 			conflictintrigue:5,
 			type:"Pregen",
@@ -1233,7 +1262,8 @@ var archetypes =[
 			abilities:["Whispering Winds: Once per session as an action, the courtier may make a Courtesy (Air) check targeting one character in the scene. The TN is equal to 6 minus the target's glory rank (to a minimum of 1). If they succeed, the courtier learns a rumor about the target. <span class='l5r'>O</span> <span class='l5r'>O</span>: The courtier learns one of the target's advantages or disadvantages of the target's choice.",],
 			techniques:["Fanning the Flames"],
 		},{
-			title:"Scholarly Shugenja",
+            fullname:"Scholarly Shugenja",
+			title:"ScholarlyShugenja",
 			conflictcombat:4,
 			conflictintrigue:3,
 			type:"Pregen",
@@ -1266,7 +1296,8 @@ var archetypes =[
 			abilities:["Disciple of Secret Lore: (Choose 0-5 additional invocations (see page 189) and 0-3 additional rituals (see page 212) that this shugenja can perform. Add 1 to this character's combat rank for each invocation with a prerequisite of rank 3+ chosen this way.",],
 			techniques:["Path to Inner Peace", "Fires from Within"],
 		},{
-			title:"Trained Ashigaru",
+            fullname:"Trained Ashigaru",
+			title:"TrainedAshigaru",
 			conflictcombat:2,
 			conflictintrigue:1,
 			type:"Pregen",
@@ -1299,7 +1330,8 @@ var archetypes =[
 			abilities:["Rank Tactics: When an ashigaru provides assistance (Core p26) to the Martial skill check of another character at range 0-2, that character adds one kept <span class='l5r'>d</span> set to a <span class='l5r'>S</span> result instead of rolling an additional die.",],
 			techniques:[],
 		},{
-			title:"Venerable Provincial Daimyo",
+            fullname:"Venerable Provincial Daimyo",
+			title:"VenerableProvincialDaimyo",
 			conflictcombat:7,
 			conflictintrigue:6,
 			type:"Pregen",
@@ -1332,7 +1364,8 @@ var archetypes =[
 			abilities:["Lord's Command: Once per scene, as a Support action, a daimyo may advise a character who can hear them on how to complete a task they wish the character to perform. The character may use the daimyo's ring or skill in place of their own for the next check they make to complete this task before the end of the game session.",],
 			techniques:[],
 },{
-			title:"Desperate Bandit",
+            fullname:"Desperate Bandit",
+			title:"DesperateBandit",
 			type:"Fighters, Outlaws, Rokugani",
 			demeanor:["Ambitious",],
 			conflictcombat:1,
@@ -1376,7 +1409,8 @@ var archetypes =[
 			],
 			techniques:[],
 },{
-			title:"Experienced Bandit",
+            fullname:"Experienced Bandit",
+			title:"ExperiencedBandit",
 			conflictcombat:3,
 			conflictintrigue:2,
 			type:"Pregen",
@@ -1409,7 +1443,8 @@ var archetypes =[
 			abilities:["Dirty Tricks : When performing an Attack action check, an experienced bandit may spend <span class='l5r'>O</span> in the following way: <span class='l5r'>O</span> : One character at range 0-2 suffers the Disoriented condition. Then you may move 1 range band, ","...Get them, you fools!: As an action, an experienced bandit may have up to two Desperate Bandits who have not yet acted this round immediately move 1 range band and perform a Strike action with skilled assistance (Core p26) .",],
 			techniques:[],
 		},{
-			title:"Skilful Ronin",
+            fullname:"Skilful Ronin",
+			title:"SkilfulRonin",
 			conflictcombat:4,
 			conflictintrigue:2,
 			type:"Pregen",
@@ -1442,7 +1477,8 @@ var archetypes =[
 			abilities:["School of the Wolf: Once per round, when an Attack action check targeting the ronin succeeds, the ronin may suffer 3 fatigue to change the target to another character (other than the attacker) at range 0-1 of the ronin.",],
 			techniques:["Striking as Fire"],
 	},{
-			title:"Deadly Bloodspeaker",
+            fullname:"Deadly Bloodspeaker",
+			title:"DeadlyBloodspeaker",
 			conflictcombat:9,
 			conflictintrigue:9,
 			type:"Pregen",
@@ -1476,7 +1512,8 @@ var archetypes =[
 			abilities:["Bleed the Soul: After the Bloodspeaker inflicts a Critical Strike on a living target, the target suffers the Dazed condition and the Bloodspeaker removes 3 fatigue.", "Hidden Heart: The Bloodspeaker cannot truly be vanquished until its heart (usually buried in some deadly tomb or sanctum of evil) has been destroyed. It ignores the Unconscious condition. If slain, it can possess a fresh corpse after its allies have prepared the corpse through a dark rite that takes four days to complete.", "Master of Vile Lore: The Bloodspeaker is a Tainted being who can perform all maho (Core p224).",],
 			techniques:[],
 		},{
-			title:"Wicked Maho-Tsukai",
+            fullname:"Wicked Maho-Tsukai",
+			title:"WickedMaho-Tsukai",
 			conflictcombat:4,
 			conflictintrigue:3,
 			type:"Pregen",
@@ -1510,6 +1547,7 @@ var archetypes =[
 			abilities:["Mark of Desecration: As a Support action, the maho-tsukai may make a TN 2 Theology (Earth) check targeting up to three corpses at range 0-3. If the maho-tsukai succeeds, each target rises as a Zombie Peasant (Core p321), or a Bushi Skeleton if it was a warrior in life (Core p318). Then, an area encompassing 1 range band around each target's position gains the Defiled terrain quality (Core p267)", "Seeker of Vile Lore: The maho-tsukai is a Tainted being. Optionally, choose 0-2 additional maho (Core p224) that the maho-tsukai can perform. Add 1 to this character's combat rank for each maho chosen this way.",],
 			techniques:[],
 		},{
+            fullname:"Gashadokuro",
 			title:"Gashadokuro",
 			conflictcombat:14,
 			conflictintrigue:0,
@@ -1544,6 +1582,7 @@ var archetypes =[
 			abilities:["Massive Bones: a gashadokuro is an Otherworldly, Tainted being of silhouette 5.  The first time it would be defeated due to suffering damage each scene, it ignores that damage and its bone plating is destroyed instead.<br>Shadowlands p15",],
 			techniques:[],
 		},{
+            fullname:"Harionago",
 			title:"Harionago",
 			conflictcombat:4,
 			conflictintrigue:3,
@@ -1578,6 +1617,7 @@ var archetypes =[
 			abilities:["Entangling Tresses: A harionago is an Otherworldly, Tainted being.  When a harionago deals damage to an Immobilized target, it ignores 2 points of the target's physical resistance.<br>Shadowlands p16",],
 			techniques:[],
 		},{
+            fullname:"Kyorinrin",
 			title:"Kyorinrin",
 			conflictcombat:3,
 			conflictintrigue:2,
@@ -1612,6 +1652,7 @@ var archetypes =[
 			abilities:["Masses of Paper: A kyorinrin is an Otherworldly, Tainted being of silhouette 3.  When a kyorinrin defends against fire damage, its resistance counts as 0.  When a kyorinrin makes a successful Attack action check, it may spend <span class='l5r'>O</span> <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span> <span class='l5r'>O</span>+: The target begins to suffocate (Core p269).  After a character suffers strife and fatigue at the start of their turn from suffocating this way, the character may make a TN 3 Fitness check (Fire 2, Earth 5) to break free and breathe normally.<br>Shadowlands p16",],
 			techniques:[],
 		},{
+            fullname:"Penanggalan",
 			title:"Penanggalan",
 			type:"Creatures",
 			conflictcombat:6,
@@ -1630,7 +1671,8 @@ var archetypes =[
 			source:"Shadowlands p17",
 			techniques:[],
 		},{
-			title:"Ravenous Shadowlands Ogre",
+            fullname:"Ravenous Shadowlands Ogre",
+			title:"RavenousShadowlandsOgre",
 			type:"Creatures",
 			conflictcombat:7,
 			conflictintrigue:1,
@@ -1647,6 +1689,7 @@ var archetypes =[
 			abilities:["Rage of the Beast: A ravenous Shadowlands ogre is a Tainted being of silhouette 4.  When the ogre suffers a critical strike, it becomes Enraged.  Whenever it inflicts a critical strike, the target suffers the Prone condition in addition to all other results of the critical strike."],
 			source:"Shadowlands p17",
 		},{
+            fullname:"Revenant",
 			title:"Revenant",
 			type:"Creatures",
 			conflictcombat:6,
@@ -1664,6 +1707,7 @@ var archetypes =[
 			abilities:["Powerful Servant: A revenant is an Otherworldly, Tainted being.  It may issue orders to undead creatures if they were created by the same maho-tsukai.  Undead creatures under its orders ignore their disadvantages and count as having the Revenant's assistance on all Scholar, Social and Trade checks they make."],
 			source:"Shadowlands p18",
 		},{
+            fullname:"Tsumunagi",
 			title:"Tsumunagi",
 			type:"Creatures",
 			conflictcombat:2,
@@ -1681,7 +1725,8 @@ var archetypes =[
 			abilities:["Twisting Leech: A tsumunagi is a Tainted being of silhouette 1.  When making an Attack action check, a tsumunagi may spend O O to attach itself to the target.  The target suffers the Bleeding condition, and cannot remove the condition while the tsumunagi is attached.  Any character at range 0-1 may make a TN 3 Medicine check (Air 2, Earth 5) to remove the tsumunagi, reducing the TN by 1 if they use a flame to scorch the creature off.  If they succeed, it is removed.  If they fail, the victim suffers a critical strike with severity 7 plus their shortfall."],
 			source:"Shadowlands p17",
 		},{
-			title:"Undead Horror",
+            fullname:"Undead Horror",
+			title:"UndeadHorror",
 			type:"Creatures",
 			conflictcombat:5,
 			conflictintrigue:0,
@@ -1698,6 +1743,7 @@ var archetypes =[
 			abilities:["Fused Corpses: An undead horror is an Otherworldly, Tainted being of silhouette 3.  Unless defeated by damage from a Sacred source, its component corpses separate and arise as three undamaged zombie peasants (Core p321)."],
 			source:"Shadowlands p19",
 		},{
+            fullname:"Wanyudo",
 			title:"Wanyudo",
 			type:"Creatures",
 			conflictcombat:4,
@@ -1715,6 +1761,7 @@ var archetypes =[
 			abilities:["Fiery Soultaker: A wanyudo is an Otherworldly, Tainted being of silhouette 2.  When making an Attack action check, the wanyudo may spend O O to inflict the Burning condition on its target.  Characters who perish while at range 0 of a wanyudo may have their souls dragged to Jigoku.  The ramifications of this terrible outcome are at the GM's discretion, such as that they cannot be reincarnated until they are rescued."],
 			source:"Shadowlands p19",
 		},{
+            fullname:"Fudoshi",
 			title:"Fudoshi",
 			type:"Creatures",
 			conflictcombat:3,
@@ -1732,7 +1779,8 @@ var archetypes =[
 			abilities:["Concealed Constrictor: A fudoshi is a Tainted being of silhouette 3.  Characters count their vigilance as half its normal value for the purposes of noticing a fudoshi or when it uses the Snaring quality of its tangling weapon."],
 			source:"Shadowlands p22",
 		},{
-			title:"Dark Moto Bushi",
+            fullname:"Dark Moto Bushi",
+			title:"DarkMotoBushi",
 			type:"Creatures",
 			conflictcombat:8,
 			conflictintrigue:4,
@@ -1749,6 +1797,7 @@ var archetypes =[
 			abilities:["Ancient Rider: A Dark Moto bushi is an Otherworldly, Tainted being.  When making an Attack action while mounted on horseback, a Dark Moto bushi may spend O O+ to move 1 range band per O O spent this way after resolving this action."],
 			source:"Shadowlands p22",
 		},{
+            fullname:"Onikage",
 			title:"Onikage",
 			type:"Creatures",
 			conflictcombat:2,
@@ -1766,7 +1815,8 @@ var archetypes =[
 			abilities:["Unnatural Speed: An onikage is an Otherworldly, Tainted being of silhouette 3.  It can be ridden by any human-sized rider, using the Mounts and Riding rules (Core p326).  <br>Unless the rider is Tainted, an onikage will attempt to throw the rider then attack him.  <br>Dark Moto Onikage are elite demonic mounts formed from the Unicorn steeds of the Moto.  Like their riders they are corrupted and terrible in appearance, with reptilian hides and crimson eyes.  These steeds use the profile for onikage, adding the following ability: <br>Deadly Steed:  If the rider is a Dark Moto, when making an Attack action check, the rider may spend O to have their mount lash out with its teeth and hooves, inflicting 5 damage with the Unholy quality on a character at range 0-1."],
 			source:"Shadowlands p23",
 		},{
-			title:"Goblin Accursed Priest",
+            fullname:"Goblin Accursed Priest",
+			title:"GoblinAccursedPriest",
 			type:"Creatures",
 			conflictcombat:2,
 			conflictintrigue:3,
@@ -1783,7 +1833,8 @@ var archetypes =[
 			abilities:["Favoured of Fu Leng: A goblin accursed priest is a Tainted being of silhouette 1, who reduces the TN of Command checks they make targeting goblins by 1.   Once per scene, they may call on Fu Leng's favour to change any die result containing a T to a result containing E.  The GM can choose 1-3 maho that the goblin accursed priest can perform.  Add 1 to this character's combat rank for each maho chosen this way."],
 			source:"Shadowlands p31",
 		},{
-			title:"Nezumi Dreamer",
+            fullname:"Nezumi Dreamer",
+			title:"NezumiDreamer",
 			type:"Creatures",
 			conflictcombat:3,
 			conflictintrigue:3,
@@ -1800,7 +1851,8 @@ var archetypes =[
 			abilities:["Dreamshaper: A nezumi dreamer is a being who can never gain the Afflicted condition or the Shadowlands Taint disadvantage.  Once per scene, the nezumi dreamer can make a Theology (Void) check to improve the destiny of a target at range 2.  The TN of the check is equal to the target's Void ring.  If the check is successful, the target gains 1 Void point.<br>Stealer of Fates: Once per scene, a nezumi dreamer can make a Theology (Void) check to snip away at the destiny of a target at range 2.  The TN of the check is equal to the target's Void Ring.  If the check is successful, the target loses 1 Void Point and gains the Disoriented condition.  If the nezumi dreamer is killed, the target regains its Void Point.<br>Dark Illusions: As a Scheme and Support action, a nezumi dreamer can make a Theology (Air) check to plant a nightmare into the mind of a target at range 0-2.  The TN of the check is equal to the target's vigilance.  If the nezumi dreamer succeeds, the target is plagued by nightmares: they cannot remove fatigue or strife until they succeed at a TN 3 Meditation check (Fire 2, Earth 5) as a downtime activity."],
 			source:"Shadowlands p44",
 		},{
-			title:"Nezumi Warrior",
+            fullname:"Nezumi Warrior",
+			title:"NezumiWarrior",
 			type:"Creatures",
 			conflictcombat:4,
 			conflictintrigue:1,
@@ -1817,7 +1869,8 @@ var archetypes =[
 			abilities:["A Warrior's Tail: A Nezumi warrior can never gain the Afflicted condition or the Shadowlands Taint disadvantage.  While making an Attack action check against a target a range 0-1, a Nezumi warrior may spend O O to lash their foe with their tail, inflicting 3 physical damage and causing their target to suffer the Immobilized condition.  Additinally, once per scene when an enemy succeeds on an Attack action check targeting another nezumi at range 0-1, a Nezumi warrior may intervene, becoming the target of the attack instead."],
 			source:"Shadowlands p45",
 		},{
-			title:"Nezumi Rememberer",
+            fullname:"Nezumi Rememberer",
+			title:"NezumiRememberer",
 			type:"Creatures",
 			conflictcombat:1,
 			conflictintrigue:4,
@@ -1834,7 +1887,8 @@ var archetypes =[
 			abilities:["Keeper of History:  A Nezumi rememberer can never gain the Afflicted condition or the Shadowlands Taint disadvantage.  Whenever a character in a scene with the Rememberer makes a Scholar skill check involving the Shadowlands, the character may spend O to have the Rememberer relate something tangentially useful, such as where additional components for a medicine just applied can be found or how long ago their tribe managed to defeat an oni similar to the one currently threatening the group."],
 			source:"Shadowlands p46",
 		},{
-			title:"Nezumi pup",
+            fullname:"Nezumi pup",
+			title:"Nezumipup",
 			type:"Creatures",
 			conflictcombat:1,
 			conflictintrigue:1,
@@ -1851,7 +1905,8 @@ var archetypes =[
 			abilities:["Inquisitive: A nezumi pup can never gain the Afflicted condition or the Shadowlands Taint disadvantage.  Their curiosity means they might be found almost anywhere in the Shadowlands, such as curled up in a backpack or behind a tent flap.  As a downtime activity, a character may observe a nezumi pup's playful antics and remove 3 strife.  A character who targets a nezumi pup with an Attack action receives 5 strife."],
 			source:"Shadowlands p47",
 		},{
-			title:"Nezumi, feral",
+            fullname:"Nezumi, feral",
+			title:"Nezumiferal",
 			type:"Creatures",
 			conflictcombat:3,
 			conflictintrigue:1,

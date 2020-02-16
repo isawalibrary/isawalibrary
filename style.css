@@ -407,6 +407,10 @@ thead {
 }
 
 
+#npcnameinput {
+  width: 150px;
+}
+
 #Conditions-table td {
   width: 80px;
 }

@@ -1,4 +1,6 @@
-var clans = ["Crab","Crane","Dragon","Lion","Phoenix","Scorpion","Unicorn","Imperial","Minor","Other"];
+var clans = ["Crab","Crane","Dragon","Lion","Phoenix","Scorpion","Unicorn","Imperial","Minor"];
+
+var ronintypelist = ["Ronin","Peasant","Gaijin"]
 
 var families = {
 	Crab:{	clanring:{Earth:+1},
@@ -639,20 +641,20 @@ Unicorn:{
 
 					],
 			other: {
-			name:'Other',
-			clan:'Other',
-			ring1:"",
-			ring2:"",
-			advantages:[
-			],
-			disadvantages:[
-			],
-			skill1:"",
-			skill2:"",demeanor:[],
-			glory:"",
-			wealth:"",	},
+				name:'Other',
+				clan:'Other',
+				ring1:"",
+				ring2:"",
+				advantages:[
+				],
+				disadvantages:[
+				],
+				skill1:"",
+				skill2:"",demeanor:[],
+				glory:"",
+				wealth:"",	},
 
-			geishaupbringing: {name: "Geisha House Upbringing", clan: "Other", ring1: "Air", ring2: "Fire", advantages: [], disadvantages: [], skill1: "Aesthetics", skill2: "Courtesy", demeanor: [], glory: "", wealth: "3",},
+
 
 
 
@@ -722,7 +724,7 @@ Unicorn:{
 			name:'Mantis',
 			clan:'Minor',
 			clanring: {"Water":+1},
-			clanskill: "Seafaring",
+			clanskill: "Trade",
 			ring1:"Water",
 			ring2:"Fire",
 			advantages:["Seasoned Seafarer (Water) [Trade, Scholar; Mental, Physical]",
@@ -741,4 +743,173 @@ Unicorn:{
 },
 
 
+}
+
+var roninregions ={
+		"Urban Region":{	
+			name:"Urban Region",
+			clanring:{Air:+1},
+			clanskill:"Trade",
+			clanstatus:0,
+			clanglory:29,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Farmland Region":{	
+			name:"Farmland Region",
+			clanring:{Earth:+1},
+			clanskill:"Martial",
+			clanstatus:0,
+			clanglory:34,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Sea, River or Lake Region":{	
+			name:"Sea, River or Lake Region",
+			clanring:{Water:+1},
+			clanskill:"Trade",
+			clanstatus:0,
+			clanglory:32,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Forest Region":{	
+			name:"Forest Region",
+			clanring:{Earth:+1},
+			clanskill:"Trade",
+			clanstatus:0,
+			clanglory:30,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Mountain Region":{	
+			name:"Mountain Region",
+			clanring:{Void:+1},
+			clanskill:"Martial",
+			clanstatus:0,
+			clanglory:33,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Cursed Region":{	
+			name:"Cursed Region",
+			clanring:{Fire:+1},
+			clanskill:"Social",
+			clanstatus:0,
+			clanglory:28,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Ujik of the Plains of Wind and Stone":{	
+			name:"Ujik of the Plains of Wind and Stone",
+			clanring:{Water:+1},
+			clanskill:"Trade",
+			clanstatus:0,
+			clanglory:30,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Qamarists of the Cradle of the World":{	
+			name:"Qamarists of the Cradle of the World",
+			clanring:{Fire:+1},
+			clanskill:"Scholar",
+			clanstatus:0,
+			clanglory:29,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Yodha of the Ghostlands":{	
+			name:"Yodha of the Ghostlands",
+			clanring:{Earth:+1},
+			clanskill:"Scholar",
+			clanstatus:0,
+			clanglory:29,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+
+		"Sheelavaan of Bhavyatapura":{	
+			name:"Sheelavaan of Bhavyatapura",
+			clanring:{Air:+1},
+			clanskill:"Social",
+			clanstatus:0,
+			clanglory:28,
+			weapons:[],
+			armor:[],
+			advantages:[
+					],
+			disadvantages:[
+					],
+				},
+			}
+
+var roninupbringings = {
+
+		craftspersonupbringing: 
+			{name: "Craftsman Upbringing", 
+			clan: "Ronin", 
+			ring1: "Earth", ring2: "Void", 
+			advantages: [], disadvantages: [], 
+			skill1: "Scholar", skill2: "Artisan", 
+			demeanor: [], 
+			glory: "", 
+			status: -2,
+			wealth: "1 koku",
+		},
+
+		geishaupbringing: 
+			{name: "Geisha House Upbringing", 
+			clan: "Ronin", 
+			ring1: "Air", ring2: "Fire", 
+			advantages: [], disadvantages: [], 
+			skill1: "Aesthetics", skill2: "Courtesy", 
+			demeanor: [], 
+			glory: "", 
+			status: -20,
+			wealth: "3 koku",
+		},
 }
