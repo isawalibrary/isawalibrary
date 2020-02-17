@@ -1471,7 +1471,7 @@ Unicorn:{
 			rank5techs:["Soul Sunder","Buoyant Arrival"],
 			chooseoptions: 0,
 			ability:'Disadvantage: False Identity (Emerald Empire, p247).  <br>Your true form is that of a large fox with up to eight tails if you are a full-blooded kitsune, or a human with certain furry traits if you possess human ancestry as well.  As a Scheme and Support action you may transform between your human and true forms, or into another silhouette 1 or 2 natural creature at the GM discretion (you cannot mimic specific individuals).  Observers with vigilance lower than or equal to your school rank plus your ranks in Performance do not detect any flaws in your facade.  However certain key features persist across all your forms.  If you become Compromised, your disguise slips, subtly revealing your true tails, ears, feet or shadow.',
-			keyword:'Minor Clan Fox',
+			keyword:'Minor Clan Fox Unaligned',
 			
 		},
 		wanderingblade: {
@@ -1498,7 +1498,7 @@ Unicorn:{
 			rank3techs:["Iron in the Mountains Style","Tonight, I am Your Opponent",],
 			rank4techs:["Bravado","Void's Embrace Style",],
 			rank5techs:["Bond of Heroes","Roar of Encouragement",],
-			keyword: "",},
+			keyword: "Unaligned",},
 		studentofthetalon: {
 			family: "Other",
 			name: "Student of the Talon",
@@ -1523,7 +1523,7 @@ Unicorn:{
 			rank3techs:["Wasp's Spite Style","Eyeless Sight Shot"],
 			rank4techs:["Wolf's Proposal","Falling Heavens Shot"],
 			rank5techs:["Deadly Sting","Watch my Back"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		treasurehunter: {
 			family: "Other",
 			name: "Treasure Hunter",
@@ -1548,7 +1548,7 @@ Unicorn:{
 			rank3techs:["Dazzling Performance","Laughing Fox Style"],
 			rank4techs:["Regal Bearing","Ruse of Moon's Reflection"],
 			rank5techs:["Watch My Back","Roar of Encouragement"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		schoolofleaves: {
 			family: "Other",
 			name: "School of Leaves",
@@ -1573,7 +1573,7 @@ Unicorn:{
 			rank3techs:["Noxious Cloud","Wasp's Spite Style"],
 			rank4techs:["Iaijutsu Cut: Reverse Draw","Ruse of Moon's Reflection"],
 			rank5techs:["Bend with the Storm","Silencing Strike"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		voiceofthewilds: {
 			family: "Other",
 			name: "Voice of the Wilds",
@@ -1598,7 +1598,7 @@ Unicorn:{
 			rank3techs:["Fury of Osano-wo","Hands of the Tides"],
 			rank4techs:["Mentor's Guidance","False Realm of the Fox Spirits"],
 			rank5techs:["Ever Changing Waves"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		artisanoftheroads: {
 			family: "Other",
 			name: "Artisan of the Roads",
@@ -1623,7 +1623,7 @@ Unicorn:{
 			rank3techs:["Bravado","Wheeling Sweep"],
 			rank4techs:["Mentor's Guidance","Laughing Fox Style"],
 			rank5techs:["Roar of Encouragement","Rouse the Soul"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		mysticofthemountain: {
 			family: "Other",
 			name: "Mystic of the Mountains",
@@ -1648,7 +1648,7 @@ Unicorn:{
 			rank3techs:["Way of the Falling Star","Ride the Water Dragon"],
 			rank4techs:["Touch the Void Dragon","Pillar of Calm"],
 			rank5techs:["Way of the Edgeless Sword","Bend the Storm"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		ujikdiviner: {
 			family: "Other",
 			name: "Ujik Diviner",
@@ -1673,7 +1673,7 @@ Unicorn:{
 			rank3techs:["Chaotic Scattering","Vapor of Nightmares"],
 			rank4techs:["Laughing Fox Style","Mentor's Guidance"],
 			rank5techs:["Roar of Encouragement","Bond of Heroes"],
-			keyword: "",},
+			keyword: "Unaligned",},
 		qamaristshieldbearer: {
 			family: "Other",
 			name: "Qamarist Shield Bearer",

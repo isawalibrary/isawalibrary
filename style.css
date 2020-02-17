@@ -179,6 +179,9 @@ body {
   margin-top: 10px;
 }
 
+.paddingtop {
+  padding-top: 10px;
+}
 .paddingtable{
   padding-top: 5px;
   padding-bottom: 5px;
@@ -258,6 +261,13 @@ body {
 
 .xwidth {
   width: 400px;
+}
+
+.ywidth {
+  width: 480;
+  text-align: right;
+  margin-bottom: 0;
+  padding-bottom: 0;
 }
 
 table {
@@ -399,6 +409,11 @@ thead {
 
 .groupboxwidth{
   min-width: 40px;
+}
+
+.topboxwidthx{
+  min-width: 35px;
+  text-align: right;
 }
 
 .topboxwidth{

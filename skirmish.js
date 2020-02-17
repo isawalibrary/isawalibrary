@@ -160,39 +160,40 @@ var skirmishcharacters={};
 
 
 function addToSkirmish(){
- 	newName=document.getElementById("name").value;
+ 	fullname=document.getElementById("name").value;
+ 	title = fullname.replace(/ /g, "")
 
- 	skirmishcharacters[newName]=new Object();
- 	skirmishcharacters[newName].name=newName;
- 	skirmishcharacters[newName].clan=selectedClan;
- 	skirmishcharacters[newName].school=selectedSchool;
- 	skirmishcharacters[newName].endurance=parseInt(document.getElementById("xendurance").value);
- 	skirmishcharacters[newName].composure=parseInt(document.getElementById("xcomposure").value);
-  	skirmishcharacters[newName].physres=parseInt(document.getElementById("xphysres").value);
- 	skirmishcharacters[newName].supres=parseInt(document.getElementById("xsupres").value);
- 	skirmishcharacters[newName].ability=document.getElementById("skirmishability").innerHTML;
+ 	skirmishcharacters[title]=new Object();
+ 	skirmishcharacters[title].name=fullname;
+ 	skirmishcharacters[title].clan=selectedClan;
+ 	skirmishcharacters[title].school=selectedSchool;
+ 	skirmishcharacters[title].endurance=parseInt(document.getElementById("xendurance").value);
+ 	skirmishcharacters[title].composure=parseInt(document.getElementById("xcomposure").value);
+  	skirmishcharacters[title].physres=parseInt(document.getElementById("xphysres").value);
+ 	skirmishcharacters[title].supres=parseInt(document.getElementById("xsupres").value);
+ 	skirmishcharacters[title].ability=document.getElementById("skirmishability").innerHTML;
 
- 	if (skirmishcharacters[newName].physres==NaN){
- 		skirmishcharacters[newName].physres=0
+ 	if (skirmishcharacters[title].physres==NaN){
+ 		skirmishcharacters[title].physres=0
  	}
- 	if (skirmishcharacters[newName].supres==NaN){
- 		skirmishcharacters[newName].supres=0
+ 	if (skirmishcharacters[title].supres==NaN){
+ 		skirmishcharacters[title].supres=0
  	}
 
 
  	if(document.getElementById("skirmishplayer").checked){
- 		skirmishcharacters[newName].player=1;  //sets character as PC
- 	} else {skirmishcharacters[newName].player=0;}  //sets character as NPC
+ 		skirmishcharacters[title].player=1;  //sets character as PC
+ 	} else {skirmishcharacters[title].player=0;}  //sets character as NPC
 
- 	skirmishcharacters[newName].fatigue=0;
- 	skirmishcharacters[newName].strife=0;
- 	skirmishcharacters[newName].initiative=0;
- 	skirmishcharacters[newName].stance="Stance";
- 	skirmishcharacters[newName].notes="";
- 	skirmishcharacters[newName].engaged="";
- 	skirmishcharacters[newName].status="alive";
+ 	skirmishcharacters[title].fatigue=0;
+ 	skirmishcharacters[title].strife=0;
+ 	skirmishcharacters[title].initiative=0;
+ 	skirmishcharacters[title].stance="Stance";
+ 	skirmishcharacters[title].notes="";
+ 	skirmishcharacters[title].engaged="";
+ 	skirmishcharacters[title].status="alive";
 
- 	buildSkirmishCharacter(newName);
+ 	buildSkirmishCharacter(title);
 
 	hideAddElements();
 	}
@@ -217,6 +218,9 @@ function updateStance(name){
 		} else if (name.name !== undefined){
 			name = name.name
 		}
+
+		fullname = name;
+		name = name.replace(/ /g, '');
 
 	stancebox=name+'-stance';
 	stanceicon=name+'-stanceicon';
@@ -280,9 +284,9 @@ function buildSkirmishCharacter (nom){
  	newdiv (nom+"-name",nom," styledselect namelength");  //creates name container
  		
  		if (skirmishcharacters[nom].player==1){		//sets PC or NPC
-				divcontents (nom+"-name","<b>"+nom+"</b>");
+				divcontents (nom+"-name","<b>"+skirmishcharacters[nom].name+"</b>");
 			} else {
-				divcontents (nom+"-name",nom); 
+				divcontents (nom+"-name",skirmishcharacters[nom].name); 
 			}
 
  	newdiv (nom+"-clan",nom,"margin10 styledselect clanlength");  //creates clan and school container

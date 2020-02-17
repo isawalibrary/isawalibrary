@@ -26,6 +26,16 @@ var demeanors =[
 {demeanor:"Curious",tns:"Fire +2, Earth -2",unmasking:"",desc:""},
 ]
 
+var skilllist =[
+	["Aesthetics","Composition","Design","Smithing"],
+	["Command","Courtesy","Games","Performance"],
+	["Culture","Government","Medicine","Sentiment","Theology"],
+	["Fitness","Melee","Ranged","Unarmed","Meditation","Tactics"],
+	["Animal Handling","Commerce","Labor","Seafaring","Skulduggery","Survival"]
+]
+
+var skillsets = ["Artisan","Social","Scholar","Martial","Trade"]
+
 var archetypes =[
 		{
 			fullname:"Rank 1",

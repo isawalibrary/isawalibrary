@@ -505,7 +505,6 @@ function selectNPCRoninClanBg(){
 			familybg.push(roninupbringings[each].name)
 		}
 		
-
 		makeSelectDropdown("npcroninfamilybgselect","Select Upbringing",familybg)
 
 }
@@ -525,29 +524,15 @@ function selectNPCRoninFamilyBg(){
 	show("npcroninfamilybg");
 	show("npcsave");
 
-	//populate school dropdown with the ronin schools
-	//make it so Rank 1 is selected by default in Archetype
+	roninschools = []
 
-	//make it so ronin fill stats properly
-	//Any in family is randomised properly - if Any and Any Other, make it so the first chosen stat is not selectable for the second
-	//make sure the save, edit etc work properly with the changes to title and fullname
-	//make sure the skirmish works properly with the changes to title and fullname and with the ronin
+	for (each in schools.Other){
+		if (schools.Other[each].keyword.includes("Unaligned")){
+			roninschools.push(schools.Other[each].name)
+		}
+	}
 
-	//make ronin schools selectable for major clans - like Fortunist Priest should be available for any clan
-
-	//make it so the starting techs and a randomly chosen one from starting tech choices are selected and displayed by default
-
-	//Path of Waves weapons
-	//Path of Waves patterns p117
-	//Path of Waves unmaskings p183
-	//Path of Waves new social objectives p184
-	//Path of Waves titles p185
-	//Path of Waves names p222 add ones to the list if they are not on there already
-	//Path of Waves adv disadv p228, maybe add to the archetypes too with a Ranger or Scout
-	//Path of Waves new animals
-	//Path of Waves strange beasts
-	//put ratlings into ronin dropdown
-
+	makeSelectDropdown("npcschoolselect","Select School",roninschools)
 
 
 
@@ -577,6 +562,10 @@ function setRoninStatus(){
 
 			selectedFamily = roninupbringings[each]
 			thisnpc.status = thisnpc.status + selectedFamily.status
+
+			if (thisnpc.status < 0){
+				thisnpc.status = 0
+			}
 		}
 	}
 }
@@ -687,9 +676,18 @@ function selectNPCSchool(){
 		}
 	}
 
-	clanName = document.getElementById("npcclanselect").value
-	text = document.getElementById("npcfamilyselect").value
+	if (document.getElementById("npcclan").classList.contains("hide")){
+		clanName = document.getElementById("npcroninclanbgselect").value
+	} else if (document.getElementById("npcroninclanbg").classList.contains("hide")){
+		clanName = document.getElementById("npcclanselect").value
+	}
 
+	if (document.getElementById("npcfamily").classList.contains("hide")){
+		text = document.getElementById("npcroninfamilybgselect").value
+	} else if (document.getElementById("npcroninfamilybg").classList.contains("hide")){
+		text = document.getElementById("npcfamilyselect").value
+	}
+	
 	if (text == "Select Family"){
 		if (selectedSchool.family !== "Other"){
 			selectedFamily = selectedSchool.family
@@ -786,9 +784,15 @@ function setRokuganiStats(){
 	thisnpc.focus = (thisnpc.Air + thisnpc.Fire);
 	thisnpc.vigilance = Math.ceil((thisnpc.Air + thisnpc.Water)/2);
 
-	thisnpc.honor = selectedSchool.honor;
-	thisnpc.glory = selectedFamily.glory;
-	thisnpc.status = selectedClan.clanstatus;
+		thisnpc.honor = selectedSchool.honor;
+
+	if (document.getElementById("type").value == "Rokugani"){
+		thisnpc.glory = selectedFamily.glory;
+		thisnpc.status = selectedClan.clanstatus;
+	} else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+		thisnpc.glory = selectedClan.clanglory;
+	}
+
 
 	thisnpc.artisanskill = selectedArchetype.skills.artisanskill;
 	thisnpc.martialskill = selectedArchetype.skills.martialskill;
@@ -830,10 +834,29 @@ function setRokuganiRings(){
 	maxRing = selectedArchetype.max - 1;
 
 	if (selectedClan.clanring == undefined){
-		family = selectedSchool.clan
-		selectedFamily = families[clan][family]
-		selectedClan.clanring = selectedFamily.clanring
-		selectedClan.clanskill = selectedFamily.clanskill
+		if (document.getElementById("type").value == "Rokugani"){
+			family = selectedSchool.clan
+			selectedFamily = families[clan][family]
+			selectedClan.clanring = selectedFamily.clanring
+			selectedClan.clanskill = selectedFamily.clanskill	
+		} else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+			for (each in roninregions){
+				if (roninregions[each].name == selectedClan){
+					selectedClan = roninregions[each]
+				}
+			} 
+			if (clans.includes(document.getElementById("npcroninclanbgselect").value)){
+
+				selectedClan = document.getElementById("npcroninclanbgselect").value
+				selectedClan = families[selectedClan]
+			}
+			for (each in roninregions){
+				if (roninregions[each].name == selectedClan){
+					selectedClan = roninregions[each]
+				}
+			} 			
+		}
+
 	}
 
 	clanRing = selectedClan.clanring
@@ -867,13 +890,15 @@ function setRokuganiRings(){
 	} else {
 		if (x == 1){
 			familyRing = selectedFamily.ring2
-			rings[familyRing] ++;
 		}
 
 		if (x == 2){
 			familyRing = selectedFamily.ring1
-			rings[familyRing] ++;
 		}
+		if (familyRing == "Any"){
+			familyRing = getRandom(array)
+		}
+		rings[familyRing] ++;
 	}
 
 	startingRingsToMax(rings,maxRing)  //adds the extra +1 to a ring that won't push it over 3
@@ -985,6 +1010,7 @@ function buildNpcStatsDiv(){
 	divcontents("npctechs","<b>Techniques</b>:<br>");
 
 	newdiv("npcschooltechnique","npctechs","block")
+	newdiv("npcstartingschooltechnique","npcschooltechnique","block")
 	newdiv("npcschooltechniquedetails","npctechs","block")
 
 	newdiv("npctechniquecontainer","npctechs","block")
@@ -996,6 +1022,44 @@ function updateSpans(variable){
 }
 
 function setRokuganiSkills(){
+	if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+		selectedTemplate.artisanskill = 0
+		selectedTemplate.martialskill = 0
+		selectedTemplate.socialskill = 0
+		selectedTemplate.scholarskill = 0
+		selectedTemplate.tradeskill = 0
+
+		for (i=0;i<skilllist.length;i++){
+			for (j=0;j<skilllist[i].length;j++){
+				if (selectedFamily.skill1 == skilllist[i][j]){
+					selectedFamily.skill1 = skillsets[i]
+				}
+			}
+		}
+
+		skill1 = selectedFamily.skill1.toLowerCase()
+		skill1 = skill1+"skill"
+		selectedTemplate[skill1]++
+
+		for (i=0;i<skilllist.length;i++){
+			for (j=0;j<skilllist[i].length;j++){
+				if (selectedFamily.skill2 == skilllist[i][j]){
+					selectedFamily.skill2 = skillsets[i]
+				}
+			}
+		}
+
+		skill2 = selectedFamily.skill2.toLowerCase()
+		skill2 = skill2+"skill"
+		selectedTemplate[skill2]++
+
+		array=["artisanskill","martialskill","socialskill","scholarskill","tradeskill"]
+
+		chosenset=getRandom(array)
+
+		selectedTemplate[chosenset]++
+
+	}
 	thisnpc.artisanskill = selectedArchetype.skills.artisanskill + selectedTemplate.artisanskill + selectedSchool.schoolskills.Artisan;
 	thisnpc.martialskill = selectedArchetype.skills.martialskill + selectedTemplate.martialskill + selectedSchool.schoolskills.Martial;
 	thisnpc.socialskill = selectedArchetype.skills.socialskill + selectedTemplate.socialskill +  + selectedSchool.schoolskills.Social;
@@ -1017,14 +1081,16 @@ function fillStats(){
 	divcontents("npcnotes","<b>Notes:</b><br>")
 	makeTextArea("npcnotes","npcnotesinput","styledselect margintopbottom")
 
-	if (selectedType == "Rokugani"){
+	if (selectedType == "Rokugani" || selectedType == "Ronin, Riffraff and Gaijin"){
 		getNPCName();
 		setRokuganiStats();
 		setRokuganiSkills()
 
 		advArray = []
 		addToArray(advArray,selectedArchetype.advantages)
-		addToArray(advArray,selectedTemplate.advantages)
+		if (document.getElementById("type").value == "Rokugani"){
+			addToArray(advArray,selectedTemplate.advantages)
+				}
 		addToArray(advArray,selectedClan.advantages)
 		addToArray(advArray,selectedFamily.advantages)
 		uniqueSet = new Set(advArray);
@@ -1034,7 +1100,9 @@ function fillStats(){
 
 		disadvArray = []
 		addToArray(disadvArray,selectedArchetype.disadvantages)
-		addToArray(disadvArray,selectedTemplate.disadvantages)
+		if (document.getElementById("type").value == "Rokugani"){
+			addToArray(disadvArray,selectedTemplate.disadvantages)
+				}
 		addToArray(disadvArray,selectedClan.disadvantages)
 		addToArray(disadvArray,selectedFamily.disadvantages)
 		uniqueSet = new Set(disadvArray);
@@ -1044,7 +1112,10 @@ function fillStats(){
 
 		demeanorArray = [];
 		addToArray(demeanorArray,selectedArchetype.demeanor)
-		addToArray(demeanorArray,selectedTemplate.demeanor)
+		if (document.getElementById("type").value == "Rokugani"){
+			addToArray(demeanorArray,selectedTemplate.demeanor)
+				}
+		
 		addToArray(demeanorArray,selectedFamily.demeanor)
 		uniqueSet = new Set(demeanorArray);
 		demeanorArray = [...uniqueSet]
@@ -1075,8 +1146,9 @@ function fillStats(){
 		document.getElementById("npcschoolability").innerHTML="";
 		document.getElementById("npcschoolability").innerHTML="<u>"+selectedSchool.name+"</u>: "+selectedSchool.ability;
 
+
+
 		techobjs = [];
-		addToArray(techobjs,selectedSchool.startingtechs)
 		addToArray(techobjs,selectedSchool.startingtechoptions)
 		npcrank = selectedArchetype.rank;
 
@@ -1107,6 +1179,30 @@ function fillStats(){
 			if (document.getElementById("schooltechdrop") == null){
 	 			makeSelect("npcschooltechnique","schooltechdrop","styledselect inline margintopbottom","showSelectedTechnique(schooltechdrop,npcschooltechniquedetails)")
 	 		}
+
+
+			
+			startingtechs = selectedSchool.startingtechs
+
+			for (m=0;m<startingtechs.length;m++){
+				newdiv("startingtech"+m,"npcstartingschooltechnique")
+
+				for (o = 0; o < techniquelist.length; o++){
+					if (techniquelist[o].title == startingtechs[m]){
+						effect = techniquelist[o].effect
+
+				while (effect.includes("<br><br>")){
+					effect = effect.replace("<br><br>","<br>");
+				}
+
+				techeffect = techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") " + effect + "<br><br>"
+
+
+
+					divcontents("startingtech"+m,techeffect)
+					}
+				}
+			}
 
 				var el = document.createElement("option");
 				npcschooltech=document.getElementById("schooltechdrop");
@@ -1219,6 +1315,11 @@ function fillStats(){
 function makeTechDropdowns(){
 	document.getElementById("npctechniquecontainer").innerHTML = "";
 
+	if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+		selectedTemplate.extratechs = 1;
+		selectedTemplate.techtypes = selectedSchool.techniquetypes;
+	}
+
 	if (selectedTemplate.extratechs>0){
 		x = "Select up to "+selectedTemplate.extratechs+" ";
 
@@ -1265,12 +1366,11 @@ function setTechs(){
 			newdiv("npctechselector","npctechniquecontainer")
 		}
 
-
-
 	var techobjs = [];
 	var techlist = [];
 	var techdroplist = [];
 
+	if (document.getElementById("type").value == "Rokugani"){
 		for (i=0; selectedTemplate.techtypes.length > i; i++){
 			for (j=0; j < techniquelist.length; j++){
 				if (techniquelist[j].type == selectedTemplate.techtypes[i]){
@@ -1279,6 +1379,17 @@ function setTechs(){
 				}
 			}
 		}
+	} else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+		for (i=0; selectedSchool.techniquetypes.length > i; i++){
+			for (j=0; j < techniquelist.length; j++){
+				if (techniquelist[j].type == selectedSchool.techniquetypes[i]){
+					techobjs.push (techniquelist[j]);
+
+				}
+			}
+		}
+	}
+
 
 	searchRank = document.getElementById("npctechniquesearchrank").value;
 
@@ -1343,10 +1454,11 @@ function showSelectedTechnique(dropId,displayDiv){
 		for (j=0; j< techniquelist.length; j++){
 		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
 			effect = techniquelist[j].effect
-			effect = effect.replace("<br><br>","<br>");
+
+			while (effect.includes("<br><br>")){
 				effect = effect.replace("<br><br>","<br>");
-					effect = effect.replace("<br><br>","<br>");
-						effect = effect.replace("<br><br>","<br>");
+			}
+
 			abilitydiv.innerHTML = effect
 		}
 	}}
@@ -1457,7 +1569,7 @@ function saveNPC (){
 
 	if (document.getElementById("schooltechdrop") == null)
 		{schooltechdrop = "None"} 
-	else {schooltechdrop = document.getElementById('schooltechdrop').options[document.getElementById('schooltechdrop').selectedIndex].value;
+	else {schooltechdrop = document.getElementById('schooltechdrop').value;
 	if (schooltechdrop == "Select School Technique")
 		{schooltechdrop = "None"};
 	}
@@ -1503,7 +1615,7 @@ function saveNPC (){
 	npc[nospaces].social.honor = thisnpc.honor;
 	npc[nospaces].social.glory = thisnpc.glory;
 	npc[nospaces].social.status = thisnpc.status;
-	npc[nospaces].social.demeanor = document.getElementById('npcdemeanor').options[document.getElementById('npcdemeanor').selectedIndex].text;
+	npc[nospaces].social.demeanor = document.getElementById('npcdemeanor').value;
 	npc[nospaces].social.demeanornotes = document.getElementById('npcdemeanornotes').innerHTML;
 	npc[nospaces].skills = {};
 	npc[nospaces].skills.artisan = thisnpc.artisanskill;
@@ -1532,8 +1644,8 @@ function saveNPC (){
 			npc[nospaces].armorsup = selectedArmor.sup
 	}
 
-	npc[nospaces].advantage = document.getElementById('npcadv').options[document.getElementById('npcadv').selectedIndex].text;
-	npc[nospaces].disadvantage = document.getElementById('npcdisadv').options[document.getElementById('npcdisadv').selectedIndex].text;
+	npc[nospaces].advantage = document.getElementById('npcadv').value;
+	npc[nospaces].disadvantage = document.getElementById('npcdisadv').value;
 
 	npc[nospaces].schoolability = document.getElementById("npcschoolability").innerHTML;
 
@@ -1642,8 +1754,8 @@ function npcskirmish(nom){
 	dropcontent = document.getElementById("stat"+nom).innerHTML;
 
 	skirmishcharacters[nom] = new Object;
-	skirmishcharacters[nom].name = nom;
-	nom = nom.replace(/ /g, '');
+	skirmishcharacters[nom].name = npc[nom].fullname;
+	nom = npc[nom].fullname.replace(/ /g, '');
 	skirmishcharacters[nom].initiative = 0;
 	skirmishcharacters[nom].stance = "Stance";
 	skirmishcharacters[nom].clan = npc[nom].clan;
@@ -1682,14 +1794,14 @@ function makeNpcEdit(nom){
 	
 	newdiv("edittype","editcharacter","inline")
 
-	makeTextInput("edittype","editname","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Name: </span>","editnameinput","margintopbottom styledselect")
+	makeTextInput("edittype","editname","inline schoolskillswidth","<span class='topboxwidthx inlineblock'>Name: </span>","editnameinput","margintopbottom styledselect")
 
 	makeTextInput("edittype","editarchetype","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Archetype: </span>","editarchetypeinput","styledselect")
 
 	makeTextInput("edittype","edittemplate","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Template: </span>","edittemplateinput","styledselect")
 
 	newdiv("editbackground","editcharacter","block")
-	makeTextInput("editbackground","editclan","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Clan: </span>","editclaninput","styledselect")
+	makeTextInput("editbackground","editclan","inline schoolskillswidth","<span class='topboxwidthx inlineblock'>Clan: </span>","editclaninput","styledselect")
 
 	makeTextInput("editbackground","editfamily","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Family: </span>","editfamilyinput","styledselect")
 
@@ -1738,9 +1850,9 @@ function makeNpcEdit(nom){
 
 	makeNumberInput("editsocialstats","editstatus","inlineblock margin10 editboxwidth",'Status: ',"editstatusinput","numberform styledselect")
 
-	newdiv("editdemeanor","editsocialstats","inline margin10")
+	newdiv("editdemeanor","editsocialstats","inlineblock editboxwidth margin10")
 	divcontents("editdemeanor",'Demeanor:')
-	makeSelect("editdemeanor","editdemeanorinput","styledselect inline","selectNPCDemeanor();")
+	makeSelect("editdemeanor","editdemeanorinput","styledselect inline editboxwidth","selectNPCDemeanor();")
 
 	demeanor = [];
 
@@ -1752,22 +1864,22 @@ function makeNpcEdit(nom){
 
 	newdiv("editdemeanorinfo","editsocialstats","inline margin10")
 
-	makeTextInput("editstats","editadvantage","inline margin10","<br>Advantage: ","editadvantageinput","margintopbottom styledselect xwidth")
+	makeTextInput("editstats","editadvantage","block margin10 ywidth","<br>Advantage: ","editadvantageinput"," styledselect xwidth")
 
-	makeTextInput("editstats","editdisadvantage","inline margin10","<br>Disadvantage: ","editdisadvantageinput","margintopbottom styledselect xwidth")
+	makeTextInput("editstats","editdisadvantage","block margin10 ywidth","<br>Disadvantage: ","editdisadvantageinput"," styledselect xwidth")
 
 	newdiv("editskills","editstats","inline")
 	divcontents("editskills",'<br>Skills:')
 
-	makeNumberInput("editskills","editartisan","inline margin10",'Artisan: ',"editartisaninput","margintopbottom numberform styledselect")
+	makeNumberInput("editskills","editartisan","inlineblock margin10 editboxwidth",'Artisan: ',"editartisaninput","margintopbottom numberform styledselect")
 
-	makeNumberInput("editskills","editsocial","inline margin10",'Social: ',"editsocialinput","margintopbottom numberform styledselect")
+	makeNumberInput("editskills","editsocial","inlineblock margin10 editboxwidth",'Social: ',"editsocialinput","margintopbottom numberform styledselect")
 
-	makeNumberInput("editskills","editmartial","inline margin10",'Martial: ',"editmartialinput","numberform styledselect")
+	makeNumberInput("editskills","editmartial","inlineblock margin10 editboxwidth",'Martial: ',"editmartialinput","numberform styledselect")
 
-	makeNumberInput("editskills","editscholar","inline margin10",'Scholar: ',"editscholarinput","numberform styledselect")
+	makeNumberInput("editskills","editscholar","inlineblock margin10 editboxwidth",'Scholar: ',"editscholarinput","numberform styledselect")
 
-	makeNumberInput("editskills","edittrade","inline margin10",'Trade: ',"edittradeinput","numberform styledselect")
+	makeNumberInput("editskills","edittrade","inlineblock margin10 editboxwidth",'Trade: ',"edittradeinput","numberform styledselect")
 
 	newdiv("editweapon","editstats","inline margin10")
 	
@@ -1839,19 +1951,19 @@ function makeNpcEdit(nom){
 
 	newdiv("editarmorstats","editstats","inline margin10")
 
-	newdiv("editability","editstats","inline margin10 margintopbottom")
+	newdiv("editability","editstats","inline margin10 margintopbottom paddingbottom marginbottom")
 	divcontents("editability","<br><i>Ability:</i>")
 
 	newdiv("editschoolability","editability","inline margin10")
-	newdiv("editschoolability1","editability","inline margin10")
+	newdiv("editschoolability1","editability","inline margin10 paddingbottom marginbottom")
 
-	newdiv("edittechs","editstats","inline margin10 margintopbottom")
-	divcontents("edittechs","<br><i>Techniques:</i>")
+	newdiv("edittechs","editstats","inline margin10 margintopbottom paddingtop")
+	divcontents("edittechs","<br><br><i>Techniques:</i>")
 
 	i=0;
 
 	for (each in nom.techs){
-		newdiv("techwrap"+i,"edittechs","margintopbottom")
+		newdiv("techwrap"+i,"edittechs","marginbottom")
 		newdiv("edittechs"+i,"techwrap"+i,"inline")
 
 		makeSelect("edittechs"+i,"edittechselect"+i,"styledselect inline","setEditTech("+i+")")
@@ -1903,7 +2015,7 @@ function populateNpcEdit(nom){
 	var nom = npc[nom];
 	thisnpc = nom
 
-	document.getElementById("editnameinput").value = nom.title;
+	document.getElementById("editnameinput").value = nom.fullname;
 
 	if (nom.player == 1){
 		document.getElementById("editarchetypeinput").value = "PC";
@@ -1967,7 +2079,7 @@ function populateNpcEdit(nom){
 
 	selectNPCArmorEdit();
 
-	if (nom.ability !== "" && nom.ability !== "None"){
+	if (nom.ability !== "" && nom.ability !== "None" && nom.ability !== undefined){
 	document.getElementById("editschoolability").innerHTML = nom.ability
 	}
 
