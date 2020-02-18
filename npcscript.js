@@ -308,6 +308,11 @@ function selectType(){
 		save.classList.remove("hide")
 
 		document.getElementById("npcsave").classList.add("hide");
+
+			selectObj = document.getElementById("archetype")
+	valueToSet = "Rank 1"
+	setSelectedValue(selectObj, valueToSet)
+	selectArchetype();
 	}
 
 	selectedType = document.getElementById("type").value
@@ -357,9 +362,7 @@ function getNPCName(){
 
 function selectArchetype(){
 
-	if (selectedType == undefined){
-		selectedType = document.getElementById("type").value
-	}
+	selectedType = document.getElementById("type").value
 
 	selectedArchetype = document.getElementById("archetype").value
 
@@ -534,8 +537,6 @@ function selectNPCRoninFamilyBg(){
 
 	makeSelectDropdown("npcschoolselect","Select School",roninschools)
 
-
-
 }
 
 function setRoninStatus(){
@@ -665,6 +666,12 @@ function selectNPCFamily(){
 }
 
 function selectNPCSchool(){
+
+	if (document.getElementById("npcschooltechnique") !== undefined && document.getElementById("npcschooltechnique") !== null){
+		document.getElementById("npcschooltechnique").innerHTML = "";
+		newdiv("npcstartingschooltechnique","npcschooltechnique")
+	}
+	
 
 	selectedSchool = document.getElementById("npcschoolselect").value;
 
@@ -1011,7 +1018,7 @@ function buildNpcStatsDiv(){
 
 	newdiv("npcschooltechnique","npctechs","block")
 	newdiv("npcstartingschooltechnique","npcschooltechnique","block")
-	newdiv("npcschooltechniquedetails","npctechs","block")
+
 
 	newdiv("npctechniquecontainer","npctechs","block")
 }
@@ -1154,14 +1161,6 @@ function fillStats(){
 
 		ranks = [1,2,3,4,5];
 
-		for (i = 1; i-1 < ranks.length; i++){
-			if (ranks[i]-1 <= npcrank){
-				a = "rank"+i+"techs"
-				for (j = 0; j < selectedSchool[a].length; j++){
-					techobjs.push(selectedSchool[a][j])
-				}
-			}
-		}
 		uniqueSet = new Set(techobjs);
 		techobjs = [...uniqueSet]
 
@@ -1176,12 +1175,8 @@ function fillStats(){
 				}
 			}
 		}
-			if (document.getElementById("schooltechdrop") == null){
-	 			makeSelect("npcschooltechnique","schooltechdrop","styledselect inline margintopbottom","showSelectedTechnique(schooltechdrop,npcschooltechniquedetails)")
-	 		}
 
-
-			
+		
 			startingtechs = selectedSchool.startingtechs
 
 			for (m=0;m<startingtechs.length;m++){
@@ -1197,15 +1192,19 @@ function fillStats(){
 
 				techeffect = techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") " + effect + "<br><br>"
 
-
-
 					divcontents("startingtech"+m,techeffect)
 					}
 				}
 			}
 
+
+			for (k =0; k< selectedSchool.chooseoptions; k++){
+			if (document.getElementById("schooltechdrop"+k) == null){
+	 			makeSelect("npcschooltechnique","schooltechdrop"+k,"styledselect block margintopbottom","showSelectedTechnique(schooltechdrop"+k+",npcschooltechniquedetails"+k+")")
+	 				newdiv("npcschooltechniquedetails"+k,"npcschooltechnique","block")
+	 		}
 				var el = document.createElement("option");
-				npcschooltech=document.getElementById("schooltechdrop");
+				npcschooltech=document.getElementById("schooltechdrop"+k);
 				npcschooltech.innerHTML="";
 				el.textContent = "Select School Technique";
 
@@ -1217,6 +1216,10 @@ function fillStats(){
 			    el.value = techlist[j];
 			    npcschooltech.appendChild(el);
 			};
+	 		
+	 	}
+
+
 
 		thisnpc.techniques = selectedArchetype.techniques;
 		makeTechDropdowns()
@@ -1627,6 +1630,7 @@ function saveNPC (){
 	npc[nospaces].weaponstats = document.getElementById('npcweaponstats').innerHTML;
 	npc[nospaces].armor = document.getElementById('npcarmor').options[document.getElementById('npcarmor').selectedIndex].text;
 	npc[nospaces].armorstats = document.getElementById('npcarmorstats').innerHTML;
+
 	
 	for(i=0; i < tabledata[9].children.length; i++){
 		if (tabledata[9].children[i].armor == npc[nospaces].armor){
@@ -1650,7 +1654,21 @@ function saveNPC (){
 	npc[nospaces].schoolability = document.getElementById("npcschoolability").innerHTML;
 
 	npc[nospaces].techs = [];
-	npc[nospaces].techs.push(schooltechdrop);
+
+	for (p =0; p< selectedSchool.startingtechs.length; p++){
+		npc[nospaces].techs.push(selectedSchool.startingtechs[p])
+	}
+
+	div = document.getElementById("npcschooltechnique")
+
+	for (q=0; q< div.children.length-1; q++){
+		schooltechs = "schooltechdrop"+q;
+		if (document.getElementById(schooltechs)!==null){
+					thistech = document.getElementById(schooltechs).value
+		npc[nospaces].techs.push(thistech)
+		}
+
+	}
 
 	if (document.getElementById('npctechselector') !== null){
 		var childDivs = document.getElementById('npctechselector').getElementsByTagName('select');
