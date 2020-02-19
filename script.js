@@ -31,14 +31,7 @@ function highlight(button,hiddenelementx){
 }
 
 
-
-
-
-
-
-
 //defs tab script
-
 
 var k = 0;
 
@@ -67,7 +60,6 @@ function makeDefs(){
 	}
 	
 };
-
 
 
 function divider() {
@@ -293,8 +285,6 @@ function hidex(x) {
 
 
 
-
-
 //TECHS TAB
 
 function makeTechniques(){
@@ -423,8 +413,6 @@ function techniquefilter() {
 //SCHOOLS STUFF
 
 
-
-
 function schoolfilter(){
 	searchString=document.getElementById("schoolsearchinput").value
 
@@ -447,7 +435,7 @@ function schoolfilter(){
 							' <br><b>Skills:</b>  <span class="trailingcommafinder"><% child.skills.forEach(function(skill) { %> <%= skill %>, <% }); %></span>;' +
 							' <br><b>Honor:</b> <%= child.honor %>; <b>Rings:</b> <%= child.ring1 %>, <%= child.ring2 %>; <b>Technique Types:</b> <span class="trailingcommafinder"><% child.techniquetypes.forEach(function(types) { %> <%= types %>, <% }); %></span>;' +
 							' <br><b>Favoured Techniques:</b> Rank 1: <span id="startingft" class="trailingcommafinder">' +
-							'<% child.startingtechs.forEach(function(stechs) { %> <span id="tec"><%= stechs %></span>, <% }); %></span>' +
+							'<% child.startingtechs.forEach(function(stechs) { %> <span id="tec"><%= stechs %></span>, <% }); %>,</span>' +
 							'<% child.startingtechoptions.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %>' +
 							'<% child.rank1techs.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %></span>' +
 							'   Rank 2: <span id="rank2ft"><% child.rank2techs.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %></span>' +

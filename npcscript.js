@@ -3,9 +3,9 @@ function loadNPC(){
 	save = JSON.parse(localStorage.getItem("savenpc"));
 
 	if (save !== undefined){
+		npc=save;
+	}
 
-	npc=save;
-}
 	if (npc==null){
 		npc={}
 	}
@@ -21,11 +21,11 @@ function makeNpcLibrary(){
 		dem = npc[each].social.demeanor
 		each = npc[each];
 		
-	for (i=0; i< demeanors.length; i++){
-		
-		if (demeanors[i].demeanor == dem){
-			npcdemeanor = demeanors[i]
-		}
+		for (i=0; i< demeanors.length; i++){
+			
+			if (demeanors[i].demeanor == dem){
+				npcdemeanor = demeanors[i]
+			}
 	}
 
 		newdiv("div"+each.title,"menu","block");
@@ -308,6 +308,8 @@ function selectType(){
 		save.classList.remove("hide")
 
 		document.getElementById("npcsave").classList.add("hide");
+
+		var type = document.getElementById("type").value
 
 			selectObj = document.getElementById("archetype")
 	valueToSet = "Rank 1"
@@ -1606,10 +1608,14 @@ function saveNPC (){
 
 	if (selectedType == "Rokugani"){
 		npc[nospaces].clan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
+	} else if (selectedType == "Ronin, Riffraff and Gaijin"){
+		npc[nospaces].clan = document.getElementById('npcroninclanbgselect').options[document.getElementById('npcroninclanbgselect').selectedIndex].text;
 	} else {npc[nospaces].clan = "None"}
 
 	if (selectedType == "Rokugani"){
 		npc[nospaces].family = document.getElementById('npcfamilyselect').options[document.getElementById('npcfamilyselect').selectedIndex].text
+	} else  if (selectedType == "Ronin, Riffraff and Gaijin"){
+		npc[nospaces].family = document.getElementById('npcroninfamilybgselect').options[document.getElementById('npcroninfamilybgselect').selectedIndex].text;
 	} else {npc[nospaces].family = "None"}
 
 	if (selectedType == "Rokugani"){
