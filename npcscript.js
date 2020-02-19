@@ -617,6 +617,14 @@ function selectNPCClan(){
 		clanSchools.push(schools[clanName][elem].name)
 	}
 
+
+	for (elem in schools.Other){
+		if (schools.Other[elem].keyword.includes("Unaligned")){
+			clanSchools.push(schools.Other[elem].name)
+		}
+		
+	}
+
 	makeSelectDropdown("npcschoolselect","Select School",clanSchools)
 	makeFamilyDropdown()
 	
@@ -660,6 +668,13 @@ function selectNPCFamily(){
 
 	for (elem in schools[clanName]){
 		clanSchools.push(schools[clanName][elem].name)
+	}
+
+	for (elem in schools.Other){
+		if (schools.Other[elem].keyword.includes("Unaligned")){
+			clanSchools.push(schools.Other[elem].name)
+		}
+		
 	}
 
 	makeSelectDropdown("npcschoolselect","Select School",clanSchools)
