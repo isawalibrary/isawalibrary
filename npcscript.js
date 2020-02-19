@@ -1190,7 +1190,7 @@ function fillStats(){
 					effect = effect.replace("<br><br>","<br>");
 				}
 
-				techeffect = techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") " + effect + "<br><br>"
+				techeffect = "<u>"+techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") </u>" + effect + "<br><br>"
 
 					divcontents("startingtech"+m,techeffect)
 					}
@@ -1218,8 +1218,6 @@ function fillStats(){
 			};
 	 		
 	 	}
-
-
 
 		thisnpc.techniques = selectedArchetype.techniques;
 		makeTechDropdowns()
