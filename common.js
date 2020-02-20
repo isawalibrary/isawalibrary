@@ -94,6 +94,8 @@ function makeSelectDropdown(selectorForm,defaultText,listName){
 		};
 }
 
+
+
 function removeDuplicates(array){  //array must be global or this function won't change the array
 	uniqueSet = new Set(array);
 	array = [...uniqueSet]
@@ -130,6 +132,18 @@ function addToSelect(selectorForm,listName){
     selectorForm.appendChild(el);
 		};
 }
+
+function addValuesToSelect(selectorForm,droplist,valuelist){
+			var el = document.createElement("option");
+			select=document.getElementById(selectorForm);
+			select.innerHTML="";
+
+			for(var j = 0; j < valuelist.length; j++) {
+		    var el = document.createElement("option");
+		    el.textContent = droplist[j];
+		    el.value = valuelist[j];
+		    select.appendChild(el);
+}}
 
 
 function getRandomSelect(selectId){

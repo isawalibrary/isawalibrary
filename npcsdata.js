@@ -40,7 +40,7 @@ var archetypes =[
 		{
 			fullname:"Rank 1",
 			title:"Rank1",
-			type:"Rokugani",
+			type:"Clan Samurai",
 			equiptype:"equipped",
 			conflictcombat:1,
 			conflictintrigue:1,
@@ -79,7 +79,7 @@ var archetypes =[
 		},		{
 			fullname:"Rank 2",
 			title:"Rank2",
-			type:"Rokugani",
+			type:"Clan Samurai",
 			equiptype:"equipped",
 			conflictcombat:2,
 			conflictintrigue:2,
@@ -134,7 +134,7 @@ var archetypes =[
 		},	{
 			title:"Rank3",
 			fullname: "Rank 3",
-			type:"Rokugani",
+			type:"Clan Samurai",
 			equiptype:"equipped",
 			conflictcombat:3,
 			conflictintrigue:3,
