@@ -269,6 +269,15 @@ function buildNpcMenu1(){
 	//create all the hidden empty dropdowns
 	//creates and populates template dropdown
 
+
+	if (document.getElementById("npcronintypeselect") == null){
+		newdiv("npcronintype","npcmenu","inline margin10 hide");
+		makeSelect("npcronintype","npcronintypeselect","styledselect","selectNPCRoninType();")
+	}
+
+	makeSelectDropdown("npcronintypeselect","Select Type",ronintypelist);	
+
+
 	if (document.getElementById("template") == null){
 		newdiv("npctemplate","npcmenu","inline hide");
 		makeSelect("npctemplate","template","styledselect inline margin10","selectTemplate();")
@@ -283,13 +292,6 @@ function buildNpcMenu1(){
 	templatelist.sort();
 
 	makeSelectDropdown("template","Select Template",templatelist);
-
-	if (document.getElementById("npcronintypeselect") == null){
-		newdiv("npcronintype","npcmenu","inline margin10 hide");
-		makeSelect("npcronintype","npcronintypeselect","styledselect","selectNPCRoninType();")
-	}
-
-	makeSelectDropdown("npcronintypeselect","Select Type",ronintypelist);	
 	
 	if (document.getElementById("npcclanselect") == null){
 		newdiv("npcclan","npcmenu","inline margin10 hide");
@@ -360,21 +362,19 @@ function selectType(){
 	ronintype = document.getElementById("npcronintype")
 
 	hideDropdowns()
+	resetNPCBuilder();
 
 	if (type == "Animals"){
-
 		document.getElementById("npcnameinput").value = selectedArchetype.title;
 		thisnpc.title = selectedArchetype.title;
 	}
 
 	if (type == "Creatures"){
-
 		document.getElementById("npcnameinput").value = selectedArchetype.title;
 		thisnpc.title = selectedArchetype.title;
 	}
 
 	if (type == "Clan Samurai"){
-
 		selectObj = document.getElementById("archetype")
 		valueToSet = "Rank 1"
 		setSelectedValue(selectObj, valueToSet)
@@ -384,13 +384,11 @@ function selectType(){
 	}
 
 	if (type == "Pregen"){
-
 		document.getElementById("npcnameinput").value = selectedArchetype.title;
 		thisnpc.title = selectedArchetype.title;
 	}
 
 	if (type == "Ronin, Riffraff and Gaijin"){
-
 		document.getElementById("npcsave").classList.add("hide");
 
 		var type = document.getElementById("type").value
@@ -404,6 +402,17 @@ function selectType(){
 	selectedType = document.getElementById("type").value
 
 }
+
+function resetNPCBuilder(){
+		selectedTemplate = {};
+		selectedSchool = {};
+		selectedFamily = {}
+		selectedClan = {}
+		document.getElementById("npcschooltechnique").innerHTML = "";
+		document.getElementById("npcschoolability").innerHTML = "";
+		document.getElementById("npctechniquecontainer").innerHTML = "";
+}
+
 
 function selectArchetype(){
 
@@ -488,12 +497,7 @@ function selectNPCRoninType(){
 		regions.push(roninregions[each].name)
 	}
 
-	for (i=0; i< clans.length; i++){
-		regions.push(clans[i])
-	}
-
-	show("npcclan")
-	makeSelectDropdown("npcclanselect","Select Background Region or Clan",regions)
+	show("npctemplate");
 }
 
 
@@ -501,6 +505,11 @@ function selectTemplate(){
 	hideDropdowns();
 	show("npctemplate")
 	show("npcclan");
+
+	if (selectedType == "Ronin, Riffraff and Gaijin"){
+			makeSelectDropdown("npcclanselect","Select Background Region",regions)
+			show("npcronintype")
+	}
 
 	selectedTemplate = document.getElementById("template").value;
 
@@ -617,7 +626,6 @@ function selectNPCSchool(){
 		}
 	} 
 
-
 	text = document.getElementById("npcfamilyselect").value
 	
 	if (text == "Select Family"){
@@ -627,8 +635,7 @@ function selectNPCSchool(){
 			npcfamilyselect = document.getElementById("npcfamilyselect")
 			setSelectedValue(npcfamilyselect, selectedFamilyName)
 		} else if (text == "Select Upbringing"){
-				getRandomSelect("npcfamilyselect")
-			
+			getRandomSelect("npcfamilyselect")
 		}
 
 	text = document.getElementById("npcfamilyselect").value
@@ -641,7 +648,6 @@ function selectNPCSchool(){
 				selectedFamily = list[elem]
 			} 
 		}
-
 
 	selectedArchetypeName = document.getElementById("archetype").value;
 
@@ -675,9 +681,7 @@ function fillStats(){
 
 		advArray = []
 		addToArray(advArray,selectedArchetype.advantages)
-		if (document.getElementById("type").value == "Clan Samurai"){
-			addToArray(advArray,selectedTemplate.advantages)
-				}
+		addToArray(advArray,selectedTemplate.advantages)
 		addToArray(advArray,selectedClan.advantages)
 		addToArray(advArray,selectedFamily.advantages)
 		removeDuplicates(advArray);
@@ -686,9 +690,7 @@ function fillStats(){
 
 		disadvArray = []
 		addToArray(disadvArray,selectedArchetype.disadvantages)
-		if (document.getElementById("type").value == "Clan Samurai"){
-			addToArray(disadvArray,selectedTemplate.disadvantages)
-				}
+		addToArray(disadvArray,selectedTemplate.disadvantages)
 		addToArray(disadvArray,selectedClan.disadvantages)
 		addToArray(disadvArray,selectedFamily.disadvantages)
 		removeDuplicates(disadvArray);
@@ -697,10 +699,7 @@ function fillStats(){
 
 		demeanorArray = [];
 		addToArray(demeanorArray,selectedArchetype.demeanor)
-		if (document.getElementById("type").value == "Clan Samurai"){
-			addToArray(demeanorArray,selectedTemplate.demeanor)
-				}
-		
+		addToArray(demeanorArray,selectedTemplate.demeanor)
 		addToArray(demeanorArray,selectedFamily.demeanor)
 		removeDuplicates(demeanorArray);
 		makeSelectDropdown1("npcdemeanor",demeanorArray)
@@ -843,7 +842,7 @@ function startingTechSelects(){
 					effect = effect.replace("<br><br>","<br>");
 				}
 
-				techeffect = "<u>"+techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") </u>" + effect + "<br><br>"
+				techeffect = "<u>"+techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") </u><br>" + effect + "<br><br>"
 
 					divcontents("startingtech"+m,techeffect)
 					}
@@ -883,7 +882,6 @@ function startingTechSelects(){
 				}	}
 			}
 			};
-
 
 
 function setRokuganiStats(){
@@ -972,7 +970,6 @@ function setRokuganiRings(){
 				selectedClan = families[selectedClan]
 			} 			
 		}
-
 	}
 
 	clanRing = selectedClan.clanring
@@ -1013,7 +1010,6 @@ function setRokuganiRings(){
 		if (x == 1){
 			familyRing = selectedFamily.ring2
 		}
-
 		if (x == 2){
 			familyRing = selectedFamily.ring1
 		}
@@ -1025,17 +1021,11 @@ function setRokuganiRings(){
 
 	startingRingsToMax(rings,maxRing)  //adds the extra +1 to a ring that won't push it over 3
 
-	rings.Air = rings.Air + selectedArchetype.ring.Air
-	rings.Earth = rings.Earth + selectedArchetype.ring.Earth
-	rings.Fire = rings.Fire + selectedArchetype.ring.Fire
-	rings.Water = rings.Water + selectedArchetype.ring.Water
-	rings.Void = rings.Void + selectedArchetype.ring.Void
-
-	thisnpc.Air = rings.Air
-	thisnpc.Earth = rings.Earth 
-	thisnpc.Fire = rings.Fire 
-	thisnpc.Water = rings.Water 
-	thisnpc.Void = rings.Void 
+	thisnpc.Air = rings.Air + selectedArchetype.ring.Air
+	thisnpc.Earth = rings.Earth + selectedArchetype.ring.Earth
+	thisnpc.Fire = rings.Fire + selectedArchetype.ring.Fire
+	thisnpc.Water = rings.Water + selectedArchetype.ring.Water
+	thisnpc.Void = rings.Void + selectedArchetype.ring.Void
 
 	updateSpans("Air");
 	updateSpans("Earth");
@@ -1063,43 +1053,6 @@ function updateSpans(variable){
 
 
 function setRokuganiSkills(){
-	if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
-		selectedTemplate.artisanskill = 0
-		selectedTemplate.martialskill = 0
-		selectedTemplate.socialskill = 0
-		selectedTemplate.scholarskill = 0
-		selectedTemplate.tradeskill = 0
-
-		for (i=0;i<skilllist.length;i++){
-			for (j=0;j<skilllist[i].length;j++){
-				if (selectedFamily.skill1 == skilllist[i][j]){
-					selectedFamily.skill1 = skillsets[i]
-				}
-			}
-		}
-
-		skill1 = selectedFamily.skill1.toLowerCase()
-		skill1 = skill1+"skill"
-		selectedTemplate[skill1]++
-
-		for (i=0;i<skilllist.length;i++){
-			for (j=0;j<skilllist[i].length;j++){
-				if (selectedFamily.skill2 == skilllist[i][j]){
-					selectedFamily.skill2 = skillsets[i]
-				}
-			}
-		}
-
-		skill2 = selectedFamily.skill2.toLowerCase()
-		skill2 = skill2+"skill"
-		selectedTemplate[skill2]++
-
-		array=["artisanskill","martialskill","socialskill","scholarskill","tradeskill"]
-
-		chosenset=getRandom(array)
-
-		selectedTemplate[chosenset]++
-	}
 
 	thisnpc.artisanskill = selectedArchetype.skills.artisanskill + selectedTemplate.artisanskill + selectedSchool.schoolskills.Artisan;
 	thisnpc.martialskill = selectedArchetype.skills.martialskill + selectedTemplate.martialskill + selectedSchool.schoolskills.Martial;
@@ -1188,7 +1141,7 @@ function selectNPCArmor(num){
 				'<span class="margin10">Supernatural Res: </span>'+selectedArmor.sup+
 				'<span class="margin10">Qualities: </span>'+selectedArmor.qualities;
 
-			divcontents("npcarmorstats",x);
+			divcontents("npcarmor"+num+"stats",x);
 		}
 	}
 }
@@ -1196,11 +1149,6 @@ function selectNPCArmor(num){
 
 function makeTechDropdowns(){
 	document.getElementById("npctechniquecontainer").innerHTML = "";
-
-	if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
-		selectedTemplate.extratechs = 1;
-		selectedTemplate.techtypes = selectedSchool.techniquetypes;
-	}
 
 	if (selectedTemplate.extratechs>0){
 		x = "Select up to "+selectedTemplate.extratechs+" ";
@@ -1213,19 +1161,16 @@ function makeTechDropdowns(){
 				else if (selectedTemplate.techtypes.length > i+1){
 					x += selectedTemplate.techtypes[i]+", ";
 				} 	
-
 				else if (selectedTemplate.techtypes.length == i+1){
 					x += selectedTemplate.techtypes[i]+".";
 				}
 			}
-
 			if (document.getElementById("npctechniquecontainer").innerHTML == "None"){
 					document.getElementById("npctechniquecontainer").innerHTML = "";
 					document.getElementById("npctechniquecontainer").innerHTML = x;
 		} else {
 		document.getElementById("npctechniquecontainer").innerHTML += x
-	}
-}
+	}	}
 		x = ' Rank: =< '
 		document.getElementById("npctechniquecontainer").innerHTML += x;
 		
@@ -1238,118 +1183,118 @@ function makeTechDropdowns(){
 		selectObj = document.getElementById("npctechniquesearchrank")
 		setSelectedValue(selectObj, rank)
 
+	if (document.getElementById("npctechselector") !== null){
+				document.getElementById("npctechselector").innerHTML="";
+			} else {
+				newdiv("npctechselector","npctechniquecontainer")
+			}
 
-if (document.getElementById("npctechselector") !== null){
-			document.getElementById("npctechselector").innerHTML="";
-		} else {
-			newdiv("npctechselector","npctechniquecontainer")
-		}
+		var techobjs = [];
+		var techlist = [];
+		var techdroplist = [];
 
-	var techobjs = [];
-	var techlist = [];
-	var techdroplist = [];
+		if (document.getElementById("type").value == "Clan Samurai" || document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+			for (i=0; selectedTemplate.techtypes.length > i; i++){
+				for (j=0; j < techniquelist.length; j++){
+					if (techniquelist[j].type == selectedTemplate.techtypes[i]){
+						techobjs.push (techniquelist[j]);
 
-	if (document.getElementById("type").value == "Clan Samurai"){
-		for (i=0; selectedTemplate.techtypes.length > i; i++){
-			for (j=0; j < techniquelist.length; j++){
-				if (techniquelist[j].type == selectedTemplate.techtypes[i]){
-					techobjs.push (techniquelist[j]);
-
+					}
 				}
 			}
+		} 
+
+		searchRank = document.getElementById("npctechniquesearchrank").value;
+
+		if (searchRank !== "any"){
+
+			searchRank = parseInt(document.getElementById("npctechniquesearchrank").value)
+			
+			techobjs = techobjs.filter(function(tech)	{
+
+				rank = parseInt(tech.rank);
+
+			 if (rank > searchRank){
+			 	return false;
+			 } else {
+			 	return true;
+			 }
+			});
 		}
-	} else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
-		for (i=0; selectedSchool.techniquetypes.length > i; i++){
-			for (j=0; j < techniquelist.length; j++){
-				if (techniquelist[j].type == selectedSchool.techniquetypes[i]){
-					techobjs.push (techniquelist[j]);
+		for (j=0; j < techobjs.length ; j++){
+			techlist.push (techobjs[j].title);
+			techdroplist.push (techobjs[j].title+" ["+techobjs[j].type+" Rank "+techobjs[j].rank+"] ("+techobjs[j].ring+") ("+techobjs[j].reference+")")
+		}
+		for (i = 0; selectedTemplate.extratechs > i; i++){
 
-				}
-			}
+			npctechselecti = "npctechselect"+i
+
+			newdiv("npctechwrapper"+i,"npctechselector")
+
+			makeSelect("npctechwrapper"+i,'npctechselect'+i,"styledselect block margintopbottom","")
+
+	 		newdiv("npctechselectdetails"+i,"npctechwrapper"+i)
+
+			npctechselectdetailsi = document.getElementById("npctechselectdetails"+i)
+
+			npctechselecti = document.getElementById(npctechselecti);
+
+	 		npctechselecti.setAttribute("onchange","showSelectedTechnique(npctechselect"+i+",npctechselectdetails"+i+")");
+
+				var el = document.createElement("option");
+				npctechselecti=document.getElementById("npctechselect"+i);
+				npctechselecti.innerHTML="";
+				el.textContent = "Select Techniques";
+
+				npctechselecti.appendChild(el);
+
+				for(var j = 0; j < techlist.length; j++) {
+			    var el = document.createElement("option");
+			    el.textContent = techdroplist[j];
+			    el.value = techlist[j];
+			    npctechselecti.appendChild(el);
+			};
 		}
 	}
-
-
-	searchRank = document.getElementById("npctechniquesearchrank").value;
-
-	if (searchRank !== "any"){
-
-		searchRank = parseInt(document.getElementById("npctechniquesearchrank").value)
-		
-		techobjs = techobjs.filter(function(tech)	{
-
-			rank = parseInt(tech.rank);
-
-		 if (rank > searchRank){
-		 	return false;
-		 } else {
-		 	return true;
-		 }
-		});
-	}
-
-	for (j=0; j < techobjs.length ; j++){
-		techlist.push (techobjs[j].title);
-		techdroplist.push (techobjs[j].title+" ["+techobjs[j].type+" Rank "+techobjs[j].rank+"] ("+techobjs[j].ring+") ("+techobjs[j].reference+")")
-	}
-
-	for (i = 0; selectedTemplate.extratechs > i; i++){
-
-		npctechselecti = "npctechselect"+i
-
-		newdiv("npctechwrapper"+i,"npctechselector")
-
-		makeSelect("npctechwrapper"+i,'npctechselect'+i,"styledselect block margintopbottom","")
-
- 		newdiv("npctechselectdetails"+i,"npctechwrapper"+i)
-
-		npctechselectdetailsi = document.getElementById("npctechselectdetails"+i)
-
-		npctechselecti = document.getElementById(npctechselecti);
-
- 		npctechselecti.setAttribute("onchange","showSelectedTechnique(npctechselect"+i+",npctechselectdetails"+i+")");
-
-			var el = document.createElement("option");
-			npctechselecti=document.getElementById("npctechselect"+i);
-			npctechselecti.innerHTML="";
-			el.textContent = "Select Techniques";
-
-			npctechselecti.appendChild(el);
-
-			for(var j = 0; j < techlist.length; j++) {
-		    var el = document.createElement("option");
-		    el.textContent = techdroplist[j];
-		    el.value = techlist[j];
-		    npctechselecti.appendChild(el);
-		};
-	}
-}
-
-
 
 
 	function showSelectedTechnique(dropId,displayDiv){
 
-if(dropId.nodeName !== 'SELECT'){
-	abilitydiv = document.getElementById(displayDiv);
-	techselect = document.getElementById(dropId);
-} else {
-	abilitydiv = displayDiv;
-	techselect = dropId;
-}
-
-	if  (techselect.selectedIndex !== -1){
-
-		for (j=0; j< techniquelist.length; j++){
-		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
-			effect = techniquelist[j].effect
-
-			while (effect.includes("<br><br>")){
-				effect = effect.replace("<br><br>","<br>");
-			}
-
-			abilitydiv.innerHTML = effect
+		if(dropId.nodeName !== 'SELECT'){
+			abilitydiv = document.getElementById(displayDiv);
+			techselect = document.getElementById(dropId);
+		} else {
+			abilitydiv = displayDiv;
+			techselect = dropId;
 		}
-	}}
+			if  (techselect.selectedIndex !== -1){
 
+				for (j=0; j< techniquelist.length; j++){
+				if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
+					effect = techniquelist[j].effect
+
+					while (effect.includes("<br><br>")){
+						effect = effect.replace("<br><br>","<br>");
+					}
+					abilitydiv.innerHTML = effect
+				}
+			}}
+		}
+
+function updatestatus(name){
+	statusbox = name+'-status';
+	stanceicon = name+'-status';
+	switch(document.getElementById(statusbox).value){
+		case "alive":
+			skirmishcharacters[name].status = "alive";
+		break;
+
+		case "out":
+			skirmishcharacters[name].status = "out";
+		break;
+
+		case "dead":
+			skirmishcharacters[name].status = "dead";
+		break;
+	}
 }
