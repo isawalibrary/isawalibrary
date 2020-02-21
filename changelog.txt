@@ -1,10 +1,21 @@
 
 -Upcoming
-
++ Finish overhaul - remaining: Edit Character
++ Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
++ Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
++ Allow collapse and expand on technique titles in the npc library to avoid super long character sheets
++ When clicking on the character name in skirmish panel, open the npc libary to the character - no on hover stuff
++ Allow adding extra weapon in npc builder
++ make getWeaponStats function to get weapon stats easily
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
 + Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category)
 + Sort pregens into alphabetical on NPC builder
 + Add 'Nezumi' option in character maker, have it structured as a clan, the different tribes can be represented by families, and the different social roles (Rememberer, Dreamer etc) can be schools.  Maybe don't add this yet, so the nezumi are a surprise when they show up in the story.
+
+-version 0.12 21.02.20
++ Added all schools and techs from Path of Waves
++ Ronin creation is supported
++ Improved character creation to be closer to PC creation
 
 -version 0.11 31.01.20
 + fixed minor bugs 
