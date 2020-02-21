@@ -1203,8 +1203,8 @@ var archetypes =[
 			abilities:["Sworn Protector: Once per scene, when an Attack action check targeting another character at range 0-1 succeeds, a bushi may intervene, becoming the target of the action instead.",],
 			techniques:["Crescent Moon Style"],
 		},{
-            fullname:"HumblePeasant",
-			title:"Humble Peasant",
+            fullname:"Humble Peasant",
+			title:"HumblePeasant",
 			conflictcombat:1,
 			conflictintrigue:1,
 			type:"Pregen",

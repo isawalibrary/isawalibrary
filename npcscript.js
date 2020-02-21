@@ -118,6 +118,7 @@ function makeNpcLibrary(){
 
 	if (each.type == "Clan Samurai"){x = each.type} 
 	else if (each.type == "Ronin, Riffraff and Gaijin"){x = each.ronintype}
+	else if (each.type == "Animals" || each.type == "Creatures" ||each.type == "Pregen" ){x = each.archetype}
 
 		newdiv("div"+each.title,"menu","block");
 		divcontents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
@@ -164,15 +165,47 @@ function makeNpcLibrary(){
 												'<span class="margin10">Martial</span>: ' + each.skills.martial +
 												'<span class="margin10">Scholar</span>: ' + each.skills.scholar +
 												'<span class="margin10">Trade</span>: ' + each.skills.trade +
-												'<br>' +
-												'Weapon: ' + each.weapon0 + ' [' + each.weaponstats + ']' +
+												'<br>' ;
+
+		for (e = 0; e < each.weapon.length; e++){
+
+					weap = each.weapon[e]
+					
+					for(i=0; i < tabledata[8].children.length; i++){
+						if (tabledata[8].children[i].name == weap){
+							weap = tabledata[8].children[i]
+
+							x = 'Damage: '+weap.damage+
+								'<span class="margin10">Deadliness: </span>'+weap.deadliness+
+								'<span class="margin10">Range: </span>'+weap.range+
+								'<span class="margin10">Qualities: </span>'+weap.qualities;
+
+							weapstats = x
+						}	
+					} 
+
+					for (i=0; npcweapons.length > i; i++){
+						if ( npcweapons[i].title == weap){
+							weap = npcweapons[i];
+
+							x = 'Damage: '+weap.damage+
+								'<span class="margin10">Deadliness: </span>'+weap.deadliness+
+								'<span class="margin10">Range: </span>'+weap.range+
+								'<span class="margin10">Qualities: </span>'+weap.qualities;
+
+							weapstats = x
+						}
+					}
+					document.getElementById("stat"+each.title).innerHTML +=
+												'Weapon: ' + weap.name + ' [' + weapstats + ']' +
 												'<br>' 
-		if (each.weapon0 !== undefined){
-			document.getElementById("stat"+each.title).innerHTML +=
-												'Weapon: ' + each.weapon1 + ' [' + each.weapon0stats + ']' + '<br>'
-		}										
+		}
+
+		each.armorstats = 'Phys Res: '+each.armorphys+
+								'<span class="margin10">Sup Res: </span>'+each.armorsup;
+		
 		document.getElementById("stat"+each.title).innerHTML +=
-												'Armor: ' + each.armor0 + ' [' + each.armorstats + ']' +
+												'Armor: ' + each.armor + ' [' + each.armorstats + ']' +
 												'<br>' +
 												'Advantage: ' + each.advantage +
 												'<br>' +
@@ -1367,10 +1400,16 @@ function saveNPC (){
 		npc[nospaces].skills.social = thisnpc.socialskill;
 		npc[nospaces].skills.scholar = thisnpc.scholarskill;
 		npc[nospaces].skills.trade = thisnpc.tradeskill;
-		npc[nospaces].weapon = document.getElementById('npcweapon0').options[document.getElementById('npcweapon0').selectedIndex].text;
-		npc[nospaces].weaponstats = document.getElementById('npcweapon0stats').innerHTML;
+		npc[nospaces].weapon = []
+
+		children =  document.getElementById("npcequip").childNodes;
+		children.forEach(function(child){
+    		if (child.nodeName == "SELECT"){
+    			npc[nospaces].weapon.push(child.value)
+			}
+		});
+		
 		npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
-		npc[nospaces].armorstats = document.getElementById('npcarmor0stats').innerHTML;
 
 		
 		for(i=0; i < tabledata[9].children.length; i++){
@@ -1396,21 +1435,24 @@ function saveNPC (){
 
 		npc[nospaces].techs = [];
 
+		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
 		for (p =0; p< selectedSchool.startingtechs.length; p++){
 			npc[nospaces].techs.push(selectedSchool.startingtechs[p])
 		}
 
 		div = document.getElementById("npcschooltechchoice")
 
-		for (q=0; q< div.children.length-1; q++){
-			schooltechs = "npcschooltechdrop"+q;
-			if (document.getElementById(schooltechs)!==null){
-						thistech = document.getElementById(schooltechs).value
-			npc[nospaces].techs.push(thistech)
+		for (q=0; q< div.children.length; q++){
+
+			subdiv = div.children[q]
+
+			for (r = 0; r< subdiv.children.length; r++){
+				if (subdiv.children[r].nodeName == "SELECT"){
+					tech = subdiv.children[r].value;
+					npc[nospaces].techs.push(tech)
+				}
 			}
 		}
-
-
 
 		if (document.getElementById('npctechselector') !== null){
 			var childDivs = document.getElementById('npctechselector').getElementsByTagName('select');
@@ -1421,7 +1463,7 @@ function saveNPC (){
 				 if (x !== "Select Techniques"){
 				 npc[nospaces].techs.push(x)
 		}}
-		}
+		}}
 
 		npc[nospaces].notes = document.getElementById('npcnotesinput').value
 
@@ -1506,4 +1548,37 @@ function showNpc(thisnpc){
 
 	thatNpc.classList.add("bold")
 }
+}
+
+function npcskirmish(nom){
+
+	dropcontent = document.getElementById("stat"+nom).innerHTML;
+
+	skirmishcharacters[nom] = new Object;
+	skirmishcharacters[nom].name = npc[nom].fullname;
+	nom = npc[nom].fullname.replace(/ /g, '');
+	skirmishcharacters[nom].initiative = 0;
+	skirmishcharacters[nom].stance = "Stance";
+	skirmishcharacters[nom].clan = npc[nom].clan;
+	skirmishcharacters[nom].school = npc[nom].school;
+
+	skirmishcharacters[nom].player = npc[nom].player;
+
+	skirmishcharacters[nom].composure = npc[nom].derived.composure;
+	skirmishcharacters[nom].endurance = npc[nom].derived.endurance;
+	skirmishcharacters[nom].ability = dropcontent;
+	skirmishcharacters[nom].engaged = "";
+	skirmishcharacters[nom].fatigue = 0;
+	skirmishcharacters[nom].strife = 0;
+	skirmishcharacters[nom].physres = npc[nom].armorphys;
+	skirmishcharacters[nom].supres = npc[nom].armorsup;
+	skirmishcharacters[nom].notes = "";
+	skirmishcharacters[nom].status = "alive";
+
+	saveSkirmish();
+	loadSkirmish();
+
+	if (document.getElementById("skirmishcontainer").classList.contains("containerx")){
+			highlight("skirmishbutton","skirmishcontainer");
+	}
 }
