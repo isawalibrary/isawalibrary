@@ -116,13 +116,16 @@ function makeNpcLibrary(){
 			}
 	}
 
+	if (each.type == "Clan Samurai"){x = each.type} 
+	else if (each.type == "Ronin, Riffraff and Gaijin"){x = each.ronintype}
+
 		newdiv("div"+each.title,"menu","block");
 		divcontents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
 		makeButton('menu'+each.title,each.title+'--delete','button',"deletenpc("+"'"+each.title+"'"+")","x")
 		document.getElementById('menu'+each.title).innerHTML += each.fullname + 
 															' [' + each.clan +
 															'/' + each.school +
-															'] (' + each.archetype +
+															'] (' + each.archetype +" "+ x +" "+
 															'/' + each.template +
 															')' 
 															;
@@ -131,7 +134,7 @@ function makeNpcLibrary(){
 		document.getElementById("npc-"+each.title).innerHTML='<b>'+ each.fullname + 
 												' [' + each.clan +
 												'/' + each.school +
-												'] (' + each.archetype +
+												'] (' + each.archetype +" "+ x +" "+
 												'/' + each.template +
 												')</b> ';
 		newdiv("addskirmishbuttondiv"+each.title,"npc-"+each.title,"inline") 
@@ -888,7 +891,7 @@ function setRokuganiStats(){
 
 	thisnpc.name = document.getElementById("npcnameinput").value
 	thisnpc.archetype = selectedArchetype.title;
-	thisnpc.type = selectedArchetype.type;
+	thisnpc.type = document.getElementById("type").value
 
 	thisnpc.clan = selectedSchool.clan
 	thisnpc.family = selectedFamily.name
@@ -1325,6 +1328,10 @@ function saveNPC (){
 
 		npc[nospaces].equiptype = thisnpc.equiptype;
 
+		if (selectedType == "Ronin, Riffraff and Gaijin"){
+			npc[nospaces].ronintype = document.getElementById('npcronintypeselect').value;
+		}
+
 		if (selectedType == "Clan Samurai" ||selectedType == "Ronin, Riffraff and Gaijin"){
 			npc[nospaces].clan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
 		} else {npc[nospaces].clan = "None"}
@@ -1403,7 +1410,7 @@ function saveNPC (){
 			}
 		}
 
-		for (each in )
+
 
 		if (document.getElementById('npctechselector') !== null){
 			var childDivs = document.getElementById('npctechselector').getElementsByTagName('select');
@@ -1442,5 +1449,61 @@ function saveNPC (){
 		selectedArchetype = {};
 
 		thisnpc = {};
-
 	}
+
+	function npcsave() {
+	savenpc=npc;
+	localStorage.setItem("savenpc",JSON.stringify(savenpc));
+}
+
+var savenpc = {};
+
+
+function deleteSave(){
+	localStorage.removeItem("savenpc")
+}
+
+
+function deletenpc (name){
+	menudiv=document.getElementById('menu');
+	item = document.getElementById('div'+name);
+	menudiv.removeChild(item);
+	delete npc[name];
+	npcsave();
+
+	statdiv=document.getElementById('statblock');
+	item = document.getElementById('npc-'+name)
+	statdiv.removeChild(item);
+
+	document.getElementById("editcharacter").innerHTML = "";
+	}
+
+
+function showNpc(thisnpc){
+
+	npcstat = "npc-"+thisnpc;
+	npcmenu = "div"+thisnpc;
+
+	thatNpc = document.getElementById(npcstat);
+
+	if (thatNpc !== null){
+
+	children = document.getElementById("statblock").childNodes;
+
+	for (i = 0; i < children.length; i++){
+		children[i].classList.add("hide")
+	}
+
+	thatNpc.classList.remove("hide")
+
+	thatNpc = document.getElementById(npcmenu);
+
+	children = document.getElementById("menu").childNodes;
+
+	for (i = 0; i < children.length; i++){
+		children[i].classList.remove("bold")
+	}
+
+	thatNpc.classList.add("bold")
+}
+}
