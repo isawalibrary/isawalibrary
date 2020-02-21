@@ -1297,9 +1297,11 @@ if (document.getElementById("npctechselector") !== null){
 
 		npctechselecti = "npctechselect"+i
 
-		makeSelect("npctechselector",'npctechselect'+i,"styledselect block margintopbottom","")
+		newdiv("npctechwrapper"+i,"npctechselector")
 
- 		newdiv("npctechselectdetails"+i,"npctechselector")
+		makeSelect("npctechwrapper"+i,'npctechselect'+i,"styledselect block margintopbottom","")
+
+ 		newdiv("npctechselectdetails"+i,"npctechwrapper"+i)
 
 		npctechselectdetailsi = document.getElementById("npctechselectdetails"+i)
 
