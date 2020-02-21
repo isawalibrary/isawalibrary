@@ -1298,3 +1298,149 @@ function updatestatus(name){
 		break;
 	}
 }
+
+
+var npc = {};
+
+function saveNPC (){
+
+		if (document.getElementById("schooltechdrop") == null)
+			{schooltechdrop = "None"} 
+		else {schooltechdrop = document.getElementById('schooltechdrop').value;
+		if (schooltechdrop == "Select School Technique")
+			{schooltechdrop = "None"};
+		}
+		name = document.getElementById('npcnameinput').value;
+		nospaces = name.replace(/ /g, "")
+		npc[nospaces] = new Object;
+
+		npc[nospaces].fullname = document.getElementById('npcnameinput').value;
+		npc[nospaces].title = nospaces;
+		npc[nospaces].archetype = document.getElementById('archetype').options[document.getElementById('archetype').selectedIndex].text;
+		npc[nospaces].type = thisnpc.type;
+
+		if (selectedType == "Clan Samurai" ||selectedType == "Ronin, Riffraff and Gaijin"){
+			npc[nospaces].template = document.getElementById('template').options[document.getElementById('template').selectedIndex].text;
+		} else {npc[nospaces].template = selectedArchetype.type}
+
+		npc[nospaces].equiptype = thisnpc.equiptype;
+
+		if (selectedType == "Clan Samurai" ||selectedType == "Ronin, Riffraff and Gaijin"){
+			npc[nospaces].clan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
+		} else {npc[nospaces].clan = "None"}
+
+		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
+			npc[nospaces].family = document.getElementById('npcfamilyselect').options[document.getElementById('npcfamilyselect').selectedIndex].text
+		} else {npc[nospaces].family = "None"}
+
+		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
+			npc[nospaces].school = document.getElementById('npcschoolselect').options[document.getElementById('npcschoolselect').selectedIndex].text;
+		} else {npc[nospaces].school = "None"}
+		
+		npc[nospaces].rings = {};		
+		npc[nospaces].rings.air = thisnpc.Air;
+		npc[nospaces].rings.earth = thisnpc.Earth;
+		npc[nospaces].rings.fire = thisnpc.Fire;
+		npc[nospaces].rings.water = thisnpc.Water;
+		npc[nospaces].rings.void = thisnpc.Void;
+		npc[nospaces].derived = {};
+		npc[nospaces].derived.endurance = thisnpc.endurance;
+		npc[nospaces].derived.composure = thisnpc.composure;
+		npc[nospaces].derived.focus = thisnpc.focus;
+		npc[nospaces].derived.vigilance = thisnpc.vigilance;
+		npc[nospaces].social = {};
+		npc[nospaces].social.honor = thisnpc.honor;
+		npc[nospaces].social.glory = thisnpc.glory;
+		npc[nospaces].social.status = thisnpc.status;
+		npc[nospaces].social.demeanor = document.getElementById('npcdemeanor').value;
+		npc[nospaces].social.demeanornotes = document.getElementById('npcdemeanornotes').innerHTML;
+		npc[nospaces].skills = {};
+		npc[nospaces].skills.artisan = thisnpc.artisanskill;
+		npc[nospaces].skills.martial = thisnpc.martialskill;
+		npc[nospaces].skills.social = thisnpc.socialskill;
+		npc[nospaces].skills.scholar = thisnpc.scholarskill;
+		npc[nospaces].skills.trade = thisnpc.tradeskill;
+		npc[nospaces].weapon = document.getElementById('npcweapon0').options[document.getElementById('npcweapon0').selectedIndex].text;
+		npc[nospaces].weaponstats = document.getElementById('npcweapon0stats').innerHTML;
+		npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
+		npc[nospaces].armorstats = document.getElementById('npcarmor0stats').innerHTML;
+
+		
+		for(i=0; i < tabledata[9].children.length; i++){
+			if (tabledata[9].children[i].armor == npc[nospaces].armor0){
+				selectedArmor = tabledata[9].children[i]
+			}	
+				npc[nospaces].armorphys = selectedArmor.phys
+				npc[nospaces].armorsup = selectedArmor.sup
+		} 
+
+		for (i=0; npcarmor.length > i; i++){
+			if ( npcarmor[i].title == npc[nospaces].armor0){
+				selectedArmor = npcarmor[i];
+			}
+				npc[nospaces].armorphys = selectedArmor.phys
+				npc[nospaces].armorsup = selectedArmor.sup
+		}
+
+		npc[nospaces].advantage = document.getElementById('npcadv').value;
+		npc[nospaces].disadvantage = document.getElementById('npcdisadv').value;
+
+		npc[nospaces].schoolability = document.getElementById("npcschoolability").innerHTML;
+
+		npc[nospaces].techs = [];
+
+		for (p =0; p< selectedSchool.startingtechs.length; p++){
+			npc[nospaces].techs.push(selectedSchool.startingtechs[p])
+		}
+
+		div = document.getElementById("npcschooltechchoice")
+
+		for (q=0; q< div.children.length-1; q++){
+			schooltechs = "npcschooltechdrop"+q;
+			if (document.getElementById(schooltechs)!==null){
+						thistech = document.getElementById(schooltechs).value
+			npc[nospaces].techs.push(thistech)
+			}
+		}
+
+		for (each in )
+
+		if (document.getElementById('npctechselector') !== null){
+			var childDivs = document.getElementById('npctechselector').getElementsByTagName('select');
+
+			for( i=0; i< childDivs.length; i++ )	{
+				 var childDiv = childDivs[i];
+				 x = childDiv.options[childDiv.selectedIndex].value;
+				 if (x !== "Select Techniques"){
+				 npc[nospaces].techs.push(x)
+		}}
+		}
+
+		npc[nospaces].notes = document.getElementById('npcnotesinput').value
+
+		savenpc=npc;
+		localStorage.setItem("savenpc",JSON.stringify(savenpc));
+
+		makeNpcLibrary();
+		buildNpcMenu();
+		
+		highlight('npcbutton','npccontainer')
+		hide("npcstats");
+		hide("npcnotes")
+
+		if (document.getElementById("library").classList.contains("containerx")){
+				highlight("npclibrarybutton","library");
+		}
+
+		showNpc(nospaces);
+
+		divcontents("npcstats","")
+		divcontents("npcnotes","")
+
+		buildNpcStatsDiv();
+
+		selectedArchetype = {};
+
+		thisnpc = {};
+
+	}
