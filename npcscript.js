@@ -118,7 +118,7 @@ function makeNpcLibrary(){
 
 	if (each.type == "Clan Samurai"){x = each.type} 
 	else if (each.type == "Ronin, Riffraff and Gaijin"){x = each.ronintype}
-	else if (each.type == "Animals" || each.type == "Creatures" ||each.type == "Pregen" ){x = each.archetype}
+	else if (each.type == "Animals" || each.type == "Creatures" ||each.type == "Pregen" ){x = ""}
 
 		newdiv("div"+each.title,"menu","block");
 		divcontents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
