@@ -1,5 +1,6 @@
 
 -Upcoming
++ Fix bug - when a character with a comma in the name is sent to skirmish, everything breaks.  Whatever is done to remove spaces from the name should be made to also remove commas.
 + Finish overhaul - remaining: Edit Character
 + Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
 + Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
