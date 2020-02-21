@@ -476,10 +476,11 @@ function schoolfilter(){
 					if (school.skills[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.startingtechoptions.length; i++){ 	
-					if (school.startingtechoptions[i].toLowerCase().includes(searchString)){
+				} for (i=0; i<school.startingtechoptions.length; i++){
+					for  (j=0; j<school.startingtechoptions[i].length; j++){
+					if (school.startingtechoptions[i][j].toLowerCase().includes(searchString)){
 					return true;
-					}
+					}}
 				} for (i=0; i<school.startingtechs.length; i++){ 	
 					if (school.startingtechs[i].toLowerCase().includes(searchString)){
 					return true;
