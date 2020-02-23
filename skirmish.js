@@ -162,6 +162,7 @@ var skirmishcharacters={};
 function addToSkirmish(){
  	fullname=document.getElementById("name").value;
  	title = fullname.replace(/ /g, "")
+ 	title = fullname.replace(/,/g, "")
 
  	skirmishcharacters[title]=new Object();
  	skirmishcharacters[title].name=fullname;
@@ -221,6 +222,7 @@ function updateStance(name){
 
 		fullname = name;
 		name = name.replace(/ /g, '');
+		name = name.replace(/,/g, "")
 
 	stancebox=name+'-stance';
 	stanceicon=name+'-stanceicon';

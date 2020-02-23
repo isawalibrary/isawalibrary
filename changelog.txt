@@ -1,6 +1,5 @@
 
 -Upcoming
-+ Fix bug - when a character with a comma in the name is sent to skirmish, everything breaks.  Whatever is done to remove spaces from the name should be made to also remove commas.
 + Finish overhaul - remaining: Edit Character
 + Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
 + Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
@@ -12,6 +11,9 @@
 + Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category)
 + Sort pregens into alphabetical on NPC builder
 + Add 'Nezumi' option in character maker, have it structured as a clan, the different tribes can be represented by families, and the different social roles (Rememberer, Dreamer etc) can be schools.  Maybe don't add this yet, so the nezumi are a surprise when they show up in the story.
+
+-version 0.13 23.02.20
++ Fixed bug - remove commas from names as well as spaces
 
 -version 0.12 21.02.20
 + Added all schools and techs from Path of Waves

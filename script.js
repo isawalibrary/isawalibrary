@@ -427,6 +427,7 @@ function schoolfilter(){
 		}
 	}
 
+
 	let schoolsTemplate = '<div>' +
 							' <% schoolsArr.forEach(function(child) { %> ' +
 							' <div class="filtitemeffect defcategory"> ' +
@@ -436,7 +437,7 @@ function schoolfilter(){
 							' <br><b>Honor:</b> <%= child.honor %>; <b>Rings:</b> <%= child.ring1 %>, <%= child.ring2 %>; <b>Technique Types:</b> <span class="trailingcommafinder"><% child.techniquetypes.forEach(function(types) { %> <%= types %>, <% }); %></span>;' +
 							' <br><b>Favoured Techniques:</b> Rank 1: <span id="startingft" class="trailingcommafinder">' +
 							'<% child.startingtechs.forEach(function(stechs) { %> <span id="tec"><%= stechs %></span>, <% }); %>,</span>' +
-							'<% child.startingtechoptions.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %>' +
+							'<% child.startingtechoptions.forEach(function(stechso) { %> <% stechso.forEach(function(stechsox) { %><span id="tec"><%= stechsox %></span>, <% }); %><% }); %>' +
 							'<% child.rank1techs.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %></span>' +
 							'   Rank 2: <span id="rank2ft"><% child.rank2techs.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %></span>' +
 							'   Rank 3: <span id="rank3ft"><% child.rank3techs.forEach(function(stechso) { %> <span id="tec"><%= stechso %></span>, <% }); %></span>' +
