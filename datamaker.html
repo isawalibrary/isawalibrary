@@ -1,0 +1,142 @@
+<html>
+ <head>
+ 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
+	<LINK href="style.css" rel="stylesheet" type="text/css">
+	<script src="javascript.js"></script>
+	<script src="common.js"></script>
+	<script src="script.js"></script>
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
+ <title></title>
+ <style type="text/css">
+ 	body {
+		  background-image: url("");
+		}
+
+	.datainputlength {
+		width: 200px;
+	}
+ </style>
+ </head>
+
+<body onload="setUpDataBuilder();">
+<div id="databuilderdiv"></div>
+</body>
+<script type="text/javascript">
+
+function setUpDataBuilder(){
+	newdiv("datatype","databuilderdiv","block")
+	makeSelect("datatype","datatypeselect","block styledselect","createDataForm()")
+
+	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC",]
+
+	makeSelectDropdown("datatypeselect","Select Data Type",datatypearray)
+
+	newdiv("dataform","databuilderdiv","block margin10")
+
+	newdiv("dataoutput","databuilderdiv","block margin10")
+}
+
+	values=[];
+
+function createDataForm(){
+
+	datatype = document.getElementById("datatypeselect").value;
+
+	//clear form to start
+	divcontents("dataform","");
+
+	switch (datatype) {
+
+		case "School":
+				datafields = ["Title (no spaces, lower case i.e. wanderingblade)","Family","School Name","Clan","School Ring 1","School Ring 2","Sourcebook","Number of Starting Skills","Artisan Skill","Social Skill","Scholar Skill","Martial Skill","Trade Skill","Taught School Skills","Honor","Weapons ([])","Armor ([])","Role ([])","School Technique Types ([])","Starting Techs ([])","Starting Tech Options ([[A,B,C],[D,E]])","Choices Available from Starting Options ([2,1])","School Ability","Rank 1 Curriculum Techniques","Rank 2 Curriculum Techniques","Rank 3 Curriculum Techniques","Rank 4 Curriculum Techniques","Rank 5 Curriculum Techniques","Keywords"]
+				break;
+
+		case "Technique":
+				datafields = ["title","type (Kata, Shuji)","rank","reference","ring (Earth / Water)","effect (Activation:...&lt;br>&lt;br>Effect"]
+				break;
+
+		case "Clan":
+				datafields = ["Clan Name","Ring","Skill (i.e. Social)","Status","Weapons ([])","Armor ([])","Advantages ([])","Disadvantages ([])"]
+				break;
+
+		case "Family":
+				datafields = ["Family Name","Clan","Ring 1","Ring 2","Advantages ([])","Disdvantages ([])","Skill 1","Skill 2","Demeanors ([])","Glory","Wealth (4 koku)"]
+				break;
+
+		case "Armor":
+				datafields = ["Armor Name","Physical Res","Supernatural Res","Armor qualities","Rarity","Price (4 koku)","Source"]
+				break;
+
+		case "NPC":
+				datafields = ["Name","Type","Combat Conflict Rating","Intrigue Conflict Rating","Ring Type (set / random)","Earth Ring","Air Ring","Fire Ring","Water Ring","Void Ring","Honor","Glory","Status","Endurance","Composure","Focus","Vigilance","Equipment Type (equipped or natural)","Artisan Skill","Martial Skill","Scholar Skill","Social Skill","Trade Skill","Demeanor ([])","Advantages ([])","Disadvantages ([])","Weapon ([])","Armor ([])","Qualities (An oni is an Otherworldly, Tainted being of silhouette 4.)","Abilities ([])","Sourcebook"]
+				break;
+
+		case "Weapon":
+				datafields = ["name","skill","category","range","damage","deadliness","grips (1-hand: - / 2-hand: Damage +2)","qualities (Mundane &lt;br>A bokken can be used for Iaijutsu Cut techniques)","rarity","price (1 koku)","source"]
+				break;
+	}
+
+	for (i=0; i< datafields.length; i++){
+		makeTextInput("dataform","data"+[i],"block datainputlength",datafields[i]+": ","datainput"+[i],"styledselect margin10 datainputlength")
+
+		datavalue = document.getElementById("datainput"+[i]).value
+		values.push(datavalue);
+
+		if (i == datafields.length -1){
+			makeButton("dataform","datasubmitbutton","styledselect","generateData()","Get JSON Blob")
+		}
+	}
+}
+
+function generateData(){
+
+	datatype = document.getElementById("datatypeselect").value;
+
+	values =[]
+
+	for (i=0; i< datafields.length; i++){
+
+		datavalue = document.getElementById("datainput"+[i]).value
+		values.push(datavalue);
+	}
+
+		switch (datatype) {
+			case "School":
+					outputstring = values[0]+': {<br>family:"'+values[1]+'",<br>name:"'+values[2]+'",<br>clan:"'+values[3]+'",<br>ring1: "'+values[4]+'",<br>ring2: "'+values[5]+'",<br>source: "'+values[6]+'",<br>skillnumber: '+values[7]+',<br>schoolskills:{Artisan:'+values[8]+',Social:'+values[9]+',Scholar:'+values[10]+',Martial:'+values[11]+',Trade:'+values[12]+'},<br>skills: ['+values[13]+'],<br>honor: '+values[14]+',<br>weapons:['+values[15]+'],<br>armor:['+values[16]+'],<br>techniquetypes: ['+values[17]+'],<br>role: ['+values[18]+'],<br>startingtechs: ['+values[19]+'],<br>startingtechoptions: ['+values[20]+'],<br>chooseoptions:['+values[21]+'],<br>ability:['+values[22]+'],<br>rank1techs:['+values[23]+'],<br>rank2techs:['+values[24]+'],<br>rank3techs:['+values[25]+'],<br>rank4techs: ['+values[26]+'],<br>rank5techs:"'+values[27]+'",<br>keyword:"'+values[28]+'",},'
+					break
+
+			case "Technique":
+					outputstring = '{<br>title: "'+values[0]+'",<br>type: "'+values[1]+'",<br>rank: "'+values[2]+'",<br>reference: "'+values[3]+'",<br>ring: "'+values[4]+'",<br>effect: "'+values[5]+'"},'
+					break;
+
+			case "Family":
+					outputstring = 	values[0].toLowerCase()+': {<br>name:"'+values[0]+'",<br>clan:"'+values[1]+'",<br>ring1:"'+values[2]+'",<br>ring2:"'+values[3]+'",<br>advantages:['+values[4]+'],<br>disadvantages:['+values[5]+'],<br>skill1:"'+values[6]+'",<br>skill2:"'+values[7]+'",demeanor:['+values[8]+'],<br>glory:'+values[9]+',<br>wealth:"'+values[10]+'",<br>},'
+					break;
+
+			case "Weapon":
+					outputstring = '{name: "'+values[0]+'", skill:["'+values[1]+'"], category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
+					break;
+
+			case "Armor":
+					outputstring = '{armor:"'+values[0]+'", phys:'+values[1]+', sup:'+values[2]+', qualities:"'+values[3]+'", rarity:"'+values[4]+'", price:"'+values[5]+'", source:"'+values[6]+'"},'
+					break;
+
+			case "Clan":
+					outputstring = values[0]+':{<br>name:"'+values[0]+'",<br>clanring:{'+values[1]+':+1},<br>clanskill:"'+values[2]+'",<br>clanstatus:'+values[3]+',<br>weapons:['+values[4]+'],<br>armor:['+values[5]+'],<br>advantages:['+values[6]+'],<br>disadvantages:['+values[7]+'],<br>},'
+					break;
+
+			case "NPC":
+
+					nospaces = values[0].replace(/ /g, "")
+					nospaces = nospaces.replace(/,/g, "")
+
+					outputstring = '{<br>fullname:"'+values[0]+'",<br>title:"'+nospaces+'",<br>type:"'+values[1]+'",<br>conflictcombat:'+values[2]+',<br>conflictintrigue:'+values[3]+',<br>ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},<br>honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+',<br>endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+',<br>equiptype:"'+values[17]+'",<br>skills:{artisanskill:'+values[18]+',martialskill:'+values[19]+',scholarskill:'+values[20]+',socialskill:'+values[21]+',tradeskill:'+values[22]+',},<br>demeanor:["'+values[23]+'"],<br>advantages:['+values[24]+'],<br>disadvantages:['+values[25]+'],<br>weapon:['+values[26]+'],armor:['+values[27]+'],<br>qualities:"'+values[28]+'",<br>abilities:['+values[28]+'],<br>source:"'+values[29]+'",<br>},'
+					break;
+		
+			}
+			divcontents("dataoutput",outputstring)
+}
+
+</script>
