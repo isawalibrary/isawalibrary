@@ -20,11 +20,11 @@
  <title></title>
  </head>
 
-<body onload="buildNpcStatsDiv();loadNPC();makeNpcLibrary();makeSkirmish();makeDefs();divider();makeTable();makeTechniques();buildNpcMenu();loadTheme();">
+<body onload="buildNpcStatsDiv();loadNPC();makeNpcLibrary();makeSkirmish();makeDefs();divider();makeTable();makeTechniques();buildNpcMenu();setUpDataBuilder();loadTheme();">
 
  	<div id="titlebar" class="titlebar">
  	<div id="title" class="inline title">Legend of the Five Rings 5th Edition GM Screen</div>
-	<button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="mainbutton button">npc builder</button>
+	<button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="inline margin10">npc builder</button>
 	<button id="npclibrarybutton" onclick="highlight('npclibrarybutton','library')" class="mainbutton button">npc library</button>
 	<button class="mainbutton button" id="skirmishbutton" onclick="highlight('skirmishbutton','skirmishcontainer');">skirmish tracker</button>
  	<button id="definitionbutton" onclick="highlight('definitionbutton','definitioncontainer')" class="mainbutton button">reference</button>
@@ -90,6 +90,10 @@
  	 	<form id="shinseisearch" onsubmit="return false" class="center block">Search:
  	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
 		<div id="shinseioutput" class="tea block"></div>
+		<div id="JSONbuilder" class="tea bold">Json Blob Generator
+		<div id="databuilderdiv" class="center"></div>
+		</div>
+
 		<div id="changelog" class="tea block"><span onclick="hideshow('log');">changelog</span>
 			<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
 	</div>

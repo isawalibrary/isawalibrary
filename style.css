@@ -7,6 +7,13 @@
     box-shadow: none!important;
 }
 
+.datainputlength {
+    width: 200px;
+  }
+
+.notbold {
+  font-weight: normal;
+}
 
 body {
   font-family: 'Abel';
