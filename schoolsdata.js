@@ -1435,7 +1435,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ["Shinobi"],
-			techniquetypes: ['Ninjitsu','Rituals','Kata'],
+			techniquetypes: ['Ninjutsu','Rituals','Kata'],
 			startingtechs: ["Skulk"],
 			startingtechoptions: [["Cadence","Shallow Waters"]],
 			chooseoptions: [1],
