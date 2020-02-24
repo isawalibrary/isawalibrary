@@ -99,6 +99,7 @@ function makeSelectDropdown(selectorForm,defaultText,listName){
 function removeDuplicates(array){  //array must be global or this function won't change the array
 	uniqueSet = new Set(array);
 	array = [...uniqueSet]
+	return(array)
 }
 
 function addToArray(arrayToAddTo,arrayToAdd){

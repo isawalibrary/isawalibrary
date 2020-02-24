@@ -46,6 +46,14 @@ function getAdvantages(){
 	for (each in families){
 		addToArray(advantages,families[each].advantages)
 	}
+
+	for (each in templates){
+		addToArray(advantages,templates[each].advantages)
+	}
+
+	for (each in roninupbringings){
+		addToArray(advantages,roninupbringings[each].advantages)
+	}
 	advantages.sort()
 	advantages = removeDuplicates(advantages)
 
@@ -67,6 +75,12 @@ function getDisadvantages(){
 
 	for (each in families){
 		addToArray(disadvantages,families[each].disadvantages)
+	}
+	for (each in templates){
+		addToArray(disadvantages,templates[each].disadvantages)
+	}
+	for (each in roninupbringings){
+		addToArray(disadvantages,roninupbringings[each].disadvantages)
 	}
 	disadvantages.sort()
 	disadvantages = removeDuplicates(disadvantages)

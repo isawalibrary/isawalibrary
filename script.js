@@ -953,9 +953,15 @@ function createDataForm(){
 		values.push(datavalue);
 
 		if (i == datafields.length -1){
-			makeButton("dataform","datasubmitbutton","styledselect","generateData()","Get JSON Blob")
+			makeButton("dataform","datasubmitbutton","styledselect margintop","generateData()","Get JSON Blob")
+			makeButton("dataform","cleardatabutton","styledselect margintop margin10","clearData()","Clear Fields")
 		}
 	}
+}
+
+
+function clearData(){
+	createDataForm()
 }
 
 function generateData(){
@@ -984,7 +990,7 @@ function generateData(){
 					break;
 
 			case "Weapon":
-					outputstring = '{name: "'+values[0]+'", skill:["'+values[1]+'"], category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
+					outputstring = '{name: "'+values[0]+'", skill:"['+values[1]+']", category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
 					break;
 
 			case "Armor":

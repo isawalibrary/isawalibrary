@@ -1838,9 +1838,7 @@ function makeNpcEdit(nom){
 		i++;
 	}
 
-	newdiv("addextratech","editstats","inline")
-	x = "<button class='button' onclick='editAddTech("+i+")'>add extra technique</button>"
-	divcontents("addextratech",x)
+	makeButton("edittechs","addextratechbutton","block",'editAddTech('+i+')',"+")
 
 	nom = nom.title
 
@@ -1848,7 +1846,6 @@ function makeNpcEdit(nom){
 	makeTextArea("editnotes","editnotesinput","styledselect margintopbottom")
 
 	populateNpcEdit(nom);
-
 }
 
 var nom={};
@@ -2111,6 +2108,10 @@ function saveEditNpc(nom){
 }
 
 function setEditTech(id){
+	if (document.getElementById("edittechfilter") !== null){
+			document.getElementById("edittechfilter").remove();
+		}
+
 	abilitydiv = document.getElementById("edittechsability"+id);
 	techselect = document.getElementById("edittechselect"+id)
 
@@ -2125,7 +2126,7 @@ function setEditTech(id){
 		}
 	}
 
-	divcontents("edittechfilter"+id,"");
+	makeButton("edittechs","addextratechbutton","block",'editAddTech('+id+')',"+")
 }
 
 function editAddWeapon(num,equiptypestring){
@@ -2176,32 +2177,48 @@ techtypearray = []
 
 function editAddTech(i){
 
-		document.getElementById("addextratech").innerHTML = "";
+		document.getElementById("addextratechbutton").remove();
+		if (document.getElementById("edittechfilter") !== null){
+			document.getElementById("edittechfilter").remove();
+		}
 
-		newdiv("techwrap"+i,"edittechs","inline")
-		divcontents("techwrap"+i,"")
+		n=0;
 
-		newdiv("edittechs"+i,"techwrap"+i,"inline")
+			children =  document.getElementById("edittechs").childNodes;
+			for (a=0; a< children.length; a++){
+				wrapId = "techwrap"+a;
 
-		makeSelect("edittechs"+i,"edittechselect"+i,"styledselect inline","setEditTech("+i+")")
+				if (document.getElementById("wrapId") !== null || document.getElementById("wrapId") !== undefined){
+					selectId = document.getElementById("edittechs"+a)
+					if (selectId !== null){
+						n++
+				}}
+		}
 
-		newdiv("edittechfilter"+i,"techwrap"+i,"inline")
+		newdiv("techwrap"+n,"edittechs","inline")
+		divcontents("techwrap"+n,"")
 
-		addToDiv("edittechfilter"+i,"Type: ")
-		makeSelect("edittechfilter"+i,"edittechsearchtype","styledselect","edittechfilter("+i+")")
+		newdiv("edittechs"+n,"techwrap"+n,"inline")
+
+		makeSelect("edittechs"+n,"edittechselect"+n,"styledselect inline","setEditTech("+n+")")
+
+		newdiv("edittechfilter","techwrap"+n,"inline")
+
+		addToDiv("edittechfilter","Type: ")
+		makeSelect("edittechfilter","edittechsearchtype","styledselect","edittechfilter("+n+")")
 		
 		for (each in techniquelist){	
 			if (techtypearray.includes(techniquelist[each].type)){} else {techtypearray.push(techniquelist[each].type)}
 		}
 
 		makeSelectDropdown("edittechsearchtype","Any",techtypearray)
-		addToDiv("edittechfilter"+i,"Ring: ")
-		makeSelect("edittechfilter"+i,"edittechsearchring","styledselect","edittechfilter("+i+")")
+		addToDiv("edittechfilter","Ring: ")
+		makeSelect("edittechfilter","edittechsearchring","styledselect","edittechfilter("+n+")")
 		ringtypearray = ["Air","Earth","Fire","Water","Void"]
 		makeSelectDropdown("edittechsearchring","Any",ringtypearray)
-		addToDiv("edittechfilter"+i,"Rank: ")
+		addToDiv("edittechfilter","Rank: ")
 
-		makeSelect("edittechfilter"+i,"edittechsearchrank1","styledselect","edittechfilter("+i+")")
+		makeSelect("edittechfilter","edittechsearchrank1","styledselect","edittechfilter("+n+")")
 		var option = document.createElement("option");
 		option.text = "=<";
 		option.value = "2"
@@ -2212,11 +2229,11 @@ function editAddTech(i){
 		option.value = "1"
 		document.getElementById("edittechsearchrank1").add(option)
 
-		makeSelect("edittechfilter"+i,"edittechsearchrank","styledselect","edittechfilter("+i+")")
+		makeSelect("edittechfilter","edittechsearchrank","styledselect","edittechfilter("+n+")")
 		rankarray = ["1","2","3","4","5"]
 		makeSelectDropdown("edittechsearchrank","Any",rankarray)
 
-		newdiv("edittechsability"+i,"techwrap"+i,"inlineblock small")
+		newdiv("edittechsability"+n,"techwrap"+n,"inlineblock small")
 
 		techniquestext = [];
 		techniquesvalues = [];
@@ -2225,7 +2242,9 @@ function editAddTech(i){
 			techniquesvalues.push(techniquelist[each].title)
 		}
 
-		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
+		makeTechSelectDropdown("edittechselect"+n,"Select Tech",techniquestext,techniquesvalues)
+
+
 }
 
 function edittechfilter(i){
