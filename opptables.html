@@ -1,0 +1,154 @@
+<html>
+ <head>
+ 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
+	<script type="text/javascript" src='common.js'></script>
+	<script type="text/javascript" src='tablesdata.js'></script>
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
+ <title></title>
+ <style type="text/css">
+	 	body {
+			  background-image: url("");
+			}
+
+		@font-face {
+		  font-family: L5R;
+		  src: url(L5RIcons.ttf);
+		}
+
+		table {
+		  font-family: 'Abel';
+		  font-size: 13px;
+		  table-layout: fixed;
+		  margin: auto;
+		}
+
+		.block {
+		  display: block;
+		}
+
+		.l5r {
+		  font-family: 'L5R';
+		  font-size: 18px;
+		}
+
+		#table td {
+		  width: 200px;
+		}
+
+		#table td+td {
+		  width: 800px;
+		}
+
+		tbody tr:nth-child(odd) {
+		  background-color: #CCC;
+
+		}
+
+		.styledselect {
+		  font-family: 'Abel';
+		  font-size: 12px;
+		  min-height: 22px;
+		  display: inline-block;
+		}
+
+ </style>
+ </head>
+
+<body onload="setUpRingOpps()">
+<div id="ringoppdrop"> </div>
+<div id="ringopptable"> </div>
+</body>
+<script type="text/javascript">
+
+function setUpRingOpps(){
+	makeSelect("ringoppdrop","ringselect","styledselect","ringOppTables()")
+	rings = ["Air","Earth","Fire","Water","Void"]
+	makeSelectDropdown("ringselect","Select Ring",rings)
+}
+
+	thisTable = []
+
+function ringOppTables(){
+	thisTable = []
+	thisTable[0] = {ring:"Opportunities", spend:"Spend"}
+
+	thisRing = document.getElementById("ringselect").value
+	document.getElementById("ringopptable").innerHTML=""
+
+
+	for (each in tabledata){
+		for (every in tabledata[each].children){
+			if (tabledata[each].children[every].ring == thisRing || tabledata[each].children[every].ring == "Any"){
+				oppType = tabledata[each].title
+				ringOpps = tabledata[each].children[every]
+				ringOpps.ring = oppType+" "+ringOpps.ring
+				thisTable.push(ringOpps)
+			}
+		}
+	}
+	title = "Opportunities"
+			tabletitle = "table";
+
+			newdiv(title,"ringopptable","block");
+			
+			divcontents(title,"<table id='"+tabletitle+"'></table>"); 
+			document.getElementById(title).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
+
+			var rownumber = 0;
+			var rowlist = [];
+			var itemlist = [];
+			var thisBody = document.getElementById(tabletitle).createTBody();
+			var itemnumber = 0;
+
+
+
+				thisTable.forEach(function(row){
+
+
+				if (rownumber==0){
+				var thisHead = document.getElementById(tabletitle).createTHead();
+				var thisRow = thisHead.insertRow(rownumber);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+
+				}
+				rownumber++;
+				itemnumber = 0;	
+				} else if (rownumber==1){
+				var thisRow = thisBody.insertRow(rownumber-1);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+					}
+				rownumber++;
+				itemnumber = 0;
+				
+				} else {
+				var thisRow = thisBody.insertRow(rownumber-1);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+					}
+				rownumber++;
+				itemnumber = 0;
+				}
+			})
+		
+}
+
+</script>
