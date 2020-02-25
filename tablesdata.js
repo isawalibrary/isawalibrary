@@ -135,7 +135,7 @@ children:[
 title:"Weapons",
 ref:"Weapons",
 children:[
-	{name: "NAME", skill:"SKILL", category:"CATEGORY", range:"RNG", damage:"DMG", deadliness:"DLS", grips:"GRIPS", qualities:"QUALITIES AND SPECIAL RULES", rarity:"RARITY", price:"PRICE", source:"BOOK"},	
+	{name: "NAME", skill:"SKILL", category:"CATEGORY", range:"RNG", damage:"DMG", deadliness:"DLS", grips:"GRIPS", qualities:"QUALITIES AND SPECIAL RULES  ", rarity:"RARITY", price:"PRICE", source:"BOOK"},	
 	{name: "Bokken", skill:"[Melee]", category:"Swords", range:"1", damage:"3", deadliness:"3", grips:"1-hand: - / 2-hand: Damage +2", qualities:"Mundane<br>A bokken can be used for Iaijutsu Cut techniques", rarity:"3", price:"1 bu", source:"Core"}, 
 	{name: "Chokuto", skill:"[Melee]", category:"Swords", range:"0-1", damage:"4", deadliness:"5", grips:"1-hand: -", qualities:"Ceremonial, Razor-Edged", rarity:"7", price:"20 koku", source:"Core"}, 
 	{name: "Dao", skill:"[Melee]", category:"Swords", range:"1", damage:"3", deadliness:"5", grips:"1-hand: -", qualities:"-", rarity:"6", price:"15 koku", source:"Core"}, 

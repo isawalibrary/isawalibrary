@@ -312,7 +312,7 @@ function buildNpcMenu1(){
 		makeSelect("npcronintype","npcronintypeselect","styledselect","selectNPCRoninType();")
 	}
 
-	makeSelectDropdown("npcronintypeselect","Select Type",ronintypelist);	
+	makeSelectDropdown("npcronintypeselect","Select Type","Select Type",ronintypelist);	
 
 
 	if (document.getElementById("template") == null){
@@ -328,14 +328,14 @@ function buildNpcMenu1(){
 
 	templatelist.sort();
 
-	makeSelectDropdown("template","Select Template",templatelist);
+	makeSelectDropdown("template","Select Template","Select Template",templatelist);
 	
 	if (document.getElementById("npcclanselect") == null){
 		newdiv("npcclan","npcmenu","inline margin10 hide");
 		makeSelect("npcclan","npcclanselect","styledselect inline","selectNPCClan();makeFamilyDropdown();")
 	}
 
-	makeSelectDropdown("npcclanselect","Select Clan",clans);
+	makeSelectDropdown("npcclanselect","Select Clan","Select Clan",clans);
 
 	if (document.getElementById("npcfamilyselect") == null){
 		newdiv("npcfamily","npcmenu","inline margin10 hide");
@@ -383,7 +383,7 @@ function selectType(){
 			archetypelist.push(archetypes[elem].fullname);
 	}}
 
-	makeSelectDropdown("archetype","Select Archetype",archetypelist);
+	makeSelectDropdown("archetype","Select Archetype","Select Archetype",archetypelist);
 	buildNpcMenu1();
 
 	document.getElementById("npcstats").classList.add("hide");
@@ -544,7 +544,7 @@ function selectTemplate(){
 	show("npcclan");
 
 	if (selectedType == "Ronin, Riffraff and Gaijin"){
-			makeSelectDropdown("npcclanselect","Select Background Region",regions)
+			makeSelectDropdown("npcclanselect","Select Background Region","Select Background Region",regions)
 			show("npcronintype")
 	}
 
@@ -589,7 +589,7 @@ function selectNPCClan(){
 		}
 	}
 
-	makeSelectDropdown("npcschoolselect","Select School",clanSchools)
+	makeSelectDropdown("npcschoolselect","Select School","Select School",clanSchools)
 	makeFamilyDropdown()
 }
 
@@ -603,7 +603,7 @@ function makeFamilyDropdown(){
 			if (families[elem].clan == document.getElementById("npcclanselect").value){
 				clanFamilies.push(families[elem].name)
 			}}
-		makeSelectDropdown("npcfamilyselect","Select Family",clanFamilies)
+		makeSelectDropdown("npcfamilyselect","Select Family","Select Family",clanFamilies)
 		}
 
 	else if (selectedType == "Ronin, Riffraff and Gaijin"){
@@ -616,7 +616,7 @@ function makeFamilyDropdown(){
 		for (elem in roninupbringings){
 			clanFamilies.push(roninupbringings[elem].name)
 			}
-			makeSelectDropdown("npcfamilyselect","Select Upbringing",clanFamilies)
+			makeSelectDropdown("npcfamilyselect","Select Upbringing","Select Upbringing",clanFamilies)
 		}
 }
 
@@ -695,7 +695,7 @@ function selectNPCSchool(){
 
 	if (document.getElementById("npcclanselect").value == "Other" && document.getElementById("npcfamilyselect").value == "Other"){
 		makeSelect("npcschool","npcbackgroundclanselect","styledselect inline margin10","makeNpcBgFamily();")
-		makeSelectDropdown("npcbackgroundclanselect","Select Background Clan",clans)
+		makeSelectDropdown("npcbackgroundclanselect","Select Background Clan","Select Background Clan",clans)
 		hide("npcsave");
 
 	} else {
@@ -901,7 +901,7 @@ function addExtraWeapon(){
 
 			weapons.sort();
 
-			makeSelectDropdown("npcweapon"+i,"Select Weapon",weapons)
+			makeSelectDropdown("npcweapon"+i,"Select Weapon","Select Weapon",weapons)
 
 			newdiv("npcweapon"+i+"stats","npcweaponwrap"+i,"inline margin10")
 			makeButton("npcequip","extraweapon","inlineblock margin10","addExtraWeapon()","+")
@@ -2211,11 +2211,11 @@ function editAddTech(i){
 			if (techtypearray.includes(techniquelist[each].type)){} else {techtypearray.push(techniquelist[each].type)}
 		}
 
-		makeSelectDropdown("edittechsearchtype","Any",techtypearray)
+		makeSelectDropdown("edittechsearchtype","Any","Any",techtypearray)
 		addToDiv("edittechfilter","Ring: ")
 		makeSelect("edittechfilter","edittechsearchring","styledselect","edittechfilter("+n+")")
 		ringtypearray = ["Air","Earth","Fire","Water","Void"]
-		makeSelectDropdown("edittechsearchring","Any",ringtypearray)
+		makeSelectDropdown("edittechsearchring","Any","Any",ringtypearray)
 		addToDiv("edittechfilter","Rank: ")
 
 		makeSelect("edittechfilter","edittechsearchrank1","styledselect","edittechfilter("+n+")")
@@ -2231,7 +2231,7 @@ function editAddTech(i){
 
 		makeSelect("edittechfilter","edittechsearchrank","styledselect","edittechfilter("+n+")")
 		rankarray = ["1","2","3","4","5"]
-		makeSelectDropdown("edittechsearchrank","Any",rankarray)
+		makeSelectDropdown("edittechsearchrank","Any","Any",rankarray)
 
 		newdiv("edittechsability"+n,"techwrap"+n,"inlineblock small")
 

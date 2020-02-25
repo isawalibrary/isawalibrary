@@ -73,6 +73,7 @@ function setUpRingOpps(){
 }
 
 var	thisTable = []
+var y = {}
 
 function ringOppTables(){
 	thisTable = []
@@ -82,25 +83,24 @@ function ringOppTables(){
 	document.getElementById("ringopptable").innerHTML=""
 
 	y = {}
-	tabledata = const tabledata
 
 	for (each in tabledata){
 		for (every in tabledata[each].children){
 				x = tabledata[each].children[every].ring
-				y = {}
-				y = Object.assign({},y,tabledata[each])
-				if (x !== undefined){
+				y = JSON.parse(JSON.stringify(tabledata[each]))
+			
+					if (x !== undefined){
 
-			if (x == thisRing || x == "Any"){
+					if (x == thisRing || x == "Any"){
 
-				thisTable.push(y.children[every])
+						thisTable.push(y.children[every])
 
-				length = thisTable.length-1
+						length = thisTable.length-1
 
-				oppType = tabledata[each].title
-				
-				thisTable[length].ring = oppType+" "+thisRing
-			}}
+						oppType = tabledata[each].title
+						
+						thisTable[length].ring = oppType+" "+y.children[every].ring
+					}}
 		}
 	}
 	title = "Opportunities"

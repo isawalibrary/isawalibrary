@@ -77,11 +77,12 @@ function makeSelectDropdown1(selectorForm,listName){
 }	
 
 
-function makeSelectDropdown(selectorForm,defaultText,listName){
+function makeSelectDropdown(selectorForm,defaultText,defaultValue,listName){
 	var el = document.createElement("option");
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";
 	el.textContent = defaultText;
+	el.value = defaultValue
 
 	selectorForm.appendChild(el);
 
@@ -184,9 +185,12 @@ function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText
 
 
 function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,inputClasses){
+
 	if (document.getElementById(formId) == null){
 		var newForm = document.createElement('form');
-		document.getElementById(parentName).appendChild(newForm);
+		if (typeof parentName === 'string' || parentName instanceof String){
+				document.getElementById(parentName).appendChild(newForm);}
+		else {parentName.appendChild(newForm)}
 
 		newForm.id = formId;
 		newForm.classList = formClasses;
@@ -220,7 +224,10 @@ function makeSelect(parentName,selectId,selectClasses,onChangeFunction){
 	if (document.getElementById(selectId) == null){
 
 		var select = document.createElement("select");
-		document.getElementById(parentName).appendChild(select);
+
+		if (typeof parentName === 'string' || parentName instanceof String){
+				document.getElementById(parentName).appendChild(select);}
+		else {parentName.appendChild(select)}
 
 		select.id = selectId;
 		select.classList = selectClasses;
