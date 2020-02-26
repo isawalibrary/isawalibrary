@@ -1,16 +1,44 @@
 
 -Upcoming
-+ Finish overhaul - remaining: Edit Character
++ In definitionsdata the skills info gives the water icon for all the void approaches, copy & replace
++ Change the makeSelect function - at the moment, it needs an extra parameter which is usally "Any" - change this so this parameter is not required, update all the instances of makeSelect, then add after the makeSelect function is called a line similar to 'select.options[0].value = "Any"' to set it to that for the ones that do need it
++ For function generateData(), row 1013, replace divcontents with something using innerText instead of innerHTML as this will allow tags like <br> to be typed in, add buttons for inserting common tags like the <span class="l5r"></span> tags, make larger textarea boxes for the longer inputs like technique effect.  Maaaybe have the innerHTML display to the right of the text input box as the input is typed into, so you can see how it appears when it is HTMLized.
++ Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
++ Get Random NPC - fully randomised, maybe weight the different groups or ronin will be overrepresented due to large number of options
++ Allow saving, loading and deleting multiple skirmish groups - so I can set up a fight with bandits for the start of the session, then another fight for the boss battle at the end 
++ Add 1-hand: & 2-hand: filter for weapons table - just a 3 choice dropdown - Any, all 1-hand, all 2-hand
++ Allow multiple filters to be in effect at once - so I can filter for just polearms from Path of Waves - either this or when one filter is used make the other unused filters reset themselves 
++ Maybe put Jason Maker somewhere else, I don't like the centred look - if there was a button to autocopy the Jason blob as last step of Jason Making that would be good too
++ Go through all the npc stuff, standardise stuff like enemy qualities (traits?) and make sure multiple abilities in [] display properly 
++ Look at the Unarmed Improvised rules and the Path of Waves improvised rules and see whether it wouldn't be better to have Unarmed as the main skill for improvised weapons
++ Some "natural" npc gear is showing in "equipped" dropdowns when adding extra weapon - figure out what's up
++ When table is sorted, recolour the visible rows
++ Insert Opps by Ring table - maybe have one table with the dropdown to select which ring 
++ Maybe rework the current Opp tables to be one table with a dropdown to select the context, "Opps by Ring" vs "Opps by Context"
++ Input the Shadowlands opps from SL book - can parentDiv.prepend(select) into the table div
 + Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
++ Go through advs and disadvs for the other clans, families and archetypes
 + Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
 + Allow collapse and expand on technique titles in the npc library to avoid super long character sheets
 + When clicking on the character name in skirmish panel, open the npc libary to the character - no on hover stuff
-+ Allow adding extra weapon in npc builder
 + make getWeaponStats function to get weapon stats easily
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
-+ Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category)
-+ Sort pregens into alphabetical on NPC builder
-+ Add 'Nezumi' option in character maker, have it structured as a clan, the different tribes can be represented by families, and the different social roles (Rememberer, Dreamer etc) can be schools.  Maybe don't add this yet, so the nezumi are a surprise when they show up in the story.
++ Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category), make the dropdown for selecting the new weapon display "Weapon name (Dmg / Dls)" so it isn't just a dropdown of gibberish
++ Sort pregens, creatures into alphabetical on NPC builder - go through to standardise so that Goblin, Shaman and Goblin, Warrior appear next to each other
++ Add SECRET option in character maker, have it structured as a clan, the different groups can be represented by families, and the different social roles in their society can be schools.  Maybe don't add this yet, so the SECRET are a surprise when they show up in the story.
+
+-Next Overhaul 
++ Standardise some of the very similar advs and disadvs
++ Get rid of the random extra files that are building up in the repository
++ Go through, declare all vars properly to prevent random global var accumulation
++ For the makeSelect etc functions, make it so parameters can be strings or DOM objects.
++ Consolidate the functions for add weapons button from NPC builder and the NPC Edit
++ Full character building - skills not skill groups, title support - don't even know if I want titles to be used at all
++ Standardise all div names, make all function names proper camelCase
+
+-version 0.14 26.02.20
++ Finished overhaul
++ Allow getting extra weapon in NPC Builder before save.
 
 -version 0.13 23.02.20
 + Fixed bug - remove commas from names as well as spaces
