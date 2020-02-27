@@ -573,7 +573,7 @@ thead {
 }
 
 #Weapons-table td+td+td+td+td+td+td+td+td+td+td {
-  width: 80px;
+  width: 95px;
 }
 
 #Armors-table td {
@@ -766,8 +766,14 @@ color:var(--table-header-font);
     border-left-color: var(--button-border-light);
 }
 
-tbody tr:nth-child(odd) {
+
+
+.odd {
   background-color: var(--tooltip-bg-color);
+  color: var(--tooltipfont);
+}
+
+.even {
   color: var(--tooltipfont);
 }
 

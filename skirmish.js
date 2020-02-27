@@ -79,7 +79,7 @@ function makeNewChar(){
 
 	newdiv("skirmishclan","makenewchar","inline margin10");
 	makeSelect("skirmishclan","newClan","styledselect inline","selectClan();")
-	makeSelectDropdown("newClan","Select Clan","Select Clan",clans);
+	makeSelectDropdown("newClan","Select Clan",clans);
 }
 
 

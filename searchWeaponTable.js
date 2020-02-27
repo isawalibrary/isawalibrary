@@ -18,7 +18,8 @@ function insertSelects(){
   weaponCategoryArray = removeDuplicates(weaponCategoryArray)
   weaponCategoryArray.shift()
 
-  makeSelectDropdown("weapons-table-category-select","Category","Any",weaponCategoryArray)
+  makeSelectDropdown("weapons-table-category-select","Category",weaponCategoryArray)
+  document.getElementById("weapons-table-category-select").options[0].value = "any";
 
   //insert text input filter into Weapons Table Qualities
 
@@ -43,7 +44,8 @@ function insertSelects(){
   weaponCategoryArray = removeDuplicates(weaponCategoryArray)
   weaponCategoryArray.shift()
 
-  makeSelectDropdown("weapons-table-book-select","Book","Any",weaponCategoryArray)
+  makeSelectDropdown("weapons-table-book-select","Book",weaponCategoryArray)
+  document.getElementById("weapons-table-book-select").options[0].value = "any";
 
 }
 
@@ -74,7 +76,7 @@ function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
 function filterTable(tableId,selectId,columnNumToFilter){
 
   // Declare variables
-  var input, filter, table, tr, td, i, txtValue;
+  var input, filter, table, tr, td, i, txtValue, k;
   select = document.getElementById(selectId).value.toLowerCase();
   table = document.getElementById(tableId);
   tr = table.getElementsByTagName("tr");
@@ -85,10 +87,28 @@ function filterTable(tableId,selectId,columnNumToFilter){
     if (td) {
       txtValue = td.textContent.toLowerCase() || td.innerText.toLowerCase();
       if (txtValue.indexOf(select) > -1 || select == "any" || select == "") {
-        tr[i].style.display = "";
+        tr[i].classList.add("show");
+        tr[i].classList.remove("hide")
+        tr[i].classList.remove("odd");
+         tr[i].classList.remove("even");
       } else {
-        tr[i].style.display = "none";
+        tr[i].classList.add("hide");
+        tr[i].classList.remove("show")
+            tr[i].classList.remove("odd");
+    tr[i].classList.remove("even");
       }
     }
   }
+  k=0
+  // Recolour the rows
+  for (i = 1; i < tr.length; i++){
+
+    if (tr[i].classList.contains("show")){
+      k++
+      if (k & 1){
+          tr[i].classList.add("odd")}
+      else {tr[i].classList.add("even")}
+    }
+  }
 }
+

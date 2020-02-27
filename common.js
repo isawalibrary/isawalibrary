@@ -77,12 +77,11 @@ function makeSelectDropdown1(selectorForm,listName){
 }	
 
 
-function makeSelectDropdown(selectorForm,defaultText,defaultValue,listName){
+function makeSelectDropdown(selectorForm,defaultText,listName){
 	var el = document.createElement("option");
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";
 	el.textContent = defaultText;
-	el.value = defaultValue
 
 	selectorForm.appendChild(el);
 
