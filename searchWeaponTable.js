@@ -24,8 +24,28 @@ function insertSelects(){
 
   insertFilterToTable("Weapons-table","weapons-table-qualities-input","INPUT",7)
 
-}
+  //insert book filter into Weapons Table Qualities
 
+  document.getElementById("Weapons-table").rows[0].cells[10].innerText="";
+
+  insertFilterToTable("Weapons-table","weapons-table-book-select","SELECT",10)
+
+  weaponCategoryArray = [];
+
+  for (each in tabledata){
+    if (tabledata[each].title == "Weapons"){
+      for (every in tabledata[each].children){
+        weaponCategoryArray.push(tabledata[each].children[every].source)
+      }
+    }
+  }
+
+  weaponCategoryArray = removeDuplicates(weaponCategoryArray)
+  weaponCategoryArray.shift()
+
+  makeSelectDropdown("weapons-table-book-select","Book","Any",weaponCategoryArray)
+
+}
 
 function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
 	

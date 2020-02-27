@@ -11,7 +11,6 @@
 + Maybe put Jason Maker somewhere else, I don't like the centred look - if there was a button to autocopy the Jason blob as last step of Jason Making that would be good too
 + Go through all the npc stuff, standardise stuff like enemy qualities (traits?) and make sure multiple abilities in [] display properly 
 + Look at the Unarmed Improvised rules and the Path of Waves improvised rules and see whether it wouldn't be better to have Unarmed as the main skill for improvised weapons
-+ Some "natural" npc gear is showing in "equipped" dropdowns when adding extra weapon - figure out what's up
 + When table is sorted, recolour the visible rows
 + Insert Opps by Ring table - maybe have one table with the dropdown to select which ring 
 + Maybe rework the current Opp tables to be one table with a dropdown to select the context, "Opps by Ring" vs "Opps by Context"
@@ -39,6 +38,8 @@
 -version 0.14 26.02.20
 + Finished overhaul
 + Allow getting extra weapon in NPC Builder before save.
++ Fixed problem with extra school techs not showing up in some schools
++ Fixed the NPC natural armor showing up on equipped Edit NPC dropdowns
 
 -version 0.13 23.02.20
 + Fixed bug - remove commas from names as well as spaces
