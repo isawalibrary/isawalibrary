@@ -721,7 +721,7 @@ function fillStats(){
 		addToArray(advArray,selectedTemplate.advantages)
 		addToArray(advArray,selectedClan.advantages)
 		addToArray(advArray,selectedFamily.advantages)
-		removeDuplicates(advArray);
+		advArray = removeDuplicates(advArray);
 		makeSelectDropdown1("npcadv",advArray)
 		getRandomSelect("npcadv")
 
@@ -730,7 +730,7 @@ function fillStats(){
 		addToArray(disadvArray,selectedTemplate.disadvantages)
 		addToArray(disadvArray,selectedClan.disadvantages)
 		addToArray(disadvArray,selectedFamily.disadvantages)
-		removeDuplicates(disadvArray);
+		disadvArray = removeDuplicates(disadvArray);
 		makeSelectDropdown1("npcdisadv",disadvArray)
 		getRandomSelect("npcdisadv")
 
@@ -738,7 +738,7 @@ function fillStats(){
 		addToArray(demeanorArray,selectedArchetype.demeanor)
 		addToArray(demeanorArray,selectedTemplate.demeanor)
 		addToArray(demeanorArray,selectedFamily.demeanor)
-		removeDuplicates(demeanorArray);
+		demeanorArray = removeDuplicates(demeanorArray);
 		makeSelectDropdown1("npcdemeanor",demeanorArray)
 		getRandomSelect("npcdemeanor")	
 		setDemeanor()
@@ -747,7 +747,7 @@ function fillStats(){
 		addToArray(weaponArray,selectedArchetype.weapon)
 		addToArray(weaponArray,selectedClan.weapons)
 		addToArray(weaponArray,selectedSchool.weapons)
-		removeDuplicates(weaponArray);
+		weaponArray = removeDuplicates(weaponArray);
 		makeSelectDropdown1("npcweapon0",weaponArray)
 		getRandomSelect("npcweapon0")	
 		selectNPCWeapon("0")
@@ -758,7 +758,7 @@ function fillStats(){
 		addToArray(armorArray,selectedArchetype.armor)
 		addToArray(armorArray,selectedClan.armor)
 		addToArray(armorArray,selectedSchool.armor)
-		removeDuplicates(armorArray);
+		armorArray = removeDuplicates(armorArray);
 		makeSelectDropdown1("npcarmor0",armorArray)
 		getRandomSelect("npcarmor0")
 		selectNPCArmor("0")
@@ -943,7 +943,7 @@ function startingTechSelects(){
 
 					techobjs = [];
 					addToArray(techobjs,selectedSchool.startingtechoptions[k])
-					removeDuplicates(techobjs)
+					techobjs = removeDuplicates(techobjs)
 
 					var techlist = [];
 					var techdroplist = [];
