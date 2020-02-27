@@ -1791,13 +1791,13 @@ function makeNpcEdit(nom){
 
 	if (equiptype == "equipped"){
 		for (each in npcarmor){
-			if (npcweapons[each].type == "equipped"){
+			if (npcarmor[each].type == "equipped"){
 
 				armor.push(npcarmor[each].title)
 	}}}
 	if (equiptype == "natural"){
 		for (each in npcarmor){
-			if (npcweapons[each].type == "natural"){
+			if (npcarmor[each].type == "natural"){
 
 				armor.push(npcarmor[each].title)
 	}}}
