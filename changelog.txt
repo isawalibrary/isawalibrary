@@ -1,20 +1,22 @@
 
 -Upcoming
-+ In definitionsdata the skills info gives the water icon for all the void approaches, copy & replace
-+ Change the makeSelect function - at the moment, it needs an extra parameter which is usally "Any" - change this so this parameter is not required, update all the instances of makeSelect, then add after the makeSelect function is called a line similar to 'select.options[0].value = "Any"' to set it to that for the ones that do need it
-+ For function generateData(), row 1013, replace divcontents with something using innerText instead of innerHTML as this will allow tags like <br> to be typed in, add buttons for inserting common tags like the <span class="l5r"></span> tags, make larger textarea boxes for the longer inputs like technique effect.  Maaaybe have the innerHTML display to the right of the text input box as the input is typed into, so you can see how it appears when it is HTMLized.
-+ Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
-+ Get Random NPC - fully randomised, maybe weight the different groups or ronin will be overrepresented due to large number of options
-+ Allow saving, loading and deleting multiple skirmish groups - so I can set up a fight with bandits for the start of the session, then another fight for the boss battle at the end 
+
++ Go over the existing families with Adv/Disadv & Demeanor list.  Some families have far less than others.
+
 + Add 1-hand: & 2-hand: filter for weapons table - just a 3 choice dropdown - Any, all 1-hand, all 2-hand
 + Allow multiple filters to be in effect at once - so I can filter for just polearms from Path of Waves - either this or when one filter is used make the other unused filters reset themselves 
+
++ For function generateData(), row 1013, replace divcontents with something using innerText instead of innerHTML as this will allow tags like <br> to be typed in, add buttons for inserting common tags like the <span class="l5r"></span> tags, make larger textarea boxes for the longer inputs like technique effect.  Maaaybe have the innerHTML display to the right of the text input box as the input is typed into, so you can see how it appears when it is HTMLized.
++ Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
++ Get Random NPC - fully randomised, maybe weight the different groups or ronin will be overrepresented due to large number of options. 
++ Allow saving, loading and deleting multiple skirmish groups - so I can set up a fight with bandits for the start of the session, then another fight for the boss battle at the end 
 + Maybe put Jason Maker somewhere else, I don't like the centred look - if there was a button to autocopy the Jason blob as last step of Jason Making that would be good too
 + Go through all the npc stuff, standardise stuff like enemy qualities (traits?) and make sure multiple abilities in [] display properly 
-+ Look at the Unarmed Improvised rules and the Path of Waves improvised rules and see whether it wouldn't be better to have Unarmed as the main skill for improvised weapons
-+ When table is sorted, recolour the visible rows
+
 + Insert Opps by Ring table - maybe have one table with the dropdown to select which ring 
-+ Maybe rework the current Opp tables to be one table with a dropdown to select the context, "Opps by Ring" vs "Opps by Context"
++ Maybe rework the current Opp tables to be one table with a dropdown to select the context, "Opps by Ring" vs "Opps by Context" - Might be easier to make the Opp table data sit in a different var to avoid being treated like the Falling Damage, Range Bands table.
 + Input the Shadowlands opps from SL book - can parentDiv.prepend(select) into the table div
+
 + Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
 + Go through advs and disadvs for the other clans, families and archetypes
 + Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
@@ -35,7 +37,10 @@
 + Full character building - skills not skill groups, title support - don't even know if I want titles to be used at all
 + Standardise all div names, make all function names proper camelCase
 
--version 0.14 26.02.20
+-version 0.15 28.02.20
++ Recolours table rows into alternating bands upon filter.
+
+-version 0.14 25.02.20
 + Finished overhaul
 + Allow getting extra weapon in NPC Builder before save.
 + Fixed problem with extra school techs not showing up in some schools

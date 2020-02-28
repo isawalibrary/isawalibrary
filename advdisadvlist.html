@@ -20,17 +20,29 @@
 	.datainputlength {
 		width: 350px;
 	}
+
+	.advdisadvwrapper {
+		display: inline-block;
+		float: left;
+	}
+
+	.advdisadv {
+		vertical-align:top;
+		float:left;
+		margin-left: 10px;
+	}
  </style>
  </head>
 
 <body onload="getAdvantages();getDisadvantages()">
-<div id="advdiv" class="inlineblock"> </div>
-<div id="disadvdiv" class="inlineblock"></div>
+<div id="advdiv" class="advdisadvwrapper "> </div>
+<div id="disadvdiv" class="advdisadvwrapper "></div>
 </body>
 <script type="text/javascript">
 
 var	advantages = [];
 var	disadvantages = [];
+var ring = []
 
 function getAdvantages(){
 
@@ -57,9 +69,22 @@ function getAdvantages(){
 	advantages.sort()
 	advantages = removeDuplicates(advantages)
 
-	for (i=0; i< advantages.length; i++){
-		document.getElementById("advdiv").innerHTML += '<br>"'+advantages[i]+'",'
-	}
+	rings = ["air","earth","fire","water","void"]
+
+for (i = 0; i < rings.length; i++){
+			ring = [];
+				for (each in advantages){
+					if (advantages[each].toLowerCase().includes(rings[i])){
+						ring.push(advantages[each])
+					}
+				}
+					document.getElementById("advdiv").innerHTML += '<u>'+rings[i]+'</u>'
+					for (j=0; j< ring.length; j++){
+							document.getElementById("advdiv").innerHTML += '<br><span class="advdisadv">'+ring[j]+'",</span>'
+						}
+					document.getElementById("advdiv").innerHTML +='<br><br>'
+			}
+
 }
 
 function getDisadvantages(){
@@ -85,9 +110,21 @@ function getDisadvantages(){
 	disadvantages.sort()
 	disadvantages = removeDuplicates(disadvantages)
 
-	for (i=0; i< disadvantages.length; i++){
-		document.getElementById("disadvdiv").innerHTML += '<br>"'+disadvantages[i]+'",'
-	}
+	rings = ["air","earth","fire","water","void"]
+
+for (i = 0; i < rings.length; i++){
+			ring = [];
+				for (each in disadvantages){
+					if (disadvantages[each].toLowerCase().includes(rings[i])){
+						ring.push(disadvantages[each])
+					}
+				}
+					document.getElementById("disadvdiv").innerHTML += '<u>'+rings[i]+'</u>'
+					for (j=0; j< ring.length; j++){
+							document.getElementById("disadvdiv").innerHTML += '<br><span class="advdisadv">'+ring[j]+'",</span>'
+						}
+					document.getElementById("disadvdiv").innerHTML +='<br><br>'
+			}
 }
 
 </script>
