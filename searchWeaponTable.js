@@ -25,7 +25,7 @@ function insertSelects(){
 
   insertFilterToTable("Weapons-table","weapons-table-qualities-input","INPUT",7)
 
-  //insert book filter into Weapons Table Qualities
+  //insert book filter into Weapons Table source
 
   document.getElementById("Weapons-table").rows[0].cells[10].innerText="";
 
@@ -47,6 +47,14 @@ function insertSelects(){
   makeSelectDropdown("weapons-table-book-select","Book",weaponCategoryArray)
   document.getElementById("weapons-table-book-select").options[0].value = "any";
 
+  //insert grip filter into Weapons Table 
+
+  weaponCategoryArray = ["1-hand:","2-hand:"]
+
+  insertFilterToTable("Weapons-table","weapons-table-grip-select","SELECT",6)
+
+   makeSelectDropdown("weapons-table-grip-select","Any",weaponCategoryArray)
+   document.getElementById("weapons-table-grip-select").options[0].value = "any";
 }
 
 function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
@@ -86,7 +94,7 @@ function filterTable(tableId,selectId,columnNumToFilter){
     td = tr[i].getElementsByTagName("td")[columnNumToFilter];
     if (td) {
       txtValue = td.textContent.toLowerCase() || td.innerText.toLowerCase();
-      if (txtValue.indexOf(select) > -1 || select == "any" || select == "") {
+      if (txtValue.indexOf(select) > -1 || select == "any" || select == "" || txtValue.includes(select)) {
         tr[i].classList.add("show");
         tr[i].classList.remove("hide")
         tr[i].classList.remove("odd");
