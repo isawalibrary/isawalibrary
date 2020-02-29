@@ -1,10 +1,6 @@
-
 -Upcoming
-
 + Insert the ring symbols into the context tables
 + Input the Shadowlands opps table data - was it too spoilery?  Was that why it wasn't already in?
-
-+ When clicking on the character name in skirmish panel, open the npc libary to the character - no on hover stuff
 
 + Go over the existing families with Adv/Disadv & Demeanor list.  Some families have far less than others.
 
@@ -32,6 +28,11 @@
 + Consolidate the functions for add weapons button from NPC builder and the NPC Edit
 + Full character building - skills not skill groups, title support - don't even know if I want titles to be used at all
 + Standardise all div names, make all function names proper camelCase
+
+-version 0.16 29.02.20
++ Opps tables are all condensed into one table in Reference
++ When character name is clicked on in skirmish, the character sheet from NPC Library is pulled up
++ Character sheets in NPC Library have techniques collapsed to show only the tech name, when clicked it opens the tech info
 
 -version 0.15 28.02.20
 + Recolours table rows into alternating bands upon filter.

@@ -2,13 +2,13 @@ function setUpRingOpps(){
 	makeSelect("ringoppdrop","ringselect","styledselect inline marginbottom margintop","ringOppTables()")
 	rings = ["Air","Earth","Fire","Water","Void"]
 	makeSelectDropdown("ringselect","",rings)
-	document.getElementById("ringselect").options[0].innerHTML="<span class='l5r'>O</span> by Ring"
+	document.getElementById("ringselect").options[0].innerHTML="Opportunities by Ring"
 
 
 	makeSelect("ringoppdrop","contextselect","styledselect inline margin10","contextOppTables()")
 	contexts = ["General", "Initiative", "Martial", "Invocation", "Other Skills", "Downtime", "Negotiations", "Romance", "Espionage"]
-	makeSelectDropdown("contextselect","<span class='l5r'>O</span> by Context",contexts)
-	document.getElementById("contextselect").options[0].innerHTML="<span class='l5r'>O</span> by Context"
+	makeSelectDropdown("contextselect","Opportunities by Context",contexts)
+	document.getElementById("contextselect").options[0].innerHTML="Opportunities by Context"
 
 }
 
@@ -17,7 +17,7 @@ function setUpRingOpps(){
 function ringOppTables(){
 
 	thisTable = []
-	thisTable[0] = {ring:"OPPORTUNITIES", spend:"SPEND"}
+	thisTable[0] = {ring:"", spend:"OPPORTUNITIES SPEND"}
 
 	thisRing = document.getElementById("ringselect").value
 	document.getElementById("opps-table").innerHTML=""

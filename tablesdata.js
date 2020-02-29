@@ -266,7 +266,7 @@ var oppdata = [
 title:"General",
 ref:"GeneralOpportunities",
 children:[
-	{ring: "", spend:"GENERAL OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>GENERAL OPPORTUNITY SPENDS:</b>"},
 	{ring: "Any", spend:"<span class='l5r'>O</span>: If you failed, determine the easiest way to accomplish the task you were attempting (skill and approach).<br><span class='l5r'>O</span>+: Remove 1 <span class='l5r'>T</span> you gained from this check per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Provide assistance (Core p26) to the next character to attempt a check to accomplish something similar."},
 	{ring: "Air", spend:"<span class='l5r'>O</span>: Learn another character in the scene's demeanor (if an NPC) and current<span class='l5r'>T</span>.<br><span class='l5r'>O</span>+: Act subtly to attract minimal attention in your efforts. Extra <span class='l5r'>O</span> makes the attempt even subtler.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Notice an interesting detail about a character in the scene, such as an advantage or disadvantage. At the GM's discretion, you may establish a new detail for an NPC."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span>: Reassure another character in the scene with your presence, allowing them to remove 2<span class='l5r'>T</span>.<br><span class='l5r'>O</span>+: Act carefully to minimize consequences of failure or other dangers that could arise from the task. Extra <span class='l5r'>O</span> makes the attempt even safer.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Suddenly recall an important piece of information not directly related to the task. At the GM's discretion, you may establish a small preparatory action you took earlier, such as bringing along a common useful item."},
@@ -278,7 +278,7 @@ children:[
 title:"Initiative",
 ref:"InitiativeOpportunities",
 children:[
-	{ring: "", spend:"INITIATIVE OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>INITIATIVE OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span>: On an Initiative check, assess one foe's weakness. Learn one of their disadvantages of that foe's choice."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span>: On an Initiative check, choose another character's disadvantage you know. They do not apply that disadvantage to their checks this scene."},
 	{ring: "Fire", spend:"<span class='l5r'>O</span>: On an Initiative check, use your focus instead of your vigilance for your initiative when surprised."},
@@ -289,7 +289,7 @@ children:[
 title:"Martial",
 ref:"MartialOpportunities",
 children:[
-	{ring: "", spend:"MARTIAL OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>MARTIAL OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span>: Add a kept <span class='l5r'>d</span> set to an <span class='l5r'>O</span> result to your next Martial skill check.<br><span class='l5r'>O</span>+: During a Movement action check, up to 1 range band of any distance you move per <span class='l5r'>O</span> spent this way may be along a vertical surface.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Increase the TN of the next Martial Arts [Ranged] check targeting you before the start of your next turn by 2."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span>: During a Movement action, ignore one terrain quality (Core p267) of your choice.<br><span class='l5r'>O</span>+: Reduce the severity of the next critical strike you suffer before the start of your next turn by 1 per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Do not apply one of your disadvantages to checks until the end of your next turn."},
 	{ring: "Fire", spend:"<span class='l5r'>O</span>: Choose another character in the scene; increase the TN of the next check they make before the end of their next turn by 1 if it does not include you as a target.<br><span class='l5r'>O</span>+: During an Attack action check, increase the TN of the next check the target makes to resist a critical strike they suffer before the start of your next turn by 1 per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Other characters must receive 2 <span class='l5r'>T</span> to choose you as the target of their Attack and Scheme actions until the start of your next turn."},
@@ -300,7 +300,7 @@ children:[
 title:"Invocation",
 ref:"InvocationOpportunities",
 children:[
-	{ring: "", spend:"INVOCATION OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>INVOCATION OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>+ Choose one additional target per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span>+ Treat the maximum range of this technique as 1 higher per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> Reduce the TN of the next Movement action check you make by 1. This effect persists until the end of your next turn.<br><span class='l5r'>O</span> <span class='l5r'>O</span>+ If this technique can target characters other than you, choose additional target per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>+ If this technique targets all characters in an area, choose 1 character in range to exclude as a target per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span> Increase your physical resistance by 1. This effect persists until the end of the beginning of your next turn.<br><span class='l5r'>O</span>+ If this technique can target characters other than you, choose additional target per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span>+ Treat the maximum range of this technique as 1 higher per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> This effect inflicts physical damage instead of supernatural damage.<br><span class='l5r'>O</span> The damage inflicted by this technique has the Sacred quality (Core p241)."},
 	{ring: "Fire", spend:"<span class='l5r'>O</span>+ Treat the maximum range of this technique as 1 higher per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span>+ If this technique can target characters other than you, choose additional target per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> Reduce the TN of the next Attack action check you make by 1. This effect persists until the end of your next turn.<br><span class='l5r'>O</span>+ Increase the TN of checks to resist this effect by 1 per <span class='l5r'>O</span> spent this way. <br><span class='l5r'>O</span> <span class='l5r'>O</span>+ One target per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way must resist with a TN 3 Fitness check (Air 4, Water 1) or suffer the Burning condition."},
@@ -311,7 +311,7 @@ children:[
 title:"Other Skills",
 ref:"OtherSkillsOpportunities",
 children:[
-	{ring: "", spend:"SKILL OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>SKILL OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"Artisan <span class='l5r'>O</span>: If you succeed, add the Resplendent or Subtle quality to an item that you are refining. <br>Scholar <span class='l5r'>O</span>: Learn a something about a character who created or used the item you are studying (such as one of their advantages or disadvantages of the GM's choice that affected their creation or use of the item). <br>Social <span class='l5r'>O</span>: Learn if the honor, glory, or status attribute of a character in the scene is higher, lower, or equal to yours. <br>Trade <span class='l5r'>O</span>: Convince a buyer to pay an additional 10% for an item you are selling."},
 	{ring: "Earth", spend:"Artisan <span class='l5r'>O</span>: If you succeed, add the Durable quality to an item that you are restoring. <br>Scholar <span class='l5r'>O</span>: Remember a place where you can research or study the topic you were attempting to recall.<br>Social <span class='l5r'>O</span>: Increase the TN of the next Social check another character makes before the end of the scene by 1.<br>Trade <span class='l5r'>O</span>: Reduce the TN of the next check another character makes with the same skill before the end of the scene by 1."},
 	{ring: "Fire", spend:"Artisan <span class='l5r'>O</span>: If you succeed, make one additional copy of the item you are creating.<br>Scholar <span class='l5r'>O</span>: Extrapolate the motivations or desires of another character in the scene or wider situation.<br>Social <span class='l5r'>O</span>: Reduce the TN of the next Social check another character makes before the end of the scene by 1.<br>Trade <span class='l5r'>O</span>: Unusual inspiration strikes; add a kept <span class='l5r'>d</span> set to an <span class='l5r'>O</span> result to the next check you make with another skill."},
@@ -322,7 +322,7 @@ children:[
 title:"Downtime",
 ref:"DowntimeOpportunities",
 children:[
-	{ring: "", spend:"DOWNTIME OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>DOWNTIME OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span>+: Learn a detail about one person in your company (such as an advantage or disadvantage of their choice) per <span class='l5r'>O</span> spent this way. You can learn only one detail about each person this way in a single downtime scene.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Perform your downtime activity without letting one or more others of your choice know that you did."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span>+: Another character in your company may remove 1 <span class='l5r'>T</span> or fatigue per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Memorize a small but vital detail from to your activity; you can recall it later without a check."},
 	{ring: "Fire", spend:"<span class='l5r'>O</span>+: Assist one other character per <span class='l5r'>O</span> spent this way with their next downtime activity check this session.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: Energize another character in your company with your efforts; they may perform 1 additional downtime action this downtime (to a maximum of 2)."},
@@ -333,7 +333,7 @@ children:[
 title:"Negotiations",
 ref:"NegotiationsOpportunities",
 children:[
-	{ring: "", spend:"NEGOTIATIONS OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>NEGOTIATIONS OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>+: Your careful verbal trap ensnares someone in a position in which they must either give up ground or give you a boon. They must offer you a minor concession unrelated to your current social objective unless they give up 1 momentum point per <span class='l5r'>O</span> <span class='l5r'>O</span> spent this way. "},
 	{ring: "Earth", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: Your uncompromising dedication to your bottom line stalls the conversation. Choose a character In the scene: that character cannot gain momentum points toward any social objective until the end of your next turn."},
 	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: You set someone else on the defense with fast-paced questions and demands. Choose a demand or statement another character in the scene has made. Their player (or the GM, for NPCs) must tell you any hidden motivations behind that demand or statement. "},
@@ -344,7 +344,7 @@ children:[
 title:"Romance",
 ref:"RomanceOpportunities",
 children:[
-	{ring: "", spend:"ROMANCE OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>ROMANCE OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: The conversation turns to mutual friends or acquaintances. Name a character you and your intended both know. They must tell you what they think of that character, revealing one of that person's advantages or disadvantages."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>: An offhand comment reveals that you and your intended share some common ground: an odd hobby, a favorite actor, or a core belief. Make three suggestions to your intended's player; they must tell you which one it is. You and your intended may each remove 2 strife"},
 	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span>:  A detail of your appearance catches your intended's interest. Their player must tell you which of your physical attributes they find most captivating. You and your intended each receive 1 strife, and you each reduce the TN of your next Social skill check by 1"},
@@ -355,7 +355,7 @@ children:[
 title:"Espionage",
 ref:"EspionageOpportunities",
 children:[
-	{ring: "", spend:"ESPIONAGE OPPORTUNITY SPENDS:"},
+	{ring: "", spend:"<b>ESPIONAGE OPPORTUNITY SPENDS:</b>"},
 	{ring: "Air", spend:"<span class='l5r'>O</span>+: Your subtlety allows you to step out of sight of people, whether by hiding in a crowd or within convenient terrain. Designate a number of Minion NPCs equal to spent this way or a single Adversary NPC with vigilance lower than or equal to spent this way. Those characters lose sight of you (and do not notice your absence unless actively looking for you)."},
 	{ring: "Earth", spend:"<span class='l5r'>O</span>+: You locate an excellent hiding place, either a place where no one questions your cover identity or a concealed location no one checks. While hiding in this location, you reduce the TN of your checks to avoid notice by <span class='l5r'>O</span> spent this way. "},
 	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: A stray motion of yours catches the attention of a person or creature- but unexpectedly they are sympathetic or helpful to you when they notice you. Who are they, and how do they offer to help? Do they think you are someone you're not? "},
