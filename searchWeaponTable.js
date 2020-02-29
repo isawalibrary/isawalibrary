@@ -59,14 +59,14 @@ function insertSelects(){
 
 function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
 	
-	var parentName, filterId, columnToInsertInput, tableId; 
+	var parentName, filterId, columnToInsertInput, tableId, input; 
 
 	parentName = document.getElementById(tableId).rows[0].cells[columnToInsertInput];
 
   switch (inputType){
 
     case "SELECT":
-      makeSelect(parentName,filterId,"styledselect inline","filterTable('"+tableId+"','"+filterId+"',"+columnToInsertInput+")")
+      makeSelect(parentName,filterId,"styledselect inline","filterWeaponTable('"+tableId+"','"+filterId+"',"+columnToInsertInput+")")
     break;
 
     case "INPUT":
@@ -74,11 +74,59 @@ function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
 
       input = document.getElementById(filterId+"-input")
 
-      input.setAttribute("oninput","filterTable('"+tableId+"','"+filterId+"-input',"+columnToInsertInput+")")
+      input.setAttribute("oninput","filterWeaponTable('"+tableId+"','"+filterId+"-input',"+columnToInsertInput+")")
       
     break;
   }
 }
+
+
+function filterWeaponTable(tableId,selectId,columnNumToFilter){
+  var x;
+
+  switch (selectId){
+
+    case "weapons-table-category-select":
+      x = document.getElementById("weapons-table-grip-select")
+      setSelectedValue(x, "Any")
+      x = document.getElementById("weapons-table-book-select")
+      setSelectedValue(x, "Book")
+      document.getElementById("weapons-table-qualities-input-input").value = ""  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-category-select",2)  //then filters by the used select
+      break;
+
+    case "weapons-table-grip-select":
+      x = document.getElementById("weapons-table-category-select")
+      setSelectedValue(x, "Category")
+      x = document.getElementById("weapons-table-book-select")
+      setSelectedValue(x, "Book")
+      document.getElementById("weapons-table-qualities-input-input").value = ""  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-grip-select",6)  //then filters by the used select
+      break;
+
+    case "weapons-table-book-select":
+      x = document.getElementById("weapons-table-grip-select")
+      setSelectedValue(x, "Any")
+      x = document.getElementById("weapons-table-category-select")
+      setSelectedValue(x, "Category")
+      document.getElementById("weapons-table-qualities-input-input").value = ""  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-book-select",10)  //then filters by the used select
+      break;
+
+    case "weapons-table-qualities-input-input":
+      x = document.getElementById("weapons-table-grip-select")
+      setSelectedValue(x, "Any")
+      x = document.getElementById("weapons-table-book-select")
+      setSelectedValue(x, "Book")
+      x = document.getElementById("weapons-table-category-select")
+      setSelectedValue(x, "Category")  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-qualities-input-input",7)  //then filters by the used select
+      break;
+
+  }
+
+}
+
 
 
 function filterTable(tableId,selectId,columnNumToFilter){
@@ -118,5 +166,7 @@ function filterTable(tableId,selectId,columnNumToFilter){
       else {tr[i].classList.add("even")}
     }
   }
+
+
 }
 

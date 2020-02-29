@@ -135,7 +135,7 @@ children:[
 title:"Weapons",
 ref:"Weapons",
 children:[
-	{name: "NAME", skill:"SKILL", category:"CATEGORY", range:"RNG", damage:"DMG", deadliness:"DLS", grips:"GRIPS", qualities:"QUALITIES AND SPECIAL RULES  ", rarity:"RARITY", price:"PRICE", source:"BOOK"},	
+	{name: "NAME", skill:"SKILL", category:"CATEGORY", range:"RNG", damage:"DMG", deadliness:"DLS", grips:"GRIPS  ", qualities:"QUALITIES AND SPECIAL RULES  ", rarity:"RARITY", price:"PRICE", source:"BOOK"},	
 	{name: "Bokken", skill:"[Melee]", category:"Swords", range:"1", damage:"3", deadliness:"3", grips:"1-hand: - / 2-hand: Damage +2", qualities:"Mundane<br>A bokken can be used for Iaijutsu Cut techniques", rarity:"3", price:"1 bu", source:"Core"}, 
 	{name: "Chokuto", skill:"[Melee]", category:"Swords", range:"0-1", damage:"4", deadliness:"5", grips:"1-hand: -", qualities:"Ceremonial, Razor-Edged", rarity:"7", price:"20 koku", source:"Core"}, 
 	{name: "Dao", skill:"[Melee]", category:"Swords", range:"1", damage:"3", deadliness:"5", grips:"1-hand: -", qualities:"-", rarity:"6", price:"15 koku", source:"Core"}, 
@@ -257,6 +257,11 @@ children:[
 {title:"Ghostlands Yodhaniya",cost:6,rarity:4,effect:"A blunt weapon made using the Ghostlands Yodhaniya pattern gains +1 physical damage.  It also gains +1 additional damage against Tainted beings and the wielder ignores the Cumbersome quality while in Defiled terrain",source:"Path of Waves p117",},
 {title:"Kokejin's Heart of the Wind",cost:8,rarity:5,effect:"A polearm made using the Kokejin's Heart of the Wind patten gains the Razor-Edged and Durable item qualities.  Additionally, its wielder treats this weapon's damage as 2 higher while mounted.",source:"Path of Waves p117",},
 ]},
+
+
+];
+
+var oppdata = [
 {
 title:"General",
 ref:"GeneralOpportunities",
@@ -356,11 +361,7 @@ children:[
 	{ring: "Fire", spend:"<span class='l5r'>O</span> <span class='l5r'>O</span> <span class='l5r'>O</span>: A stray motion of yours catches the attention of a person or creature- but unexpectedly they are sympathetic or helpful to you when they notice you. Who are they, and how do they offer to help? Do they think you are someone you're not? "},
 	{ring: "Water", spend:"<span class='l5r'>O</span>: You observe a clue or hint that indicates to you that information about your target or goal might also be found elsewhere, The GM reveals another viable avenue for espionage or, the same subject, unrelated to your current operation. "},
 	{ring: "Void", spend:"<span class='l5r'>O</span>: Your understanding of stealth clues you in on the possibility that you are not. the first spy to pass this way. The GM reveals whether another spy has traversed your location and, if so, what trace they unwittingly left behind.  "},
-		]},
-
-];
-
-
+		]},]
 
 /*
 <span class='l5r'>O</span>

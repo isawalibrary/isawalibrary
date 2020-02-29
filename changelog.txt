@@ -1,10 +1,12 @@
 
 -Upcoming
 
-+ Go over the existing families with Adv/Disadv & Demeanor list.  Some families have far less than others.
++ Insert the ring symbols into the context tables
++ Input the Shadowlands opps table data - was it too spoilery?  Was that why it wasn't already in?
 
-+ Add 1-hand: & 2-hand: filter for weapons table - just a 3 choice dropdown - Any, all 1-hand, all 2-hand
-+ Allow multiple filters to be in effect at once - so I can filter for just polearms from Path of Waves - either this or when one filter is used make the other unused filters reset themselves 
++ When clicking on the character name in skirmish panel, open the npc libary to the character - no on hover stuff
+
++ Go over the existing families with Adv/Disadv & Demeanor list.  Some families have far less than others.
 
 + For function generateData(), row 1013, replace divcontents with something using innerText instead of innerHTML as this will allow tags like <br> to be typed in, add buttons for inserting common tags like the <span class="l5r"></span> tags, make larger textarea boxes for the longer inputs like technique effect.  Maaaybe have the innerHTML display to the right of the text input box as the input is typed into, so you can see how it appears when it is HTMLized.
 + Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
@@ -13,15 +15,9 @@
 + Maybe put Jason Maker somewhere else, I don't like the centred look - if there was a button to autocopy the Jason blob as last step of Jason Making that would be good too
 + Go through all the npc stuff, standardise stuff like enemy qualities (traits?) and make sure multiple abilities in [] display properly 
 
-+ Insert Opps by Ring table - maybe have one table with the dropdown to select which ring 
-+ Maybe rework the current Opp tables to be one table with a dropdown to select the context, "Opps by Ring" vs "Opps by Context" - Might be easier to make the Opp table data sit in a different var to avoid being treated like the Falling Damage, Range Bands table.
-+ Input the Shadowlands opps from SL book - can parentDiv.prepend(select) into the table div
-
 + Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
 + Go through advs and disadvs for the other clans, families and archetypes
 + Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
-+ Allow collapse and expand on technique titles in the npc library to avoid super long character sheets
-+ When clicking on the character name in skirmish panel, open the npc libary to the character - no on hover stuff
 + make getWeaponStats function to get weapon stats easily
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
 + Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category), make the dropdown for selecting the new weapon display "Weapon name (Dmg / Dls)" so it isn't just a dropdown of gibberish

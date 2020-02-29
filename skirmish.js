@@ -32,6 +32,7 @@ function loadSkirmish(){
 		document.getElementById(elem+"-supres").value=skirmishcharacters[elem].supres;
 		document.getElementById(elem+"-engaged").value=skirmishcharacters[elem].engaged;
 		document.getElementById(elem+"-notes").value=skirmishcharacters[elem].notes;
+		document.getElementById(elem+"-status").value=skirmishcharacters[elem].status;
 
 		valueToSet = skirmishcharacters[elem].stance;
 		selectObj = document.getElementById(elem+"-stance")
@@ -192,7 +193,7 @@ function addToSkirmish(){
  	skirmishcharacters[title].stance="Stance";
  	skirmishcharacters[title].notes="";
  	skirmishcharacters[title].engaged="";
- 	skirmishcharacters[title].status="alive";
+ 	skirmishcharacters[title].status=skirmishcharacters[elem].status;
 
  	buildSkirmishCharacter(title);
 
@@ -278,6 +279,13 @@ function updateStance(name){
 			divcontents(name+'-stancetool',v)	;	
 }
 
+function showThisNpc(nom){
+	if (document.getElementById("library").classList.contains("containerx")){
+		highlight("npclibrarybutton","library")
+	}
+
+	showNpc(nom)
+}
 
 function buildSkirmishCharacter (nom){
 
@@ -294,13 +302,10 @@ function buildSkirmishCharacter (nom){
  	newdiv (nom+"-clan",nom,"margin10 styledselect clanlength");  //creates clan and school container
 
 
-	x='class="inline" onmouseover=hideshow("'+nom+'-xschoolability") onmouseout=hideshow("'+nom+'-xschoolability")'
+	x='class="inline" onclick=showThisNpc("'+nom+'");'
+
  	divcontents (nom+"-clan",'<div '+x+'>'+"("+skirmishcharacters[nom].clan+" / "+skirmishcharacters[nom].school+")</div>");  //enters clan and school
  	
-
- 	newdiv (nom+"-xschoolability",nom,"tooltiptext tooltipclass hide")  //creates school ability tooltip
- 	divcontents (nom+'-xschoolability',skirmishcharacters[nom].ability);
-
 
  	newdiv (nom+"-xinitiative",nom,"inline margin10");  //creates initiative container
 

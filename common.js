@@ -1,4 +1,6 @@
 function hideshow(x){
+	var divclasses;
+	divclasses=document.getElementById(x).classList
 	document.getElementById(x).classList.toggle("hide");
 	}
 

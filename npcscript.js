@@ -225,9 +225,14 @@ function makeNpcLibrary(){
 
 		document.getElementById("stat"+each.title).innerHTML += '<br><i>Techniques</i>: <br>'
 
-		techs = [];
+		technames = [];
+		techeffects = []
 
 				for (i = 0; i < each.techs.length; i++){
+
+					newdiv("stat"+each.title+"techwrap"+[i],"stat"+each.title,"block")
+					newdiv("stat"+each.title+"techname"+[i],"stat"+each.title+"techwrap"+[i],"block margintop")
+					newdiv("stat"+each.title+"techeffect"+[i],"stat"+each.title+"techwrap"+[i],"block hide")
 
 					thistech = each.techs[i];
 
@@ -240,17 +245,23 @@ function makeNpcLibrary(){
 
 							x = '<u>'+techniquelist[j].title + " (" + techniquelist[j].ring +
 								') [' + techniquelist[j].type + " Rank " + techniquelist[j].rank + ']' +
-								'</u><br>' + eff + '<br>'
+								'</u>'
 
-							techs.push(x);
+							technames.push(x);
+
+							x = eff + '<br>'
+							techeffects.push(x)
 						}
 					}
 
-				if (techs[i] !== undefined){
-					document.getElementById("stat"+each.title).innerHTML += techs[i] 
+				if (technames[i] !== undefined){
+					document.getElementById("stat"+each.title+"techname"+[i]).innerHTML = technames[i] 
+					x = "stat"+each.title+"techeffect"+[i]
+					document.getElementById("stat"+each.title+"techname"+[i]).setAttribute("onclick","hideshow('"+x+"')")
+					document.getElementById("stat"+each.title+"techeffect"+[i]).innerHTML = techeffects[i]
 				}
 				}
-		if (techs.length == 0){
+		if (technames.length == 0){
 			document.getElementById("stat"+each.title).innerHTML += 'None';
 		}
 

@@ -81,6 +81,7 @@ function makeTable(){
 		tableref.push(y);
 		}
 
+
 		newdiv("tablesdef","definitionsdiv","block tooltipwrapper defs");
 		divcontents("tablesdef","<b>Tables: (click)</b><div class=defs></div>")
 
@@ -103,7 +104,6 @@ function makeTable(){
 			var itemnumber = 0;
 
 				thisTableData.forEach(function(row){
-
 
 				if (rownumber==0){
 				var thisHead = document.getElementById(tabletitle).createTHead();
@@ -149,9 +149,6 @@ function makeTable(){
   
 		}
 
-	insertOpportunitySymbols();
-
-	insertRingSymbols();
 
 	sortTable("Weapons",1);
 	sortTable("Weapons",3);
@@ -160,7 +157,7 @@ function makeTable(){
 	sortTable("Armors",1);
 	sortTable("Armors",2);
 
-
+//recolour table
 for (n = 0; n < tableref.length; n++){
 	tabletitle = tableref[n]+"-table"
 	thisTable = document.getElementById(tabletitle).rows
@@ -175,6 +172,12 @@ for (n = 0; n < tableref.length; n++){
 	  		}
     	}
     }
+document.getElementById("tablesdef").innerHTML+="<div id='opps-table-div' class='tooltipwrapper defs'><span class='l5r'>O</span> Opportunities</div>";
+document.getElementById("opps-table-div").setAttribute("onclick","hidex('opportunities')");
+newdiv("opportunities","definitionstables","block hide")
+newdiv("ringoppdrop","opportunities","block")
+newdiv("opps-table","opportunities","block")
+setUpRingOpps()
 
 	};
 
@@ -224,15 +227,7 @@ function insertRingSymbols(){
 
 
 function insertOpportunitySymbols(){
-	document.getElementById("GeneralOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("InitiativeOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("MartialOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("InvocationOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("OtherSkillsOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("DowntimeOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("NegotiationsOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("RomanceOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
-	document.getElementById("EspionageOpportunities-table-div").innerHTML+=" <span class='l5r'>O</span>";
+
 }
 
 function sortTable(tableName,sortByColumn) {
@@ -281,12 +276,13 @@ function hidex(x) {
 	tableref = [];
 
 	for(var j = 0; j < tabledata.length; j++) {  //make a list of tables
-			y = tabledata[j].ref;
+			y = tabledata[j].ref+"-table";
 			tableref.push(y);
 			}
+			tableref.push("opportunities")
 
 	for (i = 0; i < tableref.length; i++){
-			thisTable = document.getElementById(tableref[i]+"-table");
+			thisTable = document.getElementById(tableref[i])
 			if (thisTable.classList.contains("hide")){
 				;
 			} else {thisTable.classList.add("hide")}
