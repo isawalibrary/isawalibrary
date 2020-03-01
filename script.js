@@ -911,7 +911,7 @@ function setUpDataBuilder(){
 
 	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC",]
 
-	makeSelectDropdown("datatypeselect","Select Data Type","Select Data Type",datatypearray)
+	makeSelectDropdown("datatypeselect","Select Data Type",datatypearray)
 
 	newdiv("dataform","databuilderdiv","notbold center styledselect block margin10")
 
