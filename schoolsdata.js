@@ -2147,9 +2147,38 @@ var titles = {
 		advance:["Trade Skills","Aesthetics","Design","Fitness","Meditation","Smithing","<span class='l5r'>b</span> Artisan's Appraisal"],
 		source:"Courts of Stone",
 	},
-
-
-
+	inservicetoalord:{
+		title:"In Service to a Lord",
+		status:"+10 Status (to a maximum of 35)",
+		xp:36 ,
+		ability:"Title Ability: Privileged Position: Once per session, when acting in your lord's interest, you may use their status rank as your own.",
+		advance:["Martial Skills","Social Skills","Culture","Government","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Wolf's Proposal","<span class='l5r'>b</span> Fluent Bargaining"],
+		source:"Path of Waves p186",
+	},
+	perfectlandsectmember:{
+		title:"Perfect Land Sect Member",
+		status:"-5 Status (to a minimum of 15)",
+		xp:24 ,
+		ability:"Title Ability: Trustworthy Cadence: When making a social skill check targeting a character with status 20 or lower, reduce the TN by 1.",
+		advance:["Scholar Skills","Courtesy","Fitness","Labor","<span class='l5r'>b</span> Rank 1-2 Water Shuji","<span class='l5r'>b</span> Roar of Encouragement","<span class='l5r'>b</span> Rallying Cry"],
+		source:"Path of Waves p186",
+	},
+	ghostlandswarrior:{
+		title:"Ghostlands Warrior",
+		status:"+0 Status (+10 in the Ivory Kingdoms, to a maximum of 50)",
+		xp:36 ,
+		ability:"Title Ability: Eyes of Yodhaniya: When you make a check to see through supernatural illusion, reduce the TN of the check by 1. If you are in Defiled terrain, reduce the TN by 2 instead.",
+		advance:["Martial Skills","Command","Medicine","Survival","<span class='l5r'>b</span> Earth Needs No Eyes","<span class='l5r'>b</span> Soaring Slice","<span class='l5r'>b</span> Cleansing of Coral and Gold"],
+		source:"Path of Waves p186",
+	},
+	astradhavi:{
+		title:"Astradhavi",
+		status:"+0 Status (+25 in the Ivory Kingdoms, to a maximum of 65)",
+		xp:36 ,
+		ability:"Title Ability: Sacred Mantras: You can purchase mantra techniques.",
+		advance:["Scholar Skills","Martial Skills","Command","Courtesy","<span class='l5r'>b</span> Rank 1-3 Rituals","<span class='l5r'>b</span> Summoning Mantra (One Implement)","<span class='l5r'>b</span> Touchstone of Courage"],
+		source:"Path of Waves p187"
+	},
 
 }
 

@@ -7,7 +7,9 @@
 + For function generateData(), row 1013, replace divcontents with something using innerText instead of innerHTML as this will allow tags like <br> to be typed in, add buttons for inserting common tags like the <span class="l5r"></span> tags, make larger textarea boxes for the longer inputs like technique effect.  Maaaybe have the innerHTML display to the right of the text input box as the input is typed into, so you can see how it appears when it is HTMLized.
 + Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
 + Get Random NPC - fully randomised, maybe weight the different groups or ronin will be overrepresented due to large number of options. 
-+ Allow saving, loading and deleting multiple skirmish groups - so I can set up a fight with bandits for the start of the session, then another fight for the boss battle at the end 
++ Add some of the new Intrigue goals from PoW
++ Allow saving, loading and deleting multiple skirmish groups - so I can set up a fight with bandits for the start of the session, then another fight for the boss battle at the end - maybe not necessary, maybe can just have the npcs in the library - maybe add a button for add all PCs
+
 + Maybe put Jason Maker somewhere else, I don't like the centred look - if there was a button to autocopy the Jason blob as last step of Jason Making that would be good too
 + Go through all the npc stuff, standardise stuff like enemy qualities (traits?) and make sure multiple abilities in [] display properly 
 

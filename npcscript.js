@@ -186,7 +186,7 @@ function makeNpcLibrary(){
 					} 
 
 					for (i=0; npcweapons.length > i; i++){
-						if ( npcweapons[i].title == weap){
+						if ( npcweapons[i].name == weap){
 							weap = npcweapons[i];
 
 							x = 'Damage: '+weap.damage+
@@ -510,6 +510,15 @@ function selectArchetype(){
 	else {
 		hideDropdowns();
 		fillStats()
+
+		var item = document.getElementById("npcweaponwrap1");
+		if (item !== null){
+				item.parentNode.removeChild(item);}
+		item = document.getElementById("extraweapon");
+		if (item !== null){
+				item.parentNode.removeChild(item);}
+		
+
 		document.getElementById("npcnameinput").value = selectedArchetype.fullname;
 		thisnpc.name = selectedArchetype.fullname;
 		thisnpc.title = selectedArchetype.title;

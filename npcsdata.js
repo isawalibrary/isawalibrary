@@ -308,7 +308,7 @@ var archetypes =[
 			ring:{
 				type: "set",
 				Earth:1,
-				Air:3,
+				Air:2,
 				Fire:1,
 				Water:3,
 				Void:1,},

@@ -909,7 +909,7 @@ function setUpDataBuilder(){
 	newdiv("datatype","databuilderdiv","block")
 	makeSelect("datatype","datatypeselect","center block styledselect","createDataForm()")
 
-	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC",]
+	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC","Title"]
 
 	makeSelectDropdown("datatypeselect","Select Data Type",datatypearray)
 
@@ -956,6 +956,10 @@ function createDataForm(){
 
 		case "Weapon":
 				datafields = ["name","skill","category","range","damage","deadliness","grips (1-hand: - / 2-hand: Damage +2)","qualities (Mundane &lt;br>A bokken can be used for Iaijutsu Cut techniques)","rarity","price (1 koku)","source"]
+				break;
+
+		case "Title":
+				datafields = ["Title","Status","Xp","Ability (Title Ability: )","Advance ([])","Source"]
 				break;
 	}
 
@@ -1014,14 +1018,24 @@ function generateData(){
 					outputstring = values[0]+':{<br>name:"'+values[0]+'",<br>clanring:{'+values[1]+':+1},<br>clanskill:"'+values[2]+'",<br>clanstatus:'+values[3]+',<br>weapons:['+values[4]+'],<br>armor:['+values[5]+'],<br>advantages:['+values[6]+'],<br>disadvantages:['+values[7]+'],<br>},'
 					break;
 
+			case "Title":
+					nospaces = values[0].replace(/ /g, "")
+					nospaces = nospaces.replace(/,/g, "")
+					nospaces = nospaces.toLowerCase()
+
+					outputstring = nospaces+':{<br>title:"'+values[0]+'",<br>status:"'+values[1]+'",<br>xp:'+values[2]+' ,<br>ability:"'+values[3]+'",<br>advance:['+values[4]+'],<br>source:"'+values[5]+'"<br>},'
+					break
+
 			case "NPC":
 
 					nospaces = values[0].replace(/ /g, "")
 					nospaces = nospaces.replace(/,/g, "")
+					nospaces = nospaces.toLowerCase()
 
-					outputstring = '{<br>fullname:"'+values[0]+'",<br>title:"'+nospaces+'",<br>type:"'+values[1]+'",<br>conflictcombat:'+values[2]+',<br>conflictintrigue:'+values[3]+',<br>ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},<br>honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+',<br>endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+',<br>equiptype:"'+values[17]+'",<br>skills:{artisanskill:'+values[18]+',martialskill:'+values[19]+',scholarskill:'+values[20]+',socialskill:'+values[21]+',tradeskill:'+values[22]+',},<br>demeanor:["'+values[23]+'"],<br>advantages:['+values[24]+'],<br>disadvantages:['+values[25]+'],<br>weapon:['+values[26]+'],armor:['+values[27]+'],<br>qualities:"'+values[28]+'",<br>abilities:['+values[28]+'],<br>source:"'+values[29]+'",<br>},'
+					outputstring = '{<br>"'+fullname+':"'+values[0]+'",<br>title:"'+nospaces+'",<br>type:"'+values[1]+'",<br>conflictcombat:'+values[2]+',<br>conflictintrigue:'+values[3]+',<br>ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},<br>honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+',<br>endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+',<br>equiptype:"'+values[17]+'",<br>skills:{artisanskill:'+values[18]+',martialskill:'+values[19]+',scholarskill:'+values[20]+',socialskill:'+values[21]+',tradeskill:'+values[22]+',},<br>demeanor:["'+values[23]+'"],<br>advantages:['+values[24]+'],<br>disadvantages:['+values[25]+'],<br>weapon:['+values[26]+'],armor:['+values[27]+'],<br>qualities:"'+values[28]+'",<br>abilities:['+values[28]+'],<br>source:"'+values[29]+'",<br>},'
 					break;
 		
 			}
 			divcontents("dataoutput",outputstring)
 }
+
