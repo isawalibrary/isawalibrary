@@ -1876,6 +1876,11 @@ function populateNpcEdit(nom){
 
 	document.getElementById("editnameinput").value = nom.fullname;
 
+	var title = document.getElementById("editnameinput").value
+	title = title.replace(/ /g, "")
+	title = title.replace(/,/g, "")
+	nom.title = title;
+
 	if (nom.player == 1){
 		document.getElementById("editarchetypeinput").value = "PC";
 	} else {document.getElementById("editarchetypeinput").value = nom.archetype}
@@ -1962,7 +1967,16 @@ function populateNpcEdit(nom){
 			}
 		}
 	}
+
+	x = nom.title
+
+	thisEditNpc = npc[x]
+	delete npc[x]
+	console.log(npc)
+	npcsave()
 }
+
+thisEditNpc = {}
 
 function selectNPCDemeanor(){
 	chosenDemeanor = document.getElementById("editdemeanorinput").value;
@@ -2043,9 +2057,17 @@ function selectNPCArmorEdit(){
 
 function saveEditNpc(nom){
 
-	nom = npc[nom]
+	var name = document.getElementById("editnameinput").value;
 
-	nom.title = document.getElementById("editnameinput").value;
+	title = name.replace(/ /g, "")
+	title = title.replace(/,/g, "")
+	npc[title] = new Object;
+
+
+	nom = npc[title]
+
+	nom.fullname = name
+	nom.title = title
 	nom.archetype = document.getElementById("editarchetypeinput").value;
 	nom.template = document.getElementById("edittemplateinput").value
 	nom.clan = document.getElementById("editclaninput").value;
@@ -2056,19 +2078,23 @@ function saveEditNpc(nom){
  		nom.player=1;  //sets character as PC
  	} else {nom.player=0;}  //sets character as NPC
 
+ 	nom.rings = {}
 	nom.rings.air = document.getElementById("editairinput").value
 	nom.rings.earth = document.getElementById("editearthinput").value
 	nom.rings.fire = document.getElementById("editfireinput").value
 	nom.rings.water = document.getElementById("editwaterinput").value
 	nom.rings.void = document.getElementById("editvoidinput").value
+	nom.derived = {}
 	nom.derived.endurance = document.getElementById("editenduranceinput").value
 	nom.derived.composure = document.getElementById("editcomposureinput").value
 	nom.derived.focus = document.getElementById("editfocusinput").value
 	nom.derived.vigilance = document.getElementById("editvigilanceinput").value
+	nom.social = {}
 	nom.social.honor = document.getElementById("edithonorinput").value
 	nom.social.glory = document.getElementById("editgloryinput").value
 	nom.social.status = document.getElementById("editstatusinput").value
 	nom.social.demeanor = document.getElementById('editdemeanorinput').options[document.getElementById('editdemeanorinput').selectedIndex].value
+	nom.skills = {}
 	nom.skills.artisan = document.getElementById("editartisaninput").value
 	nom.skills.social = document.getElementById("editsocialinput").value
 	nom.skills.martial = document.getElementById("editmartialinput").value
@@ -2077,6 +2103,9 @@ function saveEditNpc(nom){
 	nom.advantage = document.getElementById("editadvantageinput").value
 	nom.disadvantage = document.getElementById("editdisadvantageinput").value
 	nom.notes = document.getElementById("editnotesinput").value 
+
+	nom.type = thisEditNpc.type
+	nom.equiptype = thisEditNpc.equiptype
 
 	nom.weapon = []
 
