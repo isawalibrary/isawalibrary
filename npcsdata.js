@@ -250,6 +250,7 @@ var archetypes =[
 					],
 			weapon:["Tusks",],
 			armor:["Thick Hide",],
+			qualities: "A boar is a silhouette 2 creature.",
 			abilities:["Sustaining Fury: After a boar suffers a critical strike, it becomes Enraged. While Enraged, a boar cannot suffer the Unconscious condition and may perform Attack actions even while Incapacitated."],
 			techniques:[],
 		},{
@@ -382,7 +383,8 @@ var archetypes =[
 					"Trusting Soul (Air) [Social; Interpersonal]",
 					],
 			weapon:["Vicious Bite",],
-			armor:["Hide",],
+			armor:["Hide",],qualities: "A boar is a silhouette 2 creature.",
+			qualities: "A large dog is a silhouette 1 creature.",
 			abilities:["Working Companion: Choose one Martial or Trade skill. When the dog provides assistance on a check with this skill, it counts as providing skilled assistance (see page 26)."],
 			techniques:[],
 		},{
@@ -427,6 +429,7 @@ var archetypes =[
 					],
 			weapon:["Little Bite",],
 			armor:["Soft Fur",],
+			qualities: "A small dog is a silhouette 0 creature.",
 			abilities:["Working Companion: Choose one Martial or Trade skill. When the dog provides assistance on a check with this skill, it counts as providing skilled assistance (see page 26)."],
 			techniques:[],
 		},{
@@ -681,6 +684,7 @@ var archetypes =[
 					],
 			weapon:["Vicious Fangs",],
 			armor:["Hide",],
+			qualities: "A wolf is a silhouette 2 creature.",
 			abilities:["Circle the Kill: When performing a Martial Arts [Unarmed] check, a wolf may spend <span class='l5r'>O</span> in the following ways. <br>Water <span class='l5r'>O</span>: The target suffers the Bleeding condition. <br>Fire <span class='l5r'>O</span> : The target treats all terrain as Dangerous (see page 267) until the end of their next turn."],
 			techniques:[],
 		},{
@@ -763,9 +767,10 @@ var archetypes =[
 					],
 			weapon:["Twisted Talons","Horrific Maw"],
 			armor:["Fresh Skin",],
+			qualities: "The bog hag is an Otherworldly, Tainted being.",
 			abilities:[
 						"Accursed Regneneration: At the end of each round, if the bog hag has not suffered damage from a Sacred source this round, the bog hag removes the Lightly Injured condition or reduces the Severely Injured condition to Lightly Injured.",
-						"Seeker of Vile Lore: The bog hag is an Otherworldly, Tainted being. Optionally, choose 0-3 maho techniques (see page 224) that the bog hag can perform. Add 1 to this character's combat rank for each maho chosen this way",
+						"Seeker of Vile Lore: Optionally, choose 0-3 maho techniques (see page 224) that the bog hag can perform. Add 1 to this character's combat rank for each maho chosen this way",
 						"Skins of the Slaughtered: As an action, a bog hag may assume the illusory form of anyone it has killed. A character may make a TN 3 Sentiment check (Earth 4, Fire 1), or another appropriate check to see through this illusion. At the GM's discretion, a character may spend <span class='l5r'>O</span> <span class='l5r'>O</span> from any check to interact with the bog hag to see one of the following: a misplaced fold in the skin, luminescence in one eye, an impossible movement of the jaw, oddly sharp teeth, the smell of viscera, a conversational fixation on fresh and bloody meat. "
 					],
 			techniques:[],
@@ -895,7 +900,7 @@ var archetypes =[
 					],
 			weapon:["Jagged Teeth","Grasping Hands"],
 			armor:["Decaying Flesh"],
-			qualities:"An oni is an Otherworldly, Tainted being of silhouette 4.",
+			qualities:"An zombie peasant is an Otherworldly, Tainted being of silhouette 2.",
 			abilities:[
 						"Cadavarous Bite: Increase the TN of checks to resist critical strikes inflicted by zombies by 2",
 						"Horrifying Reanimation: A zombie is an Otherworldly, Tainted being. The first time it is defeated by damage from a non-Sacred source, if a zombie is in Defiled terrain, it reanimates. At the start of its next turn, it removes all fatigue and staggers to its feet with a scar disadvantage of the GM's choice"
@@ -939,9 +944,8 @@ var archetypes =[
 					],
 			weapon:["Massive Cudgel","Rending Grips"],
 			armor:["Scaled Hide"],
-			qualities:"An oni is an Otherworldly, Tainted being of silhouette 4.",
+			qualities:"Ancient and Powerful: A troll is an Otherworldly being of silhouette 4.",
 			abilities:[
-						"Ancient and Powerful: A troll is an Otherworldly being of silhouette 4.",
 						"Sorcerous Scales: After a troll suffers damage from a physical or supernatural source, increase its resistance to that damage type by 4. This effect persists until it suffers damage from a source of a different type."
 											],
 			techniques:[],
@@ -982,9 +986,9 @@ var archetypes =[
 					],
 			weapon:["Majestic Antlers"],
 			armor:["Magical Hide"],
-			qualities:"An oni is an Otherworldly, Tainted being of silhouette 4.",
+			qualities:"A ki-rin is an Otherworldly being of silhouette 3 that can fly. ",
 			abilities:[
-						"Mystical Creature: A ki-rin is an Otherworldly being of silhouette 3 that can fly. It can move vertically and ignores the negative effects of terrain. Additionally, once per scene, it may perform an Earth or Water invocation technique, and counts as succeeding with three bonus successes and <span class='l5r'>O</span> <span class='l5r'>O</span>.",
+						"Mystical Creature: A ki-rin can move vertically and ignores the negative effects of terrain. Additionally, once per scene, it may perform an Earth or Water invocation technique, and counts as succeeding with three bonus successes and <span class='l5r'>O</span> <span class='l5r'>O</span>.",
 						"Sacred Envoy: The ki-rin can speak any language, and it knows many secrets of the world. The righteous can sense its hallowed nature; to perform an Attack action against it, a character must forfeit honor equal to their honor rank (and glory equal to their glory rank, if they are seen doing it).",
 						"Wrath for the Wicked: Once per scene as a Attack action, the ki-rin may breathe holy fire from its mouth. Each Tainted being at range 0-4 must resist with a TN 4 Fitness check (Air 3, Earth 5) or suffer 8 supernatural damage with the Sacred quality, plus additional damage equal to its shortfall, and suffer the Burning condition."
 											],
@@ -1027,10 +1031,10 @@ var archetypes =[
 					],
 			weapon:["Talons of Air"],
 			armor:["Misty Mantle"],
-			qualities:"An oni is an Otherworldly, Tainted being of silhouette 4.",
+			qualities:"A manifest air kami is an Otherworldly being of silhouette 2, 3, or 4, and may change its size as an action.",
 			abilities:[
 						"Flight: A manifest air kami can move vertically and ignores the negative effects of terrain.",
-						"Living Air Spirit: A manifest air kami is an Otherworldly being of silhouette 2, 3, or 4, and may change its size as an action. Additionally, once per scene as an action of the appropriate types, a manifest air kami may perform any one Air invocation other than Rise, Air. It counts as succeeding with 3 bonus successes and 2 <span class='l5r'>O</span>.",
+						"Living Air Spirit: Once per scene as an action of the appropriate types, a manifest air kami may perform any one Air invocation other than Rise, Air. It counts as succeeding with 3 bonus successes and 2 <span class='l5r'>O</span>.",
 						"Swoop: When performing an Attack action check, a manifest air kami may spend <span class='l5r'>O</span> as follows: <span class='l5r'>O</span>+: Move 1 range band away from the target per <span class='l5r'>O</span> spent this way. If the target is of silhouette 5 or smaller, the air kami may carry it to its destination instead."
 											],
 			techniques:[],
@@ -1072,11 +1076,11 @@ var archetypes =[
 					],
 			weapon:["Stone Fists"],
 			armor:["Rocky Hide"],
-			qualities:"An oni is an Otherworldly, Tainted being of silhouette 4.",
+			qualities:"A manifest earth kami is an Otherworldly being of silhouette 3.",
 			abilities:[
 						"Burrow: As a Movement action, a manifest earth kami may withdraw into the ground. It cannot be targeted by actions or effects, or perform actions other than Eruption.",
 						"Eruption: As an Attack and Movement action while burrowed, a manifest earth kami may burst from the ground at a chosen point at range 0-3. Each character at range 0-2 of that point must resist with a TN 4 Fitness check (Air 2, Water 5) or suffer 6 physical damage and the Prone condition.",
-						"Living Earth Spirit: A manifest earth kami is an Otherworldly being of silhouette 3. Additionally, once per scene as an action of the appropriate types, a manifest earth kami may perform any one Earth invocation other than Rise, Earth. It counts as succeeding with 3 bonus successes and 2 <span class='l5r'>O</span>."
+						"Living Earth Spirit: Once per scene as an action of the appropriate types, a manifest earth kami may perform any one Earth invocation other than Rise, Earth. It counts as succeeding with 3 bonus successes and 2 <span class='l5r'>O</span>."
 											],
 			techniques:[],
 		},{
@@ -1117,9 +1121,9 @@ var archetypes =[
 					],
 			weapon:["Blazing Touch"],
 			armor:["Corona of Flames"],
-			qualities:"An oni is an Otherworldly, Tainted being of silhouette 4.",
+			qualities:"A manifest kami is an Otherworldly being.",
 			abilities:[
-						"Living Fire Spirit: A manifest kami is an Otherworldly being. Additionally, once per scene as an action of the appropriate types, a manifest fire kami may perform any one Fire invocation other than Rise, Fire. It counts as succeeding with 3 bonus successes and 2 <span class='l5r'>O</span>.",
+						"Living Fire Spirit: Once per scene as an action of the appropriate types, a manifest fire kami may perform any one Fire invocation other than Rise, Fire. It counts as succeeding with 3 bonus successes and 2 <span class='l5r'>O</span>.",
 						"Mantle of Smoke and Ash: Other characters treat the area at range 0-1 of the manifest fire kami as Dangerous and Obscuring terrain (Core p267).",
 						"Searing Caress: When performing an Attack action check, a manifest fire kami may spend <span class='l5r'>O</span> as follows: <span class='l5r'>O</span>+: The target and up to one other character per <span class='l5r'>O</span> spent this way at range 0-1 of the target suffer the Burning condition (Core p272)"
 											],

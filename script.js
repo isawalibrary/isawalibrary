@@ -63,6 +63,9 @@ function makeDefs(){
 
 
 function divider() {
+	document.getElementById("//0").innerHTML="//";
+	document.getElementById("//1").innerHTML="//";
+	document.getElementById("//2").innerHTML="//";	
 	document.getElementById("//x1").innerHTML="//";
 	document.getElementById("//14").innerHTML="//";
 	document.getElementById("//24").innerHTML="//";

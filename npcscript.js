@@ -85,7 +85,7 @@ function buildNpcStatsDiv(){
 	newdiv("npcarmor0stats","npcequiparmor","inline margin10 marginbottom")
 	
 	newdiv("npcabilitycontainer","npcstats","block margin10 defcategory")
-	divcontents("npcabilitycontainer","<b>School Ability</b>:");
+	divcontents("npcabilitycontainer","<b>Ability</b>:");
 
 	newdiv("npcschoolability","npcabilitycontainer","inline block")
 
@@ -211,9 +211,11 @@ function makeNpcLibrary(){
 												'Advantage: ' + each.advantage +
 												'<br>' +
 												'Disadvantage: ' + each.disadvantage +
-												'<br>' +
-												'<i>Ability</i>: ' 
+												'<br>' 
 												 
+		if (each.qualities !== undefined){
+			document.getElementById("stat"+each.title).innerHTML += each.qualities + "<br>" + '<i>Ability</i>: ';
+		}										 
 
 		if (each.schoolability !== "None" && each.schoolability !== "" && each.schoolability !== undefined){
 			 document.getElementById("stat"+each.title).innerHTML += each.schoolability
@@ -858,6 +860,11 @@ function fillStats(){
 		selectNPCArmor("0")
 
 		abilityArray = []
+
+		if (selectedArchetype.qualities !== null && selectedArchetype.qualities !== undefined){
+			abilityArray.push(selectedArchetype.qualities)
+		}
+
 		addToArray(abilityArray,selectedArchetype.abilities)
 		document.getElementById("npcschoolability").innerHTML="";
 		html = ""
@@ -915,7 +922,7 @@ function addExtraWeapon(){
 				if (thisnpc.equiptype == "natural"){
 					for (each in npcweapons){
 					if (npcweapons[each].type == "natural"){
-						weapons.push(npcweapons[each].title)
+						weapons.push(npcweapons[each].name)
 					}
 				}}
 
@@ -1032,6 +1039,10 @@ function setRokuganiStats(){
 	thisnpc.ability = selectedSchool.ability;
 
 	thisnpc.techniques = selectedArchetype.techniques;
+
+	if (selectedArchetype.qualities !== null && selectedArchetype.qualities !== undefined){
+		thisnpc.qualities = selectedArchetype.qualities;
+	}
 }
 
 function setRokuganiRings(){
@@ -1200,7 +1211,7 @@ function selectNPCWeapon(num){
 	} 
 
 	for (i=0; npcweapons.length > i; i++){
-		if ( npcweapons[i].title == selectedWeapon){
+		if ( npcweapons[i].name == selectedWeapon){
 			selectedWeapon = npcweapons[i];
 
 			x = 'Damage: '+selectedWeapon.damage+
@@ -1233,7 +1244,7 @@ function selectNPCArmor(num){
 	} 
 
 	for (i=0; npcarmor.length > i; i++){
-		if ( npcarmor[i].title == selectedArmor){
+		if ( npcarmor[i].armor == selectedArmor){
 			selectedArmor = npcarmor[i];
 
 			x = 'Physical Res: '+selectedArmor.phys+
@@ -1464,6 +1475,7 @@ function saveNPC (){
 		npc[nospaces].skills.social = thisnpc.socialskill;
 		npc[nospaces].skills.scholar = thisnpc.scholarskill;
 		npc[nospaces].skills.trade = thisnpc.tradeskill;
+		npc[nospaces].qualities = thisnpc.qualities;
 		npc[nospaces].weapon = []
 
 		children =  document.getElementById("npcequip").childNodes;
@@ -1758,7 +1770,7 @@ function makeNpcEdit(nom){
 	divcontents("editweapon","<br>Weapon: ")
 		for (k=0; k< nom.weapon.length; k++){
 			newdiv("editweaponwrap"+k,"editweapon","block margin10")
-			makeSelect("editweaponwrap"+k,"editweaponinput"+k,"margintop styledselect inlineblock","selectNPCWeaponEdit('editweaponinput'"+k+",'editweaponstats'"+k+");")
+			makeSelect("editweaponwrap"+k,"editweaponinput"+k,"margintop styledselect inlineblock","selectNPCWeaponEdit('editweaponinput"+k+"','editweaponstats"+k+"');")
 			
 			weapons = [];
 
@@ -1774,13 +1786,13 @@ function makeNpcEdit(nom){
 			if (equiptype == "equipped"){
 				for (each in npcweapons){
 					if (npcweapons[each].type == "equipped"){
-						weapons.push(npcweapons[each].title)
+						weapons.push(npcweapons[each].name)
 					}
 			}}
 			if (equiptype == "natural"){
 				for (each in npcweapons){
 					if (npcweapons[each].type == "natural"){
-						weapons.push(npcweapons[each].title)
+						weapons.push(npcweapons[each].name)
 					}
 			}}
 
@@ -1813,13 +1825,13 @@ function makeNpcEdit(nom){
 		for (each in npcarmor){
 			if (npcarmor[each].type == "equipped"){
 
-				armor.push(npcarmor[each].title)
+				armor.push(npcarmor[each].armor)
 	}}}
 	if (equiptype == "natural"){
 		for (each in npcarmor){
 			if (npcarmor[each].type == "natural"){
 
-				armor.push(npcarmor[each].title)
+				armor.push(npcarmor[each].armor)
 	}}}
 
 	makeSelectDropdown1("editarmorinput",armor)
@@ -1987,6 +1999,7 @@ function selectNPCDemeanor(){
 		}
 	}
 }
+
 function selectNPCWeaponEdit(selectid,divid){
 	selectedWeapon = document.getElementById(selectid).value;
 
@@ -2008,7 +2021,7 @@ function selectNPCWeaponEdit(selectid,divid){
 	} 
 
 	for (i=0; npcweapons.length > i; i++){
-		if ( npcweapons[i].title == selectedWeapon){
+		if (npcweapons[i].name == selectedWeapon){
 			selectedWeapon = npcweapons[i];
 
 			x = 'Damage: '+selectedWeapon.damage+
@@ -2042,7 +2055,7 @@ function selectNPCArmorEdit(){
 	} 
 
 	for (i=0; npcarmor.length > i; i++){
-		if ( npcarmor[i].title == selectedArmor){
+		if ( npcarmor[i].armor == selectedArmor){
 			selectedArmor = npcarmor[i];
 
 			x = 'Physical Res: '+selectedArmor.phys+
@@ -2204,13 +2217,13 @@ function editAddWeapon(num,equiptypestring){
 		if (equiptype == "equipped"){
 			for (each in npcweapons){
 				if (npcweapons[each].type == "equipped"){
-					weapons.push(npcweapons[each].title)
+					weapons.push(npcweapons[each].name)
 				}
 		}}
 		if (equiptype == "natural"){
 			for (each in npcweapons){
 				if (npcweapons[each].type == "natural"){
-					weapons.push(npcweapons[each].title)
+					weapons.push(npcweapons[each].name)
 				}
 		}}
 
