@@ -910,15 +910,16 @@ function nameMaker(){
 
 function setUpDataBuilder(){
 	newdiv("datatype","databuilderdiv","block")
+
 	makeSelect("datatype","datatypeselect","center block styledselect","createDataForm()")
 
 	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC","Title"]
 
 	makeSelectDropdown("datatypeselect","Select Data Type",datatypearray)
 
-	newdiv("dataform","databuilderdiv","notbold center styledselect block margin10")
+	newdiv("dataform","databuilderdiv","textalignleft notbold styledselect inlineblock margin10")
 
-	newdiv("dataoutput","databuilderdiv","notbold block margin10")
+	newdiv("dataoutput","databuilderdiv","notbold inlineblock margin20 textalignleft")
 }
 
 	values=[];
@@ -967,16 +968,27 @@ function createDataForm(){
 	}
 
 	for (i=0; i< datafields.length; i++){
-		makeTextInput("dataform","data"+[i],"block datainputlength center",datafields[i]+": ","datainput"+[i],"styledselect margin10 datainputlength")
+		makeTextInput("dataform","data"+[i],"block datainputlength margin10",datafields[i]+": ","datainput"+[i],"styledselect margin10 datainputlength")
+
+		
 
 		datavalue = document.getElementById("datainput"+[i]).value
 		values.push(datavalue);
 
 		if (i == datafields.length -1){
-			makeButton("dataform","datasubmitbutton","styledselect margintop","generateData()","Get JSON Blob")
+			
 			makeButton("dataform","cleardatabutton","styledselect margintop margin10","clearData()","Clear Fields")
+			makeButton("dataform","copydatabutton","styledselect margintop margin10","copyDivToClipboard()","Copy JSON")
 		}
+
+
 	}
+
+	for (i=0; i< datafields.length; i++){
+		document.getElementById("datainput"+[i]).setAttribute("oninput","generateData()");
+	}
+
+	generateData();
 }
 
 
@@ -984,11 +996,21 @@ function clearData(){
 	createDataForm()
 }
 
+function copyDivToClipboard() {
+        var range = document.createRange();
+        range.selectNode(document.getElementById("dataoutput"));
+        window.getSelection().removeAllRanges(); // clear current selection
+        window.getSelection().addRange(range); // to select text
+        document.execCommand("copy");
+        window.getSelection().removeAllRanges();// to deselect
+                }
+
 function generateData(){
 
 	datatype = document.getElementById("datatypeselect").value;
 
 	values =[]
+	var outputstring = [];
 
 	for (i=0; i< datafields.length; i++){
 
@@ -998,27 +1020,91 @@ function generateData(){
 
 		switch (datatype) {
 			case "School":
-					outputstring = values[0]+': {<br>family:"'+values[1]+'",<br>name:"'+values[2]+'",<br>clan:"'+values[3]+'",<br>ring1: "'+values[4]+'",<br>ring2: "'+values[5]+'",<br>source: "'+values[6]+'",<br>skillnumber: '+values[7]+',<br>schoolskills:{Artisan:'+values[8]+',Social:'+values[9]+',Scholar:'+values[10]+',Martial:'+values[11]+',Trade:'+values[12]+'},<br>skills: ['+values[13]+'],<br>honor: '+values[14]+',<br>weapons:['+values[15]+'],<br>armor:['+values[16]+'],<br>techniquetypes: ['+values[17]+'],<br>role: ['+values[18]+'],<br>startingtechs: ['+values[19]+'],<br>startingtechoptions: ['+values[20]+'],<br>chooseoptions:['+values[21]+'],<br>ability:['+values[22]+'],<br>rank1techs:['+values[23]+'],<br>rank2techs:['+values[24]+'],<br>rank3techs:['+values[25]+'],<br>rank4techs: ['+values[26]+'],<br>rank5techs:"'+values[27]+'",<br>keyword:"'+values[28]+'",},'
+										
+					outputstring[0] = values[0]+': {'
+					outputstring[1] = 'family:"'+values[1]+'",'
+					outputstring[2] = 'name:"'+values[2]+'",'
+					outputstring[3] = 'clan:"'+values[3]+'",'
+					outputstring[4] = 'ring1: "'+values[4]+'",'
+					outputstring[5] = 'ring2: "'+values[5]+'",'
+					outputstring[6] = 'source: "'+values[6]+'",'
+					outputstring[7] = 'skillnumber: '+values[7]+','
+					outputstring[8] = 'schoolskills:{Artisan:'+values[8]+',Social:'+values[9]+',Scholar:'+values[10]+',Martial:'+values[11]+',Trade:'+values[12]+'}'
+					outputstring[9] = 'skills: ['+values[13]+'],'
+					outputstring[10] = 'honor: '+values[14]+','
+					outputstring[11] = 'weapons:['+values[15]+'],'
+					outputstring[12] = 'armor:['+values[16]+'],'
+					outputstring[13] = 'techniquetypes: ['+values[17]+'],'
+					outputstring[14] = 'role: ['+values[18]+'],'
+					outputstring[15] = 'startingtechs: ['+values[19]+'],'
+					outputstring[16] = 'startingtechoptions: ['+values[20]+'],'
+					outputstring[17] = 'chooseoptions:['+values[21]+'],'
+					outputstring[18] = 'ability:['+values[22]+'],'
+					outputstring[19] = 'rank1techs:['+values[23]+'],'
+					outputstring[20] = 'rank2techs:['+values[24]+'],'
+					outputstring[21] = 'rank3techs:['+values[25]+'],'
+					outputstring[22] = 'rank3techs:['+values[25]+'],'
+					outputstring[23] = 'rank4techs: ['+values[26]+'],'
+					outputstring[24] = 'rank5techs:"'+values[27]+'",'
+					outputstring[25] = 'keyword:"'+values[28]+'",'
+					outputstring[26] = '},'
+
 					break
 
 			case "Technique":
-					outputstring = '{<br>title: "'+values[0]+'",<br>type: "'+values[1]+'",<br>rank: "'+values[2]+'",<br>reference: "'+values[3]+'",<br>ring: "'+values[4]+'",<br>effect: "'+values[5]+'"},'
+
+					outputstring[0] = '{'
+					outputstring[1] = 'title: "'+values[0]+'",'
+					outputstring[2] = 'type: "'+values[1]+'",'
+					outputstring[3] = 'rank: "'+values[2]+'",'
+					outputstring[4] = 'reference: "'+values[3]+'",'
+					outputstring[5] = 'ring: "'+values[4]+'",'
+					outputstring[6] = 'effect: "'+values[5]+'"'
+					outputstring[7] = '},'
+					
 					break;
 
 			case "Family":
-					outputstring = 	values[0].toLowerCase()+': {<br>name:"'+values[0]+'",<br>clan:"'+values[1]+'",<br>ring1:"'+values[2]+'",<br>ring2:"'+values[3]+'",<br>advantages:['+values[4]+'],<br>disadvantages:['+values[5]+'],<br>skill1:"'+values[6]+'",<br>skill2:"'+values[7]+'",demeanor:['+values[8]+'],<br>glory:'+values[9]+',<br>wealth:"'+values[10]+'",<br>},'
+										
+					outputstring[0] = values[0].toLowerCase()+': {'
+					outputstring[1] = 'name:"'+values[0]+'",'
+					outputstring[2] = 'clan:"'+values[1]+'",'
+					outputstring[3] = 'ring1:"'+values[2]+'",'
+					outputstring[4] = 'ring2:"'+values[3]+'",'
+					outputstring[5] = 'advantages:['+values[4]+'],'
+					outputstring[6] = 'disadvantages:['+values[5]+'],'
+					outputstring[7] = 'skill1:"'+values[6]+'",'
+					outputstring[8] = 'skill2:"'+values[7]+'",'
+					outputstring[9] = 'demeanor:['+values[8]+'],'
+					outputstring[10] = 'glory:'+values[9]+','
+					outputstring[11] = 'wealth:"'+values[10]+'",'
+					outputstring[12] = '},'
+
 					break;
 
 			case "Weapon":
-					outputstring = '{name: "'+values[0]+'", skill:"['+values[1]+']", category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
+									
+					outputstring[0] = '{name: "'+values[0]+'", skill:"['+values[1]+']", category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
+
 					break;
 
 			case "Armor":
-					outputstring = '{armor:"'+values[0]+'", phys:'+values[1]+', sup:'+values[2]+', qualities:"'+values[3]+'", rarity:"'+values[4]+'", price:"'+values[5]+'", source:"'+values[6]+'"},'
+					outputstring[0] = '{armor:"'+values[0]+'", phys:'+values[1]+', sup:'+values[2]+', qualities:"'+values[3]+'", rarity:"'+values[4]+'", price:"'+values[5]+'", source:"'+values[6]+'"},'
 					break;
 
 			case "Clan":
-					outputstring = values[0]+':{<br>name:"'+values[0]+'",<br>clanring:{'+values[1]+':+1},<br>clanskill:"'+values[2]+'",<br>clanstatus:'+values[3]+',<br>weapons:['+values[4]+'],<br>armor:['+values[5]+'],<br>advantages:['+values[6]+'],<br>disadvantages:['+values[7]+'],<br>},'
+					
+					outputstring[0] = values[0]+':{'
+					outputstring[1] = 'name:"'+values[0]+'",'
+					outputstring[2] = 'clanring:{'+values[1]+':+1},'
+					outputstring[3] = 'clanskill:"'+values[2]+'",'
+					outputstring[4] = 'clanstatus:'+values[3]+','
+					outputstring[5] = 'weapons:['+values[4]+'],'
+					outputstring[6] = 'armor:['+values[5]+'],'
+					outputstring[7] = 'advantages:['+values[6]+'],'
+					outputstring[8] = 'disadvantages:['+values[7]+'],'
+					outputstring[9] = '},'
+
 					break;
 
 			case "Title":
@@ -1026,7 +1112,15 @@ function generateData(){
 					nospaces = nospaces.replace(/,/g, "")
 					nospaces = nospaces.toLowerCase()
 
-					outputstring = nospaces+':{<br>title:"'+values[0]+'",<br>status:"'+values[1]+'",<br>xp:'+values[2]+' ,<br>ability:"'+values[3]+'",<br>advance:['+values[4]+'],<br>source:"'+values[5]+'"<br>},'
+					outputstring[0] = nospaces+':{'
+					outputstring[1] = 'title:"'+values[0]+'",'
+					outputstring[2] = 'status:"'+values[1]+'",'
+					outputstring[3] = 'xp:'+values[2]+' ,'
+					outputstring[4] = 'ability:"'+values[3]+'",'
+					outputstring[5] = 'advance:['+values[4]+'],'
+					outputstring[6] = 'source:"'+values[5]+'"'
+					outputstring[7] = '},'
+
 					break
 
 			case "NPC":
@@ -1034,11 +1128,38 @@ function generateData(){
 					nospaces = values[0].replace(/ /g, "")
 					nospaces = nospaces.replace(/,/g, "")
 					nospaces = nospaces.toLowerCase()
+			
+					outputstring[0] = nospaces+'{'
+					outputstring[1] = 'fullname:"'+values[0]+'",'
+					outputstring[2] = 'title:"'+nospaces+'",'
+					outputstring[3] = 'type:"'+values[1]+'",'
+					outputstring[4] = 'conflictcombat:'+values[2]+','
+					outputstring[5] = 'conflictintrigue:'+values[3]+','
+					outputstring[6] = 'ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},'
+					outputstring[7] = 'honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+','
+					outputstring[8] = 'endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+','
+					outputstring[9] = 'equiptype:"'+values[17]+'",'
+					outputstring[10] = 'skills:{artisanskill:'+values[18]+',martialskill:'+values[19]+',scholarskill:'+values[20]+',socialskill:'+values[21]+',tradeskill:'+values[22]+',},'
+					outputstring[11] = 'demeanor:["'+values[23]+'"],'
+					outputstring[12] = 'advantages:['+values[24]+'],'
+					outputstring[13] = 'disadvantages:['+values[25]+'],'
+					outputstring[14] = 'weapon:['+values[26]+'],'
+					outputstring[15] = 'armor:['+values[27]+'],'
+					outputstring[16] = 'qualities:"'+values[28]+'",'
+					outputstring[17] = 'abilities:['+values[28]+'],'
+					outputstring[18] = 'source:"'+values[29]+'",'
+					outputstring[19] = '},'
 
-					outputstring = '{<br>"'+fullname+':"'+values[0]+'",<br>title:"'+nospaces+'",<br>type:"'+values[1]+'",<br>conflictcombat:'+values[2]+',<br>conflictintrigue:'+values[3]+',<br>ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},<br>honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+',<br>endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+',<br>equiptype:"'+values[17]+'",<br>skills:{artisanskill:'+values[18]+',martialskill:'+values[19]+',scholarskill:'+values[20]+',socialskill:'+values[21]+',tradeskill:'+values[22]+',},<br>demeanor:["'+values[23]+'"],<br>advantages:['+values[24]+'],<br>disadvantages:['+values[25]+'],<br>weapon:['+values[26]+'],armor:['+values[27]+'],<br>qualities:"'+values[28]+'",<br>abilities:['+values[28]+'],<br>source:"'+values[29]+'",<br>},'
 					break;
 		
 			}
-			divcontents("dataoutput",outputstring)
+		
+
+			for (i=0; i< outputstring.length; i++){
+				
+				newdiv("output"+i,"dataoutput","block")
+				
+				document.getElementById("output"+i).textContent = outputstring[i]
+				}
 }
 

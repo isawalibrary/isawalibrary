@@ -212,10 +212,13 @@ function makeNpcLibrary(){
 												'<br>' +
 												'Disadvantage: ' + each.disadvantage +
 												'<br>' 
+
 												 
 		if (each.qualities !== undefined){
-			document.getElementById("stat"+each.title).innerHTML += each.qualities + "<br>" + '<i>Ability</i>: ';
+			document.getElementById("stat"+each.title).innerHTML += each.qualities + "<br>" ;
 		}										 
+
+		document.getElementById("stat"+each.title).innerHTML +='<i>Ability</i>: '
 
 		if (each.schoolability !== "None" && each.schoolability !== "" && each.schoolability !== undefined){
 			 document.getElementById("stat"+each.title).innerHTML += each.schoolability
@@ -232,8 +235,8 @@ function makeNpcLibrary(){
 
 				for (i = 0; i < each.techs.length; i++){
 
-					newdiv("stat"+each.title+"techwrap"+[i],"stat"+each.title,"block")
-					newdiv("stat"+each.title+"techname"+[i],"stat"+each.title+"techwrap"+[i],"block margintop")
+					newdiv("stat"+each.title+"techwrap"+[i],"stat"+each.title,"block margintop")
+					newdiv("stat"+each.title+"techname"+[i],"stat"+each.title+"techwrap"+[i],"block")
 					newdiv("stat"+each.title+"techeffect"+[i],"stat"+each.title+"techwrap"+[i],"block hide")
 
 					thistech = each.techs[i];
@@ -263,6 +266,9 @@ function makeNpcLibrary(){
 					document.getElementById("stat"+each.title+"techeffect"+[i]).innerHTML = techeffects[i]
 				}
 				}
+
+		if (document.getElementById("stat"+each.title+"techwrap0") !== null && document.getElementById("stat"+each.title+"techwrap0") !== undefined){
+						document.getElementById("stat"+each.title+"techwrap0").classList.remove("margintop")}
 		if (technames.length == 0){
 			document.getElementById("stat"+each.title).innerHTML += 'None';
 		}
