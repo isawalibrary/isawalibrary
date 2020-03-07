@@ -46,16 +46,11 @@ var ring = []
 
 function getAdvantages(){
 
-	for (each in archetypes){
-		if (archetypes[each].type == "Pregens"){
-				addToArray(advantages,archetypes[each].advantages)
-			}}
-
-	for (each in clandata){
+	for (each in clandata){  //familiesdata
 		addToArray(advantages,clandata[each].advantages)
 	}
 
-	for (each in families){
+	for (each in families){  //familiesdata
 		addToArray(advantages,families[each].advantages)
 	}
 
@@ -63,9 +58,16 @@ function getAdvantages(){
 		addToArray(advantages,templates[each].advantages)
 	}
 
-	for (each in roninupbringings){
+	for (each in roninupbringings){  //familiesdata
 		addToArray(advantages,roninupbringings[each].advantages)
 	}
+
+	for (each in archetypes){  //npcdata
+		if (archetypes[each].type == "Pregen"){
+			addToArray(advantages,archetypes[each].advantages)
+		}
+	}
+
 	advantages.sort()
 	advantages = removeDuplicates(advantages)
 
@@ -89,11 +91,6 @@ for (i = 0; i < rings.length; i++){
 
 function getDisadvantages(){
 
-	for (each in archetypes){
-		if (archetypes[each].type == "Pregens"){
-				addToArray(disadvantages,archetypes[each].disadvantages)
-			}}
-
 	for (each in clandata){
 		addToArray(disadvantages,clandata[each].disadvantages)
 	}
@@ -106,6 +103,12 @@ function getDisadvantages(){
 	}
 	for (each in roninupbringings){
 		addToArray(disadvantages,roninupbringings[each].disadvantages)
+	}
+
+	for (each in archetypes){
+		if (archetypes[each].type == "Pregen"){
+			addToArray(disadvantages,archetypes[each].disadvantages)
+		}
 	}
 	disadvantages.sort()
 	disadvantages = removeDuplicates(disadvantages)

@@ -913,7 +913,7 @@ function setUpDataBuilder(){
 
 	makeSelect("datatype","datatypeselect","center block styledselect","createDataForm()")
 
-	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC","Title"]
+	datatypearray = ["Technique","School","Clan","Family","Weapon","Armor","NPC Weapon","NPC Armor","NPC","Title"]
 
 	makeSelectDropdown("datatypeselect","Select Data Type",datatypearray)
 
@@ -935,7 +935,7 @@ function createDataForm(){
 	switch (datatype) {
 
 		case "School":
-				datafields = ["Title (no spaces, lower case i.e. wanderingblade)","Family","School Name","Clan","School Ring 1","School Ring 2","Sourcebook","Number of Starting Skills","Artisan Skill","Social Skill","Scholar Skill","Martial Skill","Trade Skill","Taught School Skills","Honor","Weapons ([])","Armor ([])","Role ([])","School Technique Types ([])","Starting Techs ([])","Starting Tech Options ([[A,B,C],[D,E]])","Choices Available from Starting Options ([2,1])","School Ability","Rank 1 Curriculum Techniques","Rank 2 Curriculum Techniques","Rank 3 Curriculum Techniques","Rank 4 Curriculum Techniques","Rank 5 Curriculum Techniques","Keywords"]
+				datafields = ["School Name","Family (if Ronin, 'other')","Clan (if Ronin, 'Other')","School Ring 1","School Ring 2","Sourcebook","Number of Starting Skills","Skill: Artisan","Social","Scholar","Martial","Trade","Taught School Skills (['Courtesy','Command'])","Honor","Weapons (['Katana','Wakizashi'])","Armor (['Traveling Clothes'])","Role (['Bushi','Sage'])","School Technique Types ([])","Starting Techs ([])","Starting Tech Options ([[A,B,C],[D,E]])","Choices Available from Starting Options ([2,1])","School Ability ([])","Rank 1 Curriculum Techniques ([])","Rank 2 Curriculum Techniques ([])","Rank 3 Curriculum Techniques ([])","Rank 4 Curriculum Techniques ([])","Rank 5 Curriculum Techniques ([])","Keywords"]
 				break;
 
 		case "Technique":
@@ -955,7 +955,7 @@ function createDataForm(){
 				break;
 
 		case "NPC":
-				datafields = ["Name","Type","Combat Conflict Rating","Intrigue Conflict Rating","Ring Type (set / random)","Earth Ring","Air Ring","Fire Ring","Water Ring","Void Ring","Honor","Glory","Status","Endurance","Composure","Focus","Vigilance","Equipment Type (equipped or natural)","Artisan Skill","Martial Skill","Scholar Skill","Social Skill","Trade Skill","Demeanor ([])","Advantages ([])","Disadvantages ([])","Weapon ([])","Armor ([])","Qualities (An oni is an Otherworldly, Tainted being of silhouette 4.)","Abilities ([])","Sourcebook"]
+				datafields = ["Name","Combat Conflict Rating","Intrigue Conflict Rating","Type (Clan Samurai / Animals / Creatures / Pregen)","Ring Type (set / random)","Earth Ring","Air Ring","Fire Ring","Water Ring","Void Ring","Honor","Glory","Status","Endurance","Composure","Focus","Vigilance","Equipment Type (equipped or natural)","Artisan Skill","Martial Skill","Scholar Skill","Social Skill","Trade Skill","Demeanor ([])","Advantages ([])","Disadvantages ([])","Weapon ([])","Armor ([])","Qualities (An oni is an Otherworldly, Tainted being of silhouette 4.)","Abilities ([&lt;span class='l5r'>O&lt;/span>])","Sourcebook"]
 				break;
 
 		case "Weapon":
@@ -965,12 +965,57 @@ function createDataForm(){
 		case "Title":
 				datafields = ["Title","Status","Xp","Ability (Title Ability: )","Advance ([])","Source"]
 				break;
+
+		case "NPC Weapon":
+				datafields = ["name","range","damage","deadliness","qualities","type (equipped or natural)"]
+				break;
+
+		case "NPC Armor":
+				datafields = ["name","phys res","supernatural res","qualities","type (equipped or natural)"]
 	}
 
+	//makes big fields
 	for (i=0; i< datafields.length; i++){
 		makeTextInput("dataform","data"+[i],"block datainputlength margin10",datafields[i]+": ","datainput"+[i],"styledselect margin10 datainputlength")
 
-		
+		if (datatype == "NPC" && (i == 24 || i == 25 || i == 29 )|| datatype == "Technique" && i == 5 || datatype == "School" && (i == 12 ||  i == 21) || datatype == "Title" && i == 3 || datatype == "Clan" && (i == 6 || i == 7 ) || datatype == "Family" && (i == 4 || i == 5)){
+				var elem = document. getElementById("datainput"+i); 
+				elem.parentNode.removeChild(elem);
+				makeTextArea("data"+i,"datainput"+i,"styledselect margin10 datainputlength")
+		}
+
+		//makes little fields
+		if (datatype == "School" && (i > 6 && i < 12 ) || datatype == "Weapon" && (i == 3 || i == 4 || i == 5 )  || datatype == "NPC" && ( (i > 4 && i < 17) || (i > 17 && i < 23)) || datatype == "NPC Weapon" && (i == 1 || i == 2 || i == 3 )  ){
+			document.getElementById("datainput"+i).classList.remove("datainputlength")
+			document.getElementById("data"+i).classList.remove("datainputlength")
+			document.getElementById("datainput"+i).classList.add("datanumlength")
+			document.getElementById("data"+i).classList.add("datanumformlength")
+						document.getElementById("data"+i).classList.remove("block")
+			document.getElementById("data"+i).classList.add("inlineblock")
+		}
+
+		//makes medium fields
+
+		if (datatype == "NPC" && (i > 0 && i < 5) || datatype == "School" && (i == 3 || i == 4 || i == 1 || i == 2 || i == 5 || i == 6) || datatype == "Family" && (i == 2 || i == 3|| i == 6 || i == 7) || datatype == "Weapon" && (i == 1 || i == 2) || datatype == "Armor" && (i == 4 || i == 5) || datatype == "NPC Armor" && (i == 1 || i == 2 )  || datatype == "Armor" && (i == 1 || i == 2 )  ){
+			document.getElementById("data"+i).classList.remove("datainputlength")
+			document.getElementById("datainput"+i).classList.remove("datainputlength")
+			document.getElementById("datainput"+i).classList.add("datamedlength")
+			document.getElementById("data"+i).classList.add("datamedlength")
+			document.getElementById("data"+i).classList.remove("block")
+			document.getElementById("data"+i).classList.add("inlineblock")
+		}
+
+
+		//makes field with line break before it
+		if (datatype == "NPC" && (i == 10 || i == 13 || i == 3 || i == 5) || datatype == "Weapon" && (i == 3) || datatype == "School" && (i == 3 || i == 5 || i == 7)){
+			var div = document.createElement('div')
+			div.id = "newlinediv"
+			div.classList.add("block")
+			
+			breakdiv = document.getElementById("data"+i)
+			breakdiv.parentNode.insertBefore(div, breakdiv)
+			
+		}
 
 		datavalue = document.getElementById("datainput"+[i]).value
 		values.push(datavalue);
@@ -979,6 +1024,7 @@ function createDataForm(){
 			
 			makeButton("dataform","cleardatabutton","styledselect margintop margin10","clearData()","Clear Fields")
 			makeButton("dataform","copydatabutton","styledselect margintop margin10","copyDivToClipboard()","Copy JSON")
+			newdiv("datainstruction","dataform","block margin10")
 		}
 
 
@@ -1020,34 +1066,40 @@ function generateData(){
 
 		switch (datatype) {
 			case "School":
+
+					nospaces = values[0].replace(/ /g, "")
+					nospaces = nospaces.replace(/,/g, "")
+					nospaces = nospaces.toLowerCase()
 										
-					outputstring[0] = values[0]+': {'
+					outputstring[0] = nospaces+': {'
 					outputstring[1] = 'family:"'+values[1]+'",'
-					outputstring[2] = 'name:"'+values[2]+'",'
-					outputstring[3] = 'clan:"'+values[3]+'",'
-					outputstring[4] = 'ring1: "'+values[4]+'",'
-					outputstring[5] = 'ring2: "'+values[5]+'",'
-					outputstring[6] = 'source: "'+values[6]+'",'
-					outputstring[7] = 'skillnumber: '+values[7]+','
-					outputstring[8] = 'schoolskills:{Artisan:'+values[8]+',Social:'+values[9]+',Scholar:'+values[10]+',Martial:'+values[11]+',Trade:'+values[12]+'}'
-					outputstring[9] = 'skills: ['+values[13]+'],'
-					outputstring[10] = 'honor: '+values[14]+','
-					outputstring[11] = 'weapons:['+values[15]+'],'
-					outputstring[12] = 'armor:['+values[16]+'],'
-					outputstring[13] = 'techniquetypes: ['+values[17]+'],'
-					outputstring[14] = 'role: ['+values[18]+'],'
-					outputstring[15] = 'startingtechs: ['+values[19]+'],'
-					outputstring[16] = 'startingtechoptions: ['+values[20]+'],'
-					outputstring[17] = 'chooseoptions:['+values[21]+'],'
-					outputstring[18] = 'ability:['+values[22]+'],'
-					outputstring[19] = 'rank1techs:['+values[23]+'],'
-					outputstring[20] = 'rank2techs:['+values[24]+'],'
-					outputstring[21] = 'rank3techs:['+values[25]+'],'
+					outputstring[2] = 'name:"'+values[0]+'",'
+					outputstring[3] = 'clan:"'+values[2]+'",'
+					outputstring[4] = 'ring1: "'+values[3]+'",'
+					outputstring[5] = 'ring2: "'+values[4]+'",'
+					outputstring[6] = 'source: "'+values[5]+'",'
+					outputstring[7] = 'skillnumber: '+values[6]+','
+					outputstring[8] = 'schoolskills:{Artisan:'+values[7]+',Social:'+values[8]+',Scholar:'+values[9]+',Martial:'+values[10]+',Trade:'+values[11]+'}'
+					outputstring[9] = 'skills: ['+values[12]+'],'
+					outputstring[10] = 'honor: '+values[13]+','
+					outputstring[11] = 'weapons:['+values[14]+'],'
+					outputstring[12] = 'armor:['+values[15]+'],'
+					outputstring[13] = 'techniquetypes: ['+values[16]+'],'
+					outputstring[14] = 'role: ['+values[17]+'],'
+					outputstring[15] = 'startingtechs: ['+values[18]+'],'
+					outputstring[16] = 'startingtechoptions: ['+values[19]+'],'
+					outputstring[17] = 'chooseoptions:['+values[20]+'],'
+					outputstring[18] = 'ability:['+values[21]+'],'
+					outputstring[19] = 'rank1techs:['+values[22]+'],'
+					outputstring[20] = 'rank2techs:['+values[23]+'],'
+					outputstring[21] = 'rank3techs:['+values[24]+'],'
 					outputstring[22] = 'rank3techs:['+values[25]+'],'
 					outputstring[23] = 'rank4techs: ['+values[26]+'],'
 					outputstring[24] = 'rank5techs:"'+values[27]+'",'
 					outputstring[25] = 'keyword:"'+values[28]+'",'
 					outputstring[26] = '},'
+
+					datainstruction = "paste into schoolsdata.js var schools"
 
 					break
 
@@ -1061,6 +1113,8 @@ function generateData(){
 					outputstring[5] = 'ring: "'+values[4]+'",'
 					outputstring[6] = 'effect: "'+values[5]+'"'
 					outputstring[7] = '},'
+
+					datainstruction = "paste into techniquesdata.js var techniques"
 					
 					break;
 
@@ -1080,16 +1134,34 @@ function generateData(){
 					outputstring[11] = 'wealth:"'+values[10]+'",'
 					outputstring[12] = '},'
 
+					datainstruction = "paste into familiesdata.js var families"
+
 					break;
 
 			case "Weapon":
 									
 					outputstring[0] = '{name: "'+values[0]+'", skill:"['+values[1]+']", category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
 
+					datainstruction = "paste into tablesdata.js with the other weapons"
+
+					break;
+
+			case "NPC Weapon":
+					outputstring[0] = '{name: "'+values[0]+'", range:"'+values[1]+'", damage:"'+values[2]+'", deadliness:"'+values[3]+'", qualities:"'+values[4]+'", type:"'+values[5]+'"},' 
+
+					datainstruction = "paste into npcgear.js var npcweapons"
+					break;
+
+			case "NPC Armor":
+					outputstring[0] = '{armor: "'+values[0]+'", phys:"'+values[1]+'", sup:"'+values[2]+'", qualities:"'+values[3]+'", type:"'+values[4]+'"},' 
+
+					datainstruction = "paste into npcgear.js var npcarmor"
 					break;
 
 			case "Armor":
 					outputstring[0] = '{armor:"'+values[0]+'", phys:'+values[1]+', sup:'+values[2]+', qualities:"'+values[3]+'", rarity:"'+values[4]+'", price:"'+values[5]+'", source:"'+values[6]+'"},'
+
+					datainstruction = "paste into tablesdata.js with the other armors"
 					break;
 
 			case "Clan":
@@ -1105,6 +1177,7 @@ function generateData(){
 					outputstring[8] = 'disadvantages:['+values[7]+'],'
 					outputstring[9] = '},'
 
+					datainstruction = "paste into familiesdata.js var clandata"
 					break;
 
 			case "Title":
@@ -1121,6 +1194,8 @@ function generateData(){
 					outputstring[6] = 'source:"'+values[5]+'"'
 					outputstring[7] = '},'
 
+					datainstruction = "paste into schoolsdata.js var titles"
+
 					break
 
 			case "NPC":
@@ -1128,36 +1203,40 @@ function generateData(){
 					nospaces = values[0].replace(/ /g, "")
 					nospaces = nospaces.replace(/,/g, "")
 					nospaces = nospaces.toLowerCase()
-			
-					outputstring[0] = nospaces+'{'
+
+					outputstring[0] = '{'
 					outputstring[1] = 'fullname:"'+values[0]+'",'
 					outputstring[2] = 'title:"'+nospaces+'",'
-					outputstring[3] = 'type:"'+values[1]+'",'
+					outputstring[3] = 'type:"'+values[3]+'",'
 					outputstring[4] = 'conflictcombat:'+values[2]+','
-					outputstring[5] = 'conflictintrigue:'+values[3]+','
+					outputstring[5] = 'conflictintrigue:'+values[1]+','
 					outputstring[6] = 'ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},'
 					outputstring[7] = 'honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+','
 					outputstring[8] = 'endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+','
 					outputstring[9] = 'equiptype:"'+values[17]+'",'
 					outputstring[10] = 'skills:{artisanskill:'+values[18]+',martialskill:'+values[19]+',scholarskill:'+values[20]+',socialskill:'+values[21]+',tradeskill:'+values[22]+',},'
-					outputstring[11] = 'demeanor:["'+values[23]+'"],'
+					outputstring[11] = 'demeanor:['+values[23]+'],'
 					outputstring[12] = 'advantages:['+values[24]+'],'
 					outputstring[13] = 'disadvantages:['+values[25]+'],'
 					outputstring[14] = 'weapon:['+values[26]+'],'
 					outputstring[15] = 'armor:['+values[27]+'],'
 					outputstring[16] = 'qualities:"'+values[28]+'",'
-					outputstring[17] = 'abilities:['+values[28]+'],'
-					outputstring[18] = 'source:"'+values[29]+'",'
+					outputstring[17] = 'abilities:['+values[29]+'],'
+					outputstring[18] = 'source:"'+values[30]+'",'
 					outputstring[19] = '},'
+
+					datainstruction = "paste into npcdata.js var archetypes"
 
 					break;
 		
 			}
+
+			document.getElementById("datainstruction").innerHTML = datainstruction
 		
 
 			for (i=0; i< outputstring.length; i++){
 				
-				newdiv("output"+i,"dataoutput","block")
+				newdiv("output"+i,"dataoutput","block margintop")
 				
 				document.getElementById("output"+i).textContent = outputstring[i]
 				}

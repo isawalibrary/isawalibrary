@@ -402,6 +402,8 @@ function selectType(){
 			archetypelist.push(archetypes[elem].fullname);
 	}}
 
+	archetypelist.sort()
+
 	makeSelectDropdown("archetype","Select Archetype",archetypelist);
 	buildNpcMenu1();
 
@@ -916,25 +918,36 @@ function addExtraWeapon(){
 			makeSelect("npcweaponwrap"+i,"npcweapon"+i,"styledselect inline marginbottom","selectNPCWeapon('"+i+"');")
 
 				weapons = [];
+				weaponstats = [];
 
 				if (thisnpc.equiptype == "equipped"){
 
 				for (each in tabledata[8].children){
 					if (tabledata[8].children[each].name !== "NAME"){
-						weapons.push(tabledata[8].children[each].name)
+						weap = tabledata[8].children[each]
+						weapons.push(weap.name)
+						weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
 					}
 				}
 
 				if (thisnpc.equiptype == "natural"){
 					for (each in npcweapons){
 					if (npcweapons[each].type == "natural"){
-						weapons.push(npcweapons[each].name)
+						weap = npcweapons[each]
+						weapons.push(weap.name)
+						weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
 					}
 				}}
 
 			weapons.sort();
+			weaponstats.sort();
 
 			makeSelectDropdown("npcweapon"+i,"Select Weapon",weapons)
+
+			for (j = 0; j < weaponstats.length; j++){
+				document.getElementById("npcweapon"+i).options[j].innerHTML = weaponstats[j]
+				document.getElementById("npcweapon"+i).options[j].value = weapons[j]
+			}
 
 			newdiv("npcweapon"+i+"stats","npcweaponwrap"+i,"inline margin10")
 			makeButton("npcequip","extraweapon","inlineblock margin10","addExtraWeapon()","+")
@@ -2210,30 +2223,43 @@ function editAddWeapon(num,equiptypestring){
 		makeSelect("editweaponwrap"+k,"editweaponinput"+k,"margintop styledselect inlineblock","selectNPCWeaponEdit('editweaponinput"+k+"','editweaponstats"+k+"');")
 		
 		weapons = [];
+		weaponstats = []
 
 		if (equiptype == "equipped"){
 			for (each in tabledata[8].children){
 				if (tabledata[8].children[each].name !== "NAME"){
-					weapons.push(tabledata[8].children[each].name)
+					weap = tabledata[8].children[each]
+					weapons.push(weap.name)
+					weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
 				}
 		}}
 
 		weapons.sort();
+		weaponstats.sort();
 
 		if (equiptype == "equipped"){
 			for (each in npcweapons){
 				if (npcweapons[each].type == "equipped"){
-					weapons.push(npcweapons[each].name)
+					weap = npcweapons[each]
+					weapons.push(weap.name)
+					weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
 				}
 		}}
 		if (equiptype == "natural"){
 			for (each in npcweapons){
 				if (npcweapons[each].type == "natural"){
-					weapons.push(npcweapons[each].name)
+					weap = npcweapons[each]
+					weapons.push(weap.name)
+					weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
 				}
 		}}
 
 		makeSelectDropdown1("editweaponinput"+k,weapons)
+
+		for (m = 0; m < weapons.length; m ++){
+			document.getElementById("editweaponinput"+k).options[m].value = weapons[m]
+			document.getElementById("editweaponinput"+k).options[m].innerHTML = weaponstats[m]
+		}
 
 		newdiv("editweaponstats"+k,"editweaponwrap"+k,"inline margin10")
 

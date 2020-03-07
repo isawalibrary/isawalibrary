@@ -8,12 +8,25 @@
 }
 
 .datainputlength {
-    width: 200px;
+    width: 300px;
+  }
+
+  .datanumlength {
+    width: 30px;
+  }
+
+   .datanumformlength {
+    width: 55px;
+  }
+
+     .datamedlength {
+    width: 145px;
   }
 
 .notbold {
   font-weight: normal;
 }
+
 
 body {
   font-family: 'Abel';
@@ -167,7 +180,7 @@ body {
 }
 
 #dataoutput {
-  width: 550px;
+  width: 450px;
   vertical-align: top;
 }
 
