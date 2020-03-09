@@ -1521,7 +1521,7 @@ function saveNPC (){
 		} 
 
 		for (i=0; npcarmor.length > i; i++){
-			if ( npcarmor[i].title == npc[nospaces].armor0){
+			if ( npcarmor[i].armor == npc[nospaces].armor0){
 				selectedArmor = npcarmor[i];
 			}
 				npc[nospaces].armorphys = selectedArmor.phys
@@ -2154,7 +2154,23 @@ function saveEditNpc(nom){
 		}
 
 	nom.armor = document.getElementById("editarmorinput").value
-	nom.armorstats = document.getElementById("editarmorstats").innerHTML;
+		
+		for(i=0; i < tabledata[9].children.length; i++){
+			if (tabledata[9].children[i].armor == npc[nospaces].armor0){
+				selectedArmor = tabledata[9].children[i]
+			}	
+				npc[nospaces].armorphys = selectedArmor.phys
+				npc[nospaces].armorsup = selectedArmor.sup
+		} 
+
+		for (i=0; npcarmor.length > i; i++){
+			if ( npcarmor[i].armor == npc[nospaces].armor0){
+				selectedArmor = npcarmor[i];
+			}
+				npc[nospaces].armorphys = selectedArmor.phys
+				npc[nospaces].armorsup = selectedArmor.sup
+		}
+
 
 	nom.ability = document.getElementById("editschoolability1").innerHTML
 	nom.schoolability = document.getElementById("editschoolability").innerHTML;
