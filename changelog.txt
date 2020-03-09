@@ -1,35 +1,33 @@
 -Upcoming
-+ Insert the ring symbols into the context tables
-+ Input the Shadowlands opps table data - was it too spoilery?  Was that why it wasn't already in?
++ Fix armor stats showing as undefined in edit npc.  When the edit npc is saved it loses the armor info.
 
++ Insert the ring symbols into the context tables
++ Input the Shadowlands opps table data - was it too spoilery?  Was that why it wasn't already in?  Or did it clash with Taint house rules.
 + Go over the existing families with Adv/Disadv & Demeanor list.  Some families have far less than others.
 
-+ For function generateData(), row 1013, replace divcontents with something using innerText instead of innerHTML as this will allow tags like <br> to be typed in, add buttons for inserting common tags like the <span class="l5r"></span> tags, make larger textarea boxes for the longer inputs like technique effect.  Maaaybe have the innerHTML display to the right of the text input box as the input is typed into, so you can see how it appears when it is HTMLized.
 + Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
 + Get Random NPC - fully randomised, maybe weight the different groups or ronin will be overrepresented due to large number of options. 
 + Add some of the new Intrigue goals from PoW
-+ Allow saving, loading and deleting multiple skirmish groups - so I can set up a fight with bandits for the start of the session, then another fight for the boss battle at the end - maybe not necessary, maybe can just have the npcs in the library - maybe add a button for add all PCs
 
-+ Maybe put Jason Maker somewhere else, I don't like the centred look - if there was a button to autocopy the Jason blob as last step of Jason Making that would be good too
-+ Go through all the npc stuff, standardise stuff like enemy qualities (traits?) and make sure multiple abilities in [] display properly 
++ Add demeanors and favoured weapons to the families and schools
 
-+ Add advantages and disadvantages and demeanors, favoured weapons, to the new backgrounds, upbringings and schools
-+ Go through advs and disadvs for the other clans, families and archetypes
 + Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
 + make getWeaponStats function to get weapon stats easily
 + Add 'extra advantage' and 'extra disadvantage' in NPC edit
-+ Add filter button for 'Add new weapon' for NPC edit (i.e. free text field, weapon category), make the dropdown for selecting the new weapon display "Weapon name (Dmg / Dls)" so it isn't just a dropdown of gibberish
-+ Sort pregens, creatures into alphabetical on NPC builder - go through to standardise so that Goblin, Shaman and Goblin, Warrior appear next to each other
 + Add SECRET option in character maker, have it structured as a clan, the different groups can be represented by families, and the different social roles in their society can be schools.  Maybe don't add this yet, so the SECRET are a surprise when they show up in the story.
 
 -Next Overhaul 
 + Standardise some of the very similar advs and disadvs
++ Add categories like Sword, Hand, Blunt to the npc weapons, Natural would be a category for all the fangs and maws etc.
 + Get rid of the random extra files that are building up in the repository
 + Go through, declare all vars properly to prevent random global var accumulation
 + For the makeSelect etc functions, make it so parameters can be strings or DOM objects.
-+ Consolidate the functions for add weapons button from NPC builder and the NPC Edit
++ Consolidate the functions for add weapons button from NPC builder and the NPC Edit, similar for add techniques
 + Full character building - skills not skill groups, title support - don't even know if I want titles to be used at all
-+ Standardise all div names, make all function names proper camelCase
++ Standardise all div names, make all function names proper camelCase even newdiv and divcontents
+
+-version 0.17 06.03.20
+Bug fixes, entered some more creatures from Path of Waves
 
 -version 0.16 29.02.20
 + Opps tables are all condensed into one table in Reference
