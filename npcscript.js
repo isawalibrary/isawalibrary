@@ -2156,19 +2156,19 @@ function saveEditNpc(nom){
 	nom.armor = document.getElementById("editarmorinput").value
 		
 		for(i=0; i < tabledata[9].children.length; i++){
-			if (tabledata[9].children[i].armor == npc[nospaces].armor0){
+			if (tabledata[9].children[i].armor == nom.armor0){
 				selectedArmor = tabledata[9].children[i]
 			}	
-				npc[nospaces].armorphys = selectedArmor.phys
-				npc[nospaces].armorsup = selectedArmor.sup
+				nom.armorphys = selectedArmor.phys
+				nom.armorsup = selectedArmor.sup
 		} 
 
 		for (i=0; npcarmor.length > i; i++){
-			if ( npcarmor[i].armor == npc[nospaces].armor0){
+			if ( npcarmor[i].armor == nom.armor0){
 				selectedArmor = npcarmor[i];
 			}
-				npc[nospaces].armorphys = selectedArmor.phys
-				npc[nospaces].armorsup = selectedArmor.sup
+				nom.armorphys = selectedArmor.phys
+				nom.armorsup = selectedArmor.sup
 		}
 
 
