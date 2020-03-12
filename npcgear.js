@@ -46,6 +46,13 @@ var npcweapons=[
 				{name: "Tentacle Arms", range:"0-5", damage:"8", deadliness:"6", qualities:"", type:"natural"},
 				{name: "Scorpion Claws", range:"0", damage:"4", deadliness:"3", qualities:"", type:"natural"},
 				{name: "Tail Stinger", range:"0-1", damage:"3", deadliness:"6", qualities:"", type:"natural"},
+{name: "None", range:"0", damage:"0", deadliness:"0", qualities:"", type:"natural"},
+{name: "Arcing Lightning", range:"0-4", damage:"4", deadliness:"5", qualities:"deals Supernatural damage", type:"natural"},
+{name: "Razor Teeth", range:"0", damage:"7", deadliness:"9", qualities:"Razor-Edged", type:"natural"},
+{name: "Razor Claws", range:"0", damage:"4", deadliness:"6", qualities:"Razor-Edged", type:"natural"},
+{name: "Deadly Claws", range:"0-1", damage:"5", deadliness:"4", qualities:"Razor-Edged, Unholy", type:"natural"},
+{name: "Urumi", range:"1-2", damage:"4", deadliness:"5", qualities:"Cumbersome, Razor-Edged, Snaring", type:"equipped"},
+
 
 
 				];
@@ -85,6 +92,9 @@ var npcarmor=[
 				{armor:"Fur",phys:1,sup:0,qualities:"",type:"natural"},
 				{armor: "Supernatural Hide", phys:"3", sup:"3", qualities:"", type:"natural"},
 				{armor: "Chitinous Hide", phys:"3", sup:"0", qualities:"", type:"natural"},
+{armor: "Electric Form", phys:"10", sup:"0", qualities:"", type:"natural"},
+{armor: "Turtle Shell", phys:"4", sup:"2", qualities:"", type:"natural"},
+{armor: "Unholy Hide", phys:"3", sup:"2", qualities:"Unholy", type:"equipped"},
 
 
 
