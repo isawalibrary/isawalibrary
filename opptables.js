@@ -17,6 +17,7 @@ function setUpRingOpps(){
 function ringOppTables(){
 
 	thisTable = []
+	thisTableTitle = []
 	thisTable[0] = {ring:"", spend:"OPPORTUNITIES SPEND"}
 
 	thisRing = document.getElementById("ringselect").value
@@ -26,11 +27,12 @@ function ringOppTables(){
 	for (each in oppdata){
 		for (every in oppdata[each].children){
 			x = oppdata[each].children[every].ring
+			title = oppdata[each].title
 			ringOpps = oppdata[each].children[every]
 
 			if (x !== undefined){
 			if (x.includes(thisRing) || x.includes("Any")){
-
+				thisTableTitle.push(title)
 				thisTable.push(ringOpps)
 
 			}
@@ -43,7 +45,7 @@ function ringOppTables(){
 
 			newdiv(title,"opps-table","block");
 			
-			divcontents(title,"<table id='"+tabletitle+"'></table>"); 
+			divContents(title,"<table id='"+tabletitle+"'></table>"); 
 			document.getElementById(title).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
 
 			var rownumber = 0;
@@ -94,26 +96,20 @@ function ringOppTables(){
 				rownumber++;
 				itemnumber = 0;
 				}
-
-
 			})
 
 	setSelectedValue(document.getElementById("contextselect"), "O by Context")
 
 	var array = ["Air-opps-table","Earth-opps-table","Fire-opps-table","Water-opps-table","Void-opps-table"]
 
-	for (i = 0; i < array.length; i++){
+	for (var i = 0; i < array.length; i++){
 		if (document.getElementById(array[i]) !== null){
-					document.getElementById(array[i]).rows[1].cells[0].innerText = document.getElementById(array[i]).rows[1].cells[0].innerText + " General"
-					document.getElementById(array[i]).rows[2].cells[0].innerText = document.getElementById(array[i]).rows[2].cells[0].innerText + " General"
-					document.getElementById(array[i]).rows[3].cells[0].innerText = document.getElementById(array[i]).rows[3].cells[0].innerText + " Initiative"
-					document.getElementById(array[i]).rows[4].cells[0].innerText = document.getElementById(array[i]).rows[4].cells[0].innerText + " Martial"
-					document.getElementById(array[i]).rows[5].cells[0].innerText = document.getElementById(array[i]).rows[5].cells[0].innerText + " Invocation"
-					document.getElementById(array[i]).rows[6].cells[0].innerText = document.getElementById(array[i]).rows[6].cells[0].innerText + " Other Skills"
-					document.getElementById(array[i]).rows[7].cells[0].innerText = document.getElementById(array[i]).rows[7].cells[0].innerText + " Downtime"
-					document.getElementById(array[i]).rows[8].cells[0].innerText = document.getElementById(array[i]).rows[8].cells[0].innerText + " Negotiations"
-					document.getElementById(array[i]).rows[9].cells[0].innerText = document.getElementById(array[i]).rows[9].cells[0].innerText + " Romance"
-					document.getElementById(array[i]).rows[10].cells[0].innerText = document.getElementById(array[i]).rows[10].cells[0].innerText + " Espionage"
+			var table = document.getElementById(array[i])
+
+					for (var j = 1; j < thisTable.length; j++){
+						var k = j - 1;
+						document.getElementById(array[i]).rows[j].cells[0].innerText = document.getElementById(array[i]).rows[j].cells[0].innerText +" "+ thisTableTitle[k]
+					}
 				}
 	}
 }
