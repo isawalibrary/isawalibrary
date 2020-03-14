@@ -6,7 +6,7 @@ rank: "3",
 reference: "Core 174",
 ring: "Void",
 effect: "Activation: When you make an Initiative check for a duel using your Void Ring, you may spend <span class='l5r'>O</span> in the following way:<br><br>Void <span class='l5r'>O</span> <span class='l5r'>O</span>: You name two rings, then your opponent must name one of those two rings. When your opponent selects their stance during their first turn of the duel, they cannot select the ring they named as their stance.<br>Void <span class='l5r'>O</span>+: Choose a technique category. Learn one of your opponent's known techniques of that category (chosen by the opponent) per <span class='l5r'>O</span> spent this way."},{
-title: "Breath of the Wind Style",
+title: "Breath of Wind Style",
 type: "Kata",
 rank: "4",
 reference: "Core 175",
