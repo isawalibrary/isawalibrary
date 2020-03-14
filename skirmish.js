@@ -193,7 +193,7 @@ function addToSkirmish(){
  	skirmishcharacters[title].stance="Stance";
  	skirmishcharacters[title].notes="";
  	skirmishcharacters[title].engaged="";
- 	skirmishcharacters[title].status=skirmishcharacters[elem].status;
+ 	skirmishcharacters[title].status="alive";
 
  	buildSkirmishCharacter(title);
 
