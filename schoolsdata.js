@@ -1499,7 +1499,7 @@ Unicorn:{
 			rank3techs:["Iron in the Mountains Style","Tonight, I am Your Opponent",],
 			rank4techs:["Bravado","Void Embrace Style",],
 			rank5techs:["Bond of Heroes","Roar of Encouragement",],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		studentofthetalon: {
 			family: "Other",
 			name: "Student of the Talon",
@@ -1524,7 +1524,7 @@ Unicorn:{
 			rank3techs:["Wasp's Spite Style","Eyeless Sight Shot"],
 			rank4techs:["Wolf's Proposal","Falling Heavens Shot"],
 			rank5techs:["Deadly Sting","Watch My Back"],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		treasurehunter: {
 			family: "Other",
 			name: "Treasure Hunter",
@@ -1549,7 +1549,7 @@ Unicorn:{
 			rank3techs:["Dazzling Performance","Laughing Fox Style"],
 			rank4techs:["Regal Bearing","Ruse of the Moon's Reflection"],
 			rank5techs:["Watch My Back","Roar of Encouragement"],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		schoolofleaves: {
 			family: "Other",
 			name: "School of Leaves",
@@ -1574,7 +1574,7 @@ Unicorn:{
 			rank3techs:["Noxious Cloud","Wasp's Spite Style"],
 			rank4techs:["Iaijutsu Cut: Reverse Draw","Ruse of Moon's Reflection"],
 			rank5techs:["Bend with the Storm","Silencing Stroke"],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		voiceofthewilds: {
 			family: "Other",
 			name: "Voice of the Wilds",
@@ -1599,7 +1599,7 @@ Unicorn:{
 			rank3techs:["Fury of Osano-wo","Hands of the Tides"],
 			rank4techs:["Mentor's Guidance","False Realm of the Fox Spirits"],
 			rank5techs:["Ever Changing Waves"],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		artisanoftheroads: {
 			family: "Other",
 			name: "Artisan of the Roads",
@@ -1624,7 +1624,7 @@ Unicorn:{
 			rank3techs:["Bravado","Wheeling Sweep"],
 			rank4techs:["Mentor's Guidance","Laughing Fox Style"],
 			rank5techs:["Roar of Encouragement","Rouse the Soul"],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		mysticofthemountain: {
 			family: "Other",
 			name: "Mystic of the Mountains",
@@ -1649,7 +1649,7 @@ Unicorn:{
 			rank3techs:["Way of the Falling Star","Ride the Water Dragon"],
 			rank4techs:["Touch the Void Dragon","Pillar of Calm"],
 			rank5techs:["Way of the Edgeless Sword","Bend with the Storm"],
-			keyword: "Unaligned",},
+			keyword: "Unaligned ronin",},
 		ujikdiviner: {
 			family: "Other",
 			name: "Ujik Diviner",
