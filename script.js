@@ -229,9 +229,6 @@ function insertRingSymbols(){
 };
 
 
-function insertOpportunitySymbols(){
-
-}
 
 function sortTable(tableName,sortByColumn) {
   var table, rows, switching, i, x, y, shouldSwitch;

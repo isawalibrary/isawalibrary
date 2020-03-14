@@ -174,7 +174,7 @@ var schools = {
 			role: ['Bushi'],
 			techniquetypes: ['Shuji','Rituals','Kata'],
 			startingtechs: ['Crescent Moon Style'],
-			startingtechoptions: ['Honest Assessment','Well of Desire'],
+			startingtechoptions: [['Honest Assessment','Well of Desire']],
 			chooseoptions: [1],
 			ability:"Claws of the Crab: When you successfully perform the Guard action (Core p264) you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span>+: If you succeed, you may guard one additional character in range per <span class='l5r'>O</span> spent this way.  You can spend a maximum number of <span class='l5r'>O</span> this way up to your school rank.",
 			rank1techs:['Iron Forest Style','Trip the Leg'],
