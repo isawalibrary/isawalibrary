@@ -45,7 +45,7 @@ function ringOppTables(){
 
 			newdiv(title,"opps-table","block");
 			
-			divContents(title,"<table id='"+tabletitle+"'></table>"); 
+			divcontents(title,"<table id='"+tabletitle+"'></table>"); 
 			document.getElementById(title).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
 
 			var rownumber = 0;
