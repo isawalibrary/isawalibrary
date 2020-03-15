@@ -370,6 +370,11 @@ function buildNpcMenu1(){
 		newdiv("npcsave","npcmenu","inline margin10 hide");
 		makeButton("npcsave","npcsavebutton","button inline","saveNPC()","save NPC")
 	}
+
+	if (document.getElementById("npcrerollbutton") == null){
+		newdiv("npcreroll","npcmenu","inline margin10 hide");
+		makeButton("npcreroll","npcrerollbutton","button inline","selectNPCSchool()","reroll")
+	}	
 }
 
 function hideDropdowns(){
@@ -899,6 +904,7 @@ function fillStats(){
 		updateSpans("status");
 
 	show("npcsave")
+	show("npcreroll")
 }
 
 function makeExtraWeaponButton(){
@@ -1686,6 +1692,11 @@ function npcskirmish(nom){
 	}
 }
 
+
+
+
+var techniquetypes= []
+
 function makeNpcEdit(nom){
 
 	nom = npc[nom]
@@ -1880,10 +1891,33 @@ function makeNpcEdit(nom){
 
 		techniquestext = [];
 		techniquesvalues = [];
-		for (each in techniquelist){
-			techniquestext.push(techniquelist[each].title+" ("+techniquelist[each].ring+") ["+techniquelist[each].type+" Rank "+techniquelist[each].rank+"]")
-			techniquesvalues.push(techniquelist[each].title)
+
+		
+
+		for (every in techniquelist){
+			techniquetypes.push(techniquelist[every].type)
+		} 
+		techniquetypes = removeDuplicates(techniquetypes)
+
+		rings = ["Any","Air","Earth","Fire","Water","Void"];
+
+		ranks = ["1","2","3","4","5"]
+
+		for (type in techniquetypes){
+			for (rank in ranks){
+				for (ring in rings){
+			
+					for (each in techniquelist){
+								if (techniquelist[each].type == techniquetypes[type] && techniquelist[each].ring.includes(rings[ring]) && techniquelist[each].rank == ranks[rank]){
+												techniquestext.push(techniquelist[each].title+" ("+techniquelist[each].ring+") ["+techniquelist[each].type+" Rank "+techniquelist[each].rank+"]")
+												techniquesvalues.push(techniquelist[each].title)
+								}
+							}
+						}
+			}
 		}
+
+
 		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
 
 		i++;
@@ -2384,7 +2418,7 @@ function edittechfilter(i){
 				if (tech.ring == techring || techring == "Any"){
 					return true;
 				}
-				if (tech.ring.includes(techring)){
+				if (tech.ring.includes(techring)  || tech.ring.includes("Any")){
 					return true;
 				};
 				return false;
@@ -2420,4 +2454,9 @@ function edittechfilter(i){
 		} 
 			techniquestext.push(techlist[j].title+" ("+techlist[j].ring+") ["+techlist[j].type+" Rank "+techlist[j].rank+"]")
 			techniquesvalues.push(techlist[j].title)
-		}}
+		}
+
+		document.getElementById("edittechselect"+i).options.length = 0;
+		makeSelectDropdownWithValues("edittechselect"+i,techniquesvalues,techniquestext)
+
+	}

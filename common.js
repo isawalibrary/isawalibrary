@@ -96,6 +96,19 @@ function makeSelectDropdown(selectorForm,defaultText,listName){
 		};
 }
 
+function makeSelectDropdownWithValues(selectorForm,valueListName,textcontentListName){
+	
+	selectorForm=document.getElementById(selectorForm);
+	selectorForm.innerHTML="";
+
+	for(var i = 0; i < valueListName.length; i++) {
+	    var el = document.createElement("option");
+	    el.textContent = textcontentListName[i];
+	    el.value = valueListName[i];
+	    selectorForm.appendChild(el);
+	};
+}	
+
 
 
 function removeDuplicates(array){  //array must be global or this function won't change the array
