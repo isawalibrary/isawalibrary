@@ -27,6 +27,14 @@
   font-weight: normal;
 }
 
+.selectbg {
+  background: var(--table-header-bg);
+  color: var(--table-header-font);
+  border-width: 1px 1px 1px 1px;
+  border-color: #A0A0A0;
+  border-style: solid;
+}
+
 
 body {
   font-family: 'Abel';

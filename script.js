@@ -58,19 +58,61 @@ function makeDefs(){
 		}
 		k++;
 	}
-	
+	makeSkills();
 };
 
+function makeSkills(){
+
+	newdiv ("skillsdatadiv","definitionsdiv","block tooltipwrapper defs defcategory")
+	divcontents("skillsdatadiv","<b>Skills: (click)</b>")
+
+	for (let elem in skilldata){
+		var category = elem;
+		newdiv(category,"skillsdatadiv","tooltipwrapper defs defcategory");
+		divcontents(category,category+": ");
+		newdiv(category+"div",category,"inline hide")
+		x = hideshow(category+"div")
+
+		
+
+		for (let elem in skilldata[category]){
+			var entryName = elem;
+			var xentryName = "'"+entryName+k+"-def'";
+			newdiv (entryName+k,category+"div","tooltipwrapper defs xheight");
+			u='onmouseover="hideshow('+xentryName+')"; '
+			v='onmouseout="hideshow('+xentryName+')";'
+			x='<div '+u+v+'>'+entryName+'</div>';
+			divcontents (entryName+k,x);
+
+			newdiv (entryName+k+"-def","skillsdatadiv","tooltiptext hide tooltipdef");
+			x=skilldata[category];
+			x=x[entryName];
+			divcontents (entryName+k+"-def","<b>"+entryName+"</b> "+x);
+		}
+		k++;
+	}
+
+	document.getElementById("Artisan").setAttribute("onclick",'hideshow("Artisandiv")');
+	document.getElementById("Artisandiv").classList.add("hide")
+	document.getElementById("Social").setAttribute("onclick",'hideshow("Socialdiv")');
+	document.getElementById("Socialdiv").classList.add("hide")
+	document.getElementById("Scholar").setAttribute("onclick",'hideshow("Scholardiv")');
+	document.getElementById("Scholardiv").classList.add("hide")
+	document.getElementById("Martial").setAttribute("onclick",'hideshow("Martialdiv")');
+	document.getElementById("Martialdiv").classList.add("hide")
+	document.getElementById("Trade").setAttribute("onclick",'hideshow("Tradediv")');
+	document.getElementById("Tradediv").classList.add("hide")
+};
 
 function divider() {
 	document.getElementById("//0").innerHTML="//";
 	document.getElementById("//1").innerHTML="//";
 	document.getElementById("//2").innerHTML="//";	
 	document.getElementById("//x1").innerHTML="//";
-	document.getElementById("//14").innerHTML="//";
-	document.getElementById("//24").innerHTML="//";
-	document.getElementById("//34").innerHTML="//";
-	document.getElementById("//44").innerHTML="//";
+	document.getElementById("//11").innerHTML="//";
+	document.getElementById("//21").innerHTML="//";
+	document.getElementById("//31").innerHTML="//";
+	document.getElementById("//41").innerHTML="//";
 }
 
 function makeTable(){
@@ -295,7 +337,374 @@ function hidex(x) {
 	}
 }
 
+function setUpRingOpps(){
+	makeSelect("ringoppdrop","ringselect","styledselect inline marginbottom margintop","ringOppTables()")
+	rings = ["Air","Earth","Fire","Water","Void"]
+	makeSelectDropdown("ringselect","",rings)
+	document.getElementById("ringselect").options[0].innerHTML="Opportunities by Ring"
 
+
+	makeSelect("ringoppdrop","contextselect","styledselect inline margin10","contextOppTables()")
+	contexts = ["General", "Initiative", "Martial", "Invocation", "Other Skills", "Downtime", "Negotiations", "Romance", "Espionage"]
+	makeSelectDropdown("contextselect","Opportunities by Context",contexts)
+	document.getElementById("contextselect").options[0].innerHTML="Opportunities by Context"
+
+}
+
+	thisTable = []
+
+function ringOppTables(){
+
+	thisTable = []
+	thisTableTitle = []
+	thisTable[0] = {ring:"", spend:"OPPORTUNITIES SPEND"}
+
+	thisRing = document.getElementById("ringselect").value
+	document.getElementById("opps-table").innerHTML=""
+
+
+	for (each in oppdata){
+		for (every in oppdata[each].children){
+			x = oppdata[each].children[every].ring
+			title = oppdata[each].title
+			ringOpps = oppdata[each].children[every]
+
+			if (x !== undefined){
+			if (x.includes(thisRing) || x.includes("Any")){
+				thisTableTitle.push(title)
+				thisTable.push(ringOpps)
+
+			}
+		}
+	}}
+
+
+			title = thisRing+"-opportunities"
+			tabletitle = thisRing+"-opps-table";
+
+			newdiv(title,"opps-table","block");
+			
+			divcontents(title,"<table id='"+tabletitle+"'></table>"); 
+			document.getElementById(title).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
+
+			var rownumber = 0;
+			var rowlist = [];
+			var itemlist = [];
+			var thisBody = document.getElementById(tabletitle).createTBody();
+			var itemnumber = 0;
+
+				thisTable.forEach(function(row){
+
+				if (rownumber==0){
+				var thisHead = document.getElementById(tabletitle).createTHead();
+				var thisRow = thisHead.insertRow(rownumber);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+
+				}
+				rownumber++;
+				itemnumber = 0;	
+				} else if (rownumber==1){
+				var thisRow = thisBody.insertRow(rownumber-1);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+					}
+				rownumber++;
+				itemnumber = 0;
+				
+				} else {
+				var thisRow = thisBody.insertRow(rownumber-1);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+					}
+				rownumber++;
+				itemnumber = 0;
+				}
+			})
+
+	setSelectedValue(document.getElementById("contextselect"), "O by Context")
+
+	var array = ["Air-opps-table","Earth-opps-table","Fire-opps-table","Water-opps-table","Void-opps-table"]
+
+	for (var i = 0; i < array.length; i++){
+		if (document.getElementById(array[i]) !== null){
+			var table = document.getElementById(array[i])
+
+					for (var j = 1; j < thisTable.length; j++){
+						var k = j - 1;
+						document.getElementById(array[i]).rows[j].cells[0].innerText = document.getElementById(array[i]).rows[j].cells[0].innerText +" "+ thisTableTitle[k]
+					}
+				}
+	}
+}
+
+
+function contextOppTables(){
+
+	thisTable = []
+	thisTable[0] = {}
+
+	thisRing = document.getElementById("contextselect").value
+	document.getElementById("opps-table").innerHTML=""
+
+		for (each in oppdata){
+		if (oppdata[each].title == thisRing){
+			for (every in oppdata[each].children){
+				thisTable.push(oppdata[each].children[every])
+			}
+		}
+
+	}
+
+			title = thisRing+"-opportunities"
+			title = title.replace(/ /g, "")
+			tabletitle = title+"-opps-table";
+
+			newdiv(title,"opps-table","block");
+			
+			divcontents(title,"<table id='"+tabletitle+"'></table>"); 
+			document.getElementById(tabletitle).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
+
+			var rownumber = 0;
+			var rowlist = [];
+			var itemlist = [];
+			var thisBody = document.getElementById(tabletitle).createTBody();
+			var itemnumber = 0;
+
+				thisTable.forEach(function(row){
+
+				if (rownumber==0){
+				var thisHead = document.getElementById(tabletitle).createTHead();
+				var thisRow = thisHead.insertRow(rownumber);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+
+				}
+				rownumber++;
+				itemnumber = 0;	
+				} else if (rownumber==1){
+				var thisRow = thisBody.insertRow(rownumber-1);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+					}
+				rownumber++;
+				itemnumber = 0;
+				
+				} else {
+				var thisRow = thisBody.insertRow(rownumber-1);
+
+					for (elem  in row){	
+						var thisItemData = row[elem];
+
+								var thisCell = thisRow.insertCell(itemnumber);
+								thisCell.innerHTML="<span>"+thisItemData+"</span>";
+								itemnumber ++
+					}
+				rownumber++;
+				itemnumber = 0;
+				}
+			})
+
+	setSelectedValue(document.getElementById("ringselect"), "O by Ring")
+	
+}
+
+var weaponCategoryArray = [];
+
+function insertSelects(){
+  var each, every
+
+  //insert Category filter dropdown into Weapons Table
+  document.getElementById("Weapons-table").rows[0].cells[2].innerText="";
+
+	insertFilterToTable("Weapons-table","weapons-table-category-select","SELECT",2)
+
+  for (each in tabledata){
+    if (tabledata[each].title == "Weapons"){
+      for (every in tabledata[each].children){
+        weaponCategoryArray.push(tabledata[each].children[every].category)
+      }
+    }
+  }
+  weaponCategoryArray = removeDuplicates(weaponCategoryArray)
+  weaponCategoryArray.shift()
+
+  makeSelectDropdown("weapons-table-category-select","Category",weaponCategoryArray)
+  document.getElementById("weapons-table-category-select").options[0].value = "any";
+
+  //insert text input filter into Weapons Table Qualities
+
+  insertFilterToTable("Weapons-table","weapons-table-qualities-input","INPUT",7)
+
+  //insert book filter into Weapons Table source
+
+  document.getElementById("Weapons-table").rows[0].cells[10].innerText="";
+
+  insertFilterToTable("Weapons-table","weapons-table-book-select","SELECT",10)
+
+  weaponCategoryArray = [];
+
+  for (each in tabledata){
+    if (tabledata[each].title == "Weapons"){
+      for (every in tabledata[each].children){
+        weaponCategoryArray.push(tabledata[each].children[every].source)
+      }
+    }
+  }
+
+  weaponCategoryArray = removeDuplicates(weaponCategoryArray)
+  weaponCategoryArray.shift()
+
+  makeSelectDropdown("weapons-table-book-select","Book",weaponCategoryArray)
+  document.getElementById("weapons-table-book-select").options[0].value = "any";
+
+  //insert grip filter into Weapons Table 
+
+  weaponCategoryArray = ["1-hand:","2-hand:"]
+
+  insertFilterToTable("Weapons-table","weapons-table-grip-select","SELECT",6)
+
+   makeSelectDropdown("weapons-table-grip-select","Any",weaponCategoryArray)
+   document.getElementById("weapons-table-grip-select").options[0].value = "any";
+}
+
+function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
+	
+	var parentName, filterId, columnToInsertInput, tableId, input; 
+
+	parentName = document.getElementById(tableId).rows[0].cells[columnToInsertInput];
+
+  switch (inputType){
+
+    case "SELECT":
+      makeSelect(parentName,filterId,"styledselect inline selectbg","filterWeaponTable('"+tableId+"','"+filterId+"',"+columnToInsertInput+")")
+    break;
+
+    case "INPUT":
+      makeTextInput(parentName,filterId,"styledselect inline","",filterId+"-input","styledselect inline selectbg")
+
+      input = document.getElementById(filterId+"-input")
+
+      input.setAttribute("oninput","filterWeaponTable('"+tableId+"','"+filterId+"-input',"+columnToInsertInput+")")
+      
+    break;
+  }
+}
+
+
+function filterWeaponTable(tableId,selectId,columnNumToFilter){
+  var x;
+
+  switch (selectId){
+
+    case "weapons-table-category-select":
+      x = document.getElementById("weapons-table-grip-select")
+      setSelectedValue(x, "Any")
+      x = document.getElementById("weapons-table-book-select")
+      setSelectedValue(x, "Book")
+      document.getElementById("weapons-table-qualities-input-input").value = ""  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-category-select",2)  //then filters by the used select
+      break;
+
+    case "weapons-table-grip-select":
+      x = document.getElementById("weapons-table-category-select")
+      setSelectedValue(x, "Category")
+      x = document.getElementById("weapons-table-book-select")
+      setSelectedValue(x, "Book")
+      document.getElementById("weapons-table-qualities-input-input").value = ""  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-grip-select",6)  //then filters by the used select
+      break;
+
+    case "weapons-table-book-select":
+      x = document.getElementById("weapons-table-grip-select")
+      setSelectedValue(x, "Any")
+      x = document.getElementById("weapons-table-category-select")
+      setSelectedValue(x, "Category")
+      document.getElementById("weapons-table-qualities-input-input").value = ""  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-book-select",10)  //then filters by the used select
+      break;
+
+    case "weapons-table-qualities-input-input":
+      x = document.getElementById("weapons-table-grip-select")
+      setSelectedValue(x, "Any")
+      x = document.getElementById("weapons-table-book-select")
+      setSelectedValue(x, "Book")
+      x = document.getElementById("weapons-table-category-select")
+      setSelectedValue(x, "Category")  //sets other selects to default
+      filterTable("Weapons-table","weapons-table-qualities-input-input",7)  //then filters by the used select
+      break;
+
+  }
+
+}
+
+
+
+function filterTable(tableId,selectId,columnNumToFilter){
+
+  // Declare variables
+  var input, filter, table, tr, td, i, txtValue, k;
+  select = document.getElementById(selectId).value.toLowerCase();
+  table = document.getElementById(tableId);
+  tr = table.getElementsByTagName("tr");
+
+  // Loop through all table rows, and hide those who don't match the search query
+  for (i = 1; i < tr.length; i++) {
+    td = tr[i].getElementsByTagName("td")[columnNumToFilter];
+    if (td) {
+      txtValue = td.textContent.toLowerCase() || td.innerText.toLowerCase();
+      if (txtValue.indexOf(select) > -1 || select == "any" || select == "" || txtValue.includes(select)) {
+        tr[i].classList.add("show");
+        tr[i].classList.remove("hide")
+        tr[i].classList.remove("odd");
+         tr[i].classList.remove("even");
+      } else {
+        tr[i].classList.add("hide");
+        tr[i].classList.remove("show")
+            tr[i].classList.remove("odd");
+    tr[i].classList.remove("even");
+      }
+    }
+  }
+  k=0
+  // Recolour the rows
+  for (i = 1; i < tr.length; i++){
+
+    if (tr[i].classList.contains("show")){
+      k++
+      if (k & 1){
+          tr[i].classList.add("odd")}
+      else {tr[i].classList.add("even")}
+    }
+  }
+
+
+}
 
 
 //TECHS TAB
