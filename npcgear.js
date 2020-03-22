@@ -51,8 +51,7 @@ var npcweapons=[
 {name: "Razor Teeth", range:"0", damage:"7", deadliness:"9", qualities:"Razor-Edged", type:"natural"},
 {name: "Razor Claws", range:"0", damage:"4", deadliness:"6", qualities:"Razor-Edged", type:"natural"},
 {name: "Deadly Claws", range:"0-1", damage:"5", deadliness:"4", qualities:"Razor-Edged, Unholy", type:"natural"},
-{name: "Urumi", range:"1-2", damage:"4", deadliness:"5", qualities:"Cumbersome, Razor-Edged, Snaring", type:"equipped"},
-
+{name: "Cutting Edges", range:"0", damage:"1", deadliness:"2", qualities:"", type:"natural"},
 
 
 				];
