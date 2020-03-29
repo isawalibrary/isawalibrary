@@ -157,7 +157,7 @@ children:[
 	{name: "Knife", skill:"[Melee]", category:"Hand", range:"0", damage:"2", deadliness:"4", grips:"1-hand: - / 2-hand: Deadliness +2", qualities:"Concealable, Mundane, Razor-Edged", rarity:"1", price:"1 koku", source:"Core"}, 
 	{name: "Nunchaku", skill:"[Melee]", category:"Hand", range:"0-1", damage:"4", deadliness:"2", grips:"1-hand: - / 2-hand: Snaring", qualities:"-", rarity:"6", price:"1 koku", source:"Core"}, 
 	{name: "Tessen", skill:"[Melee]", category:"Hand", range:"0-1", damage:"4", deadliness:"3", grips:"1-hand: -", qualities:"Ceremonial, Concealable", rarity:"7", price:"15 koku", source:"Core"}, 
-	{name: "Bisento", skill:"[Melee]", category:"Polearms", range:"2", damage:"4", deadliness:"6", grips:"1-hand: Range 1 / 2-hand: Damage +2", qualities:"Cumbersome, Durable, Wargear", rarity:"1", price:"15 koku", source:"Core"}, 
+	{name: "Bisento", skill:"[Melee]", category:"Polearms", range:"2", damage:"4", deadliness:"6", grips:"1-hand: Range 1 / 2-hand: Damage +2", qualities:"Cumbersome, Durable, Wargear", rarity:"8", price:"15 koku", source:"Core"}, 
 	{name: "Bo", skill:"[Melee]", category:"Polearms", range:"1-2", damage:"6", deadliness:"2", grips:"2-hand: -", qualities:"Mundane", rarity:"2", price:"2 bu", source:"Core"}, 
 	{name: "Ji", skill:"[Melee]", category:"Polearms", range:"2", damage:"5", deadliness:"2", grips:"2-hand: -", qualities:"Snaring, Wargear", rarity:"6", price:"7 koku", source:"Core"}, 
 	{name: "Naginata", skill:"[Melee]", category:"Polearms", range:"2", damage:"6", deadliness:"6", grips:"2-hand: -", qualities:"Cumbersome, Razor-Edged, Wargear", rarity:"8", price:"10 koku", source:"Core"}, 

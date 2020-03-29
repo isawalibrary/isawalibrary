@@ -120,6 +120,7 @@ function makeNpcLibrary(){
 	if (each.type == "Clan Samurai"){x = each.type} 
 	else if (each.type == "Ronin, Riffraff and Gaijin"){x = each.ronintype}
 	else if (each.type == "Animals" || each.type == "Creatures" ||each.type == "Pregen" ){x = ""}
+	else if (each.type == "Servants and Peasants" ){x = ""}
 
 		newdiv("div"+each.title,"menu","block");
 		divcontents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
@@ -287,7 +288,7 @@ function buildNpcMenu(){
 	newdiv("npctype","npcmenu","inline");
 	makeSelect("npctype","type","styledselect","selectType();")
 
-	var typelist = ["Clan Samurai","Ronin, Riffraff and Gaijin","Animals","Creatures","Pregen",];
+	var typelist = ["Clan Samurai","Ronin, Riffraff and Gaijin","Servants and Peasants","Animals","Creatures","Pregen",];
 	makeSelectDropdown1("type",typelist);
 
 	newdiv("npcarchetype","npcmenu","inline margin10");
@@ -373,8 +374,16 @@ function buildNpcMenu1(){
 
 	if (document.getElementById("npcrerollbutton") == null){
 		newdiv("npcreroll","npcmenu","inline margin10 hide");
-		makeButton("npcreroll","npcrerollbutton","button inline","selectNPCSchool()","reroll")
+		makeButton("npcreroll","npcrerollbutton","button inline","npcReroll()","reroll")
 	}	
+}
+
+function npcReroll(){
+	if (selectedType == "Servants and Peasants" ){
+		fillStats();
+	} else {
+		selectNPCSchool();
+	}
 }
 
 function hideDropdowns(){
@@ -446,9 +455,12 @@ function selectType(){
 		document.getElementById("npcsave").classList.add("hide");
 	}
 
-	if (type == "Pregen"){
-		document.getElementById("npcnameinput").value = selectedArchetype.title;
-		thisnpc.title = selectedArchetype.title;
+	if (type == "Servants and Peasants"){
+
+		selectObj = document.getElementById("archetype")
+		valueToSet = "Servants and Peasants"
+		setSelectedValue(selectObj, valueToSet)
+		selectArchetype();
 	}
 
 	if (type == "Ronin, Riffraff and Gaijin"){
@@ -505,21 +517,29 @@ function selectArchetype(){
 		if (selectedArchetype.ring.type !== "set"){
 					selectedArchetype.extra();
 		}
-	} else if (selectedType == "Ronin, Riffraff and Gaijin"){
+	} else if (selectedType == "Servants and Peasants"){
 		hideDropdowns();
-		show("npcronintype");
+		show("npctemplate");
+		hide("npcarchetype");
 
 		selectedArcTitle = document.getElementById("archetype").value;
 
-		for (elem in archetypes){
-			if (archetypes[elem].title == "Ronin"){
-				selectedArchetype = archetypes[elem]
-				}
-		}
+}
+	else if (selectedType == "Ronin, Riffraff and Gaijin"){
+			hideDropdowns();
+			show("npcronintype");
 
-		if (selectedArchetype.ring.type !== "set"){
-					selectedArchetype.extra();
-	}
+			selectedArcTitle = document.getElementById("archetype").value;
+
+			for (elem in archetypes){
+				if (archetypes[elem].title == "Ronin"){
+					selectedArchetype = archetypes[elem]
+					}
+			}
+
+			if (selectedArchetype.ring.type !== "set"){
+						selectedArchetype.extra();
+		}
 }
 
 	else {
@@ -544,17 +564,17 @@ function selectNPCRoninType(){
 	ronintype = document.getElementById("npcronintypeselect").value
 
 	switch (ronintype){
-		case "Ronin":
+		case "Samurai or Ronin Origin":
 		thisnpc.status = 24;
 	}
 
 	switch (ronintype){
-		case "Peasant":
+		case "Peasant Origin":
 		thisnpc.status = 15;
 	}
 
 	switch (ronintype){
-		case "Gaijin":
+		case "Gaijin Origin":
 		thisnpc.status = 0;
 	}
 
@@ -596,6 +616,11 @@ function selectTemplate(){
 	nom = document.getElementById("npcnameinput").value
 	if (nom == ""){
 		getNPCName();
+	}
+
+	if (selectedType == "Servants and Peasants"){
+			fillStats()
+			hide("npcclanselect")
 	}
 }
 
@@ -809,7 +834,120 @@ function fillStats(){
 		thisnpc.techniques = selectedArchetype.techniques;
 		makeTechDropdowns()
 		
-	} else {
+	} if (selectedType == "Servants and Peasants"){
+
+			thisnpc.name = selectedArchetype.title
+			thisnpc.template = selectedTemplate.title
+			thisnpc.archetype= selectedArchetype.title
+			thisnpc.type= selectedArchetype.type
+			thisnpc.equiptype= selectedArchetype.equiptype
+			thisnpc.conflictcombat= selectedArchetype.conflictcombat
+				updateSpans("conflictcombat");
+			thisnpc.conflictintrigue= selectedArchetype.conflictintrigue
+				updateSpans("conflictintrigue");
+			thisnpc.Air= selectedArchetype.ring.Air
+				updateSpans("Air");
+			thisnpc.Earth= selectedArchetype.ring.Earth
+				updateSpans("Earth");
+			thisnpc.Fire= selectedArchetype.ring.Fire
+				updateSpans("Fire");
+			thisnpc.Water= selectedArchetype.ring.Water
+				updateSpans("Water");
+			thisnpc.Void= selectedArchetype.ring.Void
+				updateSpans("Void");
+			thisnpc.max= selectedArchetype.max
+			thisnpc.endurance= selectedArchetype.endurance
+			thisnpc.composure= selectedArchetype.composure
+			thisnpc.focus= selectedArchetype.focus
+			thisnpc.vigilance= selectedArchetype.vigilance
+			thisnpc.honor= selectedArchetype.honor
+			thisnpc.glory= selectedArchetype.glory
+			thisnpc.status= selectedArchetype.status
+
+		demeanorArray = [];
+		addToArray(demeanorArray,selectedArchetype.demeanor)
+		addToArray(demeanorArray,selectedTemplate.demeanor)
+		demeanorArray = removeDuplicates(demeanorArray);
+		makeSelectDropdown1("npcdemeanor",demeanorArray)
+		getRandomSelect("npcdemeanor")	
+		setDemeanor()
+
+		advArray = []
+		addToArray(advArray,selectedArchetype.advantages)
+		addToArray(advArray,selectedTemplate.advantages)
+		advArray = removeDuplicates(advArray);
+		makeSelectDropdown1("npcadv",advArray)
+		getRandomSelect("npcadv")
+
+		disadvArray = []
+		addToArray(disadvArray,selectedArchetype.disadvantages)
+		addToArray(disadvArray,selectedTemplate.disadvantages)
+		disadvArray = removeDuplicates(disadvArray);
+		makeSelectDropdown1("npcdisadv",disadvArray)
+		getRandomSelect("npcdisadv")
+
+		selectedArchetype.extra();
+
+		ring = selectedTemplate.peasantring
+
+		thisnpc[ring] ++
+		updateSpans("Air")
+		updateSpans("Earth")
+		updateSpans("Fire")
+		updateSpans("Water")
+		updateSpans("Void")
+
+		thisnpc.artisanskill = selectedTemplate.artisanskill + selectedArchetype.skills.artisanskill
+		thisnpc.martialskill = selectedTemplate.martialskill + selectedArchetype.skills.martialskill
+		thisnpc.socialskill = selectedTemplate.socialskill + selectedArchetype.skills.socialskill
+		thisnpc.scholarskill = selectedTemplate.scholarskill + selectedArchetype.skills.scholarskill
+		thisnpc.tradeskill = selectedTemplate.tradeskill + selectedArchetype.skills.tradeskill
+
+		updateSpans("artisanskill");
+		updateSpans("martialskill");
+		updateSpans("socialskill");
+		updateSpans("scholarskill");
+		updateSpans("tradeskill");
+
+		weaponArray = []
+		addToArray(weaponArray,selectedArchetype.weapon)
+		weaponArray = removeDuplicates(weaponArray);
+		makeSelectDropdown1("npcweapon0",weaponArray)
+		getRandomSelect("npcweapon0")	
+		selectNPCWeapon("0")
+
+		makeExtraWeaponButton()
+
+		armorArray = []
+		addToArray(armorArray,selectedArchetype.armor)
+		armorArray = removeDuplicates(armorArray);
+		makeSelectDropdown1("npcarmor0",armorArray)
+		getRandomSelect("npcarmor0")
+		selectNPCArmor("0")
+
+		abilityArray = []
+
+		if (selectedArchetype.qualities !== null && selectedArchetype.qualities !== undefined){
+			abilityArray.push(selectedArchetype.qualities)
+		}
+
+		addToArray(abilityArray,selectedArchetype.abilities)
+		document.getElementById("npcschoolability").innerHTML="";
+		html = ""
+		for (i = 0 ; i < abilityArray.length; i++){
+			html += abilityArray[i]+"<br>";
+		}
+		document.getElementById("npcschoolability").innerHTML=html
+		thisnpc.ability = document.getElementById("npcschoolability").innerHTML;
+		
+		npcrank = 1;
+		ranks = [1,2,3,4,5];
+
+		thisnpc.techniques = []
+		makeTechDropdowns()
+
+
+	} else if (selectedType == "Animals" || selectedType == "Creatures" || selectedType == "Pregen" ){
 			thisnpc.name = selectedArchetype.title
 			thisnpc.template = selectedArchetype.type
 			thisnpc.archetype= selectedArchetype.title
@@ -886,25 +1024,25 @@ function fillStats(){
 		}
 		document.getElementById("npcschoolability").innerHTML=html
 		thisnpc.ability = document.getElementById("npcschoolability").innerHTML;
-		}
+	}
 
-		document.getElementById("npcinfoarchetype").innerHTML = selectedArchetype.fullname;
-		thisnpc.conflictcombat= selectedArchetype.conflictcombat
-			updateSpans("conflictcombat");
-		thisnpc.conflictintrigue= selectedArchetype.conflictintrigue
-			updateSpans("conflictintrigue");
+			document.getElementById("npcinfoarchetype").innerHTML = selectedArchetype.fullname;
+			thisnpc.conflictcombat= selectedArchetype.conflictcombat
+				updateSpans("conflictcombat");
+			thisnpc.conflictintrigue= selectedArchetype.conflictintrigue
+				updateSpans("conflictintrigue");
 
-		updateSpans("endurance");
-		updateSpans("composure");
-		updateSpans("focus");
-		updateSpans("vigilance");
+			updateSpans("endurance");
+			updateSpans("composure");
+			updateSpans("focus");
+			updateSpans("vigilance");
 
-		updateSpans("honor");
-		updateSpans("glory");
-		updateSpans("status");
+			updateSpans("honor");
+			updateSpans("glory");
+			updateSpans("status");
 
-	show("npcsave")
-	show("npcreroll")
+		show("npcsave")
+		show("npcreroll")
 }
 
 function makeExtraWeaponButton(){
@@ -1328,7 +1466,7 @@ function makeTechDropdowns(){
 		var techlist = [];
 		var techdroplist = [];
 
-		if (document.getElementById("type").value == "Clan Samurai" || document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
+		if (document.getElementById("type").value == "Clan Samurai" ||document.getElementById("type").value == "Ronin, Riffraff and Gaijin" || document.getElementById("type").value =="Servants and Peasants"){
 			for (i=0; selectedTemplate.techtypes.length > i; i++){
 				for (j=0; j < techniquelist.length; j++){
 					if (techniquelist[j].type == selectedTemplate.techtypes[i]){
@@ -1455,7 +1593,7 @@ function saveNPC (){
 		npc[nospaces].archetype = document.getElementById('archetype').options[document.getElementById('archetype').selectedIndex].text;
 		npc[nospaces].type = thisnpc.type;
 
-		if (selectedType == "Clan Samurai" ||selectedType == "Ronin, Riffraff and Gaijin"){
+		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin" || selectedType == "Servants and Peasants" ){
 			npc[nospaces].template = document.getElementById('template').options[document.getElementById('template').selectedIndex].text;
 		} else {npc[nospaces].template = selectedArchetype.type}
 

@@ -1,6 +1,6 @@
 var clans = ["Crab","Crane","Dragon","Lion","Phoenix","Scorpion","Unicorn","Imperial","Minor"];
 
-var ronintypelist = ["Ronin","Peasant","Gaijin"]
+var ronintypelist = ["Samurai or Ronin Origin","Peasant Origin","Gaijin Origin"]
 
 var clandata = {	
 	Crab:{	name:"Crab",

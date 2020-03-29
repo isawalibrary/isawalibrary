@@ -329,6 +329,13 @@ var tao = [
 	"When a man has time to think, he can make plans.  <br>When he has no time to think, but must immediately react, he can only make mistakes - Akodo",
 	"When your enemy is more powerful than you, strike quick and hard, and retreat. <br>Flow like the water, move with no form or shape or substance.<br> Commanders without courage or confidence do not know how to retaliate against you. <br>Those who understand your ways will know what you are doing, and know that their strength has been turned to weakness. <br>They will know that you are the sagacious general, and those who know the ways of Heaven and Earth will retreat and go home. - Akodo",
 	"When your enemy is entrenched and secure, lure him from his nest. <br>Attack that which is dear to him to draw him from his ground. Take him from his sanctuary and take him on your time. - Akodo",
+	"Knowing others is intelligence; knowing yourself is true wisdom.<br>Mastering others is strength; mastering yourself is true power",		
+	"A man with outward courage dares to die; a man with inner courage dares to live.",
+	"Success is as dangerous as failure. Hope is as hollow as fear.",
+	"Truth never damages a cause that is just.",
+
+
+
 			];
 
 
