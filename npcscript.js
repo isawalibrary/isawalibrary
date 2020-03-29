@@ -59,9 +59,9 @@ function buildNpcStatsDiv(){
 
 	newdiv("npcadvdisadv","npcstats","block margin10")
 	divcontents("npcadvdisadv","Advantage:")
-	makeSelect("npcadvdisadv","npcadv","styledselect inline marginbottom","")
+	makeSelect("npcadvdisadv","npcadv","styledselect inline marginbottom margin10","")
 	addToDiv("npcadvdisadv","<br>Disadvantage:")
-	makeSelect("npcadvdisadv","npcdisadv","styledselect inline","")
+	makeSelect("npcadvdisadv","npcdisadv","styledselect inline margin10","")
 	
 	newdiv("npcskills","npcstats","block margin10")
 		x = '<div class="paddingtopbottom"><b>Skills</b>: <span class="margin10">Artisan: </span><span id="npcartisanskill"></span>'+
@@ -72,15 +72,15 @@ function buildNpcStatsDiv(){
 	divcontents("npcskills",x);
 
 	newdiv("npcequip","npcstats","block margin10")
-	divcontents("npcequip","<b>Equipment</b><br>Weapon:")
+	divcontents("npcequip","<b>Equipment</b><br>Weapon:<br>")
 	newdiv("npcweaponwrap0","npcequip","block margin10")
 	makeSelect("npcweaponwrap0","npcweapon0","styledselect inline marginbottom","selectNPCWeapon('0');")
 
 	newdiv("npcweapon0stats","npcweaponwrap0","inline margin10")
 
 	newdiv("npcequiparmor","npcstats","block margin10")
-	divcontents("npcequiparmor","Clothing:")
-	makeSelect("npcequiparmor","npcarmor0","styledselect inline marginbottom","selectNPCArmor('0');")
+	divcontents("npcequiparmor","Clothing:<br>")
+	makeSelect("npcequiparmor","npcarmor0","styledselect inline marginbottom margin10","selectNPCArmor('0');")
 	
 	newdiv("npcarmor0stats","npcequiparmor","inline margin10 marginbottom")
 	
@@ -601,6 +601,8 @@ function selectTemplate(){
 	if (selectedType == "Ronin, Riffraff and Gaijin"){
 			makeSelectDropdown("npcclanselect","Select Background Region",regions)
 			show("npcronintype")
+			show("npcclanselect")
+
 	}
 
 	selectedTemplate = document.getElementById("template").value;

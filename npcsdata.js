@@ -1286,7 +1286,7 @@ var archetypes =[
 			disadvantages:["Deferential (Water) [Social; Interpersonal, Mental]",],
 			weapon:["Knife","Masakari","Club","Bo","Sling"],
 			armor:["Common Clothes","Rags","Traveling Clothes","Ashigaru Armor",],
-			abilities:["Overlooked: When a peasant makes a check targeting a character with a higher status rank, they treat that character's vigilance as 1 lower.",],
+			abilities:["Overlooked: When this character makes a check targeting a character with a higher status rank, they treat that character's vigilance as 1 lower.",],
 			techniques:[],
 		},{
             fullname:"Seasoned Courtier",
