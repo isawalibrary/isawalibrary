@@ -889,6 +889,11 @@ function fillStats(){
 		getRandomSelect("npcdisadv")
 
 		selectedArchetype.extra();
+		thisnpc.Air = selectedArchetype.ring.Air
+		thisnpc.Earth = selectedArchetype.ring.Earth
+		thisnpc.Fire = selectedArchetype.ring.Fire
+		thisnpc.Water = selectedArchetype.ring.Water
+		thisnpc.Void = selectedArchetype.ring.Void
 
 		ring = selectedTemplate.peasantring
 
