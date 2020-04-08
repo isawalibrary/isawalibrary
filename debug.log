@@ -1,8 +1,0 @@
-[0720/135105.798:ERROR:crash_report_database_win.cc(428)] unexpected header
-[0720/140932.528:ERROR:crash_report_database_win.cc(428)] unexpected header
-[0721/145027.785:ERROR:crash_report_database_win.cc(428)] unexpected header
-[1117/174819.778:ERROR:crash_report_database_win.cc(428)] unexpected header
-[0225/102758.938:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
-[0225/102758.941:ERROR:process_info.cc(556)] ReadMemoryInfo failed
-[0225/102758.941:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
-[0225/102758.941:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
