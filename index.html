@@ -3,7 +3,6 @@
  	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 	<LINK href="style.css" rel="stylesheet" type="text/css">
 	<script src="data.js"></script>
-	<script src="skirmish.js"></script>
 	<script src="familiesdata.js"></script>
 	<script src="definitionsdata.js"></script>
 	<script src="schoolsdata.js"></script>
@@ -12,136 +11,116 @@
 	<script src="npcsdata.js"></script>
 	<script src="npcgear.js"></script>
 	<script src="script.js"></script>
-	<script src="common.js"></script>
-	<script src="npcscript.js"></script>	
+	<script src="common.js"></script>	
+	<script src="skirmish.js"></script>
+	<script src="npcscript.js"></script>
 
 	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
  <title></title>
  </head>
 
-<body onload="buildNpcStatsDiv();loadNPC();makeNpcLibrary();makeSkirmish();makeDefs();divider();makeTable();makeTechniques();buildNpcMenu();setUpDataBuilder();loadTheme();insertSelects();">
+<body onload="setUp()">
+	<div id="bgdiv"></div>
+	<div id="bgmondiv"></div>
+	<div class="width100pc centre">
 
- 	<div id="titlebar" class="titlebar">
- 	<div id="title" class="inline title">Legend of the Five Rings 5th Edition GM Screen</div>
-	<button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="mainbutton button">npc builder</button>
-	<button id="npclibrarybutton" onclick="highlight('npclibrarybutton','library')" class="mainbutton button">npc library</button>
-	<button class="mainbutton button" id="skirmishbutton" onclick="highlight('skirmishbutton','skirmishcontainer');">skirmish tracker</button>
- 	<button id="definitionbutton" onclick="highlight('definitionbutton','definitioncontainer')" class="mainbutton button">reference</button>
-	<button id="techsbutton" onclick="highlight('techsbutton','techniquecontainer')" class="mainbutton button">technique search</button>
-	<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="mainbutton button">school search</button>
-	<button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="mainbutton button">campaign</button>
-	<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="mainbutton button">teahouse</button>
-	<button id="secretbutton" onclick="highlight('secretbutton','secretdiv')" class="hide mainbutton button">secret</button>
-		</div>
- 	
+		<div class="titlewrap">
+		<div class="w100pc h5 silver"></div>
+	 	<div id="titlebar" class="titlebar">
+	 	<div id="title" class="pt4 ml10 inline brushtip font2em">Legend of the Five Rings 5th Edition GM Screen</div>
+		<button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="brushtip mainbutton font2em">npc builder</button>
+		<button id="npclibrarybutton" onclick="highlight('npclibrarybutton','library')" class="brushtip mainbutton font2em">npc library</button>
+		<button id="skirmishbutton" onclick="highlight('skirmishbutton','skirmishcontainer')"; class="brushtip mainbutton font2em">skirmish tracker</button>
+	 	<button id="definitionbutton" onclick="highlight('definitionbutton','definitioncontainer')" class="brushtip mainbutton font2em">reference</button>
+		<button id="techsbutton" onclick="highlight('techsbutton','techniquecontainer')" class="brushtip mainbutton font2em">technique search</button>
+		<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="brushtip mainbutton font2em">school search</button>
+		<button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="brushtip mainbutton font2em">campaign</button>
+		<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="brushtip mainbutton font2em">teahouse</button>
+			</div><div class="w100pc h5 silver2"></div></div>
+	 	
+	<div class="">	
+		<div id="skirmishcontainer" class="hide containerhidden"></div>
 
-	<div id="skirmishcontainer" class="hide containerx"></div>
-
-	<div id="definitioncontainer" class="hide containerx">
-		<div id="definitionsdiv"></div>
-		<div id="definitionstables" class="inline"></div>
-	</div>
-
-	<div id="npccontainer" class="hide containerx">
-		<div id="npcmenu" class="margin20"></div>
-		<div id="npcstatwrap" class="centre npcbuilderwidth">
-		<div id="npcstats" class="hide margin10 inlineblock"></div>
-		<div id="npcnotes" class="hide inlineblock paddingtopbottom margin20"></div>
-	</div>
-
-	</div>		
-
-	 <div id="library" class="hide containerx">
- 		<div id="menu" class="inlineblock margin20"></div>
-
-	 		<div id="statblock" class="inlineblock margin20"></div>
-	 		<div id="editcharacter" class="inlineblock editwidth hide margin20"></div>
-
-	</div>
-
-	<div id="techniquecontainer" class="hide containerx"></div>	
-
-	<div id="schoolcontainer" class="hide containerx">
- 		<form onsubmit="return false" id="schoolsearch" class="block defs"><span class="inlineblock" style="width:97px">Search Schools:</span>
- 	 	<input id="schoolsearchinput" class="width styledselect" oninput="schoolfilter();titlefilter();" type="text"><br></form>
-		<div id="schooloutput" class="block"></div>
-		<div id="titleoutput" class="block"></div>
-	</div>
-
-
-	<div id="teahousediv" class="hide containerx">
-		<div class="themeswitcher tea">Select theme:
-			<span class="margin10" onclick="colourSwitcher('spring')">air</span> 
-			<span class="margin10"onclick="colourSwitcher('summer')">earth</span> 
-			<span class="margin10"onclick="colourSwitcher('autumn')">fire</span>
-			<span class="margin10"onclick="colourSwitcher('winter')">water</span>
-			<span class="margin10"onclick="colourSwitcher('void')">void</span>
-			<span class="margin10"onclick="colourSwitcher('printer')">printer-friendly</span></div>
-		<div class="tea">
-			Ring Dice: <input type="number" id="ringdicenumber" class="numberform styledselect"></input><br>
-			Skill Dice: <input type="number" id="skilldicenumber" class="numberform styledselect"></input><br>
-			<button id="roll" class="button margintopbottom" onclick="rolldice()">Roll Dice</button>
-			<div id="results" class="alignleft"></div> </div>
-	 	<div class="tea bold">Rokugani Teahouse Generator</div>
-		<button onclick="makeTea()" class="tea block button">pour me another at...</button>
-		<div id="pour" class="tea block brushfont"></div>
-		<div class="tea bold">Random Name Generator</div>
-	 	<button class="tea block button" id="namebutton" onclick="namegenerator()">random name</button>
- 		<div id="nameoutput" class="tea block brushfont"></div>
- 		<div class="tea bold">Fortune Cookie Generator</div>
- 	 	<button class="tea button center block" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
- 	 	<form id="shinseisearch" onsubmit="return false" class="center block">Search:
- 	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
-		<div id="shinseioutput" class="tea block"></div>
-		<div id="JSONbuilder" class="tea bold">Json Blob Generator
-		<div id="databuilderdiv" class="center"></div>
+		<div id="definitioncontainer" class="hide containerhidden smallfont bglighter">
+			<div id="definitionsdiv"></div>
+			<div id="definitionstables" class="inline"></div>
 		</div>
 
-		<div id="changelog" class="tea block"><span onclick="hideshow('log');">changelog</span>
-			<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
-	</div>
+		<div id="npccontainer" class="hide containerhidden">
+			<div id="npcmenu" class="mb10"></div>
+			<div id="npcstatwrap" class="centre w700 bgevenlighter hide pt10 pl10 pr10 pb10 hide">
+		</div> </div>	
 
-	<div id="campaigninfodiv" class="hide containerx">
+	
 
-		<div id="campaignhouserules" class="inline margin20"><span onclick="hideshow('houserules');" class="tea">House Rules</span>
+		 <div id="library" class="hide containerhidden bgevenlighter">
+	 		<div id="menu" class="inlineblock w400 aligntop"></div>
+
+		 		<div id="statblock" class="inlineblock w700 ml20"></div>
+		 		<div id="editcharacter" class="inlineblock hide w660 ">
+		 		</div>
+
 		</div>
 
+		<div id="techniquecontainer" class="hide containerhidden"></div>	
 
+		<div id="schoolcontainer" class="hide containerhidden">
+			<div id="schoolwrapper" class="w700 block marginauto">
+	 		<form onsubmit="return false" id="schoolsearch" class="block"><span class="w100 inlineblock" >Search Schools:</span>
+	 	 	<input id="schoolsearchinput" class="w200" oninput="schoolfilter();titlefilter();" type="text"></form>
+			<div id="schooloutput" class="block"></div>
+			<div id="titleoutput" class="block"></div>
+		</div></div>
 
-		<div class="inline margin20">
-		Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="tea">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download>
-		  	<span class="tea">fillable</span>	</a>	
-		</div>
+		<div id="campaigninfodiv" class="hide containerhidden">
 
-
-
-		<div id="houserules" class="hide margin20">
-			<iframe id="rulesframe" src="houserules.html" class="iframe container"></iframe>
+			<div id="campaignhouserules" class="inline margin20"><span onclick="hideshow('houserules');" class="tea">House Rules</span>
 			</div>
 
 
 
-	</div>
-
-
-		<div id="secretdiv" class="containerx hide">
-			<div id="plannav" class="inline margin20"><span onclick="hideshow('plan');" class="tea">Campaign</span>
+			<div class="inline margin20">
+			Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="tea">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download>
+			  	<span class="tea">fillable</span>	</a>	
+			</div>
 		</div>
 
-				<div id="campaigntaint" class="inline margin20"><span onclick="hideshow('taint');" class="tea">Taint Rules</span>
-		</div>
 
-		<div id="plan" class="hide margin20" style="background-color: var(--opacity-bg-overlay);">
-			<iframe id="planframe" src="plan.html" class="iframe container"></iframe>
+		<div id="teahousediv" class="containerhidden hide">
+
+			<div id="JSONbuilder" class="jsongrid w700 pt5 pb5 mt5 mb5 ml5 mr5 bold bgevenlighter"><span class="textcentre">Json Blob Generator</span>
+			<div id="databuilderdiv" class="regular aligncentre"></div>
 			</div>
 
-		<div id="taint" class="hide margin20" style="background-color: var(--opacity-bg-overlay);">
-			<iframe id="taintframe" src="taint.html" class="iframe container"></iframe>
+		 	
+		 	<div class="pt5 pb5 pl10 pr10 bold mt5 mb5 ml5 mr5 bgevenlighter textcentre">Rokugani Teahouse Generator
+			<button onclick="makeTea()" class="marginauto block mt5 mb5">pour me another at...</button>
+			<div id="pour" class="mt10 block regular brushtip"></div></div>
+				
+			<div class="pt5 pb5 bold mt5 mb5 ml5 mr5 bgevenlighter textcentre">Random Name Generator
+		 	<button class="marginauto block mt5 mb5" id="namebutton" onclick="namegenerator()">random name</button>
+	 		<div id="nameoutput" class="block regular brushtip mt10 "></div> </div>
+
+			<div id="diceroller" class="dicegrid pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 maxw200 bgevenlighter textcentre"><b>Dice Roller</b>
+				<div class="mt5">
+				Ring Dice: <input type="number" id="ringdicenumber" class="w35 styledselect"></input><br>
+				Skill Dice: <input type="number" id="skilldicenumber" class="w35 mt5 styledselect"></input><br>
+				<button id="roll" class="mt5 mb5" onclick="rolldice()">Roll Dice</button>
+				<div id="results" class="bglighter w100 centre"></div> </div>
 			</div>
 
+	 		<div class="pt5 pb5 pl10 pr10 bold maxw300 mt5 mb5 ml5 mr5 bgevenlighter  textcentre">Fortune Cookie Generator
+	 	 	<button class="marginauto center block mt5 mb5" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
+	 	 	<form id="shinseisearch" onsubmit="return false" class="center block">Search:
+	 	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
+				<div id="shinseioutput" class="block"></div> </div>
+
+			<div id="changelog" class="pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter  textcentre"><span onclick="hideshow('log');">changelog</span>
+				<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
 		</div>
 
-		</div>
+
+</div>
 
 </body>
 

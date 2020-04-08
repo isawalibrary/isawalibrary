@@ -1,30 +1,15 @@
--Upcoming
-+ Fix armor stats showing as undefined in edit npc.  When the edit npc is saved it loses the armor info.
-
-+ Insert the ring symbols into the context tables
-+ Input the Shadowlands opps table data - was it too spoilery?  Was that why it wasn't already in?  Or did it clash with Taint house rules.
-+ Go over the existing families with Adv/Disadv & Demeanor list.  Some families have far less than others.
-
-+ Fixed width website - have the outer div set to centre, left & right overflow hidden, width 1000px or so.
-+ Get Random NPC - fully randomised, maybe weight the different groups or ronin will be overrepresented due to large number of options. 
-+ Add some of the new Intrigue goals from PoW
-
-+ Add demeanors and favoured weapons to the families and schools
-
-+ Make skill allocation and stat allocation for ronin more similar to the clan samurai (via archetype)
-+ make getWeaponStats function to get weapon stats easily
-+ Add 'extra advantage' and 'extra disadvantage' in NPC edit
-+ Add SECRET option in character maker, have it structured as a clan, the different groups can be represented by families, and the different social roles in their society can be schools.  Maybe don't add this yet, so the SECRET are a surprise when they show up in the story.
-
--Next Overhaul 
-+ Standardise some of the very similar advs and disadvs
-+ Add categories like Sword, Hand, Blunt to the npc weapons, Natural would be a category for all the fangs and maws etc.
-+ Get rid of the random extra files that are building up in the repository
-+ Go through, declare all vars properly to prevent random global var accumulation
-+ For the makeSelect etc functions, make it so parameters can be strings or DOM objects.
-+ Consolidate the functions for add weapons button from NPC builder and the NPC Edit, similar for add techniques
-+ Full character building - skills not skill groups, title support - don't even know if I want titles to be used at all
-+ Standardise all div names, make all function names proper camelCase even newdiv and divcontents
+-Current Overhaul: Crab Steel Edition
++fix JSON maker
++Try adding copper or bronze to the colour scheme
++setTechs is not defined... make the NPC builder tech rank filter button work
++Format output for name and teahouse generators
++Finish adding monsters from Path of Waves
++Match up the NPC Gear to the NPCs in var npcweapons etc
++In Edit Character, the add weapon button adds a massive dropdown of gibberish - have a checkbox that controls whether NPC Gear is added to the list, then have filters that refine by weapon type
++Allow some Edit NPC stuff during NPC Builder, instead of having to save then open in Library then Edit
++Change colour of the tooltips
++Change position of the stance tooltips from Skirmish
++Searching the Fortune Cookie Generator makes it so the list of quotations comes off the bottom of the div, make it so the div stretches to fit all quotations
 
 -version 0.17 06.03.20
 Bug fixes, entered some more creatures from Path of Waves

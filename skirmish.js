@@ -3,7 +3,7 @@ var save ={};
 
 function saveSkirmish(){
 	saveskirmish.skirmishcharacters=skirmishcharacters;
-	saveskirmish.skirmish=document.getElementById("skirmish").innerHTML;
+	saveskirmish.skirmish=document.getElementById("skirmishtable").innerHTML;
 	localStorage.setItem("saveskirmish",JSON.stringify(saveskirmish));
 	}
 
@@ -14,7 +14,7 @@ function loadSkirmish(){
 	if (save !== null){
 	skirmishcharacters=save.skirmishcharacters;
 }
-	document.getElementById("skirmish").innerHTML="";
+	clearSkirmishRows()
 
 	for (let elem in skirmishcharacters){
 		buildSkirmishCharacter(elem);
@@ -34,7 +34,7 @@ function loadSkirmish(){
 		document.getElementById(elem+"-notes").value=skirmishcharacters[elem].notes;
 		document.getElementById(elem+"-status").value=skirmishcharacters[elem].status;
 
-		valueToSet = skirmishcharacters[elem].stance;
+		var valueToSet = skirmishcharacters[elem].stance;
 		selectObj = document.getElementById(elem+"-stance")
 		for (var i = 0; i < selectObj.options.length; i++) {
 		        if (selectObj.options[i].text== valueToSet) {
@@ -48,57 +48,92 @@ function loadSkirmish(){
 		}
 	}
 
+function clearSkirmishRows(){
+	var table = document.getElementById("skirmishtable")
+
+	while (table.rows.length > 1){
+		for (var i = 1; i < table.rows.length;){
+			table.deleteRow(i)
+		}}
+}
+
 
 function makeSkirmish(){
 
-	newdiv("addnewcontainer","skirmishcontainer","button inline margin10")
-	makeButton("addnewcontainer","addnewbutton","button inline skirmishbuttonstyle","makeNewChar()","Add new character to skirmish")
+	newDiv("addnewcontainer","skirmishcontainer","inline ml10")
+	newButton("addnewcontainer","addnewbutton","inline","makeNewChar()","Quick add")
 
-	newdiv("reorderskirmish","skirmishcontainer","button inline margin10")
-	makeButton("reorderskirmish","reorderskirmishbutton","button inline","reorderSkirmish()","Reorder skirmish by initiative")
+	newDiv("reorderskirmish","skirmishcontainer","inline ml10")
+	newButton("reorderskirmish","reorderskirmishbutton","inline","reorderSkirmish()","Reorder skirmish by initiative")
 
-	newdiv("saveskirmish","skirmishcontainer","button inline margin10")
-	makeButton("saveskirmish","saveskirmishbutton","button inline","saveSkirmish()","save skirmish")
+	newDiv("saveskirmish","skirmishcontainer","inline ml10")
+	newButton("saveskirmish","saveskirmishbutton","inline","saveSkirmish()","save skirmish")
 
-	newdiv("loadskirmish","skirmishcontainer","button inline margin10")
-	makeButton("loadskirmish","loadskirmishbutton","button inline","loadSkirmish()","load skirmish")
+	newDiv("loadskirmish","skirmishcontainer","inline ml10")
+	newButton("loadskirmish","loadskirmishbutton","inline","loadSkirmish()","load skirmish")
 
-	newdiv("skirmish","skirmishcontainer","block")
+	newDiv("skirmish","skirmishcontainer","block")
+
+		var skirmishtable = document.createElement("TABLE")
+			skirmishtable.id = "skirmishtable"
+			skirmishtable.classList.add("mt10")
+			document.getElementById("skirmish").appendChild(skirmishtable);
+
+	var itemlist = [];
+	var thisBody = document.getElementById("skirmishtable").createTBody();
+	var itemnumber = 0;
+
+		
+		var thisHead = document.getElementById("skirmishtable").createTHead();
+		var thisRow = thisHead.insertRow(0);
+	
+
+	var array = ["","Initiative","Stance","Fatigue","","Strife","","Phys Res","Sup Res","Engaged With:","Notes","Status",""]
+
+	for (var elem in array){	
+		var thisItemData = array[elem];
+
+		var thisCell = thisRow.insertCell(itemnumber);
+		thisCell.innerHTML="<span>"+thisItemData+"</span>";
+		itemnumber ++
+
+		}			
 
 }
 
 
 var char={};
 
+
 function makeNewChar(){
-	newdiv("makenewchar","skirmishcontainer","block");
-	makeTextInput("makenewchar","newcharname","styledselect inline margin10",'<span id="nameword" onclick="getRandomName()">Name: </span>',"name","styledselect")
+	newDiv("makenewchar","skirmishcontainer","block pt10 pb10");
+	newTextInput("makenewchar","newcharname"," inline ml10",'<span id="nameword" onclick="getRandomName()">Name: </span>',"name","")
 
-	newdiv("skirmishplayerbox","makenewchar","inline margin10");
-		x = '<form class="inline styledselect"><input type="checkbox" id="skirmishplayer" name="player" value="player">Player </form>';
-	divcontents("skirmishplayerbox",x);
+	newDiv("skirmishplayerbox","makenewchar","inline ml10");
+		x = '<form class="inline ml"><input type="checkbox" id="skirmishplayer" name="player" value="player"><span class="ml10">Player </span></form>';
+	divContents("skirmishplayerbox",x);
 
-	newdiv("skirmishclan","makenewchar","inline margin10");
-	makeSelect("skirmishclan","newClan","styledselect inline","selectClan();")
-	makeSelectDropdown("newClan","Select Clan",clans);
+	newDiv("skirmishclan","makenewchar","inline ml10");
+	newSelect("skirmishclan","newClan"," inline","selectSkirmishClan();")
+	fillSelectDropdownDefault("newClan","Select Clan",clans);
 }
 
 
 function getRandomName(){
-	name = nameMaker();
+	var name = nameMaker();
 	document.getElementById("name").innerText = name
 	document.getElementById("name").value = name
 
 }
 
-function selectClan(){
-	newdiv("skirmishschool","makenewchar","inline margin10");
+function selectSkirmishClan(){
+	newDiv("skirmishschool","makenewchar","inline ml10");
 
 	if (document.getElementById("newSchool") == null || document.getElementById("newSchool") == undefined){
-			makeSelect("skirmishschool","newSchool","styledselect inline","selectSchool();")
+			newSelect("skirmishschool","newSchool"," inline","selectSkirmishSchool();")
 		}
 
-	newdiv("skirmishability","skirmishcontainer","block margin10");
+	newDiv("skirmishability","skirmishcontainer","block ml10");
 
 	var c = document.getElementById("newClan");
 	selectedClan = c.options[c.selectedIndex].value;
@@ -110,11 +145,11 @@ function selectClan(){
 
 	var schoolsList=document.getElementById("newSchool");
 
-	sSchool=schools[selectedClan];
+	var sSchool=schools[selectedClan];
 
 	for (let elem in sSchool){
 		var chosenSchool = sSchool[elem];
-		var option=document.createElement("option");
+		option=document.createElement("option");
 		option.textContent=chosenSchool.name;
 		
 		schoolsList.appendChild(option);
@@ -123,36 +158,36 @@ function selectClan(){
 	}
 
 
-function selectSchool(){
+function selectSkirmishSchool(){
 	var s = document.getElementById("newSchool");
 	selectedSchool = s.options[s.selectedIndex].label;
 
-	x = schools[selectedClan];
+	var x = schools[selectedClan];
 	for (let elem in x){
-		y = x[elem]
+		var y = x[elem]
 		if(selectedSchool == y.name){
 		document.getElementById("skirmishability").innerHTML="";
 
-		disp = "School Ability: "+y.ability
+		var disp = "School Ability: "+y.ability
 
 		document.getElementById("skirmishability").innerHTML=disp
 		}
 	}
 
-	newdiv("divendurance","makenewchar","inline margin10")
-	makeNumberInput("divendurance","endurance","styledselect","Endurance:","xendurance","numberform")
+	newDiv("divendurance","makenewchar","inline ml10")
+	newNumberInput("divendurance","endurance","inline","Endurance:","xendurance","w35")
 
-	newdiv("divcomposure","makenewchar","inline margin10")
-	makeNumberInput("divcomposure","composure","styledselect","Composure:","xcomposure","numberform")
+	newDiv("divcomposure","makenewchar","inline ml10")
+	newNumberInput("divcomposure","composure","inline","Composure:","xcomposure","w35")
 
-	newdiv("divphysres","makenewchar","inline margin10")
-	makeNumberInput("divphysres","physicalres","styledselect","Phys Res:","xphysres","numberform")
+	newDiv("divphysres","makenewchar","inline ml10")
+	newNumberInput("divphysres","physicalres","inline","Phys Res:","xphysres","w35")
 
-	newdiv("divsupres","makenewchar","inline margin10")
-	makeNumberInput("divsupres","supernaturalres","styledselect","Sup Res:","xsupres","numberform")
+	newDiv("divsupres","makenewchar","inline ml10")
+	newNumberInput("divsupres","supernaturalres","inline","Sup Res:","xsupres","w35")
 
-	newdiv("addtoskirmish","makenewchar","inline margin10");
-	makeButton("addtoskirmish","addtoskirmishbutton","button inline","addToSkirmish()","Add Character")
+	newDiv("addtoskirmish","makenewchar","inline ml10");
+	newButton("addtoskirmish","addtoskirmishbutton","inline","addToSkirmish()","Add Character")
 
 }
 
@@ -208,7 +243,9 @@ function hideAddElements(){
 
 
 function update(name,property){
-	name = name.id
+	if (name.id !== undefined){
+		name = name.id
+	}
 	skirmishcharacters[name][property]=document.getElementById(name+"-"+property).value;
 	}
 
@@ -221,66 +258,53 @@ function updateStance(name){
 			name = name.name
 		}
 
-		fullname = name;
+		var fullname = name;
 		name = name.replace(/ /g, '');
 		name = name.replace(/,/g, "")
 
-	stancebox=name+'-stance';
-	stanceicon=name+'-stanceicon';
-	n = document.getElementById(name+"-stance").options[document.getElementById(name+"-stance").selectedIndex].value
+	var stancebox=name+'-stance';
+	var stanceicon=name+'-stanceicon';
+	var n = document.getElementById(name+"-stance").options[document.getElementById(name+"-stance").selectedIndex].value
+
+	hideAllIcons(name)
+
 	switch(n){
-		case "air":
-			hide(name+'-defaulticon');
+		case "Air": 
 			show(name+'-air');
-			hide(name+'-earth');
-			hide(name+'-fire');
-			hide(name+'-water');
-			hide(name+'-void');
 		break;
 
-		case "earth":
-			hide(name+'-defaulticon');
-			hide(name+'-air');
+		case "Earth":
 			show(name+'-earth');
-			hide(name+'-fire');
-			hide(name+'-water');
-			hide(name+'-void');
 		break;
 
-		case "fire":
-			hide(name+'-defaulticon');
-			hide(name+'-air');
-			hide(name+'-earth');
+		case "Fire":
 			show(name+'-fire');
-			hide(name+'-water');
-			hide(name+'-void');
 		break;
 
-		case "water":
-			hide(name+'-defaulticon');
-			hide(name+'-air');
-			hide(name+'-earth');
-			hide(name+'-fire');
+		case "Water":
 			show(name+'-water');
-			hide(name+'-void');
 		break;
 
-		case "void":
-			hide(name+'-defaulticon');
-			hide(name+'-air');
-			hide(name+'-earth');
-			hide(name+'-fire');
-			hide(name+'-water');
+		case "Void":
 			show(name+'-void');
 		break;
 	}
-			u=document.getElementById(name+"-stance").value;
-			v=stances[u].ability;
-			divcontents(name+'-stancetool',v)	;	
+			var u=document.getElementById(name+"-stance").value;
+			u = u.toLowerCase()
+			divContents(name+'-stancetool',stances[u].ability)	;	
+}
+
+function hideAllIcons(name){
+			hide(name+'-defaulticon');
+			hide(name+'-air');
+			hide(name+'-earth');
+			hide(name+'-fire');
+			hide(name+'-water');
+			hide(name+'-void');
 }
 
 function showThisNpc(nom){
-	if (document.getElementById("library").classList.contains("containerx")){
+	if (document.getElementById("library").classList.contains("containerhidden")){
 		highlight("npclibrarybutton","library")
 	}
 
@@ -289,124 +313,128 @@ function showThisNpc(nom){
 
 function buildSkirmishCharacter (nom){
 
-	newdiv (nom,"skirmish","block margin10") //creates container for all char stats
+	var array = []
 
- 	newdiv (nom+"-name",nom," styledselect namelength");  //creates name container
- 		
- 		if (skirmishcharacters[nom].player==1){		//sets PC or NPC
-				divcontents (nom+"-name","<b>"+skirmishcharacters[nom].name+"</b>");
-			} else {
-				divcontents (nom+"-name",skirmishcharacters[nom].name); 
-			}
+	var namehtml = "<span onclick='onclick=showThisNpc(&quot;"+nom+"&quot;)'>"+skirmishcharacters[nom].name+" ("+skirmishcharacters[nom].clan+" / "+skirmishcharacters[nom].school+")</span>"
 
- 	newdiv (nom+"-clan",nom,"margin10 styledselect clanlength");  //creates clan and school container
+	array.push(namehtml)
 
+	array.push("")
+	array.push("")
+	array.push("")
+	array.push("/<span id='"+nom+"-endurance'>"+skirmishcharacters[nom].endurance+"</span>")
+	array.push("")
+	array.push("/<span id='"+nom+"-composure'>"+skirmishcharacters[nom].endurance+"</span>")
+	array.push("")
+	array.push("")
+	array.push("")
+	array.push("")
+	array.push("")
+	array.push("")
 
-	x='class="inline" onclick=showThisNpc("'+nom+'");'
+	var table = document.getElementById("skirmishtable").getElementsByTagName('tbody')
 
- 	divcontents (nom+"-clan",'<div '+x+'>'+"("+skirmishcharacters[nom].clan+" / "+skirmishcharacters[nom].school+")</div>");  //enters clan and school
- 	
+	var thisRow = table[0].insertRow(-1)
 
- 	newdiv (nom+"-xinitiative",nom,"inline margin10");  //creates initiative container
+		for (var i = 0; i < array.length; i++){	
+			var thisItemData = array[i];
 
+			var thisCell = thisRow.insertCell(i);
 
-	makeNumberInput(nom+"-xinitiative",nom+'-yinitiative',"inline styledselect","Init:",nom+"-initiative","numberform")
-	formid = nom+'-yinitiative'
-	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"initiative")')
+			thisCell.innerHTML=thisItemData;
+		}
 
+	//makes player rows bold
 
- 	newdiv (nom+"-xstance",nom,"inline margin10");  //creates stance container
- 	makeSelect(nom+"-xstance",nom+"-stance","styledselect","update("+nom+",'stance');updateStance("+nom+")")
+	if (skirmishcharacters[nom].player == 1){
+		thisRow.classList.add("bold")
+	}
 
-		y = document.getElementById(nom+'-stance'); //creates stance dropdown
+	//inserts all the inputs
 
-		var stanceList = document.getElementById(y);
-		for (elem in stances){
+	var parent = thisRow.cells[1]
+	newNumberInput(parent,nom+'-skirmishinitiative',"aligncentre","",nom+"-initiative","w35")
+	document.getElementById(nom+"-initiative").setAttribute("oninput",'update("'+nom+'","initiative")')
+	document.getElementById(nom+"-initiative").value = 0 //set initial initiative to 0
 
-				var el = document.createElement("option");			
-			    el.textContent = elem;
-			    el.value = elem;
-			    y.appendChild(el);
-			}
+	var parent = thisRow.cells[3]
+	newNumberInput(parent,nom+'-skirmishfatigue',"aligncentre","",nom+"-fatigue","w35")
+	document.getElementById(nom+'-fatigue').setAttribute("oninput",'update("'+nom+'","fatigue")')
+	document.getElementById(nom+"-fatigue").value = 0 //set initial fatigue to 0
 
-		    y.selectedOption=0;
+	var parent = thisRow.cells[5]
+	newNumberInput(parent,nom+'-skirmishstrife',"aligncentre","",nom+"-strife","w35")
+	document.getElementById(nom+'-strife').setAttribute("oninput",'update("'+nom+'","strife")')
+	document.getElementById(nom+"-strife").value = 0 //set initial strife to 0
 
- 	newdiv (nom+"-stanceicon",nom,"inline stancediv stancelength");  //creates stance tooltip
-		    v=' onmouseover=hideshow("'+nom+'-stancetool") onmouseout=hideshow("'+nom+'-stancetool")'
-		    x = '<span class="icon" id="'+nom+'-defaulticon">p</span><span class="icon air hide" id="'+nom+'-air">a</span><span class="icon hide earth" id="'+nom+'-earth">e</span><span class="icon fire hide" id="'+nom+'-fire">f</span><span class="icon water hide" id="'+nom+'-water">w</span><span class="icon void hide" id="'+nom+'-void">v</span>';
-			divcontents(nom+"-stanceicon","<div class='inline' "+v+">"+x+"</div>");
+	var parent = thisRow.cells[7]
+	newNumberInput(parent,nom+'-skirmishphysres',"aligncentre","",nom+"-physres","w35")
+	document.getElementById(nom+"-physres").setAttribute("oninput",'update("'+nom+'","physres")')
+	document.getElementById(nom+"-physres").value = skirmishcharacters[nom].physres //set initial physres
 
-
- 	newdiv (nom+"-zendurance",nom,"fatiguelength margin10");  //creates endurance&fatigue container
-	makeNumberInput(nom+"-zendurance",nom+'-yendurance',"inline styledselect","Fatigue:",nom+'-fatigue',"numberform")
-	formid = nom+'-yendurance';
-	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"fatigue")')
-	newdiv (nom+"-endurance",nom+"-zendurance","inline")
-
-
- 	newdiv (nom+"-zcomposure",nom," strifelength margin10");  //creates composure and strife container
- 	makeNumberInput(nom+"-zcomposure",nom+'-ycomposure',"inline styledselect","Strife:",nom+'-strife',"numberform")
- 	formid = nom+'-ycomposure';
-	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"strife")')
-	newdiv (nom+"-composure",nom+"-zcomposure","inline")
-
-  	newdiv (nom+"-physres",nom," reslength margin10");  //creates phys res container
-  	makeNumberInput(nom+"-physres",nom+'-yphysres',"inline styledselect","Phys:",nom+'-nphysres',"numberform")
-  	 formid = nom+'-yphysres';
-	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"physres")')
+	var parent = thisRow.cells[8]
+	newNumberInput(parent,nom+'-skirmishsupsres',"aligncentre","",nom+"-supres","w35")
+	document.getElementById(nom+"-supres").setAttribute("oninput",'update("'+nom+'","supres")')
+	document.getElementById(nom+"-supres").value = skirmishcharacters[nom].supres //set initial supres
 
 
- 	newdiv (nom+"-supres",nom," reslength margin10");  //creates supres container
- 	makeNumberInput(nom+"-supres",nom+'-ysupres',"inline styledselect","Sup:",nom+'-nsupres',"numberform")
- 	 formid = nom+'-ysupres';
-	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"supres")')
+	var parent = thisRow.cells[9]
+	newTextInput(parent,nom+'-skirmishengaged',"aligncentre","",nom+"-engaged","w100")
+	document.getElementById(nom+"-engaged").setAttribute("onchange",'update("'+nom+'","engaged")')
 
 
- 	document.getElementById(nom+"-nphysres").value=skirmishcharacters[nom].physres;
-	document.getElementById(nom+"-nsupres").value=skirmishcharacters[nom].supres;
+	var parent = thisRow.cells[10]
+	newTextInput(parent,nom+'-skirmishnotes',"aligncentre","",nom+"-notes","w200")
+	document.getElementById(nom+"-notes").setAttribute("onchange",'update("'+nom+'","notes")')
+	
 
+	var parent = thisRow.cells[2]
+	var rings = ["Air","Earth","Fire","Water","Void"]
+	newSelect(parent,nom+"-stance","inline","update('"+nom+"','stance');updateStance('"+nom+"')")
+	fillSelectDropdownDefault(nom+"-stance","Stance",rings)
 
-   	newdiv (nom+"-xengaged",nom,"margin10 inline");  //creates engaged with container
-   	makeTextInput(nom+"-xengaged",nom+'-yengaged',"inline styledselect","Engaged:",nom+'-engaged',"styledselect")
-   	formid=nom+'-yengaged'
-   	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"engaged")')
-	document.getElementById(formid).style.width = "70px"
+	newDiv(nom+"-stanceicon",parent,"inline w35")
+	divContents(nom+"-stanceicon",'<span class="icon" id="'+nom+'-defaulticon">p</span><span class="icon air hide" id="'+nom+'-air">a</span><span class="icon hide earth" id="'+nom+'-earth">e</span><span class="icon fire hide" id="'+nom+'-fire">f</span><span class="icon water hide" id="'+nom+'-water">w</span><span class="icon void hide" id="'+nom+'-void">v</span>')
+	document.getElementById(nom+"-stanceicon").setAttribute('onmouseover','hideShow("'+nom+'-stancetool")')
+	document.getElementById(nom+"-stanceicon").setAttribute('onmouseout','hideShow("'+nom+'-stancetool")')
 
+	newDiv (nom+"-stancetool",parent,"hide tooltiptext tooltipstance");	
 
-  	newdiv (nom+"-xnotes",nom," margin10 inline");  //creates conditions and notes container
- 	makeTextInput(nom+"-xnotes",nom+'-ynotes',"inline styledselect","Notes:",nom+'-notes',"noteslength styledselect")
-    formid=nom+'-ynotes'
-   	document.getElementById(formid).setAttribute("oninput",'update('+nom+',"notes")')
+	var parent = thisRow.cells[11];
+	var statuslist = ["Alive","Out","Dead"];
+	newSelect(parent,nom+'-status',"inline",'update("'+nom+'","status")');
+	fillSelectDropdown(nom+'-status',statuslist);
 
+	var parent = thisRow.cells[12];
+	newDiv (nom+"-xdelete",parent,"inline");
+	newButton(nom+"-xdelete",nom+'-delete',"button","deletechar('"+nom+"')","x") //makes delete button
 
-  	newdiv (nom+"-xstatus",nom," margin10 inline");  //status selector
-	makeSelect(nom+"-xstatus",nom+'-status',"styledselect",'update('+nom+',"status")')
-
-		y = document.getElementById(nom+'-status');
-
-		for(var i = 0; i < statuslist.length; i++) {
-			z=statuslist[i];
-			
-		var el = document.createElement("option");			
-		    el.textContent = statuslist[i];
-		    el.value = statuslist[i];
-		    y.appendChild(el);}
- 
-
-	newdiv (nom+"-xdelete",nom,"margin10 inline");
-	makeButton(nom+"-xdelete",nom+'-delete',"button","deletechar("+nom+")","x") //makes delete button
-
-	newdiv (nom+"-stancetool",nom,"hide tooltiptext tooltipstance");
-
-	document.getElementById(nom+"-endurance").innerHTML = " /"+skirmishcharacters[nom].endurance
-	document.getElementById(nom+"-composure").innerHTML = " /"+skirmishcharacters[nom].composure
+	if (thisRow.rowIndex & 1){
+		thisRow.classList.add("odd");
+	}
 	}
 
 
 function deletechar (name){
-	skirmishdiv=document.getElementById('skirmish');
-	skirmishdiv.removeChild(name);
-	delete skirmishcharacters[name.id];
+	skirmishdiv=document.getElementById('skirmishtable');
+
+	var tablerows = document.getElementById("skirmishtable").rows;
+
+	delete skirmishcharacters[name];
+
+	for (var i = 1; i < tablerows.length ; i++){
+		if (tablerows[i].cells[0].textContent.includes(name)){  //deletes the row for the name
+			skirmishdiv.deleteRow(i);
+		}
+	}
+	for (var i = 1; i < tablerows.length ; i++){	
+		if (tablerows[i].classList.contains("odd")){  //removes all the colour bands if they have it
+			tablerows[i].classList.remove("odd");
+		}
+		if (i & 1){
+			tablerows[i].classList.add("odd")  //adds them back on to every other row
+		}
+	}
 	}
 
 
@@ -419,11 +447,13 @@ function reorderSkirmish(){
 			init=parseInt(skirmishcharacters[elem].initiative,10);
 			
 			if (skirmishcharacters[elem].player==1){ //prioritises players
-				init+=0.5;
+				init += 0.5;
 			} else {orderarray[elem]=orderarray[elem]}
 
-			if (skirmishcharacters[elem].status=="out" || skirmishcharacters[elem].status=="dead"){
-				init=-1  //deprioritises unconscious and dead characters
+			var div = document.getElementById(elem+"-status").value
+
+			if (div =="Out" || div =="Dead"){
+				init = -1;  //deprioritises unconscious and dead characters
 			}
 			
 			orderarray[elem]=init;
@@ -444,7 +474,7 @@ function reorderSkirmish(){
     			} else {;}
 		}
 	}
-	document.getElementById("skirmish").innerHTML=""; //clears skirmish div
+	 clearSkirmishRows() //clears skirmish rows
 
 	for(var i = 0; i < namesarray.length; i++) {
 		elem = namesarray[i];
@@ -467,3 +497,21 @@ function reorderSkirmish(){
 		updateStance(chosenChar);
 	}
 	}
+
+	function updatestatus(name){
+	statusbox = name+'-status';
+	stanceicon = name+'-status';
+	switch(document.getElementById(statusbox).value){
+		case "alive":
+			skirmishcharacters[name].status = "alive";
+		break;
+
+		case "out":
+			skirmishcharacters[name].status = "out";
+		break;
+
+		case "dead":
+			skirmishcharacters[name].status = "dead";
+		break;
+	}
+}

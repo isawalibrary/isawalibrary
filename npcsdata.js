@@ -173,6 +173,54 @@ var archetypes =[
 			abilities:[],
 			techniques:[],
 		},{
+            fullname:"Servants and Peasants",
+			title:"ServantsandPeasants",
+			conflictcombat:1,
+			conflictintrigue:1,
+			type:"Servants and Peasants",
+			ring:{
+				type: "random",
+				Earth:1,
+				Air:1,
+				Fire:1,
+				Water:1,
+				Void:1,},
+			extra: function(){
+						this.ring.Earth = 1
+						this.ring.Air = 1
+						this.ring.Fire = 1
+						this.ring.Water = 1
+						this.ring.Void = 1
+						array=[1,1,0,0,0];
+						array = shuffle(array);
+						this.ring.Earth += array[0];
+						this.ring.Air += array[1];
+						this.ring.Fire += array[2];
+						this.ring.Water += array[3];
+						this.ring.Void += array[4];
+			},
+			honor:20,
+			glory:25,
+			status:15,
+			endurance:4,
+			composure:4,
+			focus:3,
+			vigilance:2,
+			equiptype:"equipped",
+			skills:{
+				artisanskill:0,
+				martialskill:0,
+				scholarskill:0,
+				socialskill:0,
+				tradeskill:1,},			
+			demeanor:["Shrewd","Cautious","Friendly","Opportunistic"],
+			advantages:["Salt of the Earth (Earth) [Trade: Interpersonal]",],
+			disadvantages:["Deferential (Water) [Social; Interpersonal, Mental]",],
+			weapon:["Knife","Masakari","Club","Bo","Sling"],
+			armor:["Common Clothes","Rags","Traveling Clothes","Ashigaru Armor",],
+			abilities:["Overlooked: When this character makes a check targeting a character with a higher status rank, they treat that character's vigilance as 1 lower.",],
+			techniques:[],
+		},{
 			title:"Bear",
 			fullname: "Bear",
 			type:"Animals",
@@ -1241,54 +1289,6 @@ var archetypes =[
 			abilities:["Overlooked: When a peasant makes a check targeting a character with a higher status rank, they treat that character's vigilance as 1 lower.",],
 			techniques:[],
 		},{
-            fullname:"Servants and Peasants",
-			title:"ServantsandPeasants",
-			conflictcombat:1,
-			conflictintrigue:1,
-			type:"Servants and Peasants",
-			ring:{
-				type: "random",
-				Earth:1,
-				Air:1,
-				Fire:1,
-				Water:1,
-				Void:1,},
-			extra: function(){
-						this.ring.Earth = 1
-						this.ring.Air = 1
-						this.ring.Fire = 1
-						this.ring.Water = 1
-						this.ring.Void = 1
-						array=[1,1,0,0,0];
-						array = shuffle(array);
-						this.ring.Earth += array[0];
-						this.ring.Air += array[1];
-						this.ring.Fire += array[2];
-						this.ring.Water += array[3];
-						this.ring.Void += array[4];
-			},
-			honor:20,
-			glory:25,
-			status:15,
-			endurance:4,
-			composure:4,
-			focus:3,
-			vigilance:2,
-			equiptype:"equipped",
-			skills:{
-				artisanskill:0,
-				martialskill:0,
-				scholarskill:0,
-				socialskill:0,
-				tradeskill:1,},			
-			demeanor:["Shrewd","Cautious","Friendly","Opportunistic"],
-			advantages:["Salt of the Earth (Earth) [Trade: Interpersonal]",],
-			disadvantages:["Deferential (Water) [Social; Interpersonal, Mental]",],
-			weapon:["Knife","Masakari","Club","Bo","Sling"],
-			armor:["Common Clothes","Rags","Traveling Clothes","Ashigaru Armor",],
-			abilities:["Overlooked: When this character makes a check targeting a character with a higher status rank, they treat that character's vigilance as 1 lower.",],
-			techniques:[],
-		},{
             fullname:"Seasoned Courtier",
 			title:"SeasonedCourtier",
 			conflictcombat:1,
@@ -1426,9 +1426,8 @@ var archetypes =[
 			abilities:["Lord's Command: Once per scene, as a Support action, a daimyo may advise a character who can hear them on how to complete a task they wish the character to perform. The character may use the daimyo's ring or skill in place of their own for the next check they make to complete this task before the end of the game session.",],
 			techniques:[],
 },{
-            fullname:"Desperate Bandit",
-			title:"DesperateBandit",
-			type:"Fighters, Outlaws, Rokugani",
+            fullname:"Bandit, Desperate",
+			title:"BanditDesperate",
 			demeanor:["Ambitious",],
 			conflictcombat:1,
 			conflictintrigue:1,
@@ -1471,8 +1470,8 @@ var archetypes =[
 			],
 			techniques:[],
 },{
-            fullname:"Experienced Bandit",
-			title:"ExperiencedBandit",
+            fullname:"Bandit, Experienced",
+			title:"BanditExperienced",
 			conflictcombat:3,
 			conflictintrigue:2,
 			type:"Pregen",

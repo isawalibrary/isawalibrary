@@ -1,130 +1,56 @@
+
 function loadNPC(){
 
-	save = JSON.parse(localStorage.getItem("savenpc"));
+	var save = JSON.parse(localStorage.getItem("savenpc"));
 
 	if (save !== undefined){
-		npc=save;
-	}
+		npc=save;	}
 
 	if (npc==null){
-		npc={}
-	}
+		npc={}; 	}
 }
 
+var npc = {};
 var thisnpc = {};
-var selectedType = {}
-var selectedTemplate = {};
-var selectedArchetype = {};
-var selectedClan = {};
-var selectedFamily = {};
-var selectedSchool = {};
 var npcs = {};
-
-function buildNpcStatsDiv(){
-
-	document.getElementById("npcstats").innerHTML = "";
-	document.getElementById("npcnotes").innerHTML = "";
-
-	newdiv("npcname","npcstats","inline");
-	makeTextInput("npcname","newnpcname","styledselect inline margin10",'<span id="npcnameword" onclick="getNPCName()">Name: </span>',"npcnameinput","styledselect")
-
-	newdiv("npcinfo","npcstats","inline margin10")
-		x = '<i><span id="npcinfoarchetype"></span></i> <span class="l5r">m</span> <span id="npcconflictcombat"></span> <span class="l5r">c</span> <span id="npcconflictintrigue"></span>';
-	divcontents("npcinfo",x);
-
-	newdiv("npcrings","npcstats","block margin10 paddingtopbottom")
-		x = '<div class="paddingtopbottom inline"><b>Rings</b>: <span class="margin10 air l5r">a</span> <span id="npcAir"></span>'+
-		'<span class="l5r earth margin10">e</span> <span id="npcEarth"></span>'+
-		'<span class="l5r fire margin10">f</span> <span id="npcFire"></span>'+
-		'<span class="l5r water margin10">w</span> <span id="npcWater"></span>'+
-		'<span class="margin10 void l5r">v</span> <span id="npcVoid"></div>'+'</span>'
-	divcontents("npcrings",x)
-
-	newdiv("npcderivedstats","npcstats","block margin10 paddingbottom")
-		x =	'<b>Derived Stats</b>: Endurance: <span id="npcendurance"></span>'+
-		'<span class="margin10">Composure:</span> <span id="npccomposure"></span>'+
-		'<span class="margin10">Focus:</span> <span id="npcfocus"></span>'+
-		'<span class="margin10">Vigilance:</span> <span id="npcvigilance"></span>' 
-	divcontents("npcderivedstats",x) 
-
-	newdiv("npcsocial","npcstats","block margin10 paddingbottom")
-		x = '<b>Social</b>: <span>Honor: </span><span id="npchonor"></span>'+
-		'<span class="margin10">Glory: </span><span id="npcglory"></span>'+
-		'<span class="margin10">Status: </span><span id="npcstatus"></span>'+
-		'<span class="margin10">Demeanor: '
-		divcontents("npcsocial",x);	
-		makeSelect("npcsocial","npcdemeanor","styledselect inline","setDemeanor()")
-		x = '<span id="npcdemeanornotes" class="inline margin10"></span>'
-		addToDiv("npcsocial",x);
-
-	newdiv("npcadvdisadv","npcstats","block margin10")
-	divcontents("npcadvdisadv","Advantage:")
-	makeSelect("npcadvdisadv","npcadv","styledselect inline marginbottom margin10","")
-	addToDiv("npcadvdisadv","<br>Disadvantage:")
-	makeSelect("npcadvdisadv","npcdisadv","styledselect inline margin10","")
-	
-	newdiv("npcskills","npcstats","block margin10")
-		x = '<div class="paddingtopbottom"><b>Skills</b>: <span class="margin10">Artisan: </span><span id="npcartisanskill"></span>'+
-		'<span class="margin10">Martial: </span><span id="npcmartialskill"></span>'+
-		'<span class="margin10">Social: </span><span id="npcsocialskill"></span>'+
-		'<span class="margin10">Scholar: </span><span id="npcscholarskill"></span>'+
-		'<span class="margin10">Trade: </span><span id="npctradeskill"></span></div>';
-	divcontents("npcskills",x);
-
-	newdiv("npcequip","npcstats","block margin10")
-	divcontents("npcequip","<b>Equipment</b><br>Weapon:<br>")
-	newdiv("npcweaponwrap0","npcequip","block margin10")
-	makeSelect("npcweaponwrap0","npcweapon0","styledselect inline marginbottom","selectNPCWeapon('0');")
-
-	newdiv("npcweapon0stats","npcweaponwrap0","inline margin10")
-
-	newdiv("npcequiparmor","npcstats","block margin10")
-	divcontents("npcequiparmor","Clothing:<br>")
-	makeSelect("npcequiparmor","npcarmor0","styledselect inline marginbottom margin10","selectNPCArmor('0');")
-	
-	newdiv("npcarmor0stats","npcequiparmor","inline margin10 marginbottom")
-	
-	newdiv("npcabilitycontainer","npcstats","block margin10 defcategory")
-	divcontents("npcabilitycontainer","<b>Ability</b>:");
-
-	newdiv("npcschoolability","npcabilitycontainer","inline block")
-
-	newdiv("npcabilities","npcabilitycontainer","inline block")
-	
-	newdiv("npctechs","npcstats","block margin10 defcategory")
-	divcontents("npctechs","<b>Techniques</b>:<br>");
-
-	newdiv("npcschooltechnique","npctechs","block")
-	newdiv("npcstartingschooltechnique","npcschooltechnique","block")
-
-	newdiv("npctechniquecontainer","npctechs","block")
-}
 
 function makeNpcLibrary(){
 
 	document.getElementById("menu").innerHTML = "";
 	document.getElementById("statblock").innerHTML = ""
 
-	for (each in npc){
+	for (var each in npc){
 
-		dem = npc[each].social.demeanor
+		var dem = npc[each].social.demeanor
 		each = npc[each];
 		
-		for (i=0; i< demeanors.length; i++){
+		for (var i=0; i< demeanors.length; i++){
 			
 			if (demeanors[i].demeanor == dem){
-				npcdemeanor = demeanors[i]
+				var npcdemeanor = demeanors[i]
 			}
 	}
 
-	if (each.type == "Clan Samurai"){x = each.type} 
-	else if (each.type == "Ronin, Riffraff and Gaijin"){x = each.ronintype}
-	else if (each.type == "Animals" || each.type == "Creatures" ||each.type == "Pregen" ){x = ""}
-	else if (each.type == "Servants and Peasants" ){x = ""}
+	switch (each.type){
+		case "Clan Samurai": 
+			var x = each.type
+			break;
 
-		newdiv("div"+each.title,"menu","block");
-		divcontents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
-		makeButton('menu'+each.title,each.title+'--delete','inline marginright marginbottom',"deletenpc("+"'"+each.title+"'"+")","x")
+		case "Ronin, Riffraff and Gaijin":
+			x = each.ronintype
+			break;
+
+		case "Animals":
+		case "Creatures":
+		case "Pregen":
+		case "Servants and Peasants":
+			x = "";
+			break;
+	}
+
+		newDiv("div"+each.title,"menu","block");
+		divContents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
+		newButton('menu'+each.title,each.title+'--delete','inline mr5 mb5',"deletenpc("+"'"+each.title+"'"+")","x")
 		document.getElementById('menu'+each.title).innerHTML += each.fullname + 
 															' [' + each.clan +
 															'/' + each.school +
@@ -133,121 +59,98 @@ function makeNpcLibrary(){
 															')' 
 															;
 ;
-		newdiv("npc-"+each.title,"statblock","block hide librarywidth");
+		newDiv("npc-"+each.title,"statblock","block hide librarywidth");
 		document.getElementById("npc-"+each.title).innerHTML='<b>'+ each.fullname + 
 												' [' + each.clan +
 												'/' + each.school +
 												'] (' + each.archetype +" "+ x +" "+
 												'/' + each.template +
 												')</b> ';
-		newdiv("addskirmishbuttondiv"+each.title,"npc-"+each.title,"inline") 
-		makeButton("addskirmishbuttondiv"+each.title,each.title+'-toskirmish',"button margin10",'npcskirmish('+"'"+each.title+"'"+')',"add to skirmish")
-		makeButton("addskirmishbuttondiv"+each.title,each.title+'-edit',"button margin10",'makeNpcEdit('+"'"+each.title+"'"+')',"edit NPC")
+		newDiv("addskirmishbuttondiv"+each.title,"npc-"+each.title,"inline") 
+		newButton("addskirmishbuttondiv"+each.title,each.title+'-toskirmish',"button ml10",'npcskirmish('+"'"+each.title+"'"+')',"add to skirmish")
+		newButton("addskirmishbuttondiv"+each.title,each.title+'-edit',"button ml10",'makeNpcEdit('+"'"+each.title+"'"+')',"edit NPC")
 												
-		newdiv("stat"+each.title,"npc-"+each.title,"block statwidth");
+		newDiv("stat"+each.title,"npc-"+each.title,"block statwidth");
 		document.getElementById("stat"+each.title).innerHTML= 
-												'Rings:<span class="l5r air margin10">a</span>: '+ each.rings.air +
-												'<span class="l5r earth margin10">e</span>: '+ each.rings.earth +
-												'<span class="l5r fire margin10">f</span>: '+ each.rings.fire +
-												'<span class="l5r water margin10">w</span>: '+ each.rings.water +
-												'<span class="l5r void margin10">v</span>: '+ each.rings.void +
-												'<br>' +
+												'<p>Rings:<span class="l5r air ml10">a</span>: '+ each.rings.air +
+												'<span class="l5r earth ml10">e</span>: '+ each.rings.earth +
+												'<span class="l5r fire ml10">f</span>: '+ each.rings.fire +
+												'<span class="l5r water ml10">w</span>: '+ each.rings.water +
+												'<span class="l5r void ml10">v</span>: '+ each.rings.void +
+												'<p>' +
 												'Endurance:' + each.derived.endurance +
-												'<span class="margin10">Composure</span>: ' + each.derived.composure +
-												'<span class="margin10">Focus</span>: ' + each.derived.focus +
-												'<span class="margin10">Vigilance</span>: ' + each.derived.vigilance +
-												'<br>' +
-												'Social: <span class="margin10">Honor</span>: ' + each.social.honor +
-												'<span class="margin10">Glory</span>: ' + each.social.glory +
-												'<span class="margin10">Status</span>: ' + each.social.status +
-												'<span class="margin10">Demeanor</span>: ' + each.social.demeanor + 
+												'<span class="ml10">Composure</span>: ' + each.derived.composure +
+												'<span class="ml10">Focus</span>: ' + each.derived.focus +
+												'<span class="ml10">Vigilance</span>: ' + each.derived.vigilance +
+												'<p>' +
+												'Social: <span class="ml10">Honor</span>: ' + each.social.honor +
+												'<span class="ml10">Glory</span>: ' + each.social.glory +
+												'<span class="ml10">Status</span>: ' + each.social.status +
+												'<span class="ml10">Demeanor</span>: ' + each.social.demeanor + 
 												" (" + npcdemeanor.tns + ") Unmasking: " + npcdemeanor.unmasking +
-												'<br>Skills: <span class="margin10">Artisan</span>: ' + each.skills.artisan +
-												'<span class="margin10">Social</span>: ' + each.skills.social +
-												'<span class="margin10">Martial</span>: ' + each.skills.martial +
-												'<span class="margin10">Scholar</span>: ' + each.skills.scholar +
-												'<span class="margin10">Trade</span>: ' + each.skills.trade +
-												'<br>' ;
+												'<p>Skills: <span class="ml10">Artisan</span>: ' + each.skills.artisan +
+												'<span class="ml10">Social</span>: ' + each.skills.social +
+												'<span class="ml10">Martial</span>: ' + each.skills.martial +
+												'<span class="ml10">Scholar</span>: ' + each.skills.scholar +
+												'<span class="ml10">Trade</span>: ' + each.skills.trade +
+												'<p>' ;
 
-		for (e = 0; e < each.weapon.length; e++){
+		for (var e = 0; e < each.weapon.length; e++){
 
-					weap = each.weapon[e]
+					var weap = each.weapon[e]
 					
-					for(i=0; i < tabledata[8].children.length; i++){
-						if (tabledata[8].children[i].name == weap){
-							weap = tabledata[8].children[i]
+					var weapstats = getWeaponStats(weap)
 
-							x = 'Damage: '+weap.damage+
-								'<span class="margin10">Deadliness: </span>'+weap.deadliness+
-								'<span class="margin10">Range: </span>'+weap.range+
-								'<span class="margin10">Qualities: </span>'+weap.qualities;
-
-							weapstats = x
-						}	
-					} 
-
-					for (i=0; npcweapons.length > i; i++){
-						if ( npcweapons[i].name == weap){
-							weap = npcweapons[i];
-
-							x = 'Damage: '+weap.damage+
-								'<span class="margin10">Deadliness: </span>'+weap.deadliness+
-								'<span class="margin10">Range: </span>'+weap.range+
-								'<span class="margin10">Qualities: </span>'+weap.qualities;
-
-							weapstats = x
-						}
-					}
 					document.getElementById("stat"+each.title).innerHTML +=
-												'Weapon: ' + weap.name + ' [' + weapstats + ']' +
+												'Weapon: ' + each.weapon[e] + ' [' + weapstats + ']' +
 												'<br>' 
 		}
 
 		each.armorstats = 'Phys Res: '+each.armorphys+
-								'<span class="margin10">Sup Res: </span>'+each.armorsup;
+								'<span class="ml10">Sup Res: </span>'+each.armorsup;
 		
 		document.getElementById("stat"+each.title).innerHTML +=
-												'Armor: ' + each.armor + ' [' + each.armorstats + ']' +
-												'<br>' +
-												'Advantage: ' + each.advantage +
-												'<br>' +
-												'Disadvantage: ' + each.disadvantage +
-												'<br>' 
+												'Armor: ' + each.armor + ' [' + each.armorstats + ']<p>' 
 
-												 
+		for (var m = 0; m < each.advantage.length; m++){
+			document.getElementById("stat"+each.title).innerHTML +=
+												'Advantage: ' + each.advantage[m] 
+												+'<br>'
+		}										
+
+		for (var m =0; m < each.disadvantage.length; m++){
+			document.getElementById("stat"+each.title).innerHTML +=
+												'Disdvantage: ' + each.disadvantage[m] 
+												+'<br>'
+		}										
+		document.getElementById("stat"+each.title).innerHTML += '<p>'	
+
 		if (each.qualities !== undefined){
-			document.getElementById("stat"+each.title).innerHTML += each.qualities + "<br>" ;
+			document.getElementById("stat"+each.title).innerHTML += each.qualities + "<p>" ;
 		}										 
 
-		document.getElementById("stat"+each.title).innerHTML +='<i>Ability</i>: '
-
-		if (each.schoolability !== "None" && each.schoolability !== "" && each.schoolability !== undefined){
-			 document.getElementById("stat"+each.title).innerHTML += each.schoolability
-		} 												
-
+		document.getElementById("stat"+each.title).innerHTML +='<i>Ability</i>: '											
 		if (each.ability !== "" && each.ability != undefined){
-			document.getElementById("stat"+each.title).innerHTML += '<br>' + each.ability 
+			document.getElementById("stat"+each.title).innerHTML += '<p>' + each.ability 
 		} 
 
-		document.getElementById("stat"+each.title).innerHTML += '<br><i>Techniques</i>: <br>'
+		document.getElementById("stat"+each.title).innerHTML += '<p><i>Techniques</i>: <p>'
 
-		technames = [];
-		techeffects = []
+		var technames = [];
+		var techeffects = []
 
-				for (i = 0; i < each.techs.length; i++){
+				for (var i = 0; i < each.techs.length; i++){
 
-					newdiv("stat"+each.title+"techwrap"+[i],"stat"+each.title,"block margintop")
-					newdiv("stat"+each.title+"techname"+[i],"stat"+each.title+"techwrap"+[i],"block")
-					newdiv("stat"+each.title+"techeffect"+[i],"stat"+each.title+"techwrap"+[i],"block hide")
+					newDiv("stat"+each.title+"techwrap"+[i],"stat"+each.title,"block mt5")
+					newDiv("stat"+each.title+"techname"+[i],"stat"+each.title+"techwrap"+[i],"block")
+					newDiv("stat"+each.title+"techeffect"+[i],"stat"+each.title+"techwrap"+[i],"block hide")
 
-					thistech = each.techs[i];
+					var thistech = each.techs[i];
 
-					for (j = 0; j < techniquelist.length; j++){
+					for (var j = 0; j < techniquelist.length; j++){
 						if (thistech == techniquelist[j].title){
 
-							eff = techniquelist[j].effect.replace("<br><br>","<br>");
-							eff = eff.replace("<br><br>","<br>");
-							eff = eff.replace("<br><br>","<br>");
+							var eff = techniquelist[j].effect;
 
 							x = '<u>'+techniquelist[j].title + " (" + techniquelist[j].ring +
 								') [' + techniquelist[j].type + " Rank " + techniquelist[j].rank + ']' +
@@ -255,7 +158,7 @@ function makeNpcLibrary(){
 
 							technames.push(x);
 
-							x = eff + '<br>'
+							x = eff + '<p>'
 							techeffects.push(x)
 						}
 					}
@@ -263,136 +166,295 @@ function makeNpcLibrary(){
 				if (technames[i] !== undefined){
 					document.getElementById("stat"+each.title+"techname"+[i]).innerHTML = technames[i] 
 					x = "stat"+each.title+"techeffect"+[i]
-					document.getElementById("stat"+each.title+"techname"+[i]).setAttribute("onclick","hideshow('"+x+"')")
+					document.getElementById("stat"+each.title+"techname"+[i]).setAttribute("onclick","hideShow('"+x+"')")
 					document.getElementById("stat"+each.title+"techeffect"+[i]).innerHTML = techeffects[i]
 				}
 				}
 
 		if (document.getElementById("stat"+each.title+"techwrap0") !== null && document.getElementById("stat"+each.title+"techwrap0") !== undefined){
-						document.getElementById("stat"+each.title+"techwrap0").classList.remove("margintop")}
+						document.getElementById("stat"+each.title+"techwrap0").classList.remove("mt5")}
 		if (technames.length == 0){
 			document.getElementById("stat"+each.title).innerHTML += 'None';
 		}
 
 			document.getElementById("stat"+each.title).innerHTML +=
-						'<br>Notes: ' + each.notes;
+						'<p>Notes: ' + each.notes;
 	}
-	document.getElementById("statblock").innerHTML = document.getElementById("statblock").innerHTML.replace("<br><br>","<br>");
-
+	document.getElementById("statblock").innerHTML = document.getElementById("statblock").innerHTML.replace("<br><br>","<p>");
 }
+
+function buildNpcStatsDiv(){  //makes npcbuilder form
+
+	newDiv("npcnameleft","npcstatwrap","inline mt5 npcbuilderleft");
+	divContents("npcnameleft",'<span id="npcnameword" onclick="getNPCName(&apos;npcnameinput&apos;)">Name: </span>')
+
+	newDiv("npcnameright","npcstatwrap","inline mt5 npcbuilderright")
+	newTextInput("npcnameright","newnpcname","inline w200","","npcnameinput","inline")
+
+	newDiv("npcinfo","npcnameright","inline ml10")
+	divContents("npcinfo",'<i><span id="npcinfoarchetype"></span></i> <span class="l5r">m</span> <span id="npcconflictcombat"></span> <span class="l5r">c</span> <span id="npcconflictintrigue"></span>');
+
+	newDiv("npcringsleft","npcstatwrap","block pt5 pb5 npcbuilderleft")
+	divContents("npcringsleft",'<b>Rings</b>:')
+
+	newDiv("npcringsright","npcstatwrap","block pt5 pb5 npcbuilderright")
+	divContents("npcringsright",'<span class="air l5r">a</span> <span id="npcAir"></span>'+
+		'<span class="l5r earth ml10">e</span> <span id="npcEarth"></span>'+
+		'<span class="l5r fire ml10">f</span> <span id="npcFire"></span>'+
+		'<span class="l5r water ml10">w</span> <span id="npcWater"></span>'+
+		'<span class="ml10 void l5r">v</span> <span id="npcVoid"></div>'+'</span>')
+
+	newDiv("npcderivedstatsleft","npcstatwrap","block pt5 pb5 npcbuilderleft")
+	divContents("npcderivedstatsleft",'<b>Derived Stats</b>:')
+
+	newDiv("npcderivedstatsright","npcstatwrap","block pt5 pb5 npcbuilderright")
+	divContents("npcderivedstatsright",'Endurance: <span id="npcendurance"></span>'+
+		'<span class="ml10">Composure:</span> <span id="npccomposure"></span>'+
+		'<span class="ml10">Focus:</span> <span id="npcfocus"></span>'+
+		'<span class="ml10">Vigilance:</span> <span id="npcvigilance"></span>' ) 
+
+	newDiv("npcsocialleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcsocialleft",'<b>Social</b>:')
+
+	newDiv("npcsocialright","npcstatwrap","block pb5 pt5 npcbuilderright")
+	divContents("npcsocialright",'<span>Honor: </span><span id="npchonor"></span>'+
+		'<span class="ml10">Glory: </span><span id="npcglory"></span>'+
+		'<span class="ml10">Status: </span><span id="npcstatus"></span>'+
+		'<span class="ml10">Demeanor: ');	
+	newSelect("npcsocialright","npcdemeanor"," inline","setDemeanor()")
+	addToDiv("npcsocialright",'<span id="npcdemeanornotes" class="inline ml10"></span>');
+
+	newDiv("npcadvleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcadvleft","Advantage:")
+
+	newDiv("npcadvright","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newSelect("npcadvright","npcadv0"," inline w600","")
+
+	newDiv("npcdisadvleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcdisadvleft","Disadvantage:")
+
+	newDiv("npcdisadvright","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newSelect("npcdisadvright","npcdisadv0"," inline w600","")
+
+	newDiv("npcskillsleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcskillsleft","<b>Skills</b>:")
+
+	newDiv("npcskillsright","npcstatwrap","block pb5 pt5 npcbuilderright")
+	divContents("npcskillsright",'<span class="">Artisan: </span><span id="npcartisanskill"></span>'+
+			'<span class="ml10">Martial: </span><span id="npcmartialskill"></span>'+
+			'<span class="ml10">Social: </span><span id="npcsocialskill"></span>'+
+			'<span class="ml10">Scholar: </span><span id="npcscholarskill"></span>'+
+			'<span class="ml10">Trade: </span><span id="npctradeskill"></span>')
+	
+	newDiv("npcweapon0left","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcweapon0left","<b>Weapon</b>:")
+
+	newDiv("npcweapons","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newDiv("npcweaponwrap0","npcweapons","block pb5 npcbuilderright")
+	newSelect("npcweaponwrap0","npcweapon0"," inline","selectNPCWeapon('0');")	
+	newDiv("npcweapon0stats","npcweaponwrap0","inline ml10")
+
+	newDiv("npcarmorleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcarmorleft","<b>Clothing</b>:")
+
+	newDiv("npcequiparmor","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newSelect("npcequiparmor","npcarmor0","inline","selectNPCArmor('0');")
+	newDiv("npcarmor0stats","npcarmor0","inline")
+	
+	newDiv("npcabilityleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcabilityleft","<b>Ability</b>:")
+
+	newDiv("npcabilityright","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newDiv("npcabilities","npcabilityright","")
+
+	newDiv("npctechleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npctechleft","<b>Techniques</b>:")
+	
+	newDiv("npctechright","npcstatwrap","block pb5 pt5 npcbuilderright")
+
+	newDiv("npcschooltechnique","npctechright","block")
+	newDiv("npcstartingschooltechnique","npctechright","block")
+	newDiv("npcschooltechchoice","npctechright","block")
+	newDiv("npctechniquecontainer","npctechright","block")
+
+	newDiv("npcnotesleft","npcstatwrap","block pb5 pt5 npcbuilderleft")
+	divContents("npcnotesleft","<b>Notes</b>:")
+
+	newDiv("npcnotesright","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newTextArea("npcnotesright","npcnotesinput","w600 h100")
+}
+
 
 function buildNpcMenu(){
 
-	document.getElementById("npcmenu").innerHTML = "";
+	document.getElementById("npcmenu").innerHTML = "";  //clear menu
 
-	newdiv("npctype","npcmenu","inline");
-	makeSelect("npctype","type","styledselect","selectType();")
+	newDiv("npctype","npcmenu","inline");
+	newSelect("npctype","type","","selectType();")
 
-	var typelist = ["Clan Samurai","Ronin, Riffraff and Gaijin","Servants and Peasants","Animals","Creatures","Pregen",];
-	makeSelectDropdown1("type",typelist);
+	getNpcTypeList()
+	fillSelectDropdown("type",npcLists.npcTypeArray);
 
-	newdiv("npcarchetype","npcmenu","inline margin10");
-	makeSelect("npcarchetype","archetype","styledselect","selectArchetype();")
+	newDiv("npcarchetype","npcmenu","inline ml10");
+	newSelect("npcarchetype","archetype","","selectArchetype();")
 
-	var archetypelist = [];
-	for (elem in archetypes){
+	getNpcArchetypeList(document.getElementById('type').value)
 
-	if (document.getElementById('type').value == archetypes[elem].type){
-		archetypelist.push(archetypes[elem].fullname);
-	}}
-	archetypelist.sort();
+	npcLists.npcArchetypeArray.sort();
 
-	makeSelectDropdown1("archetype",archetypelist);
+	fillSelectDropdown("archetype",npcLists.npcArchetypeArray);
 
-	buildNpcMenu1();
+	buildNpcMenuBar();
 	selectType();
 
-	selectObj = document.getElementById("archetype")
-	valueToSet = "Rank 1"
-	setSelectedValue(selectObj, valueToSet)
+	var selectObj = document.getElementById("archetype")
+	var valueToSet = "Rank 1"
+	setSelectedText(selectObj, valueToSet)
 	selectArchetype();
 }
 
+var npcLists = {
+	npcTypeArray : ["Clan Samurai","Ronin, Riffraff and Gaijin","Servants and Peasants"],
+	npcTemplateArray : [],
+	npcArchetypeArray : [],
 
-function getNPCName(){
-	name = nameMaker();
-	document.getElementById("npcnameinput").value = name
+			}
 
-	thisnpc.name = name;
+function getNpcTypeList(){
+	npcLists.npcTypeArray = ["Clan Samurai","Ronin, Riffraff and Gaijin","Servants and Peasants"] //reset
+
+	for (var archetype in archetypes){  // picks up the rest of the npc types from npcdata, some are in the array above because I want them in an order
+		npcLists.npcTypeArray.push(archetypes[archetype].type)
+	}
+
+	npcLists.npcTypeArray = removeDuplicates(npcLists.npcTypeArray)
 }
 
-function buildNpcMenu1(){
+function getNpcTemplateList(){
+	npcLists.npcTypeArray = [] //reset
+
+	for (var template in templates){
+		npcLists.npcTemplateArray.push(templates[template].title)
+	}
+
+	npcLists.npcTemplateArray = removeDuplicates(npcLists.npcTemplateArray)
+}
+
+function getNpcArchetypeList(type){
+	npcLists.npcArchetypeArray = []
+
+	if (type == "Ronin, Riffraff and Gaijin"){
+		type = "Clan Samurai"
+	}
+
+	for (var elem in archetypes){
+		if (type == archetypes[elem].type){
+			npcLists.npcArchetypeArray.push(archetypes[elem].fullname);
+		}}
+
+	npcLists.npcArchetypeArray = removeDuplicates(npcLists.npcArchetypeArray)
+}
+
+function buildNpcMenuBar(){
 
 	//create all the hidden empty dropdowns
 	//creates and populates template dropdown
 
+	newDiv("npcronintype","npcmenu","inline ml10 hide");
+	newSelect("npcronintype","npcronintypeselect","","selectNPCRoninType();")
 
-	if (document.getElementById("npcronintypeselect") == null){
-		newdiv("npcronintype","npcmenu","inline margin10 hide");
-		makeSelect("npcronintype","npcronintypeselect","styledselect","selectNPCRoninType();")
-	}
+	fillSelectDropdownDefault("npcronintypeselect","Select Type",ronintypelist);	
 
-	makeSelectDropdown("npcronintypeselect","Select Type",ronintypelist);	
+	newDiv("npctemplate","npcmenu","inline hide");
+	newSelect("npctemplate","template"," inline ml10","selectTemplate();")
 
+	getNpcTemplateList();
+	npcLists.npcTemplateArray.sort();
 
-	if (document.getElementById("template") == null){
-		newdiv("npctemplate","npcmenu","inline hide");
-		makeSelect("npctemplate","template","styledselect inline margin10","selectTemplate();")
-	}
-
-	var templatelist = [];
-
-	for (elem in templates){
-			templatelist.push(templates[elem].title);
-			}
-
-	templatelist.sort();
-
-	makeSelectDropdown("template","Select Template",templatelist);
+	fillSelectDropdownDefault("template","Select Template",npcLists.npcTemplateArray);
 	
-	if (document.getElementById("npcclanselect") == null){
-		newdiv("npcclan","npcmenu","inline margin10 hide");
-		makeSelect("npcclan","npcclanselect","styledselect inline","selectNPCClan();makeFamilyDropdown();")
-	}
+	newDiv("npcclan","npcmenu","inline ml10 hide");
+	newSelect("npcclan","npcclanselect"," inline","selectNPCClan();makeFamilyDropdown();")
 
-	makeSelectDropdown("npcclanselect","Select Clan",clans);
+	fillSelectDropdownDefault("npcclanselect","Select Clan",clans);
 
-	if (document.getElementById("npcfamilyselect") == null){
-		newdiv("npcfamily","npcmenu","inline margin10 hide");
-		makeSelect("npcfamily","npcfamilyselect","styledselect","selectNPCFamily();")
-	}
+	newDiv("npcfamily","npcmenu","inline ml10 hide");
+	newSelect("npcfamily","npcfamilyselect","","selectNPCFamily();")
 
-	if (document.getElementById("npcschoolselect") == null){
-		newdiv("npcschool","npcmenu","inline margin10 hide");
-		makeSelect("npcschool","npcschoolselect","styledselect","selectNPCSchool();")
-	}	
+	newDiv("npcschool","npcmenu","inline ml10 hide");
+	newSelect("npcschool","npcschoolselect","","selectNPCSchool();")
 
-	if (document.getElementById("npcsavebutton") == null){
-		newdiv("npcsave","npcmenu","inline margin10 hide");
-		makeButton("npcsave","npcsavebutton","button inline","saveNPC()","save NPC")
-	}
+	newDiv("npcsave","npcmenu","inline ml10 hide");
+	newButton("npcsave","npcsavebutton","button inline","saveNPC()","save NPC")
 
-	if (document.getElementById("npcrerollbutton") == null){
-		newdiv("npcreroll","npcmenu","inline margin10 hide");
-		makeButton("npcreroll","npcrerollbutton","button inline","npcReroll()","reroll")
-	}	
+	newDiv("npcreroll","npcmenu","inline ml10 hide");
+	newButton("npcreroll","npcrerollbutton","button inline","npcReroll()","reroll")
 }
 
-function npcReroll(){
-	if (selectedType == "Servants and Peasants" ){
-		fillStats();
-	} else {
-		selectNPCSchool();
+function selectType(){
+
+	resetNPCBuilder();
+
+	var type = document.getElementById('type').value
+
+	getNpcArchetypeList(type)
+
+	npcLists.npcArchetypeArray.sort()
+
+	fillSelectDropdownDefault("archetype","Select Archetype",npcLists.npcArchetypeArray);
+	var type = document.getElementById("type").value
+
+	hideDropdowns()
+
+	if (type == "Animals"){
+		show("npcarchetype");
 	}
+
+	if (type == "Creatures"){
+		show("npcarchetype");
+	}
+
+	if (type == "Clan Samurai"){
+		show("npcarchetype")
+		var selectObj = document.getElementById("archetype")
+		var valueToSet = "Rank 1"
+		setSelectedText(selectObj, valueToSet)
+		selectArchetype();
+
+		show("template")
+		setSelectedText(document.getElementById("template"),"Select Template")
+
+		document.getElementById("npcsave").classList.add("hide");
+	}
+
+	if (type == "Servants and Peasants"){
+		var selectObj = document.getElementById("archetype")
+		var valueToSet = "Servants and Peasants"
+		setSelectedText(selectObj, valueToSet)
+		selectArchetype();
+	}
+
+	if (type == "Ronin, Riffraff and Gaijin"){
+		document.getElementById("npcsave").classList.add("hide");
+
+		thisnpc.selectedType = document.getElementById("type").value
+
+		var selectObj = document.getElementById("archetype")
+		var valueToSet = "Rank 1"
+		setSelectedText(selectObj, valueToSet)
+		selectArchetype();
+	}
+
+	thisnpc.selectedType = document.getElementById("type").value
 }
 
 function hideDropdowns(){
-	template = document.getElementById("npctemplate")
-	clan = document.getElementById("npcclan")
-	family = document.getElementById("npcfamily")
-	school = document.getElementById("npcschool")
-	save = document.getElementById("npcsave")
-	ronintype = document.getElementById("npcronintype")
+	var template = document.getElementById("npctemplate")
+	var clan = document.getElementById("npcclan")
+	var family = document.getElementById("npcfamily")
+	var school = document.getElementById("npcschool")
+	var save = document.getElementById("npcsave")
+	var ronintype = document.getElementById("npcronintype")
 
 	template.classList.add("hide");
 	clan.classList.add("hide");
@@ -401,167 +463,70 @@ function hideDropdowns(){
 	ronintype.classList.add("hide");
 	save.classList.add("hide")
 
-	hide("npcstats")
-	hide("npcnotes")
-}
-
-function selectType(){
-	var archetypelist = [];
-
-	for (elem in archetypes){
-		if (document.getElementById('type').value == archetypes[elem].type){
-			archetypelist.push(archetypes[elem].fullname);
-	}  else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
-		if ("Clan Samurai" == archetypes[elem].type)
-			archetypelist.push(archetypes[elem].fullname);
-	}}
-
-	archetypelist.sort()
-
-	makeSelectDropdown("archetype","Select Archetype",archetypelist);
-	buildNpcMenu1();
-
-	document.getElementById("npcstats").classList.add("hide");
-	document.getElementById("npcnotes").classList.add("hide");
-
-	var type = document.getElementById("type").value
-
-	template = document.getElementById("npctemplate")
-	clan = document.getElementById("npcclan")
-	family = document.getElementById("npcfamily")
-	school = document.getElementById("npcschool")
-	save = document.getElementById("npcsave")
-	ronintype = document.getElementById("npcronintype")
-
-	hideDropdowns()
-	resetNPCBuilder();
-
-	if (type == "Animals"){
-		document.getElementById("npcnameinput").value = selectedArchetype.title;
-		thisnpc.title = selectedArchetype.title;
-	}
-
-	if (type == "Creatures"){
-		document.getElementById("npcnameinput").value = selectedArchetype.title;
-		thisnpc.title = selectedArchetype.title;
-	}
-
-	if (type == "Clan Samurai"){
-		selectObj = document.getElementById("archetype")
-		valueToSet = "Rank 1"
-		setSelectedValue(selectObj, valueToSet)
-		selectArchetype();
-
-		document.getElementById("npcsave").classList.add("hide");
-	}
-
-	if (type == "Servants and Peasants"){
-
-		selectObj = document.getElementById("archetype")
-		valueToSet = "Servants and Peasants"
-		setSelectedValue(selectObj, valueToSet)
-		selectArchetype();
-	}
-
-	if (type == "Ronin, Riffraff and Gaijin"){
-		document.getElementById("npcsave").classList.add("hide");
-
-		var type = document.getElementById("type").value
-
-		selectObj = document.getElementById("archetype")
-		valueToSet = "Rank 1"
-		setSelectedValue(selectObj, valueToSet)
-		selectArchetype();
-	}
-
-	selectedType = document.getElementById("type").value
-
+	hide("npcstatwrap")
 }
 
 function resetNPCBuilder(){
-		selectedTemplate = {};
-		selectedSchool = {};
-		selectedFamily = {}
-		selectedClan = {}
-		document.getElementById("npcschooltechnique").innerHTML = "";
-		document.getElementById("npcschoolability").innerHTML = "";
-		document.getElementById("npctechniquecontainer").innerHTML = "";
+		thisnpc.selectedTemplate = {};
+		thisnpc.selectedSchool = {};
+		thisnpc.selectedFamily = {}
+		thisnpc.selectedClan = {};
+		document.getElementById("npcstatwrap").innerHTML = "";
+		buildNpcStatsDiv();		
 }
-
 
 function selectArchetype(){
 
-	selectedType = document.getElementById("type").value
+	thisnpc.selectedType = document.getElementById("type").value
 
-	selectedArchetype = document.getElementById("archetype").value
+	thisnpc.selectedArchetype = document.getElementById("archetype").value
 
-	for (i = 0; i < archetypes.length; i++){
-		if (archetypes[i].fullname == selectedArchetype){
-			selectedArchetype = archetypes[i]
+	for (var i = 0; i < archetypes.length; i++){
+		if (archetypes[i].fullname == thisnpc.selectedArchetype){
+			thisnpc.selectedArchetype = archetypes[i]
 		}
 	}
 
-	if (selectedType == "Clan Samurai"){
-		hideDropdowns();	
-		show("npctemplate");
+	hideDropdowns();
 
+	switch (thisnpc.selectedType){
 
-		selectedArcTitle = document.getElementById("archetype").value;
+		case ("Clan Samurai"):			
+			show("npctemplate");
 
-		for (elem in archetypes){
-			if (archetypes[elem].title == selectedArcTitle){
-				selectedArchetype = archetypes[elem]
-				}
-		}
+			if (thisnpc.selectedArchetype.ring.type !== "set"){
+				thisnpc.selectedArchetype.extra();
+			}
+		break;
 
-		if (selectedArchetype.ring.type !== "set"){
-					selectedArchetype.extra();
-		}
-	} else if (selectedType == "Servants and Peasants"){
-		hideDropdowns();
-		show("npctemplate");
-		hide("npcarchetype");
+		case ("Servants and Peasants"):
+			show("npctemplate");
+			hide("npcarchetype");
 
-		selectedArcTitle = document.getElementById("archetype").value;
+			setSelectedText(document.getElementById("template"),"Select Template")
 
-}
-	else if (selectedType == "Ronin, Riffraff and Gaijin"){
-			hideDropdowns();
+		break;
+
+		case ("Ronin, Riffraff and Gaijin"):
 			show("npcronintype");
 
-			selectedArcTitle = document.getElementById("archetype").value;
+			setSelectedText(document.getElementById("npcronintypeselect"),"Select Type")
 
-			for (elem in archetypes){
-				if (archetypes[elem].title == "Ronin"){
-					selectedArchetype = archetypes[elem]
-					}
+			if (thisnpc.selectedArchetype.ring.type !== "set"){
+						thisnpc.selectedArchetype.extra();
 			}
+		break;
 
-			if (selectedArchetype.ring.type !== "set"){
-						selectedArchetype.extra();
-		}
-}
-
-	else {
-		hideDropdowns();
-		fillStats()
-
-		var item = document.getElementById("npcweaponwrap1");
-		if (item !== null){
-				item.parentNode.removeChild(item);}
-		item = document.getElementById("extraweapon");
-		if (item !== null){
-				item.parentNode.removeChild(item);}
-		
-
-		document.getElementById("npcnameinput").value = selectedArchetype.fullname;
-		thisnpc.name = selectedArchetype.fullname;
-		thisnpc.title = selectedArchetype.title;
+		case ("Creatures"):
+		case ("Animals"):
+		case ("Pregen"):
+			fillStats()
+		break;
 	}
 }
 
 function selectNPCRoninType(){
-	ronintype = document.getElementById("npcronintypeselect").value
+	var ronintype = document.getElementById("npcronintypeselect").value
 
 	switch (ronintype){
 		case "Samurai or Ronin Origin":
@@ -583,46 +548,51 @@ function selectNPCRoninType(){
 	show("npcarchetype")
 	show("npcronintype")
 
-	regions = []
+	thisnpc.regions = []
 
-	for (each in roninregions){
-		regions.push(roninregions[each].name)
+	for (var each in roninregions){
+		thisnpc.regions.push(roninregions[each].name)
 	}
 
 	show("npctemplate");
 }
-
 
 function selectTemplate(){
 	hideDropdowns();
 	show("npctemplate")
 	show("npcclan");
 
-	if (selectedType == "Ronin, Riffraff and Gaijin"){
-			makeSelectDropdown("npcclanselect","Select Background Region",regions)
-			show("npcronintype")
-			show("npcclanselect")
+	thisnpc.selectedType = document.getElementById("type").value;
 
-	}
+	thisnpc.selectedTemplate = document.getElementById("template").value;
 
-	selectedTemplate = document.getElementById("template").value;
-
-	for (i=0; i<templates.length; i++){
-		if (templates[i].title == selectedTemplate ){
-			selectedTemplate = templates[i]
+	for (var i=0; i<templates.length; i++){
+		if (templates[i].title == thisnpc.selectedTemplate ){
+			thisnpc.selectedTemplate = templates[i]
 		}
 	}
-	selectObj = document.getElementById("npcclanselect")
-	setSelectedValue(selectObj, "Select Clan")
 
-	nom = document.getElementById("npcnameinput").value
-	if (nom == ""){
-		getNPCName();
-	}
+	switch (thisnpc.selectedType){
+		case "Ronin, Riffraff and Gaijin":
+			thisnpc.regions = []
 
-	if (selectedType == "Servants and Peasants"){
+			for (var each in roninregions){
+				thisnpc.regions.push(roninregions[each].name)
+			}
+
+			fillSelectDropdownDefault("npcclanselect","Select Background Region",thisnpc.regions)
+			show("npcronintype")
+			show("npcclanselect")
+			break;
+
+		case "Servants and Peasants":
 			fillStats()
-			hide("npcclanselect")
+			hide("npcclan")
+			break;
+
+		case "Clan Samurai":
+			fillSelectDropdownDefault("npcclanselect","Select Clan",clans)
+			break;
 	}
 }
 
@@ -630,419 +600,480 @@ function selectNPCClan(){
 	show("npcfamily");
 	show("npcschool");
 	clearSelect("npcschoolselect")
-	hide("npcstats")
-	hide("npcnotes")
+	hide("npcstatwrap")
 	hide("npcsave");
 
-	selectedClan = document.getElementById("npcclanselect").value;
-	selectedClan = clandata[selectedClan]
+	thisnpc.selectedClan = document.getElementById("npcclanselect").value;
+	thisnpc.selectedClan = clandata[thisnpc.selectedClan]
 
-	clanName = document.getElementById("npcclanselect").value
+	var clanName = document.getElementById("npcclanselect").value
 
-	clanSchools = [];
+	var clanSchools = [];
 
-	for (elem in schools[clanName]){
+	for (var elem in schools[clanName]){
 		clanSchools.push(schools[clanName][elem].name)
 	}
 
-	for (elem in schools.Other){
-		if (schools.Other[elem].keyword.includes("Unaligned")){
-			clanSchools.push(schools.Other[elem].name)
+	if (thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
+		for (var elem in schools){
+			for (var each in schools[elem])
+				if (schools[elem][each].keyword.includes("ronin") || schools[elem][each].keyword.includes("Unaligned")){
+					clanSchools.push(schools[elem][each].name)
+				}
 		}
-	}
 
-	makeSelectDropdown("npcschoolselect","Select School",clanSchools)
-	makeFamilyDropdown()
+		if (document.getElementById("npcronintypeselect").value == "Gaijin Origin"){
+			for (var elem in schools){
+			for (var each in schools[elem])
+				if (schools[elem][each].keyword.includes("gaijin")){
+					clanSchools.push(schools[elem][each].name)
+				}
+		}		
+	}}
+
+	fillSelectDropdownDefault("npcschoolselect","Select School",clanSchools)
 }
+
 
 function makeFamilyDropdown(){
 
-	clanFamilies = [];
+	var clanFamilies = [];
 
-	if (selectedType == "Clan Samurai"){
+	if (thisnpc.selectedType == undefined){
+		thisnpc.selectedType = document.getElementById("type").value
+	}
 
-		for (elem in families){
+	if (thisnpc.selectedType == "Clan Samurai"){
+
+		for (var elem in families){
 			if (families[elem].clan == document.getElementById("npcclanselect").value){
 				clanFamilies.push(families[elem].name)
 			}}
-		makeSelectDropdown("npcfamilyselect","Select Family",clanFamilies)
+		fillSelectDropdownDefault("npcfamilyselect","Select Family",clanFamilies)
 		}
 
-	else if (selectedType == "Ronin, Riffraff and Gaijin"){
+	else if (thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
 
-		for (elem in selectedClan){
-			if (selectedClan[elem].clan == document.getElementById("npcclanselect").value){
-				clanFamilies.push(selectedClan[elem].name)
+		for (elem in thisnpc.selectedClan){
+			if (thisnpc.selectedClan[elem].clan == document.getElementById("npcclanselect").value){
+				clanFamilies.push(thisnpc.selectedClan[elem].name)
 			}}
 
 		for (elem in roninupbringings){
 			clanFamilies.push(roninupbringings[elem].name)
 			}
-			makeSelectDropdown("npcfamilyselect","Select Upbringing",clanFamilies)
+			fillSelectDropdownDefault("npcfamilyselect","Select Upbringing",clanFamilies)
 		}
+}
+
+
+function npcReroll(){
+	if (thisnpc.selectedType == "Servants and Peasants" ){
+		fillStats();
+	} else {
+		selectNPCSchool();
+	}
 }
 
 function selectNPCFamily(){
 	show("npcschool");
 	hide("npcsave");
 
-	selectedFamily = document.getElementById("npcfamilyselect").value;
+	thisnpc.selectedFamily = document.getElementById("npcfamilyselect").value;
 
-	if (selectedFamily.includes(" ")){
-		for (each in families.Other){
-			if (families.Other[each].name == selectedFamily){
-				selectedFamily = families.Other[each]
+	if (thisnpc.selectedFamily.includes(" ")){
+		for (var each in families.Other){
+			if (families.Other[each].name == thisnpc.selectedFamily){
+				thisnpc.selectedFamily = families.Other[each]
 			}
 		}
 	} else {
-	selectedFamily = selectedFamily.toLowerCase()
-	selectedFamily = selectedClan[selectedFamily]
+	thisnpc.selectedFamily = thisnpc.selectedFamily.toLowerCase()
+	thisnpc.selectedFamily = thisnpc.selectedClan[thisnpc.selectedFamily]
 	}
+}
+
+function selectNPCRoninType(){
+	var ronintype = document.getElementById("npcronintypeselect").value
+
+	switch (ronintype){
+		case "Samurai or Ronin Origin":
+		thisnpc.status = 24;
+	}
+
+	switch (ronintype){
+		case "Peasant Origin":
+		thisnpc.status = 15;
+	}
+
+	switch (ronintype){
+		case "Gaijin Origin":
+		thisnpc.status = 0;
+	}
+
+	hideDropdowns();
+	show("npctype")
+	show("npcarchetype")
+	show("npcronintype")
+
+	thisnpc.regions = []
+
+	for (var each in roninregions){
+		thisnpc.regions.push(roninregions[each].name)
+	}
+	show("npctemplate");
+	setSelectedText(document.getElementById("template"),"Select Template");
 }
 
 function selectNPCSchool(){
 
-	selectedSchool = document.getElementById("npcschoolselect").value;
+	thisnpc.selectedSchool = document.getElementById("npcschoolselect").value;
 
-	for (elem in schools){
-		for (scho in schools[elem]){
-			if (schools[elem][scho].name == selectedSchool){
-				selectedSchool = schools[elem][scho]
+	for (var elem in schools){
+		for (var school in schools[elem]){
+			if (schools[elem][school].name == thisnpc.selectedSchool){
+				thisnpc.selectedSchool = schools[elem][school]
 			}
 		}
 	}
 
-	clanName = document.getElementById("npcclanselect").value
+	var clanName = document.getElementById("npcclanselect").value
 
-	if (selectedType == "Clan Samurai"){list = clandata}
-	if (selectedType == "Ronin, Riffraff and Gaijin"){list = roninregions}
+	if (thisnpc.selectedType == "Clan Samurai"){list = clandata}
+	if (thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){list = roninregions}
 
-	if (selectedClan == undefined){
+	if (thisnpc.selectedClan == undefined){
 		for (elem in list){
 			if (list[elem].name == clanName){
-				selectedClan = list[elem]
+				thisnpc.selectedClan = list[elem]
 			} 
 		}
 	} 
 
-	text = document.getElementById("npcfamilyselect").value
+	var text = document.getElementById("npcfamilyselect").value
 	
 	if (text == "Select Family"){
-			selectedFamily = selectedSchool.family
-			selectedFamily = families[selectedFamily]
-			selectedFamilyName = selectedFamily.name
+			thisnpc.selectedFamily = thisnpc.selectedSchool.family
+			thisnpc.selectedFamily = families[thisnpc.selectedFamily]
+			thisnpc.selectedFamilyName = thisnpc.selectedFamily.name
 			npcfamilyselect = document.getElementById("npcfamilyselect")
-			setSelectedValue(npcfamilyselect, selectedFamilyName)
-		} else if (text == "Select Upbringing"){
+			setSelectedText(npcfamilyselect, thisnpc.selectedFamilyName)
+		} 
+
+	if (text == "Select Upbringing"){
 			getRandomSelect("npcfamilyselect")
 		}
 
 	text = document.getElementById("npcfamilyselect").value
 
-	if (selectedType == "Clan Samurai"){list = families}
-	if (selectedType == "Ronin, Riffraff and Gaijin"){list = roninupbringings}
+	if (thisnpc.selectedType == "Clan Samurai"){list = families}
+	if (thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){list = roninupbringings}
 	
 		for (elem in list){
 			if (list[elem].name == text){
-				selectedFamily = list[elem]
+				thisnpc.selectedFamily = list[elem]
 			} 
 		}
 
-	selectedArchetypeName = document.getElementById("archetype").value;
+	var selectedArchetypeName = document.getElementById("archetype").value;
 
-	if (document.getElementById("npcschooltechnique") !== undefined && document.getElementById("npcschooltechnique") !== null){
-		document.getElementById("npcschooltechnique").innerHTML = "";
-		newdiv("npcstartingschooltechnique","npcschooltechnique")
-	}
+	fillStats();
+}
 
-	if (document.getElementById("npcclanselect").value == "Other" && document.getElementById("npcfamilyselect").value == "Other"){
-		makeSelect("npcschool","npcbackgroundclanselect","styledselect inline margin10","makeNpcBgFamily();")
-		makeSelectDropdown("npcbackgroundclanselect","Select Background Clan",clans)
-		hide("npcsave");
 
-	} else {
-		fillStats();
-	}
+function getNPCName(divId){
+	name = nameMaker();
+	document.getElementById(divId).value = name
 }
 
 function fillStats(){
-	show("npcstats")
-	show("npcnotes")
+	show("npcstatwrap")
 	show("npcsave")
 
-	divcontents("npcnotes","<b>Notes:</b><br>")
-	makeTextArea("npcnotes","npcnotesinput","styledselect margintopbottom")
+	if (thisnpc.selectedType == "Clan Samurai" || thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
+		
+		var name = nameMaker();
 
-	if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
-		getNPCName();
+		if (thisnpc.selectedType == "Clan Samurai"){
+			name = document.getElementById("npcfamilyselect").value+" "+name;
+		}
+
+		document.getElementById("npcnameinput").value = name
+		thisnpc.name = name;
+
 		setRokuganiStats();
 		setRokuganiSkills()
 
-		advArray = []
-		addToArray(advArray,selectedArchetype.advantages)
-		addToArray(advArray,selectedTemplate.advantages)
-		addToArray(advArray,selectedClan.advantages)
-		addToArray(advArray,selectedFamily.advantages)
-		advArray = removeDuplicates(advArray);
-		makeSelectDropdown1("npcadv",advArray)
-		getRandomSelect("npcadv")
+		thisnpc.advArray = []
+		addToArray(thisnpc.advArray,thisnpc.selectedArchetype.advantages)
+		addToArray(thisnpc.advArray,thisnpc.selectedTemplate.advantages)
+		addToArray(thisnpc.advArray,thisnpc.selectedClan.advantages)
+		addToArray(thisnpc.advArray,thisnpc.selectedFamily.advantages)
+		thisnpc.advArray = removeDuplicates(thisnpc.advArray);
+		fillSelectDropdown("npcadv0",thisnpc.advArray)
+		getRandomSelect("npcadv0")
 
-		disadvArray = []
-		addToArray(disadvArray,selectedArchetype.disadvantages)
-		addToArray(disadvArray,selectedTemplate.disadvantages)
-		addToArray(disadvArray,selectedClan.disadvantages)
-		addToArray(disadvArray,selectedFamily.disadvantages)
-		disadvArray = removeDuplicates(disadvArray);
-		makeSelectDropdown1("npcdisadv",disadvArray)
-		getRandomSelect("npcdisadv")
+		thisnpc.disadvArray = []
+		addToArray(thisnpc.disadvArray,thisnpc.selectedArchetype.disadvantages)
+		addToArray(thisnpc.disadvArray,thisnpc.selectedTemplate.disadvantages)
+		addToArray(thisnpc.disadvArray,thisnpc.selectedClan.disadvantages)
+		addToArray(thisnpc.disadvArray,thisnpc.selectedFamily.disadvantages)
+		thisnpc.disadvArray = removeDuplicates(thisnpc.disadvArray);
+		fillSelectDropdown("npcdisadv0",thisnpc.disadvArray)
+		getRandomSelect("npcdisadv0")
 
-		demeanorArray = [];
-		addToArray(demeanorArray,selectedArchetype.demeanor)
-		addToArray(demeanorArray,selectedTemplate.demeanor)
-		addToArray(demeanorArray,selectedFamily.demeanor)
-		demeanorArray = removeDuplicates(demeanorArray);
-		makeSelectDropdown1("npcdemeanor",demeanorArray)
+		thisnpc.demeanorArray = [];
+		addToArray(thisnpc.demeanorArray,thisnpc.selectedArchetype.demeanor)
+		addToArray(thisnpc.demeanorArray,thisnpc.selectedTemplate.demeanor)
+		addToArray(thisnpc.demeanorArray,thisnpc.selectedFamily.demeanor)
+		thisnpc.demeanorArray = removeDuplicates(thisnpc.demeanorArray);
+		fillSelectDropdown("npcdemeanor",thisnpc.demeanorArray)
 		getRandomSelect("npcdemeanor")	
 		setDemeanor()
 
-		weaponArray = []
-		addToArray(weaponArray,selectedArchetype.weapon)
-		addToArray(weaponArray,selectedClan.weapons)
-		addToArray(weaponArray,selectedSchool.weapons)
-		weaponArray = removeDuplicates(weaponArray);
-		makeSelectDropdown1("npcweapon0",weaponArray)
+		thisnpc.weaponArray = []
+		addToArray(thisnpc.weaponArray,thisnpc.selectedArchetype.weapon)
+		addToArray(thisnpc.weaponArray,thisnpc.selectedClan.weapons)
+		addToArray(thisnpc.weaponArray,thisnpc.selectedSchool.weapons)
+		thisnpc.weaponArray = removeDuplicates(thisnpc.weaponArray);
+		fillSelectDropdown("npcweapon0",thisnpc.weaponArray)
 		getRandomSelect("npcweapon0")	
 		selectNPCWeapon("0")
 
 		makeExtraWeaponButton()
 
-		armorArray = []
-		addToArray(armorArray,selectedArchetype.armor)
-		addToArray(armorArray,selectedClan.armor)
-		addToArray(armorArray,selectedSchool.armor)
-		armorArray = removeDuplicates(armorArray);
-		makeSelectDropdown1("npcarmor0",armorArray)
+		thisnpc.armorArray = []
+		addToArray(thisnpc.armorArray,thisnpc.selectedArchetype.armor)
+		addToArray(thisnpc.armorArray,thisnpc.selectedClan.armor)
+		addToArray(thisnpc.armorArray,thisnpc.selectedSchool.armor)
+		thisnpc.armorArray = removeDuplicates(thisnpc.armorArray);
+		fillSelectDropdown("npcarmor0",thisnpc.armorArray)
 		getRandomSelect("npcarmor0")
 		selectNPCArmor("0")
 
-		document.getElementById("npcschoolability").innerHTML="";
-		document.getElementById("npcschoolability").innerHTML="<u>"+selectedSchool.name+"</u>: "+selectedSchool.ability;
+		document.getElementById("npcabilities").innerHTML="";
+		document.getElementById("npcabilities").innerHTML="<u>"+thisnpc.selectedSchool.name+"</u>: "+thisnpc.selectedSchool.ability+"<p>";
 
-		npcrank = selectedArchetype.rank;
+		npcrank = thisnpc.selectedArchetype.rank;
 		ranks = [1,2,3,4,5];
 
 		startingTechSelects()
 
-		thisnpc.techniques = selectedArchetype.techniques;
+		thisnpc.techniques = thisnpc.selectedArchetype.techniques;
 		makeTechDropdowns()
 		
-	} if (selectedType == "Servants and Peasants"){
+	} if (thisnpc.selectedType == "Servants and Peasants"){
 
-			thisnpc.name = selectedArchetype.title
-			thisnpc.template = selectedTemplate.title
-			thisnpc.archetype= selectedArchetype.title
-			thisnpc.type= selectedArchetype.type
-			thisnpc.equiptype= selectedArchetype.equiptype
-			thisnpc.conflictcombat= selectedArchetype.conflictcombat
-				updateSpans("conflictcombat");
-			thisnpc.conflictintrigue= selectedArchetype.conflictintrigue
-				updateSpans("conflictintrigue");
-			thisnpc.Air= selectedArchetype.ring.Air
-				updateSpans("Air");
-			thisnpc.Earth= selectedArchetype.ring.Earth
-				updateSpans("Earth");
-			thisnpc.Fire= selectedArchetype.ring.Fire
-				updateSpans("Fire");
-			thisnpc.Water= selectedArchetype.ring.Water
-				updateSpans("Water");
-			thisnpc.Void= selectedArchetype.ring.Void
-				updateSpans("Void");
-			thisnpc.max= selectedArchetype.max
-			thisnpc.endurance= selectedArchetype.endurance
-			thisnpc.composure= selectedArchetype.composure
-			thisnpc.focus= selectedArchetype.focus
-			thisnpc.vigilance= selectedArchetype.vigilance
-			thisnpc.honor= selectedArchetype.honor
-			thisnpc.glory= selectedArchetype.glory
-			thisnpc.status= selectedArchetype.status
+		var name = nameMaker();
+		document.getElementById("npcnameinput").value = name
+		thisnpc.name = name;
 
-		demeanorArray = [];
-		addToArray(demeanorArray,selectedArchetype.demeanor)
-		addToArray(demeanorArray,selectedTemplate.demeanor)
-		demeanorArray = removeDuplicates(demeanorArray);
-		makeSelectDropdown1("npcdemeanor",demeanorArray)
+			thisnpc.template = thisnpc.selectedTemplate.title
+			thisnpc.archetype= thisnpc.selectedArchetype.title
+			thisnpc.type= thisnpc.selectedArchetype.type
+			thisnpc.equiptype= thisnpc.selectedArchetype.equiptype
+			thisnpc.Air= thisnpc.selectedArchetype.ring.Air
+			thisnpc.Earth= thisnpc.selectedArchetype.ring.Earth
+			thisnpc.Fire= thisnpc.selectedArchetype.ring.Fire
+			thisnpc.Water= thisnpc.selectedArchetype.ring.Water
+			thisnpc.Void= thisnpc.selectedArchetype.ring.Void
+			thisnpc.max= thisnpc.selectedArchetype.max
+			thisnpc.endurance= thisnpc.selectedArchetype.endurance
+			thisnpc.composure= thisnpc.selectedArchetype.composure
+			thisnpc.focus= thisnpc.selectedArchetype.focus
+			thisnpc.vigilance= thisnpc.selectedArchetype.vigilance
+			thisnpc.honor= thisnpc.selectedArchetype.honor
+			thisnpc.glory= thisnpc.selectedArchetype.glory
+			thisnpc.status= thisnpc.selectedArchetype.status
+
+		thisnpc.demeanorArray = [];
+		addToArray(thisnpc.demeanorArray,thisnpc.selectedArchetype.demeanor)
+		addToArray(thisnpc.demeanorArray,thisnpc.selectedTemplate.demeanor)
+		thisnpc.demeanorArray = removeDuplicates(thisnpc.demeanorArray);
+		fillSelectDropdown("npcdemeanor",thisnpc.demeanorArray)
 		getRandomSelect("npcdemeanor")	
 		setDemeanor()
 
-		advArray = []
-		addToArray(advArray,selectedArchetype.advantages)
-		addToArray(advArray,selectedTemplate.advantages)
-		advArray = removeDuplicates(advArray);
-		makeSelectDropdown1("npcadv",advArray)
-		getRandomSelect("npcadv")
+		thisnpc.advArray = []
+		addToArray(thisnpc.advArray,thisnpc.selectedArchetype.advantages)
+		addToArray(thisnpc.advArray,thisnpc.selectedTemplate.advantages)
+		thisnpc.advArray = removeDuplicates(thisnpc.advArray);
+		fillSelectDropdown("npcadv0",thisnpc.advArray)
+		getRandomSelect("npcadv0")
 
-		disadvArray = []
-		addToArray(disadvArray,selectedArchetype.disadvantages)
-		addToArray(disadvArray,selectedTemplate.disadvantages)
-		disadvArray = removeDuplicates(disadvArray);
-		makeSelectDropdown1("npcdisadv",disadvArray)
-		getRandomSelect("npcdisadv")
+		thisnpc.disadvArray = []
+		addToArray(thisnpc.disadvArray,thisnpc.selectedArchetype.disadvantages)
+		addToArray(thisnpc.disadvArray,thisnpc.selectedTemplate.disadvantages)
+		thisnpc.disadvArray = removeDuplicates(thisnpc.disadvArray);
+		fillSelectDropdown("npcdisadv0",thisnpc.disadvArray)
+		getRandomSelect("npcdisadv0")
 
-		selectedArchetype.extra();
-		thisnpc.Air = selectedArchetype.ring.Air
-		thisnpc.Earth = selectedArchetype.ring.Earth
-		thisnpc.Fire = selectedArchetype.ring.Fire
-		thisnpc.Water = selectedArchetype.ring.Water
-		thisnpc.Void = selectedArchetype.ring.Void
+		thisnpc.selectedArchetype.extra();
+		thisnpc.Air = thisnpc.selectedArchetype.ring.Air
+		thisnpc.Earth = thisnpc.selectedArchetype.ring.Earth
+		thisnpc.Fire = thisnpc.selectedArchetype.ring.Fire
+		thisnpc.Water = thisnpc.selectedArchetype.ring.Water
+		thisnpc.Void = thisnpc.selectedArchetype.ring.Void
 
-		ring = selectedTemplate.peasantring
+		var ring = thisnpc.selectedTemplate.peasantring
 
 		thisnpc[ring] ++
-		updateSpans("Air")
-		updateSpans("Earth")
-		updateSpans("Fire")
-		updateSpans("Water")
-		updateSpans("Void")
 
-		thisnpc.artisanskill = selectedTemplate.artisanskill + selectedArchetype.skills.artisanskill
-		thisnpc.martialskill = selectedTemplate.martialskill + selectedArchetype.skills.martialskill
-		thisnpc.socialskill = selectedTemplate.socialskill + selectedArchetype.skills.socialskill
-		thisnpc.scholarskill = selectedTemplate.scholarskill + selectedArchetype.skills.scholarskill
-		thisnpc.tradeskill = selectedTemplate.tradeskill + selectedArchetype.skills.tradeskill
+		thisnpc.artisanskill = thisnpc.selectedTemplate.artisanskill + thisnpc.selectedArchetype.skills.artisanskill
+		thisnpc.martialskill = thisnpc.selectedTemplate.martialskill + thisnpc.selectedArchetype.skills.martialskill
+		thisnpc.socialskill = thisnpc.selectedTemplate.socialskill + thisnpc.selectedArchetype.skills.socialskill
+		thisnpc.scholarskill = thisnpc.selectedTemplate.scholarskill + thisnpc.selectedArchetype.skills.scholarskill
+		thisnpc.tradeskill = thisnpc.selectedTemplate.tradeskill + thisnpc.selectedArchetype.skills.tradeskill
 
-		updateSpans("artisanskill");
-		updateSpans("martialskill");
-		updateSpans("socialskill");
-		updateSpans("scholarskill");
-		updateSpans("tradeskill");
-
-		weaponArray = []
-		addToArray(weaponArray,selectedArchetype.weapon)
-		weaponArray = removeDuplicates(weaponArray);
-		makeSelectDropdown1("npcweapon0",weaponArray)
+		thisnpc.weaponArray = []
+		addToArray(thisnpc.weaponArray,thisnpc.selectedArchetype.weapon)
+		thisnpc.weaponArray = removeDuplicates(thisnpc.weaponArray);
+		fillSelectDropdown("npcweapon0",thisnpc.weaponArray)
 		getRandomSelect("npcweapon0")	
 		selectNPCWeapon("0")
 
 		makeExtraWeaponButton()
 
-		armorArray = []
-		addToArray(armorArray,selectedArchetype.armor)
-		armorArray = removeDuplicates(armorArray);
-		makeSelectDropdown1("npcarmor0",armorArray)
+		thisnpc.armorArray = []
+		addToArray(thisnpc.armorArray,thisnpc.selectedArchetype.armor)
+		thisnpc.armorArray = removeDuplicates(thisnpc.armorArray);
+		fillSelectDropdown("npcarmor0",thisnpc.armorArray)
 		getRandomSelect("npcarmor0")
 		selectNPCArmor("0")
 
-		abilityArray = []
+		thisnpc.abilityArray = []
 
-		if (selectedArchetype.qualities !== null && selectedArchetype.qualities !== undefined){
-			abilityArray.push(selectedArchetype.qualities)
+		if (thisnpc.selectedArchetype.qualities !== null && thisnpc.selectedArchetype.qualities !== undefined){
+			thisnpc.abilityArray.push(thisnpc.selectedArchetype.qualities)
 		}
 
-		addToArray(abilityArray,selectedArchetype.abilities)
-		document.getElementById("npcschoolability").innerHTML="";
-		html = ""
-		for (i = 0 ; i < abilityArray.length; i++){
-			html += abilityArray[i]+"<br>";
+		addToArray(thisnpc.abilityArray,thisnpc.selectedArchetype.abilities)
+		document.getElementById("npcabilities").innerHTML="";
+		var html = ""
+		for (i = 0 ; i < thisnpc.abilityArray.length; i++){
+			html += thisnpc.abilityArray[i]+"<p>";
 		}
-		document.getElementById("npcschoolability").innerHTML=html
-		thisnpc.ability = document.getElementById("npcschoolability").innerHTML;
+		document.getElementById("npcabilities").innerHTML=html
+		thisnpc.ability = document.getElementById("npcabilities").innerHTML;
 		
-		npcrank = 1;
-		ranks = [1,2,3,4,5];
+		var npcrank = 1;
+		var ranks = [1,2,3,4,5];
 
 		thisnpc.techniques = []
 		makeTechDropdowns()
 
 
-	} else if (selectedType == "Animals" || selectedType == "Creatures" || selectedType == "Pregen" ){
-			thisnpc.name = selectedArchetype.title
-			thisnpc.template = selectedArchetype.type
-			thisnpc.archetype= selectedArchetype.title
-			thisnpc.type= selectedArchetype.type
-			thisnpc.equiptype= selectedArchetype.equiptype
-			thisnpc.conflictcombat= selectedArchetype.conflictcombat
-				updateSpans("conflictcombat");
-			thisnpc.conflictintrigue= selectedArchetype.conflictintrigue
-				updateSpans("conflictintrigue");
-			thisnpc.Air= selectedArchetype.ring.Air
-				updateSpans("Air");
-			thisnpc.Earth= selectedArchetype.ring.Earth
-				updateSpans("Earth");
-			thisnpc.Fire= selectedArchetype.ring.Fire
-				updateSpans("Fire");
-			thisnpc.Water= selectedArchetype.ring.Water
-				updateSpans("Water");
-			thisnpc.Void= selectedArchetype.ring.Void
-				updateSpans("Void");
-			thisnpc.max= selectedArchetype.max
-			thisnpc.endurance= selectedArchetype.endurance
-			thisnpc.composure= selectedArchetype.composure
-			thisnpc.focus= selectedArchetype.focus
-			thisnpc.vigilance= selectedArchetype.vigilance
-			thisnpc.honor= selectedArchetype.honor
-			thisnpc.glory= selectedArchetype.glory
-			thisnpc.status= selectedArchetype.status
-			thisnpc.artisanskill= selectedArchetype.skills.artisanskill
-				updateSpans("artisanskill");
-			thisnpc.martialskill= selectedArchetype.skills.martialskill
-				updateSpans("martialskill");
-			thisnpc.socialskill= selectedArchetype.skills.socialskill
-				updateSpans("socialskill");
-			thisnpc.scholarskill= selectedArchetype.skills.scholarskill
-				updateSpans("scholarskill");
-			thisnpc.tradeskill= selectedArchetype.skills.tradeskill
-				updateSpans("tradeskill");
-			demeanorArray = [];
-			addToArray(demeanorArray,selectedArchetype.demeanor)
-			makeSelectDropdown1("npcdemeanor",demeanorArray)	
+	} else if (thisnpc.selectedType == "Animals" || thisnpc.selectedType == "Creatures" || thisnpc.selectedType == "Pregen" ){
+			thisnpc.name = thisnpc.selectedArchetype.fullname
+			document.getElementById("npcnameinput").value = thisnpc.name
+
+			thisnpc.template = thisnpc.selectedArchetype.type
+			thisnpc.archetype= thisnpc.selectedArchetype.title
+			thisnpc.type= thisnpc.selectedArchetype.type
+			thisnpc.equiptype= thisnpc.selectedArchetype.equiptype
+			thisnpc.Air= thisnpc.selectedArchetype.ring.Air
+			thisnpc.Earth= thisnpc.selectedArchetype.ring.Earth
+			thisnpc.Fire= thisnpc.selectedArchetype.ring.Fire
+			thisnpc.Water= thisnpc.selectedArchetype.ring.Water
+			thisnpc.Void= thisnpc.selectedArchetype.ring.Void
+			thisnpc.max= thisnpc.selectedArchetype.max
+			thisnpc.endurance= thisnpc.selectedArchetype.endurance
+			thisnpc.composure= thisnpc.selectedArchetype.composure
+			thisnpc.focus= thisnpc.selectedArchetype.focus
+			thisnpc.vigilance= thisnpc.selectedArchetype.vigilance
+			thisnpc.honor= thisnpc.selectedArchetype.honor
+			thisnpc.glory= thisnpc.selectedArchetype.glory
+			thisnpc.status= thisnpc.selectedArchetype.status
+			thisnpc.artisanskill= thisnpc.selectedArchetype.skills.artisanskill
+			thisnpc.martialskill= thisnpc.selectedArchetype.skills.martialskill	
+			thisnpc.socialskill= thisnpc.selectedArchetype.skills.socialskill	
+			thisnpc.scholarskill= thisnpc.selectedArchetype.skills.scholarskill
+			thisnpc.tradeskill= thisnpc.selectedArchetype.skills.tradeskill
+				
+			thisnpc.demeanorArray = [];
+			addToArray(thisnpc.demeanorArray,thisnpc.selectedArchetype.demeanor)
+			fillSelectDropdown("npcdemeanor",thisnpc.demeanorArray)	
 			setDemeanor()
 
-		advArray = []
-		addToArray(advArray,selectedArchetype.advantages)
-		makeSelectDropdown1("npcadv",advArray)
+		thisnpc.advArray = []
+		addToArray(thisnpc.advArray,thisnpc.selectedArchetype.advantages)
 
-		disadvArray = []
-		addToArray(disadvArray,selectedArchetype.disadvantages)
-		makeSelectDropdown1("npcdisadv",disadvArray)
+		document.getElementById("npcadvright").innerHTML = ""
+		for (var i = 0; i < thisnpc.advArray.length && i < 2; i++){
+			newSelect("npcadvright","npcadv"+i,"mb10 inline w600","")
+			fillSelectDropdown("npcadv"+i,thisnpc.advArray)
+			setSelectedIndex("npcadv"+i,i)
+		}		 //loads up up to 2 advs per creature
 
-		weaponArray = []
-		addToArray(weaponArray,selectedArchetype.weapon)
-		makeSelectDropdown1("npcweapon0",weaponArray)
-		getRandomSelect("npcweapon0")
-		selectNPCWeapon("0")
+		thisnpc.disadvArray = []
+		addToArray(thisnpc.disadvArray,thisnpc.selectedArchetype.disadvantages)
 
-		armorArray = []
-		addToArray(armorArray,selectedArchetype.armor)
-		makeSelectDropdown1("npcarmor0",armorArray)
+		document.getElementById("npcdisadvright").innerHTML = ""
+		for (var i = 0; i < thisnpc.disadvArray.length && i < 2; i++){
+			newSelect("npcdisadvright","npcdisadv"+i,"mb10 inline w600","")
+			fillSelectDropdown("npcdisadv"+i,thisnpc.disadvArray)
+			setSelectedIndex("npcdisadv"+i,i)
+		}		 //loads up up to 2 disadvs per creature
+
+		thisnpc.weaponArray = []
+		addToArray(thisnpc.weaponArray,thisnpc.selectedArchetype.weapon)
+
+		document.getElementById("npcweapons").innerHTML = ""
+		for (var i = 0; i < thisnpc.selectedArchetype.weapon.length && i < 2; i++){
+			newDiv("npcweaponwrap"+i,"npcweapons","block mb10 npcbuilderright")
+			newSelect("npcweaponwrap"+i,"npcweapon"+i,"inline","selectNPCWeapon("+i+")")
+			newDiv("npcweapon"+i+"stats","npcweaponwrap"+i,"inline ml10")
+			fillSelectDropdown("npcweapon"+i,thisnpc.weaponArray)
+			document.getElementById("npcweapon"+i).options[i].selected = true;
+			selectNPCWeapon(i)
+		} //loads up up to 2 weapons per creature
+
+		thisnpc.armorArray = []
+		addToArray(thisnpc.armorArray,thisnpc.selectedArchetype.armor)
+		fillSelectDropdown("npcarmor0",thisnpc.armorArray)
 		getRandomSelect("npcarmor0")
 		selectNPCArmor("0")
 
-		abilityArray = []
+		thisnpc.abilityArray = []
 
-		if (selectedArchetype.qualities !== null && selectedArchetype.qualities !== undefined){
-			abilityArray.push(selectedArchetype.qualities)
+		if (thisnpc.selectedArchetype.qualities !== null && thisnpc.selectedArchetype.qualities !== undefined){
+			thisnpc.abilityArray.push(thisnpc.selectedArchetype.qualities)
 		}
 
-		addToArray(abilityArray,selectedArchetype.abilities)
-		document.getElementById("npcschoolability").innerHTML="";
+		addToArray(thisnpc.abilityArray,thisnpc.selectedArchetype.abilities)
+		document.getElementById("npcabilities").innerHTML="";
 		html = ""
-		for (i = 0 ; i < abilityArray.length; i++){
-			html += abilityArray[i]+"<br>";
+		for (i = 0 ; i < thisnpc.abilityArray.length; i++){
+			html += thisnpc.abilityArray[i]+"<p>";
 		}
-		document.getElementById("npcschoolability").innerHTML=html
-		thisnpc.ability = document.getElementById("npcschoolability").innerHTML;
+		document.getElementById("npcabilities").innerHTML=html
+		thisnpc.ability = document.getElementById("npcabilities").innerHTML;
 	}
 
-			document.getElementById("npcinfoarchetype").innerHTML = selectedArchetype.fullname;
-			thisnpc.conflictcombat= selectedArchetype.conflictcombat
-				updateSpans("conflictcombat");
-			thisnpc.conflictintrigue= selectedArchetype.conflictintrigue
-				updateSpans("conflictintrigue");
+			document.getElementById("npcinfoarchetype").innerHTML = thisnpc.selectedArchetype.fullname;
+			
+			thisnpc.conflictcombat= thisnpc.selectedArchetype.conflictcombat
+			updateSpans("conflictcombat");
+			
+			thisnpc.conflictintrigue= thisnpc.selectedArchetype.conflictintrigue
+			updateSpans("conflictintrigue");
+
+			updateSpans("Air");
+			updateSpans("Earth");
+			updateSpans("Fire");
+			updateSpans("Water");
+			updateSpans("Void");
 
 			updateSpans("endurance");
 			updateSpans("composure");
 			updateSpans("focus");
 			updateSpans("vigilance");
+
+			updateSpans("artisanskill");
+			updateSpans("martialskill");
+			updateSpans("socialskill");
+			updateSpans("scholarskill");
+			updateSpans("tradeskill");
 
 			updateSpans("honor");
 			updateSpans("glory");
@@ -1052,129 +1083,18 @@ function fillStats(){
 		show("npcreroll")
 }
 
-function makeExtraWeaponButton(){
-	makeButton("npcequip","extraweapon","inline margin10","addExtraWeapon()","+")
-}
-
-function addExtraWeapon(){
-	document.getElementById("extraweapon").remove()
-
-	npcequip = document.getElementById("npcequip")
-
-	for (i = 0 ; i< npcequip.children.length; i++){
-		wrap = document.getElementById("npcweaponwrap"+i)
-
-		if (wrap == undefined || wrap == null){
-			newdiv("npcweaponwrap"+i,"npcequip","block margin10")
-			makeSelect("npcweaponwrap"+i,"npcweapon"+i,"styledselect inline marginbottom","selectNPCWeapon('"+i+"');")
-
-				weapons = [];
-				weaponstats = [];
-
-				if (thisnpc.equiptype == "equipped"){
-
-				for (each in tabledata[8].children){
-					if (tabledata[8].children[each].name !== "NAME"){
-						weap = tabledata[8].children[each]
-						weapons.push(weap.name)
-						weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
-					}
-				}
-
-				if (thisnpc.equiptype == "natural"){
-					for (each in npcweapons){
-					if (npcweapons[each].type == "natural"){
-						weap = npcweapons[each]
-						weapons.push(weap.name)
-						weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
-					}
-				}}
-
-			weapons.sort();
-			weaponstats.sort();
-
-			makeSelectDropdown("npcweapon"+i,"Select Weapon",weapons)
-
-			for (j = 0; j < weaponstats.length; j++){
-				document.getElementById("npcweapon"+i).options[j].innerHTML = weaponstats[j]
-				document.getElementById("npcweapon"+i).options[j].value = weapons[j]
-			}
-
-			newdiv("npcweapon"+i+"stats","npcweaponwrap"+i,"inline margin10")
-			makeButton("npcequip","extraweapon","inlineblock margin10","addExtraWeapon()","+")
-			break
-
-		}
-	}
-}}
-
-function startingTechSelects(){
-
-			startingtechs = selectedSchool.startingtechs
-
-			for (m=0;m<startingtechs.length;m++){
-				newdiv("startingtech"+m,"npcstartingschooltechnique")
-
-				for (o = 0; o < techniquelist.length; o++){
-					if (techniquelist[o].title == startingtechs[m]){
-						effect = techniquelist[o].effect
-
-				while (effect.includes("<br><br>")){
-					effect = effect.replace("<br><br>","<br>");
-				}
-
-				techeffect = "<u>"+techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") </u><br>" + effect + "<br><br>"
-
-					divcontents("startingtech"+m,techeffect)
-					}
-				}
-			}
-			if (selectedSchool.chooseoptions[0] !== "" || selectedSchool.chooseoptions[0] !== "0"){
-				newdiv("npcschooltechchoice","npcschooltechnique","block")
-				for (k =0; k< selectedSchool.chooseoptions.length; k++){ 
-				for (x =0; x< selectedSchool.chooseoptions[k]; x++){	
-					if (document.getElementById("npcschooltechwrap"+k+x) == null){
-					newdiv("npcschooltechwrap"+k+x,"npcschooltechchoice","block paddingbottom")
-					makeSelect("npcschooltechwrap"+k+x,"npcschooltechdrop"+k+x,"block styledselect ","showSelectedTechnique('npcschooltechdrop"+k+x+"','npcschooltechdetails"+k+x+"')")
-					newdiv("npcschooltechdetails"+k+x,"npcschooltechwrap"+k+x,"block")
-
-					techobjs = [];
-					addToArray(techobjs,selectedSchool.startingtechoptions[k])
-					techobjs = removeDuplicates(techobjs)
-
-					var techlist = [];
-					var techdroplist = [];
-
-					for ( i = 0; i < techobjs.length; i++){
-						for ( j = 0; j < techniquelist.length; j++){
-							if (techobjs[i] == techniquelist[j].title){
-									techlist.push (techniquelist[j].title);
-									techdroplist.push (techniquelist[j].title+" ["+techniquelist[j].type+" Rank "+techniquelist[j].rank+"] ("+techniquelist[j].ring+") ("+techniquelist[j].reference+")")
-							}
-						}
-					}
-					addValuesToSelect("npcschooltechdrop"+k+x,techdroplist,techlist)
-					getRandomSelect("npcschooltechdrop"+k+x)
-					showSelectedTechnique("npcschooltechdrop"+k+x,"npcschooltechdetails"+k+x)
-					}
-				}	}
-			}
-			};
-
 
 function setRokuganiStats(){
 
 	thisnpc.name = document.getElementById("npcnameinput").value
-	thisnpc.archetype = selectedArchetype.title;
+	thisnpc.archetype = thisnpc.selectedArchetype.title;
 	thisnpc.type = document.getElementById("type").value
 
-	thisnpc.clan = selectedSchool.clan
-	thisnpc.family = selectedFamily.name
-	thisnpc.school = selectedSchool.name
+	thisnpc.clan = thisnpc.selectedSchool.clan
+	thisnpc.family = thisnpc.selectedFamily.name
+	thisnpc.school = thisnpc.selectedSchool.name
 
-	thisnpc.equiptype = selectedArchetype.equiptype;
-	thisnpc.conflictcombat = selectedArchetype.conflictcombat;
-	thisnpc.conflictintrigue = selectedArchetype.conflictintrigue;
+	thisnpc.equiptype = thisnpc.selectedArchetype.equiptype;
 
 	setRokuganiRings()
 
@@ -1183,35 +1103,35 @@ function setRokuganiStats(){
 	thisnpc.focus = (thisnpc.Air + thisnpc.Fire);
 	thisnpc.vigilance = Math.ceil((thisnpc.Air + thisnpc.Water)/2);
 
-		thisnpc.honor = selectedSchool.honor;
+		thisnpc.honor = thisnpc.selectedSchool.honor;
 
 	if (document.getElementById("type").value == "Clan Samurai"){
-		thisnpc.glory = selectedFamily.glory;
-		thisnpc.status = selectedClan.clanstatus;
+		thisnpc.glory = thisnpc.selectedFamily.glory;
+		thisnpc.status = thisnpc.selectedClan.clanstatus;
 	} else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
-		thisnpc.glory = selectedClan.clanglory;
+		thisnpc.glory = thisnpc.selectedClan.clanglory;
 	}
 
-	thisnpc.artisanskill = selectedArchetype.skills.artisanskill;
-	thisnpc.martialskill = selectedArchetype.skills.martialskill;
-	thisnpc.socialskill = selectedArchetype.skills.socialskill;
-	thisnpc.scholarskill = selectedArchetype.skills.scholarskill;
-	thisnpc.tradeskill = selectedArchetype.skills.tradeskill;
+	thisnpc.artisanskill = thisnpc.selectedArchetype.skills.artisanskill;
+	thisnpc.martialskill = thisnpc.selectedArchetype.skills.martialskill;
+	thisnpc.socialskill = thisnpc.selectedArchetype.skills.socialskill;
+	thisnpc.scholarskill = thisnpc.selectedArchetype.skills.scholarskill;
+	thisnpc.tradeskill = thisnpc.selectedArchetype.skills.tradeskill;
 
-	thisnpc.demeanor = selectedArchetype.demeanor;
+	thisnpc.demeanor = thisnpc.selectedArchetype.demeanor;
 
-	thisnpc.weapon = selectedArchetype.weapon;
-	thisnpc.armor = selectedArchetype.armor
+	thisnpc.weapon = thisnpc.selectedArchetype.weapon;
+	thisnpc.armor = thisnpc.selectedArchetype.armor
 
-	thisnpc.advantage = selectedArchetype.advantages;
-	thisnpc.disadvantage = selectedArchetype.disadvantages;
+	thisnpc.advantage = thisnpc.selectedArchetype.advantages;
+	thisnpc.disadvantage = thisnpc.selectedArchetype.disadvantages;
 
-	thisnpc.ability = selectedSchool.ability;
+	thisnpc.ability = thisnpc.selectedSchool.ability;
 
-	thisnpc.techniques = selectedArchetype.techniques;
+	thisnpc.techniques = thisnpc.selectedArchetype.techniques;
 
-	if (selectedArchetype.qualities !== null && selectedArchetype.qualities !== undefined){
-		thisnpc.qualities = selectedArchetype.qualities;
+	if (thisnpc.selectedArchetype.qualities !== null && thisnpc.selectedArchetype.qualities !== undefined){
+		thisnpc.qualities = thisnpc.selectedArchetype.qualities;
 	}
 }
 
@@ -1221,40 +1141,42 @@ function setRokuganiRings(){
 
 //get base stats for the rank
 
-	selectedArchetype = document.getElementById("archetype").value
+	thisnpc.selectedArchetype = document.getElementById("archetype").value
 
-	for (i=0; i<archetypes.length; i++){
-		if (archetypes[i].fullname == selectedArchetype){
-			selectedArchetype = archetypes[i]
+	for (var i=0; i<archetypes.length; i++){
+		if (archetypes[i].fullname == thisnpc.selectedArchetype){
+			thisnpc.selectedArchetype = archetypes[i]
 		}
 	}
 
-	if (selectedArchetype.ring.type !== "set"){
-			selectedArchetype.extra();
+	if (thisnpc.selectedArchetype.ring.type !== "set"){
+			thisnpc.selectedArchetype.extra();
 		}
 
-	maxRing = selectedArchetype.max - 1;
+	var maxRing = thisnpc.selectedArchetype.max - 1;
 
-	if (selectedClan.clanring == undefined){
-		if (document.getElementById("type").value == "Clan Samurai"){
-			family = selectedSchool.clan
-			selectedFamily = families[clan][family]
-			selectedClan.clanring = selectedFamily.clanring
-			selectedClan.clanskill = selectedFamily.clanskill	
+	if (thisnpc.selectedFamily == undefined){
+		thisnpc.selectedFamily = families[thisnpc.selectedSchool.family]
+	}
+
+		if (document.getElementById("npcclanselect").value == "Minor"){
+			thisnpc.selectedClan.clanstatus = thisnpc.selectedFamily.clanstatus
+			thisnpc.selectedClan.clanring = thisnpc.selectedFamily.clanring
+			thisnpc.selectedClan.clanskill = thisnpc.selectedFamily.clanskill	
 		} else if (document.getElementById("type").value == "Ronin, Riffraff and Gaijin"){
 			for (each in roninregions){
-				if (roninregions[each].name == selectedClan){
-					selectedClan = roninregions[each]
+				if (roninregions[each].name == thisnpc.selectedClan){
+					thisnpc.selectedClan = roninregions[each]
 				}
 			} 
 			if (clans.includes(document.getElementById("npcroninclanbgselect").value)){
-				selectedClan = document.getElementById("npcroninclanbgselect").value
-				selectedClan = families[selectedClan]
+				thisnpc.selectedClan = document.getElementById("npcroninclanbgselect").value
+				thisnpc.selectedClan = families[thisnpc.selectedClan]
 			} 			
 		}
-	}
+	
 
-	clanRing = selectedClan.clanring
+	var clanRing = thisnpc.selectedClan.clanring
 	clanRing = Object.keys(clanRing) 
 	clanRing = clanRing[0]
 
@@ -1262,36 +1184,36 @@ function setRokuganiRings(){
 
 	array = ["Air", "Earth", "Fire", "Water", "Void"]
 
-	if (selectedSchool.ring1 == "Any"){
-		selectedSchool.ring1 = getRandom(array)
+	if (thisnpc.selectedSchool.ring1 == "Any"){
+		thisnpc.selectedSchool.ring1 = getRandom(array)
 
-		for (m=0; m< array.length; m++){
-			if (array[m] == selectedSchool.ring1){
+		for (var m=0; m< array.length; m++){
+			if (array[m] == thisnpc.selectedSchool.ring1){
 				array.splice(m)
 			}
 		}
 	}
-	if (selectedSchool.ring2 == "Any"){
-		selectedSchool.ring2 = getRandom(array)
+	if (thisnpc.selectedSchool.ring2 == "Any"){
+		thisnpc.selectedSchool.ring2 = getRandom(array)
 	}
-	schoolRing1 = selectedSchool.ring1
+	var schoolRing1 = thisnpc.selectedSchool.ring1
 	rings[schoolRing1] ++;
-	schoolRing2 = selectedSchool.ring2
+	var schoolRing2 = thisnpc.selectedSchool.ring2
 	rings[schoolRing2] ++;
 
 	x = getRndInteger(1,2);
-	familyRing = "ring"+ x
+	var familyRing = "ring"+ x
 
-	familyRing = selectedFamily[familyRing]
+	familyRing = thisnpc.selectedFamily[familyRing]
 	
 	if (rings[familyRing] < maxRing){
 		rings[familyRing] ++;
 	} else {
 		if (x == 1){
-			familyRing = selectedFamily.ring2
+			familyRing = thisnpc.selectedFamily.ring2
 		}
 		if (x == 2){
-			familyRing = selectedFamily.ring1
+			familyRing = thisnpc.selectedFamily.ring1
 		}
 		if (familyRing == "Any"){
 			familyRing = getRandom(array)
@@ -1301,24 +1223,17 @@ function setRokuganiRings(){
 
 	startingRingsToMax(rings,maxRing)  //adds the extra +1 to a ring that won't push it over 3
 
-	thisnpc.Air = rings.Air + selectedArchetype.ring.Air
-	thisnpc.Earth = rings.Earth + selectedArchetype.ring.Earth
-	thisnpc.Fire = rings.Fire + selectedArchetype.ring.Fire
-	thisnpc.Water = rings.Water + selectedArchetype.ring.Water
-	thisnpc.Void = rings.Void + selectedArchetype.ring.Void
-
-	updateSpans("Air");
-	updateSpans("Earth");
-	updateSpans("Fire");
-	updateSpans("Water");
-	updateSpans("Void");
+	thisnpc.Air = rings.Air + thisnpc.selectedArchetype.ring.Air
+	thisnpc.Earth = rings.Earth + thisnpc.selectedArchetype.ring.Earth
+	thisnpc.Fire = rings.Fire + thisnpc.selectedArchetype.ring.Fire
+	thisnpc.Water = rings.Water + thisnpc.selectedArchetype.ring.Water
+	thisnpc.Void = rings.Void + thisnpc.selectedArchetype.ring.Void
 }
-
 
 function startingRingsToMax(rings,maxRing){
 
-	array = ["Air", "Earth", "Fire", "Water", "Void"]
-	raisedRing = getRandom(array)
+	var array = ["Air", "Earth", "Fire", "Water", "Void"]
+	var raisedRing = getRandom(array)
 
 	while (rings[raisedRing] >= maxRing){
 			raisedRing = getRandom(array)
@@ -1331,118 +1246,117 @@ function updateSpans(variable){
 	document.getElementById("npc"+variable).innerHTML = thisnpc[variable]
 }
 
-
 function setRokuganiSkills(){
 
-	thisnpc.artisanskill = selectedArchetype.skills.artisanskill + selectedTemplate.artisanskill + selectedSchool.schoolskills.Artisan;
-	thisnpc.martialskill = selectedArchetype.skills.martialskill + selectedTemplate.martialskill + selectedSchool.schoolskills.Martial;
-	thisnpc.socialskill = selectedArchetype.skills.socialskill + selectedTemplate.socialskill +  + selectedSchool.schoolskills.Social;
-	thisnpc.scholarskill = selectedArchetype.skills.scholarskill + selectedTemplate.scholarskill + selectedSchool.schoolskills.Scholar;
-	thisnpc.tradeskill = selectedArchetype.skills.tradeskill + selectedTemplate.tradeskill +  + selectedSchool.schoolskills.Trade;
-
-	updateSpans("artisanskill");
-	updateSpans("martialskill");
-	updateSpans("socialskill");
-	updateSpans("scholarskill");
-	updateSpans("tradeskill");
+	thisnpc.artisanskill = thisnpc.selectedArchetype.skills.artisanskill + thisnpc.selectedTemplate.artisanskill + thisnpc.selectedSchool.schoolskills.Artisan;
+	thisnpc.martialskill = thisnpc.selectedArchetype.skills.martialskill + thisnpc.selectedTemplate.martialskill + thisnpc.selectedSchool.schoolskills.Martial;
+	thisnpc.socialskill = thisnpc.selectedArchetype.skills.socialskill + thisnpc.selectedTemplate.socialskill + thisnpc.selectedSchool.schoolskills.Social;
+	thisnpc.scholarskill = thisnpc.selectedArchetype.skills.scholarskill + thisnpc.selectedTemplate.scholarskill + thisnpc.selectedSchool.schoolskills.Scholar;
+	thisnpc.tradeskill = thisnpc.selectedArchetype.skills.tradeskill + thisnpc.selectedTemplate.tradeskill +  + thisnpc.selectedSchool.schoolskills.Trade;
 }
 
-
 function setDemeanor(){
-	selectedDemeanor = document.getElementById("npcdemeanor").value
+	var selectedDemeanor = document.getElementById("npcdemeanor").value
 
 	for (i = 0; demeanors.length > i; i++){
 		if (selectedDemeanor == demeanors[i].demeanor){
 			x = "Social TNs ("+demeanors[i].tns+"), Unmasking: "+demeanors[i].unmasking;
-			divcontents("npcdemeanornotes",x);
+			divContents("npcdemeanornotes",x);
 		} 
 	}
 }
 
+function getWeaponStats(weapon){
+		for(var i=0; i < tabledata[8].children.length; i++){
+		if (tabledata[8].children[i].name == weapon){
+			weapon = tabledata[8].children[i]
 
-function selectNPCWeapon(num){
-	selectedWeapon = document.getElementById("npcweapon"+num).value;
-
-	if (document.getElementById("npcweapon"+num+"stats") == null){
-		newdiv("npcweapo"+num+"nstats","npcequip","inline margin10");
-	} else { document.getElementById("npcweapon"+num+"stats").innerHTML = ""; }
-
-	for(i=0; i < tabledata[8].children.length; i++){
-		if (tabledata[8].children[i].name == selectedWeapon){
-			selectedWeapon = tabledata[8].children[i]
-
-			x = 'Damage: '+selectedWeapon.damage+
-				'<span class="margin10">Deadliness: </span>'+selectedWeapon.deadliness+
-				'<span class="margin10">Range: </span>'+selectedWeapon.range+
-				'<span class="margin10">Qualities: </span>'+selectedWeapon.qualities;
-
-			divcontents("npcweapon"+num+"stats",x);
+			weaponstats = 'Damage: '+weapon.damage+
+				'<span class="ml10">Deadliness: </span>'+weapon.deadliness+
+				'<span class="ml10">Range: </span>'+weapon.range+
+				'<span class="ml10">Qualities: </span>'+weapon.qualities;
 		}	
 	} 
 
-	for (i=0; npcweapons.length > i; i++){
-		if ( npcweapons[i].name == selectedWeapon){
-			selectedWeapon = npcweapons[i];
+	for (var i=0; npcweapons.length > i; i++){
+		if ( npcweapons[i].name == weapon){
+			weapon = npcweapons[i];
 
-			x = 'Damage: '+selectedWeapon.damage+
-				'<span class="margin10">Deadliness: </span>'+selectedWeapon.deadliness+
-				'<span class="margin10">Range: </span>'+selectedWeapon.range+
-				'<span class="margin10">Qualities: </span>'+selectedWeapon.qualities;
-
-			divcontents("npcweapon"+num+"stats",x);
+			weaponstats = 'Damage: '+weapon.damage+
+				'<span class="ml10">Deadliness: </span>'+weapon.deadliness+
+				'<span class="ml10">Range: </span>'+weapon.range+
+				'<span class="ml10">Qualities: </span>'+weapon.qualities;
 		}
 	}
+
+	return weaponstats;
 }
 
-function selectNPCArmor(num){
-	selectedArmor = document.getElementById("npcarmor"+num).value;
+function getArmorStats(armor){
+		for(var i=0; i < tabledata[9].children.length; i++){
+		if (tabledata[9].children[i].armor == armor){
+			armor = tabledata[9].children[i]
 
-	if (document.getElementById("npcarmor"+num+"stats") == null){
-		newdiv("npcarmor"+num+"stats","npcequiparmor","inline margin10");
-	} else { document.getElementById("npcarmor"+num+"stats").innerHTML = ""; }
-
-	for(i=0; i < tabledata[9].children.length; i++){
-		if (tabledata[9].children[i].armor == selectedArmor){
-			selectedArmor = tabledata[9].children[i]
-
-			x = 'Physical Res: '+selectedArmor.phys+
-				'<span class="margin10">Supernatural Res: </span>'+selectedArmor.sup+
-				'<span class="margin10">Qualities: </span>'+selectedArmor.qualities;
-
-			divcontents("npcarmor"+num+"stats",x);
+			armorstats = 'Physical Res: '+armor.phys+
+				'<span class="ml10">Supernatural Res: </span>'+armor.sup+
+				'<span class="ml10">Qualities: </span>'+armor.qualities;
 		}
 	} 
 
-	for (i=0; npcarmor.length > i; i++){
-		if ( npcarmor[i].armor == selectedArmor){
-			selectedArmor = npcarmor[i];
+	for (var i=0; npcarmor.length > i; i++){
+		if ( npcarmor[i].armor == armor){
+			armor = npcarmor[i];
 
-			x = 'Physical Res: '+selectedArmor.phys+
-				'<span class="margin10">Supernatural Res: </span>'+selectedArmor.sup+
-				'<span class="margin10">Qualities: </span>'+selectedArmor.qualities;
-
-			divcontents("npcarmor"+num+"stats",x);
+			armorstats = 'Physical Res: '+armor.phys+
+				'<span class="ml10">Supernatural Res: </span>'+armor.sup+
+				'<span class="ml10">Qualities: </span>'+armor.qualities;
 		}
 	}
+
+	return armorstats
+}
+
+function selectNPCWeapon(num){
+	var selectedWeapon = document.getElementById("npcweapon"+num).value;
+
+	if (document.getElementById("npcweapon"+num+"stats") == null){
+		newDiv("npcweapon"+num+"nstats","npcequip","inline ml10");
+	} else { document.getElementById("npcweapon"+num+"stats").innerHTML = ""; }
+
+	var weapstats = getWeaponStats(selectedWeapon)
+
+	divContents("npcweapon"+num+"stats",weapstats);
+}
+
+function selectNPCArmor(num){
+	var selectedArmor = document.getElementById("npcarmor"+num).value;
+
+	if (document.getElementById("npcarmor"+num+"stats") == null){
+		newDiv("npcarmor"+num+"stats","npcequiparmor","inline ml10");
+	} else { document.getElementById("npcarmor"+num+"stats").innerHTML = ""; }
+
+	var armorstats = getArmorStats(selectedArmor)
+
+	divContents("npcarmor"+num+"stats",armorstats);
 }
 
 
 function makeTechDropdowns(){
 	document.getElementById("npctechniquecontainer").innerHTML = "";
 
-	if (selectedTemplate.extratechs>0){
-		x = "Select up to "+selectedTemplate.extratechs+" ";
+	if (thisnpc.selectedTemplate.extratechs>0){
+		var x = "Select up to "+thisnpc.selectedTemplate.extratechs+" ";
 
-			for (i=0; selectedTemplate.techtypes.length > i; i++){
+			for (var i=0; thisnpc.selectedTemplate.techtypes.length > i; i++){
 			
-				if (selectedTemplate.techtypes.length == i+2){
-					x += selectedTemplate.techtypes[i]+" or ";
+				if (thisnpc.selectedTemplate.techtypes.length == i+2){
+					x += thisnpc.selectedTemplate.techtypes[i]+" or ";
 				}
-				else if (selectedTemplate.techtypes.length > i+1){
-					x += selectedTemplate.techtypes[i]+", ";
+				else if (thisnpc.selectedTemplate.techtypes.length > i+1){
+					x += thisnpc.selectedTemplate.techtypes[i]+", ";
 				} 	
-				else if (selectedTemplate.techtypes.length == i+1){
-					x += selectedTemplate.techtypes[i]+".";
+				else if (thisnpc.selectedTemplate.techtypes.length == i+1){
+					x += thisnpc.selectedTemplate.techtypes[i]+".";
 				}
 			}
 			if (document.getElementById("npctechniquecontainer").innerHTML == "None"){
@@ -1454,19 +1368,19 @@ function makeTechDropdowns(){
 		x = ' Rank: =< '
 		document.getElementById("npctechniquecontainer").innerHTML += x;
 		
-		makeSelect("npctechniquecontainer","npctechniquesearchrank","margin10 styledselect","setTechs()")
+		newSelect("npctechniquecontainer","npctechniquesearchrank","ml10 mb5","setTechs()")
 		ranks = [1,2,3,4,5]
 
-		makeSelectDropdown1("npctechniquesearchrank",ranks)
+		fillSelectDropdown("npctechniquesearchrank",ranks)
 
-		rank = selectedArchetype.rank
+		var rank = thisnpc.selectedArchetype.rank
 		selectObj = document.getElementById("npctechniquesearchrank")
-		setSelectedValue(selectObj, rank)
+		setSelectedText(selectObj, rank)
 
 	if (document.getElementById("npctechselector") !== null){
 				document.getElementById("npctechselector").innerHTML="";
 			} else {
-				newdiv("npctechselector","npctechniquecontainer")
+				newDiv("npctechselector","npctechniquecontainer")
 			}
 
 		var techobjs = [];
@@ -1474,9 +1388,9 @@ function makeTechDropdowns(){
 		var techdroplist = [];
 
 		if (document.getElementById("type").value == "Clan Samurai" ||document.getElementById("type").value == "Ronin, Riffraff and Gaijin" || document.getElementById("type").value =="Servants and Peasants"){
-			for (i=0; selectedTemplate.techtypes.length > i; i++){
-				for (j=0; j < techniquelist.length; j++){
-					if (techniquelist[j].type == selectedTemplate.techtypes[i]){
+			for (var i=0; thisnpc.selectedTemplate.techtypes.length > i; i++){
+				for (var j=0; j < techniquelist.length; j++){
+					if (techniquelist[j].type == thisnpc.selectedTemplate.techtypes[i]){
 						techobjs.push (techniquelist[j]);
 
 					}
@@ -1484,7 +1398,7 @@ function makeTechDropdowns(){
 			}
 		} 
 
-		searchRank = document.getElementById("npctechniquesearchrank").value;
+		var searchRank = document.getElementById("npctechniquesearchrank").value;
 
 		if (searchRank !== "any"){
 
@@ -1505,17 +1419,17 @@ function makeTechDropdowns(){
 			techlist.push (techobjs[j].title);
 			techdroplist.push (techobjs[j].title+" ["+techobjs[j].type+" Rank "+techobjs[j].rank+"] ("+techobjs[j].ring+") ("+techobjs[j].reference+")")
 		}
-		for (i = 0; selectedTemplate.extratechs > i; i++){
+		for (i = 0; thisnpc.selectedTemplate.extratechs > i; i++){
 
-			npctechselecti = "npctechselect"+i
+			var npctechselecti = "npctechselect"+i
 
-			newdiv("npctechwrapper"+i,"npctechselector")
+			newDiv("npctechwrapper"+i,"npctechselector")
 
-			makeSelect("npctechwrapper"+i,'npctechselect'+i,"styledselect block margintopbottom","")
+			newSelect("npctechwrapper"+i,'npctechselect'+i," block mt5 mb5","")
 
-	 		newdiv("npctechselectdetails"+i,"npctechwrapper"+i)
+	 		newDiv("npctechselectdetails"+i,"npctechwrapper"+i)
 
-			npctechselectdetailsi = document.getElementById("npctechselectdetails"+i)
+			var npctechselectdetailsi = document.getElementById("npctechselectdetails"+i)
 
 			npctechselecti = document.getElementById(npctechselecti);
 
@@ -1541,17 +1455,17 @@ function makeTechDropdowns(){
 	function showSelectedTechnique(dropId,displayDiv){
 
 		if(dropId.nodeName !== 'SELECT'){
-			abilitydiv = document.getElementById(displayDiv);
-			techselect = document.getElementById(dropId);
+			var abilitydiv = document.getElementById(displayDiv);
+			var techselect = document.getElementById(dropId);
 		} else {
-			abilitydiv = displayDiv;
-			techselect = dropId;
+			var abilitydiv = displayDiv;
+			var techselect = dropId;
 		}
 			if  (techselect.selectedIndex !== -1){
 
 				for (j=0; j< techniquelist.length; j++){
 				if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
-					effect = techniquelist[j].effect
+					var effect = techniquelist[j].effect
 
 					while (effect.includes("<br><br>")){
 						effect = effect.replace("<br><br>","<br>");
@@ -1561,38 +1475,77 @@ function makeTechDropdowns(){
 			}}
 		}
 
-function updatestatus(name){
-	statusbox = name+'-status';
-	stanceicon = name+'-status';
-	switch(document.getElementById(statusbox).value){
-		case "alive":
-			skirmishcharacters[name].status = "alive";
-		break;
-
-		case "out":
-			skirmishcharacters[name].status = "out";
-		break;
-
-		case "dead":
-			skirmishcharacters[name].status = "dead";
-		break;
-	}
+function makeExtraWeaponButton(){
+	newButton("npcequip","npcweaponwrap0","inline","addExtraWeapon()","+")
 }
 
+function startingTechSelects(){
+
+			var startingtechs = thisnpc.selectedSchool.startingtechs
+
+			for (var m=0;m<startingtechs.length;m++){
+				newDiv("startingtech"+m,"npcstartingschooltechnique")
+
+				for (var o = 0; o < techniquelist.length; o++){
+					if (techniquelist[o].title == startingtechs[m]){
+						var effect = techniquelist[o].effect
+
+				while (effect.includes("<br><br>")){
+					effect = effect.replace("<br><br>","<br>");
+				}
+
+				var techeffect = "<u>"+techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") </u><br>" + effect + "<br><br>"
+
+					divContents("startingtech"+m,techeffect)
+					}
+				}
+			}
+			if (thisnpc.selectedSchool.chooseoptions[0] !== "" || thisnpc.selectedSchool.chooseoptions[0] !== "0"){
+				
+				for (var k =0; k< thisnpc.selectedSchool.chooseoptions.length; k++){ 
+				for (var x =0; x< thisnpc.selectedSchool.chooseoptions[k]; x++){	
+					if (document.getElementById("npcschooltechwrap"+k+x) == null){
+					newDiv("npcschooltechwrap"+k+x,"npcschooltechchoice","block pb5")
+					newSelect("npcschooltechwrap"+k+x,"npcschooltechdrop"+k+x,"block  ","showSelectedTechnique('npcschooltechdrop"+k+x+"','npcschooltechdetails"+k+x+"')")
+					newDiv("npcschooltechdetails"+k+x,"npcschooltechwrap"+k+x,"block")
+
+					var techobjs = [];
+					addToArray(techobjs,thisnpc.selectedSchool.startingtechoptions[k])
+					var techobjs = removeDuplicates(techobjs)
+
+					var techlist = [];
+					var techdroplist = [];
+
+					for (var i = 0; i < techobjs.length; i++){
+						for (var j = 0; j < techniquelist.length; j++){
+							if (techobjs[i] == techniquelist[j].title){
+									techlist.push (techniquelist[j].title);
+									techdroplist.push (techniquelist[j].title+" ["+techniquelist[j].type+" Rank "+techniquelist[j].rank+"] ("+techniquelist[j].ring+") ("+techniquelist[j].reference+")")
+							}
+						}
+					}
+					addValuesToSelect("npcschooltechdrop"+k+x,techdroplist,techlist)
+					getRandomSelect("npcschooltechdrop"+k+x)
+					showSelectedTechnique("npcschooltechdrop"+k+x,"npcschooltechdetails"+k+x)
+					}
+				}	}
+			}
+			};
 
 var npc = {};
 
 function saveNPC (){
 
 		if (document.getElementById("schooltechdrop") == null)
-			{schooltechdrop = "None"} 
-		else {schooltechdrop = document.getElementById('schooltechdrop').value;
+			{var schooltechdrop = "None"} 
+		else {var schooltechdrop = document.getElementById('schooltechdrop').value;
 		if (schooltechdrop == "Select School Technique")
 			{schooltechdrop = "None"};
 		}
-		name = document.getElementById('npcnameinput').value;
-		nospaces = name.replace(/ /g, "")
-		nospaces = nospaces.replace(/,/g, "")
+		var name = document.getElementById('npcnameinput').value;
+
+		var nospaces = noSpaces(name)
+
 		npc[nospaces] = new Object;
 
 		npc[nospaces].fullname = document.getElementById('npcnameinput').value;
@@ -1600,25 +1553,25 @@ function saveNPC (){
 		npc[nospaces].archetype = document.getElementById('archetype').options[document.getElementById('archetype').selectedIndex].text;
 		npc[nospaces].type = thisnpc.type;
 
-		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin" || selectedType == "Servants and Peasants" ){
+		if (thisnpc.selectedType == "Clan Samurai" || thisnpc.selectedType == "Ronin, Riffraff and Gaijin" || thisnpc.selectedType == "Servants and Peasants" ){
 			npc[nospaces].template = document.getElementById('template').options[document.getElementById('template').selectedIndex].text;
-		} else {npc[nospaces].template = selectedArchetype.type}
+		} else {npc[nospaces].template = thisnpc.selectedArchetype.type}
 
 		npc[nospaces].equiptype = thisnpc.equiptype;
 
-		if (selectedType == "Ronin, Riffraff and Gaijin"){
+		if (thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
 			npc[nospaces].ronintype = document.getElementById('npcronintypeselect').value;
 		}
 
-		if (selectedType == "Clan Samurai" ||selectedType == "Ronin, Riffraff and Gaijin"){
+		if (thisnpc.selectedType == "Clan Samurai" ||thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
 			npc[nospaces].clan = document.getElementById('npcclanselect').options[document.getElementById('npcclanselect').selectedIndex].text;
 		} else {npc[nospaces].clan = "None"}
 
-		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
+		if (thisnpc.selectedType == "Clan Samurai" || thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
 			npc[nospaces].family = document.getElementById('npcfamilyselect').options[document.getElementById('npcfamilyselect').selectedIndex].text
 		} else {npc[nospaces].family = "None"}
 
-		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
+		if (thisnpc.selectedType == "Clan Samurai" || thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
 			npc[nospaces].school = document.getElementById('npcschoolselect').options[document.getElementById('npcschoolselect').selectedIndex].text;
 		} else {npc[nospaces].school = "None"}
 		
@@ -1648,12 +1601,12 @@ function saveNPC (){
 		npc[nospaces].qualities = thisnpc.qualities;
 		npc[nospaces].weapon = []
 
-		children =  document.getElementById("npcequip").childNodes;
-		for (i=0; i< children.length; i++){
-			wrapId = "npcweaponwrap"+i;
+		var children =  document.getElementById("npcweapons").childNodes;
+		for (var i=0; i< children.length; i++){
+			var wrapId = "npcweaponwrap"+i;
 
 			if (document.getElementById("wrapId") !== null || document.getElementById("wrapId") !== undefined){
-				selectId = document.getElementById("npcweapon"+i)
+				var selectId = document.getElementById("npcweapon"+i)
 				if (selectId !== null){
 				npc[nospaces].weapon.push(selectId.value)
 			}
@@ -1663,43 +1616,51 @@ function saveNPC (){
 		npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
 
 		
-		for(i=0; i < tabledata[9].children.length; i++){
-			if (tabledata[9].children[i].armor == npc[nospaces].armor0){
-				selectedArmor = tabledata[9].children[i]
-			}	
-				npc[nospaces].armorphys = selectedArmor.phys
-				npc[nospaces].armorsup = selectedArmor.sup
-		} 
+		for(var i=0; i < tabledata[9].children.length; i++){
+			if (tabledata[9].children[i].armor == npc[nospaces].armor){
+				var selectedArmor = tabledata[9].children[i]
 
-		for (i=0; npcarmor.length > i; i++){
-			if ( npcarmor[i].armor == npc[nospaces].armor0){
-				selectedArmor = npcarmor[i];
-			}
 				npc[nospaces].armorphys = selectedArmor.phys
 				npc[nospaces].armorsup = selectedArmor.sup
+		} }
+
+		for (var i=0; npcarmor.length > i; i++){
+			if ( npcarmor[i].armor == npc[nospaces].armor){
+				var selectedArmor = npcarmor[i];
+			
+				npc[nospaces].armorphys = selectedArmor.phys
+				npc[nospaces].armorsup = selectedArmor.sup
+		} }
+
+		npc[nospaces].advantage = [];
+		for (var s = 0; s < document.getElementById('npcadvright').children.length; s ++){
+			npc[nospaces].advantage.push(document.getElementById('npcadv'+s).value);
 		}
 
-		npc[nospaces].advantage = document.getElementById('npcadv').value;
-		npc[nospaces].disadvantage = document.getElementById('npcdisadv').value;
+		npc[nospaces].disadvantage = [];
+		for (var s = 0; s < document.getElementById('npcdisadvright').children.length; s ++){
+			npc[nospaces].disadvantage.push(document.getElementById('npcdisadv'+s).value);
+		}
+		
 
-		npc[nospaces].schoolability = document.getElementById("npcschoolability").innerHTML;
+		npc[nospaces].ability = document.getElementById("npcabilities").innerHTML;
 
 		npc[nospaces].techs = [];
 
-		if (selectedType == "Clan Samurai" || selectedType == "Ronin, Riffraff and Gaijin"){
-		for (p =0; p< selectedSchool.startingtechs.length; p++){
-			npc[nospaces].techs.push(selectedSchool.startingtechs[p])
+		if (thisnpc.selectedType == "Clan Samurai" || thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
+		for (var p =0; p< thisnpc.selectedSchool.startingtechs.length; p++){
+			npc[nospaces].techs.push(thisnpc.selectedSchool.startingtechs[p])
 		}
 
-		div = document.getElementById("npcschooltechchoice")
+		var div = document.getElementById("npcschooltechchoice")
 
-		for (q=0; q< div.children.length; q++){
+		for (var q=0; q< div.children.length; q++){
 
-			subdiv = div.children[q]
+			var subdiv = div.children[q]
 
 			for (r = 0; r< subdiv.children.length; r++){
 				if (subdiv.children[r].nodeName == "SELECT"){
-					tech = subdiv.children[r].value;
+					var tech = subdiv.children[r].value;
 					npc[nospaces].techs.push(tech)
 				}
 			}
@@ -1710,7 +1671,7 @@ function saveNPC (){
 
 			for( i=0; i< childDivs.length; i++ )	{
 				 var childDiv = childDivs[i];
-				 x = childDiv.options[childDiv.selectedIndex].value;
+				 var x = childDiv.options[childDiv.selectedIndex].value;
 				 if (x !== "Select Techniques"){
 				 npc[nospaces].techs.push(x)
 		}}
@@ -1725,63 +1686,36 @@ function saveNPC (){
 		buildNpcMenu();
 		
 		highlight('npcbutton','npccontainer')
-		hide("npcstats");
-		hide("npcnotes")
+		hide("npcstatwrap");
 
-		if (document.getElementById("library").classList.contains("containerx")){
+		if (document.getElementById("library").classList.contains("containerhidden")){
 				highlight("npclibrarybutton","library");
 		}
 
 		showNpc(nospaces);
 
-		divcontents("npcstats","")
-		divcontents("npcnotes","")
+		divContents("npcstatwrap","")
 
 		buildNpcStatsDiv();
 
-		selectedArchetype = {};
+		thisnpc.selectedArchetype = {};
 
 		thisnpc = {};
+
+		resetNPCBuilder();
+		selectType();
 	}
-
-	function npcsave() {
-	savenpc=npc;
-	localStorage.setItem("savenpc",JSON.stringify(savenpc));
-}
-
-var savenpc = {};
-
-
-function deleteSave(){
-	localStorage.removeItem("savenpc")
-}
-
-
-function deletenpc (name){
-	menudiv=document.getElementById('menu');
-	item = document.getElementById('div'+name);
-	menudiv.removeChild(item);
-	delete npc[name];
-	npcsave();
-
-	statdiv=document.getElementById('statblock');
-	item = document.getElementById('npc-'+name)
-	statdiv.removeChild(item);
-
-	document.getElementById("editcharacter").innerHTML = "";
-	}
-
 
 function showNpc(thisnpc){
 
-	npcstat = "npc-"+thisnpc;
-	npcmenu = "div"+thisnpc;
+	var npcstat = "npc-"+thisnpc;
+	var npcmenu = "div"+thisnpc;
 
-	thatNpc = document.getElementById(npcstat);
+	var thatNpc = document.getElementById(npcstat);
 
 	if (thatNpc !== null){
 
-	children = document.getElementById("statblock").childNodes;
+	var children = document.getElementById("statblock").childNodes;
 
 	for (i = 0; i < children.length; i++){
 		children[i].classList.add("hide")
@@ -1801,13 +1735,38 @@ function showNpc(thisnpc){
 }
 }
 
+function npcsave() {
+	savenpc=npc;
+	localStorage.setItem("savenpc",JSON.stringify(savenpc));
+}
+
+var savenpc = {};
+
+
+function deleteSave(){
+	localStorage.removeItem("savenpc")
+}
+
+
+function deletenpc (name){
+	var menudiv=document.getElementById('menu');
+	var item = document.getElementById('div'+name);
+	menudiv.removeChild(item);
+	delete npc[name];
+	npcsave();
+
+	var statdiv=document.getElementById('statblock');
+	item = document.getElementById('npc-'+name)
+	statdiv.removeChild(item);
+
+	document.getElementById("editcharacter").innerHTML = "";
+	}
+
 function npcskirmish(nom){
+	var dropcontent = document.getElementById("stat"+nom).innerHTML;
 
-	dropcontent = document.getElementById("stat"+nom).innerHTML;
-
-	nom = npc[nom].fullname.replace(/ /g, '');
- 	nom = nom.replace(/,/g, "")
-
+	var nom = noSpaces(npc[nom].fullname);
+ 	
 	skirmishcharacters[nom] = new Object;
 	skirmishcharacters[nom].name = npc[nom].fullname;
 
@@ -1832,533 +1791,475 @@ function npcskirmish(nom){
 	saveSkirmish();
 	loadSkirmish();
 
-	if (document.getElementById("skirmishcontainer").classList.contains("containerx")){
+	if (document.getElementById("skirmishcontainer").classList.contains("containerhidden")){
 			highlight("skirmishbutton","skirmishcontainer");
 	}
 }
 
-
-
-
-var techniquetypes= []
-
 function makeNpcEdit(nom){
+	document.getElementById("editcharacter").classList.remove("hide")
+	document.getElementById("statblock").classList.add("hide")
+
+	thisEditNpc = npc[nom]
+
+	var datalabels = ["PC?:","Name:","Archeytpe:","Template:","Clan:","Family:","School:","<span class='l5r air'>a</span>","<span class='l5r earth'>e</span>","<span class='l5r fire'>f</span>","<span class='l5r water'>w</span>","<span class='l5r void'>v</span>","Endurance:","Composure:","Focus:","Vigilance:","Honor:","Glory:","Status","Demeanor:","Advantage:","Disadvantage:","Artisan:","Social:","Martial:","Scholar:","Trade:","Weapon:","Armor:","Ability:","Techniques:","Notes:"];
+
+	newButton("editcharacter","editsavebutton","ml10","saveEditNpc('"+nom+"')","Save Edit")
+
+	for (var i = 0; i < datalabels.length; i++){
+
+		newDiv("edit"+i,"editcharacter","inlineblock font09em ml10 alignmiddle")
+		divContents("edit"+i,"<span class='alignmiddle'>"+datalabels[i]+"</span>")
+
+		if (i == 0){
+			divContents("edit"+i,'Player: <form class="inline alignmiddle"><input  type="checkbox" id="editinput0", name="npcplayer" value="npcplayer"></form>')
+		} else if (i == 19 || i == 27 || i == 28 || i == 30){
+			newSelect("edit"+i,"editselect"+i,"mb10 ml10 inlineblock alignmiddle","");
+			newDiv("editselectinfo"+i,"edit"+i,"inlineblock ml10 font15em")
+		} else if ((i > 6 && i < 19) || (i > 21 && i < 27)){
+			newNumberInput("edit"+i,"editinputform"+i,"inline w200","","editinput"+i,"block w200 ml10")
+		} else {
+			newTextInput("edit"+i,"editinputform"+i,"inline w200","","editinput"+i,"block w200 ml10")
+		}
+
+		//makes field with line break before it
+	if (i == 1 || i == 7 || i == 12 || i == 16 || (i > 18 && i < 23) || (i > 26 && i < 32) ){
+			var div = document.createElement('div')
+			div.id = "newlinediv"
+			div.classList.add("block")
+			if (i == 7){
+				div.classList.add("mt10")
+			}			
+			var breakdiv = document.getElementById("edit"+i)
+			breakdiv.parentNode.insertBefore(div, breakdiv)
+		}
+
+		//makes big fields
+	if (i == 29 || i == 31 ){
+				var elem = document.getElementById("editinput"+i); 
+				elem.parentNode.removeChild(elem);
+				newTextArea("edit"+i,"editinput"+i,"block ml10 w640 mb10")
+
+				if (i == 29){
+					document.getElementById("editinput"+i).classList.add("h100")
+				}
+		}
+		//makes long fields for adv & disadv
+	if (i == 20 || i == 21){
+			document.getElementById("editinput"+i).classList.remove("w200")
+			document.getElementById("editinputform"+i).classList.remove("w200")
+			document.getElementById("editinput"+i).classList.add("w640")
+			document.getElementById("editinput"+i).classList.add("mb10")
+		}
+
+		//makes little fields
+	if ((i > 6 && i < 19) || (i > 21 && i < 27)){
+			document.getElementById("editinput"+i).classList.remove("w200")
+			document.getElementById("editinputform"+i).classList.remove("w200")
+			document.getElementById("editinput"+i).classList.add("w35")
+			document.getElementById("edit"+i).classList.add("w110")
+			document.getElementById("edit"+i).classList.add("textright")
+			document.getElementById("editinputform"+i).classList.remove("block")
+			document.getElementById("editinputform"+i).classList.add("inlineblock")
+			document.getElementById("editinputform"+i).classList.add("floatright")
+		}
+	}
+
+	fillNpcEdit(nom)
+}
+
+function selectNPCDemeanor(){
+	var chosenDemeanor = document.getElementById("editselect19").value;
+
+	for (var elem in demeanors){
+		if (demeanors[elem].demeanor == chosenDemeanor){
+			document.getElementById("editselectinfo19").innerHTML = demeanors[elem].tns+" Unmasking: " +demeanors[elem].unmasking
+		}
+	}
+}
+
+function fillNpcEdit(nom){
 
 	nom = npc[nom]
 
-	equiptype = nom.equiptype
+	for (var i = 0; i < 32; i++){
 
-	document.getElementById("editcharacter").classList.remove("hide")
-	document.getElementById("statblock").classList.add("hide")
-	
-	newdiv("edittype","editcharacter","inline")
+		if (i == 19){  //fills the demeanor select
 
-	makeTextInput("edittype","editname","inline schoolskillswidth","<span class='topboxwidthx inlineblock'>Name: </span>","editnameinput","margintopbottom styledselect")
+			var demeanorlist = [];
 
-	makeTextInput("edittype","editarchetype","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Archetype: </span>","editarchetypeinput","styledselect")
-
-	makeTextInput("edittype","edittemplate","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Template: </span>","edittemplateinput","styledselect")
-
-	newdiv("editbackground","editcharacter","block")
-	makeTextInput("editbackground","editclan","inline schoolskillswidth","<span class='topboxwidthx inlineblock'>Clan: </span>","editclaninput","styledselect")
-
-	makeTextInput("editbackground","editfamily","inline schoolskillswidth","<span class='topboxwidth inlineblock'>Family: </span>","editfamilyinput","styledselect")
-
-	makeTextInput("editbackground","editschool","inline schoolskillswidth","<span class='topboxwidth inlineblock'>School: </span>","editschoolinput","styledselect")
-
-	newdiv("editplayer","edittype","inline margin10")
-	x ='PC?: <form class="inline styledselect"><input onchange="setNpcPlayer()" type="checkbox" id="npceditplayer" name="npcplayer" value="npcplayer">Player </form>'
-	divcontents("editplayer",x)
-
-	newdiv("editSaveNpc","edittype","inline margin10")
-	makeButton("editSaveNpc","editSaveNpcButton","button",'saveEditNpc('+'"'+nom.title+'"'+')',"Save NPC")
-
-	newdiv("editstats","editcharacter","block")
-	newdiv("editnotes","editcharacter","block")
-
-	newdiv("editrings","editstats","block margintop")
-	divcontents("editrings","<span class='groupboxwidth inlineblock'>Rings: </span>")
-
-	makeNumberInput("editrings","editair","editboxwidth inlineblock",'<span class="l5r air margin10">a</span>: ',"editairinput"," numberform styledselect")
-
-	makeNumberInput("editrings","editearth","inlineblock margin10 editboxwidth",'<span class="l5r earth margin10">e</span>: ',"editearthinput","numberform styledselect")
-
-	makeNumberInput("editrings","editfire","inlineblock margin10 editboxwidth",'<span class="l5r fire margin10">f</span>: ',"editfireinput","numberform styledselect")
-
-	makeNumberInput("editrings","editwater","inlineblock margin10 editboxwidth",'<span class="l5r water margin10">w</span>: ',"editwaterinput","numberform styledselect")
-
-	makeNumberInput("editrings","editvoid","inlineblock margin10 editboxwidth",'<span class="l5r void margin10">v</span>: ',"editvoidinput","numberform styledselect")
-
-	newdiv("editderivedstats","editstats","block margintop")
-	divcontents("editderivedstats","<span class='groupboxwidth inlineblock'>Derived: </span>")
-
-	makeNumberInput("editderivedstats","editendurance","inlineblock editboxwidth",'Endurance: ',"editenduranceinput"," numberform styledselect")
-
-	makeNumberInput("editderivedstats","editcomposure","inlineblock margin10 editboxwidth",'Composure: ',"editcomposureinput","numberform styledselect")
-
-	makeNumberInput("editderivedstats","editfocus","inlineblock margin10 editboxwidth",'Focus: ',"editfocusinput","numberform styledselect")
-
-	makeNumberInput("editderivedstats","editvigilance","inlineblock margin10 editboxwidth",'Vigilance: ',"editvigilanceinput","numberform styledselect")
-
-	newdiv("editsocialstats","editstats","block margintop")
-	divcontents("editsocialstats","<span class='groupboxwidth inlineblock'>Social: </span>")
-
-	makeNumberInput("editsocialstats","edithonor","inlineblock editboxwidth",'Honor: ',"edithonorinput","numberform styledselect ")
-
-	makeNumberInput("editsocialstats","editglory","inlineblock margin10 editboxwidth",'Glory: ',"editgloryinput","numberform styledselect")
-
-	makeNumberInput("editsocialstats","editstatus","inlineblock margin10 editboxwidth",'Status: ',"editstatusinput","numberform styledselect")
-
-	newdiv("editdemeanor","editsocialstats","inlineblock editboxwidth margin10")
-	divcontents("editdemeanor",'Demeanor:')
-	makeSelect("editdemeanor","editdemeanorinput","styledselect inline editboxwidth","selectNPCDemeanor();")
-
-	demeanor = [];
-
-	for (i=0; i < demeanors.length; i++){
-		demeanor.push(demeanors[i].demeanor)
-	}
-
-	makeSelectDropdown1("editdemeanorinput",demeanor)
-
-	newdiv("editdemeanorinfo","editsocialstats","inline margin10")
-
-	makeTextInput("editstats","editadvantage","block margin10 ywidth","<br>Advantage: ","editadvantageinput"," styledselect xwidth")
-
-	makeTextInput("editstats","editdisadvantage","block margin10 ywidth","<br>Disadvantage: ","editdisadvantageinput"," styledselect xwidth")
-
-	newdiv("editskills","editstats","inline")
-	divcontents("editskills",'<br>Skills:')
-
-	makeNumberInput("editskills","editartisan","inlineblock margin10 editboxwidth",'Artisan: ',"editartisaninput","margintopbottom numberform styledselect")
-
-	makeNumberInput("editskills","editsocial","inlineblock margin10 editboxwidth",'Social: ',"editsocialinput","margintopbottom numberform styledselect")
-
-	makeNumberInput("editskills","editmartial","inlineblock margin10 editboxwidth",'Martial: ',"editmartialinput","numberform styledselect")
-
-	makeNumberInput("editskills","editscholar","inlineblock margin10 editboxwidth",'Scholar: ',"editscholarinput","numberform styledselect")
-
-	makeNumberInput("editskills","edittrade","inlineblock margin10 editboxwidth",'Trade: ',"edittradeinput","numberform styledselect")
-
-	newdiv("editweapon","editstats","inline margin10")
-	
-	divcontents("editweapon","<br>Weapon: ")
-		for (k=0; k< nom.weapon.length; k++){
-			newdiv("editweaponwrap"+k,"editweapon","block margin10")
-			makeSelect("editweaponwrap"+k,"editweaponinput"+k,"margintop styledselect inlineblock","selectNPCWeaponEdit('editweaponinput"+k+"','editweaponstats"+k+"');")
-			
-			weapons = [];
-
-			if (equiptype == "equipped"){
-				for (each in tabledata[8].children){
-					if (tabledata[8].children[each].name !== "NAME"){
-						weapons.push(tabledata[8].children[each].name)
-					}
-			}}
-
-			weapons.sort();
-
-			if (equiptype == "equipped"){
-				for (each in npcweapons){
-					if (npcweapons[each].type == "equipped"){
-						weapons.push(npcweapons[each].name)
-					}
-			}}
-			if (equiptype == "natural"){
-				for (each in npcweapons){
-					if (npcweapons[each].type == "natural"){
-						weapons.push(npcweapons[each].name)
-					}
-			}}
-
-			makeSelectDropdown1("editweaponinput"+k,weapons)
-
-			newdiv("editweaponstats"+k,"editweaponwrap"+k,"inline margin10")
-
-			if (k == nom.weapon.length-1){
-				j=k+1;
-				makeButton("editweapon","editAddWeaponButton",'inline margin10 margintop',"editAddWeapon("+j+",'"+equiptype+"')","+")
-			}	
-		}
-
-	newdiv("editarmor","editstats","inline margin10")
-	divcontents("editarmor","<br>Armor: ")
-	makeSelect("editarmor","editarmorinput","margintopbottom styledselect inline","selectNPCArmorEdit();")
-
-	armor = [];
-
-	if (equiptype == "equipped"){
-		for (each in tabledata[9].children){
-			if (tabledata[9].children[each].armor !== "ARMOR"){
-				armor.push(tabledata[9].children[each].armor)
+			for (var j = 0; j < demeanors.length; j++){
+				demeanorlist.push(demeanors[j].demeanor)
 			}
-	}}
 
-	armor.sort();
+			fillSelectDropdown("editselect19",demeanorlist)
 
-	if (equiptype == "equipped"){
-		for (each in npcarmor){
-			if (npcarmor[each].type == "equipped"){
+			document.getElementById("editselect19").setAttribute("onchange","selectNPCDemeanor();");
 
-				armor.push(npcarmor[each].armor)
-	}}}
-	if (equiptype == "natural"){
-		for (each in npcarmor){
-			if (npcarmor[each].type == "natural"){
+			setSelectedText(document.getElementById("editselect19"),nom.social.demeanor)
 
-				armor.push(npcarmor[each].armor)
-	}}}
-
-	makeSelectDropdown1("editarmorinput",armor)
-
-	newdiv("editarmorstats","editstats","inline margin10")
-
-	newdiv("editability","editstats","inline margin10 margintopbottom paddingbottom marginbottom")
-	divcontents("editability","<br><i>Ability:</i>")
-
-	newdiv("editschoolability","editability","inline margin10")
-	newdiv("editschoolability1","editability","inline margin10 paddingbottom marginbottom")
-
-	newdiv("edittechs","editstats","inline margin10 margintopbottom paddingtop")
-	divcontents("edittechs","<br><br><i>Techniques:</i>")
-
-	i=0;
-
-	for (each in nom.techs){
-		newdiv("techwrap"+i,"edittechs","marginbottom")
-		newdiv("edittechs"+i,"techwrap"+i,"inline")
-
-		makeSelect("edittechs"+i,"edittechselect"+i,"styledselect inline","setEditTech("+i+")")
-
-		newdiv("edittechsability"+i,"techwrap"+i,"block small")
-
-		newdiv("edittechfilter"+i,"edittechs"+i,"inlineblock");
-
-		techniquestext = [];
-		techniquesvalues = [];
-
-		
-
-		for (every in techniquelist){
-			techniquetypes.push(techniquelist[every].type)
+			selectNPCDemeanor()
 		} 
-		techniquetypes = removeDuplicates(techniquetypes)
 
-		rings = ["Any","Air","Earth","Fire","Water","Void"];
+		else if (i == 27){ // fills the weapon select
 
-		ranks = ["1","2","3","4","5"]
+			document.getElementById("edit27").innerHTML = "Weapons:";
+			document.getElementById("edit27").classList.add("w650")
 
-		for (type in techniquetypes){
-			for (rank in ranks){
-				for (ring in rings){
-			
-					for (each in techniquelist){
-								if (techniquelist[each].type == techniquetypes[type] && techniquelist[each].ring.includes(rings[ring]) && techniquelist[each].rank == ranks[rank]){
-												techniquestext.push(techniquelist[each].title+" ("+techniquelist[each].ring+") ["+techniquelist[each].type+" Rank "+techniquelist[each].rank+"]")
-												techniquesvalues.push(techniquelist[each].title)
+			newButton("edit27","addEditWeapon","inlineblock mb5 ml10","addEditWeapon('"+nom.title+"')","+")
+
+			newDiv("editweaps","edit"+i,"w650")
+
+			for (var m = 0; m < nom.weapon.length; m++){
+						editNewWeapon(nom, m)
+
+						setSelectedValue(document.getElementById("editselectweapon"+m), nom.weapon[m])
+
+						selectEditWeapon(m)}
+		}
+
+		else if (i == 28){ // fills the armor select
+			document.getElementById("edit28").innerHTML = "Armor:<br>";
+
+			m = 0;
+
+			newSelect("edit"+i,"editselectarmor"+m,"mb10 ml10 inlineblock alignmiddle","selectEditArmor("+m+")");
+			newDiv("editselectarmorinfo"+m,"edit"+i,"inlineblock ml10 font15em")
+
+							var armortext = [];
+							var armorvalue = [];
+
+							if (nom.equiptype == "equipped"){
+								for (var each in tabledata){
+									if (tabledata[each].title == "Armors"){
+										for (var j = 1; j < tabledata[each].children.length; j++){
+											armorvalue.push(tabledata[each].children[j].armor)
+											armortext.push(tabledata[each].children[j].armor+" ["+tabledata[each].children[j].phys+" / "+tabledata[each].children[j].sup+"]")
+										}
+									}
 								}
+								for (var j = 0; j < npcarmor[j].length; j++){
+									if (npcarmor[j].type == "equipped"){
+										armorvalue.push(npcarmor[j].armor)
+										armortext.push(npcarmor[j].armor+" ["+npcarmor[j].phys+" / "+npcarmor[j].sup+"]")
+									}
+								}
+
+							} else if (nom.equiptype == "natural"){
+								for (var j = 0; j < npcarmor.length; j++){
+									if (npcarmor[j].type == "natural"){
+										armorvalue.push(npcarmor[j].armor)
+										armortext.push(npcarmor[j].armor+" ["+npcarmor[j].phys+" / "+npcarmor[j].sup+"]")
+									}
+								}				
 							}
-						}
+
+						fillSelectDropdownValues("editselectarmor"+m,armorvalue,armortext)
+						setSelectedValue(document.getElementById("editselectarmor"+m), nom.armor)
+
+						selectEditArmor(m)
+		}
+		else if (i == 30){ // fills the tech select
+			document.getElementById("edit30").innerHTML = "Techniques:";
+
+			newButton("edit30","addEditTech","inlineblock mb5 ml10","addEditTech('"+nom.title+"')","+")
+
+			newDiv("edittechs","edit"+i)
+
+			for (var m = 0; m < nom.techs.length; m++){
+				editNewTech(nom, m)
+
+				setSelectedValue(document.getElementById("edittechselect"+m), nom.techs[m])
+				showSelectedTechnique('edittechselect'+m,'edittechinfo'+m)
+				
 			}
 		}
 
+		else if (i == 20){ //fills the adv input
+			document.getElementById("edit20").innerHTML = "Advantages:";
+			newButton("edit20","addEditAdv","inlineblock mb5 ml10","addEditAdv('"+nom.title+"')","+")
 
-		makeTechSelectDropdown("edittechselect"+i,"Select Tech",techniquestext,techniquesvalues)
+			newDiv("editadvs","edit"+i)
 
-		i++;
-	}
+			for (var m = 0; m < nom.advantage.length; m++){
+				newTextInput("editadvs","editadv"+m,"inlineblock","","editadvinput"+m,"ml10 w610")
+				document.getElementById("editadvinput"+m).value = nom.advantage[m];
+				newButton("editadv"+m,"deleteeditadv"+m,"inlineblock ml10","deleteEditElement('editadv','"+m+"')","-")
+			}
+		}
+		else if (i == 21){ //fills the disadv input
+			document.getElementById("edit21").innerHTML = "Disadvantages:";
+			newButton("edit21","addEditDisadv","inlineblock mb5 ml10","addEditDisadv('"+nom.title+"')","+")
 
-	makeButton("edittechs","addextratechbutton","block",'editAddTech('+i+')',"+")
+			newDiv("editdisadvs","edit"+i)
 
-	nom = nom.title
+			for (var m = 0; m < nom.disadvantage.length; m++){
+				newTextInput("editdisadvs","editdisadv"+m,"","","editdisadvinput"+m,"ml10 w610")
+				document.getElementById("editdisadvinput"+m).value = nom.disadvantage[m];
+				newButton("editdisadv"+m,"deleteeditdisadv"+m,"inlineblock ml10","deleteEditElement('editdisadv','"+m+"')","-")
+			}
+		}
 
-	divcontents("editnotes","<b>Notes:</b><br>")
-	makeTextArea("editnotes","editnotesinput","styledselect margintopbottom")
+		else {
+			var editvalues = ["x",nom.fullname, nom.archetype, nom.template, nom.clan, nom.family, nom.school,  nom.rings.air, nom.rings.earth, nom.rings.fire, nom.rings.water, nom.rings.void, nom.derived.endurance, nom.derived.composure, nom.derived.focus, nom.derived.vigilance, nom.social.honor, nom.social.glory, nom.social.status, "x","x","x",nom.skills.artisan, nom.skills.social, nom.skills.martial, nom.skills.scholar, nom.skills.trade,"x","x",nom.ability,"",nom.notes]
 
-	populateNpcEdit(nom);
-}
-
-var nom={};
-
-function populateNpcEdit(nom){
-	var nom = npc[nom];
-	thisnpc = nom
-
-	document.getElementById("editnameinput").value = nom.fullname;
-
-	var title = document.getElementById("editnameinput").value
-	title = title.replace(/ /g, "")
-	title = title.replace(/,/g, "")
-	nom.title = title;
-
-	if (nom.player == 1){
-		document.getElementById("editarchetypeinput").value = "PC";
-	} else {document.getElementById("editarchetypeinput").value = nom.archetype}
-
-	document.getElementById("edittemplateinput").value = nom.template;
-	document.getElementById("editclaninput").value = nom.clan;
-	document.getElementById("editfamilyinput").value = nom.family;	
-	document.getElementById("editschoolinput").value = nom.school;
-
-	if (nom.player == 1){
-		document.getElementById("npceditplayer").checked = true
-	} else {document.getElementById("npceditplayer").checked = false}
-
-	document.getElementById("editairinput").value = nom.rings.air;
-	document.getElementById("editearthinput").value = nom.rings.earth;
-	document.getElementById("editwaterinput").value = nom.rings.water;
-	document.getElementById("editfireinput").value = nom.rings.fire;
-	document.getElementById("editvoidinput").value = nom.rings.void;
-	document.getElementById("editenduranceinput").value = nom.derived.endurance;
-	document.getElementById("editcomposureinput").value = nom.derived.composure;
-	document.getElementById("editfocusinput").value = nom.derived.focus;
-	document.getElementById("editvigilanceinput").value = nom.derived.vigilance;
-	document.getElementById("edithonorinput").value = nom.social.honor;
-	document.getElementById("editgloryinput").value = nom.social.glory;
-	document.getElementById("editstatusinput").value = nom.social.status;
-
-	for (each in document.getElementById('editdemeanorinput').options){
-		demeanor = document.getElementById('editdemeanorinput').options[each].value;
-		if (demeanor == nom.social.demeanor){
-			document.getElementById("editdemeanorinput").options.selectedIndex = document.getElementById("editdemeanorinput").options[each].index
+			if (editvalues[i] !== "x"){
+				document.getElementById("editinput"+i).value = editvalues[i]
+			}
 		}
 	}
+}
 
-	selectNPCDemeanor()
+function selectEditWeapon(num){
+	var x = document.getElementById("editselectweapon"+num)
+
+	var weap = document.getElementById("editselectweapon"+num).value
+
+	var weaponinfo = getWeaponStats(weap);
+
+	divContents("editselectweaponinfo"+num,weaponinfo)
+}
+
+function selectEditArmor(num){
+	var x = document.getElementById("editselectarmor"+num)
+
+	var armor = document.getElementById("editselectarmor"+num).value
+
+	var armorinfo = getArmorStats(armor);
+
+	divContents("editselectarmorinfo"+num,armorinfo)
+}
+
+function addEditTech(nom){
+
+	var m = "edittechs"
+
+	m = document.getElementById(m).children.length
+
+	nom = npc[nom]
+
+	editNewTech(nom, m)			
+
+}
+
+function addEditWeapon(nom){
 	
-	document.getElementById("editartisaninput").value = nom.skills.artisan;
-	document.getElementById("editsocialinput").value = nom.skills.social;
-	document.getElementById("editmartialinput").value = nom.skills.martial;
-	document.getElementById("editscholarinput").value = nom.skills.scholar;
-	document.getElementById("edittradeinput").value = nom.skills.trade;
-	document.getElementById("editadvantageinput").value = nom.advantage;
-	document.getElementById("editdisadvantageinput").value = nom.disadvantage;
-	document.getElementById("editnotesinput").value = nom.notes;
+	var m = "editweaps"
 
-	for (m = 0; m< nom.weapon.length; m++){
-		for (each in document.getElementById('editweaponinput'+m).options){
-		weapon = document.getElementById('editweaponinput'+m).options[each].value;
-		if (weapon == nom.weapon[m]){
-			document.getElementById("editweaponinput"+m).options.selectedIndex = document.getElementById("editweaponinput"+m).options[each].index
-			selectNPCWeaponEdit("editweaponinput"+m,"editweaponstats"+m);
-		}}
-	}
+	m = document.getElementById(m).children.length
 
-	for (each in document.getElementById('editarmorinput').options){
-		armor = document.getElementById('editarmorinput').options[each].value;
-		if (armor == nom.armor){
-			document.getElementById("editarmorinput").options.selectedIndex = document.getElementById("editarmorinput").options[each].index
-		}
-	}
+	nom = npc[nom]
 
-	selectNPCArmorEdit();
+	editNewWeapon(nom, m)
+}
 
-	if (nom.ability !== "" && nom.ability !== "None" && nom.ability !== undefined){
-	document.getElementById("editschoolability").innerHTML = nom.ability
-	}
+function addEditAdv(nom){
 
-	if (nom.schoolability !== "" && nom.schoolability !== "None"){
-	document.getElementById("editschoolability1").innerHTML = nom.schoolability;
-	}
+	var m = "editadvs"
 
-	if (nom.techs.length > 0){
-		for (i=0; i<nom.techs.length; i++){
-			techselect = document.getElementById("edittechselect"+i)
+	m = document.getElementById(m).children.length
+
+	newTextInput("editadvs","editadv"+m,"inlineblock","","editadvinput"+m,"ml10 w610")
+	newButton("editadv"+m,"deleteeditadv"+m,"inlineblock ml10","deleteEditElement('editadv','"+m+"')","-")
+}
+
+function addEditDisadv(nom){
+
+	var m = "editdisadvs"
+
+	m = document.getElementById(m).children.length
+
+	newTextInput("editdisadvs","editdisadv"+m,"inlineblock","","editdisadvinput"+m,"ml10 w610")
+	newButton("editdisadv"+m,"deleteeditdisadv"+m,"inlineblock ml10","deleteEditElement('editdisadv','"+m+"')","-")
+}
+
+function deleteEditElement(id,m){
+	removeElement(id+m)
+}
+
+
+
+function editNewWeapon(nom, m){
+						newDiv("weapwrap"+m,"editweaps","w650");
+						newButton("weapwrap"+m,"deleteeditweap"+m,"floatright inlineblock ml10","deleteEditElement('weapwrap','"+m+"')","-")
+						newSelect("weapwrap"+m,"editselectweapon"+m,"mb10 ml10 inlineblock alignmiddle","selectEditWeapon("+m+")");
+						newDiv("editselectweaponinfo"+m,"weapwrap"+m,"inlineblock ml10 font15em")
+						newDiv("newlinediv"+m,"weapwrap"+m,"block")
+
+							var weapontext = [];
+							var weaponvalue = [];
 			
-			for (each in techselect.options){
-				thistech = techselect.options[each]
+							if (nom.equiptype == "equipped"){
+								for (var each in tabledata){
+									if (tabledata[each].title == "Weapons"){
+										for (var j = 1; j < tabledata[each].children.length; j++){
+											weaponvalue.push(tabledata[each].children[j].name)
+											weapontext.push(tabledata[each].children[j].name+" ["+tabledata[each].children[j].damage+" / "+tabledata[each].children[j].deadliness+"]")
+										}
+									}
+								}
+								for (var j = 0; j < npcweapons.length; j++){
+									if (npcweapons[j].type == "equipped"){
+										weaponvalue.push(npcweapons[j].name)
+										weapontext.push(npcweapons[j].name+" ["+npcweapons[j].damage+" / "+npcweapons[j].deadliness+"]")
+									}
+								}
 
-				if (thistech.value == nom.techs[i]){
+							} else if (nom.equiptype == "natural"){
+								for (var j = 0; j < npcweapons.length; j++){
+									if (npcweapons[j].type == "natural"){
+										weaponvalue.push(npcweapons[j].name)
+										weapontext.push(npcweapons[j].name+" ["+npcweapons[j].damage+" / "+npcweapons[j].deadliness+"]")
+									}
+								}				
+							}
 
-					techselect.options.selectedIndex = thistech.index;
-
-					setEditTech(i)
-				}
-			}
-		}
-	}
-
-	x = nom.title
-
-	thisEditNpc = npc[x]
-	delete npc[x]
-	console.log(npc)
-	npcsave()
+						fillSelectDropdownValues("editselectweapon"+m,weaponvalue,weapontext)
 }
 
-thisEditNpc = {}
+function editNewTech(nom, m){
+				newDiv("techwrap"+m,"edittechs","w650");
 
-function selectNPCDemeanor(){
-	chosenDemeanor = document.getElementById("editdemeanorinput").value;
+				newSelect("techwrap"+m,"edittechselect"+m,"ml10","showSelectedTechnique('edittechselect"+m+"','edittechinfo"+m+"')");
+				newButton("techwrap"+m,"deleteedittech"+m,"inlineblock floatright ml10","deleteEditElement('techwrap','"+m+"')","-")
+				newDiv("edittechinfo"+m,"techwrap"+m,"ml10 mb10 font15em");
 
-	for (elem in demeanors){
-		if (demeanors[elem].demeanor == chosenDemeanor){
-			document.getElementById("editdemeanorinfo").innerHTML = demeanors[elem].tns+" Unmasking:" +demeanors[elem].unmasking
+				var techniquestext = [];
+				var techniquesvalues = [];
+				var techniquetypes = [];
+				
+				for (every in techniquelist){
+					techniquetypes.push(techniquelist[every].type)
+				} 
+				techniquetypes = removeDuplicates(techniquetypes)
+
+				rings = ["Any","Air","Earth","Fire","Water","Void"];
+
+				ranks = ["1","2","3","4","5"]
+
+				for (var k = 0; k < techniquetypes.length; k ++){
+					for (var n = 0; n < ranks.length; n ++){
+						for (var o = 0; o < rings.length; o++){
+					
+							for (each in techniquelist){
+										if (techniquelist[each].type == techniquetypes[k] && techniquelist[each].ring.includes(rings[o]) && techniquelist[each].rank == ranks[n]){
+														techniquestext.push(techniquelist[each].title+" ("+techniquelist[each].ring+") ["+techniquelist[each].type+" Rank "+techniquelist[each].rank+"]")
+														techniquesvalues.push(techniquelist[each].title)
+										}
+									}
+								}
+					}
+				
 		}
-	}
+
+		fillSelectDropdownValues("edittechselect"+m,techniquesvalues,techniquestext)
 }
-
-function selectNPCWeaponEdit(selectid,divid){
-	selectedWeapon = document.getElementById(selectid).value;
-
-	if (document.getElementById(divid) == null){
-		newdiv(divid,"editstats","inline margin10");
-	} else { document.getElementById(divid).innerHTML = ""; }
-
-	for(i=0; i < tabledata[8].children.length; i++){
-		if (tabledata[8].children[i].name == selectedWeapon){
-			selectedWeapon = tabledata[8].children[i]
-
-			x = 'Damage: '+selectedWeapon.damage+
-				'<span class="margin10">Deadliness: </span>'+selectedWeapon.deadliness+
-				'<span class="margin10">Range: </span>'+selectedWeapon.range+
-				'<span class="margin10">Qualities: </span>'+selectedWeapon.qualities;
-
-			divcontents(divid,x);
-		}	
-	} 
-
-	for (i=0; npcweapons.length > i; i++){
-		if (npcweapons[i].name == selectedWeapon){
-			selectedWeapon = npcweapons[i];
-
-			x = 'Damage: '+selectedWeapon.damage+
-				'<span class="margin10">Deadliness: </span>'+selectedWeapon.deadliness+
-				'<span class="margin10">Range: </span>'+selectedWeapon.range+
-				'<span class="margin10">Qualities: </span>'+selectedWeapon.qualities;
-
-			divcontents(divid,x);
-		}
-	}
-}
-
-
-function selectNPCArmorEdit(){
-	selectedArmor = document.getElementById("editarmorinput").value;
-
-	if (document.getElementById("editarmorstats") == null){
-		newdiv("editarmorstats","npcequiparmor","inline margin10");
-	} else { document.getElementById("editarmorstats").innerHTML = ""; }
-
-	for(i=0; i < tabledata[9].children.length; i++){
-		if (tabledata[9].children[i].armor == selectedArmor){
-			selectedArmor = tabledata[9].children[i]
-
-			x = 'Physical Res: '+selectedArmor.phys+
-				'<span class="margin10">Supernatural Res: </span>'+selectedArmor.sup+
-				'<span class="margin10">Qualities: </span>'+selectedArmor.qualities;
-
-			divcontents("editarmorstats",x);
-		}	
-	} 
-
-	for (i=0; npcarmor.length > i; i++){
-		if ( npcarmor[i].armor == selectedArmor){
-			selectedArmor = npcarmor[i];
-
-			x = 'Physical Res: '+selectedArmor.phys+
-				'<span class="margin10">Supernatural Res: </span>'+selectedArmor.sup+
-				'<span class="margin10">Qualities: </span>'+selectedArmor.qualities;
-
-			divcontents("editarmorstats",x);
-		}
-	}
-}
-
 
 function saveEditNpc(nom){
 
-	var name = document.getElementById("editnameinput").value;
+	delete npc[nom];
 
-	title = name.replace(/ /g, "")
-	title = title.replace(/,/g, "")
+	var name = document.getElementById("editinput1").value;
+
+	title = noSpaces(name)
+
 	npc[title] = new Object;
-
 
 	nom = npc[title]
 
 	nom.fullname = name
 	nom.title = title
-	nom.archetype = document.getElementById("editarchetypeinput").value;
-	nom.template = document.getElementById("edittemplateinput").value
-	nom.clan = document.getElementById("editclaninput").value;
-	nom.family = document.getElementById("editfamilyinput").value
-	nom.school = document.getElementById("editschoolinput").value
+	nom.archetype = document.getElementById("editinput2").value;
+	nom.template = document.getElementById("editinput3").value
+	nom.clan = document.getElementById("editinput4").value;
+	nom.family = document.getElementById("editinput5").value
+	nom.school = document.getElementById("editinput6").value
 
-	if(document.getElementById("npceditplayer").checked == true){
+	if(document.getElementById("editinput0").checked == true){
  		nom.player=1;  //sets character as PC
  	} else {nom.player=0;}  //sets character as NPC
 
  	nom.rings = {}
-	nom.rings.air = document.getElementById("editairinput").value
-	nom.rings.earth = document.getElementById("editearthinput").value
-	nom.rings.fire = document.getElementById("editfireinput").value
-	nom.rings.water = document.getElementById("editwaterinput").value
-	nom.rings.void = document.getElementById("editvoidinput").value
+	nom.rings.air = document.getElementById("editinput7").value
+	nom.rings.earth = document.getElementById("editinput8").value
+	nom.rings.fire = document.getElementById("editinput9").value
+	nom.rings.water = document.getElementById("editinput10").value
+	nom.rings.void = document.getElementById("editinput11").value
 	nom.derived = {}
-	nom.derived.endurance = document.getElementById("editenduranceinput").value
-	nom.derived.composure = document.getElementById("editcomposureinput").value
-	nom.derived.focus = document.getElementById("editfocusinput").value
-	nom.derived.vigilance = document.getElementById("editvigilanceinput").value
+	nom.derived.endurance = document.getElementById("editinput12").value
+	nom.derived.composure = document.getElementById("editinput13").value
+	nom.derived.focus = document.getElementById("editinput14").value
+	nom.derived.vigilance = document.getElementById("editinput15").value
 	nom.social = {}
-	nom.social.honor = document.getElementById("edithonorinput").value
-	nom.social.glory = document.getElementById("editgloryinput").value
-	nom.social.status = document.getElementById("editstatusinput").value
-	nom.social.demeanor = document.getElementById('editdemeanorinput').options[document.getElementById('editdemeanorinput').selectedIndex].value
+	nom.social.honor = document.getElementById("editinput16").value
+	nom.social.glory = document.getElementById("editinput17").value
+	nom.social.status = document.getElementById("editinput18").value
+	nom.social.demeanor = document.getElementById('editselect19').value
 	nom.skills = {}
-	nom.skills.artisan = document.getElementById("editartisaninput").value
-	nom.skills.social = document.getElementById("editsocialinput").value
-	nom.skills.martial = document.getElementById("editmartialinput").value
-	nom.skills.scholar = document.getElementById("editscholarinput").value
-	nom.skills.trade = document.getElementById("edittradeinput").value
-	nom.advantage = document.getElementById("editadvantageinput").value
-	nom.disadvantage = document.getElementById("editdisadvantageinput").value
-	nom.notes = document.getElementById("editnotesinput").value 
+	nom.skills.artisan = document.getElementById("editinput22").value
+	nom.skills.social = document.getElementById("editinput23").value
+	nom.skills.martial = document.getElementById("editinput24").value
+	nom.skills.scholar = document.getElementById("editinput25").value
+	nom.skills.trade = document.getElementById("editinput26").value
+
+	nom.advantage = []
+	children =  document.getElementById("editadvs").childNodes;
+		for (i=0; i< children.length; i++){
+			div =  document.getElementById("editadvinput"+i);
+				nom.advantage.push(div.value)
+			}
+
+	nom.disadvantage = []
+	children =  document.getElementById("editdisadvs").childNodes;
+		for (i=0; i< children.length; i++){
+			div = document.getElementById("editdisadvinput"+i);
+				nom.disadvantage.push(div.value)
+			}
+
+	nom.notes = document.getElementById("editinput31").value 
 
 	nom.type = thisEditNpc.type
 	nom.equiptype = thisEditNpc.equiptype
 
 	nom.weapon = []
 
-	children =  document.getElementById("editweapon").childNodes;
+	children =  document.getElementById("editweaps").childNodes;
 		for (i=0; i< children.length; i++){
 			wrapId = "editweaponwrap"+i;
 
 			if (document.getElementById("wrapId") !== null || document.getElementById("wrapId") !== undefined){
-				selectId = document.getElementById("editweaponinput"+i)
+				selectId = document.getElementById("editselectweapon"+i)
 				if (selectId !== null){
 				nom.weapon.push(selectId.value)
 			}
 			}
 		}
 
-	nom.armor = document.getElementById("editarmorinput").value
+	nom.armor = document.getElementById("editselectarmor0").value
 		
 		for(i=0; i < tabledata[9].children.length; i++){
-			if (tabledata[9].children[i].armor == nom.armor0){
+
+			var x = tabledata[9].children[i].armor
+
+			if (tabledata[9].children[i].armor == nom.armor){
 				selectedArmor = tabledata[9].children[i]
 			}	
-				nom.armorphys = selectedArmor.phys
-				nom.armorsup = selectedArmor.sup
 		} 
 
 		for (i=0; npcarmor.length > i; i++){
-			if ( npcarmor[i].armor == nom.armor0){
+			if ( npcarmor[i].armor == nom.armor){
 				selectedArmor = npcarmor[i];
 			}
+		}
 				nom.armorphys = selectedArmor.phys
 				nom.armorsup = selectedArmor.sup
-		}
 
 
-	nom.ability = document.getElementById("editschoolability1").innerHTML
-	nom.schoolability = document.getElementById("editschoolability").innerHTML;
+	nom.ability = document.getElementById("editinput29").value
 
 	nom.techs = [];
 
-	nom.notes = document.getElementById("editnotesinput").value
-
-	var childDivs = document.getElementById('edittechs').children;
+	var childDivs = document.getElementById("edittechs").children;
 
 		for( i=0; i< childDivs.length; i++ ){
 		 	var childDiv = childDivs[i];
@@ -2366,8 +2267,9 @@ function saveEditNpc(nom){
 		 	if (document.getElementById(divname) !== null){
 		 	nom.techs.push(document.getElementById(divname).options[document.getElementById(divname).selectedIndex].value);
 			}}
+	nom.notes = document.getElementById("editinput31").value
 
-	document.getElementById("editstats").innerHTML = "";
+	document.getElementById("editcharacter").innerHTML = "";
 	document.getElementById("editcharacter").classList.add("hide")
 	document.getElementById("statblock").classList.remove("hide")
 	npcsave()
@@ -2381,227 +2283,5 @@ function saveEditNpc(nom){
 	}
 
 	showNpc(nom.title)
-}
-
-function setEditTech(id){
-	if (document.getElementById("edittechfilter") !== null){
-			document.getElementById("edittechfilter").remove();
-		}
-
-	abilitydiv = document.getElementById("edittechsability"+id);
-	techselect = document.getElementById("edittechselect"+id)
-
-	for (j=0; j< techniquelist.length; j++){
-		if (techselect.options[techselect.selectedIndex].value == techniquelist[j].title){
-			effect = techniquelist[j].effect
-			effect = effect.replace("<br><br>","<br>");
-				effect = effect.replace("<br><br>","<br>");
-					effect = effect.replace("<br><br>","<br>");
-						effect = effect.replace("<br><br>","<br>");
-			abilitydiv.innerHTML = effect
-		}
-	}
-
-	makeButton("edittechs","addextratechbutton","block",'editAddTech('+id+')',"+")
-}
-
-function editAddWeapon(num,equiptypestring){
-
-	k = num
-	equiptype = equiptypestring
-	j = num+1
-
-	document.getElementById("editAddWeaponButton").remove()
-
-	newdiv("editweaponwrap"+k,"editweapon","block margin10")
-
-		makeSelect("editweaponwrap"+k,"editweaponinput"+k,"margintop styledselect inlineblock","selectNPCWeaponEdit('editweaponinput"+k+"','editweaponstats"+k+"');")
-		
-		weapons = [];
-		weaponstats = []
-
-		if (equiptype == "equipped"){
-			for (each in tabledata[8].children){
-				if (tabledata[8].children[each].name !== "NAME"){
-					weap = tabledata[8].children[each]
-					weapons.push(weap.name)
-					weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
-				}
-		}}
-
-		weapons.sort();
-		weaponstats.sort();
-
-		if (equiptype == "equipped"){
-			for (each in npcweapons){
-				if (npcweapons[each].type == "equipped"){
-					weap = npcweapons[each]
-					weapons.push(weap.name)
-					weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
-				}
-		}}
-		if (equiptype == "natural"){
-			for (each in npcweapons){
-				if (npcweapons[each].type == "natural"){
-					weap = npcweapons[each]
-					weapons.push(weap.name)
-					weaponstats.push(weap.name + " (" + weap.damage + "/" + weap.deadliness +")")
-				}
-		}}
-
-		makeSelectDropdown1("editweaponinput"+k,weapons)
-
-		for (m = 0; m < weapons.length; m ++){
-			document.getElementById("editweaponinput"+k).options[m].value = weapons[m]
-			document.getElementById("editweaponinput"+k).options[m].innerHTML = weaponstats[m]
-		}
-
-		newdiv("editweaponstats"+k,"editweaponwrap"+k,"inline margin10")
-
-		makeButton("editweapon","editAddWeaponButton",'inline margin10 margintop','editAddWeapon('+j+',"'+equiptype+'")',"+")
 
 }
-
-techtypearray = []
-
-function editAddTech(i){
-
-		document.getElementById("addextratechbutton").remove();
-		if (document.getElementById("edittechfilter") !== null){
-			document.getElementById("edittechfilter").remove();
-		}
-
-		n=0;
-
-			children =  document.getElementById("edittechs").childNodes;
-			for (a=0; a< children.length; a++){
-				wrapId = "techwrap"+a;
-
-				if (document.getElementById("wrapId") !== null || document.getElementById("wrapId") !== undefined){
-					selectId = document.getElementById("edittechs"+a)
-					if (selectId !== null){
-						n++
-				}}
-		}
-
-		newdiv("techwrap"+n,"edittechs","inline")
-		divcontents("techwrap"+n,"")
-
-		newdiv("edittechs"+n,"techwrap"+n,"inline")
-
-		makeSelect("edittechs"+n,"edittechselect"+n,"styledselect inline","setEditTech("+n+")")
-
-		newdiv("edittechfilter","techwrap"+n,"inline")
-
-		addToDiv("edittechfilter","Type: ")
-		makeSelect("edittechfilter","edittechsearchtype","styledselect","edittechfilter("+n+")")
-		
-		for (each in techniquelist){	
-			if (techtypearray.includes(techniquelist[each].type)){} else {techtypearray.push(techniquelist[each].type)}
-		}
-
-		makeSelectDropdown("edittechsearchtype","Any",techtypearray)
-		addToDiv("edittechfilter","Ring: ")
-		makeSelect("edittechfilter","edittechsearchring","styledselect","edittechfilter("+n+")")
-		ringtypearray = ["Air","Earth","Fire","Water","Void"]
-		makeSelectDropdown("edittechsearchring","Any",ringtypearray)
-		addToDiv("edittechfilter","Rank: ")
-
-		makeSelect("edittechfilter","edittechsearchrank1","styledselect","edittechfilter("+n+")")
-		var option = document.createElement("option");
-		option.text = "=<";
-		option.value = "2"
-		document.getElementById("edittechsearchrank1").add(option)
-
-		var option = document.createElement("option");
-		option.text = "=";
-		option.value = "1"
-		document.getElementById("edittechsearchrank1").add(option)
-
-		makeSelect("edittechfilter","edittechsearchrank","styledselect","edittechfilter("+n+")")
-		rankarray = ["1","2","3","4","5"]
-		makeSelectDropdown("edittechsearchrank","Any",rankarray)
-
-		newdiv("edittechsability"+n,"techwrap"+n,"inlineblock small")
-
-		techniquestext = [];
-		techniquesvalues = [];
-		for (each in techniquelist){
-			techniquestext.push(techniquelist[each].title+" ("+techniquelist[each].ring+") ["+techniquelist[each].type+" Rank "+techniquelist[each].rank+"]")
-			techniquesvalues.push(techniquelist[each].title)
-		}
-
-		makeTechSelectDropdown("edittechselect"+n,"Select Tech",techniquestext,techniquesvalues)
-
-
-}
-
-function edittechfilter(i){
-	
-		techniquestext = [];
-		techniquesvalues = [];
-
-		techtype = document.getElementById("edittechsearchtype").value;
-		techring = document.getElementById("edittechsearchring").value;
-		techrank1 = document.getElementById("edittechsearchrank1").value;
-		techrank = document.getElementById("edittechsearchrank").value;
-
-		techlist = techniquelist
-
-		for(var j = 0; j < techlist.length; j++){
-			if (techtype !== false && techtype !== "Any")					{
-			techlist = techlist.filter(function(tech)				{
-				if (tech.type == techtype){
-					return true;
-				};
-
-				return false;
-			});
-		}
-		if (techring !== false && techring !== "default")					{
-			techlist = techlist.filter(function(tech)				{
-				if (tech.ring == techring || techring == "Any"){
-					return true;
-				}
-				if (tech.ring.includes(techring)  || tech.ring.includes("Any")){
-					return true;
-				};
-				return false;
-			});
-		}
-
-		techrank = Number(techrank);
-
-		if (techrank == NaN){
-			techrank = 1
-		}
-
-	if (isNaN(techrank)){techlist=techlist}
-		else {
-
-		if (techrank1 == "1")					{
-			techlist = techlist.filter(function(tech)				{
-				tech.rank = Number(tech.rank);
-				if (tech.rank == techrank){
-					return true;
-				}
-				return false;
-			});
-			} else if (techrank1 == "2")									{
-				techlist = techlist.filter(function(tech){
-					tech.rank = Number(tech.rank);
-					if (tech.rank <= techrank){
-						return true;
-					}
-					return false;
-				});
-			}
-		} 
-			techniquestext.push(techlist[j].title+" ("+techlist[j].ring+") ["+techlist[j].type+" Rank "+techlist[j].rank+"]")
-			techniquesvalues.push(techlist[j].title)
-		}
-
-		document.getElementById("edittechselect"+i).options.length = 0;
-		makeSelectDropdownWithValues("edittechselect"+i,techniquesvalues,techniquestext)
-
-	}

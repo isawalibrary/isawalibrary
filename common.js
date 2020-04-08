@@ -1,19 +1,32 @@
-function hideshow(x){
-	var divclasses;
-	divclasses=document.getElementById(x).classList
+function hideShow(x){
+	var divclasses=document.getElementById(x).classList
 	document.getElementById(x).classList.toggle("hide");
 	}
 
 
-function newdiv (divname,parentName,classname){ //create new div
-	nw = document.createElement('div');
-	document.getElementById(parentName).appendChild(nw);
+function newDiv (divname,parentName,classlist){ //create new div
+
+	if (document.getElementById(divname) == null){
+		var nw = document.createElement('div');
+	if (typeof parentName === 'string' || parentName instanceof String){
+				document.getElementById(parentName).appendChild(nw);
+			} else {
+				parentName.appendChild(nw);	
+			}
+
 	nw.id = divname;
-	nw.classList = classname;
-	};
+	nw.classList = classlist;
+	}};
+
+function noSpaces(hasSpacesAndCommas){
+		var nospaces = hasSpacesAndCommas.replace(/ /g, "")
+		nospaces = nospaces.replace(/,/g, "")
+
+		return nospaces;
+}
 
 
-function divcontents (divname,contents){ //set contents of a div
+function divContents (divname,contents){ //set contents of a div
 	document.getElementById(divname).innerHTML = contents;
 	}
 
@@ -33,39 +46,62 @@ function hide(x) { //hides via CSS
 	}
 
 
-function getRandom(listname){
+function getRandom(listname){  //x = getRandom(listname)
 	return listname[Math.floor(Math.random()*listname.length)]
 	};
 
 
 function trailingCommaKiller(){
-	trailingCommaStringList = document.getElementsByClassName('trailingcommafinder')
+	var trailingCommaStringList = document.getElementsByClassName('trailingcommafinder')
 
-	for (i = 0; i < trailingCommaStringList.length; i++){
+	for (var i = 0; i < trailingCommaStringList.length; i++){
 
-		thisString = trailingCommaStringList[i];
+		var thisString = trailingCommaStringList[i];
 
 		thisString.innerHTML = thisString.innerHTML.trim();
 
-	 	if(thisString.innerHTML.slice(-1)==","){
+	 	if (thisString.innerHTML.slice(-1)==","){
 	 		thisString.innerHTML = thisString.innerHTML.slice(0,-1);
- 	}	
- }
-}
+	 	}	
+	 }}
 
 
-function getRndInteger(min, max) {
-  return Math.floor(Math.random() * (max - min) ) + min;
-}
-
-
-function capitalizeFirstLetter(string) {
-    return string.charAt(0).toUpperCase() + string.slice(1);
+function getRndInteger(min, max) { //x = getRandom(listname)
+  	return Math.floor(Math.random() * (max - min) ) + min;
 	}
 
 
-function makeSelectDropdown1(selectorForm,listName){
-	
+function capitalizeFirstLetter(string) { //x = getRandom(listname)
+    return string.charAt(0).toUpperCase() + string.slice(1);
+	}
+
+function removeDuplicates(array){  //array must be global or this function won't change the array  x = removeDuplicates()
+	uniqueSet = new Set(array);
+	array = [...uniqueSet]
+	return(array)
+	}	
+
+function shuffle(array) {  //x = shuffle(array)
+	 var currentIndex = array.length, temporaryValue, randomIndex;
+
+	 // While there remain elements to shuffle...
+	 while (0 !== currentIndex) {
+
+	    // Pick a remaining element...
+	    randomIndex = Math.floor(Math.random() * currentIndex);
+	    currentIndex -= 1;
+
+	    // And swap it with the current element.
+	    temporaryValue = array[currentIndex];
+	    array[currentIndex] = array[randomIndex];
+	    array[randomIndex] = temporaryValue;
+	  	}
+
+	  return array;
+	}
+
+
+function fillSelectDropdown(selectorForm,listName){
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";
 
@@ -79,7 +115,7 @@ function makeSelectDropdown1(selectorForm,listName){
 }	
 
 
-function makeSelectDropdown(selectorForm,defaultText,listName){
+function fillSelectDropdownDefault(selectorForm,defaultText,listName){
 	var el = document.createElement("option");
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";
@@ -96,7 +132,7 @@ function makeSelectDropdown(selectorForm,defaultText,listName){
 		};
 }
 
-function makeSelectDropdownWithValues(selectorForm,valueListName,textcontentListName){
+function fillSelectDropdownValues(selectorForm,valueListName,textcontentListName){
 	
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";
@@ -110,16 +146,9 @@ function makeSelectDropdownWithValues(selectorForm,valueListName,textcontentList
 }	
 
 
-
-function removeDuplicates(array){  //array must be global or this function won't change the array
-	uniqueSet = new Set(array);
-	array = [...uniqueSet]
-	return(array)
-}
-
 function addToArray(arrayToAddTo,arrayToAdd){
 		if (arrayToAdd.length > 0){
-		for (i = 0; i < arrayToAdd.length; i++){
+		for (var i = 0; i < arrayToAdd.length; i++){
 			arrayToAddTo.push(arrayToAdd[i])
 		}
 	}
@@ -151,7 +180,7 @@ function addToSelect(selectorForm,listName){
 
 function addValuesToSelect(selectorForm,droplist,valuelist){
 			var el = document.createElement("option");
-			select=document.getElementById(selectorForm);
+			var select=document.getElementById(selectorForm);
 			select.innerHTML="";
 
 			for(var j = 0; j < valuelist.length; j++) {
@@ -165,14 +194,14 @@ function addValuesToSelect(selectorForm,droplist,valuelist){
 function getRandomSelect(selectId){
 	var select = document.getElementById(selectId)
 	var options = select.children;
-	maxint = options.length
-	minint = 0
+	var maxint = options.length
+	var minint = 0
 	
 	select.selectedIndex = getRndInteger(minint,maxint);
 }
 
 
-function setSelectedValue(selectObj, valueToSet) {
+function setSelectedText(selectObj, valueToSet) {
     for (var i = 0; i < selectObj.options.length; i++) {
         if (selectObj.options[i].text== valueToSet) {
             selectObj.options[i].selected = true;
@@ -181,13 +210,37 @@ function setSelectedValue(selectObj, valueToSet) {
     }
 }
 
+function setSelectedValue(selectObj, valueToSet) {
+    for (var i = 0; i < selectObj.options.length; i++) {
+    	weapname = selectObj.options[i].value
+
+        if (selectObj.options[i].value== valueToSet) {
+            selectObj.options[i].selected = true;
+            
+        }
+    }
+}
+
+function setSelectedIndex(selectObj, valueToSet) {
+            if (typeof selectObj === 'string' || selectObj instanceof String){
+				document.getElementById(selectObj).options[valueToSet].selected = true;
+			} else {
+				selectObj.options[valueToSet].selected = true;
+			}
+   }
+
+function removeElement(elementId){
+	var element = document.getElementById(elementId);
+	element.parentNode.removeChild(element);
+}
+
 function clearSelect(selectId){
 	document.getElementById(selectId).options.length = 0
 }
 
-function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
+function newButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
 	if (document.getElementById(buttonId) == null){
-		newButton = document.createElement('button');
+		var newButton = document.createElement('button');
 		document.getElementById(parentName).appendChild(newButton);
 
 		newButton.id = buttonId;
@@ -198,12 +251,13 @@ function makeButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText
 }
 
 
-function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,inputClasses){
+function newTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,inputClasses){
 
 	if (document.getElementById(formId) == null){
 		var newForm = document.createElement('form');
 		if (typeof parentName === 'string' || parentName instanceof String){
-				document.getElementById(parentName).appendChild(newForm);}
+				document.getElementById(parentName).appendChild(newForm);
+			}
 		else {parentName.appendChild(newForm)}
 
 		newForm.id = formId;
@@ -221,7 +275,7 @@ function makeTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,input
 }
 
 
-function makeTextArea(parentName,inputId,inputClasses){
+function newTextArea(parentName,inputId,inputClasses){
 	if (document.getElementById(inputId) == null){
 		var textarea = document.createElement("textarea");
 
@@ -234,7 +288,7 @@ function makeTextArea(parentName,inputId,inputClasses){
 	}
 }
 
-function makeSelect(parentName,selectId,selectClasses,onChangeFunction){
+function newSelect(parentName,selectId,selectClasses,onChangeFunction){
 	if (document.getElementById(selectId) == null){
 
 		var select = document.createElement("select");
@@ -250,10 +304,15 @@ function makeSelect(parentName,selectId,selectClasses,onChangeFunction){
 }
 
 
-function makeNumberInput(parentName,formId,formClasses,formHTML,inputId,inputClasses){
+function newNumberInput(parentName,formId,formClasses,formHTML,inputId,inputClasses){
 	if (document.getElementById(formId) == null){
 		var newForm = document.createElement('form');
-		document.getElementById(parentName).appendChild(newForm);
+
+		if (typeof parentName === 'string' || parentName instanceof String){
+				document.getElementById(parentName).appendChild(newForm);
+			} else {
+				parentName.appendChild(newForm);	
+			}
 
 		newForm.id = formId;
 		newForm.classList = formClasses;
@@ -269,27 +328,7 @@ function makeNumberInput(parentName,formId,formClasses,formHTML,inputId,inputCla
 }
 
 
-function shuffle(array) {
-  var currentIndex = array.length, temporaryValue, randomIndex;
-
-  // While there remain elements to shuffle...
-  while (0 !== currentIndex) {
-
-    // Pick a remaining element...
-    randomIndex = Math.floor(Math.random() * currentIndex);
-    currentIndex -= 1;
-
-    // And swap it with the current element.
-    temporaryValue = array[currentIndex];
-    array[currentIndex] = array[randomIndex];
-    array[randomIndex] = temporaryValue;
-  }
-
-  return array;
-}
-
-
-function makeTechSelectDropdown(selectorForm,defaultText,listName,valueName){
+function newTechSelectDropdown(selectorForm,defaultText,listName,valueName){
 	var el = document.createElement("option");
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";

@@ -33,7 +33,7 @@ var skills = [
 var statuslist = ["alive", "out", "dead"];
 
 var stances = {
-	Stance:{name:"Stance",
+	stance:{name:"Stance",
 			ability: "Select a stance"},
 	air:{	name:"Air",
 			ability:"TN+1 to Attack and Scheme actions targeting you (+2 at Rank 4+)"},
@@ -76,10 +76,12 @@ var mdeuterotheme = ["aki","akira","chika","fusa","haru","hide","hiko","hira","h
 
 var fdeuterotheme = ["ko","yo","ka","na","e","ne","mi"]
 
-var	names = ["Aika","Aka","Akane","Akari","Akemi","Aki","Akihiko","Akiko","Akinari","Akira","Amaya","Aoi","Atsushi","Ayaka","Ayame","Ayane","Azuma","Chiyo","Chieko","Chihiro","Chiharu","Daikichi","Daisetsu","Daisuke","Daiyu","Eiji","Eisuke","Emi","Emiko","Fukuro","Fumi","Genbu","Genichi","Hachi","Hachiro","Haitaka","Hajime","Hamatsu","Hanzo","Haruhi","Haruki","Hakaku","Haruka","Haruo","Haruto","Hatoka","Hayato","Hibi","Hibiki","Hideaki","Hikaru","Hiroaki","Hizaya","Hozumi","Ichijo","Ikaru","Inoue","Isamu","Isuka","Itsuki","Izumi","Izara","Iwakura","Jiro","Jun","Junpei","Kaede","Kaharu","Kamome","Kaori","Kaoru","Kasumi","Katashi","Katsuo","Kazue","Kazuhiko","Kazuki","Kazuya","Kei","Keita","Kenji","Kenmi","Kenzo","Kiji","Kiko","Kikyo","Kiro","Kimiko","Kiyoko","Kohaku","Koharu","Koji","Kokoro","Koma","Kosuke","Kotone","Kuina","Kujaku","Kumo","Kurina","Kurumi","Kyo","Madoka","Makoto","Mai","Mana","Manami","Mariko","Maru","Masahiko","Mashiro","Mayu","Mayumi","Michi","Midori","Mika","Minoru","Mio","Mirai","Misaki","Misago","Mitsuru","Miyu","Mizuki","Mori","Mozu","Nanami","Nao","Naoha","Naoki","Naota","Naoto","Natsuki","Orihime","Osamu","Rei","Reizo","Renjaku","Rika","Rin","Ruka","Ryota","Saburo","Sagi","Saito","Saboten","Sakura","Sannosuke","Sanzeni","Saori","Satoru","Satomi","Sayuri","Sazai","Seiji","Sen","Shiho","Shigeru","Shion","Shinichi","Shizuru","Shotaro","Shoubin","Shunsuke","Sora","Souta","Sui","Suisen","Suiren","Sumika","Sumire","Sumiyo","Suzaku","Suzu","Suzune","Tadashi","Tae","Taka","Takako","Takara","Takumi","Takuya","Tana","Terukazu","Toki","Tomoe","Tomomi","Torayuki","Toyoshige","Tsorika","Tsubaki","Tsubame","Tsuki","Tsukika","Tsutsuki","Tsutsuji","Usa","Uzura","Washi","Wataru","Yanagi","Yasu","Yoriko","Yoshiaki","Yousuke","Yuka","Yukari","Yuki","Yukino","Yuuki","Yuzuhime","Zennosuke","Zetsuha","Zuku"];
+var	names = ["Adachi", "Aika", "Akagi", "Akamatsu", "Akane", "Akari", "Akechi", "Akemi", "Aki", "Akihiko", "Akiko", "Akimoto", "Akinari", "Akira", "Akita", "Akiyama", "Akizuki", "Amago", "Amakusa", "Amano", "Amaya", "Anayama", "Andou", "Anenokoji", "Aoi", "Aoki", "Aoyama", "Arai", "Arima", "Asai", "Asakura", "Asano", "Ashikage", "Ashitaka", "Ashina", "Aso", "Asami", "Asukai", "Atagi", "Atsushi", "Aya", "Ayaka", "Ayame", "Ayane", "Ayano", "Azora", "Azuma", "Chieko", "Chiharu", "Chihiro", "Chikusa", "Chiyo", "Daikichi", "Daisetsu", "Daisuke", "Daiyu", "Dairu", "Daiki", "Eiji", "Eisuke", "Emi", "Emiko", "Endou", "Enomoto", "Enya", "Fuji", "Fujii", "Fujinami", "Fujioji", "Fujioka", "Fujita", "Fujitani", "Fujiwara", "Fukui", "Fukuro", "Fukushima", "Fumi", "Funabashi", "Furuta", "Futaba", "Genbu", "Genichi", "Gojou", "Gosanke", "Gosankyo", "Gotou", "Hachi", "Hachiro", "Hachisuka", "Haga", "Hagiwara", "Haitaka", "Hajime", "Hakaku", "Hamatsu", "Hamuro", "Hanzo", "Hara", "Harada", "Haruhi", "Haruka", "Haruki", "Haruo", "Haruto", "Hasegawa", "Hashiba", "Hashimoto", "Hatakeyama", "Hatano", "Hatoka", "Hayashi", "Hayato", "Hibi", "Hibiki", "Hideaki", "Higashikaze", "Higashijou", "Hijikata", "Hikari", "Hikaru", "Hiki", "Hineno", "Hino", "Hinoka", "Hina", "Hiraga", "Hirano", "Hirata", "Hiroaki", "Hiroshi", "Hisamatsu", "Hizaya", "Hojo", "Hondou", "Houjou", "Honma", "Honomi", "Hori", "Horio", "Hoshina", "Hosokawa", "Houjou", "Hozumi", "Ichibashi", "Ichijo", "Ichiro", "Ikaru", "Ikeda", "Ikejiri", "Ikoma", "Imagawa", "Imai", "Inaba", "Inagaki", "Inoue", "Irie", "Isamu", "Ise", "Ishibashi", "Ishida", "Ishikawa", "Ishimaki", "Ishino", "Ishiyama", "Ishiki", "Isuka", "Itagaki", "Itakura", "Itami", "Itsuki", "Itsutsuji", "Iwaki", "Iwakura", "Iwamura", "Iwasaki", "Iwashita", "Izara", "Izumi", "Jikouji", "Jimyouin", "Jiro", "Jun", "Junjii", "Junpei", "Kaede", "Kagae", "Kagami", "Kagawa", "Kaharu", "Kajiwara", "Kamei", "Kamizeshi", "Kamome", "Kanamaru", "Kanamori", "Kaneko", "Kanou", "Kaori", "Kaoru", "Kasahashi", "Karasumaru", "Kasumi", "Katakura", "Katano", "Kataoka", "Katashi", "Katou", "Katsuo", "Katsura", "Kawabe", "Kawada", "Kawahire", "Kawakami", "Kawamura", "Kawguchi", "Kazue", "Kazuhiko", "Kazuki", "Kazuya", "Kei", "Keita", "Kenji", "Kenmi", "Kenzo", "Kieko", "Kirina","Kiji", "Kikawa", "Kiko", "Kikuchi", "Kikyo", "Kimiko", "Kimura", "Kinoshita", "Kira", "Kiro", "Kiso", "Kitabatake", "Kitagaki", "Kitajo", "Kitanokouji", "Kiyoko", "Kiyooka", "Kiyowara", "Kobayakawa", "Kodama", "Koga", "Kohaku", "Koharu", "Koide", "Koji", "Kokoro", "Koma", "Komatsu", "Konishi", "Kono", "Konoe", "Kosuke", "Kotone", "Kou", "Kouno", "Kouriki", "Kuchiki", "Kudo", "Kuina", "Kujaku", "Kujo", "Kiki", "Kumagaya", "Kumo", "Kurina", "Kuroda", "Kuroki", "Kurumi", "Kushizu", "Kusunoki", "Kuzuyama", "Kyo", "Madoka", "Maeda", "Mai", "Makino", "Makoto", "Mana", "Manabe", "Manami", "Mariko", "Maru", "Masahiko", "Mashiro", "Matsuda", "Matsudaira", "Matsui", "Matsukura", "Matsumae", "Matsura", "Matsushita", "Matsuura", "Mayu", "Mayumi", "Mibu", "Michi", "Midori", "Mika", "Mikumo", "Minagawa", "Minamoto", "Minoru", "Mio", "Mirai", "Misago", "Misaki", "Mitsuru", "Miura", "Miyabe", "Miyake", "Miyoshi", "Miyu", "Mizoguchi", "Mizuki", "Mizuno", "Mizutani", "Mogami", "Moro", "Mori", "Morikawa", "Morioka", "Mouri", "Mozuru", "Minakata", "Murakami", "Murata", "Mutatsu", "Nabeshima", "Nagai", "Nagao", "Nagasaki", "Nagatani", "Naitou", "Nakagawa", "Nakajima", "Nakamikado", "Nakamura", "Nakanoin", "Nakatomi", "Nakayama", "Nakazono", "Nanami", "Nao", "Naoha", "Naoki", "Naota", "Naoto", "Naruse", "Nasu", "Natsuki", "Natsumi", "Nawakano", "Nijou", "Nikaidou", "Nikki", "Nishi", "Nishina", "Nishio", "Nishiouji", "Nishisanjou", "Nishitouin", "Nitta", "Niwa", "Nomiya", "Nomura", "Ochi", "Oda", "Ogasawara", "Ogawa", "Ogura", "Okabe", "Okazaki", "Oku", "Okuda", "Okudaira", "Orihime", "Osamu", "Oshinokouji", "Otagi", "Oyama", "Rei", "Reizei", "Reizo", "Renjaku", "Rika", "Rin", "Rokkaku", "Rokujou", "Ruka", "Ryota", "Ryuuzouji", "Saboten", "Saburo", "Saga", "Sagara", "Sagi", "Saigou", "Saionji", "Saito", "Saitou", "Sakai", "Sakakibara", "Sakuma", "Sakura", "Sakurai", "Sanada", "Sanjo", "Sanjou", "Sannosuke", "Sano", "Sanzeni", "Saori", "Sasaki", "Satake", "Satomi", "Satori", "Satoru", "Satou", "Sayuri", "Sazai", "Seiji", "Seikanji", "Seki", "Sen", "Sengoku", "Shiba", "Shibata", "Shibukawa", "Shigahide", "Shigenoi", "Shigeru", "Shiho", "Shijou", "Shimazu", "Shimokoube", "Shinichi", "Shinakawa", "Shinjou", "Shinmen", "Shion", "Shizuru", "Shotaro", "Shoubin", "Shouni", "Shunsuke", "Soejima", "Sonoda", "Sora", "Souma", "Souta", "Suganuma", "Sugawara", "Sugi", "Sugihara", "Sui", "Suiren", "Suisen", "Sumika", "Sumire", "Sumiyo", "Suzaku", "Suzu", "Suzuki", "Suzune", "Tadashi", "Tae", "Taguchi", "Taira", "Taichiro", "Taka", "Takahashi", "Takako", "Takamatsu", "Takanashi", "Takano", "Takaoka", "Takara", "Takatsuji", "Takatsukasa", "Takayama", "Takeda", "Takenaka", "Takeya", "Takigawa", "Takumi", "Takuya", "Tamura", "Tana", "Tanaka", "Tanegashima", "Tani", "Tamotsu", "Tanuma", "Terazawa", "Terukazu", "Toda", "Togawa", "Toki", "Tokudaiji", "Tokugawa", "Tomoe", "Tomomi", "Torayuki", "Torii", "Touji", "Toudou", "Toyoshige", "Tozawa", "Tsorika", "Tsubaki", "Tsubame", "Tsuchimikado", "Tsugaru", "Tsuki", "Tsukika", "Tsukushi", "Tsutsui", "Tsutsuji", "Tsutsuki", "Uesugi", "Ukita", "Umewaka", "Urakami", "Usa", "Usami", "Utsunomiya", "Utushi", "Uzura", "Wada", "Wakiya", "Wakizaka", "Washi", "Watanabe", "Wataru", "Yagyu", "Yamada", "Yamagata", "Yamaguchi", "Yamamoto", "Yamane", "Yamanoi", "Yamanouchi", "Yamaoka", "Yamashina", "Yanagi", "Yanagizawa", "Yashiro", "Yasu", "Yonezu", "Yoriko", "Yoshiaki", "Yoshiharu", "Yoshida", "Yoshi", "Yousuke", "Yuka", "Yukari", "Yuki", "Yukino", "Yuuki", "Yuzuhime", "Zennosuke", "Zetsuha", "Zuku",];
+
 
 
 var tao = [
+
 	"We tell the tales of heroes to remind ourselves that we also can be great. ",
 	"Every journey begins with a single step. <br>Step well, and your journey will be filled with fortune. <br>Step poorly, and it will be wrought with disaster. ",
 	"You cannot live while hiding from life. ",
@@ -333,156 +335,8 @@ var tao = [
 	"A man with outward courage dares to die; a man with inner courage dares to live.",
 	"Success is as dangerous as failure. Hope is as hollow as fear.",
 	"Truth never damages a cause that is just.",
-
-
+	"What is the cost of lies? It's not that we'll mistake them for the truth. The real danger is that if we hear enough lies, then we no longer recognize the truth at all.",
+	"You'll do it because nobody else can. And if you don't, hundreds of thousands will die. If you tell me that's not enough I won't believe you. This is what has always set our people apart. A thousand years of sacrifice in our veins.,"
 
 			];
-
-
-var color={
-	spring:{
-		  bg: "#FFFFFF",
-		  "bgimage": "url('blossom.png')",
-		  bgposition: "left top",
-		 
-		  "opacitybgoverlay": "rgb(203, 230, 237, 0.8)",
-
-		  "highlightmainbuttontextcolor": "#F7BAA1", 
-		  "tooltipbgcolor": "#F7BAA1", 
-		  "tooltip-border":"white",
-
-		  "tableheaderbg": "#595858",
-		  "tableheaderfont": "#ffffff",
-
-		  "buttoncentre": "#fffff4",
-		  buttontext:"#5e4031",
-		  "buttonborderlight": "#f7e5d7",
-		  "buttonborderdark": "#d6c49c",
- 
-		  "fontcolor": "#5e4031",
-		  tooltipfont:"black",
-
-		  greentea: "#96c988",
-	},
-	summer:{
-		 bg: "#FFFFFF",
-		  "bgimage": 'url("leaves.jpg")',
-		  bgposition: "left top",
-
-		  "opacitybgoverlay": "rgb(221, 255, 147, 0.85)",
-
-		  "highlightmainbuttontextcolor": "#adce67", 
-		  "tooltipbgcolor": "#adce67", 
-		  "tooltip-border":"white",
-
-		  "tableheaderbg": "#97b752",
-		  "tableheaderfont": "#fffff4",
-
-		  "buttoncentre": "#fffff4",
-		  buttontext:"#5e4031",
-		  "buttonborderlight": "#e5e5c3",
-		  "buttonborderdark": "#d6c49c",
-
-		  "fontcolor": "#5e4031",
-		  tooltipfont:"black",
-
-		  greentea: "#96c988",
-			},
-	autumn:{
-		  bg: "#FFFFFF",
-		  "bgimage": "url('maple.jpg')",
-		  bgposition: "left top",
-		   
-		  "opacitybgoverlay": "rgb(249, 176, 42, 0.85)",
-
-		  "highlightmainbuttontextcolor": "#FFA500", 
-		  "tooltipbgcolor": "rgb(255,215,0)", 
-		  "tooltipborder":"white",
-
-		  "tableheaderbg": "#595858",
-		  "tableheaderfont": "#ffffff",
-
-		  "buttoncentre": "#FFFF66",
-		  buttontext:"#7f4900",
-		  "buttonborderlight": "#af6600",
-		  "buttonborderdark": "#af6600",
-
-		  "fontcolor": "#7f4900",
-		  tooltipfont:"black",
-
-		  greentea: "#af6600",
-	},
-	winter:{
-		  bg: "#FFFFFF",
-		  "bgimage": "url('stones.jpg!d')",
-		  bgposition: "bottom left",
-		   
-		  "opacitybgoverlay": "rgb(206, 206, 206, 0.7)",
-
-		  "highlightmainbuttontextcolor": "rgb(84, 109, 255)", 
-		  "tooltipbgcolor": "#9ea4bf", 
-		  "tooltipborder":"white",
-
-		  "tableheaderbg": "#595858",
-		  "tableheaderfont": "#ffffff",
-
-		  "buttoncentre": "#fffff4",
-		  buttontext:"#535560",
-		  "buttonborderlight": "#e5e5c3",
-		  "buttonborderdark": "#d6c49c",
-
-		  "fontcolor": "#353849",
-		  tooltipfont:"black",
-
-		  greentea: "rgb(84, 109, 255)",
-	},
-	void:{
-		  bg: "#000000",
-		  "bgimage": "url('night.jpg')",
-		  bgposition: "right bottom",
-		   
-		  "opacitybgoverlay": "rgb(252, 252, 252, 0.85)",
-
-		  "highlightmainbuttontextcolor": "white", 
-		  "tooltipbgcolor": "#0d0249",
-		  "tooltipborder":"white", 
-
-		  "tableheaderbg": "#C0C0C0",
-		  "tableheaderfont": "#ffffff",
-
-		  "buttoncentre": "#0d0249",
-		  buttontext:"#a094b5",
-		  "buttonborderlight": "#0d0249",
-		  "buttonborderdark": "#0d0249",
-
-		  "fontcolor": "#1d1330",
-		  tooltipfont:"#c4b8db",
-
-		  greentea: "#5a4d70",
-	},
-	printer:{
-		  bg: "#000000",
-		  "bgimage": "none",
-		  bgposition: "",
-		   
-		  "opacitybgoverlay": "rgb(255, 255, 255, 1)",
-
-		  "highlightmainbuttontextcolor": "#DCDCDC", 
-		  "tooltipbgcolor": "#d6d6d6", 
-		  "tooltipborder":"#C0C0C0",
-
-		  "tableheaderbg": "#C0C0C0",
-		  "tableheaderfont": "#ffffff",
-
-		  "buttoncentre": "#FFFFFF",
-		  buttontext:"black",
-		  "buttonborderlight": "#dbdbdb",
-		  "buttonborderdark": "#dbdbdb",
-
-		  "fontcolor": "#000000",
-		  tooltipfont:"#000000",
-
-		  greentea: "#5a4d70",
-	},
-}
 

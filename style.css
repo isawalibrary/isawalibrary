@@ -1,54 +1,62 @@
-.mainbutton.focus, .mainbutton:focus {
-    outline: 0;
-    box-shadow: none!important;
-}
-.button.focus, .button:focus {
-    outline: 0;
-    box-shadow: none!important;
-}
+:root {
+  --bg: #36484a;
+  --bg-image: url('crab.gif');
 
-.datainputlength {
-    width: 300px;
-  }
+  --bgdiv-image: url('woodgrain.png');
+ 
+  --bgoverlay: rgb(142, 158, 163, 0.8);
+  --bglighter: rgb(102, 147, 156);
+  --bgevenlighter: rgb(184, 195, 198);
 
-  .datanumlength {
-    width: 30px;
-  }
+  --menubar: rgb(42, 118, 140);
 
-   .datanumformlength {
-    width: 55px;
-  }
+  --accent: #aaa9ad;
+  
+  --tooltip-bg-color: rgb(184, 195, 198);
+  --tooltip-border: #ffffb3; 
 
-     .datamedlength {
-    width: 145px;
-  }
+  --table-header-bg: rgb(59, 107, 133);
+  --table-header-font: #abbfc2;
+  --buttoncolor: #dbdd6b;
+  --mainfont: #00004d;
 
-.notbold {
-  font-weight: normal;
-}
+  --highlight: #ffffb3;
 
-.selectbg {
-  background: var(--table-header-bg);
-  color: var(--table-header-font);
-  border-width: 1px 1px 1px 1px;
-  border-color: #A0A0A0;
-  border-style: solid;
+  --highlight1:   #142952;
+  --highlight2: #eaf0fa;
+  --greentea: #96c988;
+
+  --bartop: #dbdd6b;
+  --barbottom: #dbdd6b
 }
 
-
-body {
-  font-family: 'Abel';
-  font-size: 13px;
-
-  background-image: var(--bg-image);
+::-webkit-scrollbar { 
+  display: none; 
+}
+/*
+#bgdiv {
+  z-index:-2;
+  width: 100%;
+  height: 100%;
+  position: absolute; 
   background-color: var(--bg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: var(--font-color);
-// text-shadow: 0px 0px 40px white,0px 0px 40px white,0px 0px 40px white,0px 0px 15px white,0px 0px 15px white;
-  overflow-x: hidden;
+  background-image: var(--bgdiv-image);
+  background-blend-mode: color-burn;
 }
 
+#bgmondiv {
+  z-index:-1;
+  width: 100%;
+  height: 100%;
+  position: absolute; 
+  background-color: var(--bg);
+  background-image: var(--bg-image);
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-attachment: fixed;
+}
+*/
 @font-face {
   font-family: L5R;
   src: url(L5RIcons.ttf);
@@ -59,595 +67,375 @@ body {
   src: url(brushtip.ttf);
 }
 
+.brushtip {font-family: 'brushtip'; font-size: 1.5em;}
+
+.abel {font-family: 'Abel'; font-size: 1em;}
+
+.l5r { font-family: 'L5R'; font-size: 1.2em; font-weight: normal;}
+
+.font2em {font-size: 2em;}
+
+.font1em {font-size: 1em;}
+
+.font15em {font-size: 1.1em;}
+
+.font09em {font-size: 0.9em;}
+
+.font08em {font-size: 0.8em;}
 
 
-.air {
-  color: var(--icon-air-color);
+body {
+  font-family: 'Abel';
+  font-size: 0.8em;
+  color: var(--mainfont);
+  z-index:1;
+  background-color: var(--bg);
+  padding-left:  10px;
+  padding-right: 10px;
+  background-image: var(--bg-image);
+  background-blend-mode: color-burn;
+  background-repeat: no-repeat;
+  background-position: top right;
+  background-attachment: fixed;
 }
 
-.earth {
-  color: var(--icon-earth-color);
+select, input, textarea {
+  font-family: "Abel";
+  background-color: var(--bglighter);
+  border: 1px;
+  border-color: var(--bgevenlighter);
+  border-style: solid;
 }
 
-.fire {
-  color: var(--icon-fire-color);
+input[type=text] {
+  padding-left: 5px;
+  }]
+
+textarea {
+  resize: vertical;
 }
 
-.water {
-  color: var(--icon-water-color);
+textarea::-webkit-scrollbar {
+  display: block;
 }
 
-.void {
-  color: var(--icon-void-color);
+textarea::-webkit-scrollbar-corner {
+  background-color: var(--bglighter);
+  border: none;
 }
+
+input[type=checkbox] {
+         position: relative;
+         cursor: pointer;
+    }
+    input[type=checkbox]:before {
+         content: "";
+         display: block;
+
+         width: 20px;
+         height: 20px;
+         top: 0;
+         left: 0;
+         background-color:var(--bglighter);
+}
+input[type=checkbox]:checked:before {
+         content: "";
+         display: block;
+
+         width: 20px;
+         height: 20px;
+         top: 0;
+         left: 0;
+         background-color:var(--bglighter);
+}
+    input[type=checkbox]:checked:after {
+         content: "";
+         display: block;
+         width: 5px;
+         height: 10px;
+         border: solid white;
+         border-width: 0 2px 2px 0;
+         -webkit-transform: rotate(45deg);
+         -ms-transform: rotate(45deg);
+         transform: rotate(45deg);
+         position: absolute;
+         top: 2px;
+         left: 6px;
+}
+
+
+button {
+  font-family: 'Abel';
+  color: var(--bgmenubar);
+  border-style: solid;
+  border-width: 1px;
+  border-color: var(--highlight);
+  border-radius: 3px;
+  background-color: var(--buttoncolor);
+}
+
+
+p {
+  display: block;
+  margin-top: 0.6em;
+  margin-bottom: 0.6em;
+  margin-left: 0;
+  margin-right: 0;
+}
+
+
+
+/* TOP BAR */
+
+.titlebar {
+  min-height: 55px;
+  display: flex;
+  justify-content: space-between;
+  background-color: var(--menubar);
+}
+
+.titlewrap {
+  position: sticky;
+  top: 0px;
+}
+
+.containervisible {
+  animation-duration: 500ms;
+  animation-name: slidein;
+  animation-iteration-count: none;
+  padding-left: 1%;
+  margin-right: 1%;
+  background-color: var(--bgoverlay);
+  width: 99%;
+  margin-top: 15px;
+  padding-top:  10px;
+  padding-bottom: 10px;
+  }
+
+.containerhidden {
+  animation-duration: 500ms;
+  animation-name: slideout;
+  animation-iteration-count: none; 
+  margin-left: 110%;
+  background-color: var(--bgoverlay);
+  width: 100%;
+  padding-bottom: 15px;
+  margin-bottom:  15px;
+  padding-top:  15px;  
+}
+
+@keyframes slidein {
+  from {
+    margin-left: 110%;
+    width: 99%; 
+  }
+
+  to {
+    margin-left: 1%;
+    width: 99%;
+  }
+}
+
+@keyframes slideout {
+  from {
+    margin-left: 1%;
+    width: 99%;
+  }
+
+  to {
+    margin-left: 110%; 
+  }
+}
+
+.mainbutton{
+  color: var(--mainfont);
+  border-style: hidden;
+  background-color: background-color: var(--bglighter);
+}
+
+.highlight {
+  animation-name: button-highlight;
+  animation-duration: 0.25s;
+
+  color: var(--highlight);
+  text-shadow: 0 0 3px var(--highlight1), 0 0 5px var(--highlight2);
+}
+
+.nohighlight {
+  animation-name: button-unhighlight;
+  animation-duration: 1s;
+
+  color: var(--mainfont);
+}
+
+@keyframes button-highlight {
+  from {color: var(--mainfont);}
+  to {color: var(--highlight);}
+}
+
+@keyframes button-unhighlight {
+  from {color: var(--highlight);}
+  to {color: var(--mainfont);}
+}
+
+
+
+/* MAIN CONTENT */
+
+#techniqueoutput, #schooloutput, #titleoutput {
+  background-color: var(--menubar);
+  padding: 10px 10px 10px 10px;
+  color: var(--highlight);
+}
+
+
+.tooltiptext {
+  width: 60%;
+  color: var(--mainfont);
+  text-align: justify;
+  margin-left: 20%; 
+  padding: 5px 0;
+  padding-left: 10px;
+  padding-right: 10px;
+  border-radius: 6px;
+  position: absolute;
+  padding-bottom: 10px;
+  padding-top: 10px;
+  border-color: var(--highlight);
+  border-style: solid;
+  border-width: 2px;
+  background-color: var(--tooltip-bg-color);
+}
+
+.tooltipstance {
+  margin-left: -20%;
+}
+
+.tablefilter {
+  font-family: "Abel";
+  background-color: var(--table-header-bg);
+  color: var(--table-header-font);
+  border: 1px;
+  border-color: var(--mainfont);
+  border-style: solid;
+}
+
 
 .icon {
   font-family: 'L5R';
   font-size: 16px;
   margin-top: 5px;
   display: inline;
+  font-weight: normal;
 }
 
-.paddingtable{
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.container {
-  animation-duration: 500ms;
-  animation-name: slidein;
-  animation-iteration-count: none; 
-  margin-left: 0%;
-
-  width: 100%; 
-  padding-bottom: 15px;
-  margin-bottom:  15px;
-  padding-top:  15px;
-
-  background-color: var(--opacity-bg-overlay);
-}
-
-.containerx {
-  animation-duration: 500ms;
-  animation-name: slideout;
-  animation-iteration-count: none; 
-  margin-left: 100%;
-
-  width: 100%;
-  padding-bottom: 15px;
-  margin-bottom:  15px;
-  padding-top:  15px;  
-  background-color: var(--opacity-bg-overlay);
-}
-
-@keyframes slidein {
-  from {
-    margin-left: 100%;
-    width: 100%; 
-  }
-
-  to {
-    margin-left: 0%;
-    width: 100%;
-  }
-}
-
-@keyframes slideout {
-  from {
-    margin-left: 0%;
-    width: 100%;
-  }
-
-  to {
-    margin-left: 100%; 
-  }
-
-}
-#advantagelength {
-  width: 400px;
-}
-
-
-.stancediv {
-  padding-top: 4px;
-  min-height: 22px;
-}
-
-.numberform {
-  width: 35px;
-}
-
-.margin10{
-	margin-left: 10px;
-}
-
-.margin20{
-  margin-left: 20px;
-}
-
-.padding20{
-  padding-left: 20px;
-}
-.defcategory {
-	padding-bottom: 5px;
-}
-
-#npcstats {
-  padding-top: 10px;
-  width: 600px;
-  }
-
-#npcnotesinput {
-  width: 300px;
-  height: 400px;
-}
-
-#npcnotes {
-  width: 350px;
-  vertical-align: top;
-}
-
-#dataoutput {
-  width: 450px;
-  vertical-align: top;
-}
-
-.paddingtopbottom{
-  padding-top: 10px;
-  padding-bottom: 10px;
-}
-
-.paddingbottom{
-  padding-bottom: 10px;
-}
-
-.marginbottom{
-  margin-bottom: 10px;
-}
-
-.margintop{
-  margin-top: 10px;
-}
-
-.paddingtop {
-  padding-top: 10px;
-}
-.paddingtable{
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-
-.margintopbottom{
-  margin-top: 10px;
-  margin-bottom: 10px;
-}
-
-.marginright{
-  margin-right: 10px;
-}
-.button {
-  font-family: 'Abel';
-  font-size: 12px;
-  margin-bottom: 5px;
-  background-color: white;
-}
-
-.styledselect {
-  font-family: 'Abel';
-  font-size: 12px;
-  min-height: 22px;
-  display: inline-block;
-}
-
-.defs {
-  display: inline-block;
-  padding-left: 20px;
-
-  font-size: 12.5px;
-}
-
-.padding20 {
-  padding-left: 20px;
-}
-
-.padding10 {
-  padding-left: 10px;
-}
-
-.inlineblock {
-  display: inline-block;
-  font-size: 12.5px;
-}
-
-#teahousediv{
-  width: 100%;
-}
-
-
-.techresults {
-  padding-bottom: 10px;
-}
-
-.filtitem {
-  margin-bottom: 10px;
-  max-width: 1000px;
-}
-
-.filtitemeffect {
-  margin-bottom: 10px;
-  max-width: 1000px;
-  margin-left: 20px;
-}
-
-.filtitemeffect2 {
-  margin-bottom: 5px;
-  max-width: 1000px;
-}
-
-.fontsize13 {
-  font-size: 13px;
-}
-
-.width {
-  width: 200px;
-}
-
-.xwidth {
-  width: 400px;
-}
-
-.ywidth {
-  width: 480;
-  text-align: right;
-  margin-bottom: 0;
-  padding-bottom: 0;
-  margin-top: 0;
-  padding-top: 0;
-}
-
-.textalignleft {
-  text-align: left;
-}
+/* TABLE CONTENT */
 
 table {
-  font-family: 'Abel';
-  font-size: 13px;
-  table-layout: fixed;
-  margin: auto;
+    table-layout: fixed;
+    margin: auto;
 }
 
-td {
-  display: inline-block;
-  border-color: black;
-  table-layout: fixed;
-  padding-left: 5px;
+table, thead, tbody, th, td {
+  border-spacing: 0px;
 }
 
 thead {
   background-color: var(--table-header-bg);
   color: var(--table-header-font);
-  font-family: 'Abel';
-  font-size: 13px;
-  font-weight: bold;
-  table-layout: fixed;
 }
 
-.tooltiptext {
-  width: 60%;
-  color: var(--tooltipfont);
-  text-align: justify;
-  padding: 5px 0;
-  padding-left: 10px;
-  padding-right: 10px;
-  border-radius: 6px;
-  position: absolute;
-  padding-bottom: 15px;
-  padding-top: 15px;
-  font-size: 14px;
-  border-color: white;
-  border-style: solid;
-  border-width: 2px;
-  background-color: #c2c9d3;
-}
+td {
+  font-size: 0.8em;
+  padding: 5px;
+  }
 
-.tooltipstance {
-  margin-left: 460px;
-  width: auto;
-}
+#Conditions-table td:nth-child(1) { width: 80px; }
 
-.tooltipclass {
-  margin-left: 270px;
-}
+#Conditions-table td:nth-child(2) {  width: 400px;}
 
-.tooltipdef {
-  margin-left: 270px;
-}
+#Conditions-table td:nth-child(3) {  width: 400px;}
 
-.namelength {
-  min-width: 80px;
-  display: inline-block;
-}
+#ItemQualities-table td:nth-child(1) {  width: 70px;}
 
-.stancelength {
-  min-width: 20px;
-  display: inline-block;
-}
+#ItemQualities-table td:nth-child(2) {  width: 300px;}
 
-.clanlength {
-  min-width: 160px;
-  display: inline-block;
-}
+#ItemQualities-table td:nth-child(3) {  width: 500px;}
 
-.fatiguelength {
-  min-width: 100px;
-  display: inline-block;
-}
+#Terrain-table td:nth-child(1) {  width: 70px;}
 
-.strifelength {
-  min-width: 95px;
-  display: inline-block;
-}
+#Terrain-table td:nth-child(2) {  width: 600px;}
 
-.reslength {
-  min-width: 70px;
-  display: inline-block;
-}
+#Silhouettes-table td:nth-child(1) {  width: 70px;}
 
-.noteslength {
-	min-width: 185px;
-	display: inline-block;
-}
+#Silhouettes-table td:nth-child(2) {  width: 200px;}
 
-.titlebar {
-  width:100%;
-  background-color: var(--);
-  margin-bottom: 15px;
-  padding-top: 10px;
-  padding-bottom: 10px;
-  background-color: var(--opacity-bg-overlay);
-}
+#RangeBands-table td:nth-child(1) {  width: 65px;}
 
-.title {
-  font-family: 'brushtip';
-  font-size: 24px;
-  margin: 20px;
-  text-shadow: var(--title-text-shadow)
-}
+#RangeBands-table td:nth-child(2) {  width: 150px;}
 
-.editwidth {
-  width:800px;
-}
+#RangeBands-table td:nth-child(3) {  width: 500px;}
 
-#editnotesinput {
-  width: 750px;
-  height: 30px;
-}
+#CriticalStrikes-table td:nth-child(1) {  width: 55px;}
 
-.word-wrap {
-  width:750px;
-}
+#CriticalStrikes-table td:nth-child(2) {  width: 350px;}
 
-.mainbutton {
-  font-family: 'brushtip';
-  font-size: 20px;
-  margin-left: 5px;
-  background-color: white;
-    color: var(--buttontext);
-  
-}
+#CriticalStrikes-table td:nth-child(3) {  width: 600px;}
 
-.schoolskillswidth{
-  width: 150px;
-}
+#SkillsandApproaches-table td:nth-child(1) {  width: 210px;}
 
-.editboxwidth{
-  min-width: 95px;
-  text-align: right;
-  margin-bottom: 0px;
-}
+#SkillsandApproaches-table td:nth-child(2) {  width: 300px;}
 
-.groupboxwidth{
-  min-width: 40px;
-}
+#SkillsandApproaches-table td:nth-child(3) {  width: 350px;}
 
-.topboxwidthx{
-  min-width: 35px;
-  text-align: right;
-}
+#FallingDamage-table td:nth-child(1) {  width: 120px;}
 
-.topboxwidth{
-  min-width: 55px;
-  text-align: right;
-}
+#FallingDamage-table td:nth-child(2) {  width: 450px;}
 
+#Weapons-table td:nth-child(1) {  width: 100px;}
 
-#npcnameinput {
-  width: 150px;
-}
+#Weapons-table td:nth-child(2) {  width: 60px;}
 
-#Conditions-table td {
-  width: 80px;
-}
+#Weapons-table td:nth-child(3) {  width: 60px;}
 
-#Conditions-table td+td {
-  width: 400px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right:10px;
-}
-#Conditions-table td+td+td {
-  width: 400px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-#ItemQualities-table td {
-  width: 70px;
-}
+#Weapons-table td:nth-child(4) {  width: 45px; text-align:   center; }
 
-#ItemQualities-table td+td {
-  width: 300px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-right:10px;
-}
-#ItemQualities-table td+td+td {
-  width: 500px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
-#Terrain-table td {
-  width: 70px;
-}
+#Weapons-table td:nth-child(5) {  width: 30px;  text-align:   left; }
 
-#Terrain-table td+td {
-  width: 600px;
-  padding-top: 5px;
-  padding-bottom: 5px;
-}
+#Weapons-table td:nth-child(6) {  width: 30px;}
 
-#Silhouettes-table td {
-  width: 70px;
-}
+#Weapons-table td:nth-child(7) {  width: 200px;}
 
-#Silhouettes-table td+td {
-  width: 200px;
-}
+#Weapons-table td:nth-child(8) {  width: 400px;}
 
-#RangeBands-table td {
-  width: 65px;
-}
+#Weapons-table td:nth-child(9){  width: 40px;}
 
-#RangeBands-table td+td {
-  width: 150px;
-}
+#Weapons-table td:nth-child(10) {  width: 45px;}
 
-#RangeBands-table td+td+td {
-  width: 500px;
-}
+#Weapons-table td:nth-child(11) {  width: 95px;}
 
-#CriticalStrikes-table td {
-  width: 55px;
-}
+#Armors-table td:nth-child(1) {  width: 110px;}
 
-#CriticalStrikes-table td+td {
-  width: 350px;
-}
+#Armors-table td:nth-child(2) {  width: 45px;}
 
-#CriticalStrikes-table td+td+td {
-  width: 600px;
-}
+#Armors-table td:nth-child(3) {  width: 45px;}
 
-#SkillsandApproaches-table td {
-  width: 210px;
-}
+#Armors-table td:nth-child(4) {  width: 285px;}
 
-#SkillsandApproaches-table td+td {
-  width: 300px;
-}
+#Armors-table td:nth-child(5) {  width: 45px;}
 
-#SkillsandApproaches-table td+td+td {
-  width: 350px;
-}
+#Armors-table td:nth-child(6) {  width: 50px;}
 
-#FallingDamage-table td {
-  width: 120px;
-}
+#Armors-table td:nth-child(7) {  width: 70px;}
 
-#FallingDamage-table td+td {
-  width: 450px;
-}
+#Patterns-table td:nth-child(1) {  width: 110px;}
 
-#Weapons-table td {
-  width: 100px;
-}
+#Patterns-table td:nth-child(2), 
+#Patterns-table td:nth-child(3) {  width: 60px;   text-align: center; }
 
-#Weapons-table td+td {
-  width: 60px;
-}
+#Patterns-table td:nth-child(4) {  width: 450px;   text-align: left; }
 
-#Weapons-table td+td+td {
-  width: 60px;
-}
-
-#Weapons-table td+td+td+td {
-  width: 45px;
-  text-align:   center; 
-}
-
-#Weapons-table td+td+td+td+td {
-  width: 30px;
- text-align:   left; 
-}
-
-#Weapons-table td+td+td+td+td+td {
-  width: 30px;
-}
-
-#Weapons-table td+td+td+td+td+td+td {
-  width: 200px;
-}
-
-#Weapons-table td+td+td+td+td+td+td+td {
-  width: 400px;
-}
-
-#Weapons-table td+td+td+td+td+td+td+td+td {
-  width: 40px;
-}
-
-#Weapons-table td+td+td+td+td+td+td+td+td+td {
-  width: 45px;
-}
-
-#Weapons-table td+td+td+td+td+td+td+td+td+td+td {
-  width: 95px;
-}
-
-#Armors-table td {
-  width: 110px;
-}
-
-#Armors-table td+td {
-  width: 45px;
-}
-
-#Armors-table td+td+td {
-  width: 45px;
-}
-
-#Armors-table td+td+td+td {
-  width: 285px;
-}
-
-#Armors-table td+td+td+td+td {
-  width: 45px;
-}
-
-#Armors-table td+td+td+td+td+td {
-  width: 50px;
-}
-
-#Armors-table td+td+td+td+td+td+td {
-  width: 70px;
-}
-
-#Patterns-table td {
-  width: 110px;
-}
-
-#Patterns-table td+td, #Patterns-table td+td+td {
-  width: 60px;
-  text-align: center; 
-}
-
-#Patterns-table td+td+td+td {
-  width: 450px;
-  text-align: left; 
-}
-
-#Patterns-table td+td+td+td+td {
-  width: 100px;
-}
+#Patterns-table td:nth-child(5) {  width: 100px;}
 
 #General-opportunities-opps-table  tbody tr, 
 #Initiative-opportunities-opps-table tbody tr, 
@@ -657,7 +445,7 @@ thead {
 #Downtime-opportunities-opps-table tbody tr,
 #Negotiations-opportunities-opps-table tbody tr,
 #Romance-opportunities-opps-table tbody tr,
-#Espionage-opportunities-opps-table tbody tr{
+#Espionage-opportunities-opps-table tbody tr{ 
   background-color: var(--table-header-bg);
   color: var(--table-header-font);
 }
@@ -728,13 +516,7 @@ background-color:#282828;
 color:var(--table-header-font);
 }
 
-#ringoppdrop {
-  width: 730px;
-  text-align: center;
-}
-
-
-#Air-opps-table td ,#Earth-opps-table td,#Fire-opps-table td,#Water-opps-table td,#Void-opps-table td,#General-opportunities-opps-table td, #Initiative-opportunities-opps-table td, #Martial-opportunities-opps-table td, #Invocation-opportunities-opps-table td, #OtherSkills-opportunities-opps-table td, #Downtime-opportunities-opps-table td, #Negotiations-opportunities-opps-table td, #Romance-opportunities-opps-table td, #Espionage-opportunities-opps-table td{
+#Air-opps-table td:nth-child(1) ,#Earth-opps-table td:nth-child(1),#Fire-opps-table td:nth-child(1),#Water-opps-table td:nth-child(1),#Void-opps-table td:nth-child(1),#General-opportunities-opps-table td:nth-child(1), #Initiative-opportunities-opps-table td:nth-child(1), #Martial-opportunities-opps-table td:nth-child(1), #Invocation-opportunities-opps-table td:nth-child(1), #OtherSkills-opportunities-opps-table td:nth-child(1), #Downtime-opportunities-opps-table td:nth-child(1), #Negotiations-opportunities-opps-table td:nth-child(1), #Romance-opportunities-opps-table td:nth-child(1), #Espionage-opportunities-opps-table td:nth-child(1){
   width: 80;
   text-align: center;
 }
@@ -744,14 +526,8 @@ color:var(--table-header-font);
   text-align: left;
 }
 
-#Air-opps-table tr ,#Earth-opps-table tr,#Fire-opps-table tr,#Water-opps-table tr,#Void-opps-table tr{
-  background-color: #efefef;
-  color: #5e4031;
-}
-
-#Air-opps-table thead ,#Earth-opps-table thead,#Fire-opps-table thead,#Water-opps-table thead,#Void-opps-table thead{
-  background-color: var(--table-header-bg);
-  color: var(--table-header-font);
+#Air-opps-table tbody tr, #Earth-opps-table tbody tr, #Fire-opps-table tbody tr, #Water-opps-table tbody tr, #Void-opps-table tbody tr {
+  background-color: #dbe4e5;
 }
 
 #Air-opps-table tr + tr {
@@ -775,85 +551,13 @@ color:var(--table-header-font);
   color: #ffffff;
 }
 
-#Air-opps-table thead tr,#Earth-opps-table thead tr,#Fire-opps-table thead tr,#Water-opps-table thead tr,#Void-opps-table thead tr{
-  background-color: var(--table-header-bg);
-  color: var(--table-header-font);
-}
 
-#shinseisearch {
-  padding-top: 5px;
-  padding-bottom: 10px;
+#skirmishtable tr td:nth-child(5), #skirmishtable tr td:nth-child(7) {
+  text-align: left;
 }
-
-#makenewchar {
-  padding-top: 5px;
-}
-
-.white {
-  color: var(--table-header-font);
-}
-
-#menu {
-  font-size: 12.5px;
-  width: 450px;
-  vertical-align: top;
-}
-
-#statblock {
-  max-width: 900px;
-}
-
-.floatleft {
-  float: left;
-}
-
-.floatright {
-  float: right;
-}
-
-.center {
-  margin: auto;
-  float: center;
-  text-align: center;
-}
-
-.inline {
-  display: inline;
-}
-
-.block {
-  display: block;
-}
-
-.bold {
-  font-weight: bold;
-}
-
-.hide {
-  display: none;
-}
-
-.button{
-    color: var(--buttontext);
-    background-color: var(--button-centre);
-    border-top-color: var(--button-border-light);
-    border-right-color: var(--button-border-dark);
-    border-bottom-color: var(--button-border-dark);
-    border-left-color: var(--button-border-light);
-}
-.mainbutton{
-    background-color: var(--button-centre);
-    color: var(--buttontext);
-    border-top-color: var(--button-border-light);
-    border-right-color: var(--button-border-dark);
-    border-bottom-color: var(--button-border-dark);
-    border-left-color: var(--button-border-light);
-}
-
-
 
 .odd {
-  background-color: var(--tooltip-bg-color);
+  background-color: var(--bgevenlighter);
   color: var(--tooltipfont);
 }
 
@@ -861,363 +565,203 @@ color:var(--table-header-font);
   color: var(--tooltipfont);
 }
 
-.tooltiptext {
-  background-color: var(--tooltip-bg-color);
-  border-color: var(--tooltip-border)
+
+#dataoutput {
+  position: sticky;
+  bottom: 10px;
 }
 
-.editbox {
-  width: 730px;
-  height: 300px;
+#npcstatwrap select{
+  font-size: 1em;
 }
 
-.tea {
-  margin: 0 auto;
+.inline {display: inline;}
+
+.block {display: block;}
+
+.inlineblock {display: inline-block;}
+
+.hide {display: none;}
+
+
+.textcentre {text-align: center;}
+
+.textright {text-align: right;}
+
+.textleft {text-align: left;}
+
+.bold {font-weight: bold;}
+
+.regular {font-weight: normal;}
+
+.centre {margin:auto;}
+
+.floatright {float: right;}
+
+.aligntop {vertical-align: top;}
+
+.alignmiddle {line-height: 20px;}
+
+.aligncentre {
+  margin-block-end: unset;
+}
+
+#teahousediv {
+  display: grid;
+  grid-template-columns: 710px 300px auto auto;
+  grid-template-rows: 250px 250px auto auto;
+ }
+
+.jsongrid {
   text-align: center;
-  margin-bottom: 15px;
-  font-size: 14px;
+  grid-column-start: 1;
+  grid-column-end: 2;
+  grid-row-start: 1;
+  grid-row-end: 4;
 }
 
-.brushfont{
-  font-family: brushtip;
-  font-size:  25px;
-  color: var(--greentea);
-}
-
-.small {
-  font-size: 12.5;
-}
-
-.highlight {
-  animation-name: button-highlight;
-  animation-duration: 0.25s;
-
-  color: var(--highlight-mainbutton-text-color);
-}
-
-.nohighlight {
-  animation-name: button-unhighlight;
-  animation-duration: 1s;
-
-  color: var(--buttontext);
-  
-}
-
-.alignleft {
-  text-align: left;
-  margin-left: 45%;
-}
-
-:root {
-  --bg: white;
-  --bg-image: url('blossom.png');
-  --bgposition: left top;
- 
-  --opacity-bg-overlay: rgb(203, 230, 237, 0.8);
-  
-  --highlight-mainbutton-text-color: #F7BAA1; 
-
-  --tooltip-bg-color: #F7BAA1;
-  --tooltip-border:white; 
-
-  --table-header-bg: #595858;
-  --table-header-font: #ffffff;
-  --button-centre: #fffff4;
-  --button-border-light: #f7e5d7;
-  --button-border-dark: #d6c49c;
-  --buttontext: #5e4031;
-  --font-color: #5e4031;
-
-  --icon-air-color: #ab79af;
-  --icon-earth-color: #375b2d;
-  --icon-fire-color: #bf6613;
-  --icon-water-color: #58649e;
-  --icon-void-color: black;
-  --greentea: #96c988;
-}
-  
-
-@keyframes button-highlight {
-  from {color: var(--buttontext);}
-  to {color: var(--highlight-mainbutton-text-color);}
-}
-
-@keyframes button-unhighlight {
-  from {color: var(--highlight-mainbutton-text-color);}
-  to {color: var(--buttontext);}
-}
-
-.skirmishbuttonstyle {
-  margin-bottom: 10px;
-}
-
-.l5r {
-  font-family: 'L5R';
-  font-size: 18px;
-}
-
-
-/* Mobile Styles */
-@media only screen and (max-width: 1000px) {
-body {
-  font-family: 'Abel';
-  font-size: 18px;
-
-  max-width: 800px;
-  background-image: var(--bg-image);
-  background-color: var(--bg);
-  background-repeat: no-repeat;
-  background-attachment: fixed;
-  color: var(--font-color);
-}
-
-.editboxwidth{
-  min-width: 120px;
-}
-
-
-.button {
-  font-size: 16px;
-}
-
-.styledselect {
-  font-size: 16px;
-}
-
-  .title {
-  display: none;
-}
-
-.l5r {
-  font-family: 'L5R';
-  font-size: 18px;
-}
-
-.defs {
-  display: inline-block;
-  padding-left: 20px;
-  padding-right: 20px;
-  font-size: 18px;
-}
-
-.inlineblock {
-  display: inline-block;
-  font-size: 18px;
-}
-
-.filtitem {
-  margin-bottom: 10px;
-  max-width: 100%;
-}
-
-.tooltipdef {
-  margin-left: 270px;
-}
-
-.filtitemeffect {
-  font-size: 18px;
-  margin-bottom: 10px;
-  max-width: 100%;
-  margin-left: 20px;
-  margin-right: 20px;
-}
-
-.filtitemeffect2 {
-  margin-bottom: 5px;
-  max-width: 800px;
-}
-
-.tooltipstance {
-  width: auto;
-}
-
-.tooltipclass {
-}
-
-.techresults {
-  font-size: 18px;
-}
-
-#Silhouettes-table td {
-  width: 20%;
-}
-
-#Silhouettes-table td+td+td {
-  width: 70%;
-}
-
-#RangeBands-table td {
-  width: 10%;
-}
-
-#RangeBands-table td+td {
-  width: 10%;
-}
-
-#RangeBands-table td+td+td {
-  width: 70%;
-}
-
-#CriticalStrikes-table td {
-  width: 5%;
-}
-
-#CriticalStrikes-table td+td {
-  width: 30%;
-}
-
-#CriticalStrikes-table td+td+td {
-  width: 55%;
-}
-
-#SkillsandApproaches-table td {
-  width: 20%;
-}
-
-#SkillsandApproaches-table td+td {
-  width: 30%;
-}
-
-#SkillsandApproaches-table td+td+td {
-  width: 40%;
-}
-
-#FallingDamage-table td {
-  width: 15%;
-}
-
-#FallingDamage-table td+td {
-  width: 75%;
-}
-
-#Patterns-table td {
-  width: 15%;
-}
-
-#Patterns-table td+td, #Patterns-table td+td+td {
-  width: 5%;
-  text-align:   center; 
-}
-
-#Patterns-table td+td+td+td {
-  width: 50%;
-  text-align: left; 
-}
-
-#Patterns-table td+td+td+td+td {
-  width: 15%;
-}
-
-#General-opps-table td, #Initiative-opps-table td, #Martial-opps-table td, #Invocation-opps-table td, #OtherSkills-opps-table td, #Downtime-opps-table td, #Negotiations-opps-table td, #Romance-opps-table td, #Espionage-opps-table td{
-  width: 10%;
+.dicegrid {
   text-align: center;
+  grid-column-start: 4;
+  grid-column-end: 4;
+  grid-row-start: 1;
+  grid-row-end: 2;
+  height: 480px
 }
 
-#General-opps-table td + td, #Initiative-opps-table td + td, #Martial-opps-table td + td, #Invocation-opps-table td + td, #OtherSkills-opps-table td + td, #Downtime-opps-table td + td, #Negotiations-opps-table td + td, #Romance-opps-table td + td, #Espionage-opps-table td + td{
-  width: 80%;
+.firstgrid div {
+ text-align: left; 
+}
+
+#databuilderdiv {
+  min-height: 400px;
   text-align: left;
 }
 
-#Armors-table td {
-  width: 20%;
+#npcstatwrap {
+  display: grid;
+  grid-template-columns: 100px auto ;
 }
 
-#Armors-table td+td {
-  width: 6%;
+.npcbuilderleft {
+  grid-column-start: 1;
+  grid-column-end: 1;
+  text-align: right;
+  padding-right: 30px;
 }
 
-#Armors-table td+td+td {
-  width: 6%;
+.npcbuilderright {
+  grid-column-start: 2;
+  grid-column-end: 2;
 }
 
-#Armors-table td+td+td+td {
-  width: 40%;
+.dataoutput {
+  align-self: center;
 }
 
-#Armors-table td+td+td+td+td {
-  width: 6%;
+.marginauto {
+  margin: auto;
 }
 
-#Armors-table td+td+td+td+td+td {
-  width: 7%;
-}
+.w20  {width: 20px;} /*used */
 
-#Armors-table td+td+td+td+td+td+td {
-  width: 7%;
-}
+.w30  {width: 30px;}
 
-#Weapons-table td {
-  width: 9%;
-  font-size: 0.8rem;
-}
+.w35  {width: 35px;} /*used */
 
-#Weapons-table td+td {
-  width: 5%;
-}
+.w55  {width: 55px;}
 
-#Weapons-table td+td+td {
-  width: 5%;
-}
+.w100 {width: 100px;} /*used */
+.w110 {width: 122px;} /*used */
+.w145 {width: 145px;}
 
-#Weapons-table td+td+td+td {
-  width: 4%;
-  text-align:   center; 
-}
+.w200 {width: 200px;}
 
-#Weapons-table td+td+td+td+td {
-  width: 2%;
- text-align:   left; 
-}
+.w300 {width: 300px;} /*used */
 
-#Weapons-table td+td+td+td+td+td {
-  width: 2%;
-}
+.w350 {width: 350px;} /*used */
 
-#Weapons-table td+td+td+td+td+td+td {
-  width: 10%;
-}
+.w600 {width: 600px;}
 
-#Weapons-table td+td+td+td+td+td+td+td {
-  width: 35%;
-}
+.w610 {width: 610px;}
 
-#Weapons-table td+td+td+td+td+td+td+td+td {
-  width: 3%;
-}
+.w640 {width: 640px;}
 
-#Weapons-table td+td+td+td+td+td+td+td+td+td {
-  width: 4%;
-}
+.w650 {width: 650px;}
 
-#Weapons-table td+td+td+td+td+td+td+td+td+td+td {
-  width: 6%;
-}
+.w660 {width: 660px;}
 
-#menu {
-  width: 35%;
-}
+.w700 {width: 700px;}
 
-#statblock {
-  width: 60%
-}
+.maxw200 {max-width: 200px;}
+
+.maxw300 {max-width: 300px;}
+
+.w100pc {width: 100%;}
+
+.h5 {height: 5px;}
+
+.h100 {height: 100px;}
 
 
+.pt4  {padding-top: 4px;} 
 
-.hide {
-	display: none;
-}
+.pt5  {padding-top: 5px;}
 
-}
+.pt10 {padding-top: 10px;}
 
-body {
-    border: 0px;
-    margin: 0px;
-    padding: 0px;
-}
-iframe {
-    margin-top: 20px;
-    border-style: none; 
-    width: 100%; 
-    height: 80%;  
-    background-color: var(--opacity-bg-overlay);
-}
+.pb5  {padding-bottom: 5px;}
+
+.pb10 {padding-bottom: 10px;} 
+
+.pl10 {padding-left: 10px;}
+
+.pr10 {padding-right: 10px;}
+
+
+.mt5 {margin-top: 5px;}
+
+.mt10 {margin-top: 10px;} 
+
+.ml5 {margin-left: 5px;} 
+
+.ml10 {margin-left: 10px;} 
+
+.ml20 {margin-left: 20px;}
+
+.mr5 {margin-right: 5px;} 
+
+.mr10 {margin-right: 10px;} 
+
+.mb5 {margin-bottom: 5px;}
+
+.mb10 {margin-bottom: 10px;} 
+
+
+.air { color: #7d4d80;}
+
+.earth { color: #375b2d;}
+
+.fire { color:  #bf6613;}
+
+.water { color: #58649e;}
+
+.void { color: black}
+
+.tea {color: #96c988;}
+
+
+.bgcolor { background-color: var(--bgoverlay) }
+
+.bglighter { background-color: var(--bglighter) } 
+
+.bgevenlighter {background-color: var(--bgevenlighter) }
+
+.accent {background-color: var(--accent) }
+
+
+.silver {
+background: var(--bartop)}
+
+.silver2 {
+background: var(--barbottom)}
