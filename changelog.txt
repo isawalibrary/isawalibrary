@@ -1,6 +1,5 @@
 -Current Overhaul: Crab Steel Edition
-+fix JSON maker
-+Try adding copper or bronze to the colour scheme
+
 +setTechs is not defined... make the NPC builder tech rank filter button work
 +Format output for name and teahouse generators
 +Finish adding monsters from Path of Waves

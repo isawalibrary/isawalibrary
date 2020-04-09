@@ -1,62 +1,26 @@
 :root {
-  --bg: #36484a;
-  --bg-image: url('crab.gif');
-
-  --bgdiv-image: url('woodgrain.png');
- 
-  --bgoverlay: rgb(142, 158, 163, 0.8);
-  --bglighter: rgb(102, 147, 156);
-  --bgevenlighter: rgb(184, 195, 198);
-
-  --menubar: rgb(42, 118, 140);
-
+  --bg: #ffd966;
+  --bg-image: url('phoenixmon.png');
+  --bgoverlay: rgb(239, 108, 0, 0.6);
+  --bglighter: rgb(253, 116, 0);
+  --bgevenlighter: rgb(255, 204, 51);
+  --menubar: rgb(255, 170, 0);
   --accent: #aaa9ad;
-  
-  --tooltip-bg-color: rgb(184, 195, 198);
-  --tooltip-border: #ffffb3; 
-
-  --table-header-bg: rgb(59, 107, 133);
-  --table-header-font: #abbfc2;
-  --buttoncolor: #dbdd6b;
-  --mainfont: #00004d;
-
-  --highlight: #ffffb3;
-
-  --highlight1:   #142952;
-  --highlight2: #eaf0fa;
+  --tooltip-bg-color: rgb(255, 204, 51);
+  --tooltip-border: #ffffb3;
+  --table-header-bg: rgb(204, 82, 0);
+  --buttoncolor: rgb(255, 164, 0);
+  --mainfont: #4d0000;
+  --highlight:  #ffffb3;
+  --highlight1: rgb(255,78,32);
+  --highlight2: rgb(253, 116, 0);
   --greentea: #96c988;
-
-  --bartop: #dbdd6b;
-  --barbottom: #dbdd6b
 }
 
 ::-webkit-scrollbar { 
   display: none; 
 }
-/*
-#bgdiv {
-  z-index:-2;
-  width: 100%;
-  height: 100%;
-  position: absolute; 
-  background-color: var(--bg);
-  background-image: var(--bgdiv-image);
-  background-blend-mode: color-burn;
-}
 
-#bgmondiv {
-  z-index:-1;
-  width: 100%;
-  height: 100%;
-  position: absolute; 
-  background-color: var(--bg);
-  background-image: var(--bg-image);
-  background-blend-mode: color-burn;
-  background-repeat: no-repeat;
-  background-position: top right;
-  background-attachment: fixed;
-}
-*/
 @font-face {
   font-family: L5R;
   src: url(L5RIcons.ttf);
@@ -83,7 +47,6 @@
 
 .font08em {font-size: 0.8em;}
 
-
 body {
   font-family: 'Abel';
   font-size: 0.8em;
@@ -107,9 +70,17 @@ select, input, textarea {
   border-style: solid;
 }
 
+::selection { background:#abc; color:#fff; }
+
+button:focus, select:focus, input:focus {
+  outline-style: none;
+}
+
+
+
 input[type=text] {
   padding-left: 5px;
-  }]
+  }
 
 textarea {
   resize: vertical;
@@ -285,7 +256,7 @@ p {
 #techniqueoutput, #schooloutput, #titleoutput {
   background-color: var(--menubar);
   padding: 10px 10px 10px 10px;
-  color: var(--highlight);
+  color: black;
 }
 
 
@@ -342,7 +313,7 @@ table, thead, tbody, th, td {
 
 thead {
   background-color: var(--table-header-bg);
-  color: var(--table-header-font);
+  color: var(--bgevenlighter);
 }
 
 td {
@@ -761,7 +732,7 @@ color:var(--table-header-font);
 
 
 .silver {
-background: var(--bartop)}
+background: var(--bglighter)}
 
 .silver2 {
-background: var(--barbottom)}
+background: var(--bglighter)}

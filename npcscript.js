@@ -59,7 +59,7 @@ function makeNpcLibrary(){
 															')' 
 															;
 ;
-		newDiv("npc-"+each.title,"statblock","block hide librarywidth");
+		newDiv("npc-"+each.title,"statblock","block hide");
 		document.getElementById("npc-"+each.title).innerHTML='<b>'+ each.fullname + 
 												' [' + each.clan +
 												'/' + each.school +
@@ -70,7 +70,7 @@ function makeNpcLibrary(){
 		newButton("addskirmishbuttondiv"+each.title,each.title+'-toskirmish',"button ml10",'npcskirmish('+"'"+each.title+"'"+')',"add to skirmish")
 		newButton("addskirmishbuttondiv"+each.title,each.title+'-edit',"button ml10",'makeNpcEdit('+"'"+each.title+"'"+')',"edit NPC")
 												
-		newDiv("stat"+each.title,"npc-"+each.title,"block statwidth");
+		newDiv("stat"+each.title,"npc-"+each.title,"block");
 		document.getElementById("stat"+each.title).innerHTML= 
 												'<p>Rings:<span class="l5r air ml10">a</span>: '+ each.rings.air +
 												'<span class="l5r earth ml10">e</span>: '+ each.rings.earth +
@@ -609,10 +609,19 @@ function selectNPCClan(){
 	var clanName = document.getElementById("npcclanselect").value
 
 	var clanSchools = [];
+	var unalignedSchools = [];
+	var defaultOpt = ["Select School"]
 
-	for (var elem in schools[clanName]){
-		clanSchools.push(schools[clanName][elem].name)
-	}
+		for (var elem in schools[clanName]){
+			clanSchools.push(schools[clanName][elem].name)
+		}
+
+		for (var elem in schools){
+			for (var each in schools[elem])
+				if (schools[elem][each].keyword.includes("Unaligned")){
+					unalignedSchools.push(schools[elem][each].name)
+				}
+		}
 
 	if (thisnpc.selectedType == "Ronin, Riffraff and Gaijin"){
 		for (var elem in schools){
@@ -631,7 +640,14 @@ function selectNPCClan(){
 		}		
 	}}
 
-	fillSelectDropdownDefault("npcschoolselect","Select School",clanSchools)
+	if (thisnpc.selectedType == "Clan Samurai"){
+			document.getElementById("npcschoolselect").innerHTML = "";
+			addToSelect("npcschoolselect",defaultOpt)
+			addOptgroupToSelect("npcschoolselect","Clan Schools",clanSchools)
+			addOptgroupToSelect("npcschoolselect","Other Schools",unalignedSchools)
+		} else {
+			fillSelectDropdownDefault("npcschoolselect","Select School",clanSchools)
+		}
 }
 
 

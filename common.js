@@ -190,6 +190,20 @@ function addValuesToSelect(selectorForm,droplist,valuelist){
 		    select.appendChild(el);
 }}
 
+function addOptgroupToSelect(selectorForm,optgroupName,listname){
+	var select = document.getElementById(selectorForm);
+
+	var newGroup = document.createElement('OPTGROUP')
+
+	newGroup.label = optgroupName;
+
+	for (var i = 0; i < listname.length; i++){
+		var opt = document.createElement("option");
+			opt.textContent = listname[i];
+		    newGroup.appendChild(opt);
+	}
+	select.appendChild(newGroup)
+}
 
 function getRandomSelect(selectId){
 	var select = document.getElementById(selectId)
@@ -235,7 +249,7 @@ function removeElement(elementId){
 }
 
 function clearSelect(selectId){
-	document.getElementById(selectId).options.length = 0
+	document.getElementById(selectId).options.length = 0;
 }
 
 function newButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
