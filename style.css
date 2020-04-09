@@ -717,7 +717,7 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-@media screen and (max-width: 360px) {
+@media screen {
   body {
     width: 99%;
     overflow-x: hidden;
@@ -752,6 +752,14 @@ background: var(--bglighter)}
 
   #weapons-table-category-select, #weapons-table-book-select {
     width: 15px;
+  }
+
+  .w35 {
+    width: 20px;
+  }
+
+  .w100 {
+    width: 50px;
   }
 
   #title {
