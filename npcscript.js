@@ -1393,7 +1393,11 @@ function makeTechDropdowns(){
 		selectObj = document.getElementById("npctechniquesearchrank")
 		setSelectedText(selectObj, rank)
 
-	if (document.getElementById("npctechselector") !== null){
+		setTechs();
+	}
+
+function setTechs(){
+		if (document.getElementById("npctechselector") !== null){
 				document.getElementById("npctechselector").innerHTML="";
 			} else {
 				newDiv("npctechselector","npctechniquecontainer")
@@ -1420,9 +1424,9 @@ function makeTechDropdowns(){
 
 			searchRank = parseInt(document.getElementById("npctechniquesearchrank").value)
 			
-			techobjs = techobjs.filter(function(tech)	{
+			var techobjs = techobjs.filter(function(tech)	{
 
-				rank = parseInt(tech.rank);
+				var rank = parseInt(tech.rank);
 
 			 if (rank > searchRank){
 			 	return false;
@@ -1441,7 +1445,7 @@ function makeTechDropdowns(){
 
 			newDiv("npctechwrapper"+i,"npctechselector")
 
-			newSelect("npctechwrapper"+i,'npctechselect'+i," block mt5 mb5","")
+			newSelect("npctechwrapper"+i,'npctechselect'+i,"mb5","")
 
 	 		newDiv("npctechselectdetails"+i,"npctechwrapper"+i)
 
@@ -1465,7 +1469,7 @@ function makeTechDropdowns(){
 			    npctechselecti.appendChild(el);
 			};
 		}
-	}
+}
 
 
 	function showSelectedTechnique(dropId,displayDiv){
@@ -1497,6 +1501,9 @@ function makeExtraWeaponButton(){
 
 function startingTechSelects(){
 
+			document.getElementById("npcstartingschooltechnique").innerHTML = "";
+			document.getElementById("npcschooltechchoice").innerHTML = "";
+
 			var startingtechs = thisnpc.selectedSchool.startingtechs
 
 			for (var m=0;m<startingtechs.length;m++){
@@ -1505,10 +1512,6 @@ function startingTechSelects(){
 				for (var o = 0; o < techniquelist.length; o++){
 					if (techniquelist[o].title == startingtechs[m]){
 						var effect = techniquelist[o].effect
-
-				while (effect.includes("<br><br>")){
-					effect = effect.replace("<br><br>","<br>");
-				}
 
 				var techeffect = "<u>"+techniquelist[o].title + " [" + techniquelist[o].type + " Rank "+ techniquelist[o].rank + "] (" + techniquelist[o].ring + ") (" + techniquelist[o].reference + ") </u><br>" + effect + "<br><br>"
 
@@ -1542,6 +1545,17 @@ function startingTechSelects(){
 					}
 					addValuesToSelect("npcschooltechdrop"+k+x,techdroplist,techlist)
 					getRandomSelect("npcschooltechdrop"+k+x)
+
+					for (var g = 0; g+1 < document.getElementById("npcschooltechchoice").children.length ; g++){
+						var thisdrop = document.getElementById("npcschooltechdrop"+k+x).value;
+						var otherdrop = document.getElementById("npcschooltechchoice").children[g].children[0].value;
+
+						while (thisdrop == otherdrop){
+							getRandomSelect("npcschooltechdrop"+k+x)
+							thisdrop = document.getElementById("npcschooltechdrop"+k+x).value;
+						}
+					}
+
 					showSelectedTechnique("npcschooltechdrop"+k+x,"npcschooltechdetails"+k+x)
 					}
 				}	}

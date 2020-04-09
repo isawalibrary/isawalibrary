@@ -393,7 +393,7 @@ var schools = {
 			role: ['Shugenja'],
 			startingtechs: ['Path to Inner Peace',"Jurojin's Balm",'Cleansing Rite','Commune with the Spirits'
 				],
-			startingtechoptions: [['The Fires from Within','Tetsubo of Earth']
+			startingtechoptions: [['Fires from Within','Tetsubo of Earth']
 				],
 			rank1techs:["Heart of the Water Dragon","Divination",],rank2techs:["Power of the Earth Dragon","Touchstone of Courage",],rank3techs:["Rise, Earth","Earth Becomes Sky",],rank4techs:["Ever Changing Waves","Rise, Water",],rank5techs:["Sear the Wound","Earthquake",],
 			chooseoptions:[1],
