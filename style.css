@@ -591,6 +591,7 @@ color: white;
 
 #npcstatwrap {
   display: grid;
+  grid-template-columns: 70px auto;
 }
 
 .npcbuilderleft {
@@ -716,14 +717,37 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 360px) {
   body {
     width: 99%;
     overflow-x: hidden;
+    font-size: 0.4em;
+    margin: 0;
+    background-position: 0% 0%;
   }
 
-  select, input, button, table {
+  .w400, .w600, .w700 {
+    width: 99%;
+  }
+
+  .npcbuilderleft {
+    padding-right: 10px;
+  }
+
+  body div {
+    margin: 0;
+  }
+
+  select, input, button {
     font-size: 1em;
+  }
+
+  table {
+    font-size: 0.65em;
+  }
+
+  #weapons-table-category-select, #weapons-table-book-select {
+    width: 15px;
   }
 
   #title {
@@ -736,6 +760,10 @@ background: var(--bglighter)}
 
   #npccontainer {
     margin: auto;
+  }
+
+  #dataoutput {
+    position: static;
   }
 
   #library div, #npcstatwrap, #npcmenu {
