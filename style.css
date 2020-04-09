@@ -70,13 +70,9 @@ select, input, textarea {
   border-style: solid;
 }
 
-::selection { background:#abc; color:#fff; }
-
 button:focus, select:focus, input:focus {
   outline-style: none;
 }
-
-
 
 input[type=text] {
   padding-left: 5px;
@@ -99,7 +95,7 @@ input[type=checkbox] {
          position: relative;
          cursor: pointer;
     }
-    input[type=checkbox]:before {
+  input[type=checkbox]:before {
          content: "";
          display: block;
 
@@ -109,7 +105,7 @@ input[type=checkbox] {
          left: 0;
          background-color:var(--bglighter);
 }
-input[type=checkbox]:checked:before {
+  input[type=checkbox]:checked:before {
          content: "";
          display: block;
 
@@ -119,12 +115,12 @@ input[type=checkbox]:checked:before {
          left: 0;
          background-color:var(--bglighter);
 }
-    input[type=checkbox]:checked:after {
+   input[type=checkbox]:checked:after {
          content: "";
          display: block;
          width: 5px;
          height: 10px;
-         border: solid white;
+         border: solid var(--bgevenlighter);
          border-width: 0 2px 2px 0;
          -webkit-transform: rotate(45deg);
          -ms-transform: rotate(45deg);
@@ -140,11 +136,10 @@ button {
   color: var(--bgmenubar);
   border-style: solid;
   border-width: 1px;
-  border-color: var(--highlight);
+  border-color: var(--bg);
   border-radius: 3px;
   background-color: var(--buttoncolor);
 }
-
 
 p {
   display: block;
@@ -153,7 +148,6 @@ p {
   margin-left: 0;
   margin-right: 0;
 }
-
 
 
 /* TOP BAR */
@@ -416,9 +410,10 @@ td {
 #Downtime-opportunities-opps-table tbody tr,
 #Negotiations-opportunities-opps-table tbody tr,
 #Romance-opportunities-opps-table tbody tr,
-#Espionage-opportunities-opps-table tbody tr{ 
+#Espionage-opportunities-opps-table tbody tr{
   background-color: var(--table-header-bg);
-  color: var(--table-header-font);
+  color: var(--bgevenlighter);
+  font-weight: normal;
 }
 
 #General-opportunities-opps-table  tbody tr + tr{
@@ -434,10 +429,7 @@ td {
 #Downtime-opportunities-opps-table tbody tr + tr,
 #Negotiations-opportunities-opps-table tbody tr + tr,
 #Romance-opportunities-opps-table tbody tr + tr,
-#Espionage-opportunities-opps-table tbody tr + tr{
-background-color: #e1c5ea;
-color: #5e4031;
-}
+#Espionage-opportunities-opps-table tbody tr + tr{background-color: #e1c5ea;color: #5e4031;}
 
 #General-opportunities-opps-table  tbody tr + tr + tr + tr,
 #Initiative-opportunities-opps-table tbody tr + tr + tr , 
@@ -484,7 +476,7 @@ background-color:#bdc2ed;
 #Romance-opportunities-opps-table tbody tr + tr + tr + tr + tr + tr,
 #Espionage-opportunities-opps-table tbody tr + tr + tr + tr + tr + tr{
 background-color:#282828;
-color:var(--table-header-font);
+color: white;
 }
 
 #Air-opps-table td:nth-child(1) ,#Earth-opps-table td:nth-child(1),#Fire-opps-table td:nth-child(1),#Water-opps-table td:nth-child(1),#Void-opps-table td:nth-child(1),#General-opportunities-opps-table td:nth-child(1), #Initiative-opportunities-opps-table td:nth-child(1), #Martial-opportunities-opps-table td:nth-child(1), #Invocation-opportunities-opps-table td:nth-child(1), #OtherSkills-opportunities-opps-table td:nth-child(1), #Downtime-opportunities-opps-table td:nth-child(1), #Negotiations-opportunities-opps-table td:nth-child(1), #Romance-opportunities-opps-table td:nth-child(1), #Espionage-opportunities-opps-table td:nth-child(1){
@@ -577,27 +569,16 @@ color:var(--table-header-font);
   margin-block-end: unset;
 }
 
-#teahousediv {
-  display: grid;
-  grid-template-columns: 710px 300px auto auto;
-  grid-template-rows: 250px 250px auto auto;
+ #teahousediv div div {
+  font-weight: normal;
  }
 
 .jsongrid {
   text-align: center;
-  grid-column-start: 1;
-  grid-column-end: 2;
-  grid-row-start: 1;
-  grid-row-end: 4;
 }
 
 .dicegrid {
   text-align: center;
-  grid-column-start: 4;
-  grid-column-end: 4;
-  grid-row-start: 1;
-  grid-row-end: 2;
-  height: 480px
 }
 
 .firstgrid div {
@@ -605,13 +586,11 @@ color:var(--table-header-font);
 }
 
 #databuilderdiv {
-  min-height: 400px;
   text-align: left;
 }
 
 #npcstatwrap {
   display: grid;
-  grid-template-columns: 100px auto ;
 }
 
 .npcbuilderleft {
@@ -736,3 +715,41 @@ background: var(--bglighter)}
 
 .silver2 {
 background: var(--bglighter)}
+
+@media screen and (max-width: 1080px) {
+  body {
+    width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
+    overflow-x: hidden;
+  }
+
+  select, input, button, table {
+    font-size: 1em;
+  }
+
+  #title {
+    display: none;
+  }
+
+  #library {
+    text-align: center;
+  }
+
+  #npccontainer {
+    margin: auto;
+  }
+
+  #library div, #npcstatwrap, #npcmenu {
+    width: 90%;
+    text-align: left;
+    margin-left: 0;
+    margin-top: 10px;
+  }
+
+  #npcstatwrap, #techniquecontainerx{
+    width: 97%;
+  }
+
+  .containervisible {
+    font-size: 1.5em;
+  }
+}
