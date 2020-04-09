@@ -717,7 +717,7 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-@media screen {
+@media screen and (max-width: 800px) {
   body {
     width: 99%;
     overflow-x: hidden;
@@ -726,8 +726,67 @@ background: var(--bglighter)}
     background-position: 0% 0%;
   }
 
-  .w400, .w600, .w700 {
+  body div {
+    margin: 0;
+  }
+
+  select, input, button, textarea {
+    font-size: 1em;
+    max-width: 240px;
+    margin-bottom: 5px;
+  }
+
+  table {
+    font-size: 0.65em;
+  }
+
+  #library div, #npcstatwrap, #npcmenu {
+    width: 90%;
+    text-align: left;
+    margin-left: 0;
+  }
+  
+  #npcstatwrap, #techniquecontainerx, #statblock {
+    width: 90%;
+  }
+
+  #statblock div, #menu div {
+    width: 90%;
+    margin: 0;
+  }
+
+  .w400, .w700 {
     width: 95%;
+  }
+
+  #edit1, #edit2, #edit3, #edit4, #edit5, #edit6 {
+    width: 33% !important;
+  }
+
+  #edit7, #edit8, #edit9, #edit10, #edit11 {
+    text-align: right !important;
+  }
+
+  #edit12, #edit13, #edit14, #edit15, #edit16, #edit17, #edit18 {
+    text-align: right !important;
+    width: 25% !important;
+  }
+
+  #edit19, #edit19 div, #editweaps {
+    width: 90% !important; 
+  }
+
+  .w200 {
+    width: 70px;
+  }
+
+  .w110 {
+
+    width: 20% !important;
+  }
+
+  .ml10 {
+    margin-left: 5px;
   }
 
   .npcbuilderleft {
@@ -738,20 +797,12 @@ background: var(--bglighter)}
     padding-right: 2%;
   }
 
-  body div {
-    margin: 0;
-  }
-
-  select, input, button {
-    font-size: 1em;
-  }
-
-  table {
-    font-size: 0.65em;
-  }
-
   #weapons-table-category-select, #weapons-table-book-select {
     width: 15px;
+  }
+
+  .alignmiddle {
+    line-height: normal;
   }
 
   .w35 {
@@ -778,25 +829,15 @@ background: var(--bglighter)}
     position: static;
   }
 
-  #library div, #npcstatwrap, #npcmenu {
-    width: 90%;
-    text-align: left;
-    margin-left: 0;
-    margin-top: 10px;
-  }
-
-  #npcstatwrap, #techniquecontainerx, #statblock {
-    width: 95%;
-  }
-
-  #statblock div, #menu div {
-    width: 90%;
-    margin: 0;
-  }
-
   .containervisible {
     font-size: 1.5em;
   }
 
+  .mb10 {
+    margin-bottom: 5px;
+  }
+  .mt10 {
+    margin-top: 5px;
+  }
 
 }
