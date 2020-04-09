@@ -745,11 +745,18 @@ background: var(--bglighter)}
     margin-top: 10px;
   }
 
-  #npcstatwrap, #techniquecontainerx{
+  #npcstatwrap, #techniquecontainerx, #statblock {
     width: 97%;
+  }
+
+  #statblock div, #menu div {
+    width: 100%;
+    margin: 0;
   }
 
   .containervisible {
     font-size: 1.5em;
   }
+
+
 }

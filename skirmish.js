@@ -315,7 +315,7 @@ function buildSkirmishCharacter (nom){
 
 	var array = []
 
-	var namehtml = "<span onclick='onclick=showThisNpc(&quot;"+nom+"&quot;)'>"+skirmishcharacters[nom].name+" ("+skirmishcharacters[nom].clan+" / "+skirmishcharacters[nom].school+")</span>"
+	var namehtml = "<span onclick='showThisNpc(&quot;"+nom+"&quot;)'>"+skirmishcharacters[nom].name+" ("+skirmishcharacters[nom].clan+" / "+skirmishcharacters[nom].school+")</span>"
 
 	array.push(namehtml)
 

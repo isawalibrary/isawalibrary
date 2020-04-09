@@ -1,5 +1,6 @@
 <html>
  <head>
+ 	<meta name="viewport" content="width=device-width, initial-scale=1">
  	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
 	<LINK href="style.css" rel="stylesheet" type="text/css">
 	<script src="data.js"></script>
@@ -74,21 +75,18 @@
 
 		<div id="campaigninfodiv" class="hide containerhidden">
 
-			<div id="campaignhouserules" class="inline margin20"><span onclick="hideshow('houserules');" class="tea">House Rules</span>
+			<div class="inline">
+			Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="smallcaps">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download><span class="smallcaps">fillable</span>	</a>	
 			</div>
 
-
-
-			<div class="inline margin20">
-			Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="tea">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download>
-			  	<span class="tea">fillable</span>	</a>	
+			<div id="campaignhouserules" class="inline ml20"><span class="smallcaps" onclick="hideshow('houserules');">House Rules</span>
 			</div>
 		</div>
 
 
 		<div id="teahousediv" class="containerhidden hide">
 
-			<div id="JSONbuilder" class="jsongrid w700 pt5 pb5 mt5 mb5 ml5 mr5 bold bgevenlighter"><span class="textcentre">Json Blob Generator</span>
+			<div id="JSONbuilder" class="jsongrid pt5 pb5 mt5 mb5 ml5 mr5 bold bgevenlighter"><span class="textcentre">Json Blob Generator</span>
 			<div id="databuilderdiv" class="regular aligncentre"></div>
 			</div>
 
@@ -101,21 +99,21 @@
 		 	<button class="marginauto block mt5 mb5" id="namebutton" onclick="namegenerator()">random name</button>
 	 		<div id="nameoutput" class="block regular brushtip mt10 "></div> </div>
 
-			<div id="diceroller" class="dicegrid pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 maxw200 bgevenlighter textcentre"><b>Dice Roller</b>
+			<div id="diceroller" class="dicegrid pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter textcentre"><b>Dice Roller</b>
 				<div class="mt5">
 				Ring Dice: <input type="number" id="ringdicenumber" class="w35 styledselect"></input><br>
 				Skill Dice: <input type="number" id="skilldicenumber" class="w35 mt5 styledselect"></input><br>
 				<button id="roll" class="mt5 mb5" onclick="rolldice()">Roll Dice</button>
-				<div id="results" class="bglighter w100 centre"></div> </div>
+				<div id="results" class="bglighter centre"></div> </div>
 			</div>
 
-	 		<div class="pt5 pb5 pl10 pr10 bold maxw300 mt5 mb5 ml5 mr5 bgevenlighter  textcentre">Fortune Cookie Generator
+	 		<div class="pt5 pb5 pl10 pr10 bold mt5 mb5 ml5 mr5 bgevenlighter  textcentre">Fortune Cookie Generator
 	 	 	<button class="marginauto center block mt5 mb5" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
 	 	 	<form id="shinseisearch" onsubmit="return false" class="center block">Search:
 	 	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
 				<div id="shinseioutput" class="block"></div> </div>
 
-			<div id="changelog" class="pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter  textcentre"><span onclick="hideshow('log');">changelog</span>
+			<div id="changelog" class="pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter  textcentre"><span onclick="hideShow('log');">changelog</span>
 				<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
 		</div>
 
