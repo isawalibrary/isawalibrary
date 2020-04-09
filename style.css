@@ -153,10 +153,11 @@ p {
 /* TOP BAR */
 
 .titlebar {
-  min-height: 55px;
+  min-height: 50px;
   display: flex;
   justify-content: space-between;
   background-color: var(--menubar);
+  line-height: 40px
 }
 
 .titlewrap {
@@ -216,6 +217,7 @@ p {
   color: var(--mainfont);
   border-style: hidden;
   background-color: background-color: var(--bglighter);
+  line-height: 40px
 }
 
 .highlight {
@@ -591,7 +593,7 @@ color: white;
 
 #npcstatwrap {
   display: grid;
-  grid-template-columns: 70px auto;
+  grid-template-columns: 100px auto;
 }
 
 .npcbuilderleft {
@@ -739,6 +741,11 @@ background: var(--bglighter)}
   table {
     font-size: 0.65em;
   }
+
+  #npcstatwrap {
+  grid-template-columns: 65px auto;
+}
+
 
   #library div, #npcstatwrap, #npcmenu {
     width: 90%;

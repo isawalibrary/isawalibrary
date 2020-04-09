@@ -1289,18 +1289,18 @@ function createDataForm(){
 				break;
 
 		case "NPC Weapon":
-				datafields = ["name","range","damage","deadliness","qualities","type (equipped or natural)"]
+				datafields = ["name","range","damage","deadliness","qualities","type (equipped or natural)","origin (ex. Isonade)"]
 				break;
 
 		case "NPC Armor":
-				datafields = ["name","phys res","supernatural res","qualities","type (equipped or natural)"]
+				datafields = ["name","phys res","supernatural res","qualities","type (equipped or natural)","origin (ex. Isonade)"]
 	}
 
 		//makes big fields
 	for (i=0; i< datafields.length; i++){
 		newTextInput("dataform","data"+[i],"block w300 ml10 font09em",datafields[i]+": ","datainput"+[i],"block ml10 w300")
 
-		if (datatype == "NPC" && (i == 24 || i == 25 || i == 29 )|| datatype == "Technique" && i == 5 || datatype == "School" && (i == 12 ||  i == 21) || datatype == "Title" && i == 3 || datatype == "Clan" && (i == 6 || i == 7 ) || datatype == "Family" && (i == 4 || i == 5)){
+		if (datatype == "NPC" && (i == 24 || i == 25 || i == 28|| i == 29 )|| datatype == "Technique" && i == 5 || datatype == "School" && (i == 12 ||  i == 21) || datatype == "Title" && i == 3 || datatype == "Clan" && (i == 6 || i == 7 ) || datatype == "Family" && (i == 4 || i == 5)){
 				var elem = document. getElementById("datainput"+i); 
 				elem.parentNode.removeChild(elem);
 				newTextArea("data"+i,"datainput"+i," ml10 w300")
@@ -1469,13 +1469,13 @@ function generateData(){
 					break;
 
 			case "NPC Weapon":
-					outputstring[0] = '{name: "'+values[0]+'", range:"'+values[1]+'", damage:"'+values[2]+'", deadliness:"'+values[3]+'", qualities:"'+values[4]+'", type:"'+values[5]+'"},' 
+					outputstring[0] = '{name: "'+values[0]+'", range:"'+values[1]+'", damage:"'+values[2]+'", deadliness:"'+values[3]+'", qualities:"'+values[4]+'", type:"'+values[5]+'", origin:"'+values[6]+'"},' 
 
 					datainstruction = "paste into npcgear.js var npcweapons"
 					break;
 
 			case "NPC Armor":
-					outputstring[0] = '{armor: "'+values[0]+'", phys:"'+values[1]+'", sup:"'+values[2]+'", qualities:"'+values[3]+'", type:"'+values[4]+'"},' 
+					outputstring[0] = '{armor: "'+values[0]+'", phys:"'+values[1]+'", sup:"'+values[2]+'", qualities:"'+values[3]+'", type:"'+values[4]+'", origin:"'+values[5]+'"},' 
 
 					datainstruction = "paste into npcgear.js var npcarmor"
 					break;

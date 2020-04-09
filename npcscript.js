@@ -189,7 +189,7 @@ function buildNpcStatsDiv(){  //makes npcbuilder form
 	divContents("npcnameleft",'<span id="npcnameword" onclick="getNPCName(&apos;npcnameinput&apos;)">Name: </span>')
 
 	newDiv("npcnameright","npcstatwrap","inline mt5 npcbuilderright")
-	newTextInput("npcnameright","newnpcname","inline w200","","npcnameinput","inline")
+	newTextInput("npcnameright","newnpcname","inline w200","","npcnameinput","inline w200")
 
 	newDiv("npcinfo","npcnameright","inline ml10")
 	divContents("npcinfo",'<i><span id="npcinfoarchetype"></span></i> <span class="l5r">m</span> <span id="npcconflictcombat"></span> <span class="l5r">c</span> <span id="npcconflictintrigue"></span>');
