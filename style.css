@@ -727,11 +727,15 @@ background: var(--bglighter)}
   }
 
   .w400, .w600, .w700 {
-    width: 99%;
+    width: 95%;
   }
 
   .npcbuilderleft {
     padding-right: 10px;
+  }
+
+  .npcbuilderright {
+    padding-right: 2%;
   }
 
   body div {
@@ -774,11 +778,11 @@ background: var(--bglighter)}
   }
 
   #npcstatwrap, #techniquecontainerx, #statblock {
-    width: 97%;
+    width: 95%;
   }
 
   #statblock div, #menu div {
-    width: 100%;
+    width: 90%;
     margin: 0;
   }
 
