@@ -716,7 +716,7 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-@media screen and (max-width: 1080px) {
+@media screen and (max-width: 1980px) {
   body {
     width: 100%; /* The width is 100%, when the viewport is 800px or smaller */
     overflow-x: hidden;
