@@ -727,11 +727,9 @@ background: var(--bglighter)}
     overflow-x: hidden;
     font-size: 0.4em;
     margin: 0;
-    background-position: 0% 0%;
-    background-size: 110%;
+    background-position: center 12%;
+    background-size: 450px;
   }
-
-
 
   body div {
     margin: 0;
