@@ -728,7 +728,10 @@ background: var(--bglighter)}
     font-size: 0.4em;
     margin: 0;
     background-position: 0% 0%;
+    background-size: 110%;
   }
+
+
 
   body div {
     margin: 0;
@@ -748,18 +751,25 @@ background: var(--bglighter)}
   grid-template-columns: 65px auto;
 }
 
+#titlebar {
+  min-height: 30px;
+}
+
 
   #library div, #npcstatwrap, #npcmenu {
     width: 90%;
     text-align: left;
     margin-left: 0;
   }
-  
-  #npcstatwrap, #techniquecontainerx, #statblock {
+  #library div div {
+    width: unset;
+  }
+
+  #npcstatwrap, #statblock {
     width: 90%;
   }
 
-  #statblock div, #menu div {
+ #menu div {
     width: 90%;
     margin: 0;
   }
@@ -830,7 +840,7 @@ background: var(--bglighter)}
     text-align: center;
   }
 
-  #npccontainer {
+  #npccontainer, #npcstatwrap {
     margin: auto;
   }
 
@@ -850,6 +860,16 @@ background: var(--bglighter)}
   }
   .titlebar button {
     line-height: 20px;
+  }
+
+  #pour, #nameoutput {
+    font-size: 2.5em;
+    color: var(--highlight);
+    text-shadow: 0 0 3px var(--highlight1), 0 0 5px var(--highlight2);
+  }
+
+  #results {
+    width: 50%;
   }
 
 }
