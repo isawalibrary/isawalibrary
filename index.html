@@ -1,122 +1,137 @@
 <html>
- <head>
- 	<meta name="viewport" content="width=device-width, initial-scale=1">
- 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
-	<LINK href="style.css" rel="stylesheet" type="text/css">
-	<script src="data.js"></script>
-	<script src="familiesdata.js"></script>
-	<script src="definitionsdata.js"></script>
-	<script src="schoolsdata.js"></script>
-	<script src="techniquesdata.js"></script>
-	<script src="tablesdata.js"></script>
-	<script src="npcsdata.js"></script>
-	<script src="npcgear.js"></script>
-	<script src="script.js"></script>
-	<script src="common.js"></script>	
-	<script src="skirmish.js"></script>
-	<script src="npcscript.js"></script>
 
-	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
- <title></title>
- </head>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
+    <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="data.js"></script>
+    <script src="familiesdata.js"></script>
+    <script src="definitionsdata.js"></script>
+    <script src="schoolsdata.js"></script>
+    <script src="techniquesdata.js"></script>
+    <script src="tablesdata.js"></script>
+    <script src="npcsdata.js"></script>
+    <script src="npcgear.js"></script>
+    <script src="script.js"></script>
+    <script src="common.js"></script>
+    <script src="skirmish.js"></script>
+    <script src="npcscript.js"></script>
+
+    <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js"></script>
+    <title></title>
+</head>
 
 <body onload="setUp()">
-	<div class="width100pc centre">
+    <div class="width100pc centre">
 
-		<div class="titlewrap">
-		<div class="w100pc h5 silver"></div>
-	 	<div id="titlebar" class="titlebar">
-	 	<div id="title" class="pt4 ml10 inline brushtip font2em">Legend of the Five Rings 5th Edition GM Screen</div>
-		<button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="brushtip mainbutton font2em">npc builder</button>
-		<button id="npclibrarybutton" onclick="highlight('npclibrarybutton','library')" class="brushtip mainbutton font2em">npc library</button>
-		<button id="skirmishbutton" onclick="highlight('skirmishbutton','skirmishcontainer')"; class="brushtip mainbutton font2em">skirmish tracker</button>
-	 	<button id="definitionbutton" onclick="highlight('definitionbutton','definitioncontainer')" class="brushtip mainbutton font2em">reference</button>
-		<button id="techsbutton" onclick="highlight('techsbutton','techniquecontainer')" class="brushtip mainbutton font2em">technique search</button>
-		<button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="brushtip mainbutton font2em">school search</button>
-		<button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="brushtip mainbutton font2em">campaign</button>
-		<button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="brushtip mainbutton font2em">teahouse</button>
-			</div><div class="w100pc h5 silver2"></div></div>
-	 	
-	<div class="">	
-		<div id="skirmishcontainer" class="hide containerhidden"></div>
+        <div class="titlewrap">
+            <div class="w100pc h5 silver"></div>
+            <div id="titlebar" class="titlebar">
+                <div id="title" class="pt4 ml10 inline brushtip font2em">Legend of the Five Rings 5th Edition GM Screen</div>
+                <button id="npcbutton" onclick="highlight('npcbutton','npccontainer')" class="brushtip mainbutton font2em">npc builder</button>
+                <button id="npclibrarybutton" onclick="highlight('npclibrarybutton','library')" class="brushtip mainbutton font2em">npc library</button>
+                <button id="skirmishbutton" onclick="highlight('skirmishbutton','skirmishcontainer')" ;="" class="brushtip mainbutton font2em">skirmish tracker</button>
+                <button id="definitionbutton" onclick="highlight('definitionbutton','definitioncontainer')" class="brushtip mainbutton font2em">reference</button>
+                <button id="techsbutton" onclick="highlight('techsbutton','techniquecontainer')" class="brushtip mainbutton font2em">technique search</button>
+                <button id="schoolbutton" onclick="highlight('schoolbutton','schoolcontainer')" class="brushtip mainbutton font2em">school search</button>
+                <button id="campaigninfobutton" onclick="highlight('campaigninfobutton','campaigninfodiv')" class="brushtip mainbutton font2em">campaign</button>
+                <button id="teahousebutton" onclick="highlight('teahousebutton','teahousediv')" class="brushtip mainbutton font2em">teahouse</button>
+            </div>
+            <div class="w100pc h5 silver2"></div>
+        </div>
 
-		<div id="definitioncontainer" class="hide containerhidden smallfont bglighter">
-			<div id="definitionsdiv"></div>
-			<div id="definitionstables" class="inline"></div>
-		</div>
+        <div class="">
+            <div id="skirmishcontainer" class="hide containerhidden"></div>
 
-		<div id="npccontainer" class="hide containerhidden">
-			<div id="npcmenu" class="mb10"></div>
-			<div id="npcstatwrap" class="centre w700 bgevenlighter hide pt10 pl10 pr10 pb10 hide">
-		</div> </div>	
+            <div id="definitioncontainer" class="hide containerhidden smallfont bglighter">
+                <div id="definitionsdiv"></div>
+                <div id="definitionstables" class="inline"></div>
+            </div>
 
-	
+            <div id="npccontainer" class="hide containerhidden">
+                <div id="npcmenu" class="mb10"></div>
+                <div id="npcstatwrap" class="centre w700 bgevenlighter hide pt10 pl10 pr10 pb10 hide">
+                </div>
+            </div>
 
-		 <div id="library" class="hide containerhidden">
-	 		<div id="menu" class="inlineblock w400 bglighter aligntop pt10 pl10 pr10 pb10"></div>
+            <div id="library" class="hide containerhidden">
+                <div id="menu" class="inlineblock w400 bglighter aligntop pt10 pl10 pr10 pb10"></div>
 
-		 		<div id="statblock" class="inlineblock w700 ml20 bgevenlighter pt10 pl10 pr10 pb10"></div>
-		 		<div id="editcharacter" class="inlineblock hide ml20 w660 bgevenlighter pt10 pl10 pr10 pb10">
-		 		</div>
+                <div id="statblock" class="inlineblock w700 ml20 bgevenlighter pt10 pl10 pr10 pb10"></div>
+                <div id="editcharacter" class="inlineblock hide ml20 w660 bgevenlighter pt10 pl10 pr10 pb10">
+                </div>
 
-		</div>
+            </div>
 
-		<div id="techniquecontainer" class="hide containerhidden"></div>	
+            <div id="techniquecontainer" class="hide containerhidden"></div>
 
-		<div id="schoolcontainer" class="hide containerhidden">
-			<div id="schoolwrapper" class="w700 block marginauto">
-	 		<form onsubmit="return false" id="schoolsearch" class="block"><span class="w100 inlineblock" >Search Schools:</span>
-	 	 	<input id="schoolsearchinput" class="w200" oninput="schoolfilter();titlefilter();" type="text"></form>
-			<div id="schooloutput" class="block"></div>
-			<div id="titleoutput" class="block"></div>
-		</div></div>
+            <div id="schoolcontainer" class="hide containerhidden">
+                <div id="schoolwrapper" class="w700 block marginauto">
+                    <form onsubmit="return false" id="schoolsearch" class="block"><span class="w100 inlineblock">Search Schools:</span>
+                        <input id="schoolsearchinput" class="w200" oninput="schoolfilter();titlefilter();" type="text">
+                    </form>
+                    <div id="schooloutput" class="block"></div>
+                </div>
+            </div>
 
-		<div id="campaigninfodiv" class="hide containerhidden">
+            <div id="campaigninfodiv" class="hide containerhidden">
 
-			<div class="inline">
-			Character Sheets <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download> 	<span class="smallcaps">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download><span class="smallcaps">fillable</span>	</a>	
-			</div>
+                <div class="inline">
+                    Character Sheets
+                    <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_forprint.pdf" download=""> <span class="smallcaps">for print</span> </a> and <a href="https://isawalibrary.github.io/isawalibrary/charactersheet_fillable.pdf" download=""><span class="smallcaps">fillable</span>	</a>
+                </div>
 
-			<div id="campaignhouserules" class="inline ml20"><span class="smallcaps" onclick="hideshow('houserules');">House Rules</span>
-			</div>
-		</div>
+                <div id="campaignhouserules" class="inline ml20"><span class="smallcaps" onclick="hideshow('houserules');">House Rules</span>
+                </div>
+            </div>
 
+            <div id="teahousediv" class="containerhidden hide">
 
-		<div id="teahousediv" class="containerhidden hide">
+                <div class="pt5 pb5 pl10 pr10 bold mt5 mb5 ml5 mr5 bgevenlighter textcentre">Rokugani Teahouse Generator
+                    <button onclick="makeTea()" class="marginauto block mt5 mb5">pour me another at...</button>
+                    <div id="pour" class="mt10 block regular brushtip"></div>
+                </div>
 
-			<div id="JSONbuilder" class="jsongrid pt5 pb5 mt5 mb5 ml5 mr5 bold bgevenlighter"><span class="textcentre">Json Blob Generator</span>
-			<div id="databuilderdiv" class="regular aligncentre"></div>
-			</div>
+                <div class="pt5 pb5 bold mt5 mb5 ml5 mr5 bgevenlighter textcentre">Random Name Generator
+                    <button class="marginauto block mt5 mb5" id="namebutton" onclick="namegenerator()">random name</button>
+                    <div id="nameoutput" class="block regular brushtip mt10 "></div>
+                </div>
 
-		 	
-		 	<div class="pt5 pb5 pl10 pr10 bold mt5 mb5 ml5 mr5 bgevenlighter textcentre">Rokugani Teahouse Generator
-			<button onclick="makeTea()" class="marginauto block mt5 mb5">pour me another at...</button>
-			<div id="pour" class="mt10 block regular brushtip"></div></div>
-				
-			<div class="pt5 pb5 bold mt5 mb5 ml5 mr5 bgevenlighter textcentre">Random Name Generator
-		 	<button class="marginauto block mt5 mb5" id="namebutton" onclick="namegenerator()">random name</button>
-	 		<div id="nameoutput" class="block regular brushtip mt10 "></div> </div>
+                <div id="diceroller" class="dicegrid pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter textcentre"><b>Dice Roller</b>
+                    <div class="mt5">
+                        Ring Dice:
+                        <input type="number" id="ringdicenumber" class="w35 styledselect">
+                        <br> Skill Dice:
+                        <input type="number" id="skilldicenumber" class="w35 mt5 styledselect">
+                        <br>
+                        <button id="roll" class="mt5 mb5" onclick="rolldice()">Roll Dice</button>
+                        <div id="results" class="bglighter centre"></div>
+                    </div>
+                </div>
 
-			<div id="diceroller" class="dicegrid pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter textcentre"><b>Dice Roller</b>
-				<div class="mt5">
-				Ring Dice: <input type="number" id="ringdicenumber" class="w35 styledselect"></input><br>
-				Skill Dice: <input type="number" id="skilldicenumber" class="w35 mt5 styledselect"></input><br>
-				<button id="roll" class="mt5 mb5" onclick="rolldice()">Roll Dice</button>
-				<div id="results" class="bglighter centre"></div> </div>
-			</div>
+                <div class="pt5 pb5 pl10 pr10 bold mt5 mb5 ml5 mr5 bgevenlighter  textcentre">Fortune Cookie Generator
+                    <button class="marginauto center block mt5 mb5" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
+                    <form id="shinseisearch" onsubmit="return false" class="center block">Search:
+                        <input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text">
+                        <br>
+                    </form>
+                    <div id="shinseioutput" class="block"></div>
+                </div>
 
-	 		<div class="pt5 pb5 pl10 pr10 bold mt5 mb5 ml5 mr5 bgevenlighter  textcentre">Fortune Cookie Generator
-	 	 	<button class="marginauto center block mt5 mb5" id="shinseibutton" onclick="shinseigenerator()">Shinsei and friends said...</button>
-	 	 	<form id="shinseisearch" onsubmit="return false" class="center block">Search:
-	 	 		<input id="shinseisearchinput" class="styledselect" oninput="shinseifilter()" type="text"><br></form>
-				<div id="shinseioutput" class="block"></div> </div>
+                <div id="changelog" class="pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter  textcentre"><span onclick="hideShow('log');">changelog</span>
+                    <div id="log" class="hide">
+                        <object class="word-wrap" data="changelog.txt"></object>
+                    </div>
+                </div>
 
-			<div id="changelog" class="pt5 pb5 pl10 pr10 mt5 mb5 ml5 mr5 bgevenlighter  textcentre"><span onclick="hideShow('log');">changelog</span>
-				<div id="log" class="hide"><object class="word-wrap" data="changelog.txt"></object></div></div>
-		</div>
+                <div id="JSONbuilder" class="jsongrid pt5 pb5 mt5 mb5 ml5 mr5 bold bgevenlighter"><span class="textcentre">Json Blob Generator</span>
+                    <div id="databuilderdiv" class="regular aligncentre"></div>
+                </div>
+            </div>
 
+        </div>
 
-</div>
-
+    </div>
 </body>
 
+</html>

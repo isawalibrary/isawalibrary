@@ -1,14 +1,10 @@
--Current Overhaul: Crab Steel Edition
+-Current Overhaul: Phoenix Saffron Edition
 
-+setTechs is not defined... make the NPC builder tech rank filter button work
++Finish doing Demeanors for Families, I got up to Miya
++Make the JSON Builder wider - both the form and the output
 +Format output for name and teahouse generators
-+Finish adding monsters from Path of Waves
-+Match up the NPC Gear to the NPCs in var npcweapons etc
 +In Edit Character, the add weapon button adds a massive dropdown of gibberish - have a checkbox that controls whether NPC Gear is added to the list, then have filters that refine by weapon type
 +Allow some Edit NPC stuff during NPC Builder, instead of having to save then open in Library then Edit
-+Change colour of the tooltips
-+Change position of the stance tooltips from Skirmish
-+Searching the Fortune Cookie Generator makes it so the list of quotations comes off the bottom of the div, make it so the div stretches to fit all quotations
 
 -version 0.17 06.03.20
 Bug fixes, entered some more creatures from Path of Waves

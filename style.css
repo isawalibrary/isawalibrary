@@ -157,7 +157,7 @@ p {
   display: flex;
   justify-content: space-between;
   background-color: var(--menubar);
-  line-height: 40px
+  line-height: 40px;
 }
 
 .titlewrap {
@@ -251,7 +251,7 @@ p {
 
 #techniqueoutput, #schooloutput, #titleoutput {
   background-color: var(--menubar);
-  padding: 10px 10px 10px 10px;
+  padding: 5px 10px 5px 10px;
   color: black;
 }
 
@@ -623,17 +623,19 @@ color: white;
 .w35  {width: 35px;} /*used */
 
 .w55  {width: 55px;}
-
+.w65  {width: 65px;}
 .w100 {width: 100px;} /*used */
 .w110 {width: 122px;} /*used */
 .w145 {width: 145px;}
-
+.w195 {width: 195px;}
 .w200 {width: 200px;}
 
 .w300 {width: 300px;} /*used */
 
 .w350 {width: 350px;} /*used */
 
+.w400 {width: 400px;}
+.w450 {width: 450px;}
 .w600 {width: 600px;}
 
 .w610 {width: 610px;}
@@ -845,6 +847,9 @@ background: var(--bglighter)}
   }
   .mt10 {
     margin-top: 5px;
+  }
+  .titlebar button {
+    line-height: 20px;
   }
 
 }

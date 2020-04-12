@@ -974,7 +974,7 @@ function titlefilter(){
 
 	let titlesTemplate = '<div>' +
 							' <% titlesArr.forEach(function(child) { %> ' +
-							' <div class=""> ' +
+							' <div class="mb10"> ' +
 							' <div class="" onclick="hideShow(&quot;<%= child.title %>-title&quot)"><b><%= child.title %></b> <i>(<%= child.source %>)</i> Title</div>' +
 							' <div class="hide" id="<%= child.title %>-title"><b>Ability:</b> <%= child.ability %>' +
 							' <br><b>Social:</b>  <%= child.status %>' +
@@ -1012,9 +1012,9 @@ function titlefilter(){
 			let html = titlesTemplateFunction({
 			titlesArr: titlesArr
 		})
-				document.getElementById('titleoutput').innerHTML = html;
+				document.getElementById('schooloutput').innerHTML += html;
 		} else {
-			document.getElementById('titleoutput').innerHTML = "";
+			document.getElementById('schooloutput').innerHTML = "";
 		}
 } }
 
@@ -1239,9 +1239,9 @@ function setUpDataBuilder(){
 
 	fillSelectDropdownDefault("datatypeselect","Select Data Type",datatypearray)
 
-	newDiv("dataform","databuilderdiv","w350 inlineblock ml10")
+	newDiv("dataform","databuilderdiv","w450 inlineblock ml10")
 
-	newDiv("dataoutput","databuilderdiv","w300 inlineblock ml20 aligncentre")
+	newDiv("dataoutput","databuilderdiv","w400 inlineblock ml20 aligncentre")
 }
 
 	values=[];
@@ -1298,20 +1298,20 @@ function createDataForm(){
 
 		//makes big fields
 	for (i=0; i< datafields.length; i++){
-		newTextInput("dataform","data"+[i],"block w300 ml10 font09em",datafields[i]+": ","datainput"+[i],"block ml10 w300")
+		newTextInput("dataform","data"+[i],"block w400 ml10 font09em",datafields[i]+": ","datainput"+[i],"block ml10 w400")
 
 		if (datatype == "NPC" && (i == 24 || i == 25 || i == 28|| i == 29 )|| datatype == "Technique" && i == 5 || datatype == "School" && (i == 12 ||  i == 21) || datatype == "Title" && i == 3 || datatype == "Clan" && (i == 6 || i == 7 ) || datatype == "Family" && (i == 4 || i == 5)){
 				var elem = document. getElementById("datainput"+i); 
 				elem.parentNode.removeChild(elem);
-				newTextArea("data"+i,"datainput"+i," ml10 w300")
+				newTextArea("data"+i,"datainput"+i," ml10 w400")
 		}
 
 		//makes little fields
 		if (datatype == "School" && (i > 6 && i < 12 ) || datatype == "Weapon" && (i == 3 || i == 4 || i == 5 )  || datatype == "NPC" && ( (i > 4 && i < 17) || (i > 17 && i < 23)) || datatype == "NPC Weapon" && (i == 1 || i == 2 || i == 3 )  ){
-			document.getElementById("datainput"+i).classList.remove("w300")
-			document.getElementById("data"+i).classList.remove("w300")
+			document.getElementById("datainput"+i).classList.remove("w400")
+			document.getElementById("data"+i).classList.remove("w400")
 			document.getElementById("datainput"+i).classList.add("w30")
-			document.getElementById("data"+i).classList.add("w55")
+			document.getElementById("data"+i).classList.add("w65")
 						document.getElementById("data"+i).classList.remove("block")
 			document.getElementById("data"+i).classList.add("inlineblock")
 		}
@@ -1319,10 +1319,10 @@ function createDataForm(){
 		//makes medium fields
 
 		if (datatype == "NPC" && (i > 0 && i < 5) || datatype == "School" && (i == 3 || i == 4 || i == 1 || i == 2 || i == 5 || i == 6) || datatype == "Family" && (i == 2 || i == 3|| i == 6 || i == 7) || datatype == "Weapon" && (i == 1 || i == 2) || datatype == "Armor" && (i == 4 || i == 5) || datatype == "NPC Armor" && (i == 1 || i == 2 )  || datatype == "Armor" && (i == 1 || i == 2 )  ){
-			document.getElementById("data"+i).classList.remove("w300")
-			document.getElementById("datainput"+i).classList.remove("w300")
-			document.getElementById("datainput"+i).classList.add("w145")
-			document.getElementById("data"+i).classList.add("w145")
+			document.getElementById("data"+i).classList.remove("w400")
+			document.getElementById("datainput"+i).classList.remove("w400")
+			document.getElementById("datainput"+i).classList.add("w195")
+			document.getElementById("data"+i).classList.add("w195")
 			document.getElementById("data"+i).classList.remove("block")
 			document.getElementById("data"+i).classList.add("inlineblock")
 		}
@@ -1558,7 +1558,7 @@ function generateData(){
 
 			for (i=0; i< outputstring.length; i++){
 				
-				newDiv("output"+i,"dataoutput","block margintop")
+				newDiv("output"+i,"dataoutput","block mt5")
 				
 				document.getElementById("output"+i).textContent = outputstring[i]
 				}

@@ -414,6 +414,10 @@ function selectType(){
 		show("npcarchetype");
 	}
 
+	if (type == "Oni Summoner"){
+		show("npcarchetype");
+	}
+
 	if (type == "Clan Samurai"){
 		show("npcarchetype")
 		var selectObj = document.getElementById("archetype")
@@ -521,6 +525,10 @@ function selectArchetype(){
 		case ("Animals"):
 		case ("Pregen"):
 			fillStats()
+		break;
+
+		case ("Oni Summoner"):
+			oniMaker();
 		break;
 	}
 }
@@ -979,7 +987,7 @@ function fillStats(){
 		makeTechDropdowns()
 
 
-	} else if (thisnpc.selectedType == "Animals" || thisnpc.selectedType == "Creatures" || thisnpc.selectedType == "Pregen" ){
+	} else if (thisnpc.selectedType == "Animals" || thisnpc.selectedType == "Creatures" || thisnpc.selectedType == "Pregen" || thisnpc.selectedType == "Oni Summoner"){
 			thisnpc.name = thisnpc.selectedArchetype.fullname
 			document.getElementById("npcnameinput").value = thisnpc.name
 
@@ -1064,7 +1072,7 @@ function fillStats(){
 		}
 		document.getElementById("npcabilities").innerHTML=html
 		thisnpc.ability = document.getElementById("npcabilities").innerHTML;
-	}
+	} 
 
 			document.getElementById("npcinfoarchetype").innerHTML = thisnpc.selectedArchetype.fullname;
 			
@@ -1203,9 +1211,10 @@ function setRokuganiRings(){
 	if (thisnpc.selectedSchool.ring1 == "Any"){
 		thisnpc.selectedSchool.ring1 = getRandom(array)
 
-		for (var m=0; m< array.length; m++){
+		for (var m=array.length-1; m >= 0; m--){
 			if (array[m] == thisnpc.selectedSchool.ring1){
 				array.splice(m)
+			
 			}
 		}
 	}
@@ -2314,4 +2323,159 @@ function saveEditNpc(nom){
 
 	showNpc(nom.title)
 
+}
+
+var mahos = [];
+
+function oniMaker(){
+
+	mahos = thisnpc.selectedmahos
+	thisnpc.selectedmahos = [];
+
+	fillStats();
+
+	armor = thisnpc.armorArray[0]
+
+	for (var each in npcarmor){
+		if (armor == npcarmor[each].armor){
+			thisnpc.physres = npcarmor[each].phys
+			Number(thisnpc.physres)
+			thisnpc.supres = npcarmor[each].sup
+			Number(thisnpc.supres)
+			thisnpc.armorqualities = npcarmor[each].qualities
+
+			html = "Physical Res: <span id='npcphysres'>"+thisnpc.physres+"</span> Supernatural Res: <span id='npcsupres'>"+thisnpc.supres+"</span>  Qualities: <span id='npcarmorqualities'>"+thisnpc.armorqualities+"</span>"
+
+			document.getElementById("npcarmor0stats").innerHTML = html;
+		}
+	}
+
+	var powers = thisnpc.selectedArchetype.powers
+
+	thisnpc.onipowersarray = [];
+	onipowersarray = thisnpc.onipowersarray;
+
+	thisnpc.selectedpowers = [];
+
+	for (var each in onipowers){
+		onipowersarray.push(onipowers[each].name)
+	}
+
+	if (document.getElementById("archetype").value == "Savage Brute Lesser Oni"){
+		for (var i = onipowersarray.length-1; i >= 0; i--){
+			if (onipowersarray[i] == "Captivating Voice" || onipowersarray[i] == "Human Mask"|| onipowersarray[i] == "Illusion Master" || onipowersarray[i] == "Scent of Weakness" ){
+				onipowersarray.splice(i,1);
+			}
+		}
+	}
+
+	//create dropdowns for the powers
+
+	newDiv("onipowers","npcabilities","npcright")
+
+	for (var i = 0; i < powers; i++){
+		newDiv("onipowerwrap"+i,"onipowers","npcright")
+		newSelect("onipowerwrap"+i,"onipowerselect"+i,"","selectOniPower("+i+")")
+
+		if (i == 0){
+			fillSelectDropdownDefault("onipowerselect"+i,"Select Shadowlands Power",onipowersarray)
+		}
+		
+		newDiv("onipowerinfo"+i,"onipowerwrap"+i,"npcright mb5")
+	}
+
+	if (document.getElementById("archetype").value == "Hellish Sorcerer Powerful Oni"){
+		setSelectedValue(document.getElementById("onipowerselect0"),"Tainted Sorcery")
+		selectOniPower(0);
+	}
+
+}
+
+function selectOniPower(k){
+
+	var power = document.getElementById("onipowerselect"+k).value
+
+	if (thisnpc.selectedpowers.includes(power)){
+			for (var each in onipowers){
+				if (onipowers[each].name == power){
+							var rank2 = onipowers[each].rank2;
+							divContents("onipowerinfo"+k,rank2)
+							onipowers[each].effect2()
+							document.getElementById("onipowerselect"+k).setAttribute("onchange","selectOniPower("+k+");remakeOni("+k+")")
+				}
+			}
+
+	} else {
+			for (var each in onipowers){
+				if (onipowers[each].name == power){
+							var rank1 = onipowers[each].rank1;
+							divContents("onipowerinfo"+k,rank1)
+							onipowers[each].effect()
+							document.getElementById("onipowerselect"+k).setAttribute("onchange","selectOniPower("+k+");remakeOni("+k+")")
+				}
+			}}
+
+		thisnpc.selectedpowers.push(document.getElementById("onipowerselect"+k).value)
+
+		var powers = thisnpc.selectedArchetype.powers
+
+		var i = k+1;
+
+		if (i < powers){			
+			fillSelectDropdownDefault("onipowerselect"+i,"Select Shadowlands Power",onipowersarray)
+		}
+	}	
+
+
+function removeFromOniArray(powerName){
+
+	for (var i = thisnpc.onipowersarray.length-1; i >= 0; i--){
+		if (thisnpc.onipowersarray[i] == powerName){
+			thisnpc.onipowersarray.splice(i,1)
+		}
+	}
+}
+
+function addToOniArray(powerName){
+	thisnpc.onipowersarray.push(powerName)
+}
+
+function removeFromSelectedPowers(powerName){
+	for (var i = thisnpc.selectedpowers.length -1 ;i >= 0; i--){
+		if (thisnpc.selectedpowers[i] == powerName){
+			thisnpc.selectedpowers.splice(i,1)
+		}
+	}	
+}
+
+function remakeOni(num){
+	thisnpc.selectedpowers.push(document.getElementById("onipowerselect"+num).value);
+	thisnpc.selectedpowers.splice(num,1)
+	var powers = thisnpc.selectedpowers
+	thisnpc.selectedpowers = []
+
+	document.getElementById("npctechniquecontainer").innerHTML = "";
+
+	var name = document.getElementById("npcnameinput").value
+	oniMaker();
+	document.getElementById("npcnameinput").value = name;
+
+	for (var i = 0; i < powers.length-1; i++){
+		setSelectedValue(document.getElementById("onipowerselect"+i),powers[i]);
+		selectOniPower(i);
+	}
+
+	var mahos = thisnpc.selectedmahos
+	thisnpc.selectedmahos = []	
+
+	for (var i = 0; i < mahos.length; i++){
+		setSelectedValue(document.getElementById("npctechselect"+i),mahos[i])
+		addTechToNpc(i)
+		showSelectedTechnique("npctechselect"+i,"npctechinfo"+i)
+	}	
+}
+
+function addTechToNpc(i){
+	tech = document.getElementById("npctechselect"+i).value
+	thisnpc.selectedmahos.push(tech)
 }

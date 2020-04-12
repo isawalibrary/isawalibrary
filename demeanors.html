@@ -1,0 +1,65 @@
+<html>
+ <head>
+ 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
+	<LINK href="style.css" rel="stylesheet" type="text/css">
+	<script src="common.js"></script>
+	<script src="script.js"></script>
+	<script src="npcsdata.js"></script>
+	<script src="familiesdata.js"></script>
+
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
+ <title></title>
+ <style type="text/css">
+ 	body {
+		  background-image: url("");
+		}
+ </style>
+ </head>
+
+<body onload="getDemeanors()">
+
+<div id="dems"> </div>
+
+</body>
+<script type="text/javascript">
+
+var demeanorarray = [];
+
+function getDemeanors(){
+	for (var archetype in archetypes){
+		for (var i = 0; i < archetypes[archetype].demeanor.length; i++){
+			demeanorarray.push(archetypes[archetype].demeanor[i])
+		}
+	}
+
+	for (var template in templates){
+		for (var i = 0; i < templates[template].demeanor.length; i++){
+			demeanorarray.push(templates[template].demeanor[i])
+		}
+	}
+
+	for (var family in families){
+		for (var i = 0; i < families[family].demeanor.length; i++){
+			demeanorarray.push(families[family].demeanor[i])
+		}
+	}
+
+	demeanorarray = removeDuplicates(demeanorarray);
+
+	for (var i = 0; i < demeanorarray.length; i++){
+		document.getElementById("dems").innerHTML += "<br>"+demeanorarray[i];
+
+		for (var each in demeanors){
+			if (demeanorarray[i] == demeanors[each].demeanor){
+				document.getElementById("dems").innerHTML +=": "+demeanors[each].tns+" "+demeanors[each].unmasking
+			}
+		}
+	}
+
+
+}
+
+
+</script>

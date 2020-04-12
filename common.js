@@ -157,7 +157,11 @@ function addToArray(arrayToAddTo,arrayToAdd){
 
 function addToSelect(selectorForm,listName){
 	var el = document.createElement("option");
-	selectorForm=document.getElementById(selectorForm);
+
+     if (typeof selectorForm === 'string' || selectorForm instanceof String){
+				selectorForm=document.getElementById(selectorForm);
+			} 
+
 	for(var i = 0; i < listName.length; i++) {
 		var selectedOption = listName[i];
 		
