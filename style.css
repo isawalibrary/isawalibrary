@@ -721,6 +721,12 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
+  #pour, #nameoutput {
+    font-size: 2.5em;
+    color: var(--highlight);
+    text-shadow: 0 0 3px var(--highlight1), 0 0 5px var(--highlight2);
+  }
+
 @media screen and (max-width: 600px) {
   body {
     width: 99%;
@@ -729,6 +735,7 @@ background: var(--bglighter)}
     margin: auto;
     background-position: 0px 50px;
     background-size: 450px;
+    padding-left: 0.5%;
   }
 
   body div {
@@ -751,6 +758,7 @@ background: var(--bglighter)}
 
 #titlebar {
   min-height: 30px;
+
 }
 
 
@@ -860,12 +868,6 @@ background: var(--bglighter)}
     line-height: 20px;
   }
 
-  #pour, #nameoutput {
-    font-size: 2.5em;
-    color: var(--highlight);
-    text-shadow: 0 0 3px var(--highlight1), 0 0 5px var(--highlight2);
-  }
-
   #results {
     width: 50%;
   }
@@ -873,7 +875,7 @@ background: var(--bglighter)}
 }
 
 @media screen and (-webkit-min-device-pixel-ratio: 2){
-  body {
-  
-  }
+    #skirmishbutton {
+      display: none;
+    }
 }
