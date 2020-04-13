@@ -726,8 +726,8 @@ background: var(--bglighter)}
     width: 99%;
     overflow-x: hidden;
     font-size: 0.4em;
-    margin: 0;
-    background-position: center 12%;
+    margin: auto;
+    background-position: 0px 50px;
     background-size: 450px;
   }
 

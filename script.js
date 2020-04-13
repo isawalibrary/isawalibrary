@@ -829,7 +829,7 @@ function schoolfilter(){
 							' <% schoolsArr.forEach(function(child) { %> ' +
 							' <div class="mb10"> ' +
 							' <div class="" onclick="hideShow(&quot;<%= child.name %>-school&quot)"><b><%= child.name %></b> <i>(<%= child.source %>)</i> <span class="trailingcommafinder"><% child.role.forEach(function(types) { %> <%= types %>, <% }); %></span></div>' +
-							' <div class="hide" id="<%= child.name %>-school"><b>Ability:</b> <%= child.ability %>' +
+							' <div class="hide pb10" id="<%= child.name %>-school"><b>Ability:</b> <%= child.ability %>' +
 							' <br><b>Skills:</b>  <span class="trailingcommafinder"><% child.skills.forEach(function(skill) { %> <%= skill %>, <% }); %></span>;' +
 							' <br><b>Honor:</b> <%= child.honor %>; <b>Rings:</b> <%= child.ring1 %>, <%= child.ring2 %>; <b>Technique Types:</b> <span class="trailingcommafinder"><% child.techniquetypes.forEach(function(types) { %> <%= types %>, <% }); %></span>;' +
 							' <br><b>Favoured Techniques:</b> Rank 1: <span id="startingft" class="trailingcommafinder">' +
@@ -846,9 +846,7 @@ function schoolfilter(){
 
 	let schoolsTemplateFunction = _.template(schoolsTemplate);
 	
-	if (searchString == false) {
-		document.getElementById('schooloutput').innerHTML = "";}
-	else if (searchString !== false) {
+	if (searchString !== false) {
 		searchString = searchString.toLowerCase();
 
 			schoolsArr = schoolsArr.filter(function(school) {
@@ -918,9 +916,7 @@ function schoolfilter(){
 			schoolsArr: schoolsArr
 		})
 				document.getElementById('schooloutput').innerHTML = html;
-		} else {
-			document.getElementById('schooloutput').innerHTML = "";
-		}
+		} 
 } 
 	trailingCommaKiller()
 
@@ -1014,7 +1010,7 @@ function titlefilter(){
 		})
 				document.getElementById('schooloutput').innerHTML += html;
 		} else {
-			document.getElementById('schooloutput').innerHTML = "";
+			document.getElementById('schooloutput').innerHTML += "";
 		}
 } }
 
