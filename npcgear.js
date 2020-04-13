@@ -63,6 +63,7 @@ var npcweapons=[
 				{name: "Defiled Axe", range:"1-2", damage:"10", deadliness:"7", qualities:"Durable, Razor-Edged, Unholy", type:"equipped", origin:"Monstrous Warrior Powerful Oni"},
 				{name: "Hellish Talons", range:"1-2", damage:"9", deadliness:"8", qualities:"Razor-Edged, Unholy", type:"natural", origin:"Warlord of Jigoku Powerful Oni"},
 				{name: "Bone Naginata", range:"2", damage:"6", deadliness:"7", qualities:"Durable, Razor-Edged, Unholy", type:"equipped", origin:"Hellish Sorcerer Powerful Oni"},
+				{name: "Corrupted Tetsubo", range:"1-2", damage:"8", deadliness:"3", qualities:"Durable, Unholy", type:"equipped", origin:"Savage Brute Lesser Oni"},
 				];
 var npcarmor=[
 				{armor:"Rags",phys:0,sup:0,qualities:"Mundane",type:"equipped", origin:"Humble Peasant"},
