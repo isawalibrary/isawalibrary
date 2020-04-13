@@ -731,7 +731,7 @@ background: var(--bglighter)}
   margin-bottom:  5px;
 }
 
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 560px) {
   body {
     width: 98%;
     overflow-x: hidden;
@@ -878,15 +878,17 @@ background: var(--bglighter)}
 
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 2){
+@media screen and (-webkit-min-device-pixel-ratio: 3){
     #skirmishbutton {
       display: none;
     }
     .titlebar button {
-    max-width: 10%;
+    max-width: 11%;
+    font-size: 1.8em;
   }
 
     #titlebar {
       width: 100%;
+
 }
 }
