@@ -37,7 +37,7 @@
 
 .l5r { font-family: 'L5R'; font-size: 1.2em; font-weight: normal;}
 
-.font2em {font-size: 2em;}
+.font2em { font-size: 2em;}
 
 .font1em {font-size: 1em;}
 
@@ -878,7 +878,7 @@ background: var(--bglighter)}
 
 }
 
-@media screen and (-webkit-min-device-pixel-ratio: 3){
+@media screen and (-webkit-min-device-pixel-ratio: 3) and (max-width: 800px){
     #skirmishbutton {
       display: none;
     }
@@ -889,9 +889,10 @@ background: var(--bglighter)}
     .titlebar button {
     width: 11%;
     font-size: 1.5em; 
-    vertical-align:   middle; ;
+    vertical-align:   middle;
     margin: auto;
     margin-left:10px;
+    text-align:   center;
   }
 
     #titlebar {
