@@ -729,13 +729,13 @@ background: var(--bglighter)}
 
 @media screen and (max-width: 600px) {
   body {
-    width: 99%;
+    width: 98%;
     overflow-x: hidden;
     font-size: 0.4em;
     margin: auto;
     background-position: 0px 50px;
     background-size: 450px;
-    padding-left: 0.5%;
+    padding-left: 1%;
   }
 
   body div {
