@@ -37,27 +37,35 @@ function makeNpcLibrary(){
 			break;
 
 		case "Ronin, Riffraff and Gaijin":
-			x = each.ronintype
+			var x = each.ronintype
 			break;
 
 		case "Animals":
 		case "Creatures":
 		case "Pregen":
 		case "Servants and Peasants":
-			x = "";
+		case "Oni Summoner":
+			var x = "";
 			break;
 	}
 
 		newDiv("div"+each.title,"menu","block");
 		divContents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
 		newButton('menu'+each.title,each.title+'--delete','inline mr5 mb5',"deletenpc("+"'"+each.title+"'"+")","x")
-		document.getElementById('menu'+each.title).innerHTML += each.fullname + 
-															' [' + each.clan +
-															'/' + each.school +
-															'] (' + each.archetype +" "+ x +" "+
-															'/' + each.template +
-															')' 
-															;
+		if (each.type == "Animals" || each.type == "Creatures" || each.type == "Pregen" || each.type == "Servants and Peasants" || each.type == "Oni Summoner" ){
+				document.getElementById('menu'+each.title).innerHTML += each.fullname + 									
+																	' (' + each.archetype +" "+ x +" "+
+																	'/' + each.template +
+																	')' 
+																	;
+		} else {
+				document.getElementById('menu'+each.title).innerHTML += each.fullname + 
+																	' [' + each.clan +
+																	'/' + each.school +
+																	'] (' + each.archetype +" "+ x +" "+
+																	'/' + each.template +
+																	')' 
+																	;}
 ;
 		newDiv("npc-"+each.title,"statblock","block hide");
 		document.getElementById("npc-"+each.title).innerHTML='<b>'+ each.fullname + 
@@ -1681,8 +1689,21 @@ function saveNPC (){
 			npc[nospaces].disadvantage.push(document.getElementById('npcdisadv'+s).value);
 		}
 		
+		if (thisnpc.type == "Oni Summoner"){
 
-		npc[nospaces].ability = document.getElementById("npcabilities").innerHTML;
+			div = document.getElementById("onipowers").children
+			select = document.getElementById("onipowers").children[0].childNodes[0]
+			npc[nospaces].ability = ""
+
+		for (var p = 0; p < document.getElementById("onipowers").children.length; p++){
+			if ( document.getElementById("onipowers").children[p].childNodes[0].value !== "Select Shadowlands Power" &&  document.getElementById("onipowers").children[p].childNodes[0].value !== "" && document.getElementById("onipowers").children[p].childNodes[0].value !== undefined){
+					npc[nospaces].ability += document.getElementById("onipowers").children[p].childNodes[0].value + ": ";
+					npc[nospaces].ability += document.getElementById("onipowers").children[p].childNodes[1].innerHTML +"<p>"}
+			}
+			
+		} else {
+			npc[nospaces].ability = document.getElementById("npcabilities").innerHTML;
+		}
 
 		npc[nospaces].techs = [];
 
@@ -1703,7 +1724,16 @@ function saveNPC (){
 					npc[nospaces].techs.push(tech)
 				}
 			}
-		}
+		}}
+
+		if (npc[nospaces].type == "Oni Summoner"){
+
+				for (var p = 0; p < document.getElementById("npctechniquecontainer").children.length; p++){
+					if ( document.getElementById("npctechniquecontainer").children[p].childNodes[0].value !== "Select Maho" &&  document.getElementById("npctechniquecontainer").children[p].childNodes[0].value !== "" && document.getElementById("npctechniquecontainer").children[p].childNodes[0].value !== undefined){
+							npc[nospaces].techs.push(document.getElementById("npctechniquecontainer").children[p].childNodes[0].value)
+							}
+					}	
+		} 
 
 		if (document.getElementById('npctechselector') !== null){
 			var childDivs = document.getElementById('npctechselector').getElementsByTagName('select');
@@ -1714,7 +1744,7 @@ function saveNPC (){
 				 if (x !== "Select Techniques"){
 				 npc[nospaces].techs.push(x)
 		}}
-		}}
+		}
 
 		npc[nospaces].notes = document.getElementById('npcnotesinput').value
 

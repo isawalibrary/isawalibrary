@@ -118,8 +118,8 @@ var npcarmor=[
 var onipowers = {
 	accursedregeneration: {
 		name: "Accursed Regeneration",
-		rank1: "First Rank:  At the end of each round, if the oni has not suffered damage from a Sacred source this round, the oni removes the Lightly Injured condition or reduces the Severely Injured condition to Lightly Injured.",
-		rank2: "Subsequent Ranks: At the end of each round, if the oni has not suffered damage from a Sacred source this round, the oni also reduces its fatigue by 2 per each subsequent rank of Accursed Regeneration.",
+		rank1: "(First Rank)  At the end of each round, if the oni has not suffered damage from a Sacred source this round, the oni removes the Lightly Injured condition or reduces the Severely Injured condition to Lightly Injured.",
+		rank2: "(Subsequent Ranks) At the end of each round, if the oni has not suffered damage from a Sacred source this round, the oni also reduces its fatigue by 2 per each subsequent rank of Accursed Regeneration.",
 		effect: function(){
 			thisnpc.conflictcombat = thisnpc.conflictcombat +2;
 			updateSpans("conflictcombat")
@@ -130,8 +130,8 @@ var onipowers = {
 	},
 	bonycarapace:{
 		name: "Bony Carapace",
-		rank1:"First Rank: The oni is covered in thick hide, bony plates, or some other form of natural armor beyond even the substantial protection typical of its kind.  This increases the oni's physical resistance by 2 and its supernatural resistance by 1.",
-		rank2:"Subsequent Ranks: Increases the oni's physical resistance by 1.",
+		rank1:"(First Rank) The oni is covered in thick hide, bony plates, or some other form of natural armor beyond even the substantial protection typical of its kind.  This increases the oni's physical resistance by 2 and its supernatural resistance by 1.",
+		rank2:"(Subsequent Ranks) Increases the oni's physical resistance by 1.",
 		effect: function(){
 				thisnpc.conflictcombat = thisnpc.conflictcombat +2;
 				updateSpans("conflictcombat")
@@ -151,8 +151,8 @@ var onipowers = {
 	},
 	captivatingvoice:{
 		name: "Captivating Voice",
-		rank1: "First Rank: Some oni speak with honeyed voices at odds with their hideous appearance, giving them the ability to cajole and coerce even stalwart samurai with their words.  As a Scheme action, the oni may attempt to influence the mind of a listener by making a Social (Fire) check with a TN equal to the target's vigilance. If the oni succeeds, the target suffers 1 strife, plus 1 strife for every 2 bonus successes. If the oni is aware of the target's ninjo, it adds 4 bonus successes to the check if it succeeds. A character who becomes compromised in this manner must spend 1 Void point or immediately unmask.",
-		rank2: "Subsequent Ranks: Reduce the TN of the check by 1 (to a minimum of 0).",
+		rank1: "(First Rank) Some oni speak with honeyed voices at odds with their hideous appearance, giving them the ability to cajole and coerce even stalwart samurai with their words.  As a Scheme action, the oni may attempt to influence the mind of a listener by making a Social (Fire) check with a TN equal to the target's vigilance. If the oni succeeds, the target suffers 1 strife, plus 1 strife for every 2 bonus successes. If the oni is aware of the target's ninjo, it adds 4 bonus successes to the check if it succeeds. A character who becomes compromised in this manner must spend 1 Void point or immediately unmask.",
+		rank2: "(Subsequent Ranks) Reduce the TN of the check by 1 (to a minimum of 0).",
 		effect: function(){
 			thisnpc.conflictintrigue = thisnpc.conflictintrigue +2;
 			updateSpans("conflictintrigue")
@@ -163,8 +163,8 @@ var onipowers = {
 	},
 	darkpuppet:{
 		name:"Dark Puppet",
-		rank1:"First Rank: By some vile art, the oni is able to act as if it is many in number. Splitting their form in this manner usually weakens them, but some can bend a suitable substitute to their will, striking through their shadow or another sinister proxy.  Once per scene, the oni may perform a second action at Initiative 0.",
-		rank2:"Subsequent Ranks: The oni may use this power one addition time per scene. It can only use it once per round.",
+		rank1:"(First Rank) By some vile art, the oni is able to act as if it is many in number. Splitting their form in this manner usually weakens them, but some can bend a suitable substitute to their will, striking through their shadow or another sinister proxy.  Once per scene, the oni may perform a second action at Initiative 0.",
+		rank2:"(Subsequent Ranks) The oni may use this power one addition time per scene. It can only use it once per round.",
 		effect:function(){
 			thisnpc.conflictintrigue = thisnpc.conflictintrigue +2;
 			updateSpans("conflictintrigue")
@@ -177,7 +177,7 @@ var onipowers = {
 	},
 	horrorofjigoku:{
 		name:"Horror of Jigoku",
-		rank1:"First Rank: After any character performs a successful Attack action that deals 0 damage to the oni (after resistance is applied), that character suffers 3 strife.",
+		rank1:"(First Rank) After any character performs a successful Attack action that deals 0 damage to the oni (after resistance is applied), that character suffers 3 strife.",
 		rank2:"",
 		effect:function(){
 			thisnpc.conflictcombat = thisnpc.conflictcombat +2;
@@ -188,8 +188,8 @@ var onipowers = {
 	},
 	dreadbellow:{
 		name:"Dread Bellow",
-		rank1:"First Rank: Once per scene as a Scheme action, the oni may roar, feeding on the primal terror it instills. Each other character at range 0-4 must resist with a TN 4 Meditation check (Earth or Fire 2, Air 5) or suffer the Afflicted condition and stumble back 1 range band from the oni. For each character who fails, the oni removes 2 fatigue.",
-		rank2:"Subsequent Ranks: The oni may use this power one addition time per scene. It can only use it once per round.",
+		rank1:"(First Rank) Once per scene as a Scheme action, the oni may roar, feeding on the primal terror it instills. Each other character at range 0-4 must resist with a TN 4 Meditation check (Earth or Fire 2, Air 5) or suffer the Afflicted condition and stumble back 1 range band from the oni. For each character who fails, the oni removes 2 fatigue.",
+		rank2:"(Subsequent Ranks) The oni may use this power one addition time per scene. It can only use it once per round.",
 		effect:function(){
 			thisnpc.conflictcombat = thisnpc.conflictcombat +2;
 			updateSpans("conflictcombat")
@@ -224,8 +224,8 @@ var onipowers = {
 	},
 	obsidianjaws:{
 		name:"Obsidian Jaws",
-		rank1:"First Rank: The hideous visages of some oni are further marred by massive jaws filled with teeth of obsidian shards.  The oni gains the following unarmed attack profile: Obsidian Bite (Range 0, Damage 4, Deadliness 8, Razor-Edged, Unholy).",
-		rank2:"Subsequent Ranks: After the oni inflicts a critical strike using this profile, it removes 2 fatigue per additional rank purchased.",
+		rank1:"(First Rank) The hideous visages of some oni are further marred by massive jaws filled with teeth of obsidian shards.  The oni gains the following unarmed attack profile: Obsidian Bite (Range 0, Damage 4, Deadliness 8, Razor-Edged, Unholy).",
+		rank2:"(Subsequent Ranks) After the oni inflicts a critical strike using this profile, it removes 2 fatigue per additional rank purchased.",
 		effect:function(){
 			thisnpc.conflictcombat = thisnpc.conflictcombat +4;
 			updateSpans("conflictcombat")
@@ -246,8 +246,8 @@ var onipowers = {
 	},
 	scentofweakness:{
 		name:"Scent of Weakness",
-		rank1:"First Rank: The secret desires of a samurai's heart are as playthings to an oni, who may be able to see hidden weakness as if written in burning letters on the samurai's face or to smell the wants and needs the samurai keeps hidden as clearly as wafting perfume.  As a Scheme Action, the oni may make a Social (Air) check targeting one character in the scene with a TN equal to the target's vigilance. Success reveals the target's ninjo to the oni, including contextual details. For example, an oni using this power against a character with a ninjo of secret love would learn not only about this hidden desire, but also whom the character longs for, what their love looks like, and similar information as the GM deems appropriate. This does not in and of itself grant the oni power over the target, but may help the oni in other ways, such as empowering the Captivating Voice power (see page 137) or enabling it to further a secret scheme. Characters who have their secrets exposed to the oni in this way have no way of knowing the extent of what it learned.",
-		rank2:"Subsequent Ranks: Reduce the TN of the check by 1 (to a minimum of 0).",
+		rank1:"(First Rank) The secret desires of a samurai's heart are as playthings to an oni, who may be able to see hidden weakness as if written in burning letters on the samurai's face or to smell the wants and needs the samurai keeps hidden as clearly as wafting perfume.  As a Scheme Action, the oni may make a Social (Air) check targeting one character in the scene with a TN equal to the target's vigilance. Success reveals the target's ninjo to the oni, including contextual details. For example, an oni using this power against a character with a ninjo of secret love would learn not only about this hidden desire, but also whom the character longs for, what their love looks like, and similar information as the GM deems appropriate. This does not in and of itself grant the oni power over the target, but may help the oni in other ways, such as empowering the Captivating Voice power (see page 137) or enabling it to further a secret scheme. Characters who have their secrets exposed to the oni in this way have no way of knowing the extent of what it learned.",
+		rank2:"(Subsequent Ranks) Reduce the TN of the check by 1 (to a minimum of 0).",
 		effect:function(){
 			thisnpc.conflictintrigue = thisnpc.conflictintrigue +3;
 			updateSpans("conflictintrigue")			
@@ -259,8 +259,8 @@ var onipowers = {
 	},
 	serpentinespeed:{
 		name: "Serpentine Speed",
-		rank1:"First Rank: Increases the oni's focus by 2 and decrease the TN of Fitness checks it makes by 1 to a minimum of 1.",
-		rank2:"Subsequent Ranks: Increase the oni's focus by 2.",
+		rank1:"(First Rank) Increases the oni's focus by 2 and decrease the TN of Fitness checks it makes by 1 to a minimum of 1.",
+		rank2:"(Subsequent Ranks) Increase the oni's focus by 2.",
 		effect:function(){
 			thisnpc.conflictcombat = thisnpc.conflictcombat +2;
 			updateSpans("conflictcombat")
@@ -275,8 +275,8 @@ var onipowers = {
 	},
 	shadowlandsvenom:{
 		name:"Shadowlands Venom",
-		rank1:"First Rank: The oni's weapons or attacks carry the threat of deadly venom, smeared on a weapon or injected by its claws or bite.  After the oni inflicts the Bleeding condition on a target, that target also suffers the Lightly Wounded condition for one ring of the oni's choice.",
-		rank2:"Subsequent Ranks: Increase the TN of checks to resist critical strikes inflicted by this oni by 1.",
+		rank1:"(First Rank) The oni's weapons or attacks carry the threat of deadly venom, smeared on a weapon or injected by its claws or bite.  After the oni inflicts the Bleeding condition on a target, that target also suffers the Lightly Wounded condition for one ring of the oni's choice.",
+		rank2:"(Subsequent Ranks) Increase the TN of checks to resist critical strikes inflicted by this oni by 1.",
 		effect:function(){
 			thisnpc.conflictcombat = thisnpc.conflictcombat +4;
 			updateSpans("conflictcombat")
@@ -288,7 +288,7 @@ var onipowers = {
 	},
 	stolenname:{
 		name: "Stolen Name",
-		rank1: "First Rank: An oni that was summoned by a maho-tsukai and given a name (or stole a name) gains tremendous power. Should the GM decide to have an oni possess a name, increase each of its rings by 1. The oni may also purchase up to two additional Shadowlands powers.",
+		rank1: "(First Rank) An oni that was summoned by a maho-tsukai and given a name (or stole a name) gains tremendous power. Should the GM decide to have an oni possess a name, increase each of its rings by 1. The oni may also purchase up to two additional Shadowlands powers.",
 		rank2:"",
 		effect:function(){
 			removeFromOniArray("Stolen Name")	
@@ -319,8 +319,8 @@ var onipowers = {
 	},
 	taintedsorcery:{
 		name:"Tainted Sorcery",
-		rank1:"First Rank: Some of the most fearsome oni wield powerful Tainted sorcery akin to maho, cowing the kansen into submission or drawing on the power of Jigoku instead of enticing the corrupted spirits with blood offerings.  An oni with this power gains up to three maho techniques, chosen from Core 224-225 and from Shadowlands 118-121. When using these powers, the oni never suffers spiritual backlash, nor does it take damage for channeling the techniques. For the purposes of using maho, all five of the oni's rings count as having the Shadowlands Taint disadvantage attached.",
-		rank2:"Subsequent Ranks: The oni may take 2 additional maho techniques.",
+		rank1:"(First Rank) Some of the most fearsome oni wield powerful Tainted sorcery akin to maho, cowing the kansen into submission or drawing on the power of Jigoku instead of enticing the corrupted spirits with blood offerings.  An oni with this power gains up to three maho techniques, chosen from Core 224-225 and from Shadowlands 118-121. When using these powers, the oni never suffers spiritual backlash, nor does it take damage for channeling the techniques. For the purposes of using maho, all five of the oni's rings count as having the Shadowlands Taint disadvantage attached.",
+		rank2:"(Subsequent Ranks) The oni may take 2 additional maho techniques.",
 		effect:function(){
 			thisnpc.conflictintrigue = thisnpc.conflictintrigue +5;
 			updateSpans("conflictintrigue")

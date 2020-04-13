@@ -644,7 +644,7 @@ color: white;
 
 .w650 {width: 650px;}
 
-.w660 {width: 660px;}
+.w660 {width: 690px;}
 
 .w700 {width: 700px;}
 
@@ -726,6 +726,10 @@ background: var(--bglighter)}
     color: var(--highlight);
     text-shadow: 0 0 3px var(--highlight1), 0 0 5px var(--highlight2);
   }
+
+#editcharacter select, #editcharacter input {
+  margin-bottom:  5px;
+}
 
 @media screen and (max-width: 600px) {
   body {
@@ -879,7 +883,7 @@ background: var(--bglighter)}
       display: none;
     }
     .titlebar button {
-    max-width: 14%;
+    max-width: 12%;
   }
 
     #titlebar {
