@@ -729,6 +729,7 @@ background: var(--bglighter)}
     margin: auto;
     background-position: 0px 50px;
     background-size: 450px;
+    background-color: white;
   }
 
   body div {
