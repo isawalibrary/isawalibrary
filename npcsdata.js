@@ -910,7 +910,7 @@ var archetypes =[
 					"Horrifying Visage (Water) [Social; Interpersonal]"
 					],
 			weapon:["Crushing Claws"],
-			armor:["Demonic Hide"],
+			armor:["Hellish Plate"],
 			qualities:"Of all the horrors to stalk forth from the Shadowlands, the demonic creatures called oni are by far the most powerful and dangerous. With twisted horns, razor-sharp teeth, and enormous talons on their hands and feet, these bestial creatures resemble the very Hells in which they dwell. Fortunately, they are only able to enter Ningen-do of their own volition through the Festering Pit. Unfortunately, there is another way for oni to come to Ningen-do that is far more insidious: invitation by misguided or evil mortals. Only when they are slain do their souls return to Meido, although the powerful ones are able to make their way back to Jigoku itself to be reborn. An oni is an Otherworldly, Tainted being of silhouette 4.",
 			abilities:[
 						"Dread Bellow: Once per scene as a Scheme action, the oni may roar, feeding on the primal terror it instills. Each other character at range 0-4 must resist with a TN 4 Meditation check (Earth 2, Air 5) or suffer the Afflicted condition and stumble back 1 range band from the oni. For each character who fails, the oni removes 2 fatigue.",
@@ -2469,8 +2469,8 @@ var archetypes =[
 			abilities:["Tiny living water spirit: Additionally, whenever a character deals damage to the kami, that character suffers half as much strife (rounded down).", "Shape of the Water Serpent: As an Attack action check, the tiny manifest water kami may move to a target within range 0–2. The target must attempt to resist with a TN 4 Fitness check (Water 6, Earth 2). If they fail, the water kami wraps itself around their head and the target begins suffocating (see page 269 of the core rulebook). The target may attempt the resistance check again at the end of each of their turns."],
 			source:"Path of Waves p251",
 			},{
-				fullname:"Vile Trickster Lesser Oni",
-				title:"viletricksterlesseroni",
+				fullname:"Lesser Oni: Vile Trickster",
+				title:"lesseroniviletrickster",
 				type:"Oni Summoner",
 				conflictcombat:8,
 				conflictintrigue:4,
@@ -2490,8 +2490,8 @@ var archetypes =[
 
 				powers:2,
 				},{
-				fullname:"Savage Brute Lesser Oni",
-				title:"savagebrutelesseroni",
+				fullname:"Lesser Oni: Savage Brute",
+				title:"lesseronisavagebrute",
 				type:"Oni Summoner",
 				conflictcombat:3,
 				conflictintrigue:10,
@@ -2511,8 +2511,8 @@ var archetypes =[
 
 				powers:2,
 				},{
-				fullname:"Hellish Sorcerer Powerful Oni",
-				title:"hellishsorcererpowerfuloni",
+				fullname:"Powerful Oni: Hellish Sorcerer",
+				title:"powerfulonihellishsorcerer",
 				type:"Oni Summoner",
 				conflictcombat:8,
 				conflictintrigue:10,
@@ -2532,8 +2532,8 @@ var archetypes =[
 
 				powers: 3,
 				},{
-				fullname:"Monstrous Warrior Powerful Oni",
-				title:"monstrouswarriorpowerfuloni",
+				fullname:"Powerful Oni: Monstrous Warrior",
+				title:"powerfulonimonstrouswarrior",
 				type:"Oni Summoner",
 				conflictcombat:4,
 				conflictintrigue:12,
@@ -2553,8 +2553,8 @@ var archetypes =[
 
 				powers: 4,
 				},{
-				fullname:"Warlord of Jigoku Powerful Oni",
-				title:"warlordofjigokupowerfuloni",
+				fullname:"Powerful Oni: Warlord of Jigoku",
+				title:"powerfuloniwarlordofjigoku",
 				type:"Oni Summoner",
 				conflictcombat:10,
 				conflictintrigue:14,

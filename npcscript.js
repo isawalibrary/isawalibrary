@@ -249,7 +249,7 @@ function buildNpcStatsDiv(){  //makes npcbuilder form
 	newDiv("npcweapon0left","npcstatwrap","block pb5 pt5 npcbuilderleft")
 	divContents("npcweapon0left","<b>Weapon</b>:")
 
-	newDiv("npcweapons","npcstatwrap","block pb5 pt5 npcbuilderright")
+	newDiv("npcweapons","npcstatwrap","block pt5 npcbuilderright")
 	newDiv("npcweaponwrap0","npcweapons","block pb5 npcbuilderright")
 	newSelect("npcweaponwrap0","npcweapon0"," inline","selectNPCWeapon('0');")	
 	newDiv("npcweapon0stats","npcweaponwrap0","inline ml10")
@@ -1024,7 +1024,7 @@ function fillStats(){
 
 		document.getElementById("npcadvright").innerHTML = ""
 		for (var i = 0; i < thisnpc.advArray.length && i < 2; i++){
-			newSelect("npcadvright","npcadv"+i,"mb10 inline w600","")
+			newSelect("npcadvright","npcadv"+i,"inline w600","")
 			fillSelectDropdown("npcadv"+i,thisnpc.advArray)
 			setSelectedIndex("npcadv"+i,i)
 		}		 //loads up up to 2 advs per creature
@@ -1044,7 +1044,7 @@ function fillStats(){
 
 		document.getElementById("npcweapons").innerHTML = ""
 		for (var i = 0; i < thisnpc.selectedArchetype.weapon.length && i < 2; i++){
-			newDiv("npcweaponwrap"+i,"npcweapons","block mb10 npcbuilderright")
+			newDiv("npcweaponwrap"+i,"npcweapons","block mb5 npcbuilderright")
 			newSelect("npcweaponwrap"+i,"npcweapon"+i,"inline","selectNPCWeapon("+i+")")
 			newDiv("npcweapon"+i+"stats","npcweaponwrap"+i,"inline ml10")
 			fillSelectDropdown("npcweapon"+i,thisnpc.weaponArray)
@@ -2332,6 +2332,10 @@ function oniMaker(){
 	mahos = thisnpc.selectedmahos
 	thisnpc.selectedmahos = [];
 
+	if (mahos == undefined || mahos.length == 0){
+		document.getElementById("npctechniquecontainer").innerHTML = "";
+	}
+
 	fillStats();
 
 	armor = thisnpc.armorArray[0]
@@ -2361,7 +2365,7 @@ function oniMaker(){
 		onipowersarray.push(onipowers[each].name)
 	}
 
-	if (document.getElementById("archetype").value == "Savage Brute Lesser Oni"){
+	if (document.getElementById("archetype").value == "Lesser Oni; Savage Brute"){
 		for (var i = onipowersarray.length-1; i >= 0; i--){
 			if (onipowersarray[i] == "Captivating Voice" || onipowersarray[i] == "Human Mask"|| onipowersarray[i] == "Illusion Master" || onipowersarray[i] == "Scent of Weakness" ){
 				onipowersarray.splice(i,1);
@@ -2384,7 +2388,7 @@ function oniMaker(){
 		newDiv("onipowerinfo"+i,"onipowerwrap"+i,"npcright mb5")
 	}
 
-	if (document.getElementById("archetype").value == "Hellish Sorcerer Powerful Oni"){
+	if (document.getElementById("archetype").value == "Powerful Oni: Hellish Sorcerer"){
 		setSelectedValue(document.getElementById("onipowerselect0"),"Tainted Sorcery")
 		selectOniPower(0);
 	}

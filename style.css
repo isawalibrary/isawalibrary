@@ -721,7 +721,7 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-@media screen and (max-width: 600px), @media screen and (-webkit-min-device-pixel-ratio: 2) {
+@media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1) {
   body {
     width: 99%;
     overflow-x: hidden;
