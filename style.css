@@ -878,4 +878,8 @@ background: var(--bglighter)}
     #skirmishbutton {
       display: none;
     }
+
+    #titlebar {
+      width: 100%;
+}
 }
