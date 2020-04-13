@@ -883,7 +883,7 @@ background: var(--bglighter)}
       display: none;
     }
     .titlebar button {
-    max-width: 12%;
+    max-width: 10%;
   }
 
     #titlebar {
