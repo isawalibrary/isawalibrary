@@ -721,7 +721,7 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-@media screen and (max-width: 600px) and (-webkit-min-device-pixel-ratio: 1) {
+@media screen and (max-width: 600px) {
   body {
     width: 99%;
     overflow-x: hidden;
@@ -729,7 +729,6 @@ background: var(--bglighter)}
     margin: auto;
     background-position: 0px 50px;
     background-size: 450px;
-    background-color: white;
   }
 
   body div {
@@ -871,4 +870,10 @@ background: var(--bglighter)}
     width: 50%;
   }
 
+}
+
+@media screen and (-webkit-min-device-pixel-ratio: 2){
+  body {
+  
+  }
 }
