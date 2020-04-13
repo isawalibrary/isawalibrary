@@ -249,9 +249,10 @@ p {
 
 /* MAIN CONTENT */
 
-#techniqueoutput, #schooloutput, #titleoutput {
+#techniqueoutput, #schooloutput {
   background-color: var(--menubar);
   padding: 5px 10px 5px 10px;
+  margin-top: 10px;
   color: black;
 }
 
@@ -764,6 +765,9 @@ background: var(--bglighter)}
   min-height: 30px;
 
 }
+  #techniquesearchinput, #schoolsearchinput {
+    width: 200px
+  }
 
 
   #library div, #npcstatwrap, #npcmenu {

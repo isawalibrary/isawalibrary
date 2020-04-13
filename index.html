@@ -69,7 +69,8 @@
             <div id="schoolcontainer" class="hide containerhidden">
                 <div id="schoolwrapper" class="w700 block marginauto">
                     <form onsubmit="return false" id="schoolsearch" class="block"><span class="w100 inlineblock">Search Schools:</span>
-                        <input id="schoolsearchinput" class="w200" oninput="schoolfilter();titlefilter();" type="text">
+                        <input id="schoolsearchinput" class="w200 inlineblock" oninput="schoolfilter();titlefilter();" type="text">
+                        <button id="schoolsearchbutton" class="inlineblock ml10" onclick="clearInput('schoolsearchinput');">x</button>
                     </form>
                     <div id="schooloutput" class="block"></div>
                 </div>

@@ -256,6 +256,10 @@ function clearSelect(selectId){
 	document.getElementById(selectId).options.length = 0;
 }
 
+function clearInput(selectId){
+	document.getElementById(selectId).value = "";
+}
+
 function newButton(parentName,buttonId,buttonClasses,onClickFunction,buttonText){
 	if (document.getElementById(buttonId) == null){
 		var newButton = document.createElement('button');

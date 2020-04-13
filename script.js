@@ -674,6 +674,7 @@ function makeTechniques(){
 	newDiv("techniquecontainerx","techniquecontainer","w700 block marginauto");
 	newTextInput("techniquecontainerx","techniquesearch","inlineblock","<span class='w100 inlineblock'>Search Techniques: </span>","techniquesearchinput","w200 mr10")
 	document.getElementById("techniquesearchinput").setAttribute("oninput","techniquefilter()")
+	newButton("techniquecontainerx","techniquesearchbutton","inlineblock","clearInput('techniquesearchinput')","x")
 
 	newDiv("techniquecontainery","techniquecontainerx","inlineblock");
 
