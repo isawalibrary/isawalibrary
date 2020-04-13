@@ -951,6 +951,12 @@ function goToTech(techName){
 		highlight("techsbutton","techniquecontainer")
 	} 
 
+	//reset the dropdown filters
+	setSelectedText(document.getElementById("techniquesearchtype"),"Any")
+	setSelectedText(document.getElementById("techniquesearchring"),"Select")
+	setSelectedText(document.getElementById("techniquesearchrank1"),"=")
+	setSelectedText(document.getElementById("techniquesearchrank"),"Any")
+
 		document.getElementById("techniquesearchinput").value=techName;
 		techniquefilter(techName)
 		hideShow(techName+"-effect")
