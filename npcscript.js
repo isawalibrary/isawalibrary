@@ -2189,12 +2189,12 @@ function editNewWeapon(nom, m){
 function editNewTech(nom, m){
 				newDiv("techwrap"+m,"edittechs","w650");
 
-				newSelect("techwrap"+m,"edittechselect"+m,"ml10","showSelectedTechnique('edittechselect"+m+"','edittechinfo"+m+"')");
+				newSelect("techwrap"+m,"edittechselect"+m,"ml10 w300","showSelectedTechnique('edittechselect"+m+"','edittechinfo"+m+"')");
 				newButton("techwrap"+m,"deleteedittech"+m,"inlineblock floatright ml10","deleteEditElement('techwrap','"+m+"')","-")
-				newDiv("edittechinfo"+m,"techwrap"+m,"ml10 mb10 font15em");
+				
 
-				var techniquestext = [];
-				var techniquesvalues = [];
+				var techniquestext = ["Select Technique"];
+				var techniquesvalues = ["Select Technique"];
 				var techniquetypes = [];
 				
 				for (every in techniquelist){
@@ -2217,12 +2217,110 @@ function editNewTech(nom, m){
 										}
 									}
 								}
-					}
-				
+					}			
 		}
 
+
 		fillSelectDropdownValues("edittechselect"+m,techniquesvalues,techniquestext)
+
+		addToDiv("techwrap"+m,"Type: ")
+		newSelect("techwrap"+m,"edittechniquesearchtype"+m,"inlineblock ml5 mr5","edittechniquefilter("+m+")")
+		var options = ["Any","Invocation","Kata","Kiho","Maho","Ninjutsu","Ritual","Shuji"]
+		var values = ["any","invocation","kata","kiho","maho","ninjutsu","ritual","shuji"]
+		fillSelectDropdownValues("edittechniquesearchtype"+m,values,options)
+
+		addToDiv("techwrap"+m,"Ring: ")
+		newSelect("techwrap"+m,"edittechniquesearchring"+m,"inlineblock mr5","edittechniquefilter("+m+")")
+		options = ["Select","Air","Earth","Fire","Water","Void"]
+		values = ["default","air","earth","fire","water","void"]
+		fillSelectDropdownValues("edittechniquesearchring"+m,values,options)
+
+		addToDiv("techwrap"+m,"Rank: ")
+		newSelect("techwrap"+m,"edittechniquesearchrank1"+m,"inlineblock mr5","edittechniquefilter("+m+")")
+		options = ["=","=<"]
+		values = ["1","2"]
+		fillSelectDropdownValues("edittechniquesearchrank1"+m,values,options)
+
+		newSelect("techwrap"+m,"edittechniquesearchrank"+m,"inlineblock","edittechniquefilter("+m+")")
+		options = ["Any",1,2,3,4,5]
+		values = ["any",1,2,3,4,5]
+		fillSelectDropdownValues("edittechniquesearchrank"+m,values,options)	
+
+		newDiv("edittechinfo"+m,"techwrap"+m,"ml10 mb10 font15em");
 }
+
+function edittechniquefilter(num){
+	var techtype = document.getElementById("edittechniquesearchtype"+num).value;
+	var techring = document.getElementById("edittechniquesearchring"+num).value;
+	var techrankx = document.getElementById("edittechniquesearchrank1"+num).value;
+	var techrank = document.getElementById("edittechniquesearchrank"+num).value;
+
+	var select = "edittechselect"+num;
+
+	var techvalue = [];
+	var techtext = []
+	var techlist = techniquelist
+
+	if (techtype !== false && techtype !== "any")					{
+			techlist = techlist.filter(function(tech)				{
+				if (tech.type.toLowerCase() == techtype){
+					return true;
+				};
+
+				return false;
+			});
+		}
+
+		if (techring !== false && techring !== "default")					{
+			techlist = techlist.filter(function(tech)				{
+				if (tech.ring.toLowerCase() == techring){
+					return true;
+				}
+				if (tech.ring.toLowerCase().includes(techring)){
+					return true;
+				};
+				return false;
+			});
+		}
+
+		techrank = Number(techrank);
+
+	if (isNaN(techrank)){techlist=techlist}
+		else {
+
+		if (techrankx == "1")					{
+			techlist = techlist.filter(function(tech)				{
+				tech.rank = Number(tech.rank);
+				if (tech.rank == techrank){
+					return true;
+				}
+				return false;
+			});
+			} else if (techrankx == "2")									{
+				techlist = techlist.filter(function(tech){
+					tech.rank = Number(tech.rank);
+					if (tech.rank <= techrank){
+						return true;
+					}
+					return false;
+				});
+			}
+		} 
+			
+		techvalue = techlist
+
+		for (var i = 0; i < techniquelist.length; i++){
+			for (var j = 0; j < techlist.length; j++){
+				if (techniquelist[i].title == techlist[j].title){
+					techtext.push(techniquelist[i].title+ " ("+techniquelist[i].ring+") ["+techniquelist[i].type+" "+techniquelist[i].rank+"]")
+				}
+			}}
+			
+			addValuesToSelect(select,techtext,techvalue)
+
+	}
+
+
 
 function saveEditNpc(nom){
 

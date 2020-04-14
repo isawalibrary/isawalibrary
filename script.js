@@ -674,7 +674,7 @@ function makeTechniques(){
 	newDiv("techniquecontainerx","techniquecontainer","w700 block marginauto");
 	newTextInput("techniquecontainerx","techniquesearch","inlineblock","<span class='w100 inlineblock'>Search Techniques: </span>","techniquesearchinput","w200 mr10")
 	document.getElementById("techniquesearchinput").setAttribute("oninput","techniquefilter()")
-	newButton("techniquecontainerx","techniquesearchbutton","inlineblock","clearInput('techniquesearchinput')","x")
+	newButton("techniquecontainerx","techniquesearchbutton","inlineblock mr10","clearInput('techniquesearchinput')","x")
 
 	newDiv("techniquecontainery","techniquecontainerx","inlineblock");
 
@@ -787,14 +787,14 @@ function techniquefilter() {
 			});
 		};
 
-			//sorts schools so if the search term is part of the name, those schools are first in thelist
+			//sorts techs so if the search term is part of the name, those techs are first in the list
 			techlist = techlist.sort(function(tech) {
 				if (tech.title.toLowerCase().includes(searchString)==true){
 					return -1;
 				} else if (tech.title.toLowerCase().includes(searchString)!==true){
 					return 1;
 				}
-			})
+			}) 
 
 		let html = techniqueTemplateFunction({
 			techlist: techlist
