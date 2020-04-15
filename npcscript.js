@@ -416,14 +416,17 @@ function selectType(){
 
 	if (type == "Animals"){
 		show("npcarchetype");
+		hide("npcrerollbutton");
 	}
 
 	if (type == "Creatures"){
 		show("npcarchetype");
+		hide("npcrerollbutton");
 	}
 
 	if (type == "Oni Summoner"){
 		show("npcarchetype");
+		hide("npcrerollbutton");
 	}
 
 	if (type == "Clan Samurai"){
@@ -1660,24 +1663,30 @@ function saveNPC (){
 			}
 		}
 		
-		npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
-
+		if (npc[nospaces].type == "Oni Summoner"){
+			npc[nospaces].armorphys = thisnpc.physres;
+			npc[nospaces].armorsup = thisnpc.supres;
+			npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
 		
-		for(var i=0; i < tabledata[9].children.length; i++){
-			if (tabledata[9].children[i].armor == npc[nospaces].armor){
-				var selectedArmor = tabledata[9].children[i]
-
-				npc[nospaces].armorphys = selectedArmor.phys
-				npc[nospaces].armorsup = selectedArmor.sup
-		} }
-
-		for (var i=0; npcarmor.length > i; i++){
-			if ( npcarmor[i].armor == npc[nospaces].armor){
-				var selectedArmor = npcarmor[i];
-			
-				npc[nospaces].armorphys = selectedArmor.phys
-				npc[nospaces].armorsup = selectedArmor.sup
-		} }
+		} else {
+				npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
+		
+				
+				for(var i=0; i < tabledata[9].children.length; i++){
+					if (tabledata[9].children[i].armor == npc[nospaces].armor){
+						var selectedArmor = tabledata[9].children[i]
+		
+						npc[nospaces].armorphys = selectedArmor.phys
+						npc[nospaces].armorsup = selectedArmor.sup
+				} }
+		
+				for (var i=0; npcarmor.length > i; i++){
+					if ( npcarmor[i].armor == npc[nospaces].armor){
+						var selectedArmor = npcarmor[i];
+					
+						npc[nospaces].armorphys = selectedArmor.phys
+						npc[nospaces].armorsup = selectedArmor.sup
+				} }}
 
 		npc[nospaces].advantage = [];
 		for (var s = 0; s < document.getElementById('npcadvright').children.length; s ++){
@@ -2395,7 +2404,7 @@ function saveEditNpc(nom){
 			wrapId = "editweaponwrap"+i;
 
 			if (document.getElementById("wrapId") !== null || document.getElementById("wrapId") !== undefined){
-				selectId = document.getElementById("editselectweapon"+i)
+				selectId = children[i].children[1]
 				if (selectId !== null){
 				nom.weapon.push(selectId.value)
 			}
@@ -2429,11 +2438,11 @@ function saveEditNpc(nom){
 	var childDivs = document.getElementById("edittechs").children;
 
 		for( i=0; i< childDivs.length; i++ ){
-		 	var childDiv = childDivs[i];
-		 	divname = 'edittechselect'+i;
-		 	if (document.getElementById(divname) !== null){
-		 	nom.techs.push(document.getElementById(divname).options[document.getElementById(divname).selectedIndex].value);
-			}}
+			var childDiv = childDivs[i];
+			var tech = childDivs[i].children[0].value
+			nom.techs.push(tech)
+
+		}
 	nom.notes = document.getElementById("editinput31").value
 
 	document.getElementById("editcharacter").innerHTML = "";
