@@ -96,7 +96,17 @@ children:[
 	{Severity:"14-15", Description:"Swift Death: The character lives just long enough to realize their demise.", Mechanical:"The character suffers the Severely Wounded condition for the ring they used for their check to resist, as well as the Bleeding and Dying (1 round) conditions."}, 
 	{Severity:"16+", Description:"Instant Death: The character dies without even a last word.", Mechanical:"The character dies immediately."}
 	]},
-
+	{
+title:"Unspecified Deadliness",
+ref:"UnspecifiedDeadliness",
+children:[
+	{source:"Source", deadliness:"Deadliness (Core p270)"}, 
+	{source:"Invocations and Maho", deadliness:"Deadliness equal to the value of the ring used for the Attack action check plus kept <span class='l5r'>T</span> symbols on that check.}, 
+	{source:"Kiho", deadliness:"8"} ,
+	{source:"Extreme Temperatures", deadliness:"5, but each repeated exposure increases by +2."} ,
+	{source:"Falls", deadliness:"The damage of a fall has a deadliness of 7.  Very long falls also inflict critical strikes directly."}, 
+	{source:"Sufficiently Heavy Objects", deadliness:"Deadliness equal to three times the object's silhouette"} ,
+	]},
 	{
 title:"Skills and Approaches",
 ref:"SkillsandApproaches",

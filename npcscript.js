@@ -1303,9 +1303,15 @@ function setDemeanor(){
 }
 
 function getWeaponStats(weapon){
-		for(var i=0; i < tabledata[8].children.length; i++){
-		if (tabledata[8].children[i].name == weapon){
-			weapon = tabledata[8].children[i]
+
+		for (var each in tabledata){
+			if (tabledata[each].title == "Weapons")
+				var tab = tabledata[each].children
+		}
+
+		for(var i=0; i < tab.length; i++){
+		if (tab[i].name == weapon){
+			weapon = tab[i]
 
 			weaponstats = 'Damage: '+weapon.damage+
 				'<span class="ml10">Deadliness: </span>'+weapon.deadliness+
@@ -1329,9 +1335,15 @@ function getWeaponStats(weapon){
 }
 
 function getArmorStats(armor){
-		for(var i=0; i < tabledata[9].children.length; i++){
-		if (tabledata[9].children[i].armor == armor){
-			armor = tabledata[9].children[i]
+
+		for (var each in tabledata){
+			if (tabledata[each].title == "Armor")
+				var tab = tabledata[each].children
+		}
+
+		for(var i=0; i < tab.length; i++){
+		if (tab[i].armor == armor){
+			armor = tab[i]
 
 			armorstats = 'Physical Res: '+armor.phys+
 				'<span class="ml10">Supernatural Res: </span>'+armor.sup+
@@ -1671,10 +1683,14 @@ function saveNPC (){
 		} else {
 				npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
 		
+				for (var each in tabledata){
+						if (tabledata[each].title == "Armor")
+						var tab = tabledata[each].children
+					}
 				
-				for(var i=0; i < tabledata[9].children.length; i++){
-					if (tabledata[9].children[i].armor == npc[nospaces].armor){
-						var selectedArmor = tabledata[9].children[i]
+				for(var i=0; i < tab.length; i++){
+					if (tab[i].armor == npc[nospaces].armor){
+						var selectedArmor = tab[i]
 		
 						npc[nospaces].armorphys = selectedArmor.phys
 						npc[nospaces].armorsup = selectedArmor.sup
@@ -2412,13 +2428,19 @@ function saveEditNpc(nom){
 		}
 
 	nom.armor = document.getElementById("editselectarmor0").value
+
+
+		for (var each in tabledata){
+						if (tabledata[each].title == "Armor")
+						var tab = tabledata[each].children
+					}
 		
-		for(i=0; i < tabledata[9].children.length; i++){
+		for(i=0; i <tab.length; i++){
 
-			var x = tabledata[9].children[i].armor
+			var x = tab[i].armor
 
-			if (tabledata[9].children[i].armor == nom.armor){
-				selectedArmor = tabledata[9].children[i]
+			if (tab[i].armor == nom.armor){
+				selectedArmor = tab[i]
 			}	
 		} 
 
