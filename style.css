@@ -152,6 +152,10 @@ p {
 
 /* TOP BAR */
 
+.white {
+  color: white;
+}
+
 .titlebar {
   min-height: 50px;
   display: flex;
@@ -314,9 +318,10 @@ thead {
 }
 
 td {
-  font-size: 0.8em;
+  font-size: 1sem;
   padding: 5px;
   }
+
 
 #Conditions-table td:nth-child(1) { width: 80px; }
 
@@ -326,7 +331,7 @@ td {
 
 #ItemQualities-table td:nth-child(1) {  width: 70px;}
 
-#ItemQualities-table td:nth-child(2) {  width: 300px;}
+#ItemQualities-table td:nth-child(2) {  width: 400px;}
 
 #ItemQualities-table td:nth-child(3) {  width: 500px;}
 
@@ -350,9 +355,9 @@ td {
 
 #CriticalStrikes-table td:nth-child(3) {  width: 600px;}
 
-#SkillsandApproaches-table td:nth-child(1) {  width: 210px;}
+#SkillsandApproaches-table td:nth-child(1) {  width: 150px;}
 
-#SkillsandApproaches-table td:nth-child(2) {  width: 300px;}
+#SkillsandApproaches-table td:nth-child(2) {  width: 420px;}
 
 #SkillsandApproaches-table td:nth-child(3) {  width: 350px;}
 
@@ -630,7 +635,7 @@ color: white;
 .w145 {width: 145px;}
 .w195 {width: 195px;}
 .w200 {width: 200px;}
-.w250 {width: 300px;}
+
 .w300 {width: 300px;} /*used */
 
 .w350 {width: 350px;} /*used */
@@ -722,7 +727,7 @@ background: var(--bglighter)}
 .silver2 {
 background: var(--bglighter)}
 
-  #pour, #nameoutput {
+#pour, #nameoutput {
     font-size: 2.5em;
     color: var(--highlight);
     text-shadow: 0 0 3px var(--highlight1), 0 0 5px var(--highlight2);
@@ -731,6 +736,7 @@ background: var(--bglighter)}
 #editcharacter select, #editcharacter input {
   margin-bottom:  5px;
 }
+
 
 @media screen and (max-width: 560px) {
   body {
@@ -775,6 +781,7 @@ background: var(--bglighter)}
     text-align: left;
     margin-left: 0;
   }
+
   #library div div {
     width: unset;
   }

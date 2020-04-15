@@ -830,7 +830,7 @@ function schoolfilter(){
 							' <% schoolsArr.forEach(function(child) { %> ' +
 							' <div class="mb10"> ' +
 							' <div class="" onclick="hideShow(&quot;<%= child.name %>-school&quot)"><b><%= child.name %></b> <i>(<%= child.source %>)</i> <span class="trailingcommafinder"><% child.role.forEach(function(types) { %> <%= types %>, <% }); %></span></div>' +
-							' <div class="hide pb10" id="<%= child.name %>-school"><b>Ability:</b> <%= child.ability %>' +
+							' <div class="hide pt5 pb10" id="<%= child.name %>-school"><b>Ability:</b> <%= child.ability %>' +
 							' <br><b>Skills:</b>  <span class="trailingcommafinder"><% child.skills.forEach(function(skill) { %> <%= skill %>, <% }); %></span>;' +
 							' <br><b>Honor:</b> <%= child.honor %>; <b>Rings:</b> <%= child.ring1 %>, <%= child.ring2 %>; <b>Technique Types:</b> <span class="trailingcommafinder"><% child.techniquetypes.forEach(function(types) { %> <%= types %>, <% }); %></span>;' +
 							' <br><b>Favoured Techniques:</b> Rank 1: <span id="startingft" class="trailingcommafinder">' +
@@ -917,7 +917,9 @@ function schoolfilter(){
 			schoolsArr: schoolsArr
 		})
 				document.getElementById('schooloutput').innerHTML = html;
-		} 
+		} else {
+			document.getElementById('schooloutput').innerHTML = ""
+		}
 } 
 	trailingCommaKiller()
 
@@ -979,7 +981,7 @@ function titlefilter(){
 							' <% titlesArr.forEach(function(child) { %> ' +
 							' <div class="mb10"> ' +
 							' <div class="" onclick="hideShow(&quot;<%= child.title %>-title&quot)"><b><%= child.title %></b> <i>(<%= child.source %>)</i> Title</div>' +
-							' <div class="hide" id="<%= child.title %>-title"><b>Ability:</b> <%= child.ability %>' +
+							' <div class="hide pt5 pb10" id="<%= child.title %>-title"><b>Ability:</b> <%= child.ability %>' +
 							' <br><b>Social:</b>  <%= child.status %>' +
 							' <br><b>XP needed to complete:</b> <%= child.xp %>' +
 							' <br><b>To Advance:</b> <% child.advance.forEach(function(adv) { %> <%= adv %>, <% }); %>' +

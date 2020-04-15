@@ -100,7 +100,7 @@ var schools = {
 				],
 			startingtechoptions: [['Striking as Earth','Striking as Fire']
 				],
-			rank1techs:["Bind the Shadow","Biting Steel",],rank2techs:["Crimson Leaves Strike","Symbol of Earth",],rank3techs:["Rise, Earth","Open Hand Style",],rank4techs:["Tomb of Jade","Flowing Water Strike",],rank5techs:["Earthquake","Soul Sunder",],
+			rank1techs:["Bind the Shadow","Biting Steel",],rank2techs:["Crimson Leaves Strike","Symbol of Earth",],rank3techs:["Rise Earth","Open Hand Style",],rank4techs:["Tomb of Jade","Flowing Water Strike",],rank5techs:["Earthquake","Soul Sunder",],
 			chooseoptions: [1],
 			ability:'Once per round, when you make a check targeting or involving a Tainted being, you may choose a number of your kept dice up to your school rank containing <span class="l5r">T</span> symbols. Set each of these dice to a <span class="l5r">S</span> result. You cannot use this ability if you are unsure if a being is Tainted or not.',
 			keyword:'',
@@ -209,7 +209,7 @@ var schools = {
 							],
 			startingtechoptions: [['Blessed Wind','Armor of Radience',"Inari's Blessing","Reflections of P'an Ku",'Token of Memory']
 							],
-			rank1techs:["Path to Inner Peace","Artisan's Appraisal",],rank2techs:["Grasp of the Air Dragon","Tea Ceremony",],rank3techs:["Wings of the Phoenix","Vapor of Nightmare",],rank4techs:["Rise, Air","Bend with the Storm",],rank5techs:["Ever Changing Waves","Buoyant Arrival",],
+			rank1techs:["Path to Inner Peace","Artisan's Appraisal",],rank2techs:["Grasp of the Air Dragon","Tea Ceremony",],rank3techs:["Wings of the Phoenix","Vapor of Nightmares",],rank4techs:["Rise, Air","Bend with the Storm",],rank5techs:["Ever Changing Waves","Buoyant Arrival",],
 			chooseoptions: [3],
 			ability:'When making a check to mystically summon an illusion or to summon, augment, or awaken an object, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.',
 			keyword:'',
@@ -2024,7 +2024,7 @@ var titles = {
 		status:"+5 Status (to a minimum of 35)",
 		xp:24,
 		ability:" Title Ability: Take Them Alive: When you make an Attack action using a weapon with the Snaring quality.  You may alter any number of kept dice containing <span class='l5r'>S</span> or <span class='l5r'>E</span> to results set to <span class='l5r'>O</span>",
-		advance:["Social Skills","Government","Martial Arts: Melee","Skulduggery","<span class='l5r'>b</span> Rank 1-3 Kata","F<span class='l5r'>b</span> anning the Flames","<span class='l5r'>b</span> Shallow Waters"],
+		advance:["Social Skills","Government","Martial Arts: Melee","Skulduggery","<span class='l5r'>b</span> Rank 1-3 Kata","<span class='l5r'>b</span> Fanning the Flames","<span class='l5r'>b</span> Shallow Waters"],
 		source:"Emerald Empire p253",
 	},
 
