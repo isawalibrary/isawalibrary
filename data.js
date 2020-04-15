@@ -336,7 +336,7 @@ var tao = [
 	"Success is as dangerous as failure. Hope is as hollow as fear.",
 	"Truth never damages a cause that is just.",
 	"What is the cost of lies? It's not that we'll mistake them for the truth. The real danger is that if we hear enough lies, then we no longer recognize the truth at all.",
-	"You'll do it because nobody else can. And if you don't, hundreds of thousands will die. If you tell me that's not enough I won't believe you. This is what has always set our people apart. A thousand years of sacrifice in our veins. - Hida",
+	"You'll do it because nobody else can. And if you don't, hundreds of thousands will die. If you tell me that's not enough I won't believe you. <br>This is what has always set our people apart. A thousand years of sacrifice in our veins. - Hida",
 	"Self-respect is the fruit of discipline.",
 	"Nothing is so strong as gentleness.  Nothing is so gentle as real strength.",
 	"Where does one begin?  'Perfection' is a good place to start.  We must always focus on improving things that are already perfect. - Mirumoto",
@@ -350,6 +350,6 @@ var tao = [
 	"War is not about who is right, it is about who is left.",
 	"You may as well stand and fight, because to run is to die tired - Hida",
 	"When you aim for perfection, you discover it is a moving target - Mirumoto",
-
+	"Inaction is cowardice. - Matsu",
 			];
 
