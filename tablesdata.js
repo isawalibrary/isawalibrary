@@ -100,8 +100,8 @@ children:[
 title:"Unspecified Deadliness",
 ref:"UnspecifiedDeadliness",
 children:[
-	{source:"Source", deadliness:"Deadliness (Core p270)"}, 
-	{source:"Invocations and Maho", deadliness:"Deadliness equal to the value of the ring used for the Attack action check plus kept <span class='l5r'>T</span> symbols on that check.}, 
+	{source:"SOURCE", deadliness:"DEADLINESS (Core p270)"}, 
+	{source:"Invocations and Maho", deadliness:"Deadliness equal to the value of the ring used for the Attack action check plus kept <span class='l5r'>T</span> symbols on that check."}, 
 	{source:"Kiho", deadliness:"8"} ,
 	{source:"Extreme Temperatures", deadliness:"5, but each repeated exposure increases by +2."} ,
 	{source:"Falls", deadliness:"The damage of a fall has a deadliness of 7.  Very long falls also inflict critical strikes directly."}, 

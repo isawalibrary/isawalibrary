@@ -1337,7 +1337,7 @@ function getWeaponStats(weapon){
 function getArmorStats(armor){
 
 		for (var each in tabledata){
-			if (tabledata[each].title == "Armor")
+			if (tabledata[each].title == "Armors")
 				var tab = tabledata[each].children
 		}
 
@@ -1684,7 +1684,7 @@ function saveNPC (){
 				npc[nospaces].armor = document.getElementById('npcarmor0').options[document.getElementById('npcarmor0').selectedIndex].text;
 		
 				for (var each in tabledata){
-						if (tabledata[each].title == "Armor")
+						if (tabledata[each].title == "Armors")
 						var tab = tabledata[each].children
 					}
 				
@@ -2431,7 +2431,7 @@ function saveEditNpc(nom){
 
 
 		for (var each in tabledata){
-						if (tabledata[each].title == "Armor")
+						if (tabledata[each].title == "Armors")
 						var tab = tabledata[each].children
 					}
 		
