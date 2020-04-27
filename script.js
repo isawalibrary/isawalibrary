@@ -9,6 +9,7 @@ function setUp(){
 	makeTechniques();
 	buildNpcMenu();
 	setUpDataBuilder();
+	setUpCampaignTab();
 }
 
 
@@ -1394,9 +1395,7 @@ function generateData(){
 		switch (datatype) {
 			case "School":
 
-					var nospaces = values[0].replace(/ /g, "")
-					nospaces = nospaces.replace(/,/g, "")
-					nospaces = nospaces.toLowerCase()
+					var nospaces = noSpaces(values[0])
 										
 					outputstring[0] = nospaces+': {'
 					outputstring[1] = 'family:"'+values[1]+'",'
@@ -1508,9 +1507,7 @@ function generateData(){
 					break;
 
 			case "Title":
-					nospaces = values[0].replace(/ /g, "")
-					nospaces = nospaces.replace(/,/g, "")
-					nospaces = nospaces.toLowerCase()
+					nospaces = noSpaces(values[0])
 
 					outputstring[0] = nospaces+':{'
 					outputstring[1] = 'title:"'+values[0]+'",'
@@ -1527,9 +1524,7 @@ function generateData(){
 
 			case "NPC":
 
-					nospaces = values[0].replace(/ /g, "")
-					nospaces = nospaces.replace(/,/g, "")
-					nospaces = nospaces.toLowerCase()
+					nospaces = noSpaces(values[0])
 
 					outputstring[0] = '{'
 					outputstring[1] = 'fullname:"'+values[0]+'",'
@@ -1569,3 +1564,8 @@ function generateData(){
 				}
 }
 
+
+function setUpCampaignTab(){
+	newDiv("images","campaigninfodiv","")
+	divContents("images","<a href='isawalibrary.github.io/isawalibrary/mountainshrine.png'>Cliffside Shrine Town </a>")
+}
