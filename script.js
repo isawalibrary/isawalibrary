@@ -1567,5 +1567,5 @@ function generateData(){
 
 function setUpCampaignTab(){
 	newDiv("images","campaigninfodiv","")
-	divContents("images","<a href='isawalibrary.github.io/isawalibrary/mountainshrine.png'>Cliffside Shrine Town </a>")
+	divContents("images","<a href='mountainshrine.png'>Cliffside Shrine Town </a>")
 }
