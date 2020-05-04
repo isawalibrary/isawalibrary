@@ -321,7 +321,8 @@ td {
   font-size: 1sem;
   padding: 5px;
   }
-
+#HonorRanks-table td:nth-child(1) { width: 80px; }
+#HonorRanks-table td:nth-child(2) { width: 500px; }
 
 #Conditions-table td:nth-child(1) { width: 80px; }
 
@@ -521,7 +522,6 @@ color: white;
   background-color: #282828;
   color: #ffffff;
 }
-
 
 #skirmishtable tr td:nth-child(5), #skirmishtable tr td:nth-child(7) {
   text-align: left;

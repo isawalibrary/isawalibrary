@@ -63,7 +63,7 @@ var stances = {
 
 		l6 : ['Fragrances','Prayers','Kami','Carp','Blades','Monks','Foxes','Leaves','Radishes','Chestnuts','Lights','Breezes','Mackerels','Eels','Dumplings','Tanuki','Cicadas','Steeds','Houses','Serpents','Herons','Maple Trees','Pine Trees','Cherry Blossoms','Plums','Plum Blossoms','Persimmons','Satsumas','Tangerines','Grapes','Rainstorms','Snowfalls','Mushrooms','Butterflies','Grasshoppers','Crickets','Magistrates','Sages','Silkworms','Tetsubos','Arrows','Battles','Hydrangeas','Lilies','Chrysanthemums','Pavilions','Victories','Yojimbos','Shrine Keepers','Courtiers','Duelists','Crows','Deer','Boars','Badgers','Bows','Lobsters','Harvests','Wakizashis','Falcons'],  //plural concrete noun
 
-		l7 : ['Shinsei','Lord Moon','Lady Sun','Amaterasu','Onnotangu','Benten','Bishamon','Daikoku','Ebisu','Fukurokujin','Kisshoten','Hotei','Jurojin','Isawa','Inari','the Fortunes','the Kami','the Emperor','the Daimyo','the Yojimbo','the Shugenja','the Diviner','the Bushi','the Shrine Keeper','the Shrine Maiden','the Duelist','the Courtier','the Sage','the Monk','the Magistrate','the Bakemono','the Kitsune','the Tanuki','the Geisha'], //people and entities
+		l7 : ['Shinsei','Lord Moon','Lady Sun','Amaterasu','Onnotangu','Benten','Bishamon','Daikoku','Ebisu','Fukurokujin','Kisshoten','Hotei','Jurojin','Isawa','Inari','the Fortunes','the Kami','the Emperor','the Daimyo','the Yojimbo','the Shugenja','the Diviner','the Bushi','the Shrine Keeper','the Shrine Maiden','the Duelist','the Courtier','the Sage','the Monk','the Magistrate','the Bakemono','the Kitsune','the Tanuki','the Geisha','Shiba','Matsu'], //people and entities
 
 		name:[],
 

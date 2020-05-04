@@ -1,8 +1,7 @@
 -Current Overhaul: Phoenix Saffron Edition
-+ Finish editing Skills and Approaches table
+
 + Hide campaign tab as it doesn't have anything
 + Show sources on creatures, pregens
-+ Fix Search Schools, if the search term is not found then show no schools
 + Finish doing Demeanors for Families, I got up to Miya
 + In Edit Character, the add weapon button adds a massive dropdown of gibberish - have a checkbox that controls whether NPC Gear is added to the list, then have filters that refine by weapon type
 + Allow some Edit NPC stuff during NPC Builder, instead of having to save then open in Library then Edit

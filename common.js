@@ -21,6 +21,8 @@ function newDiv (divname,parentName,classlist){ //create new div
 function noSpaces(hasSpacesAndCommas){
 		var nospaces = hasSpacesAndCommas.replace(/ /g, "")
 		nospaces = nospaces.replace(/,/g, "")
+		nospaces = nospaces.replace("(", "")
+		nospaces = nospaces.replace(")", "")
 
 		return nospaces;
 }
