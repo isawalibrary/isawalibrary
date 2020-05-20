@@ -679,25 +679,25 @@ function makeTechniques(){
 
 	newDiv("techniquecontainery","techniquecontainerx","inlineblock");
 
-	addToDiv("techniquecontainery","Type: ")
-	newSelect("techniquecontainery","techniquesearchtype","inlineblock ml10 mr10","techniquefilter()")
+	addToDiv("techniquecontainerx","Type: ")
+	newSelect("techniquecontainerx","techniquesearchtype","inlineblock ml10 mr10","techniquefilter()")
 	var options = ["Any","Invocation","Kata","Kiho","Maho","Ninjutsu","Ritual","Shuji"]
 	var values = ["any","invocation","kata","kiho","maho","ninjutsu","ritual","shuji"]
 	fillSelectDropdownValues("techniquesearchtype",values,options)
 
-	addToDiv("techniquecontainery","Ring: ")
-	newSelect("techniquecontainery","techniquesearchring","inlineblock mr10","techniquefilter()")
+	addToDiv("techniquecontainerx","Ring: ")
+	newSelect("techniquecontainerx","techniquesearchring","inlineblock mr10","techniquefilter()")
 	options = ["Select","Air","Earth","Fire","Water","Void"]
 	values = ["default","air","earth","fire","water","void"]
 	fillSelectDropdownValues("techniquesearchring",values,options)
 
-	addToDiv("techniquecontainery","Rank: ")
-	newSelect("techniquecontainery","techniquesearchrank1","inlineblock mr10","techniquefilter()")
+	addToDiv("techniquecontainerx","Rank: ")
+	newSelect("techniquecontainerx","techniquesearchrank1","inlineblock mr10","techniquefilter()")
 	options = ["=","=<"]
 	values = ["1","2"]
 	fillSelectDropdownValues("techniquesearchrank1",values,options)
 
-	newSelect("techniquecontainery","techniquesearchrank","inlineblock mr10","techniquefilter()")
+	newSelect("techniquecontainerx","techniquesearchrank","inlineblock","techniquefilter()")
 	options = ["Any",1,2,3,4,5]
 	values = ["any",1,2,3,4,5]
 	fillSelectDropdownValues("techniquesearchrank",values,options)	
@@ -712,7 +712,7 @@ function techniquefilter() {
 				' <% techlist.forEach(function(tech) { %> ' +
 				' <div class="pb10">' +
 				' <div class="mb10" onclick="hideShow(&quot;<%= tech.title %>-effect&quot)"><b><%= tech.title %></b> <i>(<%= tech.reference %>)</i> <%= tech.ring %> <%= tech.type %>    Rank <%= tech.rank %></div>' +
-				' <div class="pb10 hide" id="<%= tech.title %>-effect"><%= tech.effect %></div>' +
+				' <div class="pb10 hide" id="<%= tech.title %>-effect"><i><%= tech.fluff %></i><p><%= tech.effect %></div>' +
 				' </div>' +
 				' <% }); %>';
 
