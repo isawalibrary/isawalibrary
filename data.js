@@ -40,11 +40,11 @@ var stances = {
 	earth:{	name:"Earth",
 			ability:"Opponents cannot spend <span class='l5r'>O</span> to inflict critical strikes or conditions on you"},
 	fire:{	name:"Fire",
-			ability:"If you succeed, +1 bonus <span class='l5r'>S</span> per kept <span class='L5R'>T</span>"},
+			ability:"If you succeed, +1 bonus <span class='l5r'>S</span> per kept <span class='l5r'>T</span>"},
 	water:{	name:"Water",
 			ability:"Perform a second action on your turn that does not require a check or share a type with your first action"},
 	void:{	name:"Void",
-			ability:"Do not recieve <span class='L5R'>T</span> from kept dice on checks"},
+			ability:"Do not recieve <span class='l5r'>T</span> from kept dice on checks"},
 };
 
 
@@ -88,7 +88,7 @@ var tao = [
 	"A handful of glory is worth a handful of dust when compared to the riches a samurai's family gives to him. ",
 	"Guard your word carefully, for you own every word you speak. ",
 	"Even gods must bow to destiny. - Isawa",
-	"When darkness descends, a man must find allies in the shadows. - Shosuro", 
+	"When darkness descends, a man must find allies in the shadows. - Shosuro",
 	"It takes a wise man to see an obstacle as it truly is and not as it appears to be. ",
 	"Brave men may be forgotten; brave deeds never so. - Akodo",
 	"The more corrupt the soul, the more painful it becomes to look upon the pure. <br>So it is with crystal and jade and the creatures of the dark lands.",
@@ -331,7 +331,7 @@ var tao = [
 	"When a man has time to think, he can make plans.  <br>When he has no time to think, but must immediately react, he can only make mistakes - Akodo",
 	"When your enemy is more powerful than you, strike quick and hard, and retreat. <br>Flow like the water, move with no form or shape or substance.<br> Commanders without courage or confidence do not know how to retaliate against you. <br>Those who understand your ways will know what you are doing, and know that their strength has been turned to weakness. <br>They will know that you are the sagacious general, and those who know the ways of Heaven and Earth will retreat and go home. - Akodo",
 	"When your enemy is entrenched and secure, lure him from his nest. <br>Attack that which is dear to him to draw him from his ground. Take him from his sanctuary and take him on your time. - Akodo",
-	"Knowing others is intelligence; knowing yourself is true wisdom.<br>Mastering others is strength; mastering yourself is true power",		
+	"Knowing others is intelligence; knowing yourself is true wisdom.<br>Mastering others is strength; mastering yourself is true power",
 	"A man with outward courage dares to die; a man with inner courage dares to live.",
 	"Success is as dangerous as failure. Hope is as hollow as fear.",
 	"Truth never damages a cause that is just.",
@@ -352,4 +352,3 @@ var tao = [
 	"When you aim for perfection, you discover it is a moving target - Mirumoto",
 	"Inaction is cowardice. - Matsu",
 			];
-
