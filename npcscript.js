@@ -1204,10 +1204,10 @@ function setRokuganiRings(){
 					thisnpc.selectedClan = roninregions[each]
 				}
 			} 
-			if (clans.includes(document.getElementById("npcroninclanbgselect").value)){
-				thisnpc.selectedClan = document.getElementById("npcroninclanbgselect").value
-				thisnpc.selectedClan = families[thisnpc.selectedClan]
-			} 			
+//			if (clans.includes(document.getElementById("npcroninclanbgselect").value)){
+//				thisnpc.selectedClan = document.getElementById("npcroninclanbgselect").value
+//				thisnpc.selectedClan = families[thisnpc.selectedClan]
+//			} 			
 		}
 	
 
