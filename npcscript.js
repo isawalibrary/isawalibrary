@@ -37,7 +37,7 @@ function makeNpcLibrary(){
 			break;
 
 		case "Ronin, Riffraff and Gaijin":
-			var x = each.ronintype
+			var x = "Ronin"
 			break;
 
 		case "Animals":
