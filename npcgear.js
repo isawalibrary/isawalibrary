@@ -64,6 +64,13 @@ var npcweapons=[
 				{name: "Hellish Talons", range:"1-2", damage:"9", deadliness:"8", qualities:"Razor-Edged, Unholy", type:"natural", origin:"Warlord of Jigoku Powerful Oni"},
 				{name: "Bone Naginata", range:"2", damage:"6", deadliness:"7", qualities:"Durable, Razor-Edged, Unholy", type:"equipped", origin:"Hellish Sorcerer Powerful Oni"},
 				{name: "Corrupted Tetsubo", range:"1-2", damage:"8", deadliness:"3", qualities:"Durable, Unholy", type:"equipped", origin:"Savage Brute Lesser Oni"},
+				{name: "Shinjo Horsebow", range:"2-4", damage:"4", deadliness:"5", qualities:"Wargear", type:"equipped", origin:"Moto Rurame"},
+{name: "Trident", range:"2", damage:"4", deadliness:"4", qualities:"Snaring, Wargear", type:"equipped", origin:"Utaku Sabuteki"},
+{name: "Whiplike Boughs", range:"0-2", damage:"6", deadliness:"3", qualities:"Deals physical or supernatural damage", type:"natural", origin:"Kodama"},
+{name: "Bestial Claws", range:"0", damage:"4", deadliness:"4", qualities:"Razor-Edged", type:"natural", origin:"Shu"},
+{name: "Walking Staff", range:"1-2", damage:"6", deadliness:"2", qualities:"Mundane", type:"equipped", origin:"Jun"},
+
+
 				];
 var npcarmor=[
 				{armor:"Rags",phys:0,sup:0,qualities:"Mundane",type:"equipped", origin:"Humble Peasant"},
@@ -113,6 +120,13 @@ var npcarmor=[
 				{armor: "Thick Demonic Hide", phys:3, sup:3, qualities:"Unholy", type:"natural", origin:"Savage Brute Lesser Oni"},	
 				{armor: "Demonic Hide and Scavenged Armor", phys:"4", sup:"3", qualities:"Unholy", type:"equipped", origin:"Monstrous Warrior Powerful Oni"},
 				{armor: "Demonic Hide and Pit-Forged Armor", phys:"5", sup:"5", qualities:"Unholy", type:"natural", origin:"Warlord of Jigoku Powerful Oni"},				
+				{armor: "Lamellar Armor", phys:"4", sup:"0", qualities:"Wargear", type:"equipped", origin:"Moto Rurame"},
+{armor: "Bark Hide", phys:"4", sup:"0", qualities:"Sacred", type:"natural", origin:"Kodama"},
+{armor: "Ragged Robes", phys:"2", sup:"2", qualities:"none", type:"equipped", origin:"Shu"},
+
+
+
+
 				];
 
 var onipowers = {
