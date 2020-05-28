@@ -41,7 +41,7 @@ var npcweapons=[
 				{name:"Ritual Dagger",range:"0",damage:2,deadliness:4,qualities:"Unholy, Razor-Edged",type:"equipped", origin:"Goblin Accursed Priest"},
 				{name:"Nezumi dagger",range:"0-1",damage:3,deadliness:3,qualities:"",type:"equipped", origin:"Nezumi Dreamer"},
 				{name:"Nezumi knife",range:"0",damage:2,deadliness:4,qualities:"Concealable, Mundane",type:"equipped", origin:"Nezumi Rememberer"},
-				{name:"Nezumi Claws and Teeth",range:"0",damage:2,deadliness:3,qualities:"",type:"natural", origin:"Nezumi Feral"},
+				{name:"Nezumi Claws and Teeth",range:"0",damage:4,deadliness:3,qualities:"",type:"natural", origin:"Nezumi Feral"},
 				{name:"Sharp Little Teeth",range:"0",damage:1,deadliness:2,qualities:"Razor-Edged",type:"natural", origin:"Fox"},
 				{name: "Tentacle Arms", range:"0-5", damage:"8", deadliness:"6", qualities:"", type:"natural", origin:"Akkorokamui"},
 				{name: "Scorpion Claws", range:"0", damage:"4", deadliness:"3", qualities:"", type:"natural", origin:"Amikiri"},
@@ -69,6 +69,15 @@ var npcweapons=[
 {name: "Whiplike Boughs", range:"0-2", damage:"6", deadliness:"3", qualities:"Deals physical or supernatural damage", type:"natural", origin:"Kodama"},
 {name: "Bestial Claws", range:"0", damage:"4", deadliness:"4", qualities:"Razor-Edged", type:"natural", origin:"Shu"},
 {name: "Walking Staff", range:"1-2", damage:"6", deadliness:"2", qualities:"Mundane", type:"equipped", origin:"Jun"},
+{name: "Kitsune Teeth", range:"0", damage:"3", deadliness:"5", qualities:"", type:"Natural", origin:"Ha Iwa, Kitsune Spirit"},
+{name: "Massive Cudgel", range:"2", damage:"9", deadliness:"5", qualities:"Cumbersome", type:"natural", origin:"Kasai"},
+{name: "Rending Grip", range:"1", damage:"4", deadliness:"6", qualities:"", type:"natural", origin:"Kasai"},
+{name: "Scimitar of the Moto", range:"1", damage:"6", deadliness:"5", qualities:"Ceremonial, Durable, Razor-Edged, Unholy", type:"equipped", origin:"Moto Tsume"},
+{name: "Obsidian Claws", range:"0-1", damage:"4", deadliness:"8", qualities:"Razor-Edged, Unholy", type:"equipped", origin:"Obsidian Flower"},
+{name: "Unearthly Limbs", range:"0-2", damage:"7", deadliness:"4", qualities:"Sacred, Snaring", type:"equipped", origin:"Mazoku"},
+{name: "Ancient Falcon Katana", range:"1", damage:"4", deadliness:"5/7", qualities:"Ceremonial, Razor-Edged, Sacred", type:"equipped", origin:"Mazoku"},
+{name: "Jade-Studded Tetsubo", range:"1-2", damage:"7", deadliness:"3", qualities:"Cumbersome, Durable, Sacred, Wargear", type:"equipped", origin:"Hida Nanako"},
+{name: "Family Otsuchi", range:"1", damage:"8", deadliness:"4", qualities:"Ceremonial, Cumbersome, Wargear", type:"equipped", origin:"Hida Etsuji"},
 
 
 				];
@@ -123,10 +132,10 @@ var npcarmor=[
 				{armor: "Lamellar Armor", phys:"4", sup:"0", qualities:"Wargear", type:"equipped", origin:"Moto Rurame"},
 {armor: "Bark Hide", phys:"4", sup:"0", qualities:"Sacred", type:"natural", origin:"Kodama"},
 {armor: "Ragged Robes", phys:"2", sup:"2", qualities:"none", type:"equipped", origin:"Shu"},
-
-
-
-
+{armor: "Armor Scraps and Scaled Hide", phys:"2", sup:"1", qualities:"", type:"natural", origin:"Kasai"},
+{armor: "Corrupted Daimyo Armor", phys:"3", sup:"2", qualities:"Unholy", type:"equipped", origin:"Moto Tsume"},
+{armor: "Ethereal Clothing", phys:"3", sup:"5", qualities:"", type:"equipped", origin:"Obsidian Flower"},	
+{armor: "Ghostly Form", phys:"10", sup:"10", qualities:"", type:"equipped", origin:"Mazoku"},
 				];
 
 var onipowers = {

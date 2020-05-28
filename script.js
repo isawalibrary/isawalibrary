@@ -675,7 +675,7 @@ function makeTechniques(){
 	newDiv("techniquecontainerx","techniquecontainer","w700 block marginauto");
 	newTextInput("techniquecontainerx","techniquesearch","inlineblock","<span class='w100 inlineblock'>Search Techniques: </span>","techniquesearchinput","w200 mr10")
 	document.getElementById("techniquesearchinput").setAttribute("oninput","techniquefilter()")
-	newButton("techniquecontainerx","techniquesearchbutton","inlineblock mr10","clearInput('techniquesearchinput')","x")
+	newButton("techniquecontainerx","techniquesearchbutton","inlineblock mr10","clearInput('techniquesearchinput');fillItUp();","x")
 
 	newDiv("techniquecontainery","techniquecontainerx","inlineblock");
 
@@ -1363,6 +1363,7 @@ function createDataForm(){
 	}
 
 	generateData();
+	fillItUp()
 }
 
 
@@ -1562,10 +1563,19 @@ function generateData(){
 				
 				document.getElementById("output"+i).textContent = outputstring[i]
 				}
+
+
 }
 
 
 function setUpCampaignTab(){
 	newDiv("images","campaigninfodiv","")
 	divContents("images","<a href='mountainshrine.png'>Cliffside Shrine Town </a>")
+}
+
+function fillItUp(){
+//	document.getElementById("datainput3").value = "Pregen Individuals"
+//	document.getElementById("datainput4").value = "set"
+//	document.getElementById("datainput30").value = "Shadowlands"
+//	document.getElementById("datainput17").value = "equipped"
 }
