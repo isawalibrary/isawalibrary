@@ -1,0 +1,71 @@
+<html>
+ <head>
+ 	<link href='https://fonts.googleapis.com/css?family=Abel' rel='stylesheet'>
+ 	<link href='https://fonts.googleapis.com/css?family=Julee' rel='stylesheet'>
+	<link href='https://fonts.googleapis.com/css?family=Trade Winds' rel='stylesheet'>
+	<LINK href="style.css" rel="stylesheet" type="text/css">
+	<script src="data.js"></script>
+	<script src="common.js"></script>
+	<script src="definitionsdata.js"></script>
+	<script src="schoolsdata.js"></script>
+	<script src="techniquesdata.js"></script>
+	<script src="tablesdata.js"></script>
+	<script src="npcsdata.js"></script>
+	<script src="npcscript.js"></script>
+	<script src="npcgear.js"></script>
+	<script type="text/javascript" src='https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js'></script>
+ <title></title>
+ </head>
+
+ <body onload="setUpDivs()">
+<div id="controls"></div>
+<div id="output"></div>
+</body>
+
+<script type="text/javascript">
+
+function setUpDivs(){
+
+	var array = ["Combat","Intrigue"]
+
+	newSelect("controls","combatOrIntrigue","","loadNpcs()")
+	fillSelectDropdown("combatOrIntrigue",array)
+
+	array = [1,2,3,4,5,6,7,8,9,10,11,12,13,14,15]
+
+	newSelect("controls","ranks","","loadNpcs()")
+	fillSelectDropdown("ranks",array)
+
+}
+
+
+	
+function loadNpcs(){
+
+	var type = document.getElementById("combatOrIntrigue").value
+	var rank = document.getElementById("ranks").value
+
+	var output = document.getElementById("output")
+	output.innerHTML = ""
+
+	var property = "conflict" + type.toLowerCase() 
+
+	for (var archetype in archetypes){
+		if (archetypes[archetype][property] == rank){
+			var mob = archetypes[archetype]
+
+			var weapon = mob.weapon[0]
+			var weaponstats = getWeaponStats(weapon)
+
+			var ringSum = mob.ring.Air + mob.ring.Earth + mob.ring.Fire + mob.ring.Water + mob.ring.Void
+
+
+
+			var text = "<br><span class='w350 inlineblock'>" + mob.fullname + " (" + mob.source + ")</span>" + 
+			"<span class='inlineblock w250'><span class='l5r air'>a</span>" + mob.ring.Air + ", <span class='l5r earth'>e</span>" + mob.ring.Earth + ", <span class='l5r fire'>f</span>"  + mob.ring.Fire + ", <span class='l5r water'>w</span>" + mob.ring.Water +", <span class='l5r void'>v</span>" + mob.ring.Void +  " Sum " +ringSum + "</span> Skills: Artisan:" + mob.skills.artisanskill + ", Martial:" + mob.skills.martialskill + ", Scholar:" + mob.skills.scholarskill + ", Social:" + mob.skills.socialskill + ", Trade:" + mob.skills.tradeskill + "</span> " + mob.weapon[0] + " " + weaponstats
+			output.innerHTML += text
+		}
+	}
+}
+
+</script>

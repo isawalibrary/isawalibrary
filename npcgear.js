@@ -78,7 +78,7 @@ var npcweapons=[
 {name: "Ancient Falcon Katana", range:"1", damage:"4", deadliness:"5/7", qualities:"Ceremonial, Razor-Edged, Sacred", type:"equipped", origin:"Mazoku"},
 {name: "Jade-Studded Tetsubo", range:"1-2", damage:"7", deadliness:"3", qualities:"Cumbersome, Durable, Sacred, Wargear", type:"equipped", origin:"Hida Nanako"},
 {name: "Family Otsuchi", range:"1", damage:"8", deadliness:"4", qualities:"Ceremonial, Cumbersome, Wargear", type:"equipped", origin:"Hida Etsuji"},
-
+{name: "Gardening Staff", range:"1-2", damage:"4", deadliness:"3", qualities:"Durable, Mundane", type:"equipped", origin:"Kakita Mototada"},
 
 				];
 var npcarmor=[

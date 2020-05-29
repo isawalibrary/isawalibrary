@@ -1531,8 +1531,8 @@ function generateData(){
 					outputstring[1] = 'fullname:"'+values[0]+'",'
 					outputstring[2] = 'title:"'+nospaces+'",'
 					outputstring[3] = 'type:"'+values[3]+'",'
-					outputstring[4] = 'conflictcombat:'+values[2]+','
-					outputstring[5] = 'conflictintrigue:'+values[1]+','
+					outputstring[4] = 'conflictcombat:'+values[1]+','
+					outputstring[5] = 'conflictintrigue:'+values[2]+','
 					outputstring[6] = 'ring:{type:"'+values[4]+'",Earth:'+values[5]+',Air:'+values[6]+',Fire:'+values[7]+',Water:'+values[8]+',Void:'+values[9]+',},'
 					outputstring[7] = 'honor:'+values[10]+',glory:'+values[11]+',status:'+values[12]+','
 					outputstring[8] = 'endurance:'+values[13]+',composure:'+values[14]+',focus:'+values[15]+',vigilance:'+values[16]+','
@@ -1574,8 +1574,8 @@ function setUpCampaignTab(){
 }
 
 function fillItUp(){
-//	document.getElementById("datainput3").value = "Pregen Individuals"
-//	document.getElementById("datainput4").value = "set"
-//	document.getElementById("datainput30").value = "Shadowlands"
-//	document.getElementById("datainput17").value = "equipped"
+	document.getElementById("datainput3").value = "Pregen Individuals"
+	document.getElementById("datainput4").value = "set"
+	document.getElementById("datainput30").value = "Courts of Stone"
+	document.getElementById("datainput17").value = "equipped"
 }
