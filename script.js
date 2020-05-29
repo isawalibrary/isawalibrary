@@ -1574,8 +1574,10 @@ function setUpCampaignTab(){
 }
 
 function fillItUp(){
+	/*
 	document.getElementById("datainput3").value = "Pregen Individuals"
 	document.getElementById("datainput4").value = "set"
-	document.getElementById("datainput30").value = "Courts of Stone"
+	document.getElementById("datainput30").value = "Path of Waves"
 	document.getElementById("datainput17").value = "equipped"
+	*/
 }

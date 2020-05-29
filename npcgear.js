@@ -69,7 +69,7 @@ var npcweapons=[
 {name: "Whiplike Boughs", range:"0-2", damage:"6", deadliness:"3", qualities:"Deals physical or supernatural damage", type:"natural", origin:"Kodama"},
 {name: "Bestial Claws", range:"0", damage:"4", deadliness:"4", qualities:"Razor-Edged", type:"natural", origin:"Shu"},
 {name: "Walking Staff", range:"1-2", damage:"6", deadliness:"2", qualities:"Mundane", type:"equipped", origin:"Jun"},
-{name: "Kitsune Teeth", range:"0", damage:"3", deadliness:"5", qualities:"", type:"Natural", origin:"Ha Iwa, Kitsune Spirit"},
+{name: "Kitsune Teeth", range:"0", damage:"3", deadliness:"4", qualities:"", type:"Natural", origin:"Ha Iwa, Kitsune Spirit"},
 {name: "Massive Cudgel", range:"2", damage:"9", deadliness:"5", qualities:"Cumbersome", type:"natural", origin:"Kasai"},
 {name: "Rending Grip", range:"1", damage:"4", deadliness:"6", qualities:"", type:"natural", origin:"Kasai"},
 {name: "Scimitar of the Moto", range:"1", damage:"6", deadliness:"5", qualities:"Ceremonial, Durable, Razor-Edged, Unholy", type:"equipped", origin:"Moto Tsume"},
@@ -79,6 +79,11 @@ var npcweapons=[
 {name: "Jade-Studded Tetsubo", range:"1-2", damage:"7", deadliness:"3", qualities:"Cumbersome, Durable, Sacred, Wargear", type:"equipped", origin:"Hida Nanako"},
 {name: "Family Otsuchi", range:"1", damage:"8", deadliness:"4", qualities:"Ceremonial, Cumbersome, Wargear", type:"equipped", origin:"Hida Etsuji"},
 {name: "Gardening Staff", range:"1-2", damage:"4", deadliness:"3", qualities:"Durable, Mundane", type:"equipped", origin:"Kakita Mototada"},
+{name: "Trusted Prongs", range:"2", damage:"5", deadliness:"3", qualities:"2-handed, Wargear", type:"equipped", origin:"Shika Katsuteru"},
+{name: "Scalding Spit", range:"0-3", damage:"5", deadliness:"5", qualities:"Deals supernatural damage", type:"natural", origin:"Kami, Hot Spring"},
+{name: "Nekomata Claws and Fangs", range:"1", damage:"5", deadliness:"7", qualities:"Razor-Edged", type:"equipped", origin:"Nekomata"},
+{name: "Sharpened Wooden Appendages", range:"0", damage:"1", deadliness:"2", qualities:"", type:"natural", origin:"Possessed Puppets"},
+
 
 				];
 var npcarmor=[
@@ -136,6 +141,13 @@ var npcarmor=[
 {armor: "Corrupted Daimyo Armor", phys:"3", sup:"2", qualities:"Unholy", type:"equipped", origin:"Moto Tsume"},
 {armor: "Ethereal Clothing", phys:"3", sup:"5", qualities:"", type:"equipped", origin:"Obsidian Flower"},	
 {armor: "Ghostly Form", phys:"10", sup:"10", qualities:"", type:"equipped", origin:"Mazoku"},
+{armor: "Cloud of Steam", phys:"3", sup:"3", qualities:"", type:"natural", origin:"Kami, Hot Spring"},	
+{armor: "Lucky Robes", phys:"1", sup:"1", qualities:"", type:"equipped", origin:"Otoha, Waystop Proprietor"},
+{armor: "Ragged Robes", phys:"1", sup:"0", qualities:"Damaged", type:"equipped", origin:"Haru the Thief"},
+{armor: "Cursed Robes", phys:"1", sup:"2", qualities:"", type:"set", origin:"Osamu, Malicious Peddler"},
+{armor: "Guise of Illusions", phys:"0", sup:"3", qualities:"", type:"natural", origin:"Possessed Puppets"},
+
+
 				];
 
 var onipowers = {
