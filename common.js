@@ -23,6 +23,7 @@ function noSpaces(hasSpacesAndCommas){
 		nospaces = nospaces.replace(/,/g, "")
 		nospaces = nospaces.replace("(", "")
 		nospaces = nospaces.replace(")", "")
+		nospaces = nospaces.replace("'", "")
 
 		return nospaces;
 }
