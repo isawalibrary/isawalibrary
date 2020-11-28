@@ -11,7 +11,7 @@ function newDiv (divname,parentName,classlist){ //create new div
 	if (typeof parentName === 'string' || parentName instanceof String){
 				document.getElementById(parentName).appendChild(nw);
 			} else {
-				parentName.appendChild(nw);	
+				parentName.appendChild(nw);
 			}
 
 	nw.id = divname;
@@ -23,9 +23,17 @@ function noSpaces(hasSpacesAndCommas){
 		nospaces = nospaces.replace(/,/g, "")
 		nospaces = nospaces.replace("(", "")
 		nospaces = nospaces.replace(")", "")
-		nospaces = nospaces.replace("'", "")
+		nospaces = nospaces.replace(":", "")
 
 		return nospaces;
+}
+
+function doubleToSingleQuotes(hasDoubleQuotes){
+	while (hasDoubleQuotes.includes('"')) {
+		hasDoubleQuotes = hasDoubleQuotes.replace(/"/g,"'")
+		return hasDoubleQuotes;
+	}
+	return hasDoubleQuotes
 }
 
 
@@ -65,7 +73,7 @@ function trailingCommaKiller(){
 
 	 	if (thisString.innerHTML.slice(-1)==","){
 	 		thisString.innerHTML = thisString.innerHTML.slice(0,-1);
-	 	}	
+	 	}
 	 }}
 
 
@@ -82,7 +90,7 @@ function removeDuplicates(array){  //array must be global or this function won't
 	uniqueSet = new Set(array);
 	array = [...uniqueSet]
 	return(array)
-	}	
+	}
 
 function shuffle(array) {  //x = shuffle(array)
 	 var currentIndex = array.length, temporaryValue, randomIndex;
@@ -115,7 +123,7 @@ function fillSelectDropdown(selectorForm,listName){
 	    el.value = selectedOption;
 	    selectorForm.appendChild(el);
 	};
-}	
+}
 
 
 function fillSelectDropdownDefault(selectorForm,defaultText,listName){
@@ -136,7 +144,7 @@ function fillSelectDropdownDefault(selectorForm,defaultText,listName){
 }
 
 function fillSelectDropdownValues(selectorForm,valueListName,textcontentListName){
-	
+
 	selectorForm=document.getElementById(selectorForm);
 	selectorForm.innerHTML="";
 
@@ -146,7 +154,7 @@ function fillSelectDropdownValues(selectorForm,valueListName,textcontentListName
 	    el.value = valueListName[i];
 	    selectorForm.appendChild(el);
 	};
-}	
+}
 
 
 function addToArray(arrayToAddTo,arrayToAdd){
@@ -163,11 +171,11 @@ function addToSelect(selectorForm,listName){
 
      if (typeof selectorForm === 'string' || selectorForm instanceof String){
 				selectorForm=document.getElementById(selectorForm);
-			} 
+			}
 
 	for(var i = 0; i < listName.length; i++) {
 		var selectedOption = listName[i];
-		
+
 	    for (var j = 0; j < selectorForm.options.length; j++) {
 	    	formOption = selectorForm.options[j].value
 	    	if (selectedOption == formOption){
@@ -217,7 +225,7 @@ function getRandomSelect(selectId){
 	var options = select.children;
 	var maxint = options.length
 	var minint = 0
-	
+
 	select.selectedIndex = getRndInteger(minint,maxint);
 }
 
@@ -226,7 +234,7 @@ function setSelectedText(selectObj, valueToSet) {
     for (var i = 0; i < selectObj.options.length; i++) {
         if (selectObj.options[i].text== valueToSet) {
             selectObj.options[i].selected = true;
-            
+
         }
     }
 }
@@ -237,7 +245,7 @@ function setSelectedValue(selectObj, valueToSet) {
 
         if (selectObj.options[i].value== valueToSet) {
             selectObj.options[i].selected = true;
-            
+
         }
     }
 }
@@ -293,7 +301,7 @@ function newTextInput(parentName,formId,formClasses,spanInnerHTML,inputId,inputC
 		var input = document.createElement("input");
 		input.type = "text";
 		input.id = inputId
-		input.classList = inputClasses; 
+		input.classList = inputClasses;
 
 		newForm.appendChild(input);
 	}
@@ -306,7 +314,7 @@ function newTextArea(parentName,inputId,inputClasses){
 
 		textarea.type = "text";
 		textarea.id = inputId
-		textarea.classList = inputClasses; 
+		textarea.classList = inputClasses;
 
 		document.getElementById(parentName).appendChild(textarea);
 
@@ -336,7 +344,7 @@ function newNumberInput(parentName,formId,formClasses,formHTML,inputId,inputClas
 		if (typeof parentName === 'string' || parentName instanceof String){
 				document.getElementById(parentName).appendChild(newForm);
 			} else {
-				parentName.appendChild(newForm);	
+				parentName.appendChild(newForm);
 			}
 
 		newForm.id = formId;
@@ -347,7 +355,8 @@ function newNumberInput(parentName,formId,formClasses,formHTML,inputId,inputClas
 		var input = document.createElement("input");
 		input.type = "number";
 		input.id = inputId
-		input.classList = inputClasses; 
+//		input.step = 1;
+		input.classList = inputClasses;
 		newForm.appendChild(input);
 	}
 }

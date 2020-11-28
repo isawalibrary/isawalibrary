@@ -14,7 +14,7 @@ var schools = {
 			honor: 40,
 			weapons:[],
 			armor:[],
-			techniquetypes: ['Kata', 'Rituals', 'Shuji'],
+			techniquetypes: ['Kata', 'Ritual', 'Shuji'],
 			role: ['Bushi'],
 			startingtechs: ["Lord Hida's Grasp (Crab)"],
 			startingtechoptions: [['Striking as Earth', 'Striking as Water']],
@@ -41,7 +41,7 @@ var schools = {
 			honor: 35,
 			weapons:[],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi','Shinobi'],
 			startingtechs: [
@@ -67,7 +67,7 @@ var schools = {
 			honor: 40,
 			weapons:["Oyumi",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi','Artisan'],
 			startingtechs: ['Tactical Assessment','Stirring the Embers','Stonewall Tactics'
@@ -93,7 +93,7 @@ var schools = {
 			honor: 40,
 			weapons:[],
 			armor:["Sanctified Robes",],
-			techniquetypes: ['Invocations','Kata','Rituals'
+			techniquetypes: ['Invocation','Kata','Ritual'
 				],
 			role: ['Shugenja','Bushi'],
 			startingtechs: ['Armor of Earth','Jade Strike','Commune with the Spirits','Threshold Barrier'
@@ -119,7 +119,7 @@ var schools = {
 			honor: 40,
 			weapons:[],
 			armor:["Ceremonial Robes",],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Courtier'],
 			startingtechs: ["Artisan's Appraisal"
@@ -146,7 +146,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Monk'],
-			techniquetypes: ['Shuji','Rituals','Kiho'],
+			techniquetypes: ['Shuji','Ritual','Kiho'],
 			startingtechs: ["Truth Burns Through Lies"],
 			startingtechoptions: [['Cleansing Spirit','Flame Fist'],['Cleansing Rite','Threshold Barrier']],
 			rank1techs:["Courtier's Resolve","The Body is an Anvil"],
@@ -157,7 +157,7 @@ var schools = {
 			chooseoptions: [1,1],
 			ability:'Suppressing Blows: When you perform an Attack action check using Martial Arts (Melee) or Martial Arts (Unarmed), you may spend <span class="l5r">O</span> as follows:<br><span class="l5r">O</span>+: One character per <span class="l5r">O</span> spent this way who is in range of the weapon you used suffers the Silenced condition.  You can spend a maximum number of <span class="l5r">O</span> this way up to your school rank.',
 			keyword:'',
-			},	
+			},
 	yasukiyojimbo: {
 			family:'yasuki',
 			name:'Yasuki Yojimbo',
@@ -172,7 +172,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Bushi'],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ['Crescent Moon Style'],
 			startingtechoptions: [['Honest Assessment','Well of Desire']],
 			chooseoptions: [1],
@@ -185,6 +185,32 @@ var schools = {
 
 			keyword:'',
 			},
+			KaiuArchitect: {
+					family:"kaiu",
+					name:"Kaiu Architect",
+					clan:"Crab",
+					ring1: "Earth",
+					ring2: "Void",
+					source: "Celestial Realms p84",
+					skillnumber: 5,
+					schoolskills:{Artisan:1,Social:0,Scholar:0,Martial:0,Trade:1},
+					skills: ["Aesthetics","Command","Design","Government","Labor","Unarmed","Tactics"],
+					honor: 45,
+					weapons:["Hammer"],
+					armor:[],
+					role: ["Artisan","Courtier"],
+					techniquetypes: ["Kata","Ritual","Shuji"],
+					startingtechs: ["Commune with the Spirits"],
+					startingtechoptions: [["Courtier's Resolve","Honest Assessment"]],
+					chooseoptions:[1],
+					ability:"Every Stone Serves (School Ability): Reduce the TN of your checks for downtime activities that alter your environment (such as checks to redecorate a room, build a fence, or erect a fortification) by your school rank (to a minimum of 1). When you succeed at such a check, you may choose a number of mundane terrain qualities equal to your school rank and add or remove those terrain qualities from the area you affect.",
+					rank1techs:["Rite of the Wheel","Threshold Barrier"],
+					rank2techs:["Ebb and Flow"],
+					rank3techs:["Pillar of Calm","Lord Hida's Grip"],
+					rank4techs: ["Sear the Wound","Rouse the Soul"],
+					rank5techs:["Soul Sunder","Bend with the Storm"],
+					keyword:"",
+					},
 		},
 	Crane:{
 
@@ -202,7 +228,7 @@ var schools = {
 			honor: 50,
 			weapons:[],
 			armor:["Sanctified Robes",],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 							],
 			role: ['Shugenja','Artisan'],
 			startingtechs: ['Commune with the Spirits','Cleansing Rite'
@@ -229,7 +255,7 @@ var schools = {
 			weapons:["Bisento","Naginata",],
 			armor:[],
 			schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi'],
 			startingtechs: ['Iron Forest Style'
@@ -255,7 +281,7 @@ var schools = {
 			honor: 50,
 			weapons:[],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Courtier'],
 			startingtechs: ["Lady Doji's Decree (Crane)"
@@ -281,7 +307,7 @@ var schools = {
 			honor: 50,
 			weapons:[],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi','Artisan'],
 			startingtechs: ['Iaijutsu Cut: Rising Blade'
@@ -308,7 +334,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Artisan','Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: ["Artisan's Appraisal"],
 			startingtechoptions: [['Soaring Slice','Striking as Air','Striking as Fire']],
 			rank1techs:["Blessing of Steel","Well of Desire"],
@@ -319,7 +345,7 @@ var schools = {
 			chooseoptions: [1],
 			ability:'Kakita Pattern: You can apply this item pattern (Shadowlands p109) to any bladed weapon you craft<br>Sacred Art of Steel: Once per game session when you make a check to craft, improve or maintain a weapon, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank.',
 			keyword:'',
-			},		
+			},
 		daidojispymaster: {
 			family:'daidoji',
 			name:'Daidoji Spymaster',
@@ -334,7 +360,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Courtier','Shinobi'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: ["Ancestry Unearthed"],
 			startingtechoptions: [['Like a Ghost','Skulk'],['Striking as Air','Striking as Earth']],
 			rank1techs:["Lady Doji's Decree (Crane)","Weight of Duty"],
@@ -345,7 +371,7 @@ var schools = {
 			chooseoptions: [1,1],
 			ability:'Incisive Insight: Once per scene, when making a check for a Scheme action targeting another character, you may receive a number of strife up to your school rank to reduce the TN by that amount (to a minimum of 1).',
 			keyword:'',
-			},	
+			},
 		dojibureaucrat: {
 			family:'doji',
 			name:'Doji Bureaucrat',
@@ -360,7 +386,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Courtier'],
-			techniquetypes: ['Rituals','Shuji'],
+			techniquetypes: ['Ritual','Shuji'],
 			startingtechs: ["Courtier's Resolve","Stonewall Tactics"],
 			startingtechoptions: [],
 			rank1techs:["Treaty Signing","Beware the Smallest Mouse"],
@@ -371,7 +397,34 @@ var schools = {
 			chooseoptions: [0],
 			ability:'Procedure and Protocol: When you cause a character to receive strife as a result of a check using a social approach, that character suffers additional strife equal to your school rank.',
 			keyword:'',
-			},	
+			},
+
+asahinaenvoy: {
+					family:"asahina",
+					name:"Asahina Envoy",
+					clan:"Crane",
+					ring1: "Air",
+					ring2: "Void",
+					source: "Celestial Realms p87",
+					skillnumber: 5,
+					schoolskills:{Artisan:0,Social:1,Scholar:1,Martial:0,Trade:0},
+					skills: ["Aesthetics","Courtesy","Culture","Meditation","Performance","Sentiment","Theology"],
+					honor: 50,
+					weapons:["Bo"],
+					armor:["Traveling Clothes"],
+					role: ["Courtier"],
+					techniquetypes: ["Kata","Ritual","Shuji"],
+					startingtechs: ["Tea Ceremony"],
+					startingtechoptions: [["Cadence","Shallow Waters","Weight of Duty"]],
+					chooseoptions:[1],
+					ability:"Soul of Ceremony (School Ability): When you make a check to perform a ritual, you may add kept <span class='l5r'>d</span> set to <span class='l5r'>O</span> results equal to your school rank. You may spend these <span class='l5r'>O</span> as if the ritual were also a Social skill check of your choice (such as to activate a shuji, etc.).",
+					rank1techs:["Lady Doji's Decree","Divination"],
+					rank2techs:["Dazzling Performance","Blessing of the Dance"],
+					rank3techs:["Blessed Union","Prayer of Protection"],
+					rank4techs:["Buoyant Arrival"],
+					rank5techs: ["Bend with the Storm","The Immovable Hand of Peace"],
+					keyword:"",
+					},
 		},
 	Dragon:{
 		agasha: {
@@ -388,7 +441,7 @@ var schools = {
 			honor: 40,
 			weapons:["Bo",],
 			armor:["Sanctified Robes",],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 				],
 			role: ['Shugenja'],
 			startingtechs: ['Path to Inner Peace',"Jurojin's Balm",'Cleansing Rite','Commune with the Spirits'
@@ -414,7 +467,7 @@ var schools = {
 			honor: 45,
 			weapons:["Jian","Bo",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Courtier','Bushi'],
 			startingtechs: ['Shallow Waters'
@@ -440,7 +493,7 @@ var schools = {
 			honor: 50,
 			weapons:["Gao","Jian",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi'],
 			startingtechs: ['Dazzling Performance'
@@ -466,7 +519,7 @@ var schools = {
 			honor: 40,
 			weapons:["Bo",],
 			armor:[],
-			techniquetypes: ['Kiho','Shuji','Rituals'
+			techniquetypes: ['Kiho','Shuji','Ritual'
 				],
 			role: ['Monk'],
 			startingtechs: ["Lord Togashi's Insight (Dragon)"
@@ -492,7 +545,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Bushi','Monk'],
-			techniquetypes: ['Kata','Rituals','Kiho'],
+			techniquetypes: ['Kata','Ritual','Kiho'],
 			startingtechs: ["Water Fist"],
 			startingtechoptions: [['Iaijutsu Cut: Rising Blade','Soaring Slice','Striking as Water']],
 			rank1techs:["Crescent Moon Style","Ki Protection"],
@@ -518,7 +571,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Courtier','Monk'],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ['Divination'],
 			startingtechoptions: [['Cleansing Spirit','Ki Protection'],['Honest Assessment','Truth Burns Through Lies']],
 			chooseoptions:[1,1],
@@ -529,8 +582,34 @@ var schools = {
 			rank4techs:["Breaking Blow","Foreseen Need"],
 			rank5techs:["Death Touch","The Immovable Hand of Peace"],
 			keyword:'',
-			
+
 		},
+		AgashaAlchemistSchool: {
+				family:"Agasha",
+				name:"Agasha Alchemist School",
+				clan:"Dragon",
+				ring1: "Fire",
+				ring2: "Water",
+				source: "Celestial Realms",
+				skillnumber: 3,
+				schoolskills:{Artisan:1,Social:0,Scholar:1,Martial:0,Trade:0},
+				skills: ["Ranged","Medicine","Meditation","Performance","Survival","Theology"],
+				honor: 40,
+				weapons:["Blowgun"],
+				armor:["Traveling Clothes"],
+				role: ["Shugenja"],
+				techniquetypes: ["Invocation","Ritual","Shuji"],
+				startingtechs: [],
+				startingtechoptions: [["Amaterasu's Gaze","Fukurokujin's Wit","Path to Inner Peace","Cleansing Fire","Fires from Within"],["Shallow Waters","Stirring the Embers","Truth Burns Through Lies"]],
+				chooseoptions:[3,2],
+				ability:"Flesh of the Elements (School Ability): You can have a number of additional potions with prepared Invocation (see page 190 of the core rulebook) equal to your school rank. When you spend a downtime activity creating a potion, you may make a number of supplemental checks after the first to create additional potions equal to your school rank, but each check must be for a different invocation.",
+				rank1techs:["Hawk's Precision","Fires of Purity"],
+				rank2techs:["Dazzling Performance","Pelting Hail Style"],
+				rank3techs:["Bravado","Path of Beasts"],
+				rank4techs: ["Rain of Ten Thousand Lotuses"],
+				rank5techs:["Heart of the Lady Sun","Sear the Wound"],
+				keyword:"Tamori",
+				},
 		},
 	Lion:{
 		akodo: {
@@ -547,7 +626,7 @@ var schools = {
 			honor: 50,
 			weapons:[],
 			armor:["Lacquered Armor",],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi'],
 			startingtechs: ["Lord Akodo's Roar (Lion)"
@@ -573,7 +652,7 @@ var schools = {
 			honor: 45,
 			weapons:["Tessen",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Courtier'],
 			startingtechs: ["Warrior's Resolve",'Fanning the Flames','Tributaries of Trade'
@@ -599,7 +678,7 @@ var schools = {
 			honor: 50,
 			weapons:["Bo",],
 			armor:["Lacquered Armor",],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 				],
 			role: ['Shugenja'],
 			startingtechs: ['Commune with the Spirits','Cleansing Rite','Ancestry Unearthed'
@@ -608,7 +687,7 @@ var schools = {
 				],
 			rank1techs:["Courage of Seven Thunders","Heart of the Water Dragon",],rank2techs:["Hands of the Tides","Fanning the Flames",],rank3techs:["Rise, Earth","Ebb and Flow",],rank4techs:["Wrath of Kaze-no-Kami","Bravado",],rank5techs:["Sear the Wound","Buoyant Arrival",],
 			chooseoptions:[2],
-			ability:'Once per scene, you may importune one invocation (see Importune Invocations, on page 189) with a school rank prerequisite up to your school rank without making the sacrifices usually required and without the usual TN increase.',
+			ability:'Once per scene, you may importune one invocation (see Importune Invocation, on page 189) with a school rank prerequisite up to your school rank without making the sacrifices usually required and without the usual TN increase.',
 			keyword:'',
 			},
 		matsu: {
@@ -625,7 +704,7 @@ var schools = {
 			honor: 55,
 			weapons:["Nodachi","Zanbato","Tessen",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi'],
 			startingtechs: ['Stirring the Embers'
@@ -651,7 +730,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Artisan','Bushi'],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ["Stonewall Tactics"],
 			startingtechoptions: [['Crescent Moon Style','Striking as Earth','Striking as Water'],['Cleansing Rite','Threshold Barrier']],
 			rank1techs:["Commune with the Spirits","Honest Assessment"],
@@ -677,7 +756,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Courtier','Shinobi'],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ["Whispers of Court","Skulk"],
 			startingtechoptions: [["Hawk's Precision","Warrior's Resolve"]],
 			rank1techs:["What's Yours is Mine","Rustling of Leaves"],
@@ -689,6 +768,34 @@ var schools = {
 			ability:'Victory Before Honor: Once per scene when performing a check, you may stake an amount of honor no greater than your school rank to reroll a number of dice equal to twice the amount of honor staked.  For each rerolled die result that does not contain a <span class="l5r">S</span> or <span class="l5r">E</span>, you forfeit one staked honor',
 			keyword:'',
 			},
+	KitsuRealmWanderer: {
+			family:"kitsu",
+			name:"Kitsu Realm Wanderer",
+			clan:"Lion",
+			ring1: "Void",
+			ring2: "Water",
+			source: "Celestial Realms p88",
+			skillnumber: 3,
+			schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
+			skills: ["Fitness","Melee","Meditation","Sentiment","Survival","Theology"],
+			honor: 50,
+			weapons:["Bo","Yari"],
+			armor:["Ceremonial Clothes"],
+			role: ["Shugenja","Bushi"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
+			startingtechs: ["Striking as Water","Commune with the Spirits","Divination"],
+			startingtechoptions: [["Biting Steel","Blessed Wind","Courage of Seven Thunders","Nature's Touch","The Rushing Wave"]],
+			chooseoptions:[3],
+			ability:"Celestial Alignment (School Ability): As a Support action, you may make a TN 2 Meditation (Void) check to draw one of the Spirit Realms closer to your current location. A number of range bands around your current position up t o your school rank become a place of power of the realm you choose (see page 138 for more information). This effect persists until th e end of the scene.",
+			rank1techs:["Rite of the Wheel"],
+			rank2techs:["Messenger of Chikushu-do", "Iron Forest Style"],
+			rank3techs:["Bond of the Realms","Thunderclap Strike"],
+			rank4techs: ["Crashing Wave Style","Prayer of Protection"],
+			rank5techs:["Soul Sunder","Rain of Ten Thousand Lotuses"],
+			keyword:"",
+			},
+
+
 		},
 	Phoenix:{
 		asako: {
@@ -705,7 +812,7 @@ var schools = {
 			honor: 45,
 			weapons:[],
 			armor:["Ceremonial Robes",],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Courtier'],
 			startingtechs: ['Civility Foremost'
@@ -731,7 +838,7 @@ var schools = {
 			honor: 40,
 			weapons:[],
 			armor:["Sanctified Robes",],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 				],
 			role: ['Shugenja'],
 			startingtechs: ['Commune with the Spirits','Divination'
@@ -757,7 +864,7 @@ var schools = {
 			honor: 45,
 			weapons:["Jian","Ji","Naginata",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi','Courtier'],
 			startingtechs: ["Lord Shiba's Valor (Phoenix)"
@@ -783,7 +890,7 @@ var schools = {
 			weapons:[],
 			armor:["Sanctified Robes",],
 			honor: 45,
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Monk'],
 			startingtechs: ["Hawk's Precision",'Tempest of Air'
@@ -809,7 +916,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ['Courtier','Shugenja'],
-			techniquetypes: ['Invocations','Shuji','Rituals',],
+			techniquetypes: ['Invocation','Shuji','Ritual',],
 			startingtechs: ["Cleansing Rite","Commune with the Spirits","Divination",'Cadence','Truth Burns Through Lies'],
 			startingtechoptions: [],
 			rank1techs:["Threshold Barrier","Weight of Duty"],
@@ -818,7 +925,7 @@ var schools = {
 			rank4techs:["The Soul's Blade","Bravado"],
 			rank5techs:["Striking as Void","Rouse the Soul"],
 			chooseoptions: [0],
-			ability:'Traces of Passage: Once per scene as a Support action, you may scry to detect any supernatural abilities used at range 0-3 in the last day (such as invocations, maho and kiho).  Reduce the TN of your checks to investigate this phenomenon by your school rank.',
+			ability:'Traces of Passage: Once per scene as a Support action, you may scry to detect any supernatural abilities used at range 0-3 in the last day (such as Invocation, maho and kiho).  Reduce the TN of your checks to investigate this phenomenon by your school rank.',
 			keyword:'',
 			},
 		shibaartist: {
@@ -835,7 +942,7 @@ var schools = {
 			weapons:[],
 			armor:[],
 			role: ["Artisan"],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ["Tea Ceremony"],
 			startingtechoptions: [["Assess Strengths","Courtier's Resolve","Fun and Games"]],
 			chooseoptions: [2],
@@ -846,8 +953,34 @@ var schools = {
 			rank4techs:["Rouse the Soul","Hidden in Smoke"],
 			rank5techs:["Bend with the Storm","Buoyant Arrival"],
 			keyword:'',
-			
+
 		},
+		KaitoSpiritSeeker: {
+				family:"kaito",
+				name:"Kaito Spirit Seeker",
+				clan:"Phoenix",
+				ring1: "Earth",
+				ring2: "Water",
+				source: "Celestial Realms p83",
+				skillnumber: 5,
+				schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
+				skills: ["Composition","Courtesy","Games","Ranged","Performance","Sentiment","Theology"],
+				honor: 45,
+				weapons:["Yumi"],
+				armor:[],
+				role: ["Bushi","Shugenja"],
+				techniquetypes: ["Invocation","Kata","Ritual"],
+				startingtechs: [],
+				startingtechoptions: [["Armor of Earth","Extinguish","Dominion of Suijin","Tempest of Air"],["Striking as Air","Striking as Earth","Striking as Water"]],
+				chooseoptions:[2,2],
+				ability:"The Body Is a Shrine (School Ability): When you are in the presence of a kami (such as an elemental kami or other Supernatural being the GM deems appropriate). you may make a TN 4 Courtesy check using a ring associated with the kami's element (its highest ring) or one of its elements (if it has multiple highest rings). If you fail, you suffer 3 fatigue and 3 strife and cannot attempt to act as a vessel again this session. If you succeed, you convince the kami to use your body as a vessel. This grants you the following: <span class='l5r'>b</span> Any time you make a check using one of the kami's elements, you may reroll a number of dice up to your school rank. <span class='l5r'>b</span> Any time you make a check using one of the kami's opposing elements, increase the TN by 1 and add one kept <span class='l5r'>d</span> set to <span class='l5r'>O</span> <span class='l5r'>T</span> . <span class='l5r'>b</span> If you unmask, the kami is released (see Releasing Kami).",
+				rank1techs:["Commune with the Spirits","Civility Foremost"],
+				rank2techs:["Crimson Leaves Strike","Artisan's Appraisal"],
+				rank3techs:["Bond of the Realms"],
+				rank4techs: ["Guardian of the Secret Gate","Buoyant Arrival"],
+				rank5techs:["Rouse the Soul"],
+				keyword:"",
+				},
 		},
 Scorpion:{
 		bayushi: {
@@ -864,7 +997,7 @@ Scorpion:{
 			honor: 35,
 			weapons:[],
 			armor:["Ceremonial Robes",],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Courtier'],
 			startingtechs: ["Lord Bayushi's Whispers (Scorpion)",
@@ -891,7 +1024,7 @@ Scorpion:{
 			weapons:[],
 			armor:["Ceremonial Robes",],
 			role: ['Shinobi','Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			startingtechs: ['Deadly Sting'
 				],
@@ -917,7 +1050,7 @@ Scorpion:{
 			weapons:[],
 			armor:["Sanctified Robes",],
 			role: ['Shugenja','Courtier','Shinobi'],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 				],
 			startingtechs: ['Commune with the Spirits','All in Jest'
 				],
@@ -943,7 +1076,7 @@ Scorpion:{
 			weapons:[],
 			armor:["Sanctified Robes","Concealed Armor",],
 			role: ['Shugenja'],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 				],
 			startingtechs: ['Shallow Waters','Commune with the Spirits','Threshold Barrier'
 				],
@@ -951,7 +1084,7 @@ Scorpion:{
 				],
 			rank1techs:["Civility Foremost","Path to Inner Peace",],rank2techs:["Ebb and Flow","Embrace of Kenro-ji-Jin",],rank3techs:["Open Hand Style","Earth Becomes Sky",],rank4techs:["Skulk","Rise, Water",],rank5techs:["Deadly Sting","Tomb of Jade",],
 			chooseoptions:[2],
-			ability:'You can have a number of additional wards with prepared invocations (Core p190) up to your school rank. Decoding or using one of your wards requires any other character to make a Theology (Void) check with TN equal to your school rank.',
+			ability:'You can have a number of additional wards with prepared Invocation (Core p190) up to your school rank. Decoding or using one of your wards requires any other character to make a Theology (Void) check with TN equal to your school rank.',
 			keyword:'',
 			},
 		yogopreserver: {
@@ -968,7 +1101,7 @@ Scorpion:{
 			weapons:[],
 			armor:[],
 			role: ['Shugenja'],
-			techniquetypes: ['Invocations','Shuji','Rituals',],
+			techniquetypes: ['Invocation','Shuji','Ritual',],
 			startingtechs: ["By the Light of the Lord Moon","Embrace of Kenro-Ji-Jin","Yari of Air",'Craft Shikigami','Threshold Barrier'],
 			startingtechoptions: [],
 			rank1techs:["Cloak of Night","Reflections of P'an Ku"],
@@ -994,7 +1127,7 @@ Scorpion:{
 			weapons:[],
 			armor:[],
 			role: ['Bushi','Shinobi'],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ['Assess Strengths'],
 			startingtechoptions: [['Striking as Air','Striking as Fire']],
 			chooseoptions: [1],
@@ -1007,9 +1140,34 @@ Scorpion:{
 
 			keyword:'',
 		},
-
+		ShosuroShadowweaver: {
+					family:"shosuro",
+					name:"Shosuro Shadowweaver",
+					clan:"Scorpion",
+					ring1: "Air",
+					ring2: "Fire",
+					source: "Celestial Realms",
+					skillnumber: 3,
+					schoolskills:{Artisan:,Social:,Scholar:1,Martial:,Trade:1},
+					skills: ["Courtesy", "Culture", "Fitness", "Government", "Ranged", "Skulduggery"],
+					honor: 30,
+					weapons:["Shuriken"],
+					armor:["Concealed Armor","Sanctified Robes"],
+					role: ["Shugenja","Bushi","Shinobi"],
+					techniquetypes: ["Invocation","Kata","Ritual"],
+					startingtechs: ["By the Light of the Lord Moon","Cloak of Night","Fukurokujin's Wit","Commune with the Spirits","Prey on the Weak"],
+					startingtechoptions: [],
+					chooseoptions:[0],
+					ability:"Sudden Nightfall (School Ability): You do not suffer any ill effects of Obscuring terrain as a result of darkness (see page 267 of the core rulebook). When you perform an Attack or Scheme action check against a target in terrain that is Obscuring due to darkness, reduce the TN by your school rank (to a minimum of 1). As a Support action, you may target a position at range 0-2 and summon a cloud of supernatural darkness there. An area around the target position extending a number of range bands equal to your Air Ring become Obscuring terrain. This effect persists a number of rounds equal to your school rank.",
+					rank1techs:["Skulk","Deadly Sting"],
+					rank2techs:["Fluid Shadows","Lord Bayushi's Whispers"],
+					rank3techs:["Dream Painter","Noxious Cloud"],
+					rank4techs: ["Wolf's Proposal","Pin the Fan"],
+					rank5techs:["The Fading Dream","Silencing Stroke"],
+					keyword:"",
+					},
 			},
-Unicorn:{	
+Unicorn:{
 		ide: {
 			family:'ide',
 			source:'Core p82',
@@ -1025,7 +1183,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			startingtechs: ['Tributaries of Trade'
 				],
@@ -1051,7 +1209,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Shugenja','Artisan'],
-			techniquetypes: ['Invocations','Rituals','Shuji'
+			techniquetypes: ['Invocation','Ritual','Shuji'
 				],
 			startingtechs: ['Commune with the Spirits'
 				],
@@ -1077,7 +1235,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Bushi'],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			startingtechs: ['All in Jest'
 				],
@@ -1103,7 +1261,7 @@ Unicorn:{
 			weapons:["Horsebow",],
 			armor:[],
 			role: ['Bushi','Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			startingtechs: ["Lady Shinjo's Speed (Unicorn)"
 				],
@@ -1129,7 +1287,7 @@ Unicorn:{
 			weapons:["Naginata",],
 			armor:["Lacquered Armor",],
 			role: ['Bushi'],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			startingtechs: ["Warrior's Resolve"
 				],
@@ -1154,7 +1312,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Shugenja'],
-			techniquetypes: ['Air and Earth Invocations','Shuji','Rituals',],
+			techniquetypes: ['Air and Earth Invocation','Shuji','Ritual',],
 			startingtechs: ["Grasp of Earth","Tempest of Air",'Ancestry Unearthed','Honest Assessment'],
 			startingtechoptions: [],
 			rank1techs:["Bind the Shadow","Caress of Earth"],
@@ -1166,6 +1324,34 @@ Unicorn:{
 			ability:'Hands of Earth and Sky: When you perform an invocation that targets at least one other character, if you succeed, you may nourish or drain:<br>If you nourish, you may receive fatigue up to your school rank.  One target removes fatigue equal to the amount you received.<br>If you drain, you may remove an amount of fatigue from yourself up to your school rank.  One target receives fatigue equal to the amount you removed.',
 			keyword:'',
 			},
+
+			UtakuStablemaster: {
+						family:"utaku",
+						name:"Utaku Stablemaster",
+						clan:"Unicorn",
+						ring1: "Air",
+						ring2: "Water",
+						source: "Celestial Realms p88",
+						skillnumber: 5,
+						schoolskills:{Artisan:0,Social:0,Scholar:0,Martial:1,Trade:1},
+						skills: ["Command","Fitness","Melee","Ranged","Sentiment","Smithing","Survival"],
+						honor: 55,
+						weapons:["Scimitar","Yumi","Whip"],
+						armor:[],
+						role: ["Bushi","Sage"],
+						techniquetypes: ["Kata","Ritual"],
+						startingtechs: ["Nature's Touch","Crescent Moon Style","Striking as Air","Striking as Water"],
+						startingtechoptions: [],
+						chooseoptions:[0],
+						ability:"Steed of the Kami (School Ability): When you make a check to handle, calm, or instruct an animal or beast, you may negate a number of <span class='l5r'>T</span> results equal to your school rank. Additionally, once per scene as a Support action, you may make a TN 2 Survival (Water) or Theology (Water) check. If you succeed, you discover a ridable animal with a combat <span class='l5r'>M</span>conflict rank of 3 or lower and that is appropriate to the environment. It is friendly toward you and gives you all of the benefits of a mount (see page 326 of the core rulebook), but its Water Ring is increased by your bonus successes (to a maximum value of 6).",
+						rank1techs:["Call Upon the Wind","Blessing of Fertile Fields"],
+						rank2techs:["Emboldened Steed"],
+						rank3techs:["Messenger of Chikushu-do","Path of Beasts"],
+						rank4techs: ["Guardian of the Secret Gate"],
+						rank5techs:["Rain of Ten Thousand Lotuses"],
+						keyword:"",
+						},
+
 		},
 
 	Imperial:{
@@ -1185,7 +1371,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Artisan','Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 			],
 			startingtechs: [],
 			startingtechoptions: [['Striking as Earth',"Artisan's Appraisal"],["Warrior's Resolve",'Civility Foremost']],
@@ -1214,7 +1400,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: [],
 			startingtechoptions: [['Cadence','Honest Assessment'],['Shallow Waters','Weight of Duty']],
 			rank1techs:["Feigned Opening","Courtier's Resolve"],
@@ -1224,7 +1410,7 @@ Unicorn:{
 			rank5techs:["Sear the Wound","The Immovable Hand of Peace"],
 			chooseoptions: [1,1],
 			keyword:'',
-			
+
 			ability:'Once per round, after a character at range 0-4 succeeds on an Attack or Scheme action check, you may cause them to receive strife equal to your school rank.'},
 		schemer: {
 			family:'otomo',
@@ -1240,7 +1426,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Courtier'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: ['Slippery Maneuvers'],
 			startingtechoptions: [['Courtiers Resolve','Stirring the Embers']],
 			rank1techs:["Civility Foremost","Tea Ceremony"],
@@ -1250,7 +1436,7 @@ Unicorn:{
 			rank5techs:["Sear the Wound","The Immovable Hand of Peace"],
 			chooseoptions: [1],
 			keyword:'',
-			
+
 			ability:'You never forfeit honor or glory in order to lie or decieve for the good of the Emperor and Empire (in your opinion).  However you must forfeit twice as much honor or glory to lie for your personal gain (again, in your opinion).  When a character stakes or forfeits an amount of honor or glory in order to act against your desires, you may force them to increase that amount by your school rank.'},
 		astrologer: {
 			family:'seppun',
@@ -1266,7 +1452,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Shugenja','Artisan'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: ['Bind the Shadow','Divination','Commune with the Spirits','Threshold Barrier'],
 			startingtechoptions: [['Dominion of Suijin','Jade Strike']],
 			rank1techs:["Heart of the Water Dragon","Ancestry Unearthed"],
@@ -1276,7 +1462,7 @@ Unicorn:{
 			rank5techs:["Sear the Wound","The Soul's Blade"],
 			chooseoptions: [1],
 			keyword:'',
-			
+
 			ability:'At the beginning of a game session or as a downtime activity, you may make a TN1 Theology check using any ring.  If you succeed, choose a number of kept dice up to your school rank to reserve.   Until the end of the game session or the next downtime scene, when any character makes a skill check using the chosen ring, you may replace one or more kept dice with the same number of reserved dice of the same type.'},
 		guard: {
 			family:'seppun',
@@ -1292,20 +1478,20 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Bushi'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: [],
 			startingtechoptions: [['Iaijutsu Cut: Crossing Blade','Iaijutsu Cut: Rising Blade'],['Ancestry Unearthed','Honest Assessment']],
 			rank1techs:["Crescent Moon Style","Weight of Duty"],
 			rank2techs:["Crimson Leaves Strike","Touchstone of Courage"],
 			rank3techs:["Iron in the Mountains Style","Threshold Barrier"],
 			rank4techs:["Soul Sunder","A Samurai's Fate"],
-			rank5techs:["Rouse the Soul","The Immovable Hand of Peace"],			
+			rank5techs:["Rouse the Soul","The Immovable Hand of Peace"],
 			chooseoptions: [1,1],
 			keyword:'',
-			
+
 			ability:'When you succeed on an Initiative check during a skirmish or duel, add bonus successes equal to your school rank.'},
 	},
-	
+
 	Other:{
 		worldlyronin: {
 			family:'other',
@@ -1321,7 +1507,7 @@ Unicorn:{
 			honor: 30,
 			weapons:["Masakari",],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Bushi','Courtier'],
 			startingtechs: [
@@ -1349,7 +1535,7 @@ Unicorn:{
 			honor: 40,
 			weapons:[],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'
+			techniquetypes: ['Kata','Ritual','Shuji'
 				],
 			role: ['Monk'],
 			startingtechs: ['Open Hand Style','Cleansing Rite','Threshold Barrier'],
@@ -1360,7 +1546,7 @@ Unicorn:{
 			rank4techs:["Buoyant Arrival","Pillar of Calm"],
 			rank5techs:["Rouse the Soul","Soul Sunder"],
 			chooseoptions: [1],
-			ability:'You have gained the goodwill of the Fortune you serve, who grants you certain Invocations.  When you make a check to use an Invocation you learned in this way, add additional bonus successes equal to your school rank.  Select a Fortune to be the primary object of your veneration and choose one appropriate Invocation (Emerald Empire p237) for which you meet the rank prerequisite.  You learn that Invocation without paying its XP cost.  Each time your school rank increases, you gain one additional invocation this way.',
+			ability:'You have gained the goodwill of the Fortune you serve, who grants you certain Invocation.  When you make a check to use an Invocation you learned in this way, add additional bonus successes equal to your school rank.  Select a Fortune to be the primary object of your veneration and choose one appropriate Invocation (Emerald Empire p237) for which you meet the rank prerequisite.  You learn that Invocation without paying its XP cost.  Each time your school rank increases, you gain one additional invocation this way.',
 			keyword:'Unaligned',
 			clanstatus: 25,
 			},
@@ -1378,7 +1564,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Monk'],
-			techniquetypes: ['Kata','Rituals','Kiho'
+			techniquetypes: ['Kata','Ritual','Kiho'
 				],
 			startingtechs: ['Striking as Earth'],
 			startingtechoptions: [['Cleansing Spirit','Earth Needs No Eyes','Ki Protection']],
@@ -1418,7 +1604,7 @@ Unicorn:{
 			chooseoptions: [0],
 			ability:'Once per game session at the beginning of a scene, you may reveal that an NPC in that scene is the target of your current assignment.  The GM then decides what your assignment entails, such as sabotaging the targets current activities, framing them for a crime, killing them, or even making sure they survive to play their part in a long and sinister plot.  Until the end of the session, when you make a skill check targeting the chosen NPC, you may reroll a number of dice up to your school rank',
 			keyword:'Unaligned',
-		
+
 			},
 
 		mercenaryninja: {
@@ -1435,7 +1621,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ["Shinobi"],
-			techniquetypes: ['Ninjutsu','Rituals','Kata'],
+			techniquetypes: ['Ninjutsu','Ritual','Kata'],
 			startingtechs: ["Skulk"],
 			startingtechoptions: [["Cadence","Shallow Waters"]],
 			chooseoptions: [1],
@@ -1446,7 +1632,7 @@ Unicorn:{
 			rank5techs:["Foreseen Need","Striking as Void"],
 			ability:"Disciple of Darkness: When you perform a check to hide, move stealthily, or deceive others as to your true identity, you may suffer a number of strife up to your school rank to choose that many characters targeted by the check.  Treat each chosen character's vigilance as 1 lower while resolving the check.",
 			keyword:'Unaligned',
-			
+
 		},
 		kitsune: {
 			family:'other',
@@ -1454,7 +1640,7 @@ Unicorn:{
 			clan:'Other',
 			ring1: 'Air',
 			ring2: 'Fire',
-			source: 'Emerald Empire p239',			
+			source: 'Emerald Empire p239',
 			skillnumber: 3,
 			schoolskills:{Artisan:1,Social:1,Scholar:0,Martial:0,Trade:0},
 			skills: ['Courtesy','Games','Performance','Unarmed','Survival','Theology'],
@@ -1462,7 +1648,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Courtier','Shugenja'],
-			techniquetypes: ['Invocations','Rituals','Shuji'],
+			techniquetypes: ['Invocation','Ritual','Shuji'],
 			startingtechs: ['Natures Touch','Token of Memory','Commune with the Spirits'],
 			startingtechoptions: [],
 			rank1techs:["Fanning the Flames","All in Jest"],
@@ -1473,7 +1659,7 @@ Unicorn:{
 			chooseoptions: [0],
 			ability:'Disadvantage: False Identity (Emerald Empire, p247).  <br>Your true form is that of a large fox with up to eight tails if you are a full-blooded kitsune, or a human with certain furry traits if you possess human ancestry as well.  As a Scheme and Support action you may transform between your human and true forms, or into another silhouette 1 or 2 natural creature at the GM discretion (you cannot mimic specific individuals).  Observers with vigilance lower than or equal to your school rank plus your ranks in Performance do not detect any flaws in your facade.  However certain key features persist across all your forms.  If you become Compromised, your disguise slips, subtly revealing your true tails, ears, feet or shadow.',
 			keyword:'Minor Clan Fox Unaligned',
-			
+
 		},
 		wanderingblade: {
 			family: "Other",
@@ -1489,7 +1675,7 @@ Unicorn:{
 			weapons: [],
 			armor: ["Traveling Clothes"],
 			role: ["Bushi"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Wanderer's Resolve"],
 			startingtechoptions: [["Striking as Air","Striking as Earth","Striking as Water","Striking as Fire"]],
 			chooseoptions: [1],
@@ -1514,7 +1700,7 @@ Unicorn:{
 			weapons: ["Yumi","Yari","Daikyu"],
 			armor: ["Traveling Clothes"],
 			role: ["Bushi","Shinobi"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Skulk"],
 			startingtechoptions: [["Soaring Slice","Hawk's Precision"]],
 			chooseoptions: [1],
@@ -1539,7 +1725,7 @@ Unicorn:{
 			weapons: ["Shuriken","Knife"],
 			armor: ["Traveling Clothes"],
 			role: [],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Tactical Assessment"],
 			startingtechoptions: [["All in Jest","Rustling of Leaves"]],
 			chooseoptions: [1],
@@ -1564,7 +1750,7 @@ Unicorn:{
 			weapons: ["Knife"],
 			armor: ["Traveling Clothes"],
 			role: ["Shinobi","Courtier"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Skulk","Deadly Sting"],
 			startingtechoptions: [["Honest Assessment","Whispers of Court"]],
 			chooseoptions: [1],
@@ -1589,11 +1775,11 @@ Unicorn:{
 			weapons: ["Knife"],
 			armor: ["Traveling Clothes"],
 			role: ["Shugenja","Courtier"],
-			techniquetypes: ["Rituals","Shuji"],
+			techniquetypes: ["Ritual","Shuji"],
 			startingtechs: [],
 			startingtechoptions: [["Commune with the Spirits","Divination"],["Well of Desire","Weight of Duty","Rustling of Leaves","Sensational Distraction"]],
 			chooseoptions: [1,2],
-			ability: "Naturally Attuned: As a downtime activity you may select any number of invocations with total school rank prerequisites equal to double your school rank.  You can perform these invocations as if you knew them.",
+			ability: "Naturally Attuned: As a downtime activity you may select any number of Invocation with total school rank prerequisites equal to double your school rank.  You can perform these Invocation as if you knew them.",
 			rank1techs:["Nature's Touch","Threshold Barrier"],
 			rank2techs:["Earth Becomes Sky","Tactical Assessment"],
 			rank3techs:["Fury of Osano-wo","Hands of the Tides"],
@@ -1614,7 +1800,7 @@ Unicorn:{
 			weapons: [],
 			armor: ["Traveling Clothes"],
 			role: ["Artisan"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Fanning the Flames"],
 			startingtechoptions: [["Shallow Waters","Whispers of Court"]],
 			chooseoptions: [1],
@@ -1639,7 +1825,7 @@ Unicorn:{
 			weapons: [],
 			armor: ["Traveling Clothes"],
 			role: ["Monk","Courtier"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Cleansing Rite","Artisan's Approval"],
 			startingtechoptions: [["Ki Protection","The Great Silence"],["Honest Assessment","Stirring the Embers"]],
 			chooseoptions: [1,1],
@@ -1664,11 +1850,11 @@ Unicorn:{
 			weapons: [],
 			armor: ["Sanctified Robes","Traveling Clothes"],
 			role: ["Sage"],
-			techniquetypes: ["Earth and Water Invocations","Rituals","Shuji"],
+			techniquetypes: ["Earth and Water Invocation","Ritual","Shuji"],
 			startingtechs: ["Ancestry Unearthed"],
 			startingtechoptions: [["Commune with the Spirits","Embrace of Kenro-Ji-Jin","Caress of Earth","Jurojin's Balm","Wall of Earth"],["Dance of Seasons","Heart of the Water Dragon","Dominion of Suijin","Inari's Blessing","Reflections of P'an Ku"]],
 			chooseoptions: [2,2],
-			ability: "Seer of the Lords of Death: You can channel rituals in the same way as invocations (Core p189).  Once per scene, when you channel, you may receive fatigue up to your schol rank.  If you do, you may immediately make another check to perform an invocation of the same element using the reserved dice from your channel.  For each fatigue received this way, you may add one kept die set to a <span class='l5r'>S</span> result.",
+			ability: "Seer of the Lords of Death: You can channel Ritual in the same way as Invocation (Core p189).  Once per scene, when you channel, you may receive fatigue up to your schol rank.  If you do, you may immediately make another check to perform an invocation of the same element using the reserved dice from your channel.  For each fatigue received this way, you may add one kept die set to a <span class='l5r'>S</span> result.",
 			rank1techs:["Divination","Fukurokujin's Wit"],
 			rank2techs:["Ebb and Flow","Mask of Wind"],
 			rank3techs:["Chaotic Scattering","Vapor of Nightmares"],
@@ -1714,7 +1900,7 @@ Unicorn:{
 			weapons: [],
 			armor: ["Traveling Clothes"],
 			role: ["Sage"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: ["Balancing Salve","Cleansing Rite","Illuminate the Way","Truth Burns Through Lies"],
 			startingtechoptions: [],
 			chooseoptions: [0],
@@ -1739,7 +1925,7 @@ Unicorn:{
 			weapons: ["Talwar"],
 			armor: ["Sanctified Robes","Traveling Clothes"],
 			role: ["Sage","Bushi"],
-			techniquetypes: ["Kata","Kiho","Rituals"],
+			techniquetypes: ["Kata","Kiho","Ritual"],
 			startingtechs: ["Threshold Barrier"],
 			startingtechoptions: [["Cleansing Spirit","Earth Needs No Eyes", "Earthen Fist"]],
 			chooseoptions: [2],
@@ -1764,7 +1950,7 @@ Unicorn:{
 			weapons: [],
 			armor: [],
 			role: ["Bushi"],
-			techniquetypes: ["Kata","Rituals","Shuji"],
+			techniquetypes: ["Kata","Ritual","Shuji"],
 			startingtechs: [],
 			startingtechoptions: [["Hawk's Precision","Warrior's Resolve"],["Stirring the Embers","Honest Assessment"]],
 			chooseoptions: [1,1],
@@ -1775,8 +1961,35 @@ Unicorn:{
 			rank4techs:["Swirling Tempest Style","Roar of Encouragement"],
 			rank5techs:["Sear the Wound","The Immovable Hand of Peace"],
 			keyword: "gaijin",},
+
+			IshikenInitiate: {
+					family:"Other",
+					name:"Ishiken Initiate",
+					clan:"Other",
+					ring1: "Void",
+					ring2: "Any",
+					source: "Celestial Realms",
+					skillnumber: 3,
+					schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:0,Trade:1},
+					skills: ["Fitness","Medicine","Meditation","Sentiment","Survival","Theology"],
+					honor: 40,
+					weapons:[],
+					armor:[],
+					role: ["Sage","Shugenja"],
+					techniquetypes: ["Inversion","Ritual","Shuji"],
+					startingtechs: [],
+					startingtechoptions: [["One Within the Void","Sight Beyond Existence","Whispered Blade","Witness the End"],["Commune with the Spirits","Divination","Threshold Barrier"],["All in Jest","Ancestry Unearthed","Cadence","Truth Burns Through Lies"]],
+					chooseoptions:[1,1,1],
+					ability:"Way of the Void (School Ability): When you make a check using your Void Ring, after rol ling dice, you may receive a number of fatigue up to your school rank. If you do, you may pull or push: <br>If you pull, choose a number of d ice with non-blank results equal to the fatigue you received, and alter each to a blank result. <br>If you push, choose a number of dice with blank results equal to the fatigue you received, and alter each to a non-blank result of your choice.",
+					rank1techs:["Tea Ceremony"],
+					rank2techs:["All Arts Are One"],
+					rank3techs:["A Samurai's Fate"],
+					rank4techs: ["The Immovable Hand of Peace"],
+					rank5techs:["Rouse the Soul"],
+					keyword:"",
+					},
 			},
-	Minor:{	
+	Minor:{
 		sailor: {
 			family:'mantis',
 			name:'Storm Fleet Sailor',
@@ -1792,7 +2005,7 @@ Unicorn:{
 			weapons:["Nunchaku","Butterfly Sword","Kama","Rochin","Tinbe"],
 			armor:["Sailor's Garb","Shark Leather Armor"],
 			role: ['Bushi'],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: ['Pelting Hail Style'],
 			startingtechoptions: [['All in Jest','Stirring the Embers']],
 			rank1techs:["Skulk","Shallow Waters"],
@@ -1819,7 +2032,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Shugenja'],
-			techniquetypes: ['Air & Water Invocations','Rituals','Shuji'],
+			techniquetypes: ['Air & Water Invocation','Ritual','Shuji'],
 			startingtechs: ['Domination of Suijin','Tempest of Air','Commune with the Spirits','Divination'],
 			startingtechoptions: [['Bo of Water','Yari of Air', 'Path to Inner Peace']],
 			rank1techs:["Summon Fog","Reflections of P'an Ku"],
@@ -1846,7 +2059,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Shugenja'],
-			techniquetypes: ['Invocations','Rituals','Shuji'],
+			techniquetypes: ['Invocation','Ritual','Shuji'],
 			startingtechs: ["Cleansing Rite","Commune with the Spirits","Tea Ceremony","Courtier's Resolve",'By the Light of the Lord Moon'],
 			startingtechoptions: [],
 			rank1techs:["Bo of Water","Threshold Barrier"],
@@ -1857,7 +2070,7 @@ Unicorn:{
 			chooseoptions: [0],
 			ability:'Eyes of Yotogi: Otherworldly beings treat your vigilance as being increased by your school rank.  When you make a check to search for Otherworldly beings, or make an Initiative check in a conflict against them, if you succeed, add bonus successes equal to your school rank.',
 			keyword:'Minor Clan Falcon Ghost',
-			
+
 		},
 		tortoise:{
 			family:'kasuga',
@@ -1873,7 +2086,7 @@ Unicorn:{
 			honor: 29,
 			weapons:[],
 			armor:[],
-			techniquetypes: ['Kata','Rituals','Shuji'],
+			techniquetypes: ['Kata','Ritual','Shuji'],
 			startingtechs: ['Rushing Avalanche Style'],
 			startingtechoptions: [['Honest Assessment','Well of Desire']],
 			rank1techs:["Coiling Serpent Style","Courtier's Resolve"],
@@ -1884,13 +2097,13 @@ Unicorn:{
 			chooseoptions: [1],
 			ability:'You never need to stake glory to publicly use a Trade skill, so long as you are doing so as part of your duty to your clan.  Once per scene, you may add a number of kept <span class="l5r">d</span> set to <span class="l5r">O</span> results equal to your school rank to a check to interact with one or more gaijin, peasants, merchants, burakumin, or any other character with status of 20 or lower.',
 			keyword:'Minor clan Tortoise',
-			
+
 		},
 
 		shikamatchmaker: {
 			family:'shika',
 			name:'Shika Matchmaker',
-			clan:'Other',
+			clan:'Minor',
 			ring1: 'Air',
 			ring2: 'Water',
 			source: 'Courts of Stone',
@@ -1901,7 +2114,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ["Courtier","Shugenja"],
-			techniquetypes: ['Shuji','Rituals','Air & Water Invocations'],
+			techniquetypes: ['Shuji','Ritual','Air & Water Invocation'],
 			startingtechs: ["The Ties that Bind","Yari of Air"],
 			startingtechoptions: [["Blessed Wind","Path to Inner Peace","Sympathetic Energies","Tempest of Air"]],
 			chooseoptions: [2],
@@ -1912,12 +2125,12 @@ Unicorn:{
 			rank4techs:["Wrath of Kaze-no-Kami","Treaty Signing"],
 			rank5techs:["Buoyant Arrival","Formal Tea Ceremony"],
 			keyword:'Minor clan Deer',
-			
+
 		},
 		shikaspeardancer: {
 			family:'shika',
 			name:'Shika Speardancer',
-			clan:'Other',
+			clan:'Minor',
 			ring1: 'Air',
 			ring2: 'Fire',
 			source: 'Courts of Stone',
@@ -1928,7 +2141,7 @@ Unicorn:{
 			weapons:[],
 			armor:[],
 			role: ['Bushi','Shinobi'],
-			techniquetypes: ['Shuji','Rituals','Kata'],
+			techniquetypes: ['Shuji','Ritual','Kata'],
 			startingtechs: ['Trip the Leg'],
 			startingtechoptions: [['Striking as Air',"Striking as Fire"]],
 			chooseoptions: [1],
@@ -1939,8 +2152,35 @@ Unicorn:{
 			rank4techs:['Rouse the Soul','Disappearing World Style'],
 			rank5techs:['Silent Elimination','The Ties that Bind'],
 			keyword:'Minor clan Deer',
-			
+
 		},
+		MoshiSunSentinel: {
+				family:"moshi",
+				name:"Moshi Sun Sentinel",
+				clan:"Minor",
+				ring1: "Fire",
+				ring2: "Fire",
+				source: "Celestial Realms p86",
+				skillnumber: 3,
+				schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:1,Trade:0},
+				skills: ["Courtesy","Fitness","Melee","Unarmed","Sentiment","Theology"],
+				honor: 55,
+				weapons:["Bo"],
+				armor:["Sanctified Robes"],
+				role: ["Bushi","Shugenja"],
+				techniquetypes: ["Kata","Ritual","Shuji"],
+				startingtechs: ["Armor of Radiance","Biting Steel","Extinguish","Katana of Fire","Cleansing Rite","Commune with the Spirits"],
+				startingtechoptions: [],
+				chooseoptions:[0],
+				ability:"Blazing Tears of Lady Sun (School Ability): Damage inflicted by your Fire Invocation is treated as having the Sacred item quality. Items you augment or summon with Fire Invocation have the Sacred quality. When you affect a non-Tainted human character with a Fire invocation, it does not deal damage to the target or inflict negative conditions. Instead, the character removes equal to your school rank plus the damage you would have dealt otherwise. Each character can only remove fatigue with this school ability once per scene.",
+				rank1techs:["Striking as Fire","Fires of Purity"],
+				rank2techs:["Crescent Moon Style","Iron Forest Style"],
+				rank3techs:["Thunderclap Strike","Crimson Leaves Strike"],
+				rank4techs: ["Battle in the Mind","Heart of the Lady Sun"],
+				rank5techs:["Iron in the Mountains Style","Striking as Void"],
+				keyword:"Centipede Moshi Minor clan",
+				},
+
 	},
 
 };
@@ -1996,8 +2236,8 @@ var titles = {
 		title:"Priest",
 		status:"+10 Status (to a minimum of 40)",
 		xp:24,
-		ability:" Title Ability: Servant of the Kami: You may importune invocations even if you do not know any invocations.  When you importune an invocation, do not increase the TN by 1 (although you still increase the TN if the rank of the invocation is higher than your school rank",
-		advance:["Social Skills","Composition","Culture","Theology","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Civility Foremost","<span class='l5r'>b</span> Rouse the Soul"],
+		ability:" Title Ability: Servant of the Kami: You may importune Invocation even if you do not know any Invocation.  When you importune an invocation, do not increase the TN by 1 (although you still increase the TN if the rank of the invocation is higher than your school rank",
+		advance:["Social Skills","Composition","Culture","Theology","<span class='l5r'>b</span> Rank 1-5 Ritual","<span class='l5r'>b</span> Civility Foremost","<span class='l5r'>b</span> Rouse the Soul"],
 		source:"Emerald Empire p251",
 	},
 
@@ -2051,7 +2291,7 @@ var titles = {
 		status:"+10 Status (to a minimum of 45)",
 		xp:20,
 		ability:"Title Ability: Capture Evil: Reduce the TN of your Survival checks to track down a Tainted being by 1.  When you inflict a critical strike on a Tainted being, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span> <span class='l5r'>O</span>: The target suffers the Dazed, Disoriented or Immobilized condition.",
-		advance:["Martial Skills","Smithing","Survival","Theology","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Rank 1-2 Rituals","<span class='l5r'>b</span> Skulk"],
+		advance:["Martial Skills","Smithing","Survival","Theology","<span class='l5r'>b</span> Rank 1-2 Kata","<span class='l5r'>b</span> Rank 1-2 Ritual","<span class='l5r'>b</span> Skulk"],
 		source:"Shadowlands",
 	},
 
@@ -2069,7 +2309,7 @@ var titles = {
 		status:"+10 Status (to a minimum of 30)",
 		xp:45,
 		ability:"Title Ability: Bane of Sorcerers: When you make a check to resist the effects of a maho technique, you may spend <span class='l5r'>O</span> as follows:<br><span class='l5r'>O</span>: Reduce the TN of your next check targeting tbe maho practitioner who performed it by 1 per <span class='l5r'>O</span> spent this way.<br><span class='l5r'>O</span> <span class='l5r'>O</span>: If you succeed on the check to resist, the maho practitioner receives strife equal to your ranks in Theology.",
-		advance:["Martial Skills","Scholar Skills","Command","Skulduggery","<span class='l5r'>b</span> Rank 1-4 Kata","<span class='l5r'>b</span> Rank 1-5 Rituals","<span class='l5r'>b</span> Honest Assessment"],
+		advance:["Martial Skills","Scholar Skills","Command","Skulduggery","<span class='l5r'>b</span> Rank 1-4 Kata","<span class='l5r'>b</span> Rank 1-5 Ritual","<span class='l5r'>b</span> Honest Assessment"],
 		source:"Shadowlands",
 	},
 
@@ -2176,9 +2416,8 @@ var titles = {
 		status:"+0 Status (+25 in the Ivory Kingdoms, to a maximum of 65)",
 		xp:36 ,
 		ability:"Title Ability: Sacred Mantras: You can purchase mantra techniques.",
-		advance:["Scholar Skills","Martial Skills","Command","Courtesy","<span class='l5r'>b</span> Rank 1-3 Rituals","<span class='l5r'>b</span> Summoning Mantra (One Implement)","<span class='l5r'>b</span> Touchstone of Courage"],
+		advance:["Scholar Skills","Martial Skills","Command","Courtesy","<span class='l5r'>b</span> Rank 1-3 Ritual","<span class='l5r'>b</span> Summoning Mantra (One Implement)","<span class='l5r'>b</span> Touchstone of Courage"],
 		source:"Path of Waves p187"
 	},
 
 }
-

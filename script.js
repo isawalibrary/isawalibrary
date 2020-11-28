@@ -31,7 +31,7 @@ function highlight(button,hiddenelementx){
 		button.classList.remove("highlight");
 		button.classList.add("nohighlight")
 
-	} 
+	}
 	else if (hiddenelement.classList.contains("containerhidden")){
 
 		hiddenelement.classList.remove("containerhidden")
@@ -121,7 +121,7 @@ function makeSkills(){
 function divider() {
 	document.getElementById("//0").innerHTML="//";
 	document.getElementById("//1").innerHTML="//";
-	document.getElementById("//2").innerHTML="//";	
+	document.getElementById("//2").innerHTML="//";
 	document.getElementById("//x1").innerHTML="//";
 	document.getElementById("//11").innerHTML="//";
 	document.getElementById("//21").innerHTML="//";
@@ -151,7 +151,7 @@ function makeTable(){
 			var thisTableData = tabledata[i].children
 			newDiv(title,"definitionstables","mt10 block centre");
 			var tabletitle = ref+"-table";
-			divContents(title,"<table class='hide centre' id='"+tabletitle+"'></table>"); 
+			divContents(title,"<table class='hide centre' id='"+tabletitle+"'></table>");
 			document.getElementById("tablesdef").innerHTML+="<div id='"+tabletitle+"-div' class='centre inlineblock ml20'>"+title+"</div>";
 			document.getElementById(tabletitle+"-div").setAttribute("onclick","hidex('"+tabletitle+"')");
 
@@ -167,7 +167,7 @@ function makeTable(){
 				var thisHead = document.getElementById(tabletitle).createTHead();
 				var thisRow = thisHead.insertRow(rownumber);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -176,11 +176,11 @@ function makeTable(){
 
 				}
 				rownumber++;
-				itemnumber = 0;	
+				itemnumber = 0;
 				} else if (rownumber==1){
 				var thisRow = thisBody.insertRow(rownumber-1);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -189,11 +189,11 @@ function makeTable(){
 					}
 				rownumber++;
 				itemnumber = 0;
-				
+
 				} else {
 				var thisRow = thisBody.insertRow(rownumber-1);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -204,7 +204,7 @@ function makeTable(){
 				itemnumber = 0;
 				}
 			})
-  
+
 		}
 
 
@@ -250,12 +250,12 @@ function sortTable(tableName,sortByColumn) {
   sortByColumn = sortByColumn-1;
 
   while (switching) {
- 
+
     switching = false;
     rows = table.rows;
 
     for (var i = 1; i < (rows.length - 1); i++) {
-      
+
       shouldSwitch = false;
 
       x = rows[i].getElementsByTagName("td")[sortByColumn];
@@ -297,7 +297,7 @@ function hidex(x) {
 				;
 			} else {thisTable.classList.add("hide")}
 	}
-	
+
 	if (hidden == 1){
 		thatTable.classList.remove("hide");
 	} else {
@@ -348,8 +348,8 @@ function ringOppTables(){
 			var tabletitle = thisRing+"-opps-table";
 
 			newDiv(title,"opps-table","block");
-			
-			divContents(title,"<table id='"+tabletitle+"'></table>"); 
+
+			divContents(title,"<table id='"+tabletitle+"'></table>");
 			document.getElementById(title).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
 
 			var rownumber = 0;
@@ -364,7 +364,7 @@ function ringOppTables(){
 				var thisHead = document.getElementById(tabletitle).createTHead();
 				var thisRow = thisHead.insertRow(rownumber);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -373,11 +373,11 @@ function ringOppTables(){
 
 				}
 				rownumber++;
-				itemnumber = 0;	
+				itemnumber = 0;
 				} else if (rownumber==1){
 				var thisRow = thisBody.insertRow(rownumber-1);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -386,11 +386,11 @@ function ringOppTables(){
 					}
 				rownumber++;
 				itemnumber = 0;
-				
+
 				} else {
 				var thisRow = thisBody.insertRow(rownumber-1);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -440,8 +440,8 @@ function contextOppTables(){
 			var tabletitle = title+"-opps-table";
 
 			newDiv(title,"opps-table","block");
-			
-			divContents(title,"<table id='"+tabletitle+"'></table>"); 
+
+			divContents(title,"<table id='"+tabletitle+"'></table>");
 			document.getElementById(tabletitle).innerHTML+="<div id='"+tabletitle+"-div' class='tooltipwrapper defs'></div>";
 
 			var rownumber = 0;
@@ -456,7 +456,7 @@ function contextOppTables(){
 				var thisHead = document.getElementById(tabletitle).createTHead();
 				var thisRow = thisHead.insertRow(rownumber);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -465,11 +465,11 @@ function contextOppTables(){
 
 				}
 				rownumber++;
-				itemnumber = 0;	
+				itemnumber = 0;
 				} else if (rownumber==1){
 				var thisRow = thisBody.insertRow(rownumber-1);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -478,11 +478,11 @@ function contextOppTables(){
 					}
 				rownumber++;
 				itemnumber = 0;
-				
+
 				} else {
 				var thisRow = thisBody.insertRow(rownumber-1);
 
-					for (elem  in row){	
+					for (elem  in row){
 						var thisItemData = row[elem];
 
 								var thisCell = thisRow.insertCell(itemnumber);
@@ -495,7 +495,7 @@ function contextOppTables(){
 			})
 
 	setSelectedText(document.getElementById("ringselect"), "Opportunities by Ring")
-	
+
 }
 
 var weaponCategoryArray = [];
@@ -547,7 +547,7 @@ function insertSelects(){
   fillSelectDropdownDefault("weapons-table-book-select","Book",weaponCategoryArray)
   document.getElementById("weapons-table-book-select").options[0].value = "any";
 
-  //insert grip filter into Weapons Table 
+  //insert grip filter into Weapons Table
 
   weaponCategoryArray = ["1-hand:","2-hand:"]
 
@@ -558,8 +558,8 @@ function insertSelects(){
 }
 
 function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
-	
-	var parentName, filterId, columnToInsertInput, tableId, input; 
+
+	var parentName, filterId, columnToInsertInput, tableId, input;
 
 	parentName = document.getElementById(tableId).rows[0].cells[columnToInsertInput];
 
@@ -575,7 +575,7 @@ function insertFilterToTable(tableId,filterId,inputType,columnToInsertInput){
       input = document.getElementById(filterId+"-input")
 
       input.setAttribute("oninput","filterWeaponTable('"+tableId+"','"+filterId+"-input',"+columnToInsertInput+")")
-      
+
     break;
   }
 }
@@ -681,8 +681,8 @@ function makeTechniques(){
 
 	addToDiv("techniquecontainerx","Type: ")
 	newSelect("techniquecontainerx","techniquesearchtype","inlineblock ml10 mr10","techniquefilter()")
-	var options = ["Any","Invocation","Kata","Kiho","Maho","Ninjutsu","Ritual","Shuji"]
-	var values = ["any","invocation","kata","kiho","maho","ninjutsu","ritual","shuji"]
+	var options = ["Any","Invocation","Kata","Kiho","Maho","Ninjutsu","Ritual","Shuji","Inversion"]
+	var values = ["any","invocation","kata","kiho","maho","ninjutsu","ritual","shuji","inversion"]
 	fillSelectDropdownValues("techniquesearchtype",values,options)
 
 	addToDiv("techniquecontainerx","Ring: ")
@@ -700,7 +700,7 @@ function makeTechniques(){
 	newSelect("techniquecontainerx","techniquesearchrank","inlineblock","techniquefilter()")
 	options = ["Any",1,2,3,4,5]
 	values = ["any",1,2,3,4,5]
-	fillSelectDropdownValues("techniquesearchrank",values,options)	
+	fillSelectDropdownValues("techniquesearchrank",values,options)
 
 	newDiv("techniqueoutput","techniquecontainerx","block");
 }
@@ -708,7 +708,7 @@ function makeTechniques(){
 function techniquefilter() {
 	var searchString=document.getElementById("techniquesearchinput").value
 
-	let techniqueTemplate = 				
+	let techniqueTemplate =
 				' <% techlist.forEach(function(tech) { %> ' +
 				' <div class="pb10">' +
 				' <div class="mb10" onclick="hideShow(&quot;<%= tech.title %>-effect&quot)"><b><%= tech.title %></b> <i>(<%= tech.reference %>)</i> <%= tech.ring %> <%= tech.type %>    Rank <%= tech.rank %></div>' +
@@ -721,7 +721,7 @@ function techniquefilter() {
 	var techring=document.getElementById("techniquesearchring").value;
 	var techrank1=document.getElementById("techniquesearchrank1").value;
 	var techrank=document.getElementById("techniquesearchrank").value;
-	
+
 	if (searchString !== false) {
 		searchString = searchString.toLowerCase();
 
@@ -772,12 +772,12 @@ function techniquefilter() {
 					return false;
 				});
 			}
-		} 
+		}
 
 		techlist = techlist.filter(function(tech)				 {
 				if (tech.title.toLowerCase().includes(searchString) || tech.effect.toLowerCase().includes(searchString)|| tech.ring.toLowerCase().includes(searchString)|| tech.reference.toLowerCase().includes(searchString)) {
 					return true;
-				} 
+				}
 				return false;
 
 
@@ -795,7 +795,7 @@ function techniquefilter() {
 				} else if (tech.title.toLowerCase().includes(searchString)!==true){
 					return 1;
 				}
-			}) 
+			})
 
 		let html = techniqueTemplateFunction({
 			techlist: techlist
@@ -847,20 +847,20 @@ function schoolfilter(){
 						  '</div>';
 
 	let schoolsTemplateFunction = _.template(schoolsTemplate);
-	
+
 	if (searchString !== false) {
 		searchString = searchString.toLowerCase();
 
 			schoolsArr = schoolsArr.filter(function(school) {
 				if (school.name.toLowerCase().includes(searchString)) {
 					return true;
-				} for (var i=0; i<school.role.length; i++){ 	
+				} for (var i=0; i<school.role.length; i++){
 					if (school.role[i].toLowerCase().includes(searchString)){
 					return true;
 					}
 				} if (school.clan.toLowerCase().includes(searchString) || school.ability.toLowerCase().includes(searchString) || school.ring1.toLowerCase().includes(searchString) || school.ring2.toLowerCase().includes(searchString) || school.source.toLowerCase().includes(searchString) || school.keyword.toLowerCase().includes(searchString)) {
 					return true;
-				} for (i=0; i<school.skills.length; i++){ 	
+				} for (i=0; i<school.skills.length; i++){
 					if (school.skills[i].toLowerCase().includes(searchString)){
 					return true;
 					}
@@ -869,35 +869,35 @@ function schoolfilter(){
 					if (school.startingtechoptions[i][j].toLowerCase().includes(searchString)){
 					return true;
 					}}
-				} for (i=0; i<school.startingtechs.length; i++){ 	
+				} for (i=0; i<school.startingtechs.length; i++){
 					if (school.startingtechs[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.techniquetypes.length; i++){ 	
+				} for (i=0; i<school.techniquetypes.length; i++){
 					if (school.techniquetypes[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.rank1techs.length; i++){ 	
+				} for (i=0; i<school.rank1techs.length; i++){
 					if (school.rank1techs[i].toLowerCase().includes(searchString)){
 					return true;
-					} 
-				} for (i=0; i<school.rank2techs.length; i++){ 	
+					}
+				} for (i=0; i<school.rank2techs.length; i++){
 					if (school.rank2techs[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.rank3techs.length; i++){ 	
+				} for (i=0; i<school.rank3techs.length; i++){
 					if (school.rank3techs[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.rank4techs.length; i++){ 	
+				} for (i=0; i<school.rank4techs.length; i++){
 					if (school.rank4techs[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-				} for (i=0; i<school.rank5techs.length; i++){ 	
+				} for (i=0; i<school.rank5techs.length; i++){
 					if (school.rank5techs[i].toLowerCase().includes(searchString)){
 					return true;
 					}
-					
+
 					else {
 				return false;
 			}}});
@@ -921,7 +921,7 @@ function schoolfilter(){
 		} else {
 			document.getElementById('schooloutput').innerHTML = ""
 		}
-} 
+}
 	trailingCommaKiller()
 
 	i = 0;
@@ -941,7 +941,7 @@ function linkTechniques(){
 		var techName = '"'+techName+'"'
 
 		document.getElementById("tec").id = "tec"+i
-		
+
 		document.getElementById("tec"+i).setAttribute("onclick","goToTech("+techName+")")
 
 		linkTechniques();
@@ -953,7 +953,7 @@ function linkTechniques(){
 function goToTech(techName){
 	if (document.getElementById("techniquecontainer").classList.contains("containerhidden") == true ){
 		highlight("techsbutton","techniquecontainer")
-	} 
+	}
 
 	//reset the dropdown filters
 	setSelectedText(document.getElementById("techniquesearchtype"),"Any")
@@ -991,7 +991,7 @@ function titlefilter(){
 						  '</div>';
 
 	let titlesTemplateFunction = _.template(titlesTemplate);
-	
+
 	if (searchString == false) {
 		document.getElementById('schooloutput').innerHTML = "";}
 	else if (searchString !== false) {
@@ -1000,7 +1000,7 @@ function titlefilter(){
 			titlesArr = titlesArr.filter(function(title) {
 				if (title.title.toLowerCase().includes(searchString)) {
 					return true;
-				} for (i=0; i<title.advance.length; i++){ 	
+				} for (i=0; i<title.advance.length; i++){
 					if (title.advance[i].toLowerCase().includes(searchString)){
 					return true;
 					}
@@ -1036,7 +1036,7 @@ function rolldice (){
 
 
 function rollRings(){
-	var ringdicenumber = document.getElementById("ringdicenumber").value 
+	var ringdicenumber = document.getElementById("ringdicenumber").value
 
 	for (var i=0; i<ringdicenumber; i++){
 
@@ -1050,14 +1050,14 @@ function rollRings(){
 			ringresult = getRandom(ringdice)
 			x += " / " + ringresult
 		}
-						
+
 		divContents("ringdice"+i,x)
 	}
 }
 
 
 function rollSkills(){
-	var skilldicenumber = document.getElementById("skilldicenumber").value 
+	var skilldicenumber = document.getElementById("skilldicenumber").value
 
 	for (var i=0; i<skilldicenumber; i++){
 
@@ -1090,15 +1090,15 @@ function makeTea(){
 	var c3=getRandom(tealists.l3);
 	var c4=getRandom(tealists.l4);
 	var c5=getRandom(tealists.l5);
-	var c6=getRandom(tealists.l6);	
+	var c6=getRandom(tealists.l6);
 	var c7=getRandom(tealists.l7);
 	var cZ=getRndInteger(1,6);
 
 	switch(cZ){
-		
-		case 1: 
+
+		case 1:
 			var x=getRndInteger(1,2);
-			switch(x){			
+			switch(x){
 			case 1:
 				tealists.name="The "+c2+" of "+c7; //The Benevolence of Shinsei
 				break;
@@ -1119,7 +1119,7 @@ function makeTea(){
 			tealists.name=cU+" and "+c2; //Propriety and Rectitude
 			break;
 
-		case 3: 
+		case 3:
 			x=getRndInteger(1,5);
 			switch(x){
 			case 1:
@@ -1141,7 +1141,7 @@ function makeTea(){
 			break;
 
 		case 4: tealists.name="The "+c1+" "+c2; //The Benevolent Honesty
-			break; 
+			break;
 
 		case 5: tealists.name="The "+c1+" "+c5; //The Cheerful Kami
 			break;
@@ -1157,7 +1157,7 @@ function makeTea(){
 function namegenerator(){
  	var name = nameMaker()
  	document.getElementById("nameoutput").innerHTML="";
- 	document.getElementById("nameoutput").innerHTML=name; 	
+ 	document.getElementById("nameoutput").innerHTML=name;
  }
 
 
@@ -1193,7 +1193,7 @@ function shinseifilter() {
  function shinseigenerator(){
  	var shinsei = getRandom(tao)
  	document.getElementById("shinseioutput").innerHTML="";
- 	document.getElementById("shinseioutput").innerHTML=shinsei; 	
+ 	document.getElementById("shinseioutput").innerHTML=shinsei;
  }
 
 function nameMaker(){
@@ -1203,7 +1203,7 @@ function nameMaker(){
 
 	if (type == 1){
 		var name = getRandom(names);
-	} 
+	}
 	else if (type == 2){
 		array = ["m","f"]
 
@@ -1228,7 +1228,7 @@ function nameMaker(){
 					}
 
 		name = pro.concat(deutero);
-		
+
 	}
 
 	return name;
@@ -1267,7 +1267,7 @@ function createDataForm(){
 				break;
 
 		case "Technique":
-				datafields = ["title","type (Kata, Shuji)","rank","reference","ring (Earth / Water)","effect (Activation:...&lt;br>&lt;br>Effect"]
+				datafields = ["title","type (Kata, Shuji)","rank","reference","ring (Earth / Water)","fluff","effect (Activation:...&lt;p>&lt;br>Effect([&lt;span class='l5r'>O&lt;/span>])"]
 				break;
 
 		case "Clan":
@@ -1306,10 +1306,10 @@ function createDataForm(){
 	for (i=0; i< datafields.length; i++){
 		newTextInput("dataform","data"+[i],"block w400 ml10 font09em",datafields[i]+": ","datainput"+[i],"block ml10 w400")
 
-		if (datatype == "NPC" && (i == 24 || i == 25 || i == 28|| i == 29 )|| datatype == "Technique" && i == 5 || datatype == "School" && (i == 12 ||  i == 21) || datatype == "Title" && i == 3 || datatype == "Clan" && (i == 6 || i == 7 ) || datatype == "Family" && (i == 4 || i == 5)){
-				var elem = document. getElementById("datainput"+i); 
+		if (datatype == "NPC" && (i == 24 || i == 25 || i == 28|| i == 29 )|| datatype == "Technique" && (i == 5 || i == 6) || datatype == "School" && (i == 12 ||  i == 21) || datatype == "Title" && i == 3 || datatype == "Clan" && (i == 6 || i == 7 ) || datatype == "Family" && (i == 4 || i == 5)){
+				var elem = document. getElementById("datainput"+i);
 				elem.parentNode.removeChild(elem);
-				newTextArea("data"+i,"datainput"+i," ml10 w400")
+				newTextArea("data"+i,"datainput"+i,"h100 ml10 w400")
 		}
 
 		//makes little fields
@@ -1339,19 +1339,26 @@ function createDataForm(){
 			var div = document.createElement('div')
 			div.id = "newlinediv"
 			div.classList.add("block")
-			
+
 			breakdiv = document.getElementById("data"+i)
 			breakdiv.parentNode.insertBefore(div, breakdiv)
-			
+
 		}
 
 		datavalue = document.getElementById("datainput"+[i]).value
 		values.push(datavalue);
 
 		if (i == datafields.length -1){
-			
+
 			newButton("dataform","cleardatabutton","mt10 ml10","clearData()","Clear Fields")
 			newButton("dataform","copydatabutton","ml10","copyDivToClipboard()","Copy JSON")
+			newButton("dataform","copypbutton","ml20","copyToClipboard('<p>')","p")
+			newButton("dataform","copybrbutton","ml10","copyToClipboard('<br>')","br")
+
+			newButton("dataform","copyoppbutton","ml10","copyToClipboard('opp')","<span class='l5r'>O</span>")
+			newButton("dataform","copystrifebutton","ml10","copyToClipboard('strife')","<span class='l5r'>T</span>")
+			newButton("dataform","copyblackdicebutton","ml10","copyToClipboard('blackdice')","<span class='l5r'>d</span>")
+			newButton("dataform","copywhitedicebutton","ml10","copyToClipboard('whitedice')","<span class='l5r white'>D</span>")
 			newDiv("datainstruction","dataform","block ml10")
 		}
 
@@ -1380,6 +1387,27 @@ function copyDivToClipboard() {
         window.getSelection().removeAllRanges();// to deselect
                 }
 
+function copyToClipboard(copytext) {
+
+	switch (copytext) {
+		case "opp":
+			copytext = "<span class='l5r'>O</span>"
+			break;
+		case "strife":
+			copytext = "<span class='l5r'>T</span>"
+			break;
+		case "blackdice":
+				copytext = "<span class='l5r'>d</span>"
+				break;
+		case "whitedice":
+					copytext = "<span class='l5r white'>D</span>"
+					break;
+	}
+
+	navigator.clipboard.writeText(copytext)
+}
+
+
 function generateData(){
 
 	var datatype = document.getElementById("datatypeselect").value;
@@ -1397,33 +1425,33 @@ function generateData(){
 			case "School":
 
 					var nospaces = noSpaces(values[0])
-										
+					var lowercase = values[1].toLowerCase()
+
 					outputstring[0] = nospaces+': {'
-					outputstring[1] = 'family:"'+values[1]+'",'
+					outputstring[1] = 'family:"'+lowercase+'",'
 					outputstring[2] = 'name:"'+values[0]+'",'
 					outputstring[3] = 'clan:"'+values[2]+'",'
 					outputstring[4] = 'ring1: "'+values[3]+'",'
 					outputstring[5] = 'ring2: "'+values[4]+'",'
 					outputstring[6] = 'source: "'+values[5]+'",'
 					outputstring[7] = 'skillnumber: '+values[6]+','
-					outputstring[8] = 'schoolskills:{Artisan:'+values[7]+',Social:'+values[8]+',Scholar:'+values[9]+',Martial:'+values[10]+',Trade:'+values[11]+'}'
+					outputstring[8] = 'schoolskills:{Artisan:'+values[7]+',Social:'+values[8]+',Scholar:'+values[9]+',Martial:'+values[10]+',Trade:'+values[11]+'},'
 					outputstring[9] = 'skills: ['+values[12]+'],'
 					outputstring[10] = 'honor: '+values[13]+','
 					outputstring[11] = 'weapons:['+values[14]+'],'
 					outputstring[12] = 'armor:['+values[15]+'],'
-					outputstring[13] = 'techniquetypes: ['+values[16]+'],'
-					outputstring[14] = 'role: ['+values[17]+'],'
+					outputstring[13] = 'role: ['+values[16]+'],'
+					outputstring[14] = 'techniquetypes: ['+values[17]+'],'
 					outputstring[15] = 'startingtechs: ['+values[18]+'],'
 					outputstring[16] = 'startingtechoptions: ['+values[19]+'],'
 					outputstring[17] = 'chooseoptions:['+values[20]+'],'
-					outputstring[18] = 'ability:['+values[21]+'],'
+					outputstring[18] = 'ability:"'+values[21]+'",'
 					outputstring[19] = 'rank1techs:['+values[22]+'],'
 					outputstring[20] = 'rank2techs:['+values[23]+'],'
 					outputstring[21] = 'rank3techs:['+values[24]+'],'
-					outputstring[22] = 'rank3techs:['+values[25]+'],'
-					outputstring[23] = 'rank4techs: ['+values[26]+'],'
-					outputstring[24] = 'rank5techs:"'+values[27]+'",'
-					outputstring[25] = 'keyword:"'+values[28]+'",'
+					outputstring[23] = 'rank4techs: ['+values[25]+'],'
+					outputstring[24] = 'rank5techs:['+values[26]+'],'
+					outputstring[25] = 'keyword:"'+values[27]+'",'
 					outputstring[26] = '},'
 
 					var datainstruction = "paste into schoolsdata.js var schools"
@@ -1432,21 +1460,24 @@ function generateData(){
 
 			case "Technique":
 
+					var singlequotes = doubleToSingleQuotes(values[5])
+
 					outputstring[0] = '{'
 					outputstring[1] = 'title: "'+values[0]+'",'
 					outputstring[2] = 'type: "'+values[1]+'",'
 					outputstring[3] = 'rank: "'+values[2]+'",'
 					outputstring[4] = 'reference: "'+values[3]+'",'
 					outputstring[5] = 'ring: "'+values[4]+'",'
-					outputstring[6] = 'effect: "'+values[5]+'"'
-					outputstring[7] = '},'
+					outputstring[6] = 'fluff: "'+singlequotes+'",'
+					outputstring[7] = 'effect: "'+values[6]+'"'
+					outputstring[8] = '},'
 
 					datainstruction = "paste into techniquesdata.js var techniques"
-					
+
 					break;
 
 			case "Family":
-										
+
 					outputstring[0] = values[0].toLowerCase()+': {'
 					outputstring[1] = 'name:"'+values[0]+'",'
 					outputstring[2] = 'clan:"'+values[1]+'",'
@@ -1466,21 +1497,21 @@ function generateData(){
 					break;
 
 			case "Weapon":
-									
-					outputstring[0] = '{name: "'+values[0]+'", skill:"['+values[1]+']", category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},' 
+
+					outputstring[0] = '{name: "'+values[0]+'", skill:"['+values[1]+']", category:"'+values[2]+'", range:"'+values[3]+'", damage:"'+values[4]+'", deadliness:"'+values[5]+'", grips:"'+values[6]+'", qualities:"'+values[7]+'", rarity:"'+values[8]+'", price:"'+values[9]+'", source:"'+values[10]+'"},'
 
 					datainstruction = "paste into tablesdata.js with the other weapons"
 
 					break;
 
 			case "NPC Weapon":
-					outputstring[0] = '{name: "'+values[0]+'", range:"'+values[1]+'", damage:"'+values[2]+'", deadliness:"'+values[3]+'", qualities:"'+values[4]+'", type:"'+values[5]+'", origin:"'+values[6]+'"},' 
+					outputstring[0] = '{name: "'+values[0]+'", range:"'+values[1]+'", damage:"'+values[2]+'", deadliness:"'+values[3]+'", qualities:"'+values[4]+'", type:"'+values[5]+'", origin:"'+values[6]+'"},'
 
 					datainstruction = "paste into npcgear.js var npcweapons"
 					break;
 
 			case "NPC Armor":
-					outputstring[0] = '{armor: "'+values[0]+'", phys:"'+values[1]+'", sup:"'+values[2]+'", qualities:"'+values[3]+'", type:"'+values[4]+'", origin:"'+values[5]+'"},' 
+					outputstring[0] = '{armor: "'+values[0]+'", phys:"'+values[1]+'", sup:"'+values[2]+'", qualities:"'+values[3]+'", type:"'+values[4]+'", origin:"'+values[5]+'"},'
 
 					datainstruction = "paste into npcgear.js var npcarmor"
 					break;
@@ -1492,7 +1523,7 @@ function generateData(){
 					break;
 
 			case "Clan":
-					
+
 					outputstring[0] = values[0]+':{'
 					outputstring[1] = 'name:"'+values[0]+'",'
 					outputstring[2] = 'clanring:{'+values[1]+':+1},'
@@ -1551,16 +1582,16 @@ function generateData(){
 					datainstruction = "paste into npcdata.js var archetypes"
 
 					break;
-		
+
 			}
 
 			document.getElementById("datainstruction").innerHTML = datainstruction
-		
+
 
 			for (i=0; i< outputstring.length; i++){
-				
+
 				newDiv("output"+i,"dataoutput","block mt5")
-				
+
 				document.getElementById("output"+i).textContent = outputstring[i]
 				}
 

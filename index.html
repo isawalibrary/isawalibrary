@@ -5,6 +5,7 @@
     <meta id="Viewport" name="viewport" content="initial-scale=1, maximum-scale=1, minimum-scale=1, user-scalable=no">
     <link href="https://fonts.googleapis.com/css?family=Abel" rel="stylesheet">
     <link href="style.css" rel="stylesheet" type="text/css">
+    <script src="common.js"></script>
     <script src="data.js"></script>
     <script src="familiesdata.js"></script>
     <script src="definitionsdata.js"></script>
@@ -14,9 +15,10 @@
     <script src="npcsdata.js"></script>
     <script src="npcgear.js"></script>
     <script src="script.js"></script>
-    <script src="common.js"></script>
     <script src="skirmish.js"></script>
-    <script src="npcscript.js"></script>
+    <script src="npcscriptclasses.js"></script>
+    <script src="npcscriptnew.js"></script>
+    <script src="npclibrarymanager.js"></script>
 
     <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/lodash@4.17.11/lodash.js"></script>
     <title></title>
@@ -56,13 +58,44 @@
             </div>
 
             <div id="library" class="hide containerhidden">
-                <div id="menu" class="inlineblock w400 bglighter aligntop pt10 pl10 pr10 pb10"></div>
+                <div id="menuwrap" class="inlineblock aligntop">
+                <div id="menu" class="w450 bglighter pt10 pl10 pr10 pb10"></div>
+                <div id="npcmanager" class="w450 bglighter mt10 pt10 pl10 pr10 pb10"></div>
+            </div>
 
-                <div id="statblock" class="inlineblock w700 ml20 bgevenlighter pt10 pl10 pr10 pb10"></div>
+                <div id="statblock" class="inlineblock w700 ml10 bgevenlighter pt10 pl10 pr10 pb10"></div>
                 <div id="editcharacter" class="inlineblock hide ml20 w660 bgevenlighter pt10 pl10 pr10 pb10">
                 </div>
 
             </div>
+             <div id="myModal" class="modal hide">
+              <div class="modal-content">
+                <span class="close">&times;</span>
+                <div id="modalbox"></div>
+                <div id="modalnpcroster"></div>
+              </div>
+            </div>
+
+             <div id="npcSetModal" class="modal hide">
+              <div class="modal-content">
+                <span class="closesetmodal">&times;</span>
+                <div id="modalsetbox"></div>
+                <div id="modalsetroster" class="inlineblock"></div>
+                <div id="modalsetcontents" class="inlineblock bgevenlighter ml10 pl10 pt10 pb10 pr10 w400 aligntop"></div>
+              </div>
+            </div>
+
+            <div id="myAddToSetModal" class="modal hide">
+              <div class="modal-content">
+                <span class="closeaddtoset">&times;</span>
+                <div id="modaladdbox"></div>
+                <div id="modaladdsetroster" class="inlineblock"></div>
+                <div id="modaladdsetcontents" class="inlineblock bgevenlighter ml10 pl10 pt10 pb10 pr10 w400 aligntop"></div>
+              </div>
+          </div>
+
+            </div>
+
 
             <div id="techniquecontainer" class="hide containerhidden"></div>
 
