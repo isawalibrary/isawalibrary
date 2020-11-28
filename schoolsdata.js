@@ -1148,7 +1148,7 @@ Scorpion:{
 					ring2: "Fire",
 					source: "Celestial Realms",
 					skillnumber: 3,
-					schoolskills:{Artisan:,Social:,Scholar:1,Martial:,Trade:1},
+					schoolskills:{Artisan:0,Social:0,Scholar:1,Martial:0,Trade:1},
 					skills: ["Courtesy", "Culture", "Fitness", "Government", "Ranged", "Skulduggery"],
 					honor: 30,
 					weapons:["Shuriken"],
