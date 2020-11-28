@@ -37,13 +37,12 @@ function makeNpcLibrary(){
 			break;
 
 		case "Ronin, Riffraff and Gaijin":
-			var x = "Ronin"
+			var x = each.ronintype
 			break;
 
 		case "Animals":
 		case "Creatures":
-		case "Pregen Types":
-		case "Pregen Individuals":
+		case "Pregen":
 		case "Servants and Peasants":
 		case "Oni Summoner":
 			var x = "";
@@ -53,7 +52,7 @@ function makeNpcLibrary(){
 		newDiv("div"+each.title,"menu","block");
 		divContents("div"+each.title,"<span id='menu"+each.title+"' onclick='showNpc("+'"'+each.title+'"'+")'></span><br>");
 		newButton('menu'+each.title,each.title+'--delete','inline mr5 mb5',"deletenpc("+"'"+each.title+"'"+")","x")
-		if (each.type == "Animals" || each.type == "Creatures" || each.type == "Pregen Types" || each.type == "Pregen Individuals" || each.type == "Servants and Peasants" || each.type == "Oni Summoner" ){
+		if (each.type == "Animals" || each.type == "Creatures" || each.type == "Pregen" || each.type == "Servants and Peasants" || each.type == "Oni Summoner" ){
 				document.getElementById('menu'+each.title).innerHTML += each.fullname + 									
 																	' (' + each.archetype +" "+ x +" "+
 																	'/' + each.template +
@@ -201,7 +200,7 @@ function buildNpcStatsDiv(){  //makes npcbuilder form
 	newTextInput("npcnameright","newnpcname","inline w200","","npcnameinput","inline w200")
 
 	newDiv("npcinfo","npcnameright","inline ml10")
-	divContents("npcinfo",'<i><span id="npcinfoarchetype"></span></i> <span class="l5r">m</span>, <span id="npcconflictcombat"></span> <span class="l5r">c</span> <span id="npcconflictintrigue"></span> <span id="npcsource"></span>');
+	divContents("npcinfo",'<i><span id="npcinfoarchetype"></span></i> <span class="l5r">m</span> <span id="npcconflictcombat"></span> <span class="l5r">c</span> <span id="npcconflictintrigue"></span>');
 
 	newDiv("npcringsleft","npcstatwrap","block pt5 pb5 npcbuilderleft")
 	divContents("npcringsleft",'<b>Rings</b>:')
@@ -535,8 +534,7 @@ function selectArchetype(){
 
 		case ("Creatures"):
 		case ("Animals"):
-		case ("Pregen Types"):
-		case ("Pregen Individuals"):
+		case ("Pregen"):
 			fillStats()
 		break;
 
@@ -1000,7 +998,7 @@ function fillStats(){
 		makeTechDropdowns()
 
 
-	} else if (thisnpc.selectedType == "Animals" || thisnpc.selectedType == "Creatures" || thisnpc.selectedType == "Pregen Types" || thisnpc.selectedType == "Pregen Individuals" || thisnpc.selectedType == "Oni Summoner"){
+	} else if (thisnpc.selectedType == "Animals" || thisnpc.selectedType == "Creatures" || thisnpc.selectedType == "Pregen" || thisnpc.selectedType == "Oni Summoner"){
 			thisnpc.name = thisnpc.selectedArchetype.fullname
 			document.getElementById("npcnameinput").value = thisnpc.name
 
@@ -1094,33 +1092,6 @@ function fillStats(){
 			
 			thisnpc.conflictintrigue= thisnpc.selectedArchetype.conflictintrigue
 			updateSpans("conflictintrigue");
-
-		if (thisnpc.selectedType == "Animals" || thisnpc.selectedType == "Creatures" || thisnpc.selectedType == "Pregen Types" || thisnpc.selectedType == "Pregen Individuals" || thisnpc.selectedType == "Oni Summoner"){
-
-		}
-
-		switch (thisnpc.selectedType) {
-		
-					case "Animals":
-					case "Creatures":
-					case "Pregen Types":
-					case "Oni Summoner":
-					case "Pregen Individuals":
-						thisnpc.source = thisnpc.selectedArchetype.source
-						break;
-		
-					case "Servants and Peasants":
-						thisnpc.source = "Core p313 (Humble Peasant)"
-						break;
-		
-					case "Clan Samurai":
-					case "Ronin, Riffraff and Gaijin":
-						thisnpc.source = thisnpc.selectedSchool.source
-						break;
-		}
-
-			 
-			updateSpans("source");
 
 			updateSpans("Air");
 			updateSpans("Earth");
@@ -1233,10 +1204,10 @@ function setRokuganiRings(){
 					thisnpc.selectedClan = roninregions[each]
 				}
 			} 
-//			if (clans.includes(document.getElementById("npcroninclanbgselect").value)){
-//				thisnpc.selectedClan = document.getElementById("npcroninclanbgselect").value
-//				thisnpc.selectedClan = families[thisnpc.selectedClan]
-//			} 			
+			if (clans.includes(document.getElementById("npcroninclanbgselect").value)){
+				thisnpc.selectedClan = document.getElementById("npcroninclanbgselect").value
+				thisnpc.selectedClan = families[thisnpc.selectedClan]
+			} 			
 		}
 	
 

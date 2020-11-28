@@ -77,7 +77,7 @@ var archetypes =[
 			demeanor:[],
 			advantages:[
 					],
-			disadvantages:[	
+			disadvantages:[
 
 					],
 			weapon:["Katana","Wakizashi","Yari","Yumi",],
@@ -116,9 +116,9 @@ var archetypes =[
 				tradeskill:1,},
 			demeanor:[],
 			advantages:[
-					
+
 					],
-			disadvantages:[	
+			disadvantages:[
 
 					],
 			weapon:["Katana","Wakizashi","Yari","Yumi",],
@@ -140,7 +140,7 @@ var archetypes =[
 						this.ring.Void += array[4];
 			},
 			source:"Homebrew"
-			
+
 		},	{
 			title:"Rank3",
 			fullname: "Rank 3",
@@ -172,9 +172,9 @@ var archetypes =[
 				tradeskill:1,},
 			demeanor:[],
 			advantages:[
-					
+
 					],
-			disadvantages:[	
+			disadvantages:[
 
 					],
 			weapon:["Katana","Wakizashi","Yari","Yumi",],
@@ -222,7 +222,7 @@ var archetypes =[
 				martialskill:0,
 				scholarskill:0,
 				socialskill:0,
-				tradeskill:1,},			
+				tradeskill:1,},
 			demeanor:["Shrewd","Cautious","Friendly","Opportunistic"],
 			advantages:["Salt of the Earth (Earth) [Trade: Interpersonal]",],
 			disadvantages:["Deferential (Water) [Social; Interpersonal, Mental]",],
@@ -264,7 +264,7 @@ var archetypes =[
 			advantages:[
 					"Enormous Stature (Earth) [Martial; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Opportunist (Fire) [Martial; Mental]"
 					],
 			weapon:["Crushing Claws and Fangs",],
@@ -306,7 +306,7 @@ var archetypes =[
 			advantages:[
 					"Keen Sense of Smell (Fire) [Trade; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Hot Tempered (Water) [Martial; Mental]"
 					],
 			weapon:["Tusks",],
@@ -351,7 +351,7 @@ var archetypes =[
 					"Deft Climber (Air) [Martial; Physical]",
 					"Good Communicator (Water) [Social; Interpersonal]",
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Hubris (Air) [Social; Mental]",
 					"Trusting Soul (Air) [Social; Interpersonal]",
 					],
@@ -397,7 +397,7 @@ var archetypes =[
 					"Winsome Manner (Water) [Social; Interpersonal]",
 					"Deft Climber (Air) [Martial; Physical]",
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Light Fingers (Water) [Social; Mental]",
 					"Trusting Soul (Air) [Social; Interpersonal]",
 					"Easily Persuaded By Treats (Water) [Social; Interpersonal]",
@@ -442,7 +442,7 @@ var archetypes =[
 					"Keen Tracker (Water) [Trade; Physical]",
 					"Such a Good Boy! (Water) [Social; Interpersonal]",
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Dependent on Humans (Fire) [Trade; Mental]",
 					"Trusting Soul (Air) [Social; Interpersonal]",
 					],
@@ -486,7 +486,7 @@ var archetypes =[
 					"Keen Tracker (Water) [Trade; Physical]",
 					"Good Communicator (Water) [Social; Interpersonal]",
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Yappy (Air) [Mental]",
 					"Small Dog Complex (Water) [Mental]",
 					"Dependent on Humans (Fire) [Trade; Mental]",
@@ -531,7 +531,7 @@ var archetypes =[
 			advantages:[
 					"Sharp Eyesight (Water) [Martial, Trade; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Hollow Bones (Earth) [Martial; Physical]"
 					],
 			weapon:["Beak and Talons",],
@@ -574,7 +574,7 @@ var archetypes =[
 			advantages:[
 					"Tireless Runner (Earth) [Martial; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Skittish (Fire) [Martial; Mental]"
 					],
 			weapon:["Hooves",],
@@ -616,7 +616,7 @@ var archetypes =[
 			advantages:[
 					"Tireless Runner (Earth) [Martial; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Proud and Haughty (Water) [Social; Interpersonal]",
 					"Traumatised by War (Fire) [Martial; Mental]",
 					"Quick to Anger (Fire) [Social; Interpersonal]",
@@ -662,7 +662,7 @@ var archetypes =[
 					"Good Communicator (Water) [Social; Interpersonal]",
 					"Eerie Intelligence (Water) [Social; Interpersonal]",
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Proud and Haughty (Water) [Social; Interpersonal]",
 					"Traumatised by War (Fire) [Martial; Mental]",
 					"Quick to Anger (Fire) [Social; Interpersonal]",
@@ -707,7 +707,7 @@ var archetypes =[
 			advantages:[
 					"Silent Stalker (Air) [Martial; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Hubris (Air) [Social; Mental]"
 					],
 			weapon:["Rending Claws and Fangs",],
@@ -749,7 +749,7 @@ var archetypes =[
 			advantages:[
 					"Pack Tactics (Water) [Martial, Social; Interpersonal]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Cautious Hunter (Fire) [Martial; Mental]"
 					],
 			weapon:["Vicious Fangs",],
@@ -791,7 +791,7 @@ var archetypes =[
 			advantages:[
 					"Unholy Vigor (Earth) [Martial; Physical, Spiritual]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Visage of Death (Water) [Social; Interpersonal]"
 					],
 			weapon:["Rusty Katana","Decrepit Yumi",],
@@ -834,7 +834,7 @@ var archetypes =[
 					"Shapeshifter's Guile (Air) [Social; Interpersonal]",
 					"Sorcerous Lore (Void) [Scholar; Mental]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Dreadful Hunger (Earth) [Social; Interpersonal, Mental]"
 					],
 			weapon:["Twisted Talons","Horrific Maw"],
@@ -879,13 +879,13 @@ var archetypes =[
 			advantages:[
 					"Expert Skulker (Air) [Martial, Trade; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Cowardice (Earth) [Martial, Social; Mental]"
 					],
 			weapon:["Small Yari","Small Yumi"],
 			armor:["Ashigaru Armor"],
 			qualities:"Lithe and bestial, goblins are individually of little consequence, but hordes of them can fling themselves at the Wall in numbers sufficient to pose a major threat. A Shadowlands goblin is a Tainted being of silhouette 1.",
-			abilities:[			
+			abilities:[
 					"Unsightly Rabble: When making an Attack action check with assistance, a goblin may spend <span class='l5r'>O</span> as follows: <span class='l5r'>O</span>+: One character other than the target at range 0-2 suffers 4 physical damage. This <span class='l5r'>O</span> can be activated a number of times per round equal to the number of goblins assisting with the check.)"
 											],
 			techniques:[],
@@ -924,7 +924,7 @@ var archetypes =[
 					"Massive Stature (Earth) [Martial; Physical]",
 					"Unholy Might (Fire) [Martial; Physical, Spiritual]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Horrifying Visage (Water) [Social; Interpersonal]"
 					],
 			weapon:["Crushing Claws"],
@@ -969,7 +969,7 @@ var archetypes =[
 			advantages:[
 					"Hungry for Flesh (Fire) [Martial; Mental]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Stumbling Gait (Water) [Martial; Physical]"
 					],
 			weapon:["Jagged Teeth","Grasping Hands"],
@@ -1014,7 +1014,7 @@ var archetypes =[
 			advantages:[
 					"Brute Strength (Fire) [Martial; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Insatiable Appetites (Water) [Social; Physical]"
 					],
 			weapon:["Massive Cudgel","Rending Grips"],
@@ -1103,7 +1103,7 @@ var archetypes =[
 			advantages:[
 					"Ethereal Form (Air) [Martial, Trade; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Easily Distrcted (Fire) [Scholar, Social; Mental]"
 					],
 			weapon:["Talons of Air"],
@@ -1149,7 +1149,7 @@ var archetypes =[
 			advantages:[
 					"Massive Stature (Earth) [Martial, Trade; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Honest to a Fault (Air) [Social, Trade; Mental]"
 					],
 			weapon:["Stone Fists"],
@@ -1195,7 +1195,7 @@ var archetypes =[
 			advantages:[
 					"Primal Terror (Air) [Martial, Social; Interpersonal"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Endless Hunger (Water) [Artisan, Scholar; Mental]"
 					],
 			weapon:["Blazing Touch"],
@@ -1241,7 +1241,7 @@ var archetypes =[
 			advantages:[
 					"Liquid Body (Water) [Martial, Trade; Physical]"
 					],
-			disadvantages:[	
+			disadvantages:[
 					"Without Convictions (Earth) [Artisan, Social; Mental]"
 					],
 			weapon:["Smashing Torrent"],
@@ -1314,7 +1314,7 @@ var archetypes =[
 				martialskill:0,
 				scholarskill:0,
 				socialskill:1,
-				tradeskill:2,},			
+				tradeskill:2,},
 			demeanor:["Shrewd","Cautious","Friendly","Opportunistic"],
 			advantages:["Salt of the Earth (Earth) [Trade: Interpersonal]",],
 			disadvantages:["Deferential (Water) [Social; Interpersonal, Mental]",],
@@ -1349,9 +1349,9 @@ var archetypes =[
 				martialskill:0,
 				scholarskill:2,
 				socialskill:3,
-				tradeskill:0,},			
+				tradeskill:0,},
 			demeanor:["Shrewd","Detached","Friendly","Proud","Uncertain"],
-			advantages:["Inexhaustible Politeness (Air) [Social; Interpersonal]", 
+			advantages:["Inexhaustible Politeness (Air) [Social; Interpersonal]",
 						"Wealth and Resources (Water) [Trade; Material]",],
 			disadvantages:["Sheltered from War (Fire) [Martial; Mental]",],
 			weapon:["Wakizashi",],
@@ -1385,7 +1385,7 @@ var archetypes =[
 				martialskill:0,
 				scholarskill:2,
 				socialskill:3,
-				tradeskill:0,},		
+				tradeskill:0,},
 			demeanor:["Ambitious","Assertive","Courageous","Detached","Intense","Cautious"],
 			advantages:["Mystical Knowledge (Void) [Scholar; Mental]", "Holy Personage (Void) [Social; Interpersonal]",],
 			disadvantages:["Scholar's Physique (Earth) [Martial; Physical]",],
@@ -1420,7 +1420,7 @@ var archetypes =[
 				martialskill:1,
 				scholarskill:0,
 				socialskill:0,
-				tradeskill:1,},			
+				tradeskill:1,},
 			demeanor:["Gruff","Loyal","Ambitious","Courageous","Uncertain"],
 			advantages:["Strength in Numbers (Earth) [Martial; Physical]",],
 			disadvantages:["Jaded by Battle (Fire) [Social; Mental]",],
@@ -1535,7 +1535,7 @@ var archetypes =[
 				martialskill:2,
 				scholarskill:0,
 				socialskill:1,
-				tradeskill:1,},			
+				tradeskill:1,},
 			demeanor:["Shrewd","Assertive","Cautious","Friendly","Intimidating","Suspicious","Uncertain","Opportunistic"],
 			advantages:["Age and Cunning (Water) [Martial, Social; Interpersonal, Physical]",],
 			disadvantages:["Fool's Avarice (Earth) [Social; Mental]",],
@@ -1556,7 +1556,7 @@ var archetypes =[
 				Air:3,
 				Fire:2,
 				Water:2,
-				Void:2,},			
+				Void:2,},
 			honor:30,
 			glory:40,
 			status:20,
@@ -1641,7 +1641,7 @@ var archetypes =[
 				martialskill:1,
 				scholarskill:3,
 				socialskill:2,
-				tradeskill:1,},			
+				tradeskill:1,},
 			demeanor:["Ambitious","Shrewd","Detached","Opportunistic","Suspicious"],
 			advantages:["Excellent Liar (Air) [Social; Interpersonal]", "Whispers of Fu Leng (Void) [Scholar; Mental]",],
 			disadvantages:["Rotting from Within (Earth) [Martial; Physical, Spiritual]",],
@@ -1677,7 +1677,7 @@ var archetypes =[
 				martialskill:5,
 				scholarskill:0,
 				socialskill:1,
-				tradeskill:0,},			
+				tradeskill:0,},
 			demeanor:["Aggressive"],
 			advantages:["Massive Stature (Earth) [Martial; Physical]",],
 			disadvantages:["Easily Distracted (Fire) [Social; Interpersonal]",],
@@ -1713,7 +1713,7 @@ var archetypes =[
 				martialskill:2,
 				scholarskill:0,
 				socialskill:2,
-				tradeskill:1,},			
+				tradeskill:1,},
 			demeanor:["Shrewd"],
 			advantages:["Expert in Disguise (Air) [Social; Interpersonal]",],
 			disadvantages:["Impatience (Earth) [Social; Mental]",],
@@ -1749,7 +1749,7 @@ var archetypes =[
 				martialskill:3,
 				scholarskill:0,
 				socialskill:1,
-				tradeskill:0,},			
+				tradeskill:0,},
 			demeanor:["Shrewd"],
 			advantages:["Subtle Appearance (Air) [Martial; Physical]",],
 			disadvantages:["Fear of Fire (Fire) [Social; Mental]",],
@@ -1815,7 +1815,7 @@ var archetypes =[
 			abilities:["Powerful Servant: It may issue orders to undead creatures if they were created by the same maho-tsukai.  Undead creatures under its orders ignore their disadvantages and count as having the Revenant's assistance on all Scholar, Social and Trade checks they make."],
 			source:"Shadowlands p18",
 		},{
-            fullname:"Tsumunagi",
+      fullname:"Tsumunagi",
 			title:"Tsumunagi",
 			type:"Creatures",
 			conflictcombat:2,
@@ -1833,7 +1833,7 @@ var archetypes =[
 			abilities:["Twisting Leech: When making an Attack action check, a tsumunagi may spend <span class='l5r'>O</span> <span class='l5r'>O</span> to attach itself to the target.  The target suffers the Bleeding condition, and cannot remove the condition while the tsumunagi is attached.  Any character at range 0-1 may make a TN 3 Medicine check (Air 2, Earth 5) to remove the tsumunagi, reducing the TN by 1 if they use a flame to scorch the creature off.  If they succeed, it is removed.  If they fail, the victim suffers a critical strike with severity 7 plus their shortfall."],
 			source:"Shadowlands p17",
 		},{
-            fullname:"Undead Horror",
+      fullname:"Undead Horror",
 			title:"UndeadHorror",
 			type:"Creatures",
 			conflictcombat:5,
@@ -1851,7 +1851,7 @@ var archetypes =[
 			abilities:["Fused Corpses:Unless defeated by damage from a Sacred source, its component corpses separate and arise as three undamaged zombie peasants (Core p321)."],
 			source:"Shadowlands p19",
 		},{
-            fullname:"Wanyudo",
+      fullname:"Wanyudo",
 			title:"Wanyudo",
 			type:"Creatures",
 			conflictcombat:4,
@@ -2430,7 +2430,7 @@ var archetypes =[
 			abilities:["Breathes Flame: When making a successful Attack action check, the basan may spend <span class='l5r'>O</span> in the following way:<br> <span class='l5r'>O</span>: The target suffers the Burning condition."],
 			source:"Path of Waves p245",
 			},
-							
+
 			{
 			fullname:"Kami, Manifest Air, Tiny",
 			title:"kamimanifestairtiny",
@@ -4090,8 +4090,8 @@ var templates = [
 						"Creative Soul (Fire) [Artisan; Mental]",
 						"Impeccable Brushwork (Air) [Artisan; Mental]",
 						],
-				disadvantages:["Prima Donna (Water) [Social; Interpersonal]", 
-						"Naivete (Fire) [Social; Interpersonal]", 
+				disadvantages:["Prima Donna (Water) [Social; Interpersonal]",
+						"Naivete (Fire) [Social; Interpersonal]",
 						"Sheltered from Battle (Fire) [Martial; Mental]",
 						"World-Weariness (Earth) [Social; Interpersonal]",
 						"Angsty Artist (Air) [Social, Artisan; Mental]",
@@ -4121,13 +4121,13 @@ var templates = [
 				socialskill:1,
 				scholarskill:1,
 				tradeskill:0,
-				advantages:["Analytical Mind (Fire) [Scholar; Mental]", 
-					"Self-Awareness (Void) [Martial; Mental]", 
+				advantages:["Analytical Mind (Fire) [Scholar; Mental]",
+					"Self-Awareness (Void) [Martial; Mental]",
 					"Sharp Eyes (Water) [Scholar; Physical]",
 					"A Nose for the Truth (Water) [Scholar, Social; Mental]",
 					],
-				disadvantages:["Sceptical Attitude (Fire) [Social; Mental]", 
-					"Haughty Tone (Air) [Social; Interpersonal]", 
+				disadvantages:["Sceptical Attitude (Fire) [Social; Mental]",
+					"Haughty Tone (Air) [Social; Interpersonal]",
 					"Functional Alcoholic (Water) [Social,Scholar,Martial; Physical]",
 					"Seen It All Before (Earth) [Scholar, Social; Mental]",
 
@@ -4157,14 +4157,14 @@ var templates = [
 				socialskill:2,
 				scholarskill:0,
 				tradeskill:0,
-				advantages:["Well-Spoken (Air) [Social; Interpersonal]", 
+				advantages:["Well-Spoken (Air) [Social; Interpersonal]",
 					"Wealth and Resources (Water) [Trade; Material]",
 					"Seems Trustworthy (Water) [Social; Interpersonal]",
 					"Inexhaustible Politeness (Air) [Social; Interpersonal]",
 					"Social Connections (Air) [Social; Interpersonal]",
 					],
-				disadvantages:["Doomed Love (Fire) [Social; Interpersonal]", 
-					"Lack of Empathy (Air) [Social; Mental]", 
+				disadvantages:["Doomed Love (Fire) [Social; Interpersonal]",
+					"Lack of Empathy (Air) [Social; Mental]",
 					"Poor Memory (Earth) [Scholar; Mental]",
 					"Busybody (Air) [Social; Mental]",
 					"Avaricious (Earth) [Social; Interpersonal]",
@@ -4189,12 +4189,12 @@ var templates = [
 				socialskill:0,
 				scholarskill:2,
 				tradeskill:0,
-				advantages:["Keen Empathy (Air) [Social; Interpersonal]", 
+				advantages:["Keen Empathy (Air) [Social; Interpersonal]",
 					"Friendly Kami or Spirit (Fire, Earth, Air, or Water) [Scholar; Spiritual]",
 					"Holy Personage (Water) [Social; Interpersonal]",
 					"Mystical Knowledge (Void) [Scholar; Mental]",
 					],
-				disadvantages:["Above Worldly Matters (Water) [Trade, Social; Interpersonal]", 
+				disadvantages:["Above Worldly Matters (Water) [Trade, Social; Interpersonal]",
 							"Frailty (Earth) [Martial; Physical]",
 					"Possessed by Curiosity (Water) [Scholar; Mental]",
 					],
@@ -4223,14 +4223,14 @@ var templates = [
 				socialskill:2,
 				scholarskill:1,
 				tradeskill:0,
-				advantages:["Excellent Liar (Air) [Social; Interpersonal]", 
-					"Patience (Earth) [Scholar; Mental]", 
+				advantages:["Excellent Liar (Air) [Social; Interpersonal]",
+					"Patience (Earth) [Scholar; Mental]",
 					"Loves Haggling (Water) [Trade; Interpersonal]",
 					"Unmemorable Face (Air) [Social; Physical]",
 					"Skilled Mimic (Air) [Artisan, Social; Interpersonal, Physical]",
 					],
-				disadvantages:["Fear of Failure (Fire) [Martial; Mental]", 
-					"Narcissism (Earth) [Social; Mental]", 
+				disadvantages:["Fear of Failure (Fire) [Martial; Mental]",
+					"Narcissism (Earth) [Social; Mental]",
 					"Irrepressable Liar (Earth) [Social; Mental]",
 					"Risk-Taker (Air) [Martial; Physical]"
 					],
@@ -4254,11 +4254,11 @@ var templates = [
 				socialskill:1,
 				scholarskill:0,
 				tradeskill:0,
-				advantages:["Tested in War (Earth) [Martial: Mental, Physical]", 
-					"Fearsome Presence (Fire) [Social; Interpersonal]", 
+				advantages:["Tested in War (Earth) [Martial: Mental, Physical]",
+					"Fearsome Presence (Fire) [Social; Interpersonal]",
 					"Veteran's Instincts (Water) [Martial; Mental]"],
-				disadvantages:["Bad Dreams (Void) [Martial; Mental]", 
-					"Quick to Anger (Fire) [Social; Interpersonal]", 
+				disadvantages:["Bad Dreams (Void) [Martial; Mental]",
+					"Quick to Anger (Fire) [Social; Interpersonal]",
 					"Shattered by War (Earth) [Social; Mental]",
 					"Old War Wound (Air)[Martial; Physical]",
 					],
@@ -4290,7 +4290,7 @@ var templates = [
 				advantages:["Partial Enlightenment (Void) [Scholar; Spiritual]",
 					"Honed Physique (Earth) [Martial; Physical]",
 					"Acrobatic Fighter (Air) [Martial; Physical]"],
-				disadvantages:["Poverty (Water) [Trade; Material]", 
+				disadvantages:["Poverty (Water) [Trade; Material]",
 					"Fanaticism (Fire) [Social; Mental]",
 					"Cantankerous (Water) [Social; Interpersonal]",
 					"Above Worldly Matters (Water) [Trade, Social; Interpersonal]"],
@@ -4415,13 +4415,13 @@ var templates = [
 				socialskill:1,
 				scholarskill:2,
 				tradeskill:0,
-				advantages:["Forbidden Knowledge [Maho] (Fire) [Scholar; Mental]", 
-					"Exact Memory (Earth) [Scholar; Mental]", 
+				advantages:["Forbidden Knowledge [Maho] (Fire) [Scholar; Mental]",
+					"Exact Memory (Earth) [Scholar; Mental]",
 					"Well-Read (Fire) [Scholar; Mental]",
 					"Nimble Bureaucrat (Air) [Scholar, Social; Interpersonal, Mental]",
 					],
-				disadvantages:["Bitter Marriage (Water) [Social; Interpersonal]", 
-					"Know-It-All (Air) [Social; Interpersonal]", 
+				disadvantages:["Bitter Marriage (Water) [Social; Interpersonal]",
+					"Know-It-All (Air) [Social; Interpersonal]",
 					"Poor Eyesight (Water) [Scholar; Physical]",
 					"Scholar's Physique (Earth) [Martial; Physical]"
 					],
@@ -4430,4 +4430,3 @@ var templates = [
 				demeanor:["Detached", "Ambitious"],
 			},
 ]
-
