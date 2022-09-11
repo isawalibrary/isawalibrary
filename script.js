@@ -1350,11 +1350,11 @@ function createDataForm(){
 
 		if (i == datafields.length -1){
 
+			newButton("dataform","clearpartialbutton","mt10 ml10","clearPartialData()","X")
 			newButton("dataform","cleardatabutton","mt10 ml10","clearData()","Clear Fields")
 			newButton("dataform","copydatabutton","ml10","copyDivToClipboard()","Copy JSON")
 			newButton("dataform","copypbutton","ml20","copyToClipboard('<p>')","p")
 			newButton("dataform","copybrbutton","ml10","copyToClipboard('<br>')","br")
-
 			newButton("dataform","copyoppbutton","ml10","copyToClipboard('opp')","<span class='l5r'>O</span>")
 			newButton("dataform","copystrifebutton","ml10","copyToClipboard('strife')","<span class='l5r'>T</span>")
 			newButton("dataform","copyblackdicebutton","ml10","copyToClipboard('blackdice')","<span class='l5r'>d</span>")
@@ -1371,6 +1371,12 @@ function createDataForm(){
 
 	generateData();
 	fillItUp()
+}
+
+
+function clearPartialData(){
+	document.getElementById('datainput5').value = "";
+	document.getElementById('datainput6').value = "";
 }
 
 

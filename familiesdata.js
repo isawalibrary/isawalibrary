@@ -765,7 +765,7 @@ var families = {
 			clanstatus: 25,
 			wealth:"9",	},
 
-			mantis: {
+		mantis: {
 			name:'Mantis',
 			clan:'Minor',
 			clanring: {"Water":+1},
@@ -791,23 +791,57 @@ var families = {
 			clanstatus: 25,
 			wealth:"7",	},
 
+		moshi: {
+			name:'Moshi',
+			clan:'Minor',
+			clanring: {"Fire":+1},
+			clanskill: "Scholar",
+			ring1:"Air",
+			ring2:"Fire",
+			advantages:[
+				],
+			disadvantages:[
+				],
+			skill1:"Fitness",
+			skill2:"Meditation",demeanor:[],
+			glory:"40",
+			clanstatus: 30,
+			wealth:"3",	},
 
-			moshi: {
-				name:'Moshi',
-				clan:'Minor',
-				clanring: {"Fire":+1},
-				clanskill: "Scholar",
-				ring1:"Air",
-				ring2:"Fire",
-				advantages:[
-				],
-				disadvantages:[
-				],
-				skill1:"Fitness",
-				skill2:"Meditation",demeanor:[],
-				glory:"40",
-				clanstatus: 30,
-				wealth:"3",	},
+		kasuga: {
+			name:'Kasuga',
+			clan:'Minor',
+			clanring: {"Air":+1},
+			clanskill: "Trade",
+			ring1:"Water",
+			ring2:"Earth",
+			advantages:[
+			],
+			disadvantages:[
+			],
+			skill1:"Skulduggery",
+			skill2:"Government",
+			demeanor:[],
+			glory:"33",
+			clanstatus: 25,
+			wealth:"9",	},
+
+		tonbo: {
+			name:"Tonbo",
+			clan:"Minor",
+			clanring: {"Earth":+1},
+			clanskill: "Scholar",
+			ring1:"Air",
+			ring2:"Water",
+			advantages:[],
+			disadvantages:[],
+			skill1:"Courtesy",
+			skill2:"Culture",
+			demeanor:[],
+			glory:35,
+			clanstatus: 30,
+			wealth:"1 koku and 2 Dragonfly glass ornaments",
+			},				
 }
 
 var roninregions ={

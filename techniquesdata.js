@@ -2226,6 +2226,198 @@ reference: "Fields of Victory p107",
 ring: "Fire",
 fluff: "While Leadership counsels against the needless destruction of the enemy's assets-for these can become ones own assets if seized-sometimes fire provides an avenue that subtler means could not. Baggage trains, fortifications, or even the tents of the wounded-for dishonorable commanders, any of these can make tempting targets for the flame. ",
 effect: "Activation: Once per game session as an Attack and Movement action during a mass battle, you may make a Skulduggery (Fire) check targeting one enemy leader's cohort. The TN is equal to the vigilance of that cohort's leader. You may expend 1 charge of blasting powder and forfeit honor equal to half your honor rank (rounded up) to reduce the TN by 2 (to a minimum of 1 ). <p> Effects: If you succeed, you achieve one of the following: <br> <span class='l5r'>p</span> Reduce the difficulty value of a fortification the target is occupying by 4 plus your bonus successes. If this reduces the difficulty value to 0 or lower, the fortification is destroyed; any army with a cohort occupying it receives attrition equal to your bonus successes, and any leader or commander inside suffers a critical strike severity equal to 6 plus your bonus successes. <br> <span class='l5r'>p</span> Remove the Confining and Entangling terrain quality from a fortification the target cohort occupies, but add the Dangerous and Obscuring terrain qualities to that area as it catches ablaze. <br> <span class='l5r'>p</span> Remove one cohort ability from the target cohort. This ability is restored when the army resupplies (such as when making a maintenance check, as described on page 115). Additionally, if you succeed, the target leader must resist with a TN 5 Command check (Air 6, Water 3) or their army suffers panic equal to your ranks in Performance plus their shortfall. <p> New Opportunities <p> Fire <span class='l5r'>O</span>: If you succeed, the target cohort's leader suffers a critical strike with severity equal to equal to 6 plus your bonus successes. <br> Fire <span class='l5r'>O</span> <span class='l5r'>O</span>: The target cohort's leader suffers the Dazed condition. <br> Fire <span class='l5r'>O</span>+: If you succeed, you may expend a number of additional charges of blasting powder up to spent this way to add two bonus successes expended this way. "
+},{
+title: "Mercy of the Stone Fortune",
+type: "Kiho",
+rank: "2",
+reference: "Writ of the Wilds p108",
+ring: "Earth",
+fluff: "Stone statues dedicated to various Fortunes and figures of renown dot Rokugan, from bustling cities to small, rural shrines and temples. Folktales tell of stone Fortunes taking on suffering for those who venerate them—wounds from roadside attackers or farming accidents mysteriously appearing on the stone body instead of upon their worshipper. Whether or not these stories are true, professionally trained individuals can use their ki to absorb fatigue or injuries for nearby allies, bringing harm onto themselves for the sake of protecting their comrades while hardening their own bodies against injury.",
+effect: "Activation: As a Support action, you may make a TN 1 Meditation (Earth) check.<p> Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, when another friendly character at range 0-1 defends against damage, you may receive fatigue up to your Earth ring to reduce the damage that character suffers by that amount. While this kiho is active, when another friendly character at range 0-1 suffers a critical strike, you may spend 1 Void point. If you do, the character does not suffer that critical strike, and you suffer it instead. <p>Burst Effect: If you have two or more bonus successes, treat your ranks in Fitness as increased by 2 (to a maximum of 6) when making checks to resist critical strikes and other conditions. This effect persists for rounds equal to your bonus successes (even if the enhancement effect ends)."
+},{
+title: "Rejuvenating Breath",
+type: "Kiho",
+rank: "3",
+reference: "Writ of the Wilds p109",
+ring: "Earth",
+fluff: "Ki flows through all things, and a practitioner who has learned to channel it can draw ki from the living world around them into their body with a breath. This can allow a combatant to find fresh strength even when overwhelmed. For especially powerful kiho users, this can even let them shrug off injuries, their flesh mending back together around cuts and bruises fading rapidly.",
+effect: "Activation: As a Support action, you may make a TN 2 Fitness (Earth) check. Once per game session, you may spend 1 Void point to perform this check even while Incapacitated or Unconscious. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, increase your endurance by your Earth ring. <p>Burst Effect: If you have three or more bonus successes, you may remove the Heavily Wounded condition and gain the Lightly Wounded condition for the same ring, or you may remove the Unconscious condition."
+},{
+title: "Shadow of Ancient Peaks",
+type: "Kiho",
+rank: "4",
+reference: "Writ of the Wilds p109",
+ring: "Earth",
+fluff: "Before the works of nature, the achievements of any one mortal are inevitably overshadowed. A kiho user can align their energy with the wonders of the natural world to make their presence as insurmountable as a mountain, causing doubt to creep into the mind of any who might challenge them as their blows only encourage this foe who seems to loom above them.",
+effect: "Activation: As a Scheme or Support action, you may make a TN 3 Tactics (Earth) check. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, after you succeed at a check to resist an effect or a critical strike, the character whose effect you resisted receives strife equal to your bonus successes on the check. <p>Burst Effect: If you have two or more bonus successes, the next time you suffer a critical strike, if you would reduce it to severity 0 or lower with your Fitness check, you remove fatigue equal to the severity of the critical strike (before reductions). This effect persists until the end of your next turn."
+},{
+title: "Cutting Wind Talons",
+type: "Kiho",
+rank: "2",
+reference: "Writ of the Wilds p109",
+ring: "Air",
+fluff: "Given enough time, the wind can cut even stone, though few humans perceive the world on the timescale required to notice. A ki practitioner emulate the energy of the wind to by letting their ki to flow over their target like a gale, seeking the smallest cracks in their enemy's protections that can be exploited. Once a gap is found, the ki practitioner can sharpen their energy to a whistling edge and deliver a blow that draws blood or even brings their opponent down in one fell swoop.",
+effect: "Activation: As a Scheme and Support action, you may make a TN 1 Fitness (Air) check to enhance your unarmed strikes. When you perform this action, you may choose one character at range 0-3 as a target for the Burst effect. <p>Enhancement Effect: If you succeed, the kiho activates. While this kiho is active, your unarmed attacks have Razor-Sharp quality. <p>Burst Effect: If you have two or more bonus successes, reduce the TN of your next Attack action check against your target by your ranks in Skulduggery. This effect persists until the end of the scene."
+},{
+title: "Grace of the Gentle Breeze",
+type: "Kiho",
+rank: "3",
+reference: "Writ of the Wilds p109",
+ring: "Air",
+fluff: "Spies and assassins have often chosen to disguise themselves as monks throughout Rokugani history, for monks often pass in plain sight when other members of society would attract notice—neither peasants nor samurai, their status as outsiders within the system grants them a degree of leeway most do not enjoy. However, a skillful user of ki has no need for a disguise and can instead walk in front of those who intend them harm without concern by shrouding their presence in an aura of harmlessness. While most people are not trained to intentionally detect ki and its usage, this does not mean that they do not react instinctively to it, and a ki practitioner can use their inner energy in this way to make themself unremarkable to humans, animals, and even spirits.",
+effect: "Activation: As a Support action, you may make a TN 2 Survival (Air) check to make your presence much more subtle. When you perform this action, you may choose any number of characters at range 0-3 as targets for the Burst effect. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, characters who are unaware of your presence or location treat their vigilance as 2 lower when you make checks to avoid their notice, and those characters increase the TN of checks to look for you by +2. Animals are not disturbed by your presence. <p>Burst Effect: If you have one or more bonus successes, each target with vigilance lower than or equal to your bonus successes loses track of you, becoming unaware of your location. While you are not invisible to these characters, they are subject to the Enhancement Effect when they attempt to find you (as long as you keep it active), and count as being unaware of you for effects that require it."
+},{
+title: "Step of the Storm",
+type: "Kiho",
+rank: "4",
+reference: "Writ of the Wild p110",
+ring: "Air",
+fluff: "Every action stirs a response, from the sweep of a sword to the gentlest brush of a moth's wing. Before a warrior throws nearly any strike, their weight must shift and their stance change. Even skilled fighters can only mask their movements so much, and no concealment is perfect. By making their ki as the wind itself, a ki practitioner can feel the gentle tug of movement with preternatural speed and react before others would even register an oncoming blow. Once moving with such alacrity, however, it can be difficult to stop suddenly.",
+effect: "Activation: As a Movement and Support action, you may make a TN 3 Fitness (Air) check to suddenly leap away from harm. Once per game session, you may spend 1 Void point to perform this check immediately after being declared the target of another character's Attack action check. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, when you are targeted by an Attack action check, you may gain 1 fatigue to negate 1 <span class='l5r'>O</span> from the attacker's check. While this kiho is active, at the end of your turn, you must move 1 range band. <p>Burst Effect: If you have two or more bonus successes, you may immediately move 2 range bands."
+},{
+title: "Blistering Retribution",
+type: "Kiho",
+rank: "2",
+reference: "Writ of the Wild p110",
+ring: "Fire",
+fluff: "Whether they wield ki intentionally or instinctively through the act of breathing, all living things displace energy within their environment. When attacking, one's energy flows into the target. By making their ki volatile, a kiho user can create a burst of power whenever a foe's energy clashes with their own. The greater the energy directed toward the kiho user, the greater the force of their counterstrike.",
+effect: "Activation: As a Support action, you may make a TN 1 Meditation (Fire) check to empower your counterstrikes with ki. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, after you defend against damage dealt by a character in the scene, you decrease the TN of your next Attack or Scheme action check targeting that character by half the amount of fatigue you received from defending against damage (rounded up). This cannot reduce the TN of your next Attack or Scheme action below 1. <p>Burst Effect: If you have 3 or more bonus successes, the next time you defend against damage dealt by a character in the scene, each other character at range 0-2 of you suffers physical damage equal to your ranks in Fitness. This effect persists until the end of the scene."
+},{
+title: "Dance of Fire",
+type: "Kiho",
+rank: "3",
+reference: "Writ of the Wild p110",
+ring: "Fire",
+fluff: "By making one's ki burn like flames, a ki practitioner can push their body beyond its normal limits, the consuming power of flame coursing throughout their body and empowering each of their movements and strikes. However, while using ki this way, a practitioner cannot limit themself as they normally might, and giving their all to each motion risks means they risk burning through their stamina much more quickly than they normally might.",
+effect: "Activation: As a Movement and Support action, you may make a TN 2 Performance (Fire) check to empower your body with exceptional energy. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, if you would fail a check, you must receive 2 fatigue to roll 1 additional <span class='l5r'>d</span> and keep it. If this would not cause you to succeed, repeat this process until you succeed or become Incapacitated. After you become Incapacitated due to fatigue suffered this way, you gain the Exhausted condition (see page 272 of the core rulebook). If you already were suffering the Exhausted condition, you gain the Dying [3 rounds] condition instead. <p>Burst Effect: If you have 2 or more bonus successes, treat your focus as increased by your Fire ring and increase your initiative by the same amount. This effect persists for 1 round. When this effect would end, you may receive 2 fatigue; if you do, it persists for one additional round."
+},{
+title: "Volcanic Fist",
+type: "Kiho",
+rank: "4",
+reference: "Writ of the Wild p111",
+ring: "Fire",
+fluff: "Tectonic instability can create some of the most awe-inspiring acts of destruction known to the natural world, and a kiho user can employ the same principle to deliver devastating blows. By directing energy to their fist and allowing the pressure to build to a breaking point, the kiho user can strike with calamitous force. However, such attacks inevitably take a toll on the body, for human limbs were not built to withstand such unchecked strength.",
+effect: "Activation: As a Support action, you may make a TN 3 Fitness (Fire) check to empower your strikes with unstoppable force. Once per game session, you may spend 1 Void point to perform this action immediately after succeeding on an Attack action check, before resolving its results. <p>Enhancement Effect: While this kiho is active, increase the TN of checks to resist critical strikes you inflict by your unarmed attacks by your Fire ring plus your ranks in Fitness. <p>Burst Effect: If you have one or more bonus successes, your unarmed attacks treat their damage and deadliness as increased by your ranks in Fitness plus your bonus successes. This effect persists for one round. When this effect would end, you may receive 2 fatigue; if you do, it persists for one additional round."
+},{
+title: "Fist of Spreading Venom",
+type: "Kiho",
+rank: "2",
+reference: "Writ of the Wild p112",
+ring: "Water",
+fluff: "Ki can be used to remove poison from the body, pushing it out like a breath of foul air exhaled. But it can also be used to deliver poison alongside strikes. By taking small amounts of a poison into their own body, a kiho user can spread an even amplify its effects, making it spread like a contagion to any they touch. While this power is seen as a grotesque misuse of ki by some practitioners, others believe that it is as natural as a serpent's fangs - frightful, perhaps, but no less a part of the living world than any other animal, plant, or thing.",
+effect: "Activation: As a Support action, you may make a TN 1 Medicine (Water) check and expend one charge of a poison to imbue your unarmed strikes with venomous potency. You suffer no ill effects from consuming a poison this way. When you activate this technique, you may choose one other character at range 0-1 as a target for the burst effect. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, your unarmed attacks count as having the poison you consumed applied to them. <p>Burst Effect: If you have three or more bonus successes, your target counts as having ingested one dose of the poison, and immediately suffers its effects."
+},{
+title: "River's Flowing Stride",
+type: "Kiho",
+rank: "3",
+reference: "Writ of the Wild p112",
+ring: "Water",
+fluff: "Water flows past most obstructions without hesitation, splitting into rivulets to pass a grate only to reform into a torrent seconds later. kiho users of sufficient skill can mimic water in this way to perform incredible feats of contortion, loosening or tightening their muscles or skin and even shifting their bones with ki to slide through seemingly impossible spaces or pass safely across deadly terrain.",
+effect: "Activation: As a Movement and Support action, you may make a TN 2 Fitness (Water) check to make the ki in your body fluid and malleable, allowing you to move over dangerous or narrow terrain with ease. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, you do not suffer damage from terrain qualities while performing Movement actions. <br>Additionally, while this kiho is active, when you are targeted by an Attack action check, you may spend 1 Void point. If you do and the attacker succeeds, reduce their bonus successes by your Water ring, to a minimum of success with 0 bonus successes. <p>Burst Effect: If you have 1 or more bonus successes, you may immediately move up to 2 range bands. During this movement, you may pass through a small gap that would normally prevent your movement so long as it is large enough to accommodate your head."
+},{
+title: "Seeping Ki",
+type: "Kiho",
+rank: "4",
+reference: "Writ of the Wild p112",
+ring: "Water",
+fluff: "Manipulation of the energy within one's own body is only one application of the techniques called kiho - by aligning one's energy to that of another living being, some kiho users can spread their ki to also manipulate the energy within others' bodies. While this control rarely exceeds the unexpected jerking of a few muscles before the target's own ki reasserts itself, even a moment of control over another living creature can be devastating in a fight, forcing them to strike at an ally, leap back to create an opening, or fall to the ground at an opportune moment.",
+effect: "Activation: As an Attack and Support action, you may make a TN 3 Meditation (Water) check to imbue your touch with spreading ki. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, after you succeed at an Attack action check using an unarmed profile, one of your targets receives strife equal to your ranks in Medicine. If this causes the character to become Compromised, they must immediately resist with a TN 4 Meditation (Fire 5, Earth 2) check. If they fail, on their next turn, the character must unmask in one of the following ways of your choice: <p><span class='l5r'>d</span>Move away from you <br><span class='l5r'>d</span>Perform a Strike action targeting one of their allies <br><span class='l5r'>d</span>Drop an item they are holding <br><span class='l5r'>d</span>Another effect determined by you and the GM.<p> If their action requires a check, you choose which dice the character keeps and which ones they drop. If the character is a Minion NPC, they automatically count as failing the Meditation check to resist. <p>Burst Effect: If you have two or more bonus successes, the next time you succeed on an Attack action check using an unarmed profile, your target suffers the Bleeding condition"
+},{
+title: "Aura Awareness",
+type: "Kiho",
+rank: "2",
+reference: "Writ of the Wild p113",
+ring: "Void",
+fluff: "The world teems with strange beings that stand at odd angles to the reality humans perceive, invisible to most people save for the effects they have upon the world around them. Tengu flock on mountaintops, ghosts haunt the places they once tread in life, and stranger beings still lurk in ancient places and wild corners of the world. A kiho practitioner can diminish their mortal senses to instead see the energy that flows in the world around them, making yōkai, spirits, and other such creatures visible even when they would normally pass unnoticed. By following the traces of ki that all beings cast off can confront the truth that rests beneath the cobwebs spun by the senses.",
+effect: "Activation: As a Support action, you may make a TN 2 Mediation (Void) check. <p>Enhancement Effect: If you succeed, this kiho activates. While this kiho is active, you can perceive beings that are normally invisible to human sight, such as spirits and characters concealed by supernatural abilities. Additionally, after a character or object at range 0-3 activates a supernatural ability (such as a technique including kiho, invocations, maho, inversions, and sealed techniques, or an NPC ability that is supernatural in its effects), you become aware of the ability and its effects. <br>While this kiho is active, your natural senses are diminished. Treat your Vigilance as 2 lower (to a minimum of 1) for any effect not generated by a supernatural being, object, or ability, and increase the TN of all of your checks to detect non-supernatural characters, objects, and phenomena in your environment by 2. <p>Burst Effect: If you have two or more bonus successes, during your next Attack action check targeting an Otherworldly being, treat its resistances as reduced by your ranks in Theology. This effect persists until the end of your next turn."
+},{
+title: "Essence of Stillness",
+type: "Kiho",
+rank: "3",
+reference: "Writ of the Wild p113",
+ring: "Void",
+fluff: "The world changes. This is an undeniable truth, but a kiho user can force their ki to become unchanging for a time, preserving their life force even in the face of grievous harm. While techniques that forestall the consequences of harm do not heal the kiho practitioner, they can slow the march of time within the body, keeping them alive and fighting a bit longer when a few extra seconds are the difference between victory and defeat.",
+effect: "Activation: As a Support action, you may make a TN 3 Fitness (Void) check. <p>Enhancement: If you succeed, this kiho activates. While this kiho is active, you ignore the effects of the Bleeding, Lightly Wounded, Heavily Wounded, and Unconscious conditions. <p>Burst Effect: If you have 2 or more bonus successes, you ignore the effects of the Dying condition until the end of the scene. If the Dying condition is removed from you before the end of the scene, you do not die, even if the duration has expired."
+},{
+title: "Eternal Mind's Gate",
+type: "Kiho",
+rank: "4",
+reference: "Writ of the Wild p113",
+ring: "Void",
+fluff: "The Void is a realm without time, and by aligning their energy to it, a kiho user recognize traces of their own ki from past lives. This can allow them to identify important people, places, and objects from previous existences. By seizing upon these threads of energy from their past lives, a kiho practitioner can even revert part of their mind to that past life briefly, tapping into training and experiences they no longer possess. While these resurgent memories eventually fade to a half-remembered dream, they can be extremely potent in the moment, and can grant an important edge in many situations",
+effect: "Activation: As a Support action, you may make a TN 3 Meditation (Void) check. <p>Enhancement Effect: While this kiho is active, you are able to identify locations related to your past life, objects related to your past life, and individuals who you interacted with in your past life (but not those individuals' reincarnations). You also become aware of the general nature of your relationship with these individuals, but do not have specific memories of your interactions. <p>Burst Effect: If you have three or more bonus successes, choose two of your skills in the same group and swap their values. You must explain some details about the past life in which your character had firsthand experience with the lower of the two skills, and your GM is the final arbiter of what is an appropriate skill to increase this way. This effect persists until the end of the game session."
+},{
+title: "Bear's Swipe Style",
+type: "Kata",
+rank: "1",
+reference: "Writ of the Wild p114",
+ring: "Any",
+fluff: "Warriors of many different traditions train to strike for maximum impact, especially when the blow is not meant to disable the foe all on its own, but instead to disorient, distract, or create an opening for a finishing attack. A strike to the temple, knee, or elbow might not end the fight on its own, but if it leaves the opponent reeling and vulnerable, it can still be extremely valuable. Training to make these blows count, then, can be as important to practice as the strike that will end the fight.",
+effect: "Activation: While you perform an Attack action check, you may spend <span class='l5r'>O</span> as follows: <br>Earth <span class='l5r'>O</span>: Choose one of the following conditions: Bleeding, Dazed, Disoriented, Prone. If this check inflicts that condition on one or more targets, those targets cannot remove that condition until the end of your next turn."
+},{
+title: "Serpent's Twist Style",
+type: "Kata",
+rank: "2",
+reference: "Writ of the Wild p114",
+ring: "Any",
+fluff: "Like a lithe snake, the warrior twists with the blow rather than resisting it, pulling their foe off-balance and forcing them to expend energy. Over a protracted battle, this can exhaust even the hardiest foes, for the harder they exert themselves to land their strikes, the more tired they will become.",
+effect: "Activation: While you make a Fitness check to resist a critical strike caused by another character's Attack action check, if that character is at range 0-2 of you, you may spend <span class='l5r'>O</span> as follows: <p>Water <span class='l5r'>O</span>: The character whose effect you are resisting receives fatigue equal to the number of <span class='l5r'>T</span> results they kept on their check. Then, if you succeed on your check to resist the effect, you add that many bonus successes to your check."
+},{
+title: "Swallow's Dart Style",
+type: "Kata",
+rank: "2",
+reference: "Writ of the Wild p115",
+ring: "Any",
+fluff: "A truly great sword technique might be described as being able to catch a swallow in flight. A warrior who sidesteps as unexpectedly as a flitting bird is an extremely difficult target, as well. However, against multiple blows, this sort of focused evasion can be overcome, and the more weight a fighter is carrying in their armor, the more difficult it is to move this nimbly.",
+effect: "Activation: While you perform a Movement action check, you may spend <span class='l5r'>O</span> as follows:<br> Air <span class='l5r'>O</span> <span class='l5r'>O</span>: The next time you defend against damage, reduce the damage you suffer by an amount equal to your focus minus the physical resistance of your armor instead of by your physical or supernatural resistance. This effect persists until the start of your next turn."
+},{
+title: "Tiger's Lunge Style",
+type: "Kata",
+rank: "3",
+reference: "Writ of the Wild p116",
+ring: "Any",
+fluff: "Sweeping forward with sinuous force, the warrior makes their presence known to their foes, attempting to create space through feinted strikes or a general demeanor of aggression. While such tactics can be risky in the face of disciplined foes, striving forward with a confident expression and fire in one's eyes can help to even the odds when facing multiple enemies or taking the edge against a less seasoned opponent.",
+effect: "Activation: While you perform a Movement action check, you may spend <span class='l5r'>O</span> as follows:<p> Fire <span class='l5r'>O</span>+: After you perform this check, choose a character at range 0-1 with focus lower than or equal to your ranks in Fitness plus <span class='l5r'>O</span> spent this way. That character must move 1 range band away from you and suffer the Dazed condition unless they choose to receive strife equal to your Fire ring."
+},{
+title: "Flexible Grip",
+type: "Kata",
+rank: "1",
+reference: "Writ of the Wild p115",
+ring: "Any",
+fluff: "A polearm can be wielded in a few ways: as a reach weapon with a pointed or cutting head, but also as a blunt staff. Warriors who specialize in the polearm know that a swift blow with the butt or a strike with the center of the staff can disorient, create space, or even fell unprepared foes, giving the polearm user a chance to put the fight back on their own terms, at their preferred range.",
+effect: "Activation: As a Movement and Support action, you may shift your grip on a polearm to make close-in strikes with the blunt end. <p>Effect: If you have a readied polearm, you may treat that weapon as a staff with the following profile: 2-hand: Melee; Range 0-1, DMG 4, DLS 2. This weapon is treated as both a polearm and a blunt weapon. You may end this effect at the end of any of your turns. Otherwise, it persists until the end of the scene."
+},{
+title: "Howling Gale Defense",
+type: "Kata",
+rank: "2",
+reference: "Writ of the Wild p116",
+ring: "Any",
+fluff: "Like a tree branch snapping in the wind, a staff (polearm with no pointy end) can become a blur of motion in the hands of a skilled wielder, deflecting oncoming attacks and intercepting blows that might otherwise prove telling. By incorporating a staff into one's defense, a fighter becomes much better able to control the harm oncoming blows inflict, steel catching on swift-moving wood instead of hewing armor or biting vulnerable flesh.",
+effect: "Activation: While you make a check to resist a critical strike, if you have a readied staff (such as a bo), you may spend <span class='l5r'>O</span> as follows:<p>Any <span class='l5r'>O</span>: If you reduce the critical strike's severity to 0, you do not suffer the effects of the critical strike.<p>Any <span class='l5r'>O</span> <span class='l5r'>O</span> : If you would suffer the Bleeding condition as a result of the critical strike, you do not suffer that condition, and your staff gains the Damaged item quality instead."
+},{
+title: "Heron's Grasp Style",
+type: "Kata",
+rank: "3",
+reference: "Writ of the Wild p116",
+ring: "Any",
+fluff: "Heavy weapons and shields are fine battlefield options, and many can be used to reduce one's profile of vulnerability and intercept incoming attacks. Other heavy weapons rely on pure power to overwhelm defenses and end a fight decisively. However, polearms particularly are well-adapted to fighting cumbersome armaments, as they can be used to trap and pull aside these weapons, stripping the wielder of a defensive benefit or pinning a heavy weapon in place by depriving the wielder of the leverage to lift it. Like a heron sweeping in for a fish, a polearm wielder can tear a foe's weapon aside, leaving them to be cut down by the next soldier in line.",
+effect: "Activation: While you perform an Attack action check using a polearm, you may spend <span class='l5r'>O</span> as follows:<p>Any <span class='l5r'>O</span>+: Choose one Cumbersome weapon that one target with vigilance lower than or equal to <span class='l5r'>O</span> spent this way is wielding. That character loses any persistent benefits of that weapon and cannot use it for actions. This effect persists until the end of your next turn."
+},{
+title: "Serow's Leap Style",
+type: "Kata",
+rank: "3",
+reference: "Writ of the Wild p116",
+ring: "Any",
+fluff: "The serow is a swift, deerlike creature, capable of bounding jumps and piercing its foes with sharp horns. Like this animal, a warrior with a spear can amplify the piercing power of their weapon by using it while charging, whether on horseback or on foot. A spear can even be thrown to deadly effect, ripping through armor to deliver a killing blow against a foe at distance.",
+effect: "Activation: While you perform an Attack action check using a spear (polearm with a point or edge, such as a yari, trident, or ji) you may spend <span class='l5r'>O</span> as follows:<p>Any <span class='l5r'>O</span>+: Your spear ignores an amount of your target's physical resistance equal to <span class='l5r'>O</span> spent this way, to a maximum of the distance you moved this round or to a maximum of the distance the spear was thrown as part of the attack if it was thrown (whichever is higher). Treat your spear's deadliness as increased by the same amount."
+},{
+title: "Tumbling Oak Style",
+type: "Kata",
+rank: "4",
+reference: "Writ of the Wild p116",
+ring: "Any",
+fluff: "The warrior strikes with decisiveness, levering down their weapon in a mighty arc to generate the force needed to end the fight. While such blows can be easy to avoid, they are much easier to land on a grounded target and are very difficult to resist with toughness alone.",
+effect: "Activation: While you make an Attack action check using a staff (such as a bō) or a blunt weapon, you may spend <span class='l5r'>O</span> as follows:<p>Any <span class='l5r'>O</span>+: If this check causes one or more targets to make a check to resist a condition, critical strike, or other effect, increase the TN of that check by 2 per <span class='l5r'>O</span> spent this way."
 },
 ]
 
